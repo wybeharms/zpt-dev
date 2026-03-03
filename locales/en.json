@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "product": "Product",
+    "about": "About",
+    "resources": "Resources",
+    "cta": "Set up intro call"
+  },
+  "home": {
+    "hero": {
+      "title": "The output of a full sales team.",
+      "subtitle": "Without hiring one.",
+      "description": "ZPT handles sourcing, enrichment, and outreach using AI agents that connect to the tools a company already uses.",
+      "cta": "Set up 15 min intro call to learn more"
+    },
+    "problem": {
+      "title": "The problem",
+      "text": "A single SDR costs $50k+/year for 200 to 300 outreaches per month. Most SMBs pay for tools they barely use, outreach happens in bursts, and pipeline dries up between campaigns."
+    },
+    "models": {
+      "title": "Two ways to work with ZPT",
+      "managed": {
+        "title": "Managed Service",
+        "badge": "Recommended",
+        "description": "ZPT runs everything. Enrichment, content, outreach drafting. Output delivered via dashboard or pushed to integrations of choice (HubSpot, etc.)."
+      },
+      "selfDeploy": {
+        "title": "Self-Deploy",
+        "description": "ZPT deploys the local folder structure and connects it to the company's Claude account. Periodic updates and support included."
+      }
+    },
+    "proof": {
+      "title": "Already operational",
+      "cases": [
+        {
+          "company": "Across Logistics",
+          "stat": "Enriched 20,000 contacts in one day. Replaced a $50k SDR function."
+        },
+        {
+          "company": "Aix Leasing",
+          "stat": "Pipeline building in the Dutch equipment leasing market."
+        },
+        {
+          "company": "Financial Analytics",
+          "stat": "1,300+ contacts prospected across institutional investors."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to see what ZPT can do for your business?",
+      "button": "Set up 15 min intro call to learn more",
+      "email": "Or email request@zpteam.ai"
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "How ZPT Works",
+      "description": "AI agents that chain multiple steps together autonomously. Source, research, qualify, draft, follow up. Just like a human sales rep would."
+    },
+    "steps": {
+      "title": "Step by step",
+      "items": [
+        {
+          "number": "1",
+          "title": "Connect existing tools",
+          "description": "HubSpot, Apollo, LinkedIn, Google Maps, email. No migration. No new software."
+        },
+        {
+          "number": "2",
+          "title": "ZPT sources and enriches prospects",
+          "description": "Multi-channel sourcing: LinkedIn, directories, maps, conferences, competitor intel, job postings."
+        },
+        {
+          "number": "3",
+          "title": "Personalized outreach, ready for approval",
+          "description": "Every draft uses the company's voice, positioning, and specific prospect research. Nothing generic."
+        },
+        {
+          "number": "4",
+          "title": "Pipeline managed end-to-end",
+          "description": "Full activity logging, follow-up tracking, CRM sync, weekly reporting."
+        }
+      ]
+    },
+    "capabilities": {
+      "title": "Capabilities",
+      "items": ["Sourcing", "Enrichment", "Outreach", "Pipeline", "CRM Sync", "Content", "Meetings", "Reporting"]
+    },
+    "enrichment": {
+      "title": "Enrichment templates",
+      "description": "The company provides unstructured content and guidelines. ZPT turns that into structured, actionable intelligence.",
+      "note": "ICP scoring uses the company's own criteria and context. The more detailed the input, the better the analysis.",
+      "tabs": {
+        "simple": "Simple Template",
+        "advanced": "Advanced Template"
+      }
+    },
+    "pricing": {
+      "title": "Pricing",
+      "subtitle": "A fraction of what a single SDR costs.",
+      "tiers": [
+        {
+          "name": "Starter",
+          "price": "~$300/mo",
+          "features": ["Sourcing", "Enrichment"]
+        },
+        {
+          "name": "Growth",
+          "price": "~$600/mo",
+          "features": ["Everything in Starter, plus:", "Outreach drafting", "Pipeline management"]
+        },
+        {
+          "name": "Full Service",
+          "price": "~$1,000/mo",
+          "features": ["Everything in Growth, plus:", "CRM sync", "Content creation", "Meeting support"]
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "About ZPT",
+    "paragraphs": [
+      "ZPT started as a sales folder for a financial analytics startup. The system, markdown files, AI agents, and structured workflows, ended up more valuable than the product it was built to sell.",
+      "Two other companies asked for their own version. ZPT became a standalone product.",
+      "Today, ZPT operates across three industries: financial analytics, equipment leasing, and logistics. Same system, different context.",
+      "The vision: give any B2B company the output of a full sales team at a fraction of the cost, using AI agents that connect to the tools the company already uses.",
+      "ZPT is based in Europe. The product is live and operational."
+    ],
+    "cta": "Set up 15 min intro call to learn more"
+  },
+  "resources": {
+    "title": "Resources",
+    "cases": [
+      {
+        "title": "Logistics Company",
+        "description": "20,000 contacts enriched in a single day. Full prospect profiles with decision-maker identification, company intelligence, and outreach-ready data. Replaced a $50k/year SDR function."
+      },
+      {
+        "title": "Equipment Leasing",
+        "description": "Pipeline building in the Dutch equipment leasing market. Structured prospect sourcing across directories, industry events, and LinkedIn. Ongoing enrichment and outreach support."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "2026 ZPT. All rights reserved."
+  }
+}
