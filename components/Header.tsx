@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import LanguageSelector from "./LanguageSelector";
+import { useI18n } from "./I18nProvider";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <header className="sticky top-0 z-50 bg-navy text-white">
@@ -20,26 +22,26 @@ export default function Header() {
             href="/product"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
-            Product
+            {t("nav.product")}
           </Link>
           <Link
             href="/about"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
-            About
+            {t("nav.about")}
           </Link>
           <Link
             href="/resources"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
-            Resources
+            {t("nav.resources")}
           </Link>
           <LanguageSelector />
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
             className="rounded bg-gold px-4 py-2 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
-            Set up intro call
+            {t("nav.cta")}
           </a>
         </nav>
 
@@ -82,28 +84,28 @@ export default function Header() {
               className="text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Product
+              {t("nav.product")}
             </Link>
             <Link
               href="/about"
               className="text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              {t("nav.about")}
             </Link>
             <Link
               href="/resources"
               className="text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Resources
+              {t("nav.resources")}
             </Link>
             <LanguageSelector />
             <a
               href="mailto:request@zpteam.ai?subject=Intro call request"
               className="inline-block rounded bg-gold px-4 py-2 text-center text-sm font-medium text-navy transition-colors hover:bg-gold-light"
             >
-              Set up intro call
+              {t("nav.cta")}
             </a>
           </div>
         </nav>

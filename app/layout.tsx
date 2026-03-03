@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter, Source_Code_Pro } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import { I18nProvider } from "@/components/I18nProvider";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -12,8 +13,8 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -31,8 +32,11 @@ export const metadata: Metadata = {
     template: "%s | ZPT",
   },
   description:
-    "ZPT handles sourcing, enrichment, and outreach using AI agents that connect to the tools your company already uses. The output of a full sales team, without hiring one.",
+    "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack. The output of a full sales team, without hiring one.",
   metadataBase: new URL("https://zpteam.ai"),
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -40,13 +44,13 @@ export const metadata: Metadata = {
     siteName: "ZPT",
     title: "ZPT -- AI Sales Agents for B2B Companies",
     description:
-      "ZPT handles sourcing, enrichment, and outreach using AI agents that connect to the tools your company already uses.",
+      "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack.",
   },
   twitter: {
     card: "summary_large_image",
     title: "ZPT -- AI Sales Agents for B2B Companies",
     description:
-      "ZPT handles sourcing, enrichment, and outreach using AI agents that connect to the tools your company already uses.",
+      "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack.",
   },
   robots: {
     index: true,
@@ -68,11 +72,13 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body
-        className={`${cormorant.variable} ${inter.variable} ${sourceCode.variable} antialiased`}
+        className={`${cormorant.variable} ${jakarta.variable} ${sourceCode.variable} antialiased`}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <I18nProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

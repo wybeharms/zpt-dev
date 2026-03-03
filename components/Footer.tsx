@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useI18n } from "./I18nProvider";
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="bg-navy text-white">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -19,16 +24,16 @@ export default function Footer() {
               href="/product"
               className="transition-colors hover:text-white"
             >
-              Product
+              {t("nav.product")}
             </Link>
             <Link href="/about" className="transition-colors hover:text-white">
-              About
+              {t("nav.about")}
             </Link>
             <Link
               href="/resources"
               className="transition-colors hover:text-white"
             >
-              Resources
+              {t("nav.resources")}
             </Link>
           </nav>
 
@@ -51,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/40">
-          &copy; 2026 ZPT. All rights reserved.
+          &copy; {t("footer.copyright")}
         </div>
       </div>
     </footer>

@@ -1,1 +1,201 @@
-{}
+{
+  "nav": {
+    "product": "Prodotto",
+    "about": "Chi siamo",
+    "resources": "Casi",
+    "cta": "Prenota una chiamata"
+  },
+  "home": {
+    "hero": {
+      "title": "Il risultato di un intero team di vendita.",
+      "subtitle": "Senza assumerne uno.",
+      "description": "ZPT automatizza la ricerca di prospect, l'arricchimento dei dati e l'outreach personalizzato con agenti AI collegati agli strumenti che l'azienda gia utilizza.",
+      "cta": "Prenota una chiamata"
+    },
+    "pipeline": {
+      "title": "Cosa fa ZPT",
+      "steps": [
+        {
+          "label": "Trovare prospect",
+          "description": "Cercare lead su LinkedIn, directory, Google Maps, conferenze e intelligence competitiva."
+        },
+        {
+          "label": "Arricchire e qualificare",
+          "description": "Costruire profili completi con dati sui decisori, informazioni aziendali e punteggio ICP."
+        },
+        {
+          "label": "Outreach personalizzato",
+          "description": "Scrivere email con la voce dell'azienda, il posizionamento e la ricerca sul prospect."
+        },
+        {
+          "label": "Gestire la pipeline",
+          "description": "Monitorare attivita, follow-up e sincronizzare con il CRM esistente."
+        }
+      ]
+    },
+    "products": {
+      "title": "Due prodotti",
+      "sales": {
+        "title": "ZPT Sales",
+        "badge": "Prodotto principale",
+        "description": "Operazioni di vendita gestite. ZPT esegue sourcing, arricchimento, redazione outreach e gestione pipeline. Output consegnato tramite dashboard o integrato con gli strumenti scelti."
+      },
+      "advisory": {
+        "title": "ZPT Advisory",
+        "description": "Consulenza per aziende che vogliono implementare i propri workflow con agenti AI. Non solo vendite: automazione marketing, produzione contenuti, business plan e altre attivita operative ripetitive. ZPT implementa la struttura di cartelle locale e offre supporto continuo."
+      }
+    },
+    "proof": {
+      "title": "Gia operativo",
+      "cases": [
+        {
+          "company": "Across Logistics",
+          "stat": "20.000 contatti arricchiti, verificati e puliti. Il team di vendita ora raggiunge molte piu aziende con tassi di conversione piu elevati."
+        },
+        {
+          "company": "Aix Automotive Leasing",
+          "stat": "Ricerca strutturata di prospect nel mercato del leasing automobilistico olandese. Arricchimento e supporto outreach continui."
+        },
+        {
+          "company": "Financial Analytics",
+          "stat": "Oltre 1.300 contatti prospettati tra investitori istituzionali."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Vuoi vedere cosa ZPT puo fare per la tua azienda?",
+      "button": "Prenota una chiamata",
+      "email": "Oppure scrivi a"
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "Come funziona ZPT",
+      "description": "Agenti AI che concatenano piu passaggi in modo autonomo. Cercare, ricercare, qualificare, scrivere, dare seguito. Proprio come un rappresentante di vendita umano."
+    },
+    "pipeline": {
+      "title": "La pipeline di vendita"
+    },
+    "sales": {
+      "title": "ZPT Sales",
+      "description": "Operazioni di vendita gestite dal sourcing alla chiusura.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Collegare gli strumenti esistenti",
+          "description": "HubSpot, Apollo, LinkedIn, Google Maps, email. Nessuna migrazione. Nessun nuovo software."
+        },
+        {
+          "number": "02",
+          "title": "ZPT cerca e arricchisce i prospect",
+          "description": "Sourcing multicanale: LinkedIn, directory, mappe, conferenze, intelligence competitiva, annunci di lavoro."
+        },
+        {
+          "number": "03",
+          "title": "Outreach personalizzato, pronto per l'approvazione",
+          "description": "Ogni bozza usa la voce dell'azienda, il posizionamento e la ricerca specifica sul prospect."
+        },
+        {
+          "number": "04",
+          "title": "Pipeline gestita end-to-end",
+          "description": "Registrazione completa delle attivita, monitoraggio follow-up, sincronizzazione CRM, report settimanali."
+        }
+      ]
+    },
+    "advisory": {
+      "title": "ZPT Advisory",
+      "description": "Consulenza per aziende che vogliono costruire e gestire i propri workflow con agenti AI.",
+      "points": [
+        "Implementare un sistema di cartelle locale e strutturato su misura per il workflow aziendale",
+        "Non solo vendite: marketing, produzione contenuti, business plan, attivita operative",
+        "Collegare agenti AI agli strumenti esistenti mantenendo i dati in locale",
+        "Supporto continuo e aggiornamenti periodici man mano che il sistema evolve"
+      ]
+    },
+    "folder": {
+      "title": "La struttura di cartelle ZPT",
+      "description": "Ogni implementazione ZPT funziona su una cartella locale strutturata. Questa e la base: organizzata, trasparente e completamente personalizzabile per qualsiasi workflow.",
+      "note": "La struttura sopra e un esempio. Ogni implementazione viene personalizzata in base al workflow, agli strumenti e ai processi reali dell'azienda. Le opzioni di personalizzazione sono praticamente infinite.",
+      "folders": [
+        { "name": "account-management/", "label": "CRM", "description": "Dati e profili prospect, organizzati per fase della pipeline" },
+        { "name": "company-context/", "label": "Contesto", "description": "Cos'e l'azienda: panoramica, prodotto, ICP, posizionamento" },
+        { "name": "skills/", "label": "Standard", "description": "Come deve apparire l'output: template, formati, regole di qualita" },
+        { "name": "memory/", "label": "Memoria", "description": "Lezioni apprese, preferenze, pattern scoperti nel tempo" },
+        { "name": "output/", "label": "Deliverable", "description": "Bozze, contenuti, report pronti per la revisione" },
+        { "name": "workflows/", "label": "Processi", "description": "Come vengono eseguite le attivita: procedure passo passo" },
+        { "name": "mcp/", "label": "Strumenti", "description": "Integrazioni disponibili e configurazioni degli strumenti" },
+        { "name": "CLAUDE.md", "label": "Istruzioni", "description": "Istruzioni operative per gli agenti AI" }
+      ]
+    },
+    "enrichment": {
+      "title": "Template di arricchimento",
+      "description": "L'azienda fornisce contenuti e linee guida. ZPT li trasforma in intelligence strutturata e utilizzabile.",
+      "note": "I template sono completamente personalizzabili. Ogni cliente definisce i propri campi, criteri di punteggio e formato di output.",
+      "tabs": {
+        "simple": "Template semplice",
+        "advanced": "Template avanzato"
+      }
+    },
+    "onboarding": {
+      "title": "Iniziare e veloce",
+      "description": "ZPT ha bisogno di contesto sull'azienda, il profilo del cliente ideale e gli strumenti gia in uso. La maggior parte degli onboarding si completa in pochi giorni. Piu dettagliato e l'input, migliore e l'output dal primo giorno."
+    },
+    "pricing": {
+      "title": "Prezzi",
+      "subtitle": "Una frazione di quanto costa un singolo SDR.",
+      "tiers": [
+        {
+          "name": "Starter",
+          "price": "~$300",
+          "period": "/mese",
+          "features": ["Sourcing", "Arricchimento"]
+        },
+        {
+          "name": "Growth",
+          "price": "~$600",
+          "period": "/mese",
+          "features": ["Tutto in Starter, piu:", "Redazione outreach", "Gestione pipeline"]
+        },
+        {
+          "name": "Full Service",
+          "price": "~$1.000",
+          "period": "/mese",
+          "features": ["Tutto in Growth, piu:", "Sincronizzazione CRM", "Creazione contenuti", "Supporto riunioni"]
+        }
+      ],
+      "cta": "Inizia"
+    }
+  },
+  "about": {
+    "title": "Chi e ZPT",
+    "paragraphs": [
+      "ZPT crede che il modo piu efficace di usare gli agenti AI sia eseguirli su un sistema di cartelle locale e strutturato. File di proprieta dell'azienda, contesto controllato dall'azienda, output che l'azienda puo vedere e verificare.",
+      "L'approccio: collegare agenti AI agli strumenti che l'azienda gia utilizza, mantenere i dati in locale e conservare il pieno controllo su ogni fase del processo.",
+      "Oggi ZPT opera in tre settori: analisi finanziaria, leasing automobilistico e logistica. Stesso sistema, contesto diverso. Il prodotto e attivo e operativo."
+    ],
+    "cta": "Prenota una chiamata",
+    "ctaSubtext": "Oppure scrivi a"
+  },
+  "resources": {
+    "title": "Casi",
+    "subtitle": "Casi studio",
+    "cases": [
+      {
+        "title": "Azienda di logistica",
+        "description": "20.000 contatti arricchiti, verificati e puliti. Profili prospect completi con identificazione dei decisori e intelligence aziendale. Il team di vendita ora raggiunge molte piu aziende con tassi di conversione piu elevati."
+      },
+      {
+        "title": "Leasing automobilistico",
+        "description": "Ricerca strutturata di prospect nel mercato del leasing automobilistico olandese. Arricchimento continuo e supporto outreach tramite directory, eventi di settore e LinkedIn."
+      }
+    ],
+    "cta": {
+      "title": "Vuoi risultati simili per la tua azienda?",
+      "button": "Prenota una chiamata",
+      "email": "Oppure scrivi a"
+    }
+  },
+  "footer": {
+    "copyright": "2026 ZPT. Tutti i diritti riservati."
+  }
+}

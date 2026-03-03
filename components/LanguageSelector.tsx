@@ -1,17 +1,19 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useI18n } from "./I18nProvider";
+import type { Locale } from "@/lib/i18n";
 
-const languages = [
-  { code: "en", label: "EN" },
-  { code: "nl", label: "NL" },
-  { code: "es", label: "ES" },
-  { code: "it", label: "IT" },
+const languages: { code: Locale; label: string; flag: string }[] = [
+  { code: "en", label: "EN", flag: "\u{1F1EC}\u{1F1E7}" },
+  { code: "nl", label: "NL", flag: "\u{1F1F3}\u{1F1F1}" },
+  { code: "es", label: "ES", flag: "\u{1F1EA}\u{1F1F8}" },
+  { code: "it", label: "IT", flag: "\u{1F1EE}\u{1F1F9}" },
 ];
 
 export default function LanguageSelector() {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("en");
+  const { locale, setLocale } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,16 +26,17 @@ export default function LanguageSelector() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const selectedLabel = languages.find((l) => l.code === selected)?.label;
+  const current = languages.find((l) => l.code === locale);
 
   return (
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
+        className="flex items-center gap-1.5 text-sm text-white/80 transition-colors hover:text-white"
         aria-label="Select language"
       >
-        {selectedLabel}
+        <span>{current?.flag}</span>
+        <span>{current?.label}</span>
         <svg
           className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
@@ -55,14 +58,15 @@ export default function LanguageSelector() {
             <button
               key={lang.code}
               onClick={() => {
-                setSelected(lang.code);
+                setLocale(lang.code);
                 setOpen(false);
               }}
-              className={`block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-white/10 ${
-                selected === lang.code ? "text-gold" : "text-white/80"
+              className={`flex w-full items-center gap-2 px-4 py-2 text-left text-sm transition-colors hover:bg-white/10 ${
+                locale === lang.code ? "text-gold" : "text-white/80"
               }`}
             >
-              {lang.label}
+              <span>{lang.flag}</span>
+              <span>{lang.label}</span>
             </button>
           ))}
         </div>

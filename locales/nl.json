@@ -1,1 +1,201 @@
-{}
+{
+  "nav": {
+    "product": "Product",
+    "about": "Over ons",
+    "resources": "Cases",
+    "cta": "Kennismaken"
+  },
+  "home": {
+    "hero": {
+      "title": "De output van een volledig salesteam.",
+      "subtitle": "Zonder er een aan te nemen.",
+      "description": "ZPT automatiseert het zoeken van prospects, dataverrijking en gepersonaliseerde outreach met AI-agents die aansluiten op de tools die een bedrijf al gebruikt.",
+      "cta": "Kennismaken"
+    },
+    "pipeline": {
+      "title": "Wat ZPT doet",
+      "steps": [
+        {
+          "label": "Prospects vinden",
+          "description": "Leads sourcen via LinkedIn, bedrijvengidsen, Google Maps, conferenties en concurrentie-analyse."
+        },
+        {
+          "label": "Verrijken & kwalificeren",
+          "description": "Volledige profielen opbouwen met beslissers, bedrijfsinformatie en ICP-scores."
+        },
+        {
+          "label": "Gepersonaliseerde outreach",
+          "description": "E-mails opstellen in de tone of voice van het bedrijf, op basis van prospect-onderzoek."
+        },
+        {
+          "label": "Pipeline beheren",
+          "description": "Activiteiten bijhouden, follow-ups plannen en synchroniseren met het bestaande CRM."
+        }
+      ]
+    },
+    "products": {
+      "title": "Twee producten",
+      "sales": {
+        "title": "ZPT Sales",
+        "badge": "Kernproduct",
+        "description": "Beheerde salesoperaties. ZPT regelt sourcing, verrijking, outreach en pipelinebeheer. Output wordt geleverd via dashboard of gepusht naar integraties naar keuze."
+      },
+      "advisory": {
+        "title": "ZPT Advisory",
+        "description": "Advies voor bedrijven die hun eigen agentic workflows willen opzetten. Niet beperkt tot sales: marketingautomatisering, contentproductie, businessplannen en andere herhalende operationele taken. ZPT implementeert de lokale mapstructuur en biedt doorlopende ondersteuning."
+      }
+    },
+    "proof": {
+      "title": "Al operationeel",
+      "cases": [
+        {
+          "company": "Across Logistics",
+          "stat": "20.000 contacten verrijkt, geverifieerd en opgeschoond. Het salesteam bereikt nu aanzienlijk meer bedrijven met hogere conversiepercentages."
+        },
+        {
+          "company": "Aix Automotive Leasing",
+          "stat": "Gestructureerde prospectsourcing in de Nederlandse autoleasemarkt. Doorlopende verrijking en outreach-ondersteuning."
+        },
+        {
+          "company": "Financial Analytics",
+          "stat": "1.300+ contacten geprospecteerd bij institutionele beleggers."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Benieuwd wat ZPT voor uw bedrijf kan betekenen?",
+      "button": "Kennismaken",
+      "email": "Of mail naar"
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "Hoe ZPT werkt",
+      "description": "AI-agents die meerdere stappen autonoom aan elkaar koppelen. Sourcen, onderzoeken, kwalificeren, schrijven, opvolgen. Net zoals een menselijke salesmedewerker."
+    },
+    "pipeline": {
+      "title": "De salespipeline"
+    },
+    "sales": {
+      "title": "ZPT Sales",
+      "description": "Beheerde salesoperaties van sourcing tot deal.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Bestaande tools koppelen",
+          "description": "HubSpot, Apollo, LinkedIn, Google Maps, e-mail. Geen migratie. Geen nieuwe software."
+        },
+        {
+          "number": "02",
+          "title": "ZPT sourcet en verrijkt prospects",
+          "description": "Multi-channel sourcing: LinkedIn, bedrijvengidsen, maps, conferenties, concurrentie-analyse, vacatures."
+        },
+        {
+          "number": "03",
+          "title": "Gepersonaliseerde outreach, klaar voor goedkeuring",
+          "description": "Elk concept gebruikt de tone of voice, positionering en specifiek prospect-onderzoek van het bedrijf."
+        },
+        {
+          "number": "04",
+          "title": "Pipeline volledig beheerd",
+          "description": "Volledige activiteitenregistratie, follow-uptracking, CRM-synchronisatie, wekelijkse rapportages."
+        }
+      ]
+    },
+    "advisory": {
+      "title": "ZPT Advisory",
+      "description": "Advies voor bedrijven die hun eigen agentic workflows willen bouwen en beheren.",
+      "points": [
+        "Een lokaal, gestructureerd mappensysteem op maat van de workflow van het bedrijf",
+        "Niet beperkt tot sales: marketing, contentproductie, businessplannen, operationele taken",
+        "AI-agents koppelen aan bestaande tools, data blijft lokaal",
+        "Doorlopende ondersteuning en periodieke updates naarmate het systeem evolueert"
+      ]
+    },
+    "folder": {
+      "title": "De ZPT-mapstructuur",
+      "description": "Elke ZPT-implementatie draait bovenop een gestructureerde lokale map. Dit is de basis: georganiseerd, transparant en volledig aanpasbaar aan elke workflow.",
+      "note": "De structuur hierboven is een voorbeeld. Elke implementatie wordt aangepast aan de daadwerkelijke workflow, tools en processen van het bedrijf. De aanpassingsmogelijkheden zijn vrijwel eindeloos.",
+      "folders": [
+        { "name": "account-management/", "label": "CRM", "description": "Prospectdata en profielen, georganiseerd per pipelinefase" },
+        { "name": "company-context/", "label": "Context", "description": "Wat het bedrijf is: overzicht, product, ICP, positionering" },
+        { "name": "skills/", "label": "Standaarden", "description": "Hoe output eruit moet zien: templates, formaten, kwaliteitsregels" },
+        { "name": "memory/", "label": "Geheugen", "description": "Geleerde lessen, voorkeuren, ontdekte patronen" },
+        { "name": "output/", "label": "Oplevering", "description": "Concepten, content, rapporten klaar voor review" },
+        { "name": "workflows/", "label": "Processen", "description": "Hoe taken worden uitgevoerd: stapsgewijze procedures" },
+        { "name": "mcp/", "label": "Tools", "description": "Beschikbare integraties en toolconfiguraties" },
+        { "name": "CLAUDE.md", "label": "Instructies", "description": "Werkinstructies voor de AI-agents" }
+      ]
+    },
+    "enrichment": {
+      "title": "Verrijkingstemplates",
+      "description": "Het bedrijf levert content en richtlijnen. ZPT maakt daar gestructureerde, bruikbare informatie van.",
+      "note": "Templates zijn volledig aanpasbaar. Elke klant bepaalt eigen velden, scoringscriteria en outputformaat.",
+      "tabs": {
+        "simple": "Eenvoudig template",
+        "advanced": "Geavanceerd template"
+      }
+    },
+    "onboarding": {
+      "title": "Snel aan de slag",
+      "description": "ZPT heeft context nodig over het bedrijf, het ideale klantprofiel en de tools die al in gebruik zijn. De meeste onboardings zijn binnen enkele dagen afgerond. Hoe gedetailleerder de input, hoe beter de output vanaf dag een."
+    },
+    "pricing": {
+      "title": "Prijzen",
+      "subtitle": "Een fractie van wat een enkele SDR kost.",
+      "tiers": [
+        {
+          "name": "Starter",
+          "price": "~$300",
+          "period": "/mnd",
+          "features": ["Sourcing", "Verrijking"]
+        },
+        {
+          "name": "Growth",
+          "price": "~$600",
+          "period": "/mnd",
+          "features": ["Alles in Starter, plus:", "Outreach-concepten", "Pipelinebeheer"]
+        },
+        {
+          "name": "Full Service",
+          "price": "~$1.000",
+          "period": "/mnd",
+          "features": ["Alles in Growth, plus:", "CRM-synchronisatie", "Contentcreatie", "Meetingondersteuning"]
+        }
+      ],
+      "cta": "Aan de slag"
+    }
+  },
+  "about": {
+    "title": "Over ZPT",
+    "paragraphs": [
+      "ZPT gelooft dat de meest effectieve manier om AI-agents in te zetten is door ze te laten draaien bovenop een lokaal, gestructureerd mappensysteem. Bestanden die het bedrijf bezit, context die het bedrijf beheert, output die het bedrijf kan zien en verifieren.",
+      "De aanpak: AI-agents koppelen aan de tools die een bedrijf al gebruikt, data lokaal houden en volledige controle behouden over elke stap van het proces.",
+      "ZPT is vandaag operationeel in drie sectoren: financiele analyse, autoleasing en logistiek. Hetzelfde systeem, andere context. Het product is live en operationeel."
+    ],
+    "cta": "Kennismaken",
+    "ctaSubtext": "Of mail naar"
+  },
+  "resources": {
+    "title": "Cases",
+    "subtitle": "Casestudies",
+    "cases": [
+      {
+        "title": "Logistiek bedrijf",
+        "description": "20.000 contacten verrijkt, geverifieerd en opgeschoond. Volledige prospectprofielen met beslissersidentificatie en bedrijfsinformatie. Het salesteam bereikt nu aanzienlijk meer bedrijven met hogere conversiepercentages."
+      },
+      {
+        "title": "Autoleasing",
+        "description": "Gestructureerde prospectsourcing in de Nederlandse autoleasemarkt. Doorlopende verrijking en outreach-ondersteuning via bedrijvengidsen, branche-evenementen en LinkedIn."
+      }
+    ],
+    "cta": {
+      "title": "Vergelijkbare resultaten voor uw bedrijf?",
+      "button": "Kennismaken",
+      "email": "Of mail naar"
+    }
+  },
+  "footer": {
+    "copyright": "2026 ZPT. Alle rechten voorbehouden."
+  }
+}
