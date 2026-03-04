@@ -217,8 +217,22 @@
     },
     "agentVisual": {
       "placeholder": "Agent visual -- image placeholder",
-      "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company.",
-      "teamNote": "Team members can connect via the Claude desktop app and collaborate with the agent directly. Ask questions, give feedback, review output. All from the same interface."
+      "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company."
+    },
+    "desktop": {
+      "title": "Your team works with the agent directly",
+      "subtitle": "ZPT sets up the desktop apps so your team can collaborate with the AI agent from day one.",
+      "cards": [
+        {
+          "name": "Claude Desktop",
+          "description": "Ask questions, give feedback, review output."
+        },
+        {
+          "name": "Codex Desktop",
+          "description": "Run tasks, review output, collaborate on workflows."
+        }
+      ],
+      "note": "We help your team get set up and running. No technical knowledge required."
     },
     "folder": {
       "title": "The ZPT folder structure",

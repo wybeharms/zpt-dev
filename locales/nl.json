@@ -217,8 +217,22 @@
     },
     "agentVisual": {
       "placeholder": "Agent visueel -- afbeelding placeholder",
-      "caption": "De AI-provider is uitwisselbaar. De map blijft lokaal en eigendom van het bedrijf.",
-      "teamNote": "Teamleden kunnen verbinding maken via de Claude desktop-app en direct samenwerken met de agent. Vragen stellen, feedback geven, output beoordelen. Allemaal vanuit dezelfde interface."
+      "caption": "De AI-provider is uitwisselbaar. De map blijft lokaal en eigendom van het bedrijf."
+    },
+    "desktop": {
+      "title": "Uw team werkt direct met de agent",
+      "subtitle": "ZPT zet de desktop-apps op zodat uw team vanaf dag een met de AI-agent kan samenwerken.",
+      "cards": [
+        {
+          "name": "Claude Desktop",
+          "description": "Vragen stellen, feedback geven, output beoordelen."
+        },
+        {
+          "name": "Codex Desktop",
+          "description": "Taken uitvoeren, output beoordelen, samenwerken aan workflows."
+        }
+      ],
+      "note": "Wij helpen uw team met de installatie. Geen technische kennis nodig."
     },
     "folder": {
       "title": "De ZPT-mapstructuur",

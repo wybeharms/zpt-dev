@@ -217,8 +217,22 @@
     },
     "agentVisual": {
       "placeholder": "Visual del agente -- placeholder de imagen",
-      "caption": "El proveedor de IA es intercambiable. La carpeta permanece local y es propiedad de la empresa.",
-      "teamNote": "Los miembros del equipo pueden conectarse via la app de escritorio de Claude y colaborar directamente con el agente. Hacer preguntas, dar feedback, revisar output. Todo desde la misma interfaz."
+      "caption": "El proveedor de IA es intercambiable. La carpeta permanece local y es propiedad de la empresa."
+    },
+    "desktop": {
+      "title": "Su equipo trabaja directamente con el agente",
+      "subtitle": "ZPT configura las apps de escritorio para que su equipo pueda colaborar con el agente de IA desde el primer dia.",
+      "cards": [
+        {
+          "name": "Claude Desktop",
+          "description": "Hacer preguntas, dar feedback, revisar output."
+        },
+        {
+          "name": "Codex Desktop",
+          "description": "Ejecutar tareas, revisar output, colaborar en flujos de trabajo."
+        }
+      ],
+      "note": "Ayudamos a su equipo a configurar todo. Sin conocimientos tecnicos necesarios."
     },
     "folder": {
       "title": "La estructura de carpetas ZPT",

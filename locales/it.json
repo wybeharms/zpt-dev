@@ -217,8 +217,22 @@
     },
     "agentVisual": {
       "placeholder": "Visuale dell'agente -- placeholder immagine",
-      "caption": "Il provider AI e intercambiabile. La cartella resta locale e di proprieta dell'azienda.",
-      "teamNote": "I membri del team possono connettersi tramite l'app desktop di Claude e collaborare direttamente con l'agente. Fare domande, dare feedback, revisionare l'output. Tutto dalla stessa interfaccia."
+      "caption": "Il provider AI e intercambiabile. La cartella resta locale e di proprieta dell'azienda."
+    },
+    "desktop": {
+      "title": "Il team lavora direttamente con l'agente",
+      "subtitle": "ZPT configura le app desktop in modo che il team possa collaborare con l'agente AI fin dal primo giorno.",
+      "cards": [
+        {
+          "name": "Claude Desktop",
+          "description": "Fare domande, dare feedback, revisionare l'output."
+        },
+        {
+          "name": "Codex Desktop",
+          "description": "Eseguire attivita, revisionare l'output, collaborare sui workflow."
+        }
+      ],
+      "note": "Aiutiamo il team a configurare tutto. Nessuna conoscenza tecnica necessaria."
     },
     "folder": {
       "title": "La struttura di cartelle ZPT",

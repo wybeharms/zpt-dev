@@ -155,9 +155,6 @@ export default function AdvisoryContent() {
                   />
                 ))}
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-text-muted">
-                {t("advisory.agentVisual.teamNote")}
-              </p>
             </div>
 
             {/* Right: visual */}
@@ -213,6 +210,37 @@ export default function AdvisoryContent() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Desktop apps — team collaboration */}
+      <section className="bg-off-white px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.desktop.title")}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-text-muted">
+            {t("advisory.desktop.subtitle")}
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {(tArray("advisory.desktop.cards") as { name: string; description: string }[]).map((card) => (
+              <div
+                key={card.name}
+                className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-6"
+              >
+                <img
+                  src={card.name === "Claude Desktop" ? "/logos/claude_desktop.png" : "/logos/codex_desktop.png"}
+                  alt={card.name}
+                  className="h-32 w-auto rounded-lg object-contain"
+                />
+                <h3 className="mt-4 text-lg font-semibold text-navy">{card.name}</h3>
+                <p className="mt-1 text-sm text-text-muted">{card.description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-text-muted">
+            {t("advisory.desktop.note")}
+          </p>
         </div>
       </section>
 
