@@ -28,11 +28,11 @@ const sourceCode = Source_Code_Pro({
 
 export const metadata: Metadata = {
   title: {
-    default: "ZPT -- AI Sales Agents for B2B Companies",
+    default: "ZPT - AI Agents for B2B Companies",
     template: "%s | ZPT",
   },
   description:
-    "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack. The output of a full sales team, without hiring one.",
+    "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously. The output of a full team, without hiring one.",
   metadataBase: new URL("https://zpteam.ai"),
   icons: {
     icon: "/favicon.svg",
@@ -42,15 +42,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://zpteam.ai",
     siteName: "ZPT",
-    title: "ZPT -- AI Sales Agents for B2B Companies",
+    title: "ZPT - AI Agents for B2B Companies",
     description:
-      "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack.",
+      "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZPT -- AI Sales Agents for B2B Companies",
+    title: "ZPT - AI Agents for B2B Companies",
     description:
-      "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack.",
+      "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously.",
   },
   robots: {
     index: true,

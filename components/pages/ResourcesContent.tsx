@@ -32,7 +32,7 @@ export default function ResourcesContent() {
                 key={i}
                 className="rounded-lg border border-border-warm bg-white p-6 shadow-sm"
               >
-                <h3 className="font-heading text-xl font-medium text-navy">
+                <h3 className="text-xl font-semibold text-navy">
                   {item.title}
                 </h3>
                 <p className="mt-3 leading-relaxed text-text-muted">

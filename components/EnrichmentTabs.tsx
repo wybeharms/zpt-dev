@@ -19,7 +19,7 @@ export default function EnrichmentTabs() {
               : "text-text-muted hover:text-navy"
           }`}
         >
-          {t("product.enrichment.tabs.simple")}
+          {t("sales.enrichment.tabs.simple")}
         </button>
         <button
           onClick={() => setActive("advanced")}
@@ -29,13 +29,13 @@ export default function EnrichmentTabs() {
               : "text-text-muted hover:text-navy"
           }`}
         >
-          {t("product.enrichment.tabs.advanced")}
+          {t("sales.enrichment.tabs.advanced")}
         </button>
       </div>
 
       {/* Tab content */}
       {active === "simple" ? (
-        <div className="overflow-x-auto rounded-lg border border-border-warm bg-white shadow-sm">
+        <div className="mt-6 overflow-x-auto rounded-lg border border-border-warm bg-white shadow-sm">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-border-warm bg-cream">
@@ -80,7 +80,7 @@ export default function EnrichmentTabs() {
                   </span>
                 </td>
               </tr>
-              <tr>
+              <tr className="border-b border-border-warm">
                 <td className="px-4 py-3">Delta Ltd</td>
                 <td className="px-4 py-3">Mark Roberts</td>
                 <td className="px-4 py-3">Head of Sales</td>
@@ -91,22 +91,81 @@ export default function EnrichmentTabs() {
                   </span>
                 </td>
               </tr>
+              <tr className="border-b border-border-warm">
+                <td className="px-4 py-3">Echo GmbH</td>
+                <td className="px-4 py-3">Anna Weber</td>
+                <td className="px-4 py-3">CMO</td>
+                <td className="px-4 py-3">anna@echo.de</td>
+                <td className="px-4 py-3">
+                  <span className="rounded-full bg-green-50 px-2 py-0.5 text-xs text-green-700">
+                    Verified
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border-warm">
+                <td className="px-4 py-3">Foxtrot BV</td>
+                <td className="px-4 py-3">Pieter de Vries</td>
+                <td className="px-4 py-3">Managing Director</td>
+                <td className="px-4 py-3">pieter@foxtrot.nl</td>
+                <td className="px-4 py-3">
+                  <span className="rounded-full bg-blue-50 px-2 py-0.5 text-xs text-blue-700">
+                    Enriched
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border-warm">
+                <td className="px-4 py-3">Gulf Corp</td>
+                <td className="px-4 py-3">Sarah Johnson</td>
+                <td className="px-4 py-3">VP Business Dev</td>
+                <td className="px-4 py-3">sarah@gulf.com</td>
+                <td className="px-4 py-3">
+                  <span className="rounded-full bg-green-50 px-2 py-0.5 text-xs text-green-700">
+                    Verified
+                  </span>
+                </td>
+              </tr>
+              <tr className="border-b border-border-warm">
+                <td className="px-4 py-3">Hotel SA</td>
+                <td className="px-4 py-3">Carlos Ruiz</td>
+                <td className="px-4 py-3">CEO</td>
+                <td className="px-4 py-3">carlos@hotel.es</td>
+                <td className="px-4 py-3">
+                  <span className="rounded-full bg-yellow-50 px-2 py-0.5 text-xs text-yellow-700">
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">India Tech</td>
+                <td className="px-4 py-3">Priya Sharma</td>
+                <td className="px-4 py-3">CTO</td>
+                <td className="px-4 py-3">priya@indiatech.in</td>
+                <td className="px-4 py-3">
+                  <span className="rounded-full bg-blue-50 px-2 py-0.5 text-xs text-blue-700">
+                    Enriched
+                  </span>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
       ) : (
         /* Advanced: document/report style */
-        <div className="rounded-lg border border-border-warm bg-white shadow-sm">
+        <div className="mt-6 rounded-lg border border-border-warm bg-white shadow-sm">
+          {/* Badge header */}
+          <div className="border-b border-border-warm bg-cream px-6 py-3">
+            <span className="text-sm font-medium text-navy">{t("sales.enrichment.advancedHeader")}</span>
+          </div>
           {/* Featured company */}
           <div className="border-b border-border-warm p-6">
             <div className="flex items-center justify-between">
               <div>
-                <h4 className="font-heading text-lg font-medium text-navy">Acme Corp</h4>
+                <h4 className="text-lg font-semibold text-navy">Acme Corp</h4>
                 <p className="text-xs text-text-muted">SaaS, 50-200 employees, Munich, Germany</p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-xs text-text-muted">ICP-Fit</span>
-                <span className="rounded bg-green-50 px-2 py-1 text-sm font-medium text-green-700">4.6 / 5</span>
+                <span className="rounded bg-green-50 px-2 py-1 text-sm font-medium text-green-700">5 / 5</span>
               </div>
             </div>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -132,9 +191,9 @@ export default function EnrichmentTabs() {
           {/* Additional companies (condensed) */}
           <div className="divide-y divide-border-warm">
             {[
-              { company: "Beta Inc", contact: "Tom Brown, VP Sales", score: "3.8 / 5", signal: "Expanding to new market, no local team" },
-              { company: "Gamma SA", contact: "Lisa Muller, CEO", score: "4.2 / 5", signal: "Recently closed funding round, scaling sales" },
-              { company: "Delta Ltd", contact: "Mark Roberts, Head of Sales", score: "3.1 / 5", signal: "Using outdated CRM, high churn on sales team" },
+              { company: "Beta Inc", contact: "Tom Brown, VP Sales", score: "4 / 5", signal: "Expanding to new market, no local team" },
+              { company: "Gamma SA", contact: "Lisa Muller, CEO", score: "4 / 5", signal: "Recently closed funding round, scaling sales" },
+              { company: "Delta Ltd", contact: "Mark Roberts, Head of Sales", score: "3 / 5", signal: "Using outdated CRM, high churn on sales team" },
             ].map((item) => (
               <div key={item.company} className="flex items-center justify-between px-6 py-3">
                 <div className="flex-1">

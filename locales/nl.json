@@ -1,48 +1,35 @@
 {
   "nav": {
-    "product": "Product",
+    "sales": "Sales",
+    "advisory": "Advisory",
     "about": "Over ons",
     "resources": "Cases",
+    "product": "Product",
     "cta": "Kennismaken"
   },
   "home": {
     "hero": {
-      "title": "De output van een volledig salesteam.",
+      "title": "De output van een volledig team.",
       "subtitle": "Zonder er een aan te nemen.",
-      "description": "ZPT automatiseert het zoeken van prospects, dataverrijking en gepersonaliseerde outreach met AI-agents die aansluiten op de tools die een bedrijf al gebruikt.",
+      "description": "ZPT structureert de kennis, workflows en context van een bedrijf in een lokale map. Een AI-agent zit bovenop, leest de map en voert taken autonoom uit.",
       "cta": "Kennismaken"
     },
-    "pipeline": {
-      "title": "Wat ZPT doet",
-      "steps": [
-        {
-          "label": "Prospects vinden",
-          "description": "Leads sourcen via LinkedIn, bedrijvengidsen, Google Maps, conferenties en concurrentie-analyse."
-        },
-        {
-          "label": "Verrijken & kwalificeren",
-          "description": "Volledige profielen opbouwen met beslissers, bedrijfsinformatie en ICP-scores."
-        },
-        {
-          "label": "Gepersonaliseerde outreach",
-          "description": "E-mails opstellen in de tone of voice van het bedrijf, op basis van prospect-onderzoek."
-        },
-        {
-          "label": "Pipeline beheren",
-          "description": "Activiteiten bijhouden, follow-ups plannen en synchroniseren met het bestaande CRM."
-        }
-      ]
+    "quote": {
+      "text": "Elke grote technologische verschuiving brengt een enorme veranderingsuitdaging met zich mee voor bedrijven.",
+      "attribution": "David Sacks"
     },
     "products": {
       "title": "Twee producten",
       "sales": {
         "title": "ZPT Sales",
         "badge": "Kernproduct",
-        "description": "Beheerde salesoperaties. ZPT regelt sourcing, verrijking, outreach en pipelinebeheer. Output wordt geleverd via dashboard of gepusht naar integraties naar keuze."
+        "description": "Beheerde salesoperaties. ZPT regelt sourcing, verrijking, outreach en pipelinebeheer. Output wordt geleverd via dashboard of gepusht naar integraties naar keuze.",
+        "link": "Hoe het werkt"
       },
       "advisory": {
         "title": "ZPT Advisory",
-        "description": "Advies voor bedrijven die hun eigen agentic workflows willen opzetten. Niet beperkt tot sales: marketingautomatisering, contentproductie, businessplannen en andere herhalende operationele taken. ZPT implementeert de lokale mapstructuur en biedt doorlopende ondersteuning."
+        "description": "Implementeer een gestructureerde lokale map met een AI-agent bovenop. De map bevat de context, workflows en kennis van het bedrijf. De agent doet het werk.",
+        "link": "Meer info"
       }
     },
     "proof": {
@@ -53,7 +40,7 @@
           "stat": "20.000 contacten verrijkt, geverifieerd en opgeschoond. Het salesteam bereikt nu aanzienlijk meer bedrijven met hogere conversiepercentages."
         },
         {
-          "company": "Aix Automotive Leasing",
+          "company": "Blankert Shortlease",
           "stat": "Gestructureerde prospectsourcing in de Nederlandse autoleasemarkt. Doorlopende verrijking en outreach-ondersteuning."
         },
         {
@@ -68,77 +55,84 @@
       "email": "Of mail naar"
     }
   },
-  "product": {
+  "sales": {
     "hero": {
-      "title": "Hoe ZPT werkt",
+      "title": "Hoe ZPT Sales werkt",
       "description": "AI-agents die meerdere stappen autonoom aan elkaar koppelen. Sourcen, onderzoeken, kwalificeren, schrijven, opvolgen. Net zoals een menselijke salesmedewerker."
     },
-    "pipeline": {
-      "title": "De salespipeline"
-    },
-    "sales": {
-      "title": "ZPT Sales",
-      "description": "Beheerde salesoperaties van sourcing tot deal.",
-      "steps": [
+    "funnel": {
+      "title": "De salesfunnel",
+      "sources": ["LinkedIn", "Google Maps", "Web", "Vacaturebanken"],
+      "stages": [
         {
-          "number": "01",
-          "title": "Bestaande tools koppelen",
-          "description": "HubSpot, Apollo, LinkedIn, Google Maps, e-mail. Geen migratie. Geen nieuwe software."
+          "title": "Prospects vinden",
+          "description": "Leads sourcen via LinkedIn, bedrijvengidsen, Google Maps, conferenties en concurrentie-analyse."
         },
         {
-          "number": "02",
-          "title": "ZPT sourcet en verrijkt prospects",
-          "description": "Multi-channel sourcing: LinkedIn, bedrijvengidsen, maps, conferenties, concurrentie-analyse, vacatures."
+          "title": "Verrijken & kwalificeren",
+          "description": "Volledige profielen opbouwen met beslissers, bedrijfsinformatie en ICP-scores."
         },
         {
-          "number": "03",
-          "title": "Gepersonaliseerde outreach, klaar voor goedkeuring",
-          "description": "Elk concept gebruikt de tone of voice, positionering en specifiek prospect-onderzoek van het bedrijf."
+          "title": "Gepersonaliseerde outreach",
+          "description": "E-mails opstellen in de tone of voice van het bedrijf, op basis van prospect-onderzoek."
         },
         {
-          "number": "04",
-          "title": "Pipeline volledig beheerd",
-          "description": "Volledige activiteitenregistratie, follow-uptracking, CRM-synchronisatie, wekelijkse rapportages."
+          "title": "Pipeline beheren",
+          "description": "Activiteiten bijhouden, follow-ups plannen en synchroniseren met het bestaande CRM."
         }
       ]
     },
-    "advisory": {
-      "title": "ZPT Advisory",
-      "description": "Advies voor bedrijven die hun eigen agentic workflows willen bouwen en beheren.",
-      "points": [
-        "Een lokaal, gestructureerd mappensysteem op maat van de workflow van het bedrijf",
-        "Niet beperkt tot sales: marketing, contentproductie, businessplannen, operationele taken",
-        "AI-agents koppelen aan bestaande tools, data blijft lokaal",
-        "Doorlopende ondersteuning en periodieke updates naarmate het systeem evolueert"
-      ]
-    },
-    "folder": {
-      "title": "De ZPT-mapstructuur",
-      "description": "Elke ZPT-implementatie draait bovenop een gestructureerde lokale map. Dit is de basis: georganiseerd, transparant en volledig aanpasbaar aan elke workflow.",
-      "note": "De structuur hierboven is een voorbeeld. Elke implementatie wordt aangepast aan de daadwerkelijke workflow, tools en processen van het bedrijf. De aanpassingsmogelijkheden zijn vrijwel eindeloos.",
-      "folders": [
-        { "name": "account-management/", "label": "CRM", "description": "Prospectdata en profielen, georganiseerd per pipelinefase" },
-        { "name": "company-context/", "label": "Context", "description": "Wat het bedrijf is: overzicht, product, ICP, positionering" },
-        { "name": "skills/", "label": "Standaarden", "description": "Hoe output eruit moet zien: templates, formaten, kwaliteitsregels" },
-        { "name": "memory/", "label": "Geheugen", "description": "Geleerde lessen, voorkeuren, ontdekte patronen" },
-        { "name": "output/", "label": "Oplevering", "description": "Concepten, content, rapporten klaar voor review" },
-        { "name": "workflows/", "label": "Processen", "description": "Hoe taken worden uitgevoerd: stapsgewijze procedures" },
-        { "name": "mcp/", "label": "Tools", "description": "Beschikbare integraties en toolconfiguraties" },
-        { "name": "CLAUDE.md", "label": "Instructies", "description": "Werkinstructies voor de AI-agents" }
-      ]
+    "tools": {
+      "title": "Sluit aan op uw stack",
+      "subtitle": "ZPT haalt data op uit en stuurt data naar de tools die uw bedrijf al gebruikt.",
+      "existing": {
+        "label": "Uw bestaande tools",
+        "items": ["HubSpot", "Salesforce", "Google Drive", "Notion", "Slack"]
+      }
     },
     "enrichment": {
       "title": "Verrijkingstemplates",
       "description": "Het bedrijf levert content en richtlijnen. ZPT maakt daar gestructureerde, bruikbare informatie van.",
       "note": "Templates zijn volledig aanpasbaar. Elke klant bepaalt eigen velden, scoringscriteria en outputformaat.",
+      "advancedHeader": "Verrijkt bedrijfsprofiel",
       "tabs": {
         "simple": "Eenvoudig template",
         "advanced": "Geavanceerd template"
       }
     },
     "onboarding": {
-      "title": "Snel aan de slag",
-      "description": "ZPT heeft context nodig over het bedrijf, het ideale klantprofiel en de tools die al in gebruik zijn. De meeste onboardings zijn binnen enkele dagen afgerond. Hoe gedetailleerder de input, hoe beter de output vanaf dag een."
+      "title": "15 min tot uw eerste analyse, inclusief onboarding",
+      "description": "ZPT heeft context nodig over het bedrijf, het ideale klantprofiel en de tools die al in gebruik zijn. De setup is snel en gestructureerd: context delen, tools koppelen, en binnen minuten het eerste verrijkte prospectprofiel zien."
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Veelgestelde vragen over ZPT Sales.",
+      "items": [
+        {
+          "question": "Hoe lang duurt het om te starten?",
+          "answer": "De meeste bedrijven zijn binnen 15 minuten operationeel. ZPT heeft context nodig over het bedrijf, het ideale klantprofiel en de gebruikte tools. Daarna wordt direct het eerste verrijkte prospectprofiel gegenereerd."
+        },
+        {
+          "question": "Met welke tools werkt ZPT?",
+          "answer": "ZPT integreert met HubSpot, Salesforce, Google Drive, Notion en Slack. Het haalt data op en stuurt data naar de tools die het bedrijf al gebruikt. Geen migratie, geen nieuwe software."
+        },
+        {
+          "question": "Hoe verschilt dit van het aannemen van een SDR?",
+          "answer": "ZPT neemt de repetitieve onderdelen van het salesproces over: sourcing, verrijking, outreach-concepten en pipelinebeheer. Het draait 24/7 voor een fractie van de kosten. Menselijk toezicht blijft in de loop voor goedkeuringen en relatieopbouw."
+        },
+        {
+          "question": "Wie keurt de outreach goed voordat die wordt verzonden?",
+          "answer": "Het bedrijf keurt altijd goed. ZPT stelt gepersonaliseerde outreach op op basis van prospect-onderzoek, maar er wordt niets verzonden zonder expliciete goedkeuring. Volledige controle blijft bij het team."
+        },
+        {
+          "question": "Kan ZPT werken met onze bestaande CRM-data?",
+          "answer": "Ja. ZPT koppelt aan het bestaande CRM van het bedrijf en synchroniseert data in beide richtingen. Bestaande contacten, deals en pipelinefasen worden bewaard en verrijkt."
+        },
+        {
+          "question": "Wat gebeurt er met onze data?",
+          "answer": "Alle data blijft onder controle van het bedrijf. ZPT werkt op een lokale mapstructuur. Niets wordt gedeeld, verkocht of gebruikt voor training. Het bedrijf is eigenaar van alles."
+        }
+      ]
     },
     "pricing": {
       "title": "Prijzen",
@@ -166,6 +160,95 @@
       "cta": "Aan de slag"
     }
   },
+  "advisory": {
+    "hero": {
+      "title": "Bouw uw eigen AI-aangedreven workflows",
+      "description": "ZPT legt vast wat een bedrijf uniek maakt in een gestructureerde lokale map en zet daar vervolgens een agent bovenop. De map is het besturingssysteem."
+    },
+    "concept": {
+      "title": "Elk bedrijf is anders",
+      "paragraphs": [
+        "Elk bedrijf heeft unieke workflows, cultuur en institutionele kennis. ZPT legt dat vast in een gestructureerde lokale map -- de basis voor alles wat de agent doet.",
+        "De agent zit bovenop de map. Die leest context, voert taken uit en schrijft resultaten terug. Onderzoek, schrijven, dataverwerking, rapportage -- alles draait autonoom.",
+        "De map blijft volledig lokaal. Geen vendor lock-in. Werkt met Anthropic, OpenAI en anderen. Wissel van provider op elk moment zonder context of structuur te verliezen."
+      ]
+    },
+    "agentVisual": {
+      "placeholder": "Agent visueel -- afbeelding placeholder",
+      "caption": "De AI-provider is uitwisselbaar. De map blijft lokaal en eigendom van het bedrijf.",
+      "teamNote": "Teamleden kunnen verbinding maken via de Claude desktop-app en direct samenwerken met de agent. Vragen stellen, feedback geven, output beoordelen -- allemaal vanuit dezelfde interface."
+    },
+    "folder": {
+      "title": "De ZPT-mapstructuur",
+      "description": "Elke ZPT-implementatie draait bovenop een gestructureerde lokale map. Dit is de basis: georganiseerd, transparant en volledig aanpasbaar aan elke workflow.",
+      "note": "De structuur hierboven is een voorbeeld. Elke implementatie wordt aangepast aan de daadwerkelijke workflow, tools en processen van het bedrijf.",
+      "folders": [
+        { "name": "company-context/", "label": "Context", "description": "Wat het bedrijf is: overzicht, product, ICP, positionering" },
+        { "name": "account-management/", "label": "CRM", "description": "Prospectdata en profielen, georganiseerd per pipelinefase" },
+        { "name": "skills/", "label": "Standaarden", "description": "Hoe output eruit moet zien: templates, formaten, kwaliteitsregels" },
+        { "name": "memory/", "label": "Geheugen", "description": "Geleerde lessen, voorkeuren, ontdekte patronen" },
+        { "name": "output/", "label": "Oplevering", "description": "Concepten, content, rapporten klaar voor review" },
+        { "name": "workflows/", "label": "Processen", "description": "Hoe taken worden uitgevoerd: stapsgewijze procedures" },
+        { "name": "mcp/", "label": "Tools", "description": "Beschikbare integraties en toolconfiguraties" },
+        { "name": "CLAUDE.md", "label": "Instructies", "description": "Werkinstructies voor de AI-agents" },
+        { "name": "AGENT.md", "label": "Agent-configuratie", "description": "Agent-specifieke instellingen en voorkeuren" }
+      ]
+    },
+    "consulting": {
+      "title": "Wij zetten het voor u op",
+      "description": "ZPT implementeert de mapstructuur, configureert de AI-agents, koppelt ze aan de tools van het bedrijf en biedt doorlopende ondersteuning naarmate het systeem evolueert.",
+      "points": [
+        "Aangepaste mapstructuur op maat van de workflow van het bedrijf",
+        "Configuratie van AI-agents en toolintegratie",
+        "Training in het werken met het systeem",
+        "Doorlopende ondersteuning en periodieke updates"
+      ]
+    },
+    "pricing": {
+      "title": "Advisory pakketten",
+      "subtitle": "Prijs op aanvraag. Elk traject begint met het begrijpen van de behoeften van het bedrijf.",
+      "tiers": [
+        {
+          "name": "Educate",
+          "description": "AI-bewustwording voor het team",
+          "features": [
+            "AI-presentatie afgestemd op de branche van het bedrijf",
+            "Live demo van agentic workflows",
+            "Team Q&A en identificatie van use cases",
+            "Schriftelijke samenvatting met aanbevolen vervolgstappen"
+          ]
+        },
+        {
+          "name": "Basic Setup",
+          "description": "Mapstructuur + agentconfiguratie",
+          "features": [
+            "Alles in Educate, plus:",
+            "Gestructureerde lokale map voor een workflow",
+            "AI-agent geconfigureerd en verbonden",
+            "Teamtraining voor dagelijks gebruik",
+            "30 dagen ondersteuning"
+          ]
+        },
+        {
+          "name": "Advanced Setup",
+          "description": "Volledige implementatie over workflows",
+          "features": [
+            "Alles in Basic Setup, plus:",
+            "Meerdere workflows en afdelingen",
+            "Toolintegraties (CRM, drives, messaging)",
+            "Aangepaste agentvaardigheden en automatisering",
+            "Doorlopende ondersteuning en optimalisatie"
+          ]
+        }
+      ],
+      "cta": "Neem contact op"
+    },
+    "cta": {
+      "title": "Klaar om uw eigen AI-aangedreven workflows te bouwen?",
+      "button": "Kennismaken",
+      "email": "Of mail naar"
+    }
+  },
   "about": {
     "title": "Over ZPT",
     "paragraphs": [
@@ -185,7 +268,7 @@
         "description": "20.000 contacten verrijkt, geverifieerd en opgeschoond. Volledige prospectprofielen met beslissersidentificatie en bedrijfsinformatie. Het salesteam bereikt nu aanzienlijk meer bedrijven met hogere conversiepercentages."
       },
       {
-        "title": "Autoleasing",
+        "title": "Blankert Shortlease",
         "description": "Gestructureerde prospectsourcing in de Nederlandse autoleasemarkt. Doorlopende verrijking en outreach-ondersteuning via bedrijvengidsen, branche-evenementen en LinkedIn."
       }
     ],

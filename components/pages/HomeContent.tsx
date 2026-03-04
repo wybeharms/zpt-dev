@@ -1,6 +1,6 @@
 "use client";
 
-import Pipeline from "@/components/Pipeline";
+import Link from "next/link";
 import { useI18n } from "@/components/I18nProvider";
 
 export default function HomeContent() {
@@ -32,13 +32,23 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Pipeline */}
+      {/* Quote */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("home.pipeline.title")}
-          </h2>
-          <Pipeline />
+        <div className="mx-auto max-w-3xl text-center">
+          <blockquote className="font-heading text-2xl font-light leading-relaxed tracking-tight text-navy md:text-3xl">
+            &ldquo;{t("home.quote.text")}&rdquo;
+          </blockquote>
+          <p className="mt-4 text-sm text-text-muted">
+            -{" "}
+            <a
+              href="https://www.youtube.com/shorts/VaGOdcn3Dqo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-navy"
+            >
+              {t("home.quote.attribution")}
+            </a>
+          </p>
         </div>
       </section>
 
@@ -49,9 +59,9 @@ export default function HomeContent() {
             {t("home.products.title")}
           </h2>
           <div className="mt-10 grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg border border-gold/30 bg-white p-6 shadow-sm">
+            <Link href="/sales" className="group rounded-lg border border-gold/30 bg-white p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md">
               <div className="flex items-center gap-3">
-                <h3 className="font-heading text-2xl font-medium text-navy">
+                <h3 className="text-2xl font-semibold text-navy">
                   {t("home.products.sales.title")}
                 </h3>
                 <span className="rounded-full bg-gold/10 px-3 py-0.5 text-xs font-medium text-gold">
@@ -61,15 +71,21 @@ export default function HomeContent() {
               <p className="mt-3 leading-relaxed text-text-muted">
                 {t("home.products.sales.description")}
               </p>
-            </div>
-            <div className="rounded-lg border border-border-warm bg-white p-6 shadow-sm">
-              <h3 className="font-heading text-2xl font-medium text-navy">
+              <span className="mt-4 inline-block text-sm font-medium text-gold group-hover:underline">
+                {t("home.products.sales.link")} &rarr;
+              </span>
+            </Link>
+            <Link href="/advisory" className="group rounded-lg border border-border-warm bg-white p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md">
+              <h3 className="text-2xl font-semibold text-navy">
                 {t("home.products.advisory.title")}
               </h3>
               <p className="mt-3 leading-relaxed text-text-muted">
                 {t("home.products.advisory.description")}
               </p>
-            </div>
+              <span className="mt-4 inline-block text-sm font-medium text-gold group-hover:underline">
+                {t("home.products.advisory.link")} &rarr;
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -83,7 +99,7 @@ export default function HomeContent() {
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {cases.map((c, i) => (
               <div key={i} className="text-center">
-                <h3 className="font-heading text-xl font-medium text-gold">
+                <h3 className="text-xl font-semibold text-gold">
                   {c.company}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import LanguageSelector from "./LanguageSelector";
+import ProductDropdown from "./ProductDropdown";
 import { useI18n } from "./I18nProvider";
 
 export default function Header() {
@@ -18,12 +19,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
-          <Link
-            href="/product"
-            className="text-sm text-white/80 transition-colors hover:text-white"
-          >
-            {t("nav.product")}
-          </Link>
+          <ProductDropdown />
           <Link
             href="/about"
             className="text-sm text-white/80 transition-colors hover:text-white"
@@ -79,12 +75,22 @@ export default function Header() {
       {mobileMenuOpen && (
         <nav className="border-t border-white/10 px-6 pb-6 md:hidden">
           <div className="flex flex-col gap-4 pt-4">
+            <span className="text-xs font-medium uppercase tracking-wider text-white/40">
+              {t("nav.product")}
+            </span>
             <Link
-              href="/product"
-              className="text-sm text-white/80 transition-colors hover:text-white"
+              href="/sales"
+              className="pl-3 text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t("nav.product")}
+              {t("nav.sales")}
+            </Link>
+            <Link
+              href="/advisory"
+              className="pl-3 text-sm text-white/80 transition-colors hover:text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.advisory")}
             </Link>
             <Link
               href="/about"

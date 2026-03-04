@@ -1,48 +1,35 @@
 {
   "nav": {
-    "product": "Product",
+    "sales": "Sales",
+    "advisory": "Advisory",
     "about": "About",
     "resources": "Resources",
+    "product": "Product",
     "cta": "Set Up Intro Call"
   },
   "home": {
     "hero": {
-      "title": "The output of a full sales team.",
+      "title": "The output of a full team.",
       "subtitle": "Without hiring one.",
-      "description": "ZPT automates prospect sourcing, data enrichment, and personalized outreach using AI agents connected to your existing sales stack.",
+      "description": "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top, reads the folder, and executes tasks autonomously.",
       "cta": "Set Up Intro Call"
     },
-    "pipeline": {
-      "title": "What ZPT does",
-      "steps": [
-        {
-          "label": "Find Prospects",
-          "description": "Source leads from LinkedIn, directories, maps, conferences, and competitor intel."
-        },
-        {
-          "label": "Enrich & Qualify",
-          "description": "Build full profiles with decision-maker data, company intel, and ICP scoring."
-        },
-        {
-          "label": "Personalized Outreach",
-          "description": "Draft emails using the company's voice, positioning, and prospect research."
-        },
-        {
-          "label": "Manage Pipeline",
-          "description": "Track activity, follow-ups, and sync with your existing CRM (HubSpot, etc.)."
-        }
-      ]
+    "quote": {
+      "text": "Every major technology shift creates a massive change management challenge for enterprises.",
+      "attribution": "David Sacks"
     },
     "products": {
       "title": "Two products",
       "sales": {
         "title": "ZPT Sales",
         "badge": "Core product",
-        "description": "Managed sales operations. ZPT runs sourcing, enrichment, outreach drafting, and pipeline management. Output delivered via dashboard or pushed to integrations of choice."
+        "description": "Managed sales operations. ZPT runs sourcing, enrichment, outreach drafting, and pipeline management. Output delivered via dashboard or pushed to integrations of choice.",
+        "link": "How it works"
       },
       "advisory": {
         "title": "ZPT Advisory",
-        "description": "Consulting for companies that want to set up their own agentic workflows. Not limited to sales: marketing automation, content production, business plans, and other repetitive operational tasks. ZPT deploys the local folder structure and provides ongoing support."
+        "description": "Implement a structured local folder with an AI agent on top. The folder captures the company's context, workflows, and knowledge. The agent does the work.",
+        "link": "Learn more"
       }
     },
     "proof": {
@@ -53,7 +40,7 @@
           "stat": "20,000 contacts enriched, verified, and cleaned. The sales team now reaches significantly more companies with higher conversion rates."
         },
         {
-          "company": "Aix Automotive Leasing",
+          "company": "Blankert Shortlease",
           "stat": "Structured prospect sourcing in the Dutch automotive leasing market. Ongoing enrichment and outreach support."
         },
         {
@@ -68,77 +55,84 @@
       "email": "Or email"
     }
   },
-  "product": {
+  "sales": {
     "hero": {
-      "title": "How ZPT Works",
+      "title": "How ZPT Sales Works",
       "description": "AI agents that chain multiple steps together autonomously. Source, research, qualify, draft, follow up. Just like a human sales rep would."
     },
-    "pipeline": {
-      "title": "The sales pipeline"
-    },
-    "sales": {
-      "title": "ZPT Sales",
-      "description": "Managed sales operations from sourcing to closed deal.",
-      "steps": [
+    "funnel": {
+      "title": "The sales funnel",
+      "sources": ["LinkedIn", "Google Maps", "Web", "Job boards"],
+      "stages": [
         {
-          "number": "01",
-          "title": "Connect existing tools",
-          "description": "HubSpot, Apollo, LinkedIn, Google Maps, email. No migration. No new software."
+          "title": "Find Prospects",
+          "description": "Source leads from LinkedIn, directories, maps, conferences, and competitor intel."
         },
         {
-          "number": "02",
-          "title": "ZPT sources and enriches prospects",
-          "description": "Multi-channel sourcing: LinkedIn, directories, maps, conferences, competitor intel, job postings."
+          "title": "Enrich & Qualify",
+          "description": "Build full profiles with decision-maker data, company intel, and ICP scoring."
         },
         {
-          "number": "03",
-          "title": "Personalized outreach, ready for approval",
-          "description": "Every draft uses the company's voice, positioning, and specific prospect research. Nothing generic."
+          "title": "Personalized Outreach",
+          "description": "Draft emails using the company's voice, positioning, and prospect research."
         },
         {
-          "number": "04",
-          "title": "Pipeline managed end-to-end",
-          "description": "Full activity logging, follow-up tracking, CRM sync, weekly reporting."
+          "title": "Manage Pipeline",
+          "description": "Track activity, follow-ups, and sync with your existing CRM."
         }
       ]
     },
-    "advisory": {
-      "title": "ZPT Advisory",
-      "description": "Consulting for companies that want to build and run their own agentic workflows.",
-      "points": [
-        "Deploy a local, structured folder system tailored to the company's workflow",
-        "Not limited to sales: marketing, content production, business plans, operational tasks",
-        "Connect AI agents to existing tools while keeping data local",
-        "Ongoing support and periodic updates as the system evolves"
-      ]
-    },
-    "folder": {
-      "title": "The ZPT folder structure",
-      "description": "Every ZPT deployment runs on top of a structured local folder. This is the foundation: organized, transparent, and fully customizable to match any workflow.",
-      "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes. The customization options are virtually endless.",
-      "folders": [
-        { "name": "account-management/", "label": "CRM", "description": "Prospect data and profiles, organized by pipeline stage" },
-        { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
-        { "name": "skills/", "label": "Standards", "description": "How output should look: templates, formats, quality rules" },
-        { "name": "memory/", "label": "Memory", "description": "Lessons learned, preferences, patterns discovered over time" },
-        { "name": "output/", "label": "Deliverables", "description": "Drafts, content, reports ready for review" },
-        { "name": "workflows/", "label": "Processes", "description": "How tasks get done: step-by-step procedures" },
-        { "name": "mcp/", "label": "Tools", "description": "Available integrations and tool configurations" },
-        { "name": "CLAUDE.md", "label": "Instructions", "description": "Operating instructions for the AI agents" }
-      ]
+    "tools": {
+      "title": "Connects to your stack",
+      "subtitle": "ZPT pulls from and pushes to the tools your company already uses.",
+      "existing": {
+        "label": "Your existing tools",
+        "items": ["HubSpot", "Salesforce", "Google Drive", "Notion", "Slack"]
+      }
     },
     "enrichment": {
       "title": "Enrichment templates",
       "description": "The company provides content and guidelines. ZPT turns that into structured, actionable intelligence.",
       "note": "Templates are fully customizable. Each client defines their own fields, scoring criteria, and output format.",
+      "advancedHeader": "Enriched Company Profile",
       "tabs": {
         "simple": "Simple Template",
         "advanced": "Advanced Template"
       }
     },
     "onboarding": {
-      "title": "Getting started is fast",
-      "description": "ZPT needs context about the company, the ideal customer profile, and the tools already in use. Most onboarding completes within a few days. The more detailed the input, the better the output from day one."
+      "title": "15 min to your first analysis, including onboarding",
+      "description": "ZPT needs context about the company, the ideal customer profile, and the tools already in use. The setup is fast and structured: share context, connect tools, and see the first enriched prospect profile within minutes."
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Common questions about ZPT Sales.",
+      "items": [
+        {
+          "question": "How long does it take to get started?",
+          "answer": "Most companies are up and running within 15 minutes. ZPT needs context about the business, the ideal customer profile, and the tools in use. From there, the first enriched prospect profile is generated immediately."
+        },
+        {
+          "question": "What tools does ZPT connect to?",
+          "answer": "ZPT integrates with HubSpot, Salesforce, Google Drive, Notion, and Slack. It pulls from and pushes to the tools the company already uses. No migration, no new software."
+        },
+        {
+          "question": "How is this different from hiring an SDR?",
+          "answer": "ZPT handles the repetitive parts of the sales process: sourcing, enrichment, outreach drafting, and pipeline management. It runs 24/7 at a fraction of the cost. Human oversight stays in the loop for approvals and relationship building."
+        },
+        {
+          "question": "Who approves the outreach before it goes out?",
+          "answer": "The company always approves. ZPT drafts personalized outreach based on prospect research, but nothing gets sent without explicit approval. Full control stays with the team."
+        },
+        {
+          "question": "Can ZPT work with our existing CRM data?",
+          "answer": "Yes. ZPT connects to the company's existing CRM and syncs data bidirectionally. Existing contacts, deals, and pipeline stages are preserved and enriched."
+        },
+        {
+          "question": "What happens to our data?",
+          "answer": "All data stays under the company's control. ZPT operates on a local folder structure. Nothing is shared, sold, or used for training. The company owns everything."
+        }
+      ]
     },
     "pricing": {
       "title": "Pricing",
@@ -166,6 +160,95 @@
       "cta": "Get Started"
     }
   },
+  "advisory": {
+    "hero": {
+      "title": "Build your own AI-powered workflows",
+      "description": "ZPT captures what makes a company unique into a structured local folder, then puts an agent on top. The folder is the operating system."
+    },
+    "concept": {
+      "title": "Every company is different",
+      "paragraphs": [
+        "Every company has unique workflows, culture, and institutional knowledge. ZPT captures that into a structured local folder -- the foundation for everything the agent does.",
+        "The agent sits on top of the folder. It reads context, executes tasks, and writes results back. Research, drafting, data processing, reporting -- all running autonomously.",
+        "The folder stays fully local. No vendor lock-in. Works with Anthropic, OpenAI, and others. Switch providers anytime without losing context or structure."
+      ]
+    },
+    "agentVisual": {
+      "placeholder": "Agent visual -- image placeholder",
+      "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company.",
+      "teamNote": "Team members can connect via the Claude desktop app and collaborate with the agent directly. Ask questions, give feedback, review output -- all from the same interface."
+    },
+    "folder": {
+      "title": "The ZPT folder structure",
+      "description": "Every ZPT deployment runs on top of a structured local folder. This is the foundation: organized, transparent, and fully customizable to match any workflow.",
+      "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes.",
+      "folders": [
+        { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
+        { "name": "account-management/", "label": "CRM", "description": "Prospect data and profiles, organized by pipeline stage" },
+        { "name": "skills/", "label": "Standards", "description": "How output should look: templates, formats, quality rules" },
+        { "name": "memory/", "label": "Memory", "description": "Lessons learned, preferences, patterns discovered over time" },
+        { "name": "output/", "label": "Deliverables", "description": "Drafts, content, reports ready for review" },
+        { "name": "workflows/", "label": "Processes", "description": "How tasks get done: step-by-step procedures" },
+        { "name": "mcp/", "label": "Tools", "description": "Available integrations and tool configurations" },
+        { "name": "CLAUDE.md", "label": "Instructions", "description": "Operating instructions for the AI agents" },
+        { "name": "AGENT.md", "label": "Agent config", "description": "Agent-specific settings and preferences" }
+      ]
+    },
+    "consulting": {
+      "title": "We set it up for you",
+      "description": "ZPT deploys the folder structure, configures the AI agents, connects them to the company's tools, and provides ongoing support as the system evolves.",
+      "points": [
+        "Custom folder structure tailored to the company's workflow",
+        "AI agent configuration and tool integration",
+        "Training on how to work with the system",
+        "Ongoing support and periodic updates"
+      ]
+    },
+    "pricing": {
+      "title": "Advisory tiers",
+      "subtitle": "Pricing on request. Every engagement starts with understanding the company's needs.",
+      "tiers": [
+        {
+          "name": "Educate",
+          "description": "AI awareness for the team",
+          "features": [
+            "AI presentation tailored to the company's industry",
+            "Live demo of agentic workflows",
+            "Team Q&A and use case identification",
+            "Written summary with recommended next steps"
+          ]
+        },
+        {
+          "name": "Basic Setup",
+          "description": "Folder structure + agent configuration",
+          "features": [
+            "Everything in Educate, plus:",
+            "Structured local folder for one workflow",
+            "AI agent configured and connected",
+            "Team training on daily usage",
+            "30 days of support"
+          ]
+        },
+        {
+          "name": "Advanced Setup",
+          "description": "Full implementation across workflows",
+          "features": [
+            "Everything in Basic Setup, plus:",
+            "Multiple workflows and departments",
+            "Tool integrations (CRM, drives, messaging)",
+            "Custom agent skills and automation",
+            "Ongoing support and optimization"
+          ]
+        }
+      ],
+      "cta": "Get in touch"
+    },
+    "cta": {
+      "title": "Ready to build your own AI-powered workflows?",
+      "button": "Set Up Intro Call",
+      "email": "Or email"
+    }
+  },
   "about": {
     "title": "About ZPT",
     "paragraphs": [
@@ -185,7 +268,7 @@
         "description": "20,000 contacts enriched, verified, and cleaned. Full prospect profiles with decision-maker identification and company intelligence. The sales team now reaches significantly more companies with higher conversion rates."
       },
       {
-        "title": "Automotive Leasing",
+        "title": "Blankert Shortlease",
         "description": "Structured prospect sourcing in the Dutch automotive leasing market. Ongoing enrichment and outreach support across directories, industry events, and LinkedIn."
       }
     ],

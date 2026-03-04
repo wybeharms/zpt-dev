@@ -21,10 +21,16 @@ export default function Footer() {
 
           <nav className="flex flex-col gap-3 text-sm text-white/70">
             <Link
-              href="/product"
+              href="/sales"
               className="transition-colors hover:text-white"
             >
-              {t("nav.product")}
+              {t("nav.sales")}
+            </Link>
+            <Link
+              href="/advisory"
+              className="transition-colors hover:text-white"
+            >
+              {t("nav.advisory")}
             </Link>
             <Link href="/about" className="transition-colors hover:text-white">
               {t("nav.about")}
