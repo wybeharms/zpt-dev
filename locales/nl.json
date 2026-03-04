@@ -28,7 +28,7 @@
       },
       "advisory": {
         "title": "ZPT Advisory",
-        "description": "Implementeer een gestructureerde lokale map met een AI-agent bovenop. De map bevat de context, workflows en kennis van het bedrijf. De agent doet het werk.",
+        "description": "Wij implementeren AI voor uw bedrijf. Een lokale map legt uw context, workflows en kennis vast. Een AI-agent zit bovenop en werkt als een teamlid — vanaf dag een.",
         "link": "Meer info"
       }
     },
@@ -102,7 +102,23 @@
     },
     "onboarding": {
       "title": "15 min tot uw eerste analyse, inclusief onboarding",
-      "description": "ZPT heeft context nodig over het bedrijf, het ideale klantprofiel en de tools die al in gebruik zijn. De setup is snel en gestructureerd: context delen, tools koppelen, en binnen minuten het eerste verrijkte prospectprofiel zien."
+      "steps": [
+        {
+          "number": "1",
+          "title": "U levert context aan",
+          "description": "Bedrijfsinformatie, ideaal klantprofiel, positionering en tone of voice."
+        },
+        {
+          "number": "2",
+          "title": "Tools koppelen of een lijst aanleveren",
+          "description": "Geef toegang tot uw CRM en tools voor live data, of lever simpelweg een lijst aan (bijv. 200 bedrijfsnamen) voor een eerste test."
+        },
+        {
+          "number": "3",
+          "title": "Eerste resultaten binnen minuten",
+          "description": "ZPT draait de eerste verrijking en levert een volledig geprofileerd prospect op."
+        }
+      ]
     },
     "faq": {
       "title": "FAQ",
@@ -162,21 +178,47 @@
   },
   "advisory": {
     "hero": {
-      "title": "Bouw uw eigen AI-aangedreven workflows",
-      "description": "ZPT legt vast wat een bedrijf uniek maakt in een gestructureerde lokale map en zet daar vervolgens een agent bovenop. De map is het besturingssysteem."
+      "title": "Uw bedrijf weet dat AI krachtig is.",
+      "subtitle": "Wij maken het werkelijkheid.",
+      "description": "Elk bedrijf experimenteert met AI, maar weinigen zien echte resultaten. ZPT zet een gestructureerd, lokaal AI-systeem op maat van uw bedrijf op — voor minder dan een maandsalaris."
+    },
+    "tools": {
+      "title": "Sluit aan op uw stack",
+      "subtitle": "ZPT koppelt aan de tools die uw bedrijf al gebruikt. Geen migratie, geen nieuwe software."
+    },
+    "why": {
+      "title": "Waarom deze aanpak",
+      "items": [
+        {
+          "title": "100% eigendom van het bedrijf",
+          "description": "Het volledige systeem draait op een lokale map op uw machine. Geen data verlaat uw netwerk. Geen vendor lock-in. De meest private AI-opzet die mogelijk is."
+        },
+        {
+          "title": "Open-source compatibel",
+          "description": "Bezorgd over het delen van data met AI-labs? Draai het systeem op open-source modellen (Llama, Mistral, etc.). Dezelfde map, dezelfde workflow, volledige controle."
+        },
+        {
+          "title": "Gebouwd op Claude Code-architectuur",
+          "description": "Hetzelfde lokale mappensysteem dat wereldwijd door ontwikkelaars wordt gebruikt (CLAUDE.md, skills/, memory/), maar speciaal gebouwd voor bedrijfsoperaties in plaats van code."
+        },
+        {
+          "title": "Sluit aan op wat u al gebruikt",
+          "description": "Claude in uw spreadsheets. Claude in uw presentaties. Verbind met Excel, PowerPoint, Google Drive, Slack, HubSpot en meer. Geen migratie nodig."
+        }
+      ]
     },
     "concept": {
       "title": "Elk bedrijf is anders",
       "paragraphs": [
-        "Elk bedrijf heeft unieke workflows, cultuur en institutionele kennis. ZPT legt dat vast in een gestructureerde lokale map -- de basis voor alles wat de agent doet.",
-        "De agent zit bovenop de map. Die leest context, voert taken uit en schrijft resultaten terug. Onderzoek, schrijven, dataverwerking, rapportage -- alles draait autonoom.",
-        "De map blijft volledig lokaal. Geen vendor lock-in. Werkt met Anthropic, OpenAI en anderen. Wissel van provider op elk moment zonder context of structuur te verliezen."
+        "ZPT legt <strong>cultuur, rollen, processen en institutionele kennis</strong> vast in een gestructureerde lokale map. De agent leest dit voor elke taak en werkt als <em>een collega die al jaren bij het bedrijf werkt</em>.",
+        "Begin met <strong>een enkele AI-collega</strong> voor onderzoek, schrijfwerk of dataverwerking. Schaal op naar <strong>een volledige AI-afdeling</strong>. Hetzelfde systeem, dezelfde map, meegroeiend met het bedrijf.",
+        "De map blijft <strong>volledig lokaal</strong>. Geen vendor lock-in. Werkt met Anthropic, OpenAI, open-source modellen en anderen. <em>Wissel van provider op elk moment</em>."
       ]
     },
     "agentVisual": {
       "placeholder": "Agent visueel -- afbeelding placeholder",
       "caption": "De AI-provider is uitwisselbaar. De map blijft lokaal en eigendom van het bedrijf.",
-      "teamNote": "Teamleden kunnen verbinding maken via de Claude desktop-app en direct samenwerken met de agent. Vragen stellen, feedback geven, output beoordelen -- allemaal vanuit dezelfde interface."
+      "teamNote": "Teamleden kunnen verbinding maken via de Claude desktop-app en direct samenwerken met de agent. Vragen stellen, feedback geven, output beoordelen. Allemaal vanuit dezelfde interface."
     },
     "folder": {
       "title": "De ZPT-mapstructuur",
@@ -195,12 +237,13 @@
       ]
     },
     "consulting": {
-      "title": "Wij zetten het voor u op",
-      "description": "ZPT implementeert de mapstructuur, configureert de AI-agents, koppelt ze aan de tools van het bedrijf en biedt doorlopende ondersteuning naarmate het systeem evolueert.",
+      "title": "Het ZPT SWAT-team komt langs",
+      "description": "ZPT landt in de organisatie, zet het volledige systeem op, koppelt het aan bestaande tools, traint het team en biedt doorlopende ondersteuning.",
       "points": [
         "Aangepaste mapstructuur op maat van de workflow van het bedrijf",
-        "Configuratie van AI-agents en toolintegratie",
-        "Training in het werken met het systeem",
+        "Agent geconfigureerd met volledige bedrijfscontext (cultuur, rollen, processen)",
+        "Gekoppeld aan bestaande tools — Excel, PowerPoint, CRM, drives, messaging",
+        "Team getraind om met de agent te werken als collega",
         "Doorlopende ondersteuning en periodieke updates"
       ]
     },
@@ -212,28 +255,26 @@
           "name": "Educate",
           "description": "AI-bewustwording voor het team",
           "features": [
-            "AI-presentatie afgestemd op de branche van het bedrijf",
+            "Branchegerichte AI-presentatie",
             "Live demo van agentic workflows",
-            "Team Q&A en identificatie van use cases",
-            "Schriftelijke samenvatting met aanbevolen vervolgstappen"
+            "Team Q&A + identificatie van use cases",
+            "Samenvatting met vervolgstappen"
           ]
         },
         {
           "name": "Basic Setup",
-          "description": "Mapstructuur + agentconfiguratie",
+          "description": "Een workflow, volledig operationeel",
           "features": [
-            "Alles in Educate, plus:",
-            "Gestructureerde lokale map voor een workflow",
-            "AI-agent geconfigureerd en verbonden",
+            "Lokale map voor een workflow",
+            "Agent geconfigureerd en verbonden",
             "Teamtraining voor dagelijks gebruik",
             "30 dagen ondersteuning"
           ]
         },
         {
           "name": "Advanced Setup",
-          "description": "Volledige implementatie over workflows",
+          "description": "Volledige uitrol door de organisatie",
           "features": [
-            "Alles in Basic Setup, plus:",
             "Meerdere workflows en afdelingen",
             "Toolintegraties (CRM, drives, messaging)",
             "Aangepaste agentvaardigheden en automatisering",
@@ -244,7 +285,7 @@
       "cta": "Neem contact op"
     },
     "cta": {
-      "title": "Klaar om uw eigen AI-aangedreven workflows te bouwen?",
+      "title": "Benieuwd wat AI voor uw bedrijf kan betekenen?",
       "button": "Kennismaken",
       "email": "Of mail naar"
     }

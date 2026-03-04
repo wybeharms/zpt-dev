@@ -60,13 +60,25 @@ export default function SalesContent() {
 
       {/* Onboarding */}
       <section className="bg-cream px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("sales.onboarding.title")}
           </h2>
-          <p className="mt-4 leading-relaxed text-text-muted">
-            {t("sales.onboarding.description")}
-          </p>
+          <div className="mt-8 space-y-6">
+            {(tArray("sales.onboarding.steps") as { number: string; title: string; description: string }[]).map((step) => (
+              <div key={step.number} className="flex gap-4">
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-navy text-sm font-semibold text-gold">
+                  {step.number}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-navy">{step.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-text-muted">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

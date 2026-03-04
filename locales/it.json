@@ -28,7 +28,7 @@
       },
       "advisory": {
         "title": "ZPT Advisory",
-        "description": "Implementa una cartella locale strutturata con un agente AI sopra. La cartella cattura il contesto, i workflow e le conoscenze dell'azienda. L'agente fa il lavoro.",
+        "description": "Implementiamo l'IA per la tua azienda. Una cartella locale cattura il contesto, i workflow e le conoscenze. Un agente AI si posiziona sopra e lavora come un membro del team — dal primo giorno.",
         "link": "Scopri di piu"
       }
     },
@@ -102,7 +102,23 @@
     },
     "onboarding": {
       "title": "15 min alla prima analisi, onboarding incluso",
-      "description": "ZPT ha bisogno di contesto sull'azienda, il profilo del cliente ideale e gli strumenti gia in uso. La configurazione e rapida e strutturata: condividere contesto, collegare strumenti e vedere il primo profilo prospect arricchito in pochi minuti."
+      "steps": [
+        {
+          "number": "1",
+          "title": "Fornisci il contesto",
+          "description": "Informazioni aziendali, profilo del cliente ideale, posizionamento e tono di comunicazione."
+        },
+        {
+          "number": "2",
+          "title": "Collega gli strumenti o fornisci una lista",
+          "description": "Concedi l'accesso al CRM e agli strumenti per dati in tempo reale, oppure condividi semplicemente una lista (es. 200 nomi di aziende) per un test iniziale."
+        },
+        {
+          "number": "3",
+          "title": "Primi risultati in pochi minuti",
+          "description": "ZPT esegue il primo arricchimento e consegna un prospect completamente profilato."
+        }
+      ]
     },
     "faq": {
       "title": "FAQ",
@@ -162,21 +178,47 @@
   },
   "advisory": {
     "hero": {
-      "title": "Costruisci i tuoi workflow basati sull'IA",
-      "description": "ZPT cattura cio che rende unica un'azienda in una cartella locale strutturata, e poi ci mette un agente sopra. La cartella e il sistema operativo."
+      "title": "La tua azienda sa che l'IA e potente.",
+      "subtitle": "Noi la rendiamo realta.",
+      "description": "Tutte le aziende sperimentano con l'IA, ma poche vedono risultati concreti. ZPT configura un sistema di IA locale e strutturato su misura per la tua azienda — per meno di uno stipendio mensile."
+    },
+    "tools": {
+      "title": "Si collega al tuo stack",
+      "subtitle": "ZPT si collega agli strumenti che la tua azienda gia utilizza. Nessuna migrazione, nessun nuovo software."
+    },
+    "why": {
+      "title": "Perche questa configurazione",
+      "items": [
+        {
+          "title": "100% di proprieta dell'azienda",
+          "description": "L'intero sistema funziona su una cartella locale sulla tua macchina. Nessun dato esce dalla tua rete. Nessun vendor lock-in. La configurazione IA piu privata possibile."
+        },
+        {
+          "title": "Compatibile con open-source",
+          "description": "Preoccupato di condividere dati con laboratori di IA? Esegui il sistema su modelli open-source (Llama, Mistral, ecc.). Stessa cartella, stesso workflow, controllo totale."
+        },
+        {
+          "title": "Costruito sull'architettura di Claude Code",
+          "description": "Lo stesso sistema di cartelle locali usato dagli sviluppatori in tutto il mondo (CLAUDE.md, skills/, memory/), ma progettato per le operazioni aziendali invece che per il codice."
+        },
+        {
+          "title": "Si collega a cio che gia usi",
+          "description": "Claude nei tuoi fogli di calcolo. Claude nelle tue presentazioni. Collega Excel, PowerPoint, Google Drive, Slack, HubSpot e altro. Nessuna migrazione necessaria."
+        }
+      ]
     },
     "concept": {
       "title": "Ogni azienda e diversa",
       "paragraphs": [
-        "Ogni azienda ha workflow, cultura e conoscenza istituzionale unici. ZPT cattura tutto questo in una cartella locale strutturata -- la base per tutto cio che l'agente fa.",
-        "L'agente si trova sopra la cartella. Legge il contesto, esegue attivita e scrive i risultati. Ricerca, redazione, elaborazione dati, reportistica -- tutto funziona in autonomia.",
-        "La cartella resta completamente locale. Nessun vendor lock-in. Funziona con Anthropic, OpenAI e altri. Cambia fornitore in qualsiasi momento senza perdere contesto o struttura."
+        "ZPT cattura <strong>cultura, ruoli, processi e conoscenza istituzionale</strong> in una cartella locale strutturata. L'agente legge tutto prima di ogni attivita, lavorando come <em>un collega che e in azienda da anni</em>.",
+        "Inizia con <strong>un singolo collaboratore IA</strong> per ricerca, redazione o elaborazione dati. Scala fino a <strong>un intero dipartimento IA</strong>. Stesso sistema, stessa cartella, cresce con l'azienda.",
+        "La cartella resta <strong>completamente locale</strong>. Nessun vendor lock-in. Funziona con Anthropic, OpenAI, modelli open-source e altri. <em>Cambia fornitore in qualsiasi momento</em>."
       ]
     },
     "agentVisual": {
       "placeholder": "Visuale dell'agente -- placeholder immagine",
       "caption": "Il provider AI e intercambiabile. La cartella resta locale e di proprieta dell'azienda.",
-      "teamNote": "I membri del team possono connettersi tramite l'app desktop di Claude e collaborare direttamente con l'agente. Fare domande, dare feedback, revisionare l'output -- tutto dalla stessa interfaccia."
+      "teamNote": "I membri del team possono connettersi tramite l'app desktop di Claude e collaborare direttamente con l'agente. Fare domande, dare feedback, revisionare l'output. Tutto dalla stessa interfaccia."
     },
     "folder": {
       "title": "La struttura di cartelle ZPT",
@@ -195,12 +237,13 @@
       ]
     },
     "consulting": {
-      "title": "Lo configuriamo per te",
-      "description": "ZPT implementa la struttura di cartelle, configura gli agenti AI, li collega agli strumenti dell'azienda e offre supporto continuo man mano che il sistema evolve.",
+      "title": "Il team SWAT di ZPT arriva",
+      "description": "ZPT atterra nell'organizzazione, configura l'intero sistema, lo collega agli strumenti esistenti, forma il team e offre supporto continuo.",
       "points": [
         "Struttura di cartelle personalizzata per il workflow aziendale",
-        "Configurazione agenti AI e integrazione strumenti",
-        "Formazione su come lavorare con il sistema",
+        "Agente configurato con contesto aziendale completo (cultura, ruoli, processi)",
+        "Collegato agli strumenti esistenti — Excel, PowerPoint, CRM, drive, messaggistica",
+        "Team formato per lavorare con l'agente come un collega",
         "Supporto continuo e aggiornamenti periodici"
       ]
     },
@@ -212,30 +255,28 @@
           "name": "Educate",
           "description": "Consapevolezza AI per il team",
           "features": [
-            "Presentazione AI adattata al settore dell'azienda",
+            "Presentazione AI adattata al settore",
             "Demo dal vivo di workflow con agenti",
-            "Q&A del team e identificazione dei casi d'uso",
-            "Riepilogo scritto con prossimi passi consigliati"
+            "Q&A del team + identificazione casi d'uso",
+            "Riepilogo scritto con prossimi passi"
           ]
         },
         {
           "name": "Basic Setup",
-          "description": "Struttura cartelle + configurazione agente",
+          "description": "Un workflow, completamente operativo",
           "features": [
-            "Tutto in Educate, piu:",
-            "Cartella locale strutturata per un workflow",
-            "Agente AI configurato e collegato",
+            "Cartella locale per un workflow",
+            "Agente configurato e collegato",
             "Formazione del team per l'uso quotidiano",
             "30 giorni di supporto"
           ]
         },
         {
           "name": "Advanced Setup",
-          "description": "Implementazione completa su piu workflow",
+          "description": "Implementazione completa nell'organizzazione",
           "features": [
-            "Tutto in Basic Setup, piu:",
             "Workflow e dipartimenti multipli",
-            "Integrazioni strumenti (CRM, drive, messaggistica)",
+            "Integrazioni (CRM, drive, messaggistica)",
             "Competenze agente personalizzate e automazione",
             "Supporto continuo e ottimizzazione"
           ]
@@ -244,7 +285,7 @@
       "cta": "Contattaci"
     },
     "cta": {
-      "title": "Pronto a costruire i tuoi workflow basati sull'IA?",
+      "title": "Pronto a scoprire cosa l'IA puo fare per la tua azienda?",
       "button": "Prenota una chiamata",
       "email": "Oppure scrivi a"
     }

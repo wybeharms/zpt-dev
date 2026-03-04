@@ -28,7 +28,7 @@
       },
       "advisory": {
         "title": "ZPT Advisory",
-        "description": "Implement a structured local folder with an AI agent on top. The folder captures the company's context, workflows, and knowledge. The agent does the work.",
+        "description": "We implement AI for your company. A local folder captures your context, workflows, and knowledge. An AI agent sits on top and works like a team member — from day one.",
         "link": "Learn more"
       }
     },
@@ -102,7 +102,23 @@
     },
     "onboarding": {
       "title": "15 min to your first analysis, including onboarding",
-      "description": "ZPT needs context about the company, the ideal customer profile, and the tools already in use. The setup is fast and structured: share context, connect tools, and see the first enriched prospect profile within minutes."
+      "steps": [
+        {
+          "number": "1",
+          "title": "You provide context",
+          "description": "Company info, ideal customer profile, positioning, and tone of voice."
+        },
+        {
+          "number": "2",
+          "title": "Connect tools or provide a sample list",
+          "description": "Grant access to your CRM and tools for live data, or simply share a list (e.g. 200 company names) for an initial test."
+        },
+        {
+          "number": "3",
+          "title": "First results within minutes",
+          "description": "ZPT runs the first enrichment and delivers a fully profiled prospect."
+        }
+      ]
     },
     "faq": {
       "title": "FAQ",
@@ -162,21 +178,47 @@
   },
   "advisory": {
     "hero": {
-      "title": "Build your own AI-powered workflows",
-      "description": "ZPT captures what makes a company unique into a structured local folder, then puts an agent on top. The folder is the operating system."
+      "title": "Your company knows AI is powerful.",
+      "subtitle": "We make it happen.",
+      "description": "Every company is experimenting with AI, but few are seeing real results. ZPT sets up a structured, local AI system tailored to your company — for less than one month's employee salary."
+    },
+    "tools": {
+      "title": "Connects to your stack",
+      "subtitle": "ZPT plugs into the tools your company already uses. No migration, no new software."
+    },
+    "why": {
+      "title": "Why this setup",
+      "items": [
+        {
+          "title": "100% company-owned",
+          "description": "The entire system runs on a local folder on your machine. No data leaves your network. No vendor lock-in. The most private AI setup possible."
+        },
+        {
+          "title": "Open-source compatible",
+          "description": "Concerned about sharing data with AI labs? Run the system on open-source models (Llama, Mistral, etc.). Same folder, same workflow, full control."
+        },
+        {
+          "title": "Built on Claude Code architecture",
+          "description": "The same local folder system used by developers worldwide (CLAUDE.md, skills/, memory/), but purpose-built for business operations instead of code."
+        },
+        {
+          "title": "Plugs into what you already use",
+          "description": "Claude in your spreadsheets. Claude in your presentations. Connect to Excel, PowerPoint, Google Drive, Slack, HubSpot, and more. No migration required."
+        }
+      ]
     },
     "concept": {
       "title": "Every company is different",
       "paragraphs": [
-        "Every company has unique workflows, culture, and institutional knowledge. ZPT captures that into a structured local folder -- the foundation for everything the agent does.",
-        "The agent sits on top of the folder. It reads context, executes tasks, and writes results back. Research, drafting, data processing, reporting -- all running autonomously.",
-        "The folder stays fully local. No vendor lock-in. Works with Anthropic, OpenAI, and others. Switch providers anytime without losing context or structure."
+        "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a structured local folder. The agent reads this before every task, working like <em>a colleague who's been at the company for years</em>.",
+        "Start with <strong>a single AI coworker</strong> for research, drafting, or data processing. Scale to <strong>an entire AI department</strong>. Same system, same folder, growing with the business.",
+        "The folder stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em>Switch providers anytime</em>."
       ]
     },
     "agentVisual": {
       "placeholder": "Agent visual -- image placeholder",
       "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company.",
-      "teamNote": "Team members can connect via the Claude desktop app and collaborate with the agent directly. Ask questions, give feedback, review output -- all from the same interface."
+      "teamNote": "Team members can connect via the Claude desktop app and collaborate with the agent directly. Ask questions, give feedback, review output. All from the same interface."
     },
     "folder": {
       "title": "The ZPT folder structure",
@@ -195,12 +237,13 @@
       ]
     },
     "consulting": {
-      "title": "We set it up for you",
-      "description": "ZPT deploys the folder structure, configures the AI agents, connects them to the company's tools, and provides ongoing support as the system evolves.",
+      "title": "The ZPT SWAT team drops in",
+      "description": "ZPT deploys into the organization, sets up the entire system, connects it to existing tools, trains the team, and provides ongoing support.",
       "points": [
         "Custom folder structure tailored to the company's workflow",
-        "AI agent configuration and tool integration",
-        "Training on how to work with the system",
+        "Agent configured with full company context (culture, roles, processes)",
+        "Connected to existing tools — Excel, PowerPoint, CRM, drives, messaging",
+        "Team trained to work with the agent as a coworker",
         "Ongoing support and periodic updates"
       ]
     },
@@ -212,28 +255,26 @@
           "name": "Educate",
           "description": "AI awareness for the team",
           "features": [
-            "AI presentation tailored to the company's industry",
+            "Industry-tailored AI presentation",
             "Live demo of agentic workflows",
-            "Team Q&A and use case identification",
-            "Written summary with recommended next steps"
+            "Team Q&A + use case identification",
+            "Written summary with next steps"
           ]
         },
         {
           "name": "Basic Setup",
-          "description": "Folder structure + agent configuration",
+          "description": "One workflow, fully operational",
           "features": [
-            "Everything in Educate, plus:",
-            "Structured local folder for one workflow",
-            "AI agent configured and connected",
+            "Local folder for one workflow",
+            "Agent configured and connected",
             "Team training on daily usage",
             "30 days of support"
           ]
         },
         {
           "name": "Advanced Setup",
-          "description": "Full implementation across workflows",
+          "description": "Full implementation across the org",
           "features": [
-            "Everything in Basic Setup, plus:",
             "Multiple workflows and departments",
             "Tool integrations (CRM, drives, messaging)",
             "Custom agent skills and automation",
@@ -244,7 +285,7 @@
       "cta": "Get in touch"
     },
     "cta": {
-      "title": "Ready to build your own AI-powered workflows?",
+      "title": "Ready to see what AI can do for your company?",
       "button": "Set Up Intro Call",
       "email": "Or email"
     }

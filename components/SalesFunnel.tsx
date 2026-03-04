@@ -51,7 +51,7 @@ export default function SalesFunnel() {
   return (
     <div className="mt-10 mx-auto max-w-4xl">
       {/* Two-column layout: funnel left, descriptions right */}
-      <div className="grid gap-x-8 md:grid-cols-[320px_1fr]">
+      <div className="grid gap-x-8 md:grid-cols-[380px_1fr]">
         {/* Left column: agents + funnel */}
         <div>
           {/* Source agent icons - above the funnel */}
