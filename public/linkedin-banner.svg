@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="191" viewBox="0 0 1128 191">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0C0C28"/>
+      <stop offset="100%" stop-color="#141438"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C9A96E"/>
+      <stop offset="100%" stop-color="#B8944E"/>
+    </linearGradient>
+    <!-- Subtle grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a40" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1128" height="191" fill="url(#bg)"/>
+  <rect width="1128" height="191" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- Subtle horizontal accent line -->
+  <line x1="0" y1="188" x2="1128" y2="188" stroke="#C9A96E" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- ============================================ -->
+  <!-- LEFT SIDE: Helicopter dropping into building -->
+  <!-- ============================================ -->
+  <g transform="translate(220, 5) scale(0.92)">
+    <!-- Helicopter -->
+    <line x1="10" y1="10" x2="100" y2="10" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="55" cy="10" r="3" fill="#C9A96E"/>
+    <line x1="55" y1="13" x2="55" y2="24" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+    <ellipse cx="55" cy="33" rx="24" ry="11" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.8"/>
+    <path d="M67 28 Q74 33 67 38" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
+    <line x1="31" y1="30" x2="14" y2="24" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+    <line x1="14" y1="24" x2="14" y2="18" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+    <line x1="8" y1="18" x2="20" y2="18" stroke="#C9A96E" stroke-width="1.5"/>
+    <line x1="40" y1="43" x2="40" y2="50" stroke="#ffffff" stroke-width="1.2" opacity="0.6"/>
+    <line x1="70" y1="43" x2="70" y2="50" stroke="#ffffff" stroke-width="1.2" opacity="0.6"/>
+    <line x1="32" y1="50" x2="78" y2="50" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Rope -->
+    <line x1="55" y1="50" x2="55" y2="72" stroke="#C9A96E" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+    <!-- Person -->
+    <circle cx="55" cy="77" r="4.5" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.9"/>
+    <line x1="55" y1="81" x2="55" y2="97" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+    <line x1="55" y1="86" x2="45" y2="94" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+    <line x1="55" y1="86" x2="65" y2="94" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+    <line x1="55" y1="97" x2="46" y2="110" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+    <line x1="55" y1="97" x2="64" y2="110" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+    <!-- Briefcase -->
+    <rect x="65" y="90" width="8" height="6" rx="1" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
+
+    <!-- Dashed line to building -->
+    <line x1="55" y1="110" x2="55" y2="126" stroke="#C9A96E" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+    <!-- Building -->
+    <rect x="22" y="128" width="66" height="38" rx="3" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <line x1="22" y1="138" x2="88" y2="138" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
+    <!-- Windows -->
+    <rect x="30" y="143" width="10" height="7" rx="1" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <rect x="50" y="143" width="10" height="7" rx="1" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <rect x="70" y="143" width="10" height="7" rx="1" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <!-- Door -->
+    <rect x="50" y="155" width="10" height="10" rx="1" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- CENTER: ZPT branding + tagline              -->
+  <!-- ============================================ -->
+  <g transform="translate(720, 42)">
+    <!-- ZPT text -->
+    <text x="0" y="0" text-anchor="middle" font-family="monospace" font-size="42" font-weight="600" fill="#C9A96E" letter-spacing="4">ZPT</text>
+    <!-- Divider line -->
+    <line x1="-120" y1="14" x2="120" y2="14" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
+    <!-- Tagline -->
+    <text x="0" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#ffffff" opacity="0.85" letter-spacing="1.5" font-style="italic">The output of a full team</text>
+    <text x="0" y="56" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#ffffff" opacity="0.85" letter-spacing="1.5" font-style="italic">Without hiring one</text>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="250" cy="30" r="1.5" fill="#C9A96E" opacity="0.2"/>
+  <circle cx="300" cy="160" r="1" fill="#C9A96E" opacity="0.15"/>
+  <circle cx="750" cy="25" r="1" fill="#C9A96E" opacity="0.15"/>
+  <circle cx="400" cy="170" r="1.5" fill="#C9A96E" opacity="0.1"/>
+
+</svg>
