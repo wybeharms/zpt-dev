@@ -23,28 +23,47 @@
       },
       "hands": {
         "title": "The Hands",
-        "description": "Tools that execute: read files, update text, search web, connect to HubSpot and more via MCP."
+        "description": "Tools that execute: read files, update text, search web, connect via MCP."
       },
       "folder": {
         "title": "Your Folder",
         "description": "All of your company's knowledge, workflows, and context. <strong>Structured, local, and 100% yours.</strong>"
       },
-      "access": "Your team accesses the folder through Claude Desktop, ChatGPT, or any compatible app."
+      "access": "Your team accesses the folder through Claude Desktop, ChatGPT, or any compatible app.",
+      "folderCallout": "ZPT provides a battle-tested default folder and personalizes it for your company."
     },
     "bottleneck": {
       "title": "AI is not the bottleneck. Your setup is.",
-      "description": "The models are incredibly capable. But most companies lack the infrastructure: which tools to connect, how to structure data, what constraints to set, how to create schemas. Most organizations don't have someone who understands this, because <strong>it has only been possible for a few months</strong>.",
-      "examples": [
-        "Enrich 1,000 prospects overnight",
-        "Build a slide deck from the terminal",
-        "Draft personalized outreach in your company's voice",
-        "Research competitors across 50 data points",
-        "Clean and deduplicate your entire CRM"
+      "description": "Most companies already use ChatGPT or Claude. But everyone has their own conversations, their own context, their own way of prompting. Knowledge is scattered and nothing is centralized.",
+      "description2": "ZPT believes the best path forward is to <strong>keep using the native AI tools</strong> your team already has, and make them dramatically more effective with a centralized folder containing your company's full context, connected tools, and repeatable workflows.",
+      "examplesLabel": "Real-life examples of what the ZPT folder can do:",
+      "useCases": [
+        {
+          "title": "Enrich prospects",
+          "description": "The agent checks your CRM, searches Google Maps, cross-references your ideal customer profile, and adds new prospects to HubSpot.",
+          "why": "Claude on the web can search too, but can't access your CRM or know your ideal customer."
+        },
+        {
+          "title": "Build a Google Slides deck",
+          "description": "Define your brand guidelines, colors, and structure once. The agent follows them every time it builds a deck via API.",
+          "why": "Same tools, but with your company's positioning, tone, and formatting built in."
+        },
+        {
+          "title": "Monitor competitors",
+          "description": "Set it up once. The agent periodically scans sources, updates a centralized competitors/ folder, and flags changes.",
+          "why": "No more ad hoc research scattered across team members' chat histories."
+        },
+        {
+          "title": "Automate busywork",
+          "description": "Copy meeting notes between CRM systems. Update spreadsheets from email data. Define it once, repeat indefinitely.",
+          "why": "Workflows that run on their own, not tasks someone remembers to do manually."
+        }
       ],
-      "punchline": "That's the gap ZPT fills."
+      "screenshotCaption": "Real example: Claude finds new prospects in Chicago by checking HubSpot, cross-referencing the ICP, and searching Google Maps.",
+      "punchline": "ZPT sets this up for you."
     },
     "growing": {
-      "title": "A department that grows with you",
+      "title": "A folder that grows with you",
       "day1": "Day 1",
       "month3": "Month 3",
       "arrow": "Add MCPs, skills, and agents over time",

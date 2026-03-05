@@ -23,28 +23,47 @@
       },
       "hands": {
         "title": "Las Manos",
-        "description": "Herramientas que ejecutan: leer archivos, actualizar texto, buscar en la web, conectar con HubSpot y mas via MCP."
+        "description": "Herramientas que ejecutan: leer archivos, actualizar texto, buscar en la web, conectar via MCP."
       },
       "folder": {
         "title": "Tu Carpeta",
         "description": "Todo el conocimiento, workflows y contexto de tu empresa. <strong>Estructurado, local y 100% tuyo.</strong>"
       },
-      "access": "Tu equipo accede a la carpeta a traves de Claude Desktop, ChatGPT o cualquier app compatible."
+      "access": "Tu equipo accede a la carpeta a traves de Claude Desktop, ChatGPT o cualquier app compatible.",
+      "folderCallout": "ZPT proporciona una carpeta predeterminada probada y la personaliza para tu empresa."
     },
     "bottleneck": {
       "title": "La IA no es el cuello de botella. Tu configuracion si.",
-      "description": "Los modelos son increiblemente capaces. Pero la mayoria de las empresas carecen de la infraestructura: que herramientas conectar, como estructurar datos, que restricciones establecer, como crear esquemas. La mayoria de las organizaciones no tienen a alguien que entienda esto, porque <strong>solo ha sido posible desde hace unos meses</strong>.",
-      "examples": [
-        "Enriquecer 1.000 prospectos en una noche",
-        "Crear una presentacion desde la terminal",
-        "Redactar outreach personalizado con la voz de tu empresa",
-        "Investigar competidores en 50 puntos de datos",
-        "Limpiar y deduplicar todo tu CRM"
+      "description": "La mayoria de las empresas ya usan ChatGPT o Claude. Pero cada persona tiene sus propias conversaciones, su propio contexto, su propia forma de hacer prompts. El conocimiento esta disperso y nada esta centralizado.",
+      "description2": "ZPT cree que el mejor camino es <strong>seguir usando las herramientas de IA nativas</strong> que tu equipo ya tiene, y hacerlas dramaticamente mas efectivas con una carpeta centralizada con todo el contexto de la empresa, herramientas conectadas y flujos de trabajo repetibles.",
+      "examplesLabel": "Ejemplos reales de lo que la carpeta ZPT puede hacer:",
+      "useCases": [
+        {
+          "title": "Enriquecer prospectos",
+          "description": "El agente revisa tu CRM, busca en Google Maps, cruza con tu perfil de cliente ideal y agrega nuevos prospectos a HubSpot.",
+          "why": "Claude en la web tambien puede buscar, pero no puede acceder a tu CRM ni conocer tu cliente ideal."
+        },
+        {
+          "title": "Crear un deck en Google Slides",
+          "description": "Define tu identidad visual, colores y estructura una vez. El agente los sigue cada vez que crea un deck via API.",
+          "why": "Las mismas herramientas, pero con el posicionamiento, tono y formato de tu empresa."
+        },
+        {
+          "title": "Monitorear competidores",
+          "description": "Configuralo una vez. El agente escanea fuentes periodicamente, actualiza una carpeta centralizada de competidores y senala cambios.",
+          "why": "No mas investigacion ad hoc dispersa en los historiales de chat del equipo."
+        },
+        {
+          "title": "Automatizar trabajo rutinario",
+          "description": "Copiar notas de reuniones entre CRMs. Actualizar hojas de calculo desde emails. Definelo una vez, repetelo indefinidamente.",
+          "why": "Flujos de trabajo que corren solos, no tareas que alguien debe recordar hacer manualmente."
+        }
       ],
-      "punchline": "Esa es la brecha que ZPT llena."
+      "screenshotCaption": "Ejemplo real: Claude encuentra nuevos prospectos en Chicago revisando HubSpot, cruzando el ICP y buscando en Google Maps.",
+      "punchline": "ZPT lo configura para ti."
     },
     "growing": {
-      "title": "Un departamento que crece contigo",
+      "title": "Una carpeta que crece contigo",
       "day1": "Dia 1",
       "month3": "Mes 3",
       "arrow": "Agrega MCPs, skills y agentes con el tiempo",
