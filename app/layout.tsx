@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { I18nProvider } from "@/components/I18nProvider";
 
@@ -75,9 +73,7 @@ export default function RootLayout({
         className={`${cormorant.variable} ${jakarta.variable} ${sourceCode.variable} antialiased`}
       >
         <I18nProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          {children}
         </I18nProvider>
       </body>
     </html>
