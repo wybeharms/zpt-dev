@@ -11,8 +11,46 @@
     "hero": {
       "title": "The output of a full team.",
       "subtitle": "Without hiring one.",
-      "description": "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top, reads the folder, and executes tasks autonomously.",
+      "description": "ZPT mirrors your company's knowledge, workflows, and context into a <strong>structured local folder</strong>. With everything in one place, AI handles the repetitive work your team shouldn't be doing.",
       "cta": "Set Up Intro Call"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "intro": "Since early 2026, AI models can read entire folders, chain dozens of steps, and connect to external services. All autonomously and locally.",
+      "brain": {
+        "title": "The Brain",
+        "description": "The AI model reads your folder, understands your company context, and decides what to do next."
+      },
+      "hands": {
+        "title": "The Hands",
+        "description": "Tools that execute: read files, update text, search web, connect to HubSpot and more via MCP."
+      },
+      "folder": {
+        "title": "Your Folder",
+        "description": "All of your company's knowledge, workflows, and context. <strong>Structured, local, and 100% yours.</strong>"
+      },
+      "access": "Your team accesses the folder through Claude Desktop, ChatGPT, or any compatible app."
+    },
+    "bottleneck": {
+      "title": "AI is not the bottleneck. Your setup is.",
+      "description": "The models are incredibly capable. But most companies lack the infrastructure: which tools to connect, how to structure data, what constraints to set, how to create schemas. Most organizations don't have someone who understands this, because <strong>it has only been possible for a few months</strong>.",
+      "examples": [
+        "Enrich 1,000 prospects overnight",
+        "Build a slide deck from the terminal",
+        "Draft personalized outreach in your company's voice",
+        "Research competitors across 50 data points",
+        "Clean and deduplicate your entire CRM"
+      ],
+      "punchline": "That's the gap ZPT fills."
+    },
+    "growing": {
+      "title": "A department that grows with you",
+      "day1": "Day 1",
+      "month3": "Month 3",
+      "arrow": "Add MCPs, skills, and agents over time",
+      "caption": "Each addition gives the agent one more capability. You control what gets added.",
+      "day1Tools": ["Files", "Shell", "Search"],
+      "month3Tools": ["Files", "Shell", "Search", "Maps", "Email", "Slack", "Browser", "LinkedIn", "Intel"]
     },
     "quote": {
       "text": "Every major technology shift creates a massive change management challenge for enterprises.",

@@ -11,8 +11,46 @@
     "hero": {
       "title": "De output van een volledig team.",
       "subtitle": "Zonder er een aan te nemen.",
-      "description": "ZPT structureert de kennis, workflows en context van een bedrijf in een lokale map. Een AI-agent zit bovenop, leest de map en voert taken autonoom uit.",
+      "description": "ZPT spiegelt de kennis, workflows en context van uw bedrijf in een <strong>gestructureerde lokale map</strong>. Met alles op een plek neemt AI het repetitieve werk over waar uw team niet aan zou moeten zitten.",
       "cta": "Kennismaken"
+    },
+    "howItWorks": {
+      "title": "Hoe het werkt",
+      "intro": "Sinds begin 2026 kunnen AI-modellen volledige mappen lezen, tientallen stappen koppelen en verbinding maken met externe diensten. Volledig autonoom en lokaal.",
+      "brain": {
+        "title": "Het Brein",
+        "description": "Het AI-model leest uw map, begrijpt de bedrijfscontext en bepaalt wat er moet gebeuren."
+      },
+      "hands": {
+        "title": "De Handen",
+        "description": "Tools die uitvoeren: bestanden lezen, tekst bijwerken, web doorzoeken, verbinden met HubSpot en meer via MCP."
+      },
+      "folder": {
+        "title": "Uw Map",
+        "description": "Alle kennis, workflows en context van uw bedrijf. <strong>Gestructureerd, lokaal en 100% van u.</strong>"
+      },
+      "access": "Uw team benadert de map via Claude Desktop, ChatGPT of een andere compatibele app."
+    },
+    "bottleneck": {
+      "title": "AI is niet het knelpunt. Uw opzet wel.",
+      "description": "De modellen zijn ongelooflijk krachtig. Maar de meeste bedrijven missen de infrastructuur: welke tools te koppelen, hoe data te structureren, welke beperkingen in te stellen, hoe schema's te maken. De meeste organisaties hebben niemand die dit begrijpt, omdat <strong>het pas een paar maanden mogelijk is</strong>.",
+      "examples": [
+        "1.000 prospects verrijken in een nacht",
+        "Een slidedeck bouwen vanuit de terminal",
+        "Gepersonaliseerde outreach schrijven in de tone of voice van het bedrijf",
+        "Concurrenten analyseren op 50 datapunten",
+        "Het hele CRM opschonen en dedupliceren"
+      ],
+      "punchline": "Dat is het gat dat ZPT vult."
+    },
+    "growing": {
+      "title": "Een afdeling die met u meegroeit",
+      "day1": "Dag 1",
+      "month3": "Maand 3",
+      "arrow": "Voeg MCPs, skills en agents toe over tijd",
+      "caption": "Elke toevoeging geeft de agent een extra vaardigheid. U bepaalt wat wordt toegevoegd.",
+      "day1Tools": ["Bestanden", "Shell", "Zoeken"],
+      "month3Tools": ["Bestanden", "Shell", "Zoeken", "Maps", "E-mail", "Slack", "Browser", "LinkedIn", "Intel"]
     },
     "quote": {
       "text": "Elke grote technologische verschuiving brengt een enorme veranderingsuitdaging met zich mee voor bedrijven.",
