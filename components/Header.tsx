@@ -32,6 +32,12 @@ export default function Header() {
           >
             {t("nav.resources")}
           </Link>
+          <Link
+            href="/portal"
+            className="text-sm text-white/80 transition-colors hover:text-white"
+          >
+            Portal
+          </Link>
           <LanguageSelector />
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
@@ -105,6 +111,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.resources")}
+            </Link>
+            <Link
+              href="/portal"
+              className="text-sm text-white/80 transition-colors hover:text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Portal
             </Link>
             <LanguageSelector />
             <a
