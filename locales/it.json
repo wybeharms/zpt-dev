@@ -11,8 +11,46 @@
     "hero": {
       "title": "Il risultato di un intero team.",
       "subtitle": "Senza assumerne uno.",
-      "description": "ZPT struttura le conoscenze, i workflow e il contesto di un'azienda in una cartella locale. Un agente AI si posiziona sopra, legge la cartella ed esegue attivita in autonomia.",
+      "description": "ZPT rispecchia le conoscenze, i workflow e il contesto della tua azienda in una <strong>cartella locale strutturata</strong>. Con tutto in un unico posto, l'AI gestisce il lavoro ripetitivo che il tuo team non dovrebbe fare.",
       "cta": "Prenota una chiamata"
+    },
+    "howItWorks": {
+      "title": "Come funziona",
+      "intro": "Da inizio 2026, i modelli AI possono leggere intere cartelle, concatenare decine di passaggi e connettersi a servizi esterni. Tutto in autonomia e localmente.",
+      "brain": {
+        "title": "Il Cervello",
+        "description": "Il modello AI legge la tua cartella, comprende il contesto aziendale e decide cosa fare."
+      },
+      "hands": {
+        "title": "Le Mani",
+        "description": "Strumenti che eseguono: leggere file, aggiornare testo, cercare sul web, connettersi a HubSpot e altro tramite MCP."
+      },
+      "folder": {
+        "title": "La Tua Cartella",
+        "description": "Tutte le conoscenze, i workflow e il contesto della tua azienda. <strong>Strutturato, locale e 100% tuo.</strong>"
+      },
+      "access": "Il tuo team accede alla cartella tramite Claude Desktop, ChatGPT o qualsiasi app compatibile."
+    },
+    "bottleneck": {
+      "title": "L'IA non e il collo di bottiglia. La tua configurazione si.",
+      "description": "I modelli sono incredibilmente capaci. Ma la maggior parte delle aziende non ha l'infrastruttura: quali strumenti collegare, come strutturare i dati, quali vincoli impostare, come creare schemi. La maggior parte delle organizzazioni non ha qualcuno che lo capisca, perche <strong>e possibile solo da pochi mesi</strong>.",
+      "examples": [
+        "Arricchire 1.000 prospect in una notte",
+        "Creare una presentazione dal terminale",
+        "Scrivere outreach personalizzato con la voce della tua azienda",
+        "Analizzare competitor su 50 punti dati",
+        "Pulire e deduplicare l'intero CRM"
+      ],
+      "punchline": "Questo e il gap che ZPT colma."
+    },
+    "growing": {
+      "title": "Un dipartimento che cresce con te",
+      "day1": "Giorno 1",
+      "month3": "Mese 3",
+      "arrow": "Aggiungi MCP, skill e agenti nel tempo",
+      "caption": "Ogni aggiunta da all'agente una capacita in piu. Tu controlli cosa viene aggiunto.",
+      "day1Tools": ["File", "Shell", "Ricerca"],
+      "month3Tools": ["File", "Shell", "Ricerca", "Maps", "Email", "Slack", "Browser", "LinkedIn", "Intel"]
     },
     "quote": {
       "text": "Ogni grande cambiamento tecnologico crea un'enorme sfida di gestione del cambiamento per le aziende.",
