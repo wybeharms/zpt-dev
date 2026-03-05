@@ -23,28 +23,47 @@
       },
       "hands": {
         "title": "Le Mani",
-        "description": "Strumenti che eseguono: leggere file, aggiornare testo, cercare sul web, connettersi a HubSpot e altro tramite MCP."
+        "description": "Strumenti che eseguono: leggere file, aggiornare testo, cercare sul web, connettersi tramite MCP."
       },
       "folder": {
         "title": "La Tua Cartella",
         "description": "Tutte le conoscenze, i workflow e il contesto della tua azienda. <strong>Strutturato, locale e 100% tuo.</strong>"
       },
-      "access": "Il tuo team accede alla cartella tramite Claude Desktop, ChatGPT o qualsiasi app compatibile."
+      "access": "Il tuo team accede alla cartella tramite Claude Desktop, ChatGPT o qualsiasi app compatibile.",
+      "folderCallout": "ZPT fornisce una cartella predefinita collaudata e la personalizza per la tua azienda."
     },
     "bottleneck": {
       "title": "L'IA non e il collo di bottiglia. La tua configurazione si.",
-      "description": "I modelli sono incredibilmente capaci. Ma la maggior parte delle aziende non ha l'infrastruttura: quali strumenti collegare, come strutturare i dati, quali vincoli impostare, come creare schemi. La maggior parte delle organizzazioni non ha qualcuno che lo capisca, perche <strong>e possibile solo da pochi mesi</strong>.",
-      "examples": [
-        "Arricchire 1.000 prospect in una notte",
-        "Creare una presentazione dal terminale",
-        "Scrivere outreach personalizzato con la voce della tua azienda",
-        "Analizzare competitor su 50 punti dati",
-        "Pulire e deduplicare l'intero CRM"
+      "description": "La maggior parte delle aziende usa gia ChatGPT o Claude. Ma ognuno ha le proprie conversazioni, il proprio contesto, il proprio modo di fare prompt. Le conoscenze sono sparse e niente e centralizzato.",
+      "description2": "ZPT crede che la strada migliore sia <strong>continuare a usare gli strumenti AI nativi</strong> che il tuo team ha gia, e renderli drasticamente piu efficaci con una cartella centralizzata con tutto il contesto aziendale, strumenti connessi e workflow ripetibili.",
+      "examplesLabel": "Esempi reali di cosa puo fare la cartella ZPT:",
+      "useCases": [
+        {
+          "title": "Arricchire prospect",
+          "description": "L'agente controlla il tuo CRM, cerca su Google Maps, incrocia con il tuo profilo cliente ideale e aggiunge nuovi prospect a HubSpot.",
+          "why": "Claude sul web puo cercare, ma non puo accedere al tuo CRM o conoscere il tuo cliente ideale."
+        },
+        {
+          "title": "Creare un deck Google Slides",
+          "description": "Definisci le linee guida del brand, i colori e la struttura una volta. L'agente li segue ogni volta che crea un deck via API.",
+          "why": "Gli stessi strumenti, ma con il posizionamento, il tono e la formattazione della tua azienda."
+        },
+        {
+          "title": "Monitorare competitor",
+          "description": "Configuralo una volta. L'agente scansiona periodicamente le fonti, aggiorna una cartella competitor centralizzata e segnala i cambiamenti.",
+          "why": "Niente piu ricerche ad hoc sparse nelle cronologie chat dei membri del team."
+        },
+        {
+          "title": "Automatizzare lavoro di routine",
+          "description": "Copiare note riunioni tra CRM. Aggiornare fogli di calcolo dai dati email. Definiscilo una volta, ripetilo all'infinito.",
+          "why": "Workflow che girano da soli, non compiti che qualcuno deve ricordarsi di fare manualmente."
+        }
       ],
-      "punchline": "Questo e il gap che ZPT colma."
+      "screenshotCaption": "Esempio reale: Claude trova nuovi prospect a Chicago controllando HubSpot, incrociando l'ICP e cercando su Google Maps.",
+      "punchline": "ZPT lo configura per te."
     },
     "growing": {
-      "title": "Un dipartimento che cresce con te",
+      "title": "Una cartella che cresce con te",
       "day1": "Giorno 1",
       "month3": "Mese 3",
       "arrow": "Aggiungi MCP, skill e agenti nel tempo",

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "@/components/I18nProvider";
 
@@ -11,7 +12,11 @@ export default function HomeContent() {
   }[];
   const day1Tools = tArray("home.growing.day1Tools") as string[];
   const month3Tools = tArray("home.growing.month3Tools") as string[];
-  const examples = tArray("home.bottleneck.examples") as string[];
+  const useCases = tArray("home.bottleneck.useCases") as {
+    title: string;
+    description: string;
+    why: string;
+  }[];
 
   return (
     <>
@@ -114,9 +119,23 @@ export default function HomeContent() {
                 </div>
               </div>
 
+              {/* Horizontal curly bracket */}
+              <div className="mx-auto mt-4 w-3/4">
+                <svg viewBox="0 0 200 24" className="w-full" preserveAspectRatio="none">
+                  <path
+                    d="M0,2 Q25,2 45,10 Q65,18 100,18 Q135,18 155,10 Q175,2 200,2"
+                    fill="none"
+                    stroke="#DE7356"
+                    strokeWidth="2.5"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  <line x1="100" y1="18" x2="100" y2="24" stroke="#DE7356" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+                </svg>
+              </div>
+
               {/* Harness label */}
-              <p className="mt-4 text-center text-xs italic text-text-muted">
-                Claude Code / Codex / ChatGPT = &ldquo;harness&rdquo;
+              <p className="mt-1 text-center text-xs italic text-text-muted">
+                <strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;harness&rdquo;
               </p>
             </div>
 
@@ -129,9 +148,9 @@ export default function HomeContent() {
             </div>
 
             {/* Folder */}
-            <div className="w-full max-w-md rounded-b-lg border border-t-0 border-gold/30 bg-white p-4 text-center">
-              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
-                <svg className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <div className="w-full max-w-sm rounded-b-lg border-2 border-gold bg-white p-4 text-center">
+              <div className="mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-gold/10">
+                <svg className="h-7 w-7 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
                 </svg>
               </div>
@@ -145,9 +164,149 @@ export default function HomeContent() {
             </div>
           </div>
 
+          {/* Folder callout */}
+          <p className="mt-4 text-center text-sm italic text-gold">
+            {t("home.howItWorks.folderCallout")}
+          </p>
+
           {/* Desktop access note */}
-          <p className="mt-6 text-center text-sm text-text-muted">
+          <p className="mt-4 text-center text-sm text-text-muted">
             {t("home.howItWorks.access")}
+          </p>
+        </div>
+      </section>
+
+      {/* AI is not the bottleneck */}
+      <section className="bg-off-white px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("home.bottleneck.title")}
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-center leading-relaxed text-text-muted">
+            {t("home.bottleneck.description")}
+          </p>
+          <p
+            className="mx-auto mt-3 max-w-3xl text-center leading-relaxed text-text-muted"
+            dangerouslySetInnerHTML={{ __html: t("home.bottleneck.description2") }}
+          />
+
+          {/* Use case examples label */}
+          <p className="mt-10 text-center text-sm font-medium text-text-muted">
+            {t("home.bottleneck.examplesLabel")}
+          </p>
+
+          {/* Use case cards — hover to reveal "why" */}
+          <div className="mt-4 grid gap-5 md:grid-cols-2 lg:gap-6">
+            {useCases.map((uc) => (
+              <div
+                key={uc.title}
+                className="group relative h-[180px] overflow-hidden rounded-lg border border-border-warm bg-white p-5"
+              >
+                {/* Default content: title + description */}
+                <h3 className="text-base font-semibold text-navy">{uc.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                  {uc.description}
+                </p>
+                {/* Hover overlay with "why" — desktop only */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end bg-gradient-to-t from-white via-white/95 to-transparent px-5 pb-4 pt-8 opacity-0 transition-opacity duration-200 md:group-hover:opacity-100">
+                  <p className="text-xs font-medium italic text-[#DE7356]">
+                    {uc.why}
+                  </p>
+                </div>
+                {/* Mobile: always show "why" */}
+                <p className="mt-2 text-xs font-medium italic text-[#DE7356] md:hidden">
+                  {uc.why}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Screenshot */}
+          <div className="mt-10 overflow-hidden rounded-lg border border-border-warm shadow-sm">
+            <Image
+              src="/screenshots/claude_cowork.png"
+              alt="Claude finding new prospects by checking HubSpot and searching Google Maps"
+              width={1400}
+              height={900}
+              className="w-full"
+            />
+          </div>
+          <p className="mt-3 text-center text-xs text-text-muted">
+            {t("home.bottleneck.screenshotCaption")}
+          </p>
+
+          <p className="mt-6 text-center text-lg font-semibold text-gold">
+            {t("home.bottleneck.punchline")}
+          </p>
+        </div>
+      </section>
+
+      {/* A folder that grows with you */}
+      <section className="bg-cream px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("home.growing.title")}
+          </h2>
+          <div className="mt-10 flex flex-col items-center gap-6 md:flex-row md:gap-4">
+            {/* Day 1 */}
+            <div className="flex min-h-[220px] w-full flex-col rounded-lg border border-border-warm bg-white p-6 md:w-2/5">
+              <h3 className="text-center text-lg font-semibold text-navy">
+                {t("home.growing.day1")}
+              </h3>
+              <div className="mx-auto mt-3 flex h-12 w-12 items-center justify-center">
+                <svg className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+                </svg>
+              </div>
+              <div className="mt-auto flex flex-wrap justify-center gap-2 pt-4">
+                {day1Tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-border-warm bg-off-white px-3 py-1 text-xs text-text-muted"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex flex-col items-center gap-1 text-center md:w-1/5">
+              <svg className="hidden h-6 w-6 text-gold md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+              <svg className="h-6 w-6 text-gold md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+              </svg>
+              <span className="text-xs leading-tight text-text-muted">
+                {t("home.growing.arrow")}
+              </span>
+            </div>
+
+            {/* Month 3 */}
+            <div className="flex min-h-[220px] w-full flex-col rounded-lg border border-gold/30 bg-white p-6 md:w-2/5">
+              <h3 className="text-center text-lg font-semibold text-gold">
+                {t("home.growing.month3")}
+              </h3>
+              <div className="mx-auto mt-3 flex h-12 w-12 items-center justify-center">
+                <svg className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
+                </svg>
+              </div>
+              <div className="mt-auto flex flex-wrap justify-center gap-2 pt-4">
+                {month3Tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p className="mt-6 text-center text-sm text-text-muted">
+            {t("home.growing.caption")}
           </p>
         </div>
       </section>
@@ -187,102 +346,6 @@ export default function HomeContent() {
               </span>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* AI is not the bottleneck */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("home.bottleneck.title")}
-          </h2>
-          <p
-            className="mx-auto mt-6 max-w-2xl leading-relaxed text-text-muted"
-            dangerouslySetInnerHTML={{ __html: t("home.bottleneck.description") }}
-          />
-          <div className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2">
-            {examples.map((example) => (
-              <span
-                key={example}
-                className="rounded-full border border-gold/30 bg-gold/5 px-4 py-1.5 text-xs text-navy"
-              >
-                {example}
-              </span>
-            ))}
-          </div>
-          <p className="mt-6 text-lg font-semibold text-gold">
-            {t("home.bottleneck.punchline")}
-          </p>
-        </div>
-      </section>
-
-      {/* Growing the Department */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("home.growing.title")}
-          </h2>
-          <div className="mt-10 flex flex-col items-center gap-6 md:flex-row md:gap-4">
-            {/* Day 1 */}
-            <div className="w-full rounded-lg border border-border-warm bg-white p-6 md:w-2/5">
-              <h3 className="text-center text-lg font-semibold text-navy">
-                {t("home.growing.day1")}
-              </h3>
-              <div className="mx-auto mt-3 flex h-12 w-12 items-center justify-center">
-                <svg className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
-                </svg>
-              </div>
-              <div className="mt-4 flex flex-wrap justify-center gap-2">
-                {day1Tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-border-warm bg-off-white px-3 py-1 text-xs text-text-muted"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="flex flex-col items-center gap-1 text-center md:w-1/5">
-              <svg className="hidden h-6 w-6 text-gold md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-              <svg className="h-6 w-6 text-gold md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-              </svg>
-              <span className="text-xs leading-tight text-text-muted">
-                {t("home.growing.arrow")}
-              </span>
-            </div>
-
-            {/* Month 3 */}
-            <div className="w-full rounded-lg border border-gold/30 bg-white p-6 md:w-2/5">
-              <h3 className="text-center text-lg font-semibold text-gold">
-                {t("home.growing.month3")}
-              </h3>
-              <div className="mx-auto mt-3 flex h-12 w-12 items-center justify-center">
-                <svg className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
-                </svg>
-              </div>
-              <div className="mt-4 flex flex-wrap justify-center gap-2">
-                {month3Tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <p className="mt-6 text-center text-sm text-text-muted">
-            {t("home.growing.caption")}
-          </p>
         </div>
       </section>
 

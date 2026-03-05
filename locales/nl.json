@@ -23,28 +23,47 @@
       },
       "hands": {
         "title": "De Handen",
-        "description": "Tools die uitvoeren: bestanden lezen, tekst bijwerken, web doorzoeken, verbinden met HubSpot en meer via MCP."
+        "description": "Tools die uitvoeren: bestanden lezen, tekst bijwerken, web doorzoeken, verbinden via MCP."
       },
       "folder": {
         "title": "Uw Map",
         "description": "Alle kennis, workflows en context van uw bedrijf. <strong>Gestructureerd, lokaal en 100% van u.</strong>"
       },
-      "access": "Uw team benadert de map via Claude Desktop, ChatGPT of een andere compatibele app."
+      "access": "Uw team benadert de map via Claude Desktop, ChatGPT of een andere compatibele app.",
+      "folderCallout": "ZPT biedt een beproefde standaardmap en personaliseert deze voor uw bedrijf."
     },
     "bottleneck": {
       "title": "AI is niet het knelpunt. Uw opzet wel.",
-      "description": "De modellen zijn ongelooflijk krachtig. Maar de meeste bedrijven missen de infrastructuur: welke tools te koppelen, hoe data te structureren, welke beperkingen in te stellen, hoe schema's te maken. De meeste organisaties hebben niemand die dit begrijpt, omdat <strong>het pas een paar maanden mogelijk is</strong>.",
-      "examples": [
-        "1.000 prospects verrijken in een nacht",
-        "Een slidedeck bouwen vanuit de terminal",
-        "Gepersonaliseerde outreach schrijven in de tone of voice van het bedrijf",
-        "Concurrenten analyseren op 50 datapunten",
-        "Het hele CRM opschonen en dedupliceren"
+      "description": "De meeste bedrijven gebruiken al ChatGPT of Claude. Maar iedereen heeft eigen gesprekken, eigen context, een eigen manier van prompten. Kennis is verspreid en niets is gecentraliseerd.",
+      "description2": "ZPT gelooft dat de beste weg vooruit is om <strong>de native AI-tools te blijven gebruiken</strong> die uw team al heeft, en ze drastisch effectiever te maken met een gecentraliseerde map met de volledige bedrijfscontext, gekoppelde tools en herhaalbare workflows.",
+      "examplesLabel": "Praktijkvoorbeelden van wat de ZPT-map kan:",
+      "useCases": [
+        {
+          "title": "Prospects verrijken",
+          "description": "De agent checkt uw CRM, doorzoekt Google Maps, vergelijkt met uw ideale klantprofiel en voegt nieuwe prospects toe aan HubSpot.",
+          "why": "Claude op het web kan ook zoeken, maar heeft geen toegang tot uw CRM of kennis van uw ideale klant."
+        },
+        {
+          "title": "Google Slides deck bouwen",
+          "description": "Definieer uw huisstijl, kleuren en structuur eenmalig. De agent volgt ze telkens bij het maken van een deck via API.",
+          "why": "Dezelfde tools, maar met de positionering, tone of voice en opmaak van uw bedrijf."
+        },
+        {
+          "title": "Concurrenten monitoren",
+          "description": "Stel het een keer in. De agent scant periodiek bronnen, werkt een centrale concurrenten-map bij en signaleert veranderingen.",
+          "why": "Geen ad hoc onderzoek meer verspreid over chatgeschiedenissen van teamleden."
+        },
+        {
+          "title": "Routinewerk automatiseren",
+          "description": "Vergadernotities kopieren tussen CRM-systemen. Spreadsheets bijwerken vanuit e-maildata. Definieer het een keer, herhaal oneindig.",
+          "why": "Workflows die vanzelf draaien, geen taken die iemand handmatig moet onthouden."
+        }
       ],
-      "punchline": "Dat is het gat dat ZPT vult."
+      "screenshotCaption": "Echt voorbeeld: Claude vindt nieuwe prospects in Chicago door HubSpot te checken, het ICP te vergelijken en Google Maps te doorzoeken.",
+      "punchline": "ZPT zet dit voor u op."
     },
     "growing": {
-      "title": "Een afdeling die met u meegroeit",
+      "title": "Een map die met u meegroeit",
       "day1": "Dag 1",
       "month3": "Maand 3",
       "arrow": "Voeg MCPs, skills en agents toe over tijd",
