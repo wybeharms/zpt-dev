@@ -18,7 +18,8 @@
     },
     "practical": {
       "title": "What this means for you",
-      "intro": "Every week, new AI features and tools are released. It's overwhelming. ZPT simplifies this for you.",
+      "intro": "Every week, new AI features and tools are released. It's overwhelming...",
+      "introHighlight": "ZPT simplifies this for you.",
       "description": "We build a structured setup around the AI tools your team already uses, so they become more useful, more consistent, and much easier to rely on in daily work. It's fast, lightweight, and improves over time.",
       "bullets": [
         "Minimal setup",
