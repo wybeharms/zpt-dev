@@ -104,7 +104,7 @@ export default function AdvisoryContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 text-white lg:px-8">
+      <section className="bg-navy px-6 py-16 text-white lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("advisory.hero.title")}
