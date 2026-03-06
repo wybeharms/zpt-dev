@@ -42,7 +42,7 @@ export default function HomeContent() {
           <h1 className="font-heading text-4xl font-light leading-tight tracking-tight md:text-6xl">
             {t("home.hero.title")}
           </h1>
-          <p className="mt-4 font-heading text-4xl font-light text-gold md:text-5xl">
+          <p className="mt-4 font-heading text-4xl font-light text-gold md:text-6xl">
             {t("home.hero.subtitle")}
           </p>
           <p
