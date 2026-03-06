@@ -239,19 +239,7 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "Every company is experimenting with AI, but few are seeing real results. ZPT sets up a structured, local AI system tailored to your company and hands it over. Your team owns it."
-    },
-    "flow": {
-      "title": "What you get",
-      "description": "ZPT comes in, learns your company, and builds a personalized AI folder your team can use from day one. The entire process takes 3-5 days.",
-      "steps": [
-        "ZPT drops in",
-        "Interviews & context",
-        "Folder built",
-        "Handover",
-        "Periodic updates"
-      ],
-      "callout": "You own the folder. ZPT keeps it up to date with new skills and capabilities."
+      "description": "ZPT sets up a structured local folder tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
     },
     "tools": {
       "title": "Connects to your stack",
@@ -282,12 +270,12 @@
       "title": "Every company is different",
       "paragraphs": [
         "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a structured local folder. The agent reads this before every task, working like <em>a colleague who's been at the company for years</em>.",
-        "Start with <strong>a single AI coworker</strong> for research, drafting, or data processing. Scale to <strong>an entire AI department</strong>. Same system, same folder, growing with the business.",
         "The folder stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em>Switch providers anytime</em>."
       ]
     },
     "agentVisual": {
-      "placeholder": "Agent visual -- image placeholder",
+      "interchangeable": "Interchangeable",
+      "yourFolder": "Your folder",
       "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company."
     },
     "desktop": {
@@ -307,7 +295,7 @@
     },
     "folder": {
       "title": "The ZPT folder structure",
-      "description": "Every ZPT deployment runs on top of a structured local folder. This is the foundation: organized, transparent, and fully customizable to match any workflow.",
+      "description": "Below is an example of a default ZPT folder. Every deployment is customized, but this is the foundation: organized, transparent, and fully yours.",
       "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes.",
       "folders": [
         { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
@@ -330,7 +318,8 @@
         "Connected to existing tools — Excel, PowerPoint, CRM, drives, messaging",
         "Team trained to work with the agent as a coworker",
         "Ongoing support and periodic updates"
-      ]
+      ],
+      "callout": "You own the folder. ZPT keeps it up to date with new skills and capabilities."
     },
     "pricing": {
       "title": "Advisory tiers",

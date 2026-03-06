@@ -239,19 +239,7 @@
     "hero": {
       "title": "Su empresa sabe que la IA es poderosa.",
       "subtitle": "Nosotros la hacemos realidad.",
-      "description": "Todas las empresas experimentan con IA, pero pocas ven resultados reales. ZPT configura un sistema de IA local y estructurado a medida de su empresa y se lo entrega. Su equipo es el dueno."
-    },
-    "flow": {
-      "title": "Lo que obtiene",
-      "description": "ZPT llega, conoce su empresa y construye una carpeta de IA personalizada que su equipo puede usar desde el primer dia. Todo el proceso toma 3-5 dias.",
-      "steps": [
-        "ZPT llega",
-        "Entrevistas y contexto",
-        "Carpeta construida",
-        "Entrega",
-        "Actualizaciones periodicas"
-      ],
-      "callout": "Usted es dueno de la carpeta. ZPT la mantiene actualizada con nuevas habilidades y capacidades."
+      "description": "ZPT configura una carpeta local estructurada a medida de su empresa. Su equipo la usa a traves de Claude, ChatGPT o cualquier app compatible. Usted es dueno de todo."
     },
     "tools": {
       "title": "Se conecta a su stack",
@@ -282,12 +270,12 @@
       "title": "Cada empresa es diferente",
       "paragraphs": [
         "ZPT captura <strong>cultura, roles, procesos y conocimiento institucional</strong> en una carpeta local estructurada. El agente lee esto antes de cada tarea, trabajando como <em>un colega que lleva anos en la empresa</em>.",
-        "Empiece con <strong>un solo colaborador IA</strong> para investigacion, redaccion o procesamiento de datos. Escale a <strong>un departamento de IA completo</strong>. Mismo sistema, misma carpeta, creciendo con el negocio.",
         "La carpeta permanece <strong>completamente local</strong>. Sin dependencia de proveedor. Funciona con Anthropic, OpenAI, modelos open-source y otros. <em>Cambie de proveedor en cualquier momento</em>."
       ]
     },
     "agentVisual": {
-      "placeholder": "Visual del agente -- placeholder de imagen",
+      "interchangeable": "Intercambiable",
+      "yourFolder": "Tu carpeta",
       "caption": "El proveedor de IA es intercambiable. La carpeta permanece local y es propiedad de la empresa."
     },
     "desktop": {
@@ -307,7 +295,7 @@
     },
     "folder": {
       "title": "La estructura de carpetas ZPT",
-      "description": "Cada implementacion de ZPT se ejecuta sobre una carpeta local estructurada. Esta es la base: organizada, transparente y completamente personalizable para cualquier flujo de trabajo.",
+      "description": "A continuacion se muestra un ejemplo de una carpeta ZPT predeterminada. Cada implementacion se personaliza, pero esta es la base: organizada, transparente y completamente suya.",
       "note": "La estructura anterior es un ejemplo. Cada implementacion se personaliza segun el flujo de trabajo, herramientas y procesos reales de la empresa.",
       "folders": [
         { "name": "company-context/", "label": "Contexto", "description": "Que es la empresa: vision general, producto, ICP, posicionamiento" },
@@ -330,7 +318,8 @@
         "Conectado a herramientas existentes — Excel, PowerPoint, CRM, drives, mensajeria",
         "Equipo capacitado para trabajar con el agente como companero",
         "Soporte continuo y actualizaciones periodicas"
-      ]
+      ],
+      "callout": "Usted es dueno de la carpeta. ZPT la mantiene actualizada con nuevas habilidades y capacidades."
     },
     "pricing": {
       "title": "Paquetes Advisory",
