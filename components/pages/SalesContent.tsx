@@ -44,10 +44,10 @@ export default function SalesContent() {
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("sales.hero.title")}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70">
+          <p className="mx-auto mt-14 max-w-2xl text-lg leading-relaxed text-white/70">
             {t("sales.hero.audience")}
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <a
               href="mailto:request@zpteam.ai?subject=Sales inquiry"
               className="inline-flex min-w-[200px] items-center justify-center rounded bg-gold px-6 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
@@ -61,7 +61,7 @@ export default function SalesContent() {
               {t("sales.hero.secondaryCta")}
             </a>
           </div>
-          <p className="mt-6 text-sm text-gold">
+          <p className="mt-8 text-sm text-gold">
             {t("sales.hero.trialNote")}
           </p>
         </div>

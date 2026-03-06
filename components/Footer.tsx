@@ -51,7 +51,7 @@ export default function Footer() {
               request@zpteam.ai
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/zpteam/"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-white"
