@@ -68,7 +68,6 @@ export default function AdvisoryContent() {
   const lowerRopeRef = useRef<SVGLineElement>(null);
   const buildingRef = useRef<SVGRectElement>(null);
   const windowRefs = useRef<(SVGRectElement | null)[]>([]);
-  const doorRef = useRef<SVGRectElement>(null);
   const confettiRef = useRef<SVGGElement>(null);
   const hasLandedRef = useRef(false);
 
@@ -77,7 +76,7 @@ export default function AdvisoryContent() {
     const PERSON_TOP = 92;
     const PERSON_BOTTOM = 158;
     const PERSON_ATTACH = 108;
-    const LANDING_Y = 310;
+    const LANDING_Y = 290;
     const LANDING_TOP = LANDING_Y - (PERSON_BOTTOM - PERSON_TOP);
 
     // Confetti burst — spawns gold particles from the landing zone
@@ -138,12 +137,6 @@ export default function AdvisoryContent() {
           w.style.fill = "rgba(201,169,110,0.35)";
         }, i * 90);
       });
-      if (doorRef.current) {
-        setTimeout(() => {
-          doorRef.current!.style.stroke = "#C9A96E";
-          doorRef.current!.style.fill = "rgba(201,169,110,0.35)";
-        }, windowRefs.current.length * 90);
-      }
     };
 
     const update = () => {
@@ -152,7 +145,7 @@ export default function AdvisoryContent() {
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
       // Stickman stays near helicopter until section is well into view, lands as it scrolls past
-      const progress = Math.min(1, Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.65)));
+      const progress = Math.min(1, Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.50)));
 
       const ty = (ROPE_START - PERSON_TOP) + progress * (LANDING_TOP - ROPE_START);
       const landed = progress > 0.92;
@@ -175,10 +168,6 @@ export default function AdvisoryContent() {
       if (!landed && hasLandedRef.current) {
         hasLandedRef.current = false;
         windowRefs.current.forEach((w) => { if (w) w.style.fill = "none"; });
-        if (doorRef.current) {
-          doorRef.current.style.stroke = "";
-          doorRef.current.style.fill = "none";
-        }
       }
     };
 
@@ -202,7 +191,7 @@ export default function AdvisoryContent() {
           <p className="mt-4 font-heading text-4xl font-light text-gold md:text-5xl">
             {t("advisory.hero.subtitle")}
           </p>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+          <p className="mx-auto mt-14 max-w-2xl text-lg leading-relaxed text-white/70">
             {t("advisory.hero.description")}
           </p>
         </div>
@@ -246,12 +235,12 @@ export default function AdvisoryContent() {
                   <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
                 </g>
                 {/* Dashed line from person landing to org */}
-                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="316" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
+                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="296" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
                 {/* Organization building */}
                 <rect
                   ref={buildingRef}
                   x="46"
-                  y="320"
+                  y="300"
                   width="100"
                   height="72"
                   rx="4"
@@ -259,11 +248,11 @@ export default function AdvisoryContent() {
                   className="text-navy"
                   style={{ transition: "stroke 0.4s ease" }}
                 />
-                <line x1="46" y1="338" x2="146" y2="338" strokeWidth={1} className="text-navy" opacity="0.3" />
+                <line x1="46" y1="318" x2="146" y2="318" strokeWidth={1} className="text-navy" opacity="0.3" />
                 <rect
                   ref={(el) => { windowRefs.current[0] = el; }}
                   x="60"
-                  y="347"
+                  y="327"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -275,7 +264,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[1] = el; }}
                   x="88"
-                  y="347"
+                  y="327"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -287,7 +276,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[2] = el; }}
                   x="116"
-                  y="347"
+                  y="327"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -299,7 +288,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[3] = el; }}
                   x="60"
-                  y="368"
+                  y="348"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -311,7 +300,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[4] = el; }}
                   x="88"
-                  y="368"
+                  y="348"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -321,15 +310,16 @@ export default function AdvisoryContent() {
                   style={{ transition: "fill 0.3s ease" }}
                 />
                 <rect
-                  ref={doorRef}
+                  ref={(el) => { windowRefs.current[5] = el; }}
                   x="116"
-                  y="368"
+                  y="348"
                   width="16"
-                  height="18"
+                  height="11"
                   rx="1.5"
                   strokeWidth={1.2}
-                  className="text-navy"
-                  style={{ transition: "all 0.3s ease" }}
+                  className="text-gold"
+                  fill="none"
+                  style={{ transition: "fill 0.3s ease" }}
                 />
                 {/* Confetti container — particles spawned by JS on landing */}
                 <g ref={confettiRef} />
@@ -450,11 +440,11 @@ export default function AdvisoryContent() {
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.whatItCanDo.title")}
           </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
             {whatItCanDoItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-border-warm bg-white p-5 transition-all duration-200 hover:scale-[1.03] hover:shadow-md"
+                className="rounded-lg border border-border-warm bg-white p-7 transition-all duration-200 hover:scale-[1.03] hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-navy">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-text-muted">
@@ -467,16 +457,14 @@ export default function AdvisoryContent() {
       </section>
 
       {/* Native AI tools disclaimer */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.nativeTools.title")}
           </h2>
           <div className="mt-6 space-y-4">
             {nativeToolsParagraphs.map((p, i) => (
-              <p key={i} className="text-sm leading-relaxed text-text-muted">
-                {p}
-              </p>
+              <p key={i} className="text-sm leading-relaxed text-text-muted" dangerouslySetInnerHTML={{ __html: p }} />
             ))}
           </div>
         </div>
@@ -485,8 +473,8 @@ export default function AdvisoryContent() {
       {/* Every company is different */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-14">
-            <div className="max-w-lg">
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-20">
+            <div className="flex-1">
               <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
                 {t("advisory.concept.title")}
               </h2>
@@ -499,12 +487,9 @@ export default function AdvisoryContent() {
                   />
                 ))}
               </div>
-              <p className="mt-6 text-sm leading-relaxed text-text-muted">
-                {t("advisory.concept.audience")}
-              </p>
             </div>
             {/* Interchangeable provider visual */}
-            <div className="flex flex-shrink-0 flex-col items-center md:w-64">
+            <div className="flex flex-shrink-0 flex-col items-center md:w-52">
               <div className="rounded-xl border border-border-warm bg-white p-6">
                 <div className="flex justify-center gap-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-border-warm bg-off-white p-2">
@@ -542,9 +527,6 @@ export default function AdvisoryContent() {
                   <span>{t("advisory.agentVisual.yourFolder")}</span>
                 </div>
               </div>
-              <p className="mt-3 text-center text-xs text-text-muted">
-                {t("advisory.agentVisual.caption")}
-              </p>
             </div>
           </div>
         </div>

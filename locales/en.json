@@ -140,7 +140,7 @@
     "intro": {
       "title": "What ZPT Sales is",
       "description": "We help companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it. ZPT leverages the latest AI and agent tools, so your sales process stays ahead of the competition.",
-      "note": "Share a list of 100 names. We enrich them for free and deliver the results in your preferred format. From there, we scale to any volume and connect directly to your CRM."
+      "note": "Share a list of 100 names. We enrich them for free and deliver the results in your preferred format."
     },
     "funnel": {
       "title": "The sales funnel",
@@ -306,16 +306,16 @@
           "description": "Use information from notes, documents, spreadsheets, and internal knowledge in one place instead of scattered chat histories."
         },
         {
-          "title": "Onboard new team members faster",
-          "description": "Give new hires access to the same company knowledge, templates, and workflows from day one — no shadowing or tribal knowledge required."
+          "title": "Onboard team members faster",
+          "description": "Give new hires access to the same company knowledge, templates, and workflows from day one. No shadowing or tribal knowledge required."
         }
       ]
     },
     "nativeTools": {
       "title": "But aren't Claude and ChatGPT already adding these features?",
       "paragraphs": [
-        "Yes, and that's exactly why this works. Tools like Claude and ChatGPT ship powerful default capabilities: skills, integrations, memory. But they're generic. Every company gets the same starting point.",
-        "ZPT takes those same building blocks and structures them around your company. Your context, your workflows, your standards. The result: your team gets more out of the tools they're already using, because the tools actually know how the company works."
+        "Yes, and that's exactly why this works. Tools like <strong>Claude</strong> and <strong>ChatGPT</strong> ship powerful default capabilities: skills, integrations, memory. But they're generic. Every company gets the same starting point.",
+        "ZPT takes those same building blocks and structures them around <strong>your company</strong>. Your context, your workflows, your standards. The result: your team gets more out of the tools they're already using, because <em class=\"text-gold\">the tools actually know how the company works</em>."
       ]
     },
     "why": {
@@ -342,10 +342,9 @@
     "concept": {
       "title": "Every company is different",
       "paragraphs": [
-        "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a practical shared setup. The agent reads this before every task, working like <em>a colleague who's been at the company for years</em>.",
-        "The setup stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em>Switch providers anytime</em>."
-      ],
-      "audience": "This works especially well for startups, small and mid-sized teams, and companies already experimenting with AI but using it inconsistently."
+        "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a practical shared setup. The agent reads this before every task, working like <em class=\"text-gold\">a colleague who's been at the company for years</em>.",
+        "The setup stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em class=\"text-gold\">Switch providers anytime</em>."
+      ]
     },
     "agentVisual": {
       "interchangeable": "Interchangeable",
