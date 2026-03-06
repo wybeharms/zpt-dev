@@ -65,7 +65,7 @@ export default function ToolLogos({ portalTitle, portalDescription }: { portalTi
 
         {/* Portal visibility — inline if props provided */}
         {portalTitle && (
-          <div className="mx-auto mt-8 max-w-3xl rounded-lg border border-border-warm bg-white p-6 text-center">
+          <div className="mx-auto mt-8 max-w-xl rounded-lg border border-border-warm bg-white p-6 text-center">
             <h3 className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
               {portalTitle}
             </h3>

@@ -12,12 +12,12 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-navy text-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 py-4 lg:px-8">
         <Link href="/" className="font-logo text-lg font-medium tracking-tight">
           Zero Person Team
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — centered */}
         <nav className="hidden items-center gap-8 md:flex">
           <ProductDropdown />
           <Link
@@ -38,6 +38,10 @@ export default function Header() {
           >
             Portal
           </Link>
+        </nav>
+
+        {/* Right side — language + CTA */}
+        <div className="hidden items-center justify-end gap-4 md:flex">
           <LanguageSelector />
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
@@ -45,7 +49,7 @@ export default function Header() {
           >
             {t("nav.cta")}
           </a>
-        </nav>
+        </div>
 
         {/* Mobile menu button */}
         <button

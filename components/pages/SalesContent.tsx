@@ -61,7 +61,7 @@ export default function SalesContent() {
               {t("sales.hero.secondaryCta")}
             </a>
           </div>
-          <p className="mt-4 text-sm text-gold">
+          <p className="mt-6 text-sm text-gold">
             {t("sales.hero.trialNote")}
           </p>
         </div>
