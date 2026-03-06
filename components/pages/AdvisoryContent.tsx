@@ -71,19 +71,35 @@ export default function AdvisoryContent() {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const viewportH = window.innerHeight;
-      // Progress from 0 (section just entering viewport) to 1 (section midway through)
-      const start = viewportH * 0.9;
-      const end = viewportH * 0.35;
+      // Progress from 0 to 1 across a tighter scroll window for a snappier drop.
+      const start = viewportH * 0.7;
+      const end = viewportH * 0.45;
       const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
       setDropProgress(progress);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
-  // Stickman drops 120px
-  const dropOffset = dropProgress * 120;
+  const ropeStartY = 88;
+  const ropeLandingY = 280;
+  const maxDropOffset = ropeLandingY - ropeStartY;
+  const personTopY = 92;
+  const personBottomY = 158;
+  const personAttachY = 108;
+  const personHeight = personBottomY - personTopY;
+  const landingTopY = ropeLandingY - personHeight;
+  const dropOffset = dropProgress * maxDropOffset;
+  const dropRatio = dropOffset / maxDropOffset;
+  const stickmanTranslateY = (ropeStartY - personTopY) + dropRatio * (landingTopY - ropeStartY);
+  const upperRopeEndY = personAttachY + stickmanTranslateY;
+  const lowerRopeStartY = Math.min(personBottomY + stickmanTranslateY, ropeLandingY);
+  const landed = dropProgress > 0.85;
 
   return (
     <>
@@ -127,9 +143,9 @@ export default function AdvisoryContent() {
                 <line x1="120" y1="74" x2="120" y2="88" strokeWidth={1.5} />
                 <line x1="60" y1="88" x2="132" y2="88" strokeWidth={2} />
                 {/* Rope from helicopter — grows with scroll */}
-                <line x1="96" y1="88" x2="96" y2={88 + dropOffset} strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
+                <line x1="96" y1={ropeStartY} x2="96" y2={upperRopeEndY} strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
                 {/* Person figure — drops with scroll */}
-                <g style={{ transform: `translateY(${dropOffset}px)` }}>
+                <g transform={`translate(0 ${stickmanTranslateY})`}>
                   <circle cx="96" cy="100" r="8" strokeWidth={2} className="text-navy" />
                   <line x1="96" y1="108" x2="96" y2="138" strokeWidth={2.2} className="text-navy" />
                   <line x1="96" y1="117" x2="79" y2="129" strokeWidth={2} className="text-navy" />
@@ -140,16 +156,88 @@ export default function AdvisoryContent() {
                   <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
                 </g>
                 {/* Dashed line from person landing to org */}
-                <line x1="96" y1={Math.min(88 + dropOffset + 70, 280)} x2="96" y2="300" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity={dropProgress > 0.6 ? (dropProgress - 0.6) / 0.4 : 0} />
+                <line x1="96" y1={lowerRopeStartY} x2="96" y2="300" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity={dropProgress > 0.6 ? (dropProgress - 0.6) / 0.4 : 0} />
                 {/* Organization building */}
-                <rect x="46" y="304" width="100" height="72" rx="4" strokeWidth={2} className="text-navy" />
+                <rect
+                  x="46"
+                  y="304"
+                  width="100"
+                  height="72"
+                  rx="4"
+                  strokeWidth={2}
+                  className="text-navy"
+                  style={{ stroke: landed ? "#C9A96E" : "currentColor", transition: "all 0.4s ease" }}
+                />
                 <line x1="46" y1="322" x2="146" y2="322" strokeWidth={1} className="text-navy" opacity="0.3" />
-                <rect x="60" y="331" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="88" y="331" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="116" y="331" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="60" y="352" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="88" y="352" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="116" y="352" width="16" height="18" rx="1.5" strokeWidth={1.2} className="text-navy" />
+                <rect
+                  x="60"
+                  y="331"
+                  width="16"
+                  height="11"
+                  rx="1.5"
+                  strokeWidth={1.2}
+                  className="text-gold"
+                  fill="none"
+                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                />
+                <rect
+                  x="88"
+                  y="331"
+                  width="16"
+                  height="11"
+                  rx="1.5"
+                  strokeWidth={1.2}
+                  className="text-gold"
+                  fill="none"
+                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                />
+                <rect
+                  x="116"
+                  y="331"
+                  width="16"
+                  height="11"
+                  rx="1.5"
+                  strokeWidth={1.2}
+                  className="text-gold"
+                  fill="none"
+                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                />
+                <rect
+                  x="60"
+                  y="352"
+                  width="16"
+                  height="11"
+                  rx="1.5"
+                  strokeWidth={1.2}
+                  className="text-gold"
+                  fill="none"
+                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                />
+                <rect
+                  x="88"
+                  y="352"
+                  width="16"
+                  height="11"
+                  rx="1.5"
+                  strokeWidth={1.2}
+                  className="text-gold"
+                  fill="none"
+                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                />
+                <rect
+                  x="116"
+                  y="352"
+                  width="16"
+                  height="18"
+                  rx="1.5"
+                  strokeWidth={1.2}
+                  className="text-navy"
+                  style={{
+                    stroke: landed ? "#C9A96E" : "currentColor",
+                    fill: landed ? "rgba(201,169,110,0.15)" : "none",
+                    transition: "all 0.4s ease",
+                  }}
+                />
               </svg>
             </div>
             <div className="flex-1">
