@@ -312,10 +312,10 @@
       ]
     },
     "nativeTools": {
-      "title": "Aren't Claude and ChatGPT already adding these features?",
+      "title": "But aren't Claude and ChatGPT already adding these features?",
       "paragraphs": [
-        "Yes — and that's exactly why this works. Tools like Claude and ChatGPT ship powerful default capabilities: skills, integrations, memory. But they're generic. Every company gets the same starting point.",
-        "ZPT takes those same building blocks and structures them around your company — your context, your workflows, your standards. The result: your team gets more out of the tools they're already using, because the tools actually know how the company works."
+        "Yes, and that's exactly why this works. Tools like Claude and ChatGPT ship powerful default capabilities: skills, integrations, memory. But they're generic. Every company gets the same starting point.",
+        "ZPT takes those same building blocks and structures them around your company. Your context, your workflows, your standards. The result: your team gets more out of the tools they're already using, because the tools actually know how the company works."
       ]
     },
     "why": {
@@ -395,10 +395,6 @@
         "Ongoing support and periodic updates"
       ],
       "callout": "You own the folder. ZPT helps you operationalize it."
-    },
-    "caseSnapshot": {
-      "title": "Case snapshot",
-      "description": "A 12-person startup wanted a better way to use AI across daily work. ZPT set up a company-ready system, connected the right tools, and helped the team automate repetitive tasks with a setup they could actually use."
     },
     "pricing": {
       "title": "Advisory tiers",

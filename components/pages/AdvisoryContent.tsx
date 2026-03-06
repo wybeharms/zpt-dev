@@ -72,8 +72,8 @@ export default function AdvisoryContent() {
       const rect = el.getBoundingClientRect();
       const viewportH = window.innerHeight;
       // Progress from 0 (section just entering viewport) to 1 (section midway through)
-      const start = viewportH;
-      const end = viewportH * 0.2;
+      const start = viewportH * 0.8;
+      const end = viewportH * 0.3;
       const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
       setDropProgress(progress);
     };
@@ -271,7 +271,7 @@ export default function AdvisoryContent() {
             {whatItCanDoItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-border-warm bg-white p-5"
+                className="rounded-lg border border-border-warm bg-white p-5 transition-all duration-200 hover:scale-[1.03] hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-navy">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-text-muted">
@@ -285,7 +285,7 @@ export default function AdvisoryContent() {
 
       {/* Native AI tools disclaimer */}
       <section className="bg-cream px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-4xl">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.nativeTools.title")}
           </h2>
@@ -393,12 +393,14 @@ export default function AdvisoryContent() {
       {/* Folder structure */}
       <section id="folder-structure" className="scroll-mt-8 bg-navy px-6 py-14 text-white lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
-            {t("advisory.folder.title")}
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/60">
-            {t("advisory.folder.description")}
-          </p>
+          <div className="max-w-xl">
+            <h2 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
+              {t("advisory.folder.title")}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/60">
+              {t("advisory.folder.description")}
+            </p>
+          </div>
           <div className="mt-8 rounded-lg border border-white/10 bg-navy-light p-5 font-logo text-sm">
             <div className="text-gold">example-zpt/</div>
             {folders.map((folder, i) => {
@@ -423,25 +425,13 @@ export default function AdvisoryContent() {
         </div>
       </section>
 
-      {/* Case snapshot */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-lg border border-border-warm bg-white p-8">
-          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("advisory.caseSnapshot.title")}
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-text-muted">
-            {t("advisory.caseSnapshot.description")}
-          </p>
-        </div>
-      </section>
-
       {/* Pricing tiers */}
-      <section className="bg-navy px-6 py-14 text-white lg:px-8">
+      <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight md:text-4xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.pricing.title")}
           </h2>
-          <p className="mt-3 text-center text-white/60">
+          <p className="mt-3 text-center text-text-muted">
             {t("advisory.pricing.subtitle")}
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -453,7 +443,7 @@ export default function AdvisoryContent() {
                   className={`flex flex-col rounded-lg p-7 ${
                     isHighlight
                       ? "border-2 border-gold bg-navy-light"
-                      : "border border-white/10 bg-navy-light"
+                      : "border border-navy/20 bg-navy-light"
                   }`}
                 >
                   <h3 className="text-2xl font-semibold">{tier.name}</h3>
@@ -471,7 +461,7 @@ export default function AdvisoryContent() {
                     className={`mt-6 block rounded py-2.5 text-center text-sm font-medium transition-colors ${
                       isHighlight
                         ? "bg-gold text-navy hover:bg-gold-light"
-                        : "border border-white/20 text-white hover:bg-white/5"
+                        : "border border-white/30 text-white hover:bg-white/10"
                     }`}
                   >
                     {t("advisory.pricing.cta")}
