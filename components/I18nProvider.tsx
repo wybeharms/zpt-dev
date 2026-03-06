@@ -41,7 +41,7 @@ function subscribe(callback: () => void) {
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const locale = useSyncExternalStore(subscribe, getStoredLocale, () => "en");
+  const locale = useSyncExternalStore(subscribe, getStoredLocale, () => "en" as Locale);
 
   useEffect(() => {
     document.documentElement.lang = locale;
