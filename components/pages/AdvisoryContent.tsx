@@ -165,7 +165,8 @@ export default function AdvisoryContent() {
           <p className="mx-auto mt-3 max-w-2xl text-center text-text-muted">
             {t("advisory.tools.subtitle")}
           </p>
-          <div className="mt-10 flex flex-col items-center gap-5">
+          <div className="mt-10 flex flex-col items-center gap-4">
+            {/* Tool logos */}
             <div className="flex flex-wrap justify-center gap-3">
               {advisoryToolLogos.map((tool) => (
                 <div
@@ -185,6 +186,7 @@ export default function AdvisoryContent() {
                 </div>
               ))}
             </div>
+            {/* Arrows: tools ↔ folder */}
             <div className="flex flex-col items-center gap-0">
               <svg className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -193,12 +195,42 @@ export default function AdvisoryContent() {
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
+            {/* Folder */}
             <FolderBadge />
+            {/* Arrows: folder ↔ desktop apps */}
+            <div className="flex flex-col items-center gap-0">
+              <svg className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+              <svg className="h-5 w-5 rotate-180 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+            {/* Desktop app cards */}
+            <div className="grid w-full max-w-lg gap-4 md:grid-cols-2">
+              {(tArray("advisory.desktop.cards") as { name: string; description: string }[]).map((card) => (
+                <div
+                  key={card.name}
+                  className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-4"
+                >
+                  <img
+                    src={card.name === "Claude Desktop" ? "/logos/claude_desktop.png" : "/logos/codex_desktop.png"}
+                    alt={card.name}
+                    className="h-24 w-auto rounded-lg object-contain"
+                  />
+                  <h3 className="mt-3 text-sm font-semibold text-navy">{card.name}</h3>
+                  <p className="mt-1 text-xs text-text-muted">{card.description}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-center text-sm text-text-muted">
+              {t("advisory.desktop.note")}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Every company is different + Desktop apps */}
+      {/* Every company is different */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-14">
@@ -259,31 +291,6 @@ export default function AdvisoryContent() {
                 {t("advisory.agentVisual.caption")}
               </p>
             </div>
-          </div>
-          {/* Desktop apps */}
-          <div className="mt-12">
-            <p className="text-center text-text-muted">
-              {t("advisory.desktop.subtitle")}
-            </p>
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
-              {(tArray("advisory.desktop.cards") as { name: string; description: string }[]).map((card) => (
-                <div
-                  key={card.name}
-                  className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-6"
-                >
-                  <img
-                    src={card.name === "Claude Desktop" ? "/logos/claude_desktop.png" : "/logos/codex_desktop.png"}
-                    alt={card.name}
-                    className="h-32 w-auto rounded-lg object-contain"
-                  />
-                  <h3 className="mt-4 text-lg font-semibold text-navy">{card.name}</h3>
-                  <p className="mt-1 text-sm text-text-muted">{card.description}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-center text-sm text-text-muted">
-              {t("advisory.desktop.note")}
-            </p>
           </div>
         </div>
       </section>
