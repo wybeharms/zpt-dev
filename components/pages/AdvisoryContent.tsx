@@ -77,7 +77,7 @@ export default function AdvisoryContent() {
     const PERSON_TOP = 92;
     const PERSON_BOTTOM = 158;
     const PERSON_ATTACH = 108;
-    const LANDING_Y = 390;
+    const LANDING_Y = 340;
     const LANDING_TOP = LANDING_Y - (PERSON_BOTTOM - PERSON_TOP);
 
     // Confetti burst — spawns gold particles from the landing zone
@@ -85,7 +85,7 @@ export default function AdvisoryContent() {
       const g = confettiRef.current;
       if (!g) return;
       const cx = 96;
-      const cy = LANDING_Y + 10;
+      const cy = LANDING_Y + 15;
       for (let i = 0; i < 16; i++) {
         const angle = (Math.PI * 2 * i) / 16 + (Math.random() - 0.5) * 0.4;
         const speed = 40 + Math.random() * 50;
@@ -214,7 +214,7 @@ export default function AdvisoryContent() {
           <div ref={helicopterSectionRef} className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
             {/* Helicopter + person dropping into org */}
             <div className="flex flex-shrink-0 flex-col items-center md:w-56">
-              <svg className="h-[520px] w-48 text-navy" fill="none" viewBox="0 0 192 520" strokeWidth={1.2} stroke="currentColor">
+              <svg className="h-[470px] w-48 text-navy" fill="none" viewBox="0 0 192 470" strokeWidth={1.2} stroke="currentColor">
                 {/* Rotor */}
                 <line x1="28" y1="22" x2="164" y2="22" strokeWidth={2.5} className="text-gold" />
                 <ellipse cx="96" cy="22" rx="4" ry="4" fill="currentColor" className="text-gold" />
@@ -246,12 +246,12 @@ export default function AdvisoryContent() {
                   <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
                 </g>
                 {/* Dashed line from person landing to org */}
-                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="396" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
+                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="346" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
                 {/* Organization building */}
                 <rect
                   ref={buildingRef}
                   x="46"
-                  y="400"
+                  y="350"
                   width="100"
                   height="72"
                   rx="4"
@@ -259,11 +259,11 @@ export default function AdvisoryContent() {
                   className="text-navy"
                   style={{ transition: "stroke 0.4s ease" }}
                 />
-                <line x1="46" y1="418" x2="146" y2="418" strokeWidth={1} className="text-navy" opacity="0.3" />
+                <line x1="46" y1="368" x2="146" y2="368" strokeWidth={1} className="text-navy" opacity="0.3" />
                 <rect
                   ref={(el) => { windowRefs.current[0] = el; }}
                   x="60"
-                  y="427"
+                  y="377"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -275,7 +275,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[1] = el; }}
                   x="88"
-                  y="427"
+                  y="377"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -287,7 +287,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[2] = el; }}
                   x="116"
-                  y="427"
+                  y="377"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -299,7 +299,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[3] = el; }}
                   x="60"
-                  y="448"
+                  y="398"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -311,7 +311,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={(el) => { windowRefs.current[4] = el; }}
                   x="88"
-                  y="448"
+                  y="398"
                   width="16"
                   height="11"
                   rx="1.5"
@@ -323,7 +323,7 @@ export default function AdvisoryContent() {
                 <rect
                   ref={doorRef}
                   x="116"
-                  y="448"
+                  y="398"
                   width="16"
                   height="18"
                   rx="1.5"
