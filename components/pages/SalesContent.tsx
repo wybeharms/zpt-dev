@@ -53,7 +53,7 @@ export default function SalesContent() {
               </div>
             ))}
           </div>
-          <div className="mx-auto mt-8 max-w-2xl rounded-lg border border-gold/30 bg-gold/10 px-6 py-4 text-center">
+          <div className="mx-auto mt-8 w-fit rounded-full border border-gold/30 bg-gold/10 px-8 py-3 text-center">
             <p className="text-base font-semibold text-navy">
               {t("sales.onboarding.callout")}
             </p>
@@ -75,7 +75,7 @@ export default function SalesContent() {
       <ToolLogos />
 
       {/* Enrichment templates */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("sales.enrichment.title")}

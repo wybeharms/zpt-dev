@@ -94,10 +94,10 @@ export default function SalesFunnel() {
         {/* Right column: descriptions aligned to each stage */}
         <div className="hidden md:flex md:flex-col">
           {/* Spacer for agents + arrow height */}
-          <div className="h-[108px]" />
+          <div className="h-[88px]" />
 
-          {/* Descriptions */}
-          <div className="flex flex-1 flex-col justify-between space-y-2">
+          {/* Descriptions matching funnel stage rhythm */}
+          <div className="space-y-2">
             {stages.map((stage, i) => (
               <div key={i} className="flex items-center py-5">
                 <p className="text-sm leading-relaxed text-text-muted">

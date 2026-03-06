@@ -14,7 +14,7 @@ export default function ToolLogos() {
   const { t } = useI18n();
 
   return (
-    <section className="bg-cream px-6 py-14 lg:px-8">
+    <section className="bg-off-white px-6 py-14 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
           {t("sales.tools.title")}
