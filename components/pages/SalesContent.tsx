@@ -39,15 +39,15 @@ export default function SalesContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 text-white lg:px-8">
+      <section className="bg-navy px-6 py-16 text-white lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("sales.hero.title")}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/70">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70">
             {t("sales.hero.audience")}
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="mailto:request@zpteam.ai?subject=Sales inquiry"
               className="inline-flex min-w-[200px] items-center justify-center rounded bg-gold px-6 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
@@ -68,7 +68,7 @@ export default function SalesContent() {
       </section>
 
       {/* What ZPT Sales is */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("sales.intro.title")}
@@ -76,7 +76,7 @@ export default function SalesContent() {
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-text-muted">
             {t("sales.intro.description")}
           </p>
-          <div className="mx-auto mt-6 w-fit rounded-lg border border-gold/30 bg-gold/10 px-5 py-3 text-center">
+          <div className="mx-auto mt-8 w-fit rounded-lg border border-gold/30 bg-gold/10 px-5 py-4 text-center">
             <p className="text-sm font-semibold text-navy">
               {t("sales.intro.note")}
             </p>
