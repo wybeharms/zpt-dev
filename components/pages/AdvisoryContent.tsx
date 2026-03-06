@@ -1,7 +1,7 @@
 "use client";
 
 import { useI18n } from "@/components/I18nProvider";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const whyIcons = [
   // Shield (company-owned)
@@ -61,45 +61,55 @@ export default function AdvisoryContent() {
   const conceptParagraphs = tArray("advisory.concept.paragraphs") as string[];
   const nativeToolsParagraphs = tArray("advisory.nativeTools.paragraphs") as string[];
 
-  // Scroll animation for the stickman dropping from helicopter
+  // Scroll animation — direct DOM manipulation via refs (bypasses React render cycle)
   const helicopterSectionRef = useRef<HTMLDivElement>(null);
-  const [dropProgress, setDropProgress] = useState(0);
+  const stickmanRef = useRef<SVGGElement>(null);
+  const upperRopeRef = useRef<SVGLineElement>(null);
+  const lowerRopeRef = useRef<SVGLineElement>(null);
+  const buildingRef = useRef<SVGRectElement>(null);
+  const windowRefs = useRef<(SVGRectElement | null)[]>([]);
+  const doorRef = useRef<SVGRectElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const ROPE_START = 88;
+    const PERSON_TOP = 92;
+    const PERSON_BOTTOM = 158;
+    const PERSON_ATTACH = 108;
+    const LANDING_Y = 280;
+    const LANDING_TOP = LANDING_Y - (PERSON_BOTTOM - PERSON_TOP);
+
+    const update = () => {
       const el = helicopterSectionRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
-      const viewportH = window.innerHeight;
-      // Progress from 0 to 1 across a tighter scroll window for a snappier drop.
-      const start = viewportH * 0.7;
-      const end = viewportH * 0.45;
-      const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
-      setDropProgress(progress);
+      const vh = window.innerHeight;
+      const progress = Math.min(1, Math.max(0, (vh * 0.7 - rect.top) / (vh * 0.25)));
+
+      const ty = (ROPE_START - PERSON_TOP) + progress * (LANDING_TOP - ROPE_START);
+      const landed = progress > 0.85;
+
+      stickmanRef.current?.setAttribute("transform", `translate(0 ${ty})`);
+      upperRopeRef.current?.setAttribute("y2", String(PERSON_ATTACH + ty));
+      if (lowerRopeRef.current) {
+        lowerRopeRef.current.setAttribute("y1", String(Math.min(PERSON_BOTTOM + ty, LANDING_Y)));
+        lowerRopeRef.current.setAttribute("opacity", String(progress > 0.6 ? (progress - 0.6) / 0.4 : 0));
+      }
+      buildingRef.current && (buildingRef.current.style.stroke = landed ? "#C9A96E" : "");
+      windowRefs.current.forEach((w) => { if (w) w.style.fill = landed ? "rgba(201,169,110,0.15)" : "none"; });
+      if (doorRef.current) {
+        doorRef.current.style.stroke = landed ? "#C9A96E" : "";
+        doorRef.current.style.fill = landed ? "rgba(201,169,110,0.15)" : "none";
+      }
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
   }, []);
-
-  const ropeStartY = 88;
-  const ropeLandingY = 280;
-  const maxDropOffset = ropeLandingY - ropeStartY;
-  const personTopY = 92;
-  const personBottomY = 158;
-  const personAttachY = 108;
-  const personHeight = personBottomY - personTopY;
-  const landingTopY = ropeLandingY - personHeight;
-  const dropOffset = dropProgress * maxDropOffset;
-  const dropRatio = dropOffset / maxDropOffset;
-  const stickmanTranslateY = (ropeStartY - personTopY) + dropRatio * (landingTopY - ropeStartY);
-  const upperRopeEndY = personAttachY + stickmanTranslateY;
-  const lowerRopeStartY = Math.min(personBottomY + stickmanTranslateY, ropeLandingY);
-  const landed = dropProgress > 0.85;
 
   return (
     <>
@@ -143,9 +153,9 @@ export default function AdvisoryContent() {
                 <line x1="120" y1="74" x2="120" y2="88" strokeWidth={1.5} />
                 <line x1="60" y1="88" x2="132" y2="88" strokeWidth={2} />
                 {/* Rope from helicopter — grows with scroll */}
-                <line x1="96" y1={ropeStartY} x2="96" y2={upperRopeEndY} strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
+                <line ref={upperRopeRef} x1="96" y1="88" x2="96" y2="104" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
                 {/* Person figure — drops with scroll */}
-                <g transform={`translate(0 ${stickmanTranslateY})`}>
+                <g ref={stickmanRef} transform="translate(0 -4)">
                   <circle cx="96" cy="100" r="8" strokeWidth={2} className="text-navy" />
                   <line x1="96" y1="108" x2="96" y2="138" strokeWidth={2.2} className="text-navy" />
                   <line x1="96" y1="117" x2="79" y2="129" strokeWidth={2} className="text-navy" />
@@ -156,9 +166,10 @@ export default function AdvisoryContent() {
                   <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
                 </g>
                 {/* Dashed line from person landing to org */}
-                <line x1="96" y1={lowerRopeStartY} x2="96" y2="300" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity={dropProgress > 0.6 ? (dropProgress - 0.6) / 0.4 : 0} />
+                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="300" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
                 {/* Organization building */}
                 <rect
+                  ref={buildingRef}
                   x="46"
                   y="304"
                   width="100"
@@ -166,10 +177,11 @@ export default function AdvisoryContent() {
                   rx="4"
                   strokeWidth={2}
                   className="text-navy"
-                  style={{ stroke: landed ? "#C9A96E" : "currentColor", transition: "all 0.4s ease" }}
+                  style={{ transition: "stroke 0.4s ease" }}
                 />
                 <line x1="46" y1="322" x2="146" y2="322" strokeWidth={1} className="text-navy" opacity="0.3" />
                 <rect
+                  ref={(el) => { windowRefs.current[0] = el; }}
                   x="60"
                   y="331"
                   width="16"
@@ -178,9 +190,10 @@ export default function AdvisoryContent() {
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                  style={{ transition: "fill 0.4s ease" }}
                 />
                 <rect
+                  ref={(el) => { windowRefs.current[1] = el; }}
                   x="88"
                   y="331"
                   width="16"
@@ -189,9 +202,10 @@ export default function AdvisoryContent() {
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                  style={{ transition: "fill 0.4s ease" }}
                 />
                 <rect
+                  ref={(el) => { windowRefs.current[2] = el; }}
                   x="116"
                   y="331"
                   width="16"
@@ -200,9 +214,10 @@ export default function AdvisoryContent() {
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                  style={{ transition: "fill 0.4s ease" }}
                 />
                 <rect
+                  ref={(el) => { windowRefs.current[3] = el; }}
                   x="60"
                   y="352"
                   width="16"
@@ -211,9 +226,10 @@ export default function AdvisoryContent() {
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                  style={{ transition: "fill 0.4s ease" }}
                 />
                 <rect
+                  ref={(el) => { windowRefs.current[4] = el; }}
                   x="88"
                   y="352"
                   width="16"
@@ -222,9 +238,10 @@ export default function AdvisoryContent() {
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ fill: landed ? "rgba(201,169,110,0.15)" : "none", transition: "all 0.4s ease" }}
+                  style={{ transition: "fill 0.4s ease" }}
                 />
                 <rect
+                  ref={doorRef}
                   x="116"
                   y="352"
                   width="16"
@@ -232,11 +249,7 @@ export default function AdvisoryContent() {
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-navy"
-                  style={{
-                    stroke: landed ? "#C9A96E" : "currentColor",
-                    fill: landed ? "rgba(201,169,110,0.15)" : "none",
-                    transition: "all 0.4s ease",
-                  }}
+                  style={{ transition: "all 0.4s ease" }}
                 />
               </svg>
             </div>
