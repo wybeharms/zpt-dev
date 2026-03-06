@@ -10,11 +10,11 @@ const toolLogos: { name: string; file: string }[] = [
   { name: "Slack", file: "/logos/slack.png" },
 ];
 
-export default function ToolLogos() {
+export default function ToolLogos({ portalTitle, portalDescription }: { portalTitle?: string; portalDescription?: string } = {}) {
   const { t } = useI18n();
 
   return (
-    <section className="bg-off-white px-6 py-14 lg:px-8">
+    <section className="bg-cream px-6 py-14 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
           {t("sales.tools.title")}
@@ -62,6 +62,20 @@ export default function ToolLogos() {
             </svg>
           </div>
         </div>
+
+        {/* Portal visibility — inline if props provided */}
+        {portalTitle && (
+          <div className="mx-auto mt-8 max-w-3xl rounded-lg border border-border-warm bg-white p-6 text-center">
+            <h3 className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
+              {portalTitle}
+            </h3>
+            {portalDescription && (
+              <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                {portalDescription}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

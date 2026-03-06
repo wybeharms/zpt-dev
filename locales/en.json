@@ -139,7 +139,7 @@
     },
     "intro": {
       "title": "What ZPT Sales is",
-      "description": "ZPT Sales helps companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it.",
+      "description": "We help companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it.",
       "note": "Share a list of 100 names. We enrich them for free and deliver the results in your preferred format. From there, we scale to any volume and connect directly to your CRM."
     },
     "funnel": {
@@ -174,7 +174,7 @@
     },
     "enrichment": {
       "title": "Enrichment templates",
-      "description": "The company provides content and guidelines. ZPT turns that into structured, actionable intelligence.",
+      "description": "You provide content and guidelines. ZPT turns that into structured, actionable intelligence.",
       "note": "Templates are fully customizable. Each client defines their own fields, scoring criteria, and output format.",
       "advancedHeader": "Enriched Company Profile",
       "tabs": {
@@ -210,10 +210,10 @@
     "idealCustomer": {
       "title": "Who this is for",
       "items": [
-        { "icon": "📊", "text": "Companies with sales data but inconsistent enrichment" },
-        { "icon": "📋", "text": "Teams working from spreadsheets or a CRM that needs cleanup" },
-        { "icon": "🏢", "text": "Traditional firms that want more pipeline without hiring immediately" },
-        { "icon": "⚡", "text": "Lean teams that need better output from their existing sales process" }
+        { "icon": "chart", "text": "Companies with sales data but inconsistent enrichment" },
+        { "icon": "table", "text": "Teams working from spreadsheets or a CRM that needs cleanup" },
+        { "icon": "building", "text": "Traditional firms that want more pipeline without hiring immediately" },
+        { "icon": "bolt", "text": "Lean teams that need better output from their existing sales process" }
       ]
     },
     "faq": {
