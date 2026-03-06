@@ -219,7 +219,6 @@ export default function AdvisoryContent() {
                     className="h-24 w-auto rounded-lg object-contain"
                   />
                   <h3 className="mt-3 text-sm font-semibold text-navy">{card.name}</h3>
-                  <p className="mt-1 text-xs text-text-muted">{card.description}</p>
                 </div>
               ))}
             </div>
