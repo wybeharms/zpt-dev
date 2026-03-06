@@ -114,8 +114,8 @@
   },
   "sales": {
     "hero": {
-      "title": "How ZPT Sales Works",
-      "description": "AI agents that chain multiple steps together autonomously. Source, research, qualify, draft, follow up. Just like a human sales rep would."
+      "title": "AI-powered sales operations. Managed for you.",
+      "description": "ZPT collects your company context, connects to your CRM, and handles prospecting, enrichment, and outreach. You get the output. We run the system."
     },
     "funnel": {
       "title": "The sales funnel",
@@ -158,24 +158,26 @@
       }
     },
     "onboarding": {
-      "title": "15 min to your first analysis, including onboarding",
+      "title": "How we get started",
+      "description": "We keep the start simple: collect company context, connect the systems that matter, and begin prospecting and enrichment.",
       "steps": [
         {
           "number": "1",
-          "title": "You provide context",
-          "description": "Company info, ideal customer profile, positioning, and tone of voice."
+          "title": "Collect company context",
+          "description": "We learn your ICP, positioning, current process, and examples of good-fit accounts."
         },
         {
           "number": "2",
-          "title": "Connect tools or provide a sample list",
-          "description": "Grant access to your CRM and tools for live data, or simply share a list (e.g. 200 company names) for an initial test."
+          "title": "Connect to your CRM",
+          "description": "We hook into HubSpot, Salesforce, or whatever your team already uses."
         },
         {
           "number": "3",
-          "title": "First results within minutes",
-          "description": "ZPT runs the first enrichment and delivers a fully profiled prospect."
+          "title": "Start delivering results",
+          "description": "ZPT begins sourcing, enriching, and qualifying prospects. Output flows back through your CRM."
         }
-      ]
+      ],
+      "callout": "You get the output. We run the system."
     },
     "faq": {
       "title": "FAQ",
@@ -203,7 +205,7 @@
         },
         {
           "question": "What happens to our data?",
-          "answer": "All data stays under the company's control. ZPT operates on a local folder structure. Nothing is shared, sold, or used for training. The company owns everything."
+          "answer": "Your company data and output stay under your control. ZPT operates the sales system on your behalf and pushes the results back into the tools your team already uses."
         }
       ]
     },
@@ -237,7 +239,7 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "Every company is experimenting with AI, but few are seeing real results. ZPT sets up a structured, local AI system tailored to your company — for less than one month's employee salary."
+      "description": "ZPT sets up a structured local folder tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
     },
     "tools": {
       "title": "Connects to your stack",
@@ -268,12 +270,12 @@
       "title": "Every company is different",
       "paragraphs": [
         "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a structured local folder. The agent reads this before every task, working like <em>a colleague who's been at the company for years</em>.",
-        "Start with <strong>a single AI coworker</strong> for research, drafting, or data processing. Scale to <strong>an entire AI department</strong>. Same system, same folder, growing with the business.",
         "The folder stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em>Switch providers anytime</em>."
       ]
     },
     "agentVisual": {
-      "placeholder": "Agent visual -- image placeholder",
+      "interchangeable": "Interchangeable",
+      "yourFolder": "Your folder",
       "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company."
     },
     "desktop": {
@@ -293,7 +295,7 @@
     },
     "folder": {
       "title": "The ZPT folder structure",
-      "description": "Every ZPT deployment runs on top of a structured local folder. This is the foundation: organized, transparent, and fully customizable to match any workflow.",
+      "description": "Below is an example of a default ZPT folder. Every deployment is customized, but this is the foundation: organized, transparent, and fully yours.",
       "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes.",
       "folders": [
         { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
@@ -309,14 +311,16 @@
     },
     "consulting": {
       "title": "The ZPT SWAT team drops in",
-      "description": "ZPT deploys into the organization, sets up the entire system, connects it to existing tools, trains the team, and provides ongoing support.",
+      "description": "We deploy into your org, set up a tailored ZPT folder, connect it to your existing tools, train the team, and provide ongoing support.",
+      "exampleLink": "example",
       "points": [
         "Custom folder structure tailored to the company's workflow",
         "Agent configured with full company context (culture, roles, processes)",
         "Connected to existing tools — Excel, PowerPoint, CRM, drives, messaging",
         "Team trained to work with the agent as a coworker",
         "Ongoing support and periodic updates"
-      ]
+      ],
+      "callout": "You own the folder. ZPT keeps it up to date with new skills and capabilities."
     },
     "pricing": {
       "title": "Advisory tiers",

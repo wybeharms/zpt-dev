@@ -114,8 +114,8 @@
   },
   "sales": {
     "hero": {
-      "title": "Hoe ZPT Sales werkt",
-      "description": "AI-agents die meerdere stappen autonoom aan elkaar koppelen. Sourcen, onderzoeken, kwalificeren, schrijven, opvolgen. Net zoals een menselijke salesmedewerker."
+      "title": "AI-aangedreven salesoperaties. Beheerd voor u.",
+      "description": "ZPT verzamelt uw bedrijfscontext, koppelt aan uw CRM en regelt prospecting, verrijking en outreach. U krijgt de output. Wij draaien het systeem."
     },
     "funnel": {
       "title": "De salesfunnel",
@@ -158,24 +158,26 @@
       }
     },
     "onboarding": {
-      "title": "15 min tot uw eerste analyse, inclusief onboarding",
+      "title": "Hoe we starten",
+      "description": "We houden de start eenvoudig: bedrijfscontext verzamelen, de juiste systemen koppelen en beginnen met prospecting en verrijking.",
       "steps": [
         {
           "number": "1",
-          "title": "U levert context aan",
-          "description": "Bedrijfsinformatie, ideaal klantprofiel, positionering en tone of voice."
+          "title": "Bedrijfscontext verzamelen",
+          "description": "We leren uw ICP, positionering, huidig proces en voorbeelden van goede accounts kennen."
         },
         {
           "number": "2",
-          "title": "Tools koppelen of een lijst aanleveren",
-          "description": "Geef toegang tot uw CRM en tools voor live data, of lever simpelweg een lijst aan (bijv. 200 bedrijfsnamen) voor een eerste test."
+          "title": "Koppelen aan uw CRM",
+          "description": "We koppelen aan HubSpot, Salesforce of wat uw team ook gebruikt."
         },
         {
           "number": "3",
-          "title": "Eerste resultaten binnen minuten",
-          "description": "ZPT draait de eerste verrijking en levert een volledig geprofileerd prospect op."
+          "title": "Resultaten leveren",
+          "description": "ZPT begint met sourcen, verrijken en kwalificeren van prospects. Output stroomt terug via uw CRM."
         }
-      ]
+      ],
+      "callout": "U krijgt de output. Wij draaien het systeem."
     },
     "faq": {
       "title": "FAQ",
@@ -237,7 +239,7 @@
     "hero": {
       "title": "Uw bedrijf weet dat AI krachtig is.",
       "subtitle": "Wij maken het werkelijkheid.",
-      "description": "Elk bedrijf experimenteert met AI, maar weinigen zien echte resultaten. ZPT zet een gestructureerd, lokaal AI-systeem op maat van uw bedrijf op — voor minder dan een maandsalaris."
+      "description": "ZPT zet een gestructureerde lokale map op, afgestemd op uw bedrijf. Uw team gebruikt deze via Claude, ChatGPT of een andere compatibele app. U bent eigenaar van alles."
     },
     "tools": {
       "title": "Sluit aan op uw stack",
@@ -268,12 +270,12 @@
       "title": "Elk bedrijf is anders",
       "paragraphs": [
         "ZPT legt <strong>cultuur, rollen, processen en institutionele kennis</strong> vast in een gestructureerde lokale map. De agent leest dit voor elke taak en werkt als <em>een collega die al jaren bij het bedrijf werkt</em>.",
-        "Begin met <strong>een enkele AI-collega</strong> voor onderzoek, schrijfwerk of dataverwerking. Schaal op naar <strong>een volledige AI-afdeling</strong>. Hetzelfde systeem, dezelfde map, meegroeiend met het bedrijf.",
         "De map blijft <strong>volledig lokaal</strong>. Geen vendor lock-in. Werkt met Anthropic, OpenAI, open-source modellen en anderen. <em>Wissel van provider op elk moment</em>."
       ]
     },
     "agentVisual": {
-      "placeholder": "Agent visueel -- afbeelding placeholder",
+      "interchangeable": "Uitwisselbaar",
+      "yourFolder": "Uw map",
       "caption": "De AI-provider is uitwisselbaar. De map blijft lokaal en eigendom van het bedrijf."
     },
     "desktop": {
@@ -293,7 +295,7 @@
     },
     "folder": {
       "title": "De ZPT-mapstructuur",
-      "description": "Elke ZPT-implementatie draait bovenop een gestructureerde lokale map. Dit is de basis: georganiseerd, transparant en volledig aanpasbaar aan elke workflow.",
+      "description": "Hieronder staat een voorbeeld van een standaard ZPT-map. Elke implementatie wordt aangepast, maar dit is de basis: georganiseerd, transparant en volledig van u.",
       "note": "De structuur hierboven is een voorbeeld. Elke implementatie wordt aangepast aan de daadwerkelijke workflow, tools en processen van het bedrijf.",
       "folders": [
         { "name": "company-context/", "label": "Context", "description": "Wat het bedrijf is: overzicht, product, ICP, positionering" },
@@ -309,14 +311,16 @@
     },
     "consulting": {
       "title": "Het ZPT SWAT-team komt langs",
-      "description": "ZPT landt in de organisatie, zet het volledige systeem op, koppelt het aan bestaande tools, traint het team en biedt doorlopende ondersteuning.",
+      "description": "Wij komen bij u langs, zetten een op maat gemaakte ZPT-map op, koppelen deze aan uw bestaande tools, trainen het team en bieden doorlopende ondersteuning.",
+      "exampleLink": "voorbeeld",
       "points": [
         "Aangepaste mapstructuur op maat van de workflow van het bedrijf",
         "Agent geconfigureerd met volledige bedrijfscontext (cultuur, rollen, processen)",
         "Gekoppeld aan bestaande tools — Excel, PowerPoint, CRM, drives, messaging",
         "Team getraind om met de agent te werken als collega",
         "Doorlopende ondersteuning en periodieke updates"
-      ]
+      ],
+      "callout": "U bent eigenaar van de map. ZPT houdt deze up-to-date met nieuwe vaardigheden en mogelijkheden."
     },
     "pricing": {
       "title": "Advisory pakketten",

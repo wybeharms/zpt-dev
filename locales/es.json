@@ -114,8 +114,8 @@
   },
   "sales": {
     "hero": {
-      "title": "Como funciona ZPT Sales",
-      "description": "Agentes de IA que encadenan multiples pasos de forma autonoma. Buscar, investigar, calificar, redactar, dar seguimiento. Igual que un representante de ventas humano."
+      "title": "Operaciones de ventas con IA. Gestionadas para usted.",
+      "description": "ZPT recopila el contexto de su empresa, se conecta a su CRM y gestiona prospecting, enriquecimiento y outreach. Usted recibe los resultados. Nosotros operamos el sistema."
     },
     "funnel": {
       "title": "El embudo de ventas",
@@ -158,24 +158,26 @@
       }
     },
     "onboarding": {
-      "title": "15 min hasta su primer analisis, incluyendo onboarding",
+      "title": "Como empezamos",
+      "description": "Mantenemos el inicio simple: recopilar contexto de la empresa, conectar los sistemas que importan y comenzar con prospecting y enriquecimiento.",
       "steps": [
         {
           "number": "1",
-          "title": "Usted proporciona contexto",
-          "description": "Informacion de la empresa, perfil de cliente ideal, posicionamiento y tono de comunicacion."
+          "title": "Recopilar contexto de la empresa",
+          "description": "Aprendemos su ICP, posicionamiento, proceso actual y ejemplos de cuentas ideales."
         },
         {
           "number": "2",
-          "title": "Conectar herramientas o proporcionar una lista",
-          "description": "Otorgue acceso a su CRM y herramientas para datos en vivo, o simplemente comparta una lista (ej. 200 nombres de empresas) para una prueba inicial."
+          "title": "Conectar a su CRM",
+          "description": "Nos conectamos a HubSpot, Salesforce o lo que su equipo ya utilice."
         },
         {
           "number": "3",
-          "title": "Primeros resultados en minutos",
-          "description": "ZPT ejecuta el primer enriquecimiento y entrega un prospecto completamente perfilado."
+          "title": "Comenzar a entregar resultados",
+          "description": "ZPT comienza a buscar, enriquecer y calificar prospectos. Los resultados fluyen de vuelta a su CRM."
         }
-      ]
+      ],
+      "callout": "Usted recibe los resultados. Nosotros operamos el sistema."
     },
     "faq": {
       "title": "FAQ",
@@ -237,7 +239,7 @@
     "hero": {
       "title": "Su empresa sabe que la IA es poderosa.",
       "subtitle": "Nosotros la hacemos realidad.",
-      "description": "Todas las empresas experimentan con IA, pero pocas ven resultados reales. ZPT configura un sistema de IA local y estructurado a medida de su empresa — por menos de un salario mensual."
+      "description": "ZPT configura una carpeta local estructurada a medida de su empresa. Su equipo la usa a traves de Claude, ChatGPT o cualquier app compatible. Usted es dueno de todo."
     },
     "tools": {
       "title": "Se conecta a su stack",
@@ -268,12 +270,12 @@
       "title": "Cada empresa es diferente",
       "paragraphs": [
         "ZPT captura <strong>cultura, roles, procesos y conocimiento institucional</strong> en una carpeta local estructurada. El agente lee esto antes de cada tarea, trabajando como <em>un colega que lleva anos en la empresa</em>.",
-        "Empiece con <strong>un solo colaborador IA</strong> para investigacion, redaccion o procesamiento de datos. Escale a <strong>un departamento de IA completo</strong>. Mismo sistema, misma carpeta, creciendo con el negocio.",
         "La carpeta permanece <strong>completamente local</strong>. Sin dependencia de proveedor. Funciona con Anthropic, OpenAI, modelos open-source y otros. <em>Cambie de proveedor en cualquier momento</em>."
       ]
     },
     "agentVisual": {
-      "placeholder": "Visual del agente -- placeholder de imagen",
+      "interchangeable": "Intercambiable",
+      "yourFolder": "Tu carpeta",
       "caption": "El proveedor de IA es intercambiable. La carpeta permanece local y es propiedad de la empresa."
     },
     "desktop": {
@@ -293,7 +295,7 @@
     },
     "folder": {
       "title": "La estructura de carpetas ZPT",
-      "description": "Cada implementacion de ZPT se ejecuta sobre una carpeta local estructurada. Esta es la base: organizada, transparente y completamente personalizable para cualquier flujo de trabajo.",
+      "description": "A continuacion se muestra un ejemplo de una carpeta ZPT predeterminada. Cada implementacion se personaliza, pero esta es la base: organizada, transparente y completamente suya.",
       "note": "La estructura anterior es un ejemplo. Cada implementacion se personaliza segun el flujo de trabajo, herramientas y procesos reales de la empresa.",
       "folders": [
         { "name": "company-context/", "label": "Contexto", "description": "Que es la empresa: vision general, producto, ICP, posicionamiento" },
@@ -309,14 +311,16 @@
     },
     "consulting": {
       "title": "El equipo SWAT de ZPT llega",
-      "description": "ZPT aterriza en la organizacion, configura todo el sistema, lo conecta a las herramientas existentes, capacita al equipo y ofrece soporte continuo.",
+      "description": "Nos desplegamos en su organizacion, configuramos una carpeta ZPT a medida, la conectamos a sus herramientas existentes, capacitamos al equipo y ofrecemos soporte continuo.",
+      "exampleLink": "ejemplo",
       "points": [
         "Estructura de carpetas personalizada al flujo de trabajo",
         "Agente configurado con contexto completo (cultura, roles, procesos)",
         "Conectado a herramientas existentes — Excel, PowerPoint, CRM, drives, mensajeria",
         "Equipo capacitado para trabajar con el agente como companero",
         "Soporte continuo y actualizaciones periodicas"
-      ]
+      ],
+      "callout": "Usted es dueno de la carpeta. ZPT la mantiene actualizada con nuevas habilidades y capacidades."
     },
     "pricing": {
       "title": "Paquetes Advisory",
