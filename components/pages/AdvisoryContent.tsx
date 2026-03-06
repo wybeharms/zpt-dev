@@ -69,36 +69,116 @@ export default function AdvisoryContent() {
   const buildingRef = useRef<SVGRectElement>(null);
   const windowRefs = useRef<(SVGRectElement | null)[]>([]);
   const doorRef = useRef<SVGRectElement>(null);
+  const confettiRef = useRef<SVGGElement>(null);
+  const hasLandedRef = useRef(false);
 
   useEffect(() => {
     const ROPE_START = 88;
     const PERSON_TOP = 92;
     const PERSON_BOTTOM = 158;
     const PERSON_ATTACH = 108;
-    const LANDING_Y = 280;
+    const LANDING_Y = 390;
     const LANDING_TOP = LANDING_Y - (PERSON_BOTTOM - PERSON_TOP);
+
+    // Confetti burst — spawns gold particles from the landing zone
+    const spawnConfetti = () => {
+      const g = confettiRef.current;
+      if (!g) return;
+      const cx = 96;
+      const cy = LANDING_Y + 10;
+      for (let i = 0; i < 16; i++) {
+        const angle = (Math.PI * 2 * i) / 16 + (Math.random() - 0.5) * 0.4;
+        const speed = 40 + Math.random() * 50;
+        const size = 2 + Math.random() * 3;
+        const el = document.createElementNS("http://www.w3.org/2000/svg", Math.random() > 0.5 ? "circle" : "rect");
+        if (el.tagName === "circle") {
+          el.setAttribute("r", String(size));
+        } else {
+          el.setAttribute("width", String(size * 1.5));
+          el.setAttribute("height", String(size * 1.5));
+          el.setAttribute("rx", "1");
+        }
+        el.setAttribute("fill", i % 3 === 0 ? "#C9A96E" : i % 3 === 1 ? "#E8D5A8" : "#0C0C28");
+        el.setAttribute("opacity", "1");
+        g.appendChild(el);
+
+        const dx = Math.cos(angle) * speed;
+        const dy = Math.sin(angle) * speed - 20; // bias upward
+        let frame = 0;
+        const totalFrames = 35 + Math.floor(Math.random() * 15);
+        const animate = () => {
+          frame++;
+          const t = frame / totalFrames;
+          const ease = 1 - (1 - t) * (1 - t); // ease-out
+          const x = cx + dx * ease;
+          const y = cy + dy * ease + 30 * t * t; // gravity
+          if (el.tagName === "circle") {
+            el.setAttribute("cx", String(x));
+            el.setAttribute("cy", String(y));
+          } else {
+            el.setAttribute("x", String(x));
+            el.setAttribute("y", String(y));
+          }
+          el.setAttribute("opacity", String(Math.max(0, 1 - t)));
+          if (frame < totalFrames) {
+            requestAnimationFrame(animate);
+          } else {
+            el.remove();
+          }
+        };
+        requestAnimationFrame(animate);
+      }
+    };
+
+    // Staggered window lighting
+    const lightWindows = () => {
+      windowRefs.current.forEach((w, i) => {
+        if (!w) return;
+        setTimeout(() => {
+          w.style.fill = "rgba(201,169,110,0.35)";
+        }, i * 90);
+      });
+      if (doorRef.current) {
+        setTimeout(() => {
+          doorRef.current!.style.stroke = "#C9A96E";
+          doorRef.current!.style.fill = "rgba(201,169,110,0.35)";
+        }, windowRefs.current.length * 90);
+      }
+    };
 
     const update = () => {
       const el = helicopterSectionRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
-      const progress = Math.min(1, Math.max(0, (vh * 0.7 - rect.top) / (vh * 0.25)));
+      // Stickman stays near helicopter until section is well into view, lands as it scrolls past
+      const progress = Math.min(1, Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.65)));
 
       const ty = (ROPE_START - PERSON_TOP) + progress * (LANDING_TOP - ROPE_START);
-      const landed = progress > 0.85;
+      const landed = progress > 0.92;
 
       stickmanRef.current?.setAttribute("transform", `translate(0 ${ty})`);
       upperRopeRef.current?.setAttribute("y2", String(PERSON_ATTACH + ty));
       if (lowerRopeRef.current) {
         lowerRopeRef.current.setAttribute("y1", String(Math.min(PERSON_BOTTOM + ty, LANDING_Y)));
-        lowerRopeRef.current.setAttribute("opacity", String(progress > 0.6 ? (progress - 0.6) / 0.4 : 0));
+        lowerRopeRef.current.setAttribute("opacity", String(progress > 0.7 ? (progress - 0.7) / 0.3 : 0));
       }
       buildingRef.current && (buildingRef.current.style.stroke = landed ? "#C9A96E" : "");
-      windowRefs.current.forEach((w) => { if (w) w.style.fill = landed ? "rgba(201,169,110,0.15)" : "none"; });
-      if (doorRef.current) {
-        doorRef.current.style.stroke = landed ? "#C9A96E" : "";
-        doorRef.current.style.fill = landed ? "rgba(201,169,110,0.15)" : "none";
+
+      // Trigger confetti + staggered lights exactly once on landing
+      if (landed && !hasLandedRef.current) {
+        hasLandedRef.current = true;
+        spawnConfetti();
+        lightWindows();
+      }
+      // Reset if user scrolls back up
+      if (!landed && hasLandedRef.current) {
+        hasLandedRef.current = false;
+        windowRefs.current.forEach((w) => { if (w) w.style.fill = "none"; });
+        if (doorRef.current) {
+          doorRef.current.style.stroke = "";
+          doorRef.current.style.fill = "none";
+        }
       }
     };
 
@@ -134,7 +214,7 @@ export default function AdvisoryContent() {
           <div ref={helicopterSectionRef} className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
             {/* Helicopter + person dropping into org */}
             <div className="flex flex-shrink-0 flex-col items-center md:w-56">
-              <svg className="h-[420px] w-48 text-navy" fill="none" viewBox="0 0 192 420" strokeWidth={1.2} stroke="currentColor">
+              <svg className="h-[520px] w-48 text-navy" fill="none" viewBox="0 0 192 520" strokeWidth={1.2} stroke="currentColor">
                 {/* Rotor */}
                 <line x1="28" y1="22" x2="164" y2="22" strokeWidth={2.5} className="text-gold" />
                 <ellipse cx="96" cy="22" rx="4" ry="4" fill="currentColor" className="text-gold" />
@@ -156,7 +236,7 @@ export default function AdvisoryContent() {
                 <line ref={upperRopeRef} x1="96" y1="88" x2="96" y2="104" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
                 {/* Person figure — drops with scroll */}
                 <g ref={stickmanRef} transform="translate(0 -4)">
-                  <circle cx="96" cy="100" r="8" strokeWidth={2} className="text-navy" />
+                  <circle cx="96" cy="100" r="8" strokeWidth={2} className="text-navy" fill="#FAFAF7" />
                   <line x1="96" y1="108" x2="96" y2="138" strokeWidth={2.2} className="text-navy" />
                   <line x1="96" y1="117" x2="79" y2="129" strokeWidth={2} className="text-navy" />
                   <line x1="96" y1="117" x2="113" y2="129" strokeWidth={2} className="text-navy" />
@@ -166,12 +246,12 @@ export default function AdvisoryContent() {
                   <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
                 </g>
                 {/* Dashed line from person landing to org */}
-                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="300" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
+                <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="396" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
                 {/* Organization building */}
                 <rect
                   ref={buildingRef}
                   x="46"
-                  y="304"
+                  y="400"
                   width="100"
                   height="72"
                   rx="4"
@@ -179,78 +259,80 @@ export default function AdvisoryContent() {
                   className="text-navy"
                   style={{ transition: "stroke 0.4s ease" }}
                 />
-                <line x1="46" y1="322" x2="146" y2="322" strokeWidth={1} className="text-navy" opacity="0.3" />
+                <line x1="46" y1="418" x2="146" y2="418" strokeWidth={1} className="text-navy" opacity="0.3" />
                 <rect
                   ref={(el) => { windowRefs.current[0] = el; }}
                   x="60"
-                  y="331"
+                  y="427"
                   width="16"
                   height="11"
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ transition: "fill 0.4s ease" }}
+                  style={{ transition: "fill 0.3s ease" }}
                 />
                 <rect
                   ref={(el) => { windowRefs.current[1] = el; }}
                   x="88"
-                  y="331"
+                  y="427"
                   width="16"
                   height="11"
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ transition: "fill 0.4s ease" }}
+                  style={{ transition: "fill 0.3s ease" }}
                 />
                 <rect
                   ref={(el) => { windowRefs.current[2] = el; }}
                   x="116"
-                  y="331"
+                  y="427"
                   width="16"
                   height="11"
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ transition: "fill 0.4s ease" }}
+                  style={{ transition: "fill 0.3s ease" }}
                 />
                 <rect
                   ref={(el) => { windowRefs.current[3] = el; }}
                   x="60"
-                  y="352"
+                  y="448"
                   width="16"
                   height="11"
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ transition: "fill 0.4s ease" }}
+                  style={{ transition: "fill 0.3s ease" }}
                 />
                 <rect
                   ref={(el) => { windowRefs.current[4] = el; }}
                   x="88"
-                  y="352"
+                  y="448"
                   width="16"
                   height="11"
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-gold"
                   fill="none"
-                  style={{ transition: "fill 0.4s ease" }}
+                  style={{ transition: "fill 0.3s ease" }}
                 />
                 <rect
                   ref={doorRef}
                   x="116"
-                  y="352"
+                  y="448"
                   width="16"
                   height="18"
                   rx="1.5"
                   strokeWidth={1.2}
                   className="text-navy"
-                  style={{ transition: "all 0.4s ease" }}
+                  style={{ transition: "all 0.3s ease" }}
                 />
+                {/* Confetti container — particles spawned by JS on landing */}
+                <g ref={confettiRef} />
               </svg>
             </div>
             <div className="flex-1">
