@@ -311,7 +311,8 @@
     },
     "consulting": {
       "title": "Il team SWAT di ZPT arriva",
-      "description": "ZPT atterra nell'organizzazione, configura l'intero sistema, lo collega agli strumenti esistenti, forma il team e offre supporto continuo.",
+      "description": "Ci inseriamo nella tua organizzazione, configuriamo una cartella ZPT su misura, la colleghiamo ai tuoi strumenti esistenti, formiamo il team e offriamo supporto continuo.",
+      "exampleLink": "esempio",
       "points": [
         "Struttura di cartelle personalizzata per il workflow aziendale",
         "Agente configurato con contesto aziendale completo (cultura, ruoli, processi)",

@@ -311,7 +311,8 @@
     },
     "consulting": {
       "title": "The ZPT SWAT team drops in",
-      "description": "ZPT deploys into the organization, sets up the entire system, connects it to existing tools, trains the team, and provides ongoing support.",
+      "description": "We deploy into your org, set up a tailored ZPT folder, connect it to your existing tools, train the team, and provide ongoing support.",
+      "exampleLink": "example",
       "points": [
         "Custom folder structure tailored to the company's workflow",
         "Agent configured with full company context (culture, roles, processes)",

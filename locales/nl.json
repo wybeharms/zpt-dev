@@ -311,7 +311,8 @@
     },
     "consulting": {
       "title": "Het ZPT SWAT-team komt langs",
-      "description": "ZPT landt in de organisatie, zet het volledige systeem op, koppelt het aan bestaande tools, traint het team en biedt doorlopende ondersteuning.",
+      "description": "Wij komen bij u langs, zetten een op maat gemaakte ZPT-map op, koppelen deze aan uw bestaande tools, trainen het team en bieden doorlopende ondersteuning.",
+      "exampleLink": "voorbeeld",
       "points": [
         "Aangepaste mapstructuur op maat van de workflow van het bedrijf",
         "Agent geconfigureerd met volledige bedrijfscontext (cultuur, rollen, processen)",

@@ -63,7 +63,7 @@ export default function AdvisoryContent() {
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("advisory.hero.title")}
           </h1>
-          <p className="mt-3 font-heading text-2xl font-light text-gold md:text-3xl">
+          <p className="mt-4 font-heading text-4xl font-light text-gold md:text-5xl">
             {t("advisory.hero.subtitle")}
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
@@ -131,17 +131,22 @@ export default function AdvisoryContent() {
                 {consultingPoints.map((point, i) => (
                   <li key={i} className="flex gap-3 text-sm leading-relaxed text-text-muted">
                     <span className="mt-0.5 flex-shrink-0 text-gold">+</span>
-                    {i === 0 ? (
-                      <a href="#folder-structure" className="underline underline-offset-2 transition-colors hover:text-navy">
-                        {point as string}
-                      </a>
-                    ) : (
-                      point as string
-                    )}
+                    <span>
+                      {point as string}
+                      {i === 0 && (
+                        <>
+                          {" ("}
+                          <a href="#folder-structure" className="text-navy underline underline-offset-2 transition-colors hover:text-gold">
+                            {t("advisory.consulting.exampleLink")}
+                          </a>
+                          {")"}
+                        </>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 rounded-lg border border-gold/30 bg-gold/10 px-6 py-4">
+              <div className="mt-6 inline-block rounded-lg border border-gold/30 bg-gold/10 px-5 py-3">
                 <p className="text-sm font-semibold text-navy">
                   {t("advisory.consulting.callout")}
                 </p>
@@ -193,11 +198,11 @@ export default function AdvisoryContent() {
         </div>
       </section>
 
-      {/* Every company is different */}
+      {/* Every company is different + Desktop apps */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-4xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-14">
-            <div className="flex-1">
+            <div className="max-w-lg">
               <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
                 {t("advisory.concept.title")}
               </h2>
@@ -205,7 +210,7 @@ export default function AdvisoryContent() {
                 {conceptParagraphs.map((p, i) => (
                   <p
                     key={i}
-                    className="leading-relaxed text-text-muted"
+                    className="text-sm leading-relaxed text-text-muted"
                     dangerouslySetInnerHTML={{ __html: p }}
                   />
                 ))}
@@ -255,6 +260,31 @@ export default function AdvisoryContent() {
               </p>
             </div>
           </div>
+          {/* Desktop apps */}
+          <div className="mt-12">
+            <p className="text-center text-text-muted">
+              {t("advisory.desktop.subtitle")}
+            </p>
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              {(tArray("advisory.desktop.cards") as { name: string; description: string }[]).map((card) => (
+                <div
+                  key={card.name}
+                  className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-6"
+                >
+                  <img
+                    src={card.name === "Claude Desktop" ? "/logos/claude_desktop.png" : "/logos/codex_desktop.png"}
+                    alt={card.name}
+                    className="h-32 w-auto rounded-lg object-contain"
+                  />
+                  <h3 className="mt-4 text-lg font-semibold text-navy">{card.name}</h3>
+                  <p className="mt-1 text-sm text-text-muted">{card.description}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-center text-sm text-text-muted">
+              {t("advisory.desktop.note")}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -278,37 +308,6 @@ export default function AdvisoryContent() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Desktop apps — team collaboration */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("advisory.desktop.title")}
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-text-muted">
-            {t("advisory.desktop.subtitle")}
-          </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {(tArray("advisory.desktop.cards") as { name: string; description: string }[]).map((card) => (
-              <div
-                key={card.name}
-                className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-6"
-              >
-                <img
-                  src={card.name === "Claude Desktop" ? "/logos/claude_desktop.png" : "/logos/codex_desktop.png"}
-                  alt={card.name}
-                  className="h-32 w-auto rounded-lg object-contain"
-                />
-                <h3 className="mt-4 text-lg font-semibold text-navy">{card.name}</h3>
-                <p className="mt-1 text-sm text-text-muted">{card.description}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-text-muted">
-            {t("advisory.desktop.note")}
-          </p>
         </div>
       </section>
 
