@@ -14,7 +14,10 @@ export default function SalesContent() {
     period: string;
     features: string[];
   }[];
-  const idealCustomerItems = tArray("sales.idealCustomer.items") as string[];
+  const idealCustomerItems = tArray("sales.idealCustomer.items") as {
+    text: string;
+    icon: string;
+  }[];
 
   return (
     <>
@@ -44,6 +47,9 @@ export default function SalesContent() {
               {t("sales.hero.secondaryCta")}
             </a>
           </div>
+          <p className="mt-4 text-sm text-gold">
+            {t("sales.hero.trialNote")}
+          </p>
         </div>
       </section>
 
@@ -70,12 +76,6 @@ export default function SalesContent() {
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("sales.onboarding.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center leading-relaxed text-text-muted">
-            {t("sales.onboarding.description")}
-          </p>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
-            {t("sales.onboarding.note")}
-          </p>
           <div className="mt-8 space-y-6">
             {(tArray("sales.onboarding.steps") as { number: string; title: string; description: string }[]).map((step) => (
               <div key={step.number} className="flex gap-4">
@@ -109,8 +109,11 @@ export default function SalesContent() {
         </div>
       </section>
 
+      {/* Tool integrations */}
+      <ToolLogos />
+
       {/* Portal visibility */}
-      <section className="bg-off-white px-6 py-10 lg:px-8">
+      <section className="bg-cream px-6 py-10 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-lg border border-border-warm bg-white p-6 text-center">
           <h2 className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
             {t("sales.portal.title")}
@@ -120,9 +123,6 @@ export default function SalesContent() {
           </p>
         </div>
       </section>
-
-      {/* Tool integrations */}
-      <ToolLogos />
 
       {/* Enrichment templates */}
       <section className="bg-cream px-6 py-14 lg:px-8">
@@ -149,10 +149,13 @@ export default function SalesContent() {
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {idealCustomerItems.map((item) => (
               <div
-                key={item}
-                className="rounded-lg border border-border-warm bg-white p-5 text-sm leading-relaxed text-text-muted"
+                key={item.text}
+                className="flex items-start gap-4 rounded-lg border border-border-warm bg-white p-5 transition-all hover:scale-[1.02] hover:shadow-md"
               >
-                {item}
+                <span className="flex-shrink-0 text-2xl">{item.icon}</span>
+                <p className="text-sm font-medium leading-relaxed text-navy">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>

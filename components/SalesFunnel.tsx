@@ -56,9 +56,15 @@ export default function SalesFunnel() {
         <div>
           {/* Source agent icons - above the funnel */}
           <div className="flex flex-wrap justify-center gap-5">
-            {sources.map((source) => (
-              <AgentIcon key={source} label={source} />
-            ))}
+            {sources.map((source) =>
+              source === "..." ? (
+                <div key={source} className="flex flex-col items-center justify-end gap-1.5">
+                  <span className="text-lg font-semibold text-navy/40">...</span>
+                </div>
+              ) : (
+                <AgentIcon key={source} label={source} />
+              )
+            )}
           </div>
 
           {/* Arrow from sources to funnel */}
@@ -77,7 +83,7 @@ export default function SalesFunnel() {
             {stages.map((stage, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center py-5"
+                className="flex items-center justify-center py-7"
                 style={{
                   background: "var(--color-navy)",
                   clipPath: stageClips[i],
@@ -99,7 +105,7 @@ export default function SalesFunnel() {
           {/* Descriptions matching funnel stage rhythm */}
           <div className="space-y-2">
             {stages.map((stage, i) => (
-              <div key={i} className="flex items-center py-5">
+              <div key={i} className="flex items-center py-7">
                 <p className="text-sm leading-relaxed text-text-muted">
                   {stage.description}
                 </p>

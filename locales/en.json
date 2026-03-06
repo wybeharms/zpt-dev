@@ -134,16 +134,17 @@
       "audience": "For companies with lead data, CRM workflows, or spreadsheets that need a better way to enrich, organize, and act on them.",
       "description": "You share your sales context and data. ZPT helps source, enrich, organize, and update the output for you.",
       "primaryCta": "Book Sales Call",
-      "secondaryCta": "See How It Works"
+      "secondaryCta": "See How It Works",
+      "trialNote": "Start with 100 contacts enriched for free."
     },
     "intro": {
       "title": "What ZPT Sales is",
       "description": "ZPT Sales helps companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it.",
-      "note": "Clients can share an Excel file or give access to HubSpot. ZPT handles the workflow from there and pushes the output back."
+      "note": "Share a list of 100 names. We enrich them for free and deliver the results in your preferred format. From there, we scale to any volume and connect directly to your CRM."
     },
     "funnel": {
       "title": "The sales funnel",
-      "sources": ["LinkedIn", "Google Maps", "Web", "Job boards"],
+      "sources": ["LinkedIn", "Google Maps", "Web", "Job boards", "..."],
       "stages": [
         {
           "title": "Find Prospects",
@@ -183,8 +184,6 @@
     },
     "onboarding": {
       "title": "How we get started",
-      "description": "We keep the start simple: collect company context, connect the systems that matter, and begin prospecting and enrichment.",
-      "note": "You can share an Excel file or give us access to HubSpot. We handle the workflow from there.",
       "steps": [
         {
           "number": "1",
@@ -211,10 +210,10 @@
     "idealCustomer": {
       "title": "Who this is for",
       "items": [
-        "Companies with sales data but inconsistent enrichment",
-        "Teams working from spreadsheets or a CRM that needs cleanup",
-        "Traditional firms that want more pipeline without hiring immediately",
-        "Lean teams that need better output from their existing sales process"
+        { "icon": "📊", "text": "Companies with sales data but inconsistent enrichment" },
+        { "icon": "📋", "text": "Teams working from spreadsheets or a CRM that needs cleanup" },
+        { "icon": "🏢", "text": "Traditional firms that want more pipeline without hiring immediately" },
+        { "icon": "⚡", "text": "Lean teams that need better output from their existing sales process" }
       ]
     },
     "faq": {
