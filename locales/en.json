@@ -139,7 +139,7 @@
     },
     "intro": {
       "title": "What ZPT Sales is",
-      "description": "We help companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it.",
+      "description": "We help companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it. ZPT leverages the latest AI and agent tools, so your sales process stays ahead of the competition.",
       "note": "Share a list of 100 names. We enrich them for free and deliver the results in your preferred format. From there, we scale to any volume and connect directly to your CRM."
     },
     "funnel": {
@@ -210,7 +210,7 @@
     "idealCustomer": {
       "title": "Who this is for",
       "items": [
-        { "icon": "chart", "text": "Companies with sales data but inconsistent enrichment" },
+        { "icon": "chart", "text": "Companies with sales data but inconsistent or manual enrichment" },
         { "icon": "table", "text": "Teams working from spreadsheets or a CRM that needs cleanup" },
         { "icon": "building", "text": "Traditional firms that want more pipeline without hiring immediately" },
         { "icon": "bolt", "text": "Lean teams that need better output from their existing sales process" }
