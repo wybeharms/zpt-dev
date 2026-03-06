@@ -85,6 +85,9 @@ export default function HomeContent() {
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
             {t("home.practical.intro")}
           </p>
+          <p className="mx-auto mt-2 max-w-3xl text-base font-semibold leading-relaxed text-navy">
+            {t("home.practical.introHighlight")}
+          </p>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
             {t("home.practical.description")}
           </p>
@@ -98,7 +101,7 @@ export default function HomeContent() {
               </span>
             ))}
           </div>
-          <p className="mx-auto mt-5 max-w-3xl text-sm font-medium leading-relaxed text-[#DE7356]">
+          <p className="mx-auto mt-5 max-w-3xl text-sm font-medium leading-relaxed text-gold">
             {t("home.practical.followup")}
           </p>
         </div>
@@ -223,7 +226,7 @@ export default function HomeContent() {
       </section>
 
       {/* Real-life examples */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.bottleneck.title")}
