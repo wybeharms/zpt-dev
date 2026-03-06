@@ -59,8 +59,8 @@
           "why": "Workflows die vanzelf draaien, geen taken die iemand handmatig moet onthouden."
         }
       ],
-      "screenshotCaption": "Echt voorbeeld: Claude vindt nieuwe prospects in Chicago door HubSpot te checken, het ICP te vergelijken en Google Maps te doorzoeken.",
-      "punchline": "ZPT zet dit voor u op."
+      "screenshotLabel": "Screenshot vanuit Claude Desktop, gericht op een ZPT-map",
+      "screenshotCaption": "Echt voorbeeld: Claude vindt nieuwe prospects in Chicago door HubSpot te checken, het ICP te vergelijken en Google Maps te doorzoeken."
     },
     "growing": {
       "title": "Een map die met u meegroeit",

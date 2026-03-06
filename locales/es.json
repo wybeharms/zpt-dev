@@ -59,8 +59,8 @@
           "why": "Flujos de trabajo que corren solos, no tareas que alguien debe recordar hacer manualmente."
         }
       ],
-      "screenshotCaption": "Ejemplo real: Claude encuentra nuevos prospectos en Chicago revisando HubSpot, cruzando el ICP y buscando en Google Maps.",
-      "punchline": "ZPT lo configura para ti."
+      "screenshotLabel": "Captura de pantalla de Claude Desktop, apuntando a una carpeta ZPT",
+      "screenshotCaption": "Ejemplo real: Claude encuentra nuevos prospectos en Chicago revisando HubSpot, cruzando el ICP y buscando en Google Maps."
     },
     "growing": {
       "title": "Una carpeta que crece contigo",

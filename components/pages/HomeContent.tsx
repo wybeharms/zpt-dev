@@ -39,7 +39,7 @@ export default function HomeContent() {
           >
             {t("home.hero.cta")}
           </a>
-          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/advisory"
               className="inline-flex min-w-[220px] items-center justify-center rounded border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
@@ -92,7 +92,7 @@ export default function HomeContent() {
             {practicalBullets.map((bullet) => (
               <span
                 key={bullet}
-                className="rounded-full border border-border-warm bg-white px-4 py-2 text-sm font-medium text-navy"
+                className="rounded-full border border-border-warm bg-white px-4 py-2 text-sm font-medium text-navy transition-colors hover:border-gold/40 hover:bg-gold/10"
               >
                 {bullet}
               </span>
@@ -105,7 +105,7 @@ export default function HomeContent() {
       </section>
 
       {/* How It Works — Agent on top of company setup */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.howItWorks.title")}
@@ -116,7 +116,7 @@ export default function HomeContent() {
 
           <div className="mt-10 flex flex-col items-center gap-0">
             {/* Agent — Brain + Loop + Hands */}
-            <div className="w-full max-w-2xl rounded-t-lg border border-border-warm bg-white p-8">
+            <div className="w-full max-w-2xl rounded-lg border border-border-warm bg-white p-8">
               <p className="mb-5 text-center text-sm font-semibold uppercase tracking-[0.2em] text-text-muted">
                 {t("home.howItWorks.agent")}
               </p>
@@ -194,7 +194,7 @@ export default function HomeContent() {
             </div>
 
             {/* Folder */}
-            <div className="w-full max-w-sm rounded-b-lg border-2 border-gold bg-white p-4 text-center">
+            <div className="w-full max-w-sm rounded-lg border-2 border-gold bg-white p-4 text-center">
               <div className="mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-gold/10">
                 <svg className="h-7 w-7 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
@@ -255,23 +255,33 @@ export default function HomeContent() {
             ))}
           </div>
 
-          {/* Screenshot */}
-          <div className="mt-10 overflow-hidden rounded-lg border border-border-warm shadow-sm">
-            <Image
-              src="/screenshots/claude_cowork.png"
-              alt="Claude finding new prospects by checking HubSpot and searching Google Maps"
-              width={1400}
-              height={900}
-              className="w-full"
-            />
+          {/* Screenshot with Claude logo + caption */}
+          <div className="mt-10 flex flex-col items-center">
+            <div className="mb-3 flex items-center gap-2">
+              <Image
+                src="/logos/claude.png"
+                alt="Claude"
+                width={24}
+                height={24}
+                className="h-6 w-6"
+              />
+              <p className="text-sm font-medium text-navy">
+                {t("home.bottleneck.screenshotLabel")}
+              </p>
+            </div>
+            <div className="w-full overflow-hidden rounded-lg border border-border-warm shadow-sm">
+              <Image
+                src="/screenshots/claude_cowork.png"
+                alt="Claude finding new prospects by checking HubSpot and searching Google Maps"
+                width={1400}
+                height={900}
+                className="w-full"
+              />
+            </div>
+            <p className="mt-3 text-center text-xs text-text-muted">
+              {t("home.bottleneck.screenshotCaption")}
+            </p>
           </div>
-          <p className="mt-3 text-center text-xs text-text-muted">
-            {t("home.bottleneck.screenshotCaption")}
-          </p>
-
-          <p className="mt-6 text-center text-lg font-semibold text-gold">
-            {t("home.bottleneck.punchline")}
-          </p>
         </div>
       </section>
 
@@ -356,7 +366,7 @@ export default function HomeContent() {
               <h3 className="text-2xl font-semibold text-navy">
                 {t("home.products.sales.title")}
               </h3>
-              <p className="mt-3 leading-relaxed text-text-muted">
+              <p className="mt-3 text-sm leading-relaxed text-text-muted">
                 {t("home.products.sales.description")}
               </p>
               <span className="mt-4 inline-block text-sm font-medium text-gold group-hover:underline">
@@ -367,7 +377,7 @@ export default function HomeContent() {
               <h3 className="text-2xl font-semibold text-navy">
                 {t("home.products.advisory.title")}
               </h3>
-              <p className="mt-3 leading-relaxed text-text-muted">
+              <p className="mt-3 text-sm leading-relaxed text-text-muted">
                 {t("home.products.advisory.description")}
               </p>
               <span className="mt-4 inline-block text-sm font-medium text-gold group-hover:underline">
