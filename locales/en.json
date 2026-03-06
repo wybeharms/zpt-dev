@@ -276,7 +276,7 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "ZPT sets up a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
+      "description": "ZPT builds a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
     },
     "tools": {
       "title": "Connects to your stack",
@@ -304,7 +304,18 @@
         {
           "title": "Connect context across tools",
           "description": "Use information from notes, documents, spreadsheets, and internal knowledge in one place instead of scattered chat histories."
+        },
+        {
+          "title": "Onboard new team members faster",
+          "description": "Give new hires access to the same company knowledge, templates, and workflows from day one — no shadowing or tribal knowledge required."
         }
+      ]
+    },
+    "nativeTools": {
+      "title": "Aren't Claude and ChatGPT already adding these features?",
+      "paragraphs": [
+        "Yes — and that's exactly why this works. Tools like Claude and ChatGPT ship powerful default capabilities: skills, integrations, memory. But they're generic. Every company gets the same starting point.",
+        "ZPT takes those same building blocks and structures them around your company — your context, your workflows, your standards. The result: your team gets more out of the tools they're already using, because the tools actually know how the company works."
       ]
     },
     "why": {
