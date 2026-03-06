@@ -51,7 +51,7 @@ export default function SalesFunnel() {
   return (
     <div className="mt-10 mx-auto max-w-4xl">
       {/* Two-column layout: funnel left, descriptions right */}
-      <div className="grid gap-x-8 md:grid-cols-[380px_1fr]">
+      <div className="grid gap-x-8 md:grid-cols-[340px_1fr]">
         {/* Left column: agents + funnel */}
         <div>
           {/* Source agent icons - above the funnel */}
@@ -79,7 +79,7 @@ export default function SalesFunnel() {
           </div>
 
           {/* Funnel stages */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             {stages.map((stage, i) => (
               <div
                 key={i}
@@ -103,7 +103,7 @@ export default function SalesFunnel() {
           <div className="h-[88px]" />
 
           {/* Descriptions matching funnel stage rhythm */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             {stages.map((stage, i) => (
               <div key={i} className="flex items-center py-7">
                 <p className="text-sm leading-relaxed text-text-muted">
