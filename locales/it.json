@@ -59,8 +59,8 @@
           "why": "Workflow che girano da soli, non compiti che qualcuno deve ricordarsi di fare manualmente."
         }
       ],
-      "screenshotCaption": "Esempio reale: Claude trova nuovi prospect a Chicago controllando HubSpot, incrociando l'ICP e cercando su Google Maps.",
-      "punchline": "ZPT lo configura per te."
+      "screenshotLabel": "Screenshot da Claude Desktop, che punta a una cartella ZPT",
+      "screenshotCaption": "Esempio reale: Claude trova nuovi prospect a Chicago controllando HubSpot, incrociando l'ICP e cercando su Google Maps."
     },
     "growing": {
       "title": "Una cartella che cresce con te",

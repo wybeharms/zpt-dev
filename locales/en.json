@@ -18,8 +18,8 @@
     },
     "practical": {
       "title": "What this means for you",
-      "intro": "Every week, new AI features and tools are released. It’s overwhelming. ZPT simplifies this for your company.",
-      "description": "We set up a practical system around the AI tools your team already uses, so they become more useful, more consistent, and much easier to rely on in daily work. Setup is fast, lightweight, and improves over time.",
+      "intro": "ZPT simplifies this for you.",
+      "description": "We build a structured setup around the AI tools your team already uses, so they become more useful, more consistent, and much easier to rely on in daily work. It's fast, lightweight, and improves over time.",
       "bullets": [
         "Minimal setup",
         "Shared company context",
@@ -60,12 +60,12 @@
         },
         {
           "title": "Build a Google Slides deck",
-          "description": "Define your brand guidelines, colors, and structure once. The agent follows them every time it builds a deck via API.",
+          "description": "Create full Google Slides decks from your terminal or Claude Desktop. ZPT sets up the Google Workspace CLI so the agent builds branded decks on command.",
           "why": "Same tools, but with your company's positioning, tone, and formatting built in."
         },
         {
           "title": "Monitor competitors",
-          "description": "Set it up once. The agent periodically scans sources, updates a shared competitor workflow, and flags changes.",
+          "description": "The agent pulls from LinkedIn, Google Maps, and other sources to track competitor activity on a regular schedule. Results go into a shared file your team can review.",
           "why": "No more ad hoc research scattered across team members' chat histories."
         },
         {
@@ -74,8 +74,8 @@
           "why": "Workflows that run on their own, not tasks someone remembers to do manually."
         }
       ],
-      "screenshotCaption": "Real example: Claude finds new prospects in Chicago by checking HubSpot, cross-referencing the ICP, and searching Google Maps.",
-      "punchline": "ZPT sets this up for you."
+      "screenshotLabel": "Screenshot from Claude Desktop, pointing at a ZPT folder",
+      "screenshotCaption": "Real example: Claude finds new prospects in Chicago by checking HubSpot, cross-referencing the ICP, and searching Google Maps."
     },
     "growing": {
       "title": "A setup that grows with you",
