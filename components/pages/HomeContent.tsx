@@ -39,7 +39,7 @@ export default function HomeContent() {
           >
             {t("home.hero.cta")}
           </a>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/advisory"
               className="inline-flex min-w-[220px] items-center justify-center rounded border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
@@ -98,7 +98,7 @@ export default function HomeContent() {
               </span>
             ))}
           </div>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-text-muted">
+          <p className="mx-auto mt-5 max-w-3xl text-sm font-medium leading-relaxed text-[#DE7356]">
             {t("home.practical.followup")}
           </p>
         </div>
@@ -257,15 +257,15 @@ export default function HomeContent() {
 
           {/* Screenshot with Claude logo + caption */}
           <div className="mt-10 flex flex-col items-center">
-            <div className="mb-3 flex items-center gap-2">
+            <div className="mb-4 flex items-center gap-2">
               <Image
                 src="/logos/claude.png"
                 alt="Claude"
-                width={24}
-                height={24}
-                className="h-6 w-6"
+                width={28}
+                height={28}
+                className="h-7 w-7"
               />
-              <p className="text-sm font-medium text-navy">
+              <p className="text-base font-semibold text-navy">
                 {t("home.bottleneck.screenshotLabel")}
               </p>
             </div>
