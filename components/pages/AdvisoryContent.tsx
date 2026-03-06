@@ -1,6 +1,7 @@
 "use client";
 
 import { useI18n } from "@/components/I18nProvider";
+import { useEffect, useRef, useState } from "react";
 
 const whyIcons = [
   // Shield (company-owned)
@@ -58,6 +59,31 @@ export default function AdvisoryContent() {
   }[];
   const consultingPoints = tArray("advisory.consulting.points") as string[];
   const conceptParagraphs = tArray("advisory.concept.paragraphs") as string[];
+  const nativeToolsParagraphs = tArray("advisory.nativeTools.paragraphs") as string[];
+
+  // Scroll animation for the stickman dropping from helicopter
+  const helicopterSectionRef = useRef<HTMLDivElement>(null);
+  const [dropProgress, setDropProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = helicopterSectionRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      // Progress from 0 (section just entering viewport) to 1 (section midway through)
+      const start = viewportH;
+      const end = viewportH * 0.2;
+      const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+      setDropProgress(progress);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Stickman drops 90px (from y=120 to y=210 range in the SVG)
+  const dropOffset = dropProgress * 90;
 
   return (
     <>
@@ -79,49 +105,51 @@ export default function AdvisoryContent() {
       {/* Consulting — helicopter SWAT team */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
+          <div ref={helicopterSectionRef} className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
             {/* Helicopter + person dropping into org */}
             <div className="flex flex-shrink-0 flex-col items-center md:w-56">
-              <svg className="h-80 w-44 text-navy" fill="none" viewBox="0 0 176 320" strokeWidth={1.2} stroke="currentColor">
+              <svg className="h-[420px] w-48 text-navy" fill="none" viewBox="0 0 192 420" strokeWidth={1.2} stroke="currentColor">
                 {/* Rotor */}
-                <line x1="28" y1="22" x2="148" y2="22" strokeWidth={2.5} className="text-gold" />
-                <ellipse cx="88" cy="22" rx="4" ry="4" fill="currentColor" className="text-gold" />
+                <line x1="28" y1="22" x2="164" y2="22" strokeWidth={2.5} className="text-gold" />
+                <ellipse cx="96" cy="22" rx="4" ry="4" fill="currentColor" className="text-gold" />
                 {/* Rotor mast */}
-                <line x1="88" y1="22" x2="88" y2="38" strokeWidth={2} />
+                <line x1="96" y1="22" x2="96" y2="40" strokeWidth={2} />
                 {/* Body */}
-                <ellipse cx="88" cy="54" rx="32" ry="16" strokeWidth={2} />
+                <ellipse cx="96" cy="58" rx="36" ry="18" strokeWidth={2} />
                 {/* Cockpit window */}
-                <path d="M103 48 Q112 54 103 60" strokeWidth={1.5} className="text-gold" />
+                <path d="M113 51 Q123 58 113 65" strokeWidth={1.5} className="text-gold" />
                 {/* Tail */}
-                <line x1="56" y1="50" x2="34" y2="42" strokeWidth={2} />
-                <line x1="34" y1="42" x2="34" y2="34" strokeWidth={2} />
-                <line x1="28" y1="34" x2="40" y2="34" strokeWidth={2} className="text-gold" />
+                <line x1="60" y1="54" x2="36" y2="45" strokeWidth={2} />
+                <line x1="36" y1="45" x2="36" y2="36" strokeWidth={2} />
+                <line x1="29" y1="36" x2="43" y2="36" strokeWidth={2} className="text-gold" />
                 {/* Landing skids */}
-                <line x1="68" y1="68" x2="68" y2="80" strokeWidth={1.5} />
-                <line x1="108" y1="68" x2="108" y2="80" strokeWidth={1.5} />
-                <line x1="58" y1="80" x2="118" y2="80" strokeWidth={2} />
-                {/* Rope from helicopter */}
-                <line x1="88" y1="80" x2="88" y2="120" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
-                {/* Person figure */}
-                <circle cx="88" cy="128" r="7" strokeWidth={2} className="text-navy" />
-                <line x1="88" y1="135" x2="88" y2="162" strokeWidth={2.2} className="text-navy" />
-                <line x1="88" y1="143" x2="73" y2="153" strokeWidth={2} className="text-navy" />
-                <line x1="88" y1="143" x2="103" y2="153" strokeWidth={2} className="text-navy" />
-                <line x1="88" y1="162" x2="76" y2="180" strokeWidth={2} className="text-navy" />
-                <line x1="88" y1="162" x2="100" y2="180" strokeWidth={2} className="text-navy" />
-                {/* Briefcase */}
-                <rect x="103" y="148" width="11" height="8" rx="1.5" strokeWidth={1.5} className="text-gold" />
-                {/* Dashed line from person to org */}
-                <line x1="88" y1="180" x2="88" y2="210" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
+                <line x1="72" y1="74" x2="72" y2="88" strokeWidth={1.5} />
+                <line x1="120" y1="74" x2="120" y2="88" strokeWidth={1.5} />
+                <line x1="60" y1="88" x2="132" y2="88" strokeWidth={2} />
+                {/* Rope from helicopter — grows with scroll */}
+                <line x1="96" y1="88" x2="96" y2={88 + dropOffset} strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
+                {/* Person figure — drops with scroll */}
+                <g style={{ transform: `translateY(${dropOffset}px)` }}>
+                  <circle cx="96" cy="100" r="8" strokeWidth={2} className="text-navy" />
+                  <line x1="96" y1="108" x2="96" y2="138" strokeWidth={2.2} className="text-navy" />
+                  <line x1="96" y1="117" x2="79" y2="129" strokeWidth={2} className="text-navy" />
+                  <line x1="96" y1="117" x2="113" y2="129" strokeWidth={2} className="text-navy" />
+                  <line x1="96" y1="138" x2="82" y2="158" strokeWidth={2} className="text-navy" />
+                  <line x1="96" y1="138" x2="110" y2="158" strokeWidth={2} className="text-navy" />
+                  {/* Briefcase */}
+                  <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
+                </g>
+                {/* Dashed line from person landing to org */}
+                <line x1="96" y1={Math.min(88 + dropOffset + 70, 280)} x2="96" y2="300" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity={dropProgress > 0.6 ? (dropProgress - 0.6) / 0.4 : 0} />
                 {/* Organization building */}
-                <rect x="42" y="214" width="92" height="64" rx="4" strokeWidth={2} className="text-navy" />
-                <line x1="42" y1="230" x2="134" y2="230" strokeWidth={1} className="text-navy" opacity="0.3" />
-                <rect x="54" y="238" width="14" height="10" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="81" y="238" width="14" height="10" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="108" y="238" width="14" height="10" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="54" y="258" width="14" height="10" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="81" y="258" width="14" height="10" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
-                <rect x="108" y="258" width="14" height="16" rx="1.5" strokeWidth={1.2} className="text-navy" />
+                <rect x="46" y="304" width="100" height="72" rx="4" strokeWidth={2} className="text-navy" />
+                <line x1="46" y1="322" x2="146" y2="322" strokeWidth={1} className="text-navy" opacity="0.3" />
+                <rect x="60" y="331" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
+                <rect x="88" y="331" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
+                <rect x="116" y="331" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
+                <rect x="60" y="352" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
+                <rect x="88" y="352" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" />
+                <rect x="116" y="352" width="16" height="18" rx="1.5" strokeWidth={1.2} className="text-navy" />
               </svg>
             </div>
             <div className="flex-1">
@@ -250,6 +278,22 @@ export default function AdvisoryContent() {
                   {item.description}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Native AI tools disclaimer */}
+      <section className="bg-cream px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.nativeTools.title")}
+          </h2>
+          <div className="mt-6 space-y-4">
+            {nativeToolsParagraphs.map((p, i) => (
+              <p key={i} className="text-sm leading-relaxed text-text-muted">
+                {p}
+              </p>
             ))}
           </div>
         </div>
