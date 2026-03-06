@@ -114,8 +114,8 @@
   },
   "sales": {
     "hero": {
-      "title": "Hoe ZPT Sales werkt",
-      "description": "AI-agents die meerdere stappen autonoom aan elkaar koppelen. Sourcen, onderzoeken, kwalificeren, schrijven, opvolgen. Net zoals een menselijke salesmedewerker."
+      "title": "AI-aangedreven salesoperaties. Beheerd voor u.",
+      "description": "ZPT verzamelt uw bedrijfscontext, koppelt aan uw CRM en regelt prospecting, verrijking en outreach. U krijgt de output. Wij draaien het systeem."
     },
     "funnel": {
       "title": "De salesfunnel",
@@ -158,24 +158,26 @@
       }
     },
     "onboarding": {
-      "title": "15 min tot uw eerste analyse, inclusief onboarding",
+      "title": "Hoe we starten",
+      "description": "We houden de start eenvoudig: bedrijfscontext verzamelen, de juiste systemen koppelen en beginnen met prospecting en verrijking.",
       "steps": [
         {
           "number": "1",
-          "title": "U levert context aan",
-          "description": "Bedrijfsinformatie, ideaal klantprofiel, positionering en tone of voice."
+          "title": "Bedrijfscontext verzamelen",
+          "description": "We leren uw ICP, positionering, huidig proces en voorbeelden van goede accounts kennen."
         },
         {
           "number": "2",
-          "title": "Tools koppelen of een lijst aanleveren",
-          "description": "Geef toegang tot uw CRM en tools voor live data, of lever simpelweg een lijst aan (bijv. 200 bedrijfsnamen) voor een eerste test."
+          "title": "Koppelen aan uw CRM",
+          "description": "We koppelen aan HubSpot, Salesforce of wat uw team ook gebruikt."
         },
         {
           "number": "3",
-          "title": "Eerste resultaten binnen minuten",
-          "description": "ZPT draait de eerste verrijking en levert een volledig geprofileerd prospect op."
+          "title": "Resultaten leveren",
+          "description": "ZPT begint met sourcen, verrijken en kwalificeren van prospects. Output stroomt terug via uw CRM."
         }
-      ]
+      ],
+      "callout": "U krijgt de output. Wij draaien het systeem."
     },
     "faq": {
       "title": "FAQ",
@@ -237,7 +239,19 @@
     "hero": {
       "title": "Uw bedrijf weet dat AI krachtig is.",
       "subtitle": "Wij maken het werkelijkheid.",
-      "description": "Elk bedrijf experimenteert met AI, maar weinigen zien echte resultaten. ZPT zet een gestructureerd, lokaal AI-systeem op maat van uw bedrijf op — voor minder dan een maandsalaris."
+      "description": "Elk bedrijf experimenteert met AI, maar weinigen zien echte resultaten. ZPT zet een gestructureerd, lokaal AI-systeem op maat van uw bedrijf op en draagt het over. Uw team is eigenaar."
+    },
+    "flow": {
+      "title": "Wat u krijgt",
+      "description": "ZPT komt binnen, leert uw bedrijf kennen en bouwt een gepersonaliseerde AI-map die uw team vanaf dag een kan gebruiken. Het hele proces duurt 3-5 dagen.",
+      "steps": [
+        "ZPT landt",
+        "Interviews & context",
+        "Map gebouwd",
+        "Overdracht",
+        "Periodieke updates"
+      ],
+      "callout": "U bent eigenaar van de map. ZPT houdt deze up-to-date met nieuwe vaardigheden en mogelijkheden."
     },
     "tools": {
       "title": "Sluit aan op uw stack",

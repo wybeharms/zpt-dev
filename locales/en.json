@@ -114,8 +114,8 @@
   },
   "sales": {
     "hero": {
-      "title": "How ZPT Sales Works",
-      "description": "AI agents that chain multiple steps together autonomously. Source, research, qualify, draft, follow up. Just like a human sales rep would."
+      "title": "AI-powered sales operations. Managed for you.",
+      "description": "ZPT collects your company context, connects to your CRM, and handles prospecting, enrichment, and outreach. You get the output. We run the system."
     },
     "funnel": {
       "title": "The sales funnel",
@@ -158,24 +158,26 @@
       }
     },
     "onboarding": {
-      "title": "15 min to your first analysis, including onboarding",
+      "title": "How we get started",
+      "description": "We keep the start simple: collect company context, connect the systems that matter, and begin prospecting and enrichment.",
       "steps": [
         {
           "number": "1",
-          "title": "You provide context",
-          "description": "Company info, ideal customer profile, positioning, and tone of voice."
+          "title": "Collect company context",
+          "description": "We learn your ICP, positioning, current process, and examples of good-fit accounts."
         },
         {
           "number": "2",
-          "title": "Connect tools or provide a sample list",
-          "description": "Grant access to your CRM and tools for live data, or simply share a list (e.g. 200 company names) for an initial test."
+          "title": "Connect to your CRM",
+          "description": "We hook into HubSpot, Salesforce, or whatever your team already uses."
         },
         {
           "number": "3",
-          "title": "First results within minutes",
-          "description": "ZPT runs the first enrichment and delivers a fully profiled prospect."
+          "title": "Start delivering results",
+          "description": "ZPT begins sourcing, enriching, and qualifying prospects. Output flows back through your CRM."
         }
-      ]
+      ],
+      "callout": "You get the output. We run the system."
     },
     "faq": {
       "title": "FAQ",
@@ -203,7 +205,7 @@
         },
         {
           "question": "What happens to our data?",
-          "answer": "All data stays under the company's control. ZPT operates on a local folder structure. Nothing is shared, sold, or used for training. The company owns everything."
+          "answer": "Your company data and output stay under your control. ZPT operates the sales system on your behalf and pushes the results back into the tools your team already uses."
         }
       ]
     },
@@ -237,7 +239,19 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "Every company is experimenting with AI, but few are seeing real results. ZPT sets up a structured, local AI system tailored to your company — for less than one month's employee salary."
+      "description": "Every company is experimenting with AI, but few are seeing real results. ZPT sets up a structured, local AI system tailored to your company and hands it over. Your team owns it."
+    },
+    "flow": {
+      "title": "What you get",
+      "description": "ZPT comes in, learns your company, and builds a personalized AI folder your team can use from day one. The entire process takes 3-5 days.",
+      "steps": [
+        "ZPT drops in",
+        "Interviews & context",
+        "Folder built",
+        "Handover",
+        "Periodic updates"
+      ],
+      "callout": "You own the folder. ZPT keeps it up to date with new skills and capabilities."
     },
     "tools": {
       "title": "Connects to your stack",

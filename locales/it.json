@@ -114,8 +114,8 @@
   },
   "sales": {
     "hero": {
-      "title": "Come funziona ZPT Sales",
-      "description": "Agenti AI che concatenano piu passaggi in modo autonomo. Cercare, ricercare, qualificare, scrivere, dare seguito. Proprio come un rappresentante di vendita umano."
+      "title": "Operazioni di vendita con IA. Gestite per te.",
+      "description": "ZPT raccoglie il contesto della tua azienda, si collega al tuo CRM e gestisce prospecting, arricchimento e outreach. Tu ricevi i risultati. Noi operiamo il sistema."
     },
     "funnel": {
       "title": "L'imbuto di vendita",
@@ -158,24 +158,26 @@
       }
     },
     "onboarding": {
-      "title": "15 min alla prima analisi, onboarding incluso",
+      "title": "Come iniziamo",
+      "description": "Manteniamo l'inizio semplice: raccogliere il contesto aziendale, collegare i sistemi che contano e iniziare con prospecting e arricchimento.",
       "steps": [
         {
           "number": "1",
-          "title": "Fornisci il contesto",
-          "description": "Informazioni aziendali, profilo del cliente ideale, posizionamento e tono di comunicazione."
+          "title": "Raccogliere il contesto aziendale",
+          "description": "Impariamo il tuo ICP, posizionamento, processo attuale ed esempi di account ideali."
         },
         {
           "number": "2",
-          "title": "Collega gli strumenti o fornisci una lista",
-          "description": "Concedi l'accesso al CRM e agli strumenti per dati in tempo reale, oppure condividi semplicemente una lista (es. 200 nomi di aziende) per un test iniziale."
+          "title": "Collegare al tuo CRM",
+          "description": "Ci colleghiamo a HubSpot, Salesforce o qualunque strumento il tuo team gia utilizzi."
         },
         {
           "number": "3",
-          "title": "Primi risultati in pochi minuti",
-          "description": "ZPT esegue il primo arricchimento e consegna un prospect completamente profilato."
+          "title": "Iniziare a consegnare risultati",
+          "description": "ZPT inizia a cercare, arricchire e qualificare prospect. I risultati tornano nel tuo CRM."
         }
-      ]
+      ],
+      "callout": "Tu ricevi i risultati. Noi operiamo il sistema."
     },
     "faq": {
       "title": "FAQ",
@@ -237,7 +239,19 @@
     "hero": {
       "title": "La tua azienda sa che l'IA e potente.",
       "subtitle": "Noi la rendiamo realta.",
-      "description": "Tutte le aziende sperimentano con l'IA, ma poche vedono risultati concreti. ZPT configura un sistema di IA locale e strutturato su misura per la tua azienda — per meno di uno stipendio mensile."
+      "description": "Tutte le aziende sperimentano con l'IA, ma poche vedono risultati concreti. ZPT configura un sistema di IA locale e strutturato su misura per la tua azienda e te lo consegna. Il tuo team ne e il proprietario."
+    },
+    "flow": {
+      "title": "Cosa ottieni",
+      "description": "ZPT arriva, conosce la tua azienda e costruisce una cartella AI personalizzata che il tuo team puo usare dal primo giorno. L'intero processo richiede 3-5 giorni.",
+      "steps": [
+        "ZPT arriva",
+        "Interviste e contesto",
+        "Cartella costruita",
+        "Consegna",
+        "Aggiornamenti periodici"
+      ],
+      "callout": "Tu possiedi la cartella. ZPT la mantiene aggiornata con nuove competenze e capacita."
     },
     "tools": {
       "title": "Si collega al tuo stack",
