@@ -72,8 +72,8 @@ export default function AdvisoryContent() {
       const rect = el.getBoundingClientRect();
       const viewportH = window.innerHeight;
       // Progress from 0 (section just entering viewport) to 1 (section midway through)
-      const start = viewportH * 0.8;
-      const end = viewportH * 0.3;
+      const start = viewportH * 0.9;
+      const end = viewportH * 0.35;
       const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
       setDropProgress(progress);
     };
@@ -82,8 +82,8 @@ export default function AdvisoryContent() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Stickman drops 90px (from y=120 to y=210 range in the SVG)
-  const dropOffset = dropProgress * 90;
+  // Stickman drops 120px
+  const dropOffset = dropProgress * 120;
 
   return (
     <>
@@ -446,7 +446,7 @@ export default function AdvisoryContent() {
                       : "border border-navy/20 bg-navy-light"
                   }`}
                 >
-                  <h3 className="text-2xl font-semibold">{tier.name}</h3>
+                  <h3 className="text-2xl font-semibold text-white">{tier.name}</h3>
                   <p className="mt-1 text-sm text-white/50">{tier.description}</p>
                   <ul className="mt-5 flex-1 space-y-2">
                     {tier.features.map((feature: string) => (
