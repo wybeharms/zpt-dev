@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/components/I18nProvider";
 
 export default function HomeContent() {
@@ -11,6 +12,20 @@ export default function HomeContent() {
     stat: string;
   }[];
   const practicalBullets = tArray("home.practical.bullets") as string[];
+
+  // Scroll-reveal for "ZPT simplifies" card
+  const simplifyRef = useRef<HTMLDivElement>(null);
+  const [simplifyVisible, setSimplifyVisible] = useState(false);
+  useEffect(() => {
+    const el = simplifyRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setSimplifyVisible(true); },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   const day1Tools = tArray("home.growing.day1Tools") as string[];
   const month3Tools = tArray("home.growing.month3Tools") as string[];
   const useCases = tArray("home.bottleneck.useCases") as {
@@ -26,11 +41,12 @@ export default function HomeContent() {
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-light leading-tight tracking-tight md:text-6xl">
             {t("home.hero.title")}
-            <br />
-            <span className="text-gold">{t("home.hero.subtitle")}</span>
           </h1>
+          <p className="mt-4 font-heading text-4xl font-light text-gold md:text-5xl">
+            {t("home.hero.subtitle")}
+          </p>
           <p
-            className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70"
+            className="mx-auto mt-14 max-w-2xl text-lg leading-relaxed text-white/70"
             dangerouslySetInnerHTML={{ __html: t("home.hero.description") }}
           />
           <a
@@ -82,28 +98,26 @@ export default function HomeContent() {
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.practical.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-text-muted">
             {t("home.practical.intro")}
           </p>
-          <p className="mx-auto mt-2 max-w-3xl text-base font-semibold leading-relaxed text-navy">
-            {t("home.practical.introHighlight")}
-          </p>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
-            {t("home.practical.description")}
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {practicalBullets.map((bullet) => (
-              <span
-                key={bullet}
-                className="rounded-full border border-border-warm bg-white px-4 py-2 text-sm font-medium text-navy transition-colors hover:border-gold/40 hover:bg-gold/10"
-              >
-                {bullet}
-              </span>
-            ))}
+
+          {/* Card with scroll-reveal */}
+          <div
+            ref={simplifyRef}
+            className={`mx-auto mt-8 max-w-2xl rounded-xl border border-border-warm bg-white px-8 py-8 shadow-sm transition-all duration-700 ${
+              simplifyVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-6 opacity-0"
+            }`}
+          >
+            <p className="text-lg font-semibold text-navy">
+              {t("home.practical.introHighlight")}
+            </p>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-text-muted">
+              {t("home.practical.description")}
+            </p>
           </div>
-          <p className="mx-auto mt-5 max-w-3xl text-sm font-medium leading-relaxed text-gold">
-            {t("home.practical.followup")}
-          </p>
         </div>
       </section>
 
@@ -290,7 +304,7 @@ export default function HomeContent() {
       </section>
 
       {/* A folder that grows with you */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.growing.title")}
@@ -360,7 +374,7 @@ export default function HomeContent() {
       </section>
 
       {/* Two products */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.products.title")}
