@@ -11,32 +11,47 @@
     "hero": {
       "title": "The output of a full team.",
       "subtitle": "Without hiring one.",
-      "description": "ZPT mirrors your company's knowledge, workflows, and context into a <strong>structured local folder</strong>. With everything in one place, AI handles the repetitive work your team shouldn't be doing.",
-      "cta": "Set Up Intro Call"
+      "description": "ZPT turns the AI tools your team already uses from simple chatbots into practical co-workers that can help with real company tasks.",
+      "cta": "Set Up Intro Call",
+      "teamCta": "I want to equip my team",
+      "salesCta": "I want help with sales"
+    },
+    "practical": {
+      "title": "What this means for you",
+      "intro": "Every week, new AI features and tools are released. It’s overwhelming. ZPT simplifies this for your company.",
+      "description": "We set up a practical system around the AI tools your team already uses, so they become more useful, more consistent, and much easier to rely on in daily work. Setup is fast, lightweight, and improves over time.",
+      "bullets": [
+        "Minimal setup",
+        "Shared company context",
+        "Works with your existing tools",
+        "Improves over time"
+      ],
+      "followup": "Most companies don’t need another tool. They need a better setup around the tools they already have."
     },
     "howItWorks": {
       "title": "How it works",
-      "intro": "Since early 2026, AI models can read entire folders, chain dozens of steps, and connect to external services. All autonomously and locally.",
+      "intro": "ZPT sets up the agent and the tools around it, so AI can do real work for your company.",
+      "agent": "Agent",
       "brain": {
         "title": "The Brain",
-        "description": "The AI model reads your folder, understands your company context, and decides what to do next."
+        "description": "The AI model understands your company context and decides what to do next."
       },
       "hands": {
         "title": "The Hands",
         "description": "Tools that execute: read files, update text, search web, connect via MCP."
       },
       "folder": {
-        "title": "Your Folder",
-        "description": "All of your company's knowledge, workflows, and context. <strong>Structured, local, and 100% yours.</strong>"
+        "title": "Your Company Setup",
+        "description": "The agent works from your company’s information, workflows, and connected tools."
       },
-      "access": "Your team accesses the folder through Claude Desktop, ChatGPT, or any compatible app.",
-      "folderCallout": "ZPT provides a battle-tested default folder and personalizes it for your company."
+      "access": "Your team accesses it through Claude Desktop, ChatGPT, or any compatible app.",
+      "folderCallout": "ZPT provides a battle-tested setup and personalizes it for your company."
     },
     "bottleneck": {
-      "title": "AI is not the bottleneck. Your setup is.",
-      "description": "Most companies already use ChatGPT or Claude. But everyone has their own conversations, their own context, their own way of prompting. Knowledge is scattered and nothing is centralized.",
-      "description2": "ZPT believes the best path forward is to <strong>keep using the native AI tools</strong> your team already has, and make them dramatically more effective with a centralized folder containing your company's full context, connected tools, and repeatable workflows.",
-      "examplesLabel": "Real-life examples of what the ZPT folder can do:",
+      "title": "Real-life examples of what the setup can do",
+      "description": "",
+      "description2": "",
+      "examplesLabel": "Real-life examples of what the setup can do:",
       "useCases": [
         {
           "title": "Enrich prospects",
@@ -50,7 +65,7 @@
         },
         {
           "title": "Monitor competitors",
-          "description": "Set it up once. The agent periodically scans sources, updates a centralized competitors/ folder, and flags changes.",
+          "description": "Set it up once. The agent periodically scans sources, updates a shared competitor workflow, and flags changes.",
           "why": "No more ad hoc research scattered across team members' chat histories."
         },
         {
@@ -63,7 +78,7 @@
       "punchline": "ZPT sets this up for you."
     },
     "growing": {
-      "title": "A folder that grows with you",
+      "title": "A setup that grows with you",
       "day1": "Day 1",
       "month3": "Month 3",
       "arrow": "Add MCPs, skills, and agents over time",
@@ -76,17 +91,17 @@
       "attribution": "David Sacks"
     },
     "products": {
-      "title": "Two products",
+      "title": "Two ways to work with ZPT",
       "sales": {
         "title": "ZPT Sales",
-        "badge": "Core product",
-        "description": "Managed sales operations. ZPT runs sourcing, enrichment, outreach drafting, and pipeline management. Output delivered via dashboard or pushed to integrations of choice.",
-        "link": "How it works"
+        "badge": "",
+        "description": "For companies that want help sourcing, enriching, and managing sales workflows.",
+        "link": "Explore Sales"
       },
       "advisory": {
         "title": "ZPT Advisory",
-        "description": "We implement AI for your company. A local folder captures your context, workflows, and knowledge. An AI agent sits on top and works like a team member — from day one.",
-        "link": "Learn more"
+        "description": "For startups and teams that want to equip employees with AI tools that actually work like co-workers.",
+        "link": "Explore Advisory"
       }
     },
     "proof": {
@@ -115,7 +130,15 @@
   "sales": {
     "hero": {
       "title": "AI-powered sales operations. Managed for you.",
-      "description": "ZPT collects your company context, connects to your CRM, and handles prospecting, enrichment, and outreach. You get the output. We run the system."
+      "audience": "For companies with lead data, CRM workflows, or spreadsheets that need a better way to enrich, organize, and act on them.",
+      "description": "You share your sales context and data. ZPT helps source, enrich, organize, and update the output for you.",
+      "primaryCta": "Book Sales Call",
+      "secondaryCta": "See How It Works"
+    },
+    "intro": {
+      "title": "What ZPT Sales is",
+      "description": "ZPT Sales helps companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it.",
+      "note": "Clients can share an Excel file or give access to HubSpot. ZPT handles the workflow from there and pushes the output back."
     },
     "funnel": {
       "title": "The sales funnel",
@@ -160,6 +183,7 @@
     "onboarding": {
       "title": "How we get started",
       "description": "We keep the start simple: collect company context, connect the systems that matter, and begin prospecting and enrichment.",
+      "note": "You can share an Excel file or give us access to HubSpot. We handle the workflow from there.",
       "steps": [
         {
           "number": "1",
@@ -178,6 +202,19 @@
         }
       ],
       "callout": "You get the output. We run the system."
+    },
+    "portal": {
+      "title": "Portal visibility",
+      "description": "Clients can track activity and output through the ZPT portal."
+    },
+    "idealCustomer": {
+      "title": "Who this is for",
+      "items": [
+        "Companies with sales data but inconsistent enrichment",
+        "Teams working from spreadsheets or a CRM that needs cleanup",
+        "Traditional firms that want more pipeline without hiring immediately",
+        "Lean teams that need better output from their existing sales process"
+      ]
     },
     "faq": {
       "title": "FAQ",
@@ -239,11 +276,36 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "ZPT sets up a structured local folder tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
+      "description": "ZPT sets up a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
     },
     "tools": {
       "title": "Connects to your stack",
       "subtitle": "ZPT plugs into the tools your company already uses. No migration, no new software."
+    },
+    "whatItCanDo": {
+      "title": "What it can do",
+      "items": [
+        {
+          "title": "Build presentations from scratch",
+          "description": "Have Claude create an entire Google Slides deck based on your company materials, style, and previous client work."
+        },
+        {
+          "title": "Pull from multiple tools",
+          "description": "Find the right meeting notes, summarize them, and add the outcome to Notion or another system your team already uses."
+        },
+        {
+          "title": "Standardize repetitive workflows",
+          "description": "Turn recurring manual work into a repeatable workflow your team can actually use without re-explaining everything each time."
+        },
+        {
+          "title": "Create better outputs",
+          "description": "Generate summaries, drafts, reports, and updates in a format that matches how your company already works."
+        },
+        {
+          "title": "Connect context across tools",
+          "description": "Use information from notes, documents, spreadsheets, and internal knowledge in one place instead of scattered chat histories."
+        }
+      ]
     },
     "why": {
       "title": "Why this setup",
@@ -269,14 +331,15 @@
     "concept": {
       "title": "Every company is different",
       "paragraphs": [
-        "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a structured local folder. The agent reads this before every task, working like <em>a colleague who's been at the company for years</em>.",
-        "The folder stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em>Switch providers anytime</em>."
-      ]
+        "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a practical shared setup. The agent reads this before every task, working like <em>a colleague who's been at the company for years</em>.",
+        "The setup stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em>Switch providers anytime</em>."
+      ],
+      "audience": "This works especially well for startups, small and mid-sized teams, and companies already experimenting with AI but using it inconsistently."
     },
     "agentVisual": {
       "interchangeable": "Interchangeable",
-      "yourFolder": "Your folder",
-      "caption": "The AI provider is interchangeable. The folder stays local and proprietary to the company."
+      "yourFolder": "Your setup",
+      "caption": "The AI provider is interchangeable. Your company setup stays local and proprietary to the company."
     },
     "desktop": {
       "title": "Your team works with the agent directly",
@@ -295,7 +358,7 @@
     },
     "folder": {
       "title": "The ZPT folder structure",
-      "description": "Below is an example of a default ZPT folder. Every deployment is customized, but this is the foundation: organized, transparent, and fully yours.",
+      "description": "Below is an example of a default ZPT structure. Every setup is customized, but this shows the foundation.",
       "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes.",
       "folders": [
         { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
@@ -320,7 +383,11 @@
         "Team trained to work with the agent as a coworker",
         "Ongoing support and periodic updates"
       ],
-      "callout": "You own the folder. ZPT keeps it up to date with new skills and capabilities."
+      "callout": "You own the folder. ZPT helps you operationalize it."
+    },
+    "caseSnapshot": {
+      "title": "Case snapshot",
+      "description": "A 12-person startup wanted a better way to use AI across daily work. ZPT set up a company-ready system, connected the right tools, and helped the team automate repetitive tasks with a setup they could actually use."
     },
     "pricing": {
       "title": "Advisory tiers",

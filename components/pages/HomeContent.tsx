@@ -10,6 +10,7 @@ export default function HomeContent() {
     company: string;
     stat: string;
   }[];
+  const practicalBullets = tArray("home.practical.bullets") as string[];
   const day1Tools = tArray("home.growing.day1Tools") as string[];
   const month3Tools = tArray("home.growing.month3Tools") as string[];
   const useCases = tArray("home.bottleneck.useCases") as {
@@ -38,6 +39,20 @@ export default function HomeContent() {
           >
             {t("home.hero.cta")}
           </a>
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/advisory"
+              className="inline-flex min-w-[220px] items-center justify-center rounded border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
+            >
+              {t("home.hero.teamCta")}
+            </Link>
+            <Link
+              href="/sales"
+              className="inline-flex min-w-[220px] items-center justify-center rounded border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
+            >
+              {t("home.hero.salesCta")}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -61,7 +76,35 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* How It Works — Brain + Hands harness on top of Folder */}
+      {/* What this means for you */}
+      <section className="bg-cream px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("home.practical.title")}
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
+            {t("home.practical.intro")}
+          </p>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
+            {t("home.practical.description")}
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {practicalBullets.map((bullet) => (
+              <span
+                key={bullet}
+                className="rounded-full border border-border-warm bg-white px-4 py-2 text-sm font-medium text-navy"
+              >
+                {bullet}
+              </span>
+            ))}
+          </div>
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-text-muted">
+            {t("home.practical.followup")}
+          </p>
+        </div>
+      </section>
+
+      {/* How It Works — Agent on top of company setup */}
       <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
@@ -72,8 +115,11 @@ export default function HomeContent() {
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-0">
-            {/* Harness — Brain + Loop + Hands */}
+            {/* Agent — Brain + Loop + Hands */}
             <div className="w-full max-w-2xl rounded-t-lg border border-border-warm bg-white p-8">
+              <p className="mb-5 text-center text-sm font-semibold uppercase tracking-[0.2em] text-text-muted">
+                {t("home.howItWorks.agent")}
+              </p>
               <div className="flex items-center justify-center gap-6 md:gap-10">
                 {/* Brain */}
                 <div className="flex flex-col items-center gap-2 text-center">
@@ -176,27 +222,15 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* AI is not the bottleneck */}
+      {/* Real-life examples */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.bottleneck.title")}
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-center leading-relaxed text-text-muted">
-            {t("home.bottleneck.description")}
-          </p>
-          <p
-            className="mx-auto mt-3 max-w-3xl text-center leading-relaxed text-text-muted"
-            dangerouslySetInnerHTML={{ __html: t("home.bottleneck.description2") }}
-          />
-
-          {/* Use case examples label */}
-          <p className="mt-10 text-center text-sm font-medium text-text-muted">
-            {t("home.bottleneck.examplesLabel")}
-          </p>
 
           {/* Use case cards — hover to reveal "why" */}
-          <div className="mt-4 grid gap-5 md:grid-cols-2 lg:gap-6">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:gap-6">
             {useCases.map((uc) => (
               <div
                 key={uc.title}
@@ -319,14 +353,9 @@ export default function HomeContent() {
           </h2>
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             <Link href="/sales" className="group rounded-lg border border-gold/30 bg-white p-6 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md">
-              <div className="flex items-center gap-3">
-                <h3 className="text-2xl font-semibold text-navy">
-                  {t("home.products.sales.title")}
-                </h3>
-                <span className="rounded-full bg-gold/10 px-3 py-0.5 text-xs font-medium text-gold">
-                  {t("home.products.sales.badge")}
-                </span>
-              </div>
+              <h3 className="text-2xl font-semibold text-navy">
+                {t("home.products.sales.title")}
+              </h3>
               <p className="mt-3 leading-relaxed text-text-muted">
                 {t("home.products.sales.description")}
               </p>

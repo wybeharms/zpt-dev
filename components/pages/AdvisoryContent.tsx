@@ -43,6 +43,10 @@ function FolderBadge() {
 
 export default function AdvisoryContent() {
   const { t, tArray } = useI18n();
+  const whatItCanDoItems = tArray("advisory.whatItCanDo.items") as {
+    title: string;
+    description: string;
+  }[];
   const whyItems = tArray("advisory.why.items") as {
     title: string;
     description: string;
@@ -207,24 +211,46 @@ export default function AdvisoryContent() {
               </svg>
             </div>
             {/* Desktop app cards */}
-            <div className="grid w-full max-w-lg gap-4 md:grid-cols-2">
+            <div className="grid w-full max-w-md gap-3 md:grid-cols-2">
               {(tArray("advisory.desktop.cards") as { name: string; description: string }[]).map((card) => (
                 <div
                   key={card.name}
-                  className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-4"
+                  className="flex flex-col items-center rounded-lg border border-border-warm bg-white p-3"
                 >
                   <img
                     src={card.name === "Claude Desktop" ? "/logos/claude_desktop.png" : "/logos/codex_desktop.png"}
                     alt={card.name}
-                    className="h-24 w-auto rounded-lg object-contain"
+                    className="h-16 w-auto rounded-lg object-contain"
                   />
-                  <h3 className="mt-3 text-sm font-semibold text-navy">{card.name}</h3>
+                  <h3 className="mt-2 text-sm font-semibold text-navy">{card.name}</h3>
                 </div>
               ))}
             </div>
             <p className="mt-2 text-center text-sm text-text-muted">
               {t("advisory.desktop.note")}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What it can do */}
+      <section className="bg-off-white px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.whatItCanDo.title")}
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {whatItCanDoItems.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-lg border border-border-warm bg-white p-5"
+              >
+                <h3 className="text-base font-semibold text-navy">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -246,6 +272,9 @@ export default function AdvisoryContent() {
                   />
                 ))}
               </div>
+              <p className="mt-6 text-sm leading-relaxed text-text-muted">
+                {t("advisory.concept.audience")}
+              </p>
             </div>
             {/* Interchangeable provider visual */}
             <div className="flex flex-shrink-0 flex-col items-center md:w-64">
@@ -323,7 +352,7 @@ export default function AdvisoryContent() {
           <h2 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
             {t("advisory.folder.title")}
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-white/60">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/60">
             {t("advisory.folder.description")}
           </p>
           <div className="mt-8 rounded-lg border border-white/10 bg-navy-light p-5 font-logo text-sm">
@@ -346,6 +375,18 @@ export default function AdvisoryContent() {
           </div>
           <p className="mt-4 text-xs leading-relaxed text-white/40">
             {t("advisory.folder.note")}
+          </p>
+        </div>
+      </section>
+
+      {/* Case snapshot */}
+      <section className="bg-off-white px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-3xl rounded-lg border border-border-warm bg-white p-8">
+          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.caseSnapshot.title")}
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-text-muted">
+            {t("advisory.caseSnapshot.description")}
           </p>
         </div>
       </section>
