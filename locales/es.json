@@ -5,18 +5,65 @@
     "about": "Nosotros",
     "resources": "Casos",
     "product": "Producto",
+    "portal": "Portal",
     "cta": "Agendar llamada"
+  },
+  "ui": {
+    "menuToggle": "Abrir o cerrar menu",
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "meta": {
+    "default": {
+      "title": "ZPT - Agentes de IA para empresas B2B",
+      "description": "ZPT estructura el conocimiento, los flujos de trabajo y el contexto de una empresa en una carpeta local. Un agente de IA opera encima y ejecuta tareas de forma autonoma. El resultado de un equipo completo, sin contratar uno."
+    },
+    "sales": {
+      "title": "ZPT Sales - Operaciones de ventas con IA",
+      "description": "Agentes de IA que encadenan multiples pasos de forma autonoma. Buscar, investigar, calificar, redactar y hacer seguimiento. Se conecta a sus herramientas actuales, sin migracion."
+    },
+    "about": {
+      "title": "Sobre ZPT - Agentes de ventas con IA",
+      "description": "ZPT cree que la forma mas efectiva de usar agentes de IA es ejecutarlos sobre una carpeta local y estructurada. Operativo en tres industrias."
+    },
+    "advisory": {
+      "title": "ZPT Advisory - Configure su propia carpeta local",
+      "description": "El producto central de ZPT es una carpeta local estructurada que se conecta con agentes de IA para programacion. No solo para ventas: tambien marketing, contenido, operaciones y mas."
+    },
+    "resources": {
+      "title": "Casos de estudio - ZPT",
+      "description": "Vea como opera ZPT en logistica, leasing automotriz y analitica financiera. Resultados reales de empresas reales."
+    },
+    "portal": {
+      "title": "Portal | ZPT",
+      "description": "Portal de clientes para seguir la actividad y los resultados de ZPT."
+    }
   },
   "home": {
     "hero": {
       "title": "El resultado de un equipo completo.",
       "subtitle": "Sin contratar uno.",
       "description": "ZPT refleja el conocimiento, los flujos de trabajo y el contexto de tu empresa en una <strong>carpeta local estructurada</strong>. Con todo en un solo lugar, la IA se encarga del trabajo repetitivo que tu equipo no deberia estar haciendo.",
-      "cta": "Agendar llamada"
+      "cta": "Agendar llamada",
+      "teamCta": "Quiero equipar a mi equipo",
+      "salesCta": "Quiero ayuda con ventas"
+    },
+    "practical": {
+      "title": "Lo que esto significa para usted",
+      "intro": "Cada semana aparecen nuevas funciones y herramientas de IA. Es abrumador...",
+      "introHighlight": "ZPT simplifica esto para usted.",
+      "description": "Construimos una estructura alrededor de las herramientas de IA que su equipo ya utiliza, para que sean mas utiles, mas consistentes y mucho mas faciles de usar en el trabajo diario. Es rapido, ligero y mejora con el tiempo.",
+      "bullets": [
+        "Configuracion minima",
+        "Contexto compartido de la empresa",
+        "Funciona con sus herramientas actuales",
+        "Mejora con el tiempo"
+      ],
+      "followup": "La mayoria de las empresas no necesita otra herramienta. Necesita una mejor configuracion alrededor de las herramientas que ya tiene."
     },
     "howItWorks": {
       "title": "Como funciona",
       "intro": "Desde principios de 2026, los modelos de IA pueden leer carpetas enteras, encadenar decenas de pasos y conectarse a servicios externos. Todo de forma autonoma y local.",
+      "agent": "Agente",
       "brain": {
         "title": "El Cerebro",
         "description": "El modelo de IA lee tu carpeta, comprende el contexto de tu empresa y decide que hacer."
@@ -29,6 +76,7 @@
         "title": "Tu Carpeta",
         "description": "Todo el conocimiento, workflows y contexto de tu empresa. <strong>Estructurado, local y 100% tuyo.</strong>"
       },
+      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;interfaz&rdquo;",
       "access": "Tu equipo accede a la carpeta a traves de Claude Desktop, ChatGPT o cualquier app compatible.",
       "folderCallout": "ZPT proporciona una carpeta predeterminada probada y la personaliza para tu empresa."
     },
@@ -115,11 +163,20 @@
   "sales": {
     "hero": {
       "title": "Operaciones de ventas con IA. Gestionadas para usted.",
-      "description": "ZPT recopila el contexto de su empresa, se conecta a su CRM y gestiona prospecting, enriquecimiento y outreach. Usted recibe los resultados. Nosotros operamos el sistema."
+      "audience": "Para empresas con datos de leads, workflows de CRM u hojas de calculo que necesitan una mejor forma de enriquecerlos, organizarlos y actuar sobre ellos.",
+      "description": "ZPT recopila el contexto de su empresa, se conecta a su CRM y gestiona prospecting, enriquecimiento y outreach. Usted recibe los resultados. Nosotros operamos el sistema.",
+      "primaryCta": "Reservar llamada comercial",
+      "secondaryCta": "Ver como funciona",
+      "trialNote": "Empiece con 100 contactos enriquecidos gratis."
+    },
+    "intro": {
+      "title": "Que es ZPT Sales",
+      "description": "Ayudamos a empresas que ya tienen leads, listas o datos en el CRM, pero necesitan una forma mas clara y fiable de trabajar con ellos. ZPT aprovecha las ultimas herramientas de IA y agentes para que su proceso comercial se mantenga por delante de la competencia.",
+      "note": "Comparta una lista de 100 nombres. Los enriquecemos gratis y entregamos los resultados en el formato que prefiera."
     },
     "funnel": {
       "title": "El embudo de ventas",
-      "sources": ["LinkedIn", "Google Maps", "Web", "Ofertas de empleo"],
+      "sources": ["LinkedIn", "Google Maps", "Web", "Ofertas de empleo", "..."],
       "stages": [
         {
           "title": "Encontrar prospectos",
@@ -152,6 +209,52 @@
       "description": "La empresa proporciona contenido y directrices. ZPT lo convierte en inteligencia estructurada y accionable.",
       "note": "Las plantillas son completamente personalizables. Cada cliente define sus propios campos, criterios de puntuacion y formato de salida.",
       "advancedHeader": "Perfil de empresa enriquecido",
+      "simpleTable": {
+        "columns": {
+          "company": "Empresa",
+          "contact": "Contacto",
+          "role": "Cargo",
+          "email": "Email",
+          "status": "Estado"
+        },
+        "rows": [
+          { "company": "Acme Corp", "contact": "Jane Smith", "role": "CRO", "email": "jane@acme.com", "status": "verified" },
+          { "company": "Beta Inc", "contact": "Tom Brown", "role": "VP Ventas", "email": "tom@beta.io", "status": "enriched" },
+          { "company": "Gamma SA", "contact": "Lisa Muller", "role": "CEO", "email": "lisa@gamma.de", "status": "verified" },
+          { "company": "Delta Ltd", "contact": "Mark Roberts", "role": "Director de ventas", "email": "mark@delta.co.uk", "status": "pending" },
+          { "company": "Echo GmbH", "contact": "Anna Weber", "role": "CMO", "email": "anna@echo.de", "status": "verified" },
+          { "company": "Foxtrot BV", "contact": "Pieter de Vries", "role": "Director general", "email": "pieter@foxtrot.nl", "status": "enriched" },
+          { "company": "Gulf Corp", "contact": "Sarah Johnson", "role": "VP Desarrollo de negocio", "email": "sarah@gulf.com", "status": "verified" },
+          { "company": "Hotel SA", "contact": "Carlos Ruiz", "role": "CEO", "email": "carlos@hotel.es", "status": "pending" },
+          { "company": "India Tech", "contact": "Priya Sharma", "role": "CTO", "email": "priya@indiatech.in", "status": "enriched" }
+        ]
+      },
+      "statusLabels": {
+        "verified": "Verificado",
+        "enriched": "Enriquecido",
+        "pending": "Pendiente"
+      },
+      "advanced": {
+        "featured": {
+          "company": "Acme Corp",
+          "meta": "SaaS, 50-200 empleados, Munich, Alemania",
+          "fitLabel": "Ajuste ICP",
+          "fitScore": "5 / 5",
+          "decisionMakerLabel": "Responsable de decision",
+          "decisionMakerValue": "Jane Smith, CRO",
+          "painSignalsLabel": "Senales de necesidad",
+          "painSignalsValue": "Contratando SDR, actualizaciones manuales del CRM, bajo volumen de outreach",
+          "personalizedHookLabel": "Gancho personalizado",
+          "personalizedHookValue": "\"Vi su vacante para SDR en LinkedIn. ZPT podria cubrir esa funcion por una fraccion del coste...\"",
+          "recommendedChannelLabel": "Canal recomendado",
+          "recommendedChannelValue": "Secuencia de LinkedIn + email"
+        },
+        "additionalCompanies": [
+          { "company": "Beta Inc", "contact": "Tom Brown, VP Ventas", "score": "4 / 5", "signal": "Expandiendose a un nuevo mercado, sin equipo local" },
+          { "company": "Gamma SA", "contact": "Lisa Muller, CEO", "score": "4 / 5", "signal": "Cerro recientemente una ronda de financiacion, escalando ventas" },
+          { "company": "Delta Ltd", "contact": "Mark Roberts, Director de ventas", "score": "3 / 5", "signal": "Usa un CRM obsoleto, alta rotacion en el equipo comercial" }
+        ]
+      },
       "tabs": {
         "simple": "Plantilla simple",
         "advanced": "Plantilla avanzada"
@@ -178,6 +281,19 @@
         }
       ],
       "callout": "Usted recibe los resultados. Nosotros operamos el sistema."
+    },
+    "portal": {
+      "title": "Visibilidad en el portal",
+      "description": "Los clientes pueden seguir la actividad y los resultados a traves del portal de ZPT."
+    },
+    "idealCustomer": {
+      "title": "Para quien es esto",
+      "items": [
+        { "icon": "chart", "text": "Empresas con datos comerciales pero con enriquecimiento inconsistente o manual" },
+        { "icon": "table", "text": "Equipos que trabajan con hojas de calculo o un CRM que necesita limpieza" },
+        { "icon": "building", "text": "Empresas tradicionales que quieren mas pipeline sin contratar de inmediato" },
+        { "icon": "bolt", "text": "Equipos ligeros que necesitan mejores resultados de su proceso comercial actual" }
+      ]
     },
     "faq": {
       "title": "FAQ",
@@ -244,6 +360,42 @@
     "tools": {
       "title": "Se conecta a su stack",
       "subtitle": "ZPT se conecta a las herramientas que su empresa ya utiliza. Sin migracion, sin software nuevo."
+    },
+    "whatItCanDo": {
+      "title": "Lo que puede hacer",
+      "items": [
+        {
+          "title": "Crear presentaciones desde cero",
+          "description": "Pida a Claude que cree una presentacion completa en Google Slides basandose en los materiales, el estilo y el trabajo previo de su empresa."
+        },
+        {
+          "title": "Extraer de multiples herramientas",
+          "description": "Encuentre las notas de reunion correctas, resumalas y anada el resultado a Notion u otro sistema que su equipo ya utiliza."
+        },
+        {
+          "title": "Estandarizar workflows repetitivos",
+          "description": "Convierta trabajo manual recurrente en un workflow repetible que su equipo pueda usar de verdad sin tener que volver a explicar todo cada vez."
+        },
+        {
+          "title": "Crear mejores entregables",
+          "description": "Genere resumenes, borradores, reportes y actualizaciones en un formato que encaje con la forma en que su empresa ya trabaja."
+        },
+        {
+          "title": "Conectar contexto entre herramientas",
+          "description": "Use informacion de notas, documentos, hojas de calculo y conocimiento interno en un solo lugar en vez de historiales de chat dispersos."
+        },
+        {
+          "title": "Incorporar al equipo mas rapido",
+          "description": "De a las nuevas incorporaciones acceso al mismo conocimiento, plantillas y workflows de la empresa desde el primer dia. Sin acompanamiento ni conocimiento tribal."
+        }
+      ]
+    },
+    "nativeTools": {
+      "title": "Pero Claude y ChatGPT no estan anadiendo ya estas funciones?",
+      "paragraphs": [
+        "Si, y precisamente por eso esto funciona. Herramientas como <strong>Claude</strong> y <strong>ChatGPT</strong> ya traen capacidades potentes por defecto: skills, integraciones y memoria. Pero son genericas. Todas las empresas parten del mismo punto.",
+        "ZPT toma esos mismos bloques y los estructura alrededor de <strong>su empresa</strong>. Su contexto, sus workflows y sus estandares. El resultado: su equipo obtiene mas de las herramientas que ya usa, porque <em class=\"text-gold\">las herramientas realmente entienden como funciona la empresa</em>."
+      ]
     },
     "why": {
       "title": "Por que esta configuracion",
@@ -392,6 +544,23 @@
       "title": "Quiere resultados similares para su empresa?",
       "button": "Agendar llamada",
       "email": "O escriba a"
+    }
+  },
+  "portalUi": {
+    "title": "Portal",
+    "customer": "Cliente",
+    "onboarding": "Onboarding",
+    "prospects": "Prospectos",
+    "competitors": "Competidores",
+    "signOut": "Cerrar sesion",
+    "loadingProspects": "Cargando prospectos...",
+    "emptyProspects": "Todavia no hay prospectos enriquecidos. Los datos apareceran aqui cuando termine el procesamiento.",
+    "table": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "title": "Cargo",
+      "email": "Email",
+      "score": "Puntuacion"
     }
   },
   "footer": {

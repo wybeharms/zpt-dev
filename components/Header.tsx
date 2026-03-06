@@ -36,7 +36,7 @@ export default function Header() {
             href="/portal"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
-            Portal
+            {t("nav.portal")}
           </Link>
         </nav>
 
@@ -55,7 +55,7 @@ export default function Header() {
         <button
           className="md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={t("ui.menuToggle")}
         >
           <svg
             className="h-6 w-6"
@@ -121,7 +121,7 @@ export default function Header() {
               className="text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Portal
+              {t("nav.portal")}
             </Link>
             <LanguageSelector />
             <a

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Plus_Jakarta_Sans, Source_Code_Pro } from "next/fon
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { I18nProvider } from "@/components/I18nProvider";
+import LocalizedMetadata from "@/components/LocalizedMetadata";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -73,6 +74,7 @@ export default function RootLayout({
         className={`${cormorant.variable} ${jakarta.variable} ${sourceCode.variable} antialiased`}
       >
         <I18nProvider>
+          <LocalizedMetadata />
           {children}
         </I18nProvider>
       </body>

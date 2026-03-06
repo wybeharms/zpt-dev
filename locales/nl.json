@@ -5,18 +5,65 @@
     "about": "Over ons",
     "resources": "Cases",
     "product": "Product",
+    "portal": "Portal",
     "cta": "Kennismaken"
+  },
+  "ui": {
+    "menuToggle": "Menu openen of sluiten",
+    "selectLanguage": "Taal selecteren"
+  },
+  "meta": {
+    "default": {
+      "title": "ZPT - AI-agents voor B2B-bedrijven",
+      "description": "ZPT structureert de kennis, workflows en context van een bedrijf in een lokale map. Een AI-agent werkt daarbovenop en voert taken autonoom uit. De output van een volledig team, zonder er een aan te nemen."
+    },
+    "sales": {
+      "title": "ZPT Sales - AI-gedreven salesoperaties",
+      "description": "AI-agents die meerdere stappen autonoom aan elkaar rijgen. Sourcen, onderzoeken, kwalificeren, schrijven en opvolgen. Sluit aan op bestaande tools, zonder migratie."
+    },
+    "about": {
+      "title": "Over ZPT - AI-salesagents",
+      "description": "ZPT gelooft dat de meest effectieve manier om AI-agents te gebruiken is bovenop een lokaal, gestructureerd mappensysteem. Operationeel in drie sectoren."
+    },
+    "advisory": {
+      "title": "ZPT Advisory - Richt uw eigen lokale map in",
+      "description": "Het kernproduct van ZPT is een gestructureerde lokale map die verbinding maakt met AI-coding agents. Niet alleen voor sales: ook marketing, content, operations en meer."
+    },
+    "resources": {
+      "title": "Casestudies - ZPT",
+      "description": "Bekijk hoe ZPT werkt in logistiek, autoleasing en financiele analyse. Echte resultaten van echte bedrijven."
+    },
+    "portal": {
+      "title": "Portal | ZPT",
+      "description": "Klantportal om ZPT-activiteit en output te volgen."
+    }
   },
   "home": {
     "hero": {
       "title": "De output van een volledig team.",
       "subtitle": "Zonder er een aan te nemen.",
       "description": "ZPT spiegelt de kennis, workflows en context van uw bedrijf in een <strong>gestructureerde lokale map</strong>. Met alles op een plek neemt AI het repetitieve werk over waar uw team niet aan zou moeten zitten.",
-      "cta": "Kennismaken"
+      "cta": "Kennismaken",
+      "teamCta": "Ik wil mijn team uitrusten",
+      "salesCta": "Ik wil hulp bij sales"
+    },
+    "practical": {
+      "title": "Wat dit voor u betekent",
+      "intro": "Elke week verschijnen er nieuwe AI-functies en tools. Dat is overweldigend...",
+      "introHighlight": "ZPT maakt dit eenvoudig voor u.",
+      "description": "Wij bouwen een gestructureerde laag rond de AI-tools die uw team al gebruikt, zodat ze nuttiger, consistenter en veel betrouwbaarder worden in het dagelijkse werk. Het is snel, lichtgewicht en wordt met de tijd beter.",
+      "bullets": [
+        "Minimale setup",
+        "Gedeelde bedrijfscontext",
+        "Werkt met uw bestaande tools",
+        "Verbetert na verloop van tijd"
+      ],
+      "followup": "De meeste bedrijven hebben geen nieuwe tool nodig. Ze hebben een betere setup nodig rond de tools die ze al hebben."
     },
     "howItWorks": {
       "title": "Hoe het werkt",
       "intro": "Sinds begin 2026 kunnen AI-modellen volledige mappen lezen, tientallen stappen koppelen en verbinding maken met externe diensten. Volledig autonoom en lokaal.",
+      "agent": "Agent",
       "brain": {
         "title": "Het Brein",
         "description": "Het AI-model leest uw map, begrijpt de bedrijfscontext en bepaalt wat er moet gebeuren."
@@ -29,6 +76,7 @@
         "title": "Uw Map",
         "description": "Alle kennis, workflows en context van uw bedrijf. <strong>Gestructureerd, lokaal en 100% van u.</strong>"
       },
+      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;interface&rdquo;",
       "access": "Uw team benadert de map via Claude Desktop, ChatGPT of een andere compatibele app.",
       "folderCallout": "ZPT biedt een beproefde standaardmap en personaliseert deze voor uw bedrijf."
     },
@@ -115,11 +163,20 @@
   "sales": {
     "hero": {
       "title": "AI-aangedreven salesoperaties. Beheerd voor u.",
-      "description": "ZPT verzamelt uw bedrijfscontext, koppelt aan uw CRM en regelt prospecting, verrijking en outreach. U krijgt de output. Wij draaien het systeem."
+      "audience": "Voor bedrijven met leaddata, CRM-workflows of spreadsheets die een betere manier nodig hebben om die te verrijken, organiseren en benutten.",
+      "description": "ZPT verzamelt uw bedrijfscontext, koppelt aan uw CRM en regelt prospecting, verrijking en outreach. U krijgt de output. Wij draaien het systeem.",
+      "primaryCta": "Plan salesgesprek",
+      "secondaryCta": "Bekijk hoe het werkt",
+      "trialNote": "Start met 100 gratis verrijkte contacten."
+    },
+    "intro": {
+      "title": "Wat ZPT Sales is",
+      "description": "Wij helpen bedrijven die al leads, lijsten of CRM-data hebben maar een duidelijkere en betrouwbaardere manier nodig hebben om ermee te werken. ZPT benut de nieuwste AI- en agenttools, zodat uw salesproces de concurrentie voorblijft.",
+      "note": "Deel een lijst met 100 namen. Wij verrijken die gratis en leveren de resultaten in het formaat van uw voorkeur."
     },
     "funnel": {
       "title": "De salesfunnel",
-      "sources": ["LinkedIn", "Google Maps", "Web", "Vacaturebanken"],
+      "sources": ["LinkedIn", "Google Maps", "Web", "Vacaturebanken", "..."],
       "stages": [
         {
           "title": "Prospects vinden",
@@ -152,6 +209,52 @@
       "description": "Het bedrijf levert content en richtlijnen. ZPT maakt daar gestructureerde, bruikbare informatie van.",
       "note": "Templates zijn volledig aanpasbaar. Elke klant bepaalt eigen velden, scoringscriteria en outputformaat.",
       "advancedHeader": "Verrijkt bedrijfsprofiel",
+      "simpleTable": {
+        "columns": {
+          "company": "Bedrijf",
+          "contact": "Contact",
+          "role": "Rol",
+          "email": "E-mail",
+          "status": "Status"
+        },
+        "rows": [
+          { "company": "Acme Corp", "contact": "Jane Smith", "role": "CRO", "email": "jane@acme.com", "status": "verified" },
+          { "company": "Beta Inc", "contact": "Tom Brown", "role": "VP Sales", "email": "tom@beta.io", "status": "enriched" },
+          { "company": "Gamma SA", "contact": "Lisa Muller", "role": "CEO", "email": "lisa@gamma.de", "status": "verified" },
+          { "company": "Delta Ltd", "contact": "Mark Roberts", "role": "Head of Sales", "email": "mark@delta.co.uk", "status": "pending" },
+          { "company": "Echo GmbH", "contact": "Anna Weber", "role": "CMO", "email": "anna@echo.de", "status": "verified" },
+          { "company": "Foxtrot BV", "contact": "Pieter de Vries", "role": "Managing Director", "email": "pieter@foxtrot.nl", "status": "enriched" },
+          { "company": "Gulf Corp", "contact": "Sarah Johnson", "role": "VP Business Dev", "email": "sarah@gulf.com", "status": "verified" },
+          { "company": "Hotel SA", "contact": "Carlos Ruiz", "role": "CEO", "email": "carlos@hotel.es", "status": "pending" },
+          { "company": "India Tech", "contact": "Priya Sharma", "role": "CTO", "email": "priya@indiatech.in", "status": "enriched" }
+        ]
+      },
+      "statusLabels": {
+        "verified": "Geverifieerd",
+        "enriched": "Verrijkt",
+        "pending": "In afwachting"
+      },
+      "advanced": {
+        "featured": {
+          "company": "Acme Corp",
+          "meta": "SaaS, 50-200 medewerkers, Munchen, Duitsland",
+          "fitLabel": "ICP-fit",
+          "fitScore": "5 / 5",
+          "decisionMakerLabel": "Beslisser",
+          "decisionMakerValue": "Jane Smith, CRO",
+          "painSignalsLabel": "Koopsignalen",
+          "painSignalsValue": "Bezig met SDR-werving, handmatige CRM-updates, laag outreach-volume",
+          "personalizedHookLabel": "Persoonlijke invalshoek",
+          "personalizedHookValue": "\"Ik zag jullie vacature voor een SDR op LinkedIn. ZPT zou die functie voor een fractie van de kosten kunnen invullen...\"",
+          "recommendedChannelLabel": "Aanbevolen kanaal",
+          "recommendedChannelValue": "LinkedIn + e-mailsequence"
+        },
+        "additionalCompanies": [
+          { "company": "Beta Inc", "contact": "Tom Brown, VP Sales", "score": "4 / 5", "signal": "Expansie naar nieuwe markt, geen lokaal team" },
+          { "company": "Gamma SA", "contact": "Lisa Muller, CEO", "score": "4 / 5", "signal": "Recent financieringsronde afgerond, sales wordt opgeschaald" },
+          { "company": "Delta Ltd", "contact": "Mark Roberts, Head of Sales", "score": "3 / 5", "signal": "Verouderd CRM, hoge uitstroom in het salesteam" }
+        ]
+      },
       "tabs": {
         "simple": "Eenvoudig template",
         "advanced": "Geavanceerd template"
@@ -178,6 +281,19 @@
         }
       ],
       "callout": "U krijgt de output. Wij draaien het systeem."
+    },
+    "portal": {
+      "title": "Zichtbaarheid in het portal",
+      "description": "Klanten kunnen activiteit en output volgen via het ZPT-portal."
+    },
+    "idealCustomer": {
+      "title": "Voor wie dit is",
+      "items": [
+        { "icon": "chart", "text": "Bedrijven met salesdata maar inconsistente of handmatige verrijking" },
+        { "icon": "table", "text": "Teams die werken vanuit spreadsheets of een CRM dat opgeschoond moet worden" },
+        { "icon": "building", "text": "Traditionele bedrijven die meer pipeline willen zonder direct te werven" },
+        { "icon": "bolt", "text": "Lean teams die betere output nodig hebben uit hun bestaande salesproces" }
+      ]
     },
     "faq": {
       "title": "FAQ",
@@ -244,6 +360,42 @@
     "tools": {
       "title": "Sluit aan op uw stack",
       "subtitle": "ZPT koppelt aan de tools die uw bedrijf al gebruikt. Geen migratie, geen nieuwe software."
+    },
+    "whatItCanDo": {
+      "title": "Wat het kan doen",
+      "items": [
+        {
+          "title": "Presentaties vanaf nul opbouwen",
+          "description": "Laat Claude een volledige Google Slides-deck maken op basis van uw bedrijfsdocumenten, stijl en eerder klantwerk."
+        },
+        {
+          "title": "Informatie uit meerdere tools halen",
+          "description": "Vind de juiste vergadernotities, vat ze samen en voeg de uitkomst toe aan Notion of een ander systeem dat uw team al gebruikt."
+        },
+        {
+          "title": "Herhaalbare workflows standaardiseren",
+          "description": "Zet terugkerend handmatig werk om in een herhaalbare workflow die uw team echt kan gebruiken zonder alles telkens opnieuw uit te leggen."
+        },
+        {
+          "title": "Betere output maken",
+          "description": "Genereer samenvattingen, concepten, rapporten en updates in een formaat dat past bij hoe uw bedrijf al werkt."
+        },
+        {
+          "title": "Context tussen tools verbinden",
+          "description": "Gebruik informatie uit notities, documenten, spreadsheets en interne kennis op een plek in plaats van verspreide chatgeschiedenissen."
+        },
+        {
+          "title": "Teamleden sneller inwerken",
+          "description": "Geef nieuwe medewerkers vanaf dag een toegang tot dezelfde bedrijfskennis, templates en workflows. Geen meelooptraject of impliciete kennis nodig."
+        }
+      ]
+    },
+    "nativeTools": {
+      "title": "Maar voegen Claude en ChatGPT deze functies niet al toe?",
+      "paragraphs": [
+        "Ja, en precies daarom werkt dit. Tools zoals <strong>Claude</strong> en <strong>ChatGPT</strong> leveren standaard krachtige mogelijkheden: skills, integraties en geheugen. Maar ze zijn generiek. Elk bedrijf krijgt hetzelfde startpunt.",
+        "ZPT neemt diezelfde bouwstenen en structureert ze rond <strong>uw bedrijf</strong>. Uw context, uw workflows, uw standaarden. Het resultaat: uw team haalt meer uit de tools die het al gebruikt, omdat <em class=\"text-gold\">de tools echt weten hoe het bedrijf werkt</em>."
+      ]
     },
     "why": {
       "title": "Waarom deze aanpak",
@@ -392,6 +544,23 @@
       "title": "Vergelijkbare resultaten voor uw bedrijf?",
       "button": "Kennismaken",
       "email": "Of mail naar"
+    }
+  },
+  "portalUi": {
+    "title": "Portal",
+    "customer": "Klant",
+    "onboarding": "Onboarding",
+    "prospects": "Prospects",
+    "competitors": "Concurrenten",
+    "signOut": "Uitloggen",
+    "loadingProspects": "Prospects laden...",
+    "emptyProspects": "Er zijn nog geen verrijkte prospects. De data verschijnt hier zodra de verwerking klaar is.",
+    "table": {
+      "name": "Naam",
+      "company": "Bedrijf",
+      "title": "Functie",
+      "email": "E-mail",
+      "score": "Score"
     }
   },
   "footer": {
