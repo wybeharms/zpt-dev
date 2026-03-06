@@ -13,7 +13,7 @@ const languages: { code: Locale; label: string; flag: string }[] = [
 
 export default function LanguageSelector() {
   const [open, setOpen] = useState(false);
-  const { locale, setLocale } = useI18n();
+  const { locale, setLocale, t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function LanguageSelector() {
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 text-sm text-white/80 transition-colors hover:text-white"
-        aria-label="Select language"
+        aria-label={t("ui.selectLanguage")}
       >
         <span>{current?.flag}</span>
         <span>{current?.label}</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useI18n } from "@/components/I18nProvider";
 
 interface Prospect {
   name?: string;
@@ -15,6 +16,7 @@ interface Prospect {
 export default function ProspectsPage() {
   const [prospects, setProspects] = useState<Prospect[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useI18n();
 
   useEffect(() => {
     fetch("/api/portal/data?type=enrichment")
@@ -27,7 +29,7 @@ export default function ProspectsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <span className="text-sm text-text-muted">Loading prospects...</span>
+        <span className="text-sm text-text-muted">{t("portalUi.loadingProspects")}</span>
       </div>
     );
   }
@@ -36,11 +38,11 @@ export default function ProspectsPage() {
     return (
       <div>
         <h1 className="mb-6 font-heading text-2xl font-semibold text-text-primary">
-          Prospects
+          {t("portalUi.prospects")}
         </h1>
         <div className="rounded-lg border border-border-warm bg-white px-6 py-12 text-center">
           <p className="text-sm text-text-muted">
-            No enriched prospects yet. Data will appear here once processing is complete.
+            {t("portalUi.emptyProspects")}
           </p>
         </div>
       </div>
@@ -50,17 +52,17 @@ export default function ProspectsPage() {
   return (
     <div>
       <h1 className="mb-6 font-heading text-2xl font-semibold text-text-primary">
-        Prospects
+        {t("portalUi.prospects")}
       </h1>
       <div className="overflow-hidden rounded-lg border border-border-warm bg-white">
         <table className="w-full text-left text-sm">
           <thead className="border-b border-border-warm bg-cream">
             <tr>
-              <th className="px-6 py-3 font-medium text-text-muted">Name</th>
-              <th className="px-6 py-3 font-medium text-text-muted">Company</th>
-              <th className="px-6 py-3 font-medium text-text-muted">Title</th>
-              <th className="px-6 py-3 font-medium text-text-muted">Email</th>
-              <th className="px-6 py-3 font-medium text-text-muted">Score</th>
+              <th className="px-6 py-3 font-medium text-text-muted">{t("portalUi.table.name")}</th>
+              <th className="px-6 py-3 font-medium text-text-muted">{t("portalUi.table.company")}</th>
+              <th className="px-6 py-3 font-medium text-text-muted">{t("portalUi.table.title")}</th>
+              <th className="px-6 py-3 font-medium text-text-muted">{t("portalUi.table.email")}</th>
+              <th className="px-6 py-3 font-medium text-text-muted">{t("portalUi.table.score")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border-warm">

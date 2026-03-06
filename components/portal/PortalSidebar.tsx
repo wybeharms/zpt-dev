@@ -2,12 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const navItems = [
-  { href: "/portal/onboarding", label: "Onboarding" },
-  { href: "/portal/prospects", label: "Prospects" },
-  { href: "/portal/competitors", label: "Competitors" },
-];
+import { useI18n } from "../I18nProvider";
 
 export default function PortalSidebar({
   isAdmin,
@@ -21,6 +16,12 @@ export default function PortalSidebar({
   onCustomerChange?: (id: string) => void;
 }) {
   const pathname = usePathname();
+  const { t } = useI18n();
+  const navItems = [
+    { href: "/portal/onboarding", label: t("portalUi.onboarding") },
+    { href: "/portal/prospects", label: t("portalUi.prospects") },
+    { href: "/portal/competitors", label: t("portalUi.competitors") },
+  ];
 
   return (
     <aside className="flex w-64 flex-col bg-navy text-white">
@@ -28,12 +29,12 @@ export default function PortalSidebar({
         <Link href="/" className="font-logo text-lg font-medium tracking-tight">
           ZPT
         </Link>
-        <span className="ml-2 text-xs text-white/40">Portal</span>
+        <span className="ml-2 text-xs text-white/40">{t("portalUi.title")}</span>
       </div>
 
       {isAdmin && customerIds.length > 0 && (
         <div className="px-6 pb-4">
-          <label className="mb-1 block text-xs text-white/40">Customer</label>
+          <label className="mb-1 block text-xs text-white/40">{t("portalUi.customer")}</label>
           <select
             value={currentCustomerId}
             onChange={(e) => onCustomerChange?.(e.target.value)}

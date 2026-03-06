@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { createContext, useContext, useEffect, useCallback, useSyncExternalStore } from "react";
 import { type Locale, getTranslations } from "@/lib/i18n";
 
 type I18nContextType = {
@@ -12,33 +12,51 @@ type I18nContextType = {
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
+function isLocale(value: string | null): value is Locale {
+  return value !== null && ["en", "nl", "es", "it"].includes(value);
+}
+
+function getStoredLocale(): Locale {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const stored = localStorage.getItem("zpt-locale");
+  return isLocale(stored) ? stored : "en";
+}
+
+function subscribe(callback: () => void) {
+  if (typeof window === "undefined") {
+    return () => {};
+  }
+
+  const handleChange = () => callback();
+  window.addEventListener("storage", handleChange);
+  window.addEventListener("zpt-locale-change", handleChange);
+
+  return () => {
+    window.removeEventListener("storage", handleChange);
+    window.removeEventListener("zpt-locale-change", handleChange);
+  };
+}
+
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
-  const [mounted, setMounted] = useState(false);
+  const locale = useSyncExternalStore(subscribe, getStoredLocale, () => "en");
 
   useEffect(() => {
-    const stored = localStorage.getItem("zpt-locale") as Locale | null;
-    if (stored && ["en", "nl", "es", "it"].includes(stored)) {
-      setLocaleState(stored);
-    }
-    setMounted(true);
-  }, []);
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const setLocale = useCallback((newLocale: Locale) => {
-    setLocaleState(newLocale);
     localStorage.setItem("zpt-locale", newLocale);
     document.documentElement.lang = newLocale;
+    window.dispatchEvent(new Event("zpt-locale-change"));
   }, []);
 
   const { t, tArray } = getTranslations(locale);
 
-  // Prevent hydration mismatch by showing English until mounted
-  const { t: tFinal, tArray: tArrayFinal } = mounted
-    ? { t, tArray }
-    : getTranslations("en");
-
   return (
-    <I18nContext.Provider value={{ locale: mounted ? locale : "en", setLocale, t: tFinal, tArray: tArrayFinal }}>
+    <I18nContext.Provider value={{ locale, setLocale, t, tArray }}>
       {children}
     </I18nContext.Provider>
   );

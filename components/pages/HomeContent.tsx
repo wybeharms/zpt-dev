@@ -183,9 +183,10 @@ export default function HomeContent() {
               </div>
 
               {/* Harness label */}
-              <p className="mt-1 text-center text-xs italic text-text-muted">
-                <strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;harness&rdquo;
-              </p>
+              <p
+                className="mt-1 text-center text-xs italic text-text-muted"
+                dangerouslySetInnerHTML={{ __html: t("home.howItWorks.harnessLabel") }}
+              />
             </div>
 
             {/* Connector arrow down */}

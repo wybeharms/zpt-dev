@@ -5,7 +5,38 @@
     "about": "About",
     "resources": "Resources",
     "product": "Product",
+    "portal": "Portal",
     "cta": "Set Up Intro Call"
+  },
+  "ui": {
+    "menuToggle": "Toggle menu",
+    "selectLanguage": "Select language"
+  },
+  "meta": {
+    "default": {
+      "title": "ZPT - AI Agents for B2B Companies",
+      "description": "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously. The output of a full team, without hiring one."
+    },
+    "sales": {
+      "title": "ZPT Sales - AI-Powered Sales Operations",
+      "description": "AI agents that chain multiple steps together autonomously. Source, research, qualify, draft, follow up. Connect existing tools, no migration needed."
+    },
+    "about": {
+      "title": "About ZPT - AI Sales Agents",
+      "description": "ZPT believes the most effective way to use AI agents is by running them on top of a local, structured folder system. Operational across three industries."
+    },
+    "advisory": {
+      "title": "ZPT Advisory - Set Up Your Own Local Folder",
+      "description": "ZPT's core product is a structured local folder that connects to AI coding agents. Not limited to sales: marketing, content, operations, and more."
+    },
+    "resources": {
+      "title": "Case Studies - ZPT",
+      "description": "See how ZPT operates across logistics, automotive leasing, and financial analytics. Real results from real companies."
+    },
+    "portal": {
+      "title": "Portal | ZPT",
+      "description": "Client portal for tracking ZPT activity and output."
+    }
   },
   "home": {
     "hero": {
@@ -45,6 +76,7 @@
         "title": "Your Company Setup",
         "description": "The agent works from your company’s information, workflows, and connected tools."
       },
+      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;harness&rdquo;",
       "access": "Your team accesses it through Claude Desktop, ChatGPT, or any compatible app.",
       "folderCallout": "ZPT provides a battle-tested setup and personalizes it for your company."
     },
@@ -177,6 +209,52 @@
       "description": "You provide content and guidelines. ZPT turns that into structured, actionable intelligence.",
       "note": "Templates are fully customizable. Each client defines their own fields, scoring criteria, and output format.",
       "advancedHeader": "Enriched Company Profile",
+      "simpleTable": {
+        "columns": {
+          "company": "Company",
+          "contact": "Contact",
+          "role": "Role",
+          "email": "Email",
+          "status": "Status"
+        },
+        "rows": [
+          { "company": "Acme Corp", "contact": "Jane Smith", "role": "CRO", "email": "jane@acme.com", "status": "verified" },
+          { "company": "Beta Inc", "contact": "Tom Brown", "role": "VP Sales", "email": "tom@beta.io", "status": "enriched" },
+          { "company": "Gamma SA", "contact": "Lisa Muller", "role": "CEO", "email": "lisa@gamma.de", "status": "verified" },
+          { "company": "Delta Ltd", "contact": "Mark Roberts", "role": "Head of Sales", "email": "mark@delta.co.uk", "status": "pending" },
+          { "company": "Echo GmbH", "contact": "Anna Weber", "role": "CMO", "email": "anna@echo.de", "status": "verified" },
+          { "company": "Foxtrot BV", "contact": "Pieter de Vries", "role": "Managing Director", "email": "pieter@foxtrot.nl", "status": "enriched" },
+          { "company": "Gulf Corp", "contact": "Sarah Johnson", "role": "VP Business Dev", "email": "sarah@gulf.com", "status": "verified" },
+          { "company": "Hotel SA", "contact": "Carlos Ruiz", "role": "CEO", "email": "carlos@hotel.es", "status": "pending" },
+          { "company": "India Tech", "contact": "Priya Sharma", "role": "CTO", "email": "priya@indiatech.in", "status": "enriched" }
+        ]
+      },
+      "statusLabels": {
+        "verified": "Verified",
+        "enriched": "Enriched",
+        "pending": "Pending"
+      },
+      "advanced": {
+        "featured": {
+          "company": "Acme Corp",
+          "meta": "SaaS, 50-200 employees, Munich, Germany",
+          "fitLabel": "ICP-Fit",
+          "fitScore": "5 / 5",
+          "decisionMakerLabel": "Decision maker",
+          "decisionMakerValue": "Jane Smith, CRO",
+          "painSignalsLabel": "Pain signals",
+          "painSignalsValue": "Hiring SDR, manual CRM updates, low outreach volume",
+          "personalizedHookLabel": "Personalized hook",
+          "personalizedHookValue": "\"Saw your SDR job post on LinkedIn. ZPT could cover that function at a fraction of the cost...\"",
+          "recommendedChannelLabel": "Recommended channel",
+          "recommendedChannelValue": "LinkedIn + email sequence"
+        },
+        "additionalCompanies": [
+          { "company": "Beta Inc", "contact": "Tom Brown, VP Sales", "score": "4 / 5", "signal": "Expanding to new market, no local team" },
+          { "company": "Gamma SA", "contact": "Lisa Muller, CEO", "score": "4 / 5", "signal": "Recently closed funding round, scaling sales" },
+          { "company": "Delta Ltd", "contact": "Mark Roberts, Head of Sales", "score": "3 / 5", "signal": "Using outdated CRM, high churn on sales team" }
+        ]
+      },
       "tabs": {
         "simple": "Simple Template",
         "advanced": "Advanced Template"
@@ -465,6 +543,23 @@
       "title": "Want results like these for your business?",
       "button": "Set Up Intro Call",
       "email": "Or email"
+    }
+  },
+  "portalUi": {
+    "title": "Portal",
+    "customer": "Customer",
+    "onboarding": "Onboarding",
+    "prospects": "Prospects",
+    "competitors": "Competitors",
+    "signOut": "Sign out",
+    "loadingProspects": "Loading prospects...",
+    "emptyProspects": "No enriched prospects yet. Data will appear here once processing is complete.",
+    "table": {
+      "name": "Name",
+      "company": "Company",
+      "title": "Title",
+      "email": "Email",
+      "score": "Score"
     }
   },
   "footer": {
