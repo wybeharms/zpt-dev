@@ -42,14 +42,14 @@
     "hero": {
       "title": "The output of a full team.",
       "subtitle": "Without hiring one.",
-      "description": "ZPT turns the AI tools your team already uses from simple chatbots into practical co-workers that can help with real company tasks.",
+      "description": "ZPT turns the AI tools your team already uses into practical co-workers that help with real company tasks.",
       "cta": "Set Up Intro Call",
       "teamCta": "I want to equip my team",
       "salesCta": "I want help with sales"
     },
     "practical": {
       "title": "What this means for you",
-      "intro": "Every week, new AI features and tools are released. It's overwhelming...",
+      "intro": "Every week, new AI concepts land: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">It's overwhelming...</span>",
       "introHighlight": "ZPT simplifies this for you.",
       "description": "We build a structured setup around the AI tools your team already uses, so they become more useful, more consistent, and much easier to rely on in daily work. It's fast, lightweight, and improves over time.",
       "bullets": [
@@ -62,7 +62,7 @@
     },
     "howItWorks": {
       "title": "How it works",
-      "intro": "ZPT sets up the agent and the tools around it, so AI can do real work for your company.",
+      "intro": "There's been a lot of talk about AI agents. But few companies know how to actually implement them. ZPT bridges that gap.",
       "agent": "Agent",
       "brain": {
         "title": "The Brain",
@@ -70,13 +70,13 @@
       },
       "hands": {
         "title": "The Hands",
-        "description": "Tools that execute: read files, update text, search web, connect via MCP."
+        "description": "MCPs, plugins, and sub-agents that execute: read files, search the web, update your CRM."
       },
       "folder": {
         "title": "Your Company Setup",
         "description": "The agent works from your company’s information, workflows, and connected tools."
       },
-      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;harness&rdquo;",
+      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex CLI</strong> / <strong>Gemini CLI</strong> = the &ldquo;harness&rdquo; (<a href=\"https://www.anthropic.com/research/building-effective-agents\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 hover:text-gold\">what is an agent?</a>)",
       "access": "Your team accesses it through Claude Desktop, ChatGPT, or any compatible app.",
       "folderCallout": "ZPT provides a battle-tested setup and personalizes it for your company."
     },
@@ -88,22 +88,22 @@
       "useCases": [
         {
           "title": "Enrich prospects",
-          "description": "The agent checks your CRM, searches Google Maps, cross-references your ideal customer profile, and adds new prospects to HubSpot.",
+          "description": "The agent checks your CRM, searches <strong class=\"text-[#EA4335]\">Google Maps</strong>, cross-references your ideal customer profile, and adds new prospects to <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
           "why": "Claude on the web can search too, but can't access your CRM or know your ideal customer."
         },
         {
-          "title": "Build a Google Slides deck",
-          "description": "Create full Google Slides decks from your terminal or Claude Desktop. ZPT sets up the Google Workspace CLI so the agent builds branded decks on command.",
+          "title": "Build a deck",
+          "description": "Create <strong class=\"text-[#0F9D58]\">Google Slides</strong> or <strong class=\"text-[#D04A02]\">PowerPoint</strong> decks from your terminal or Claude Desktop. The agent uses your company context to produce branded, consistent output.",
           "why": "Same tools, but with your company's positioning, tone, and formatting built in."
         },
         {
           "title": "Monitor competitors",
-          "description": "The agent pulls from LinkedIn, Google Maps, and other sources to track competitor activity on a regular schedule. Results go into a shared file your team can review.",
+          "description": "The agent pulls from <strong class=\"text-[#0A66C2]\">LinkedIn</strong>, <strong class=\"text-[#EA4335]\">Google Maps</strong>, and other sources to track competitor activity on a regular schedule. Results go into a shared file your team can review.",
           "why": "No more ad hoc research scattered across team members' chat histories."
         },
         {
           "title": "Automate busywork",
-          "description": "Copy meeting notes between CRM systems. Update spreadsheets from email data. Define it once, repeat indefinitely.",
+          "description": "Copy meeting notes between CRM systems. Update <strong class=\"text-[#217346]\">Excel</strong> spreadsheets from email data. Define it once, repeat indefinitely.",
           "why": "Workflows that run on their own, not tasks someone remembers to do manually."
         }
       ],
@@ -121,7 +121,24 @@
     },
     "quote": {
       "text": "Every major technology shift creates a massive change management challenge for enterprises.",
-      "attribution": "David Sacks"
+      "attribution": "David Sacks",
+      "headlines": [
+        {
+          "text": "Anthropic's new AI tool sends shudders through software stocks",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/02/04/investing/us-stocks-anthropic-software"
+        },
+        {
+          "text": "Thomson Reuters, RELX stocks crushed after Claude legal plug-in",
+          "source": "Morningstar",
+          "url": "https://www.morningstar.com/stocks/reuters-relx-wolters-stocks-crushed-after-anthropic-debuts-claude-legal-plug-in"
+        },
+        {
+          "text": "After crashing IT stocks, Anthropic launches Claude plug-ins to automate HR and banking",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-02-24/anthropic-links-ai-agent-with-tools-for-investment-banking-hr"
+        }
+      ]
     },
     "products": {
       "title": "Two ways to work with ZPT",

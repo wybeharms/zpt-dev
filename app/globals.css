@@ -26,3 +26,8 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-body), system-ui, sans-serif;
 }
+
+@keyframes glow {
+  0%, 100% { color: var(--color-navy); text-shadow: none; }
+  50% { color: var(--color-gold); text-shadow: 0 0 12px rgba(201, 169, 110, 0.4); }
+}

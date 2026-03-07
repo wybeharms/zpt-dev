@@ -49,7 +49,7 @@
     },
     "practical": {
       "title": "Lo que esto significa para usted",
-      "intro": "Cada semana aparecen nuevas funciones y herramientas de IA. Es abrumador...",
+      "intro": "Cada semana aparecen nuevos conceptos de IA: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">Es abrumador...</span>",
       "introHighlight": "ZPT simplifica esto para usted.",
       "description": "Construimos una estructura alrededor de las herramientas de IA que su equipo ya utiliza, para que sean mas utiles, mas consistentes y mucho mas faciles de usar en el trabajo diario. Es rapido, ligero y mejora con el tiempo.",
       "bullets": [
@@ -62,7 +62,7 @@
     },
     "howItWorks": {
       "title": "Como funciona",
-      "intro": "Desde principios de 2026, los modelos de IA pueden leer carpetas enteras, encadenar decenas de pasos y conectarse a servicios externos. Todo de forma autonoma y local.",
+      "intro": "Se habla mucho de agentes de IA. Pero pocas empresas saben como implementarlos de verdad. ZPT cierra esa brecha.",
       "agent": "Agente",
       "brain": {
         "title": "El Cerebro",
@@ -70,13 +70,13 @@
       },
       "hands": {
         "title": "Las Manos",
-        "description": "Herramientas que ejecutan: leer archivos, actualizar texto, buscar en la web, conectar via MCP."
+        "description": "MCPs, plugins y sub-agentes que ejecutan: leer archivos, buscar en la web, actualizar su CRM."
       },
       "folder": {
         "title": "Tu Carpeta",
         "description": "Todo el conocimiento, workflows y contexto de tu empresa. <strong>Estructurado, local y 100% tuyo.</strong>"
       },
-      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;interfaz&rdquo;",
+      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex CLI</strong> / <strong>Gemini CLI</strong> = la &ldquo;interfaz&rdquo; (<a href=\"https://www.anthropic.com/research/building-effective-agents\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 hover:text-gold\">que es un agente?</a>)",
       "access": "Tu equipo accede a la carpeta a traves de Claude Desktop, ChatGPT o cualquier app compatible.",
       "folderCallout": "ZPT proporciona una carpeta predeterminada probada y la personaliza para tu empresa."
     },
@@ -88,12 +88,12 @@
       "useCases": [
         {
           "title": "Enriquecer prospectos",
-          "description": "El agente revisa tu CRM, busca en Google Maps, cruza con tu perfil de cliente ideal y agrega nuevos prospectos a HubSpot.",
+          "description": "El agente revisa tu CRM, busca en <strong class=\"text-[#EA4335]\">Google Maps</strong>, cruza con tu perfil de cliente ideal y agrega nuevos prospectos a <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
           "why": "Claude en la web tambien puede buscar, pero no puede acceder a tu CRM ni conocer tu cliente ideal."
         },
         {
-          "title": "Crear un deck en Google Slides",
-          "description": "Define tu identidad visual, colores y estructura una vez. El agente los sigue cada vez que crea un deck via API.",
+          "title": "Crear un deck",
+          "description": "Crea decks en <strong class=\"text-[#0F9D58]\">Google Slides</strong> o <strong class=\"text-[#D04A02]\">PowerPoint</strong> desde tu terminal o Claude Desktop. El agente usa el contexto de tu empresa para producir resultados consistentes y con tu marca.",
           "why": "Las mismas herramientas, pero con el posicionamiento, tono y formato de tu empresa."
         },
         {
@@ -103,7 +103,7 @@
         },
         {
           "title": "Automatizar trabajo rutinario",
-          "description": "Copiar notas de reuniones entre CRMs. Actualizar hojas de calculo desde emails. Definelo una vez, repetelo indefinidamente.",
+          "description": "Copiar notas de reuniones entre CRMs. Actualizar hojas de calculo de <strong class=\"text-[#217346]\">Excel</strong> desde emails. Definelo una vez, repetelo indefinidamente.",
           "why": "Flujos de trabajo que corren solos, no tareas que alguien debe recordar hacer manualmente."
         }
       ],
@@ -121,7 +121,24 @@
     },
     "quote": {
       "text": "Cada gran cambio tecnologico genera un enorme desafio de gestion del cambio para las empresas.",
-      "attribution": "David Sacks"
+      "attribution": "David Sacks",
+      "headlines": [
+        {
+          "text": "La nueva herramienta de IA de Anthropic sacude las acciones de software",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/02/04/investing/us-stocks-anthropic-software"
+        },
+        {
+          "text": "Thomson Reuters y RELX se desploman tras el plugin legal de Claude",
+          "source": "Morningstar",
+          "url": "https://www.morningstar.com/stocks/reuters-relx-wolters-stocks-crushed-after-anthropic-debuts-claude-legal-plug-in"
+        },
+        {
+          "text": "Tras hundir acciones IT, Anthropic lanza plugins de Claude para HR y banca",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-02-24/anthropic-links-ai-agent-with-tools-for-investment-banking-hr"
+        }
+      ]
     },
     "products": {
       "title": "Dos productos",
