@@ -26,8 +26,8 @@
       "description": "ZPT cree que la forma mas efectiva de usar agentes de IA es ejecutarlos sobre una carpeta local y estructurada. Operativo en tres industrias."
     },
     "advisory": {
-      "title": "ZPT Advisory - Configure su propia carpeta local",
-      "description": "El producto central de ZPT es una carpeta local estructurada que se conecta con agentes de IA para programacion. No solo para ventas: tambien marketing, contenido, operaciones y mas."
+      "title": "ZPT Advisory - Consultoria de IA para su equipo",
+      "description": "ZPT visita su empresa, comprende los flujos de trabajo, educa a su equipo sobre IA, configura cuentas, conecta integraciones y opcionalmente construye una carpeta empresarial a medida. Sin dependencia de proveedor."
     },
     "resources": {
       "title": "Casos de estudio - ZPT",
@@ -44,14 +44,17 @@
       "subtitle": "Sin contratar uno.",
       "description": "ZPT refleja el conocimiento, los flujos de trabajo y el contexto de tu empresa en una <strong>carpeta local estructurada</strong>. Con todo en un solo lugar, la IA se encarga del trabajo repetitivo que tu equipo no deberia estar haciendo.",
       "cta": "Agendar llamada",
-      "teamCta": "Quiero equipar a mi equipo",
-      "salesCta": "Quiero ayuda con ventas"
+      "teamCtaPrefix": "Advisory:",
+      "teamCtaLabel": "Quiero equipar a mi equipo",
+      "salesCtaPrefix": "Sales:",
+      "salesCtaLabel": "Quiero ayuda con ventas"
     },
     "practical": {
       "title": "Lo que esto significa para usted",
-      "intro": "Cada semana aparecen nuevos conceptos de IA: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">Es abrumador...</span>",
+      "intro": "Cada semana aparecen nuevos conceptos de IA: skills, MCPs, plugins, CLIs.",
+      "introOverwhelming": "Es abrumador",
       "introHighlight": "ZPT simplifica esto para usted.",
-      "description": "Construimos una estructura alrededor de las herramientas de IA que su equipo ya utiliza, para que sean mas utiles, mas consistentes y mucho mas faciles de usar en el trabajo diario. Es rapido, ligero y mejora con el tiempo.",
+      "description": "Configuramos Claude Desktop, lo conectamos a su CRM, creamos skills para sus flujos de trabajo y conectamos los MCPs adecuados para que su equipo tenga co-workers de IA que realmente entienden como funciona la empresa. Rapido de configurar, facil de mantener, y mejora continuamente.",
       "bullets": [
         "Configuracion minima",
         "Contexto compartido de la empresa",
@@ -81,10 +84,10 @@
       "folderCallout": "ZPT proporciona una carpeta predeterminada probada y la personaliza para tu empresa."
     },
     "bottleneck": {
-      "title": "La IA no es el cuello de botella. Tu configuracion si.",
+      "title": "Ejemplos reales de lo que podemos hacer por usted",
       "description": "La mayoria de las empresas ya usan ChatGPT o Claude. Pero cada persona tiene sus propias conversaciones, su propio contexto, su propia forma de hacer prompts. El conocimiento esta disperso y nada esta centralizado.",
       "description2": "ZPT cree que el mejor camino es <strong>seguir usando las herramientas de IA nativas</strong> que tu equipo ya tiene, y hacerlas dramaticamente mas efectivas con una carpeta centralizada con todo el contexto de la empresa, herramientas conectadas y flujos de trabajo repetibles.",
-      "examplesLabel": "Ejemplos reales de lo que la carpeta ZPT puede hacer:",
+      "examplesLabel": "Ejemplos reales de lo que podemos hacer por usted:",
       "useCases": [
         {
           "title": "Enriquecer prospectos",
@@ -378,8 +381,30 @@
       "title": "Se conecta a su stack",
       "subtitle": "ZPT se conecta a las herramientas que su empresa ya utiliza. Sin migracion, sin software nuevo."
     },
+    "services": {
+      "title": "Lo que ofrecemos",
+      "subtitle": "Cada empresa es diferente. Elija lo que necesita. Usted es dueno de todo lo que construimos.",
+      "items": [
+        {
+          "title": "Educar a su equipo",
+          "description": "Presentaciones, demos y Q&A adaptadas a la industria y flujos de trabajo de la empresa."
+        },
+        {
+          "title": "Configurar cuentas y herramientas",
+          "description": "Configurar Claude, ChatGPT, apps de escritorio y dejar a su equipo operativo."
+        },
+        {
+          "title": "Construir la configuracion de la empresa",
+          "description": "Carpeta estructurada con contexto empresarial, flujos de trabajo, plantillas y estandares de calidad."
+        },
+        {
+          "title": "Integrar sus herramientas",
+          "description": "Conectar MCPs e integraciones a herramientas existentes como CRM, drives y mensajeria."
+        }
+      ]
+    },
     "whatItCanDo": {
-      "title": "Lo que puede hacer",
+      "title": "Lo que obtiene su equipo",
       "items": [
         {
           "title": "Crear presentaciones desde cero",
@@ -415,7 +440,7 @@
       ]
     },
     "why": {
-      "title": "Por que esta configuracion",
+      "title": "Lo que usted posee",
       "items": [
         {
           "title": "100% propiedad de la empresa",
@@ -433,13 +458,6 @@
           "title": "Se conecta a lo que ya usa",
           "description": "Claude en sus hojas de calculo. Claude en sus presentaciones. Conecte con Excel, PowerPoint, Google Drive, Slack, HubSpot y mas. Sin migracion necesaria."
         }
-      ]
-    },
-    "concept": {
-      "title": "Cada empresa es diferente",
-      "paragraphs": [
-        "ZPT captura <strong>cultura, roles, procesos y conocimiento institucional</strong> en una carpeta local estructurada. El agente lee esto antes de cada tarea, trabajando como <em>un colega que lleva anos en la empresa</em>.",
-        "La carpeta permanece <strong>completamente local</strong>. Sin dependencia de proveedor. Funciona con Anthropic, OpenAI, modelos open-source y otros. <em>Cambie de proveedor en cualquier momento</em>."
       ]
     },
     "agentVisual": {
@@ -463,9 +481,11 @@
       "note": "Ayudamos a su equipo a configurar todo. Sin conocimientos tecnicos necesarios."
     },
     "folder": {
-      "title": "La estructura de carpetas ZPT",
-      "description": "A continuacion se muestra un ejemplo de una carpeta ZPT predeterminada. Cada implementacion se personaliza, pero esta es la base: organizada, transparente y completamente suya.",
-      "note": "La estructura anterior es un ejemplo. Cada implementacion se personaliza segun el flujo de trabajo, herramientas y procesos reales de la empresa.",
+      "title": "Ejemplo de estructura de carpetas ZPT",
+      "description": "No todos los proyectos incluyen una carpeta. Pero cuando la incluyen, se ve asi.",
+      "expandLabel": "Mostrar estructura de carpetas",
+      "collapseLabel": "Ocultar estructura de carpetas",
+      "note": "La estructura anterior es un ejemplo. Cada implementacion se personaliza segun el flujo de trabajo, herramientas y procesos reales de la empresa. 100% propiedad de la empresa. Ningun dato sale de su red.",
       "folders": [
         { "name": "company-context/", "label": "Contexto", "description": "Que es la empresa: vision general, producto, ICP, posicionamiento" },
         { "name": "account-management/", "label": "CRM", "description": "Datos y perfiles de prospectos, organizados por etapa de pipeline" },
@@ -479,51 +499,36 @@
       ]
     },
     "consulting": {
-      "title": "El equipo SWAT de ZPT llega",
-      "description": "Nos desplegamos en su organizacion, configuramos una carpeta ZPT a medida, la conectamos a sus herramientas existentes, capacitamos al equipo y ofrecemos soporte continuo.",
+      "title": "Como funciona un proyecto de ZPT Advisory",
+      "description": "Visitamos su empresa, entendemos como trabaja el equipo y construimos la configuracion de IA adecuada, desde educacion hasta implementacion completa.",
       "exampleLink": "ejemplo",
       "points": [
-        "Estructura de carpetas personalizada al flujo de trabajo",
-        "Agente configurado con contexto completo (cultura, roles, procesos)",
-        "Conectado a herramientas existentes — Excel, PowerPoint, CRM, drives, mensajeria",
-        "Equipo capacitado para trabajar con el agente como companero",
-        "Soporte continuo y actualizaciones periodicas"
+        "Entender flujos de trabajo, herramientas y estructura del equipo",
+        "Educar al equipo sobre capacidades de IA relevantes",
+        "Configurar cuentas, herramientas y conectar integraciones",
+        "Opcionalmente construir una carpeta empresarial a medida",
+        "Capacitar al equipo para trabajar con IA como companero"
       ],
-      "callout": "Usted es dueno de la carpeta. ZPT la mantiene actualizada con nuevas habilidades y capacidades."
+      "callout": "Todo lo que ZPT construye se queda con la empresa. Sin lock-in, sin dependencias."
     },
     "pricing": {
       "title": "Paquetes Advisory",
-      "subtitle": "Precio a consultar. Cada proyecto comienza entendiendo las necesidades de la empresa.",
+      "subtitle": "Elija lo que se ajuste — precio a consultar.",
       "tiers": [
         {
           "name": "Educate",
-          "description": "Concientizacion de IA para el equipo",
-          "features": [
-            "Presentacion de IA adaptada a la industria",
-            "Demo en vivo de flujos con agentes",
-            "Q&A del equipo + identificacion de casos de uso",
-            "Resumen escrito con proximos pasos"
-          ]
+          "time": "Medio dia",
+          "description": "Su equipo entiende la IA"
         },
         {
-          "name": "Basic Setup",
-          "description": "Un flujo de trabajo, totalmente operativo",
-          "features": [
-            "Carpeta local para un flujo de trabajo",
-            "Agente configurado y conectado",
-            "Capacitacion del equipo para uso diario",
-            "30 dias de soporte"
-          ]
+          "name": "Equip",
+          "time": "1-3 dias",
+          "description": "Su equipo usa IA a diario"
         },
         {
-          "name": "Advanced Setup",
-          "description": "Implementacion completa en la organizacion",
-          "features": [
-            "Multiples flujos de trabajo y departamentos",
-            "Integraciones (CRM, drives, mensajeria)",
-            "Habilidades de agente personalizadas y automatizacion",
-            "Soporte continuo y optimizacion"
-          ]
+          "name": "Embed",
+          "time": "Continuo",
+          "description": "La IA se integra en como trabaja la empresa"
         }
       ],
       "cta": "Contactenos"

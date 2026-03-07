@@ -1,26 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useI18n } from "@/components/I18nProvider";
-import { useEffect, useRef } from "react";
-
-const whyIcons = [
-  // Shield (company-owned)
-  <svg key="shield" className="h-7 w-7 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-  </svg>,
-  // Code bracket (open-source)
-  <svg key="code" className="h-7 w-7 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-  </svg>,
-  // Folder (Claude Code architecture)
-  <svg key="folder" className="h-7 w-7 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-  </svg>,
-  // Plug (connects to tools)
-  <svg key="plug" className="h-7 w-7 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-  </svg>,
-];
+import { useEffect, useRef, useState } from "react";
 
 const advisoryToolLogos: { name: string; file: string }[] = [
   { name: "HubSpot", file: "/logos/hubspot.png" },
@@ -48,18 +30,30 @@ export default function AdvisoryContent() {
     title: string;
     description: string;
   }[];
-  const whyItems = tArray("advisory.why.items") as {
-    title: string;
-    description: string;
-  }[];
   const folders = tArray("advisory.folder.folders") as {
     name: string;
     label: string;
     description: string;
   }[];
+  const servicesItems = tArray("advisory.services.items") as {
+    title: string;
+    description: string;
+  }[];
   const consultingPoints = tArray("advisory.consulting.points") as string[];
-  const conceptParagraphs = tArray("advisory.concept.paragraphs") as string[];
   const nativeToolsParagraphs = tArray("advisory.nativeTools.paragraphs") as string[];
+
+  // Collapsible folder structure
+  const [folderOpen, setFolderOpen] = useState(false);
+  useEffect(() => {
+    if (window.location.hash === "#folder-structure") {
+      setFolderOpen(true);
+    }
+    const onHashChange = () => {
+      if (window.location.hash === "#folder-structure") setFolderOpen(true);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   // Scroll animation — direct DOM manipulation via refs (bypasses React render cycle)
   const helicopterSectionRef = useRef<HTMLDivElement>(null);
@@ -338,7 +332,7 @@ export default function AdvisoryContent() {
                     <span className="mt-0.5 flex-shrink-0 text-gold">+</span>
                     <span>
                       {point as string}
-                      {i === 0 && (
+                      {i === 3 && (
                         <>
                           {" ("}
                           <a href="#folder-structure" className="text-navy underline underline-offset-2 transition-colors hover:text-gold">
@@ -357,6 +351,70 @@ export default function AdvisoryContent() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What we offer — services overview */}
+      <section className="bg-cream px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.services.title")}
+          </h2>
+          <p className="mt-3 text-center text-text-muted">
+            {t("advisory.services.subtitle")}
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {servicesItems.map((item, i) => {
+              const icons = [
+                // Educate — agentic workflows screenshot
+                <Image key="educate" src="/screenshots/agentic workflows.png" alt="Agentic workflows presentation" width={200} height={120} className="h-16 w-auto rounded object-cover" />,
+                // Claude logo
+                <Image key="claude" src="/logos/claude.png" alt="Claude" width={40} height={40} className="h-10 w-10 object-contain" />,
+                // Folder
+                <svg key="folder" className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                </svg>,
+                // Plug/link
+                <svg key="plug" className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                </svg>,
+              ];
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-lg border border-border-warm bg-white p-5 transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
+                >
+                  <div className="mb-3">{icons[i]}</div>
+                  <h3 className="text-base font-semibold text-navy">{item.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-text-muted">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What your team gets — concrete examples */}
+      <section className="bg-off-white px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.whatItCanDo.title")}
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {whatItCanDoItems.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-lg border border-border-warm bg-white p-6 transition-all duration-200 hover:scale-[1.03] hover:shadow-md"
+              >
+                <h3 className="text-base font-semibold text-navy">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -434,57 +492,17 @@ export default function AdvisoryContent() {
         </div>
       </section>
 
-      {/* What it can do */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("advisory.whatItCanDo.title")}
-          </h2>
-          <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
-            {whatItCanDoItems.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-lg border border-border-warm bg-white p-7 transition-all duration-200 hover:scale-[1.03] hover:shadow-md"
-              >
-                <h3 className="text-base font-semibold text-navy">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Native AI tools disclaimer */}
-      <section className="bg-cream px-6 py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("advisory.nativeTools.title")}
-          </h2>
-          <div className="mt-6 space-y-4">
-            {nativeToolsParagraphs.map((p, i) => (
-              <p key={i} className="text-sm leading-relaxed text-text-muted" dangerouslySetInnerHTML={{ __html: p }} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Every company is different */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-20">
             <div className="flex-1">
               <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-                {t("advisory.concept.title")}
+                {t("advisory.nativeTools.title")}
               </h2>
               <div className="mt-6 space-y-4">
-                {conceptParagraphs.map((p, i) => (
-                  <p
-                    key={i}
-                    className="text-sm leading-relaxed text-text-muted"
-                    dangerouslySetInnerHTML={{ __html: p }}
-                  />
+                {nativeToolsParagraphs.map((p, i) => (
+                  <p key={i} className="text-sm leading-relaxed text-text-muted" dangerouslySetInnerHTML={{ __html: p }} />
                 ))}
               </div>
             </div>
@@ -532,30 +550,7 @@ export default function AdvisoryContent() {
         </div>
       </section>
 
-      {/* Why this setup */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("advisory.why.title")}
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {whyItems.map((item, i) => (
-              <div
-                key={i}
-                className="rounded-lg border border-border-warm bg-white p-6 transition-all duration-200 hover:scale-[1.03] hover:shadow-md"
-              >
-                <div className="mb-3">{whyIcons[i]}</div>
-                <h3 className="text-lg font-semibold text-navy">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Folder structure */}
+      {/* Folder structure — collapsible */}
       <section id="folder-structure" className="scroll-mt-8 bg-navy px-6 py-14 text-white lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
@@ -566,33 +561,56 @@ export default function AdvisoryContent() {
               {t("advisory.folder.description")}
             </p>
           </div>
-          <div className="mt-8 rounded-lg border border-white/10 bg-navy-light p-5 font-logo text-sm">
-            <div className="text-gold">example-zpt/</div>
-            {folders.map((folder, i) => {
-              const isLast = i === folders.length - 1;
-              const prefix = isLast ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ";
-              return (
-                <div key={i} className="mt-1 flex gap-4 pl-2">
-                  <span className="flex-shrink-0 whitespace-pre text-white/40">{prefix}</span>
-                  <span className="flex-shrink-0 text-white/80">{folder.name}</span>
-                  <span className="inline text-white/30">
-                    <span className="text-gold/60">{folder.label}</span>
-                    {" — "}
-                    {folder.description}
-                  </span>
-                </div>
-              );
-            })}
+          <button
+            onClick={() => setFolderOpen((o) => !o)}
+            className="mt-6 flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-light"
+          >
+            <svg
+              className={`h-4 w-4 transition-transform duration-200 ${folderOpen ? "rotate-90" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            {folderOpen ? t("advisory.folder.collapseLabel") : t("advisory.folder.expandLabel")}
+          </button>
+          <div
+            className={`grid transition-all duration-300 ease-in-out ${
+              folderOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              <div className="mt-4 rounded-lg border border-white/10 bg-navy-light p-5 font-logo text-sm">
+                <div className="text-gold">example-zpt/</div>
+                {folders.map((folder, i) => {
+                  const isLast = i === folders.length - 1;
+                  const prefix = isLast ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ";
+                  return (
+                    <div key={i} className="mt-1 flex gap-4 pl-2">
+                      <span className="flex-shrink-0 whitespace-pre text-white/40">{prefix}</span>
+                      <span className="flex-shrink-0 text-white/80">{folder.name}</span>
+                      <span className="inline text-white/30">
+                        <span className="text-gold/60">{folder.label}</span>
+                        {" — "}
+                        {folder.description}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="mt-4 text-xs leading-relaxed text-white/40">
+                {t("advisory.folder.note")}
+              </p>
+            </div>
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-white/40">
-            {t("advisory.folder.note")}
-          </p>
         </div>
       </section>
 
       {/* Pricing tiers */}
       <section className="bg-cream px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.pricing.title")}
           </h2>
@@ -600,30 +618,23 @@ export default function AdvisoryContent() {
             {t("advisory.pricing.subtitle")}
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {(tArray("advisory.pricing.tiers") as { name: string; description: string; features: string[] }[]).map((tier, i) => {
+            {(tArray("advisory.pricing.tiers") as { name: string; time: string; description: string }[]).map((tier, i) => {
               const isHighlight = i === 1;
               return (
                 <div
                   key={tier.name}
-                  className={`flex flex-col rounded-lg p-7 ${
+                  className={`flex flex-col items-center rounded-lg p-7 text-center ${
                     isHighlight
                       ? "border-2 border-gold bg-navy-light"
                       : "border border-navy/20 bg-navy-light"
                   }`}
                 >
                   <h3 className="text-2xl font-semibold text-white">{tier.name}</h3>
-                  <p className="mt-1 text-sm text-white/50">{tier.description}</p>
-                  <ul className="mt-5 flex-1 space-y-2">
-                    {tier.features.map((feature: string) => (
-                      <li key={feature} className="text-sm leading-relaxed text-white/70">
-                        <span className="mr-2 text-gold">+</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mt-2 text-sm font-medium text-gold">{tier.time}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-white/60">{tier.description}</p>
                   <a
                     href="mailto:request@zpteam.ai?subject=Advisory inquiry"
-                    className={`mt-6 block rounded py-2.5 text-center text-sm font-medium transition-colors ${
+                    className={`mt-6 block w-full rounded py-2.5 text-center text-sm font-medium transition-colors ${
                       isHighlight
                         ? "bg-gold text-navy hover:bg-gold-light"
                         : "border border-white/30 text-white hover:bg-white/10"

@@ -26,8 +26,8 @@
       "description": "ZPT crede che il modo piu efficace di usare agenti AI sia eseguirli sopra un sistema di cartelle locale e strutturato. Operativo in tre settori."
     },
     "advisory": {
-      "title": "ZPT Advisory - Configura la tua cartella locale",
-      "description": "Il prodotto principale di ZPT e una cartella locale strutturata che si collega agli agenti AI di coding. Non solo vendite: anche marketing, contenuti, operations e altro."
+      "title": "ZPT Advisory - Consulenza AI per il tuo team",
+      "description": "ZPT visita la tua azienda, comprende i workflow, forma il team sull'AI, configura gli account, collega le integrazioni e opzionalmente costruisce una cartella aziendale su misura. Nessun vendor lock-in."
     },
     "resources": {
       "title": "Case study - ZPT",
@@ -44,14 +44,17 @@
       "subtitle": "Senza assumerne uno.",
       "description": "ZPT rispecchia le conoscenze, i workflow e il contesto della tua azienda in una <strong>cartella locale strutturata</strong>. Con tutto in un unico posto, l'AI gestisce il lavoro ripetitivo che il tuo team non dovrebbe fare.",
       "cta": "Prenota una chiamata",
-      "teamCta": "Voglio attrezzare il mio team",
-      "salesCta": "Voglio supporto per le vendite"
+      "teamCtaPrefix": "Advisory:",
+      "teamCtaLabel": "Voglio attrezzare il mio team",
+      "salesCtaPrefix": "Sales:",
+      "salesCtaLabel": "Voglio supporto per le vendite"
     },
     "practical": {
       "title": "Cosa significa per te",
-      "intro": "Ogni settimana emergono nuovi concetti AI: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">E' travolgente...</span>",
+      "intro": "Ogni settimana emergono nuovi concetti AI: skills, MCPs, plugins, CLIs.",
+      "introOverwhelming": "E' travolgente",
       "introHighlight": "ZPT semplifica tutto questo per te.",
-      "description": "Costruiamo una struttura attorno agli strumenti AI che il tuo team gia usa, cosi diventano piu utili, piu coerenti e molto piu facili da usare nel lavoro quotidiano. E' veloce, leggera e migliora nel tempo.",
+      "description": "Configuriamo Claude Desktop, lo colleghiamo al tuo CRM, creiamo skill per i tuoi workflow e colleghiamo gli MCP giusti cosi il tuo team ottiene co-worker AI che sanno davvero come funziona l'azienda. Veloce da configurare, facile da mantenere, e migliora continuamente.",
       "bullets": [
         "Setup minimo",
         "Contesto aziendale condiviso",
@@ -81,10 +84,10 @@
       "folderCallout": "ZPT fornisce una cartella predefinita collaudata e la personalizza per la tua azienda."
     },
     "bottleneck": {
-      "title": "L'IA non e il collo di bottiglia. La tua configurazione si.",
+      "title": "Esempi reali di cosa possiamo fare per te",
       "description": "La maggior parte delle aziende usa gia ChatGPT o Claude. Ma ognuno ha le proprie conversazioni, il proprio contesto, il proprio modo di fare prompt. Le conoscenze sono sparse e niente e centralizzato.",
       "description2": "ZPT crede che la strada migliore sia <strong>continuare a usare gli strumenti AI nativi</strong> che il tuo team ha gia, e renderli drasticamente piu efficaci con una cartella centralizzata con tutto il contesto aziendale, strumenti connessi e workflow ripetibili.",
-      "examplesLabel": "Esempi reali di cosa puo fare la cartella ZPT:",
+      "examplesLabel": "Esempi reali di cosa possiamo fare per te:",
       "useCases": [
         {
           "title": "Arricchire prospect",
@@ -378,8 +381,30 @@
       "title": "Si collega al tuo stack",
       "subtitle": "ZPT si collega agli strumenti che la tua azienda gia utilizza. Nessuna migrazione, nessun nuovo software."
     },
+    "services": {
+      "title": "Cosa offriamo",
+      "subtitle": "Ogni azienda e diversa. Scegli cio di cui hai bisogno. Sei proprietario di tutto cio che costruiamo.",
+      "items": [
+        {
+          "title": "Formare il tuo team",
+          "description": "Presentazioni, demo e Q&A su misura per il settore e i workflow dell'azienda."
+        },
+        {
+          "title": "Configurare account e strumenti",
+          "description": "Configurare Claude, ChatGPT, app desktop e rendere operativo il tuo team."
+        },
+        {
+          "title": "Costruire il setup aziendale",
+          "description": "Cartella strutturata con contesto aziendale, workflow, template e standard di qualita."
+        },
+        {
+          "title": "Integrare i tuoi strumenti",
+          "description": "Collegare MCP e integrazioni agli strumenti esistenti come CRM, drive e messaggistica."
+        }
+      ]
+    },
     "whatItCanDo": {
-      "title": "Cosa puo fare",
+      "title": "Cosa ottiene il tuo team",
       "items": [
         {
           "title": "Creare presentazioni da zero",
@@ -415,7 +440,7 @@
       ]
     },
     "why": {
-      "title": "Perche questa configurazione",
+      "title": "Cosa possiedi",
       "items": [
         {
           "title": "100% di proprieta dell'azienda",
@@ -433,13 +458,6 @@
           "title": "Si collega a cio che gia usi",
           "description": "Claude nei tuoi fogli di calcolo. Claude nelle tue presentazioni. Collega Excel, PowerPoint, Google Drive, Slack, HubSpot e altro. Nessuna migrazione necessaria."
         }
-      ]
-    },
-    "concept": {
-      "title": "Ogni azienda e diversa",
-      "paragraphs": [
-        "ZPT cattura <strong>cultura, ruoli, processi e conoscenza istituzionale</strong> in una cartella locale strutturata. L'agente legge tutto prima di ogni attivita, lavorando come <em>un collega che e in azienda da anni</em>.",
-        "La cartella resta <strong>completamente locale</strong>. Nessun vendor lock-in. Funziona con Anthropic, OpenAI, modelli open-source e altri. <em>Cambia fornitore in qualsiasi momento</em>."
       ]
     },
     "agentVisual": {
@@ -463,9 +481,11 @@
       "note": "Aiutiamo il team a configurare tutto. Nessuna conoscenza tecnica necessaria."
     },
     "folder": {
-      "title": "La struttura di cartelle ZPT",
-      "description": "Di seguito un esempio di cartella ZPT predefinita. Ogni implementazione viene personalizzata, ma questa e la base: organizzata, trasparente e completamente tua.",
-      "note": "La struttura sopra e un esempio. Ogni implementazione viene personalizzata in base al workflow, agli strumenti e ai processi reali dell'azienda.",
+      "title": "Esempio di struttura cartelle ZPT",
+      "description": "Non tutti i progetti includono una cartella. Ma quando la includono, ha questo aspetto.",
+      "expandLabel": "Mostra struttura cartelle",
+      "collapseLabel": "Nascondi struttura cartelle",
+      "note": "La struttura sopra e un esempio. Ogni implementazione viene personalizzata in base al workflow, agli strumenti e ai processi reali dell'azienda. 100% di proprieta dell'azienda. Nessun dato esce dalla tua rete.",
       "folders": [
         { "name": "company-context/", "label": "Contesto", "description": "Cos'e l'azienda: panoramica, prodotto, ICP, posizionamento" },
         { "name": "account-management/", "label": "CRM", "description": "Dati e profili prospect, organizzati per fase della pipeline" },
@@ -479,51 +499,36 @@
       ]
     },
     "consulting": {
-      "title": "Il team SWAT di ZPT arriva",
-      "description": "Ci inseriamo nella tua organizzazione, configuriamo una cartella ZPT su misura, la colleghiamo ai tuoi strumenti esistenti, formiamo il team e offriamo supporto continuo.",
+      "title": "Come funziona un progetto ZPT Advisory",
+      "description": "Visitiamo la tua azienda, comprendiamo come lavora il team e costruiamo il setup AI giusto, dalla formazione all'implementazione completa.",
       "exampleLink": "esempio",
       "points": [
-        "Struttura di cartelle personalizzata per il workflow aziendale",
-        "Agente configurato con contesto aziendale completo (cultura, ruoli, processi)",
-        "Collegato agli strumenti esistenti — Excel, PowerPoint, CRM, drive, messaggistica",
-        "Team formato per lavorare con l'agente come un collega",
-        "Supporto continuo e aggiornamenti periodici"
+        "Comprendere workflow, strumenti e struttura del team",
+        "Formare il team sulle capacita AI rilevanti",
+        "Configurare account, strumenti e collegare integrazioni",
+        "Opzionalmente costruire una cartella aziendale su misura",
+        "Formare il team a lavorare con l'AI come un collega"
       ],
-      "callout": "Tu possiedi la cartella. ZPT la mantiene aggiornata con nuove competenze e capacita."
+      "callout": "Tutto cio che ZPT costruisce resta all'azienda. Nessun lock-in, nessuna dipendenza."
     },
     "pricing": {
       "title": "Pacchetti Advisory",
-      "subtitle": "Prezzo su richiesta. Ogni progetto inizia comprendendo le esigenze dell'azienda.",
+      "subtitle": "Scegli cio che fa per te — prezzo su richiesta.",
       "tiers": [
         {
           "name": "Educate",
-          "description": "Consapevolezza AI per il team",
-          "features": [
-            "Presentazione AI adattata al settore",
-            "Demo dal vivo di workflow con agenti",
-            "Q&A del team + identificazione casi d'uso",
-            "Riepilogo scritto con prossimi passi"
-          ]
+          "time": "Mezza giornata",
+          "description": "Il tuo team capisce l'AI"
         },
         {
-          "name": "Basic Setup",
-          "description": "Un workflow, completamente operativo",
-          "features": [
-            "Cartella locale per un workflow",
-            "Agente configurato e collegato",
-            "Formazione del team per l'uso quotidiano",
-            "30 giorni di supporto"
-          ]
+          "name": "Equip",
+          "time": "1-3 giorni",
+          "description": "Il tuo team usa l'AI ogni giorno"
         },
         {
-          "name": "Advanced Setup",
-          "description": "Implementazione completa nell'organizzazione",
-          "features": [
-            "Workflow e dipartimenti multipli",
-            "Integrazioni (CRM, drive, messaggistica)",
-            "Competenze agente personalizzate e automazione",
-            "Supporto continuo e ottimizzazione"
-          ]
+          "name": "Embed",
+          "time": "Continuativo",
+          "description": "L'AI diventa parte di come lavora l'azienda"
         }
       ],
       "cta": "Contattaci"
