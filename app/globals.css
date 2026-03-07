@@ -31,3 +31,8 @@ body {
   0%, 100% { color: var(--color-navy); text-shadow: none; }
   50% { color: var(--color-gold); text-shadow: 0 0 12px rgba(201, 169, 110, 0.4); }
 }
+
+@keyframes breathe {
+  0%, 100% { font-size: 1em; }
+  50% { font-size: 1.15em; }
+}

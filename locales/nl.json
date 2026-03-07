@@ -26,8 +26,8 @@
       "description": "ZPT gelooft dat de meest effectieve manier om AI-agents te gebruiken is bovenop een lokaal, gestructureerd mappensysteem. Operationeel in drie sectoren."
     },
     "advisory": {
-      "title": "ZPT Advisory - Richt uw eigen lokale map in",
-      "description": "Het kernproduct van ZPT is een gestructureerde lokale map die verbinding maakt met AI-coding agents. Niet alleen voor sales: ook marketing, content, operations en meer."
+      "title": "ZPT Advisory - AI-advies voor uw team",
+      "description": "ZPT komt langs bij uw bedrijf, begrijpt workflows, leert uw team over AI, richt accounts in, verbindt integraties en bouwt optioneel een bedrijfsmap op maat. Geen vendor lock-in."
     },
     "resources": {
       "title": "Casestudies - ZPT",
@@ -44,14 +44,17 @@
       "subtitle": "Zonder er een aan te nemen.",
       "description": "ZPT spiegelt de kennis, workflows en context van uw bedrijf in een <strong>gestructureerde lokale map</strong>. Met alles op een plek neemt AI het repetitieve werk over waar uw team niet aan zou moeten zitten.",
       "cta": "Kennismaken",
-      "teamCta": "Ik wil mijn team uitrusten",
-      "salesCta": "Ik wil hulp bij sales"
+      "teamCtaPrefix": "Advisory:",
+      "teamCtaLabel": "Ik wil mijn team uitrusten",
+      "salesCtaPrefix": "Sales:",
+      "salesCtaLabel": "Ik wil hulp bij sales"
     },
     "practical": {
       "title": "Wat dit voor u betekent",
-      "intro": "Elke week duiken er nieuwe AI-concepten op: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">Dat is overweldigend...</span>",
+      "intro": "Elke week duiken er nieuwe AI-concepten op: skills, MCPs, plugins, CLIs.",
+      "introOverwhelming": "Dat is overweldigend",
       "introHighlight": "ZPT maakt dit eenvoudig voor u.",
-      "description": "Wij bouwen een gestructureerde laag rond de AI-tools die uw team al gebruikt, zodat ze nuttiger, consistenter en veel betrouwbaarder worden in het dagelijkse werk. Het is snel, lichtgewicht en wordt met de tijd beter.",
+      "description": "Wij richten Claude Desktop in, koppelen het aan uw CRM, maken skills voor uw workflows en verbinden de juiste MCPs zodat uw team AI-collega's krijgt die echt weten hoe het bedrijf werkt. Snel opgezet, makkelijk te onderhouden, en het wordt steeds beter.",
       "bullets": [
         "Minimale setup",
         "Gedeelde bedrijfscontext",
@@ -81,10 +84,10 @@
       "folderCallout": "ZPT biedt een beproefde standaardmap en personaliseert deze voor uw bedrijf."
     },
     "bottleneck": {
-      "title": "AI is niet het knelpunt. Uw opzet wel.",
+      "title": "Praktijkvoorbeelden van wat wij voor u kunnen doen",
       "description": "De meeste bedrijven gebruiken al ChatGPT of Claude. Maar iedereen heeft eigen gesprekken, eigen context, een eigen manier van prompten. Kennis is verspreid en niets is gecentraliseerd.",
       "description2": "ZPT gelooft dat de beste weg vooruit is om <strong>de native AI-tools te blijven gebruiken</strong> die uw team al heeft, en ze drastisch effectiever te maken met een gecentraliseerde map met de volledige bedrijfscontext, gekoppelde tools en herhaalbare workflows.",
-      "examplesLabel": "Praktijkvoorbeelden van wat de ZPT-map kan:",
+      "examplesLabel": "Praktijkvoorbeelden van wat wij voor u kunnen doen:",
       "useCases": [
         {
           "title": "Prospects verrijken",
@@ -378,8 +381,30 @@
       "title": "Sluit aan op uw stack",
       "subtitle": "ZPT koppelt aan de tools die uw bedrijf al gebruikt. Geen migratie, geen nieuwe software."
     },
+    "services": {
+      "title": "Wat wij bieden",
+      "subtitle": "Elk bedrijf is anders. Kies wat u nodig heeft. U bent eigenaar van alles wat wij bouwen.",
+      "items": [
+        {
+          "title": "Uw team opleiden",
+          "description": "Presentaties, demo's en Q&A afgestemd op de branche en workflows van het bedrijf."
+        },
+        {
+          "title": "Accounts en tools inrichten",
+          "description": "Claude, ChatGPT en desktop-apps configureren en uw team operationeel maken."
+        },
+        {
+          "title": "De bedrijfsmap bouwen",
+          "description": "Gestructureerde map met bedrijfscontext, workflows, templates en kwaliteitsstandaarden."
+        },
+        {
+          "title": "Uw tools integreren",
+          "description": "MCPs en integraties koppelen aan bestaande tools zoals CRM, drives en messaging."
+        }
+      ]
+    },
     "whatItCanDo": {
-      "title": "Wat het kan doen",
+      "title": "Wat uw team krijgt",
       "items": [
         {
           "title": "Presentaties vanaf nul opbouwen",
@@ -415,7 +440,7 @@
       ]
     },
     "why": {
-      "title": "Waarom deze aanpak",
+      "title": "Wat u bezit",
       "items": [
         {
           "title": "100% eigendom van het bedrijf",
@@ -433,13 +458,6 @@
           "title": "Sluit aan op wat u al gebruikt",
           "description": "Claude in uw spreadsheets. Claude in uw presentaties. Verbind met Excel, PowerPoint, Google Drive, Slack, HubSpot en meer. Geen migratie nodig."
         }
-      ]
-    },
-    "concept": {
-      "title": "Elk bedrijf is anders",
-      "paragraphs": [
-        "ZPT legt <strong>cultuur, rollen, processen en institutionele kennis</strong> vast in een gestructureerde lokale map. De agent leest dit voor elke taak en werkt als <em>een collega die al jaren bij het bedrijf werkt</em>.",
-        "De map blijft <strong>volledig lokaal</strong>. Geen vendor lock-in. Werkt met Anthropic, OpenAI, open-source modellen en anderen. <em>Wissel van provider op elk moment</em>."
       ]
     },
     "agentVisual": {
@@ -463,9 +481,11 @@
       "note": "Wij helpen uw team met de installatie. Geen technische kennis nodig."
     },
     "folder": {
-      "title": "De ZPT-mapstructuur",
-      "description": "Hieronder staat een voorbeeld van een standaard ZPT-map. Elke implementatie wordt aangepast, maar dit is de basis: georganiseerd, transparant en volledig van u.",
-      "note": "De structuur hierboven is een voorbeeld. Elke implementatie wordt aangepast aan de daadwerkelijke workflow, tools en processen van het bedrijf.",
+      "title": "Voorbeeld ZPT-mapstructuur",
+      "description": "Niet elk traject bevat een map. Maar als dat wel zo is, ziet het er zo uit.",
+      "expandLabel": "Mapstructuur tonen",
+      "collapseLabel": "Mapstructuur verbergen",
+      "note": "De structuur hierboven is een voorbeeld. Elke implementatie wordt aangepast aan de daadwerkelijke workflow, tools en processen van het bedrijf. 100% eigendom van het bedrijf. Geen data verlaat uw netwerk.",
       "folders": [
         { "name": "company-context/", "label": "Context", "description": "Wat het bedrijf is: overzicht, product, ICP, positionering" },
         { "name": "account-management/", "label": "CRM", "description": "Prospectdata en profielen, georganiseerd per pipelinefase" },
@@ -479,51 +499,36 @@
       ]
     },
     "consulting": {
-      "title": "Het ZPT SWAT-team komt langs",
-      "description": "Wij komen bij u langs, zetten een op maat gemaakte ZPT-map op, koppelen deze aan uw bestaande tools, trainen het team en bieden doorlopende ondersteuning.",
+      "title": "Hoe een ZPT Advisory-traject werkt",
+      "description": "Wij komen langs bij uw bedrijf, begrijpen hoe het team werkt en bouwen de juiste AI-setup, van educatie tot volledige implementatie.",
       "exampleLink": "voorbeeld",
       "points": [
-        "Aangepaste mapstructuur op maat van de workflow van het bedrijf",
-        "Agent geconfigureerd met volledige bedrijfscontext (cultuur, rollen, processen)",
-        "Gekoppeld aan bestaande tools — Excel, PowerPoint, CRM, drives, messaging",
-        "Team getraind om met de agent te werken als collega",
-        "Doorlopende ondersteuning en periodieke updates"
+        "Workflows, tools en teamstructuur begrijpen",
+        "Het team opleiden over relevante AI-mogelijkheden",
+        "Accounts inrichten, tools configureren, integraties verbinden",
+        "Optioneel een bedrijfsmap op maat bouwen",
+        "Het team trainen om met AI als collega te werken"
       ],
-      "callout": "U bent eigenaar van de map. ZPT houdt deze up-to-date met nieuwe vaardigheden en mogelijkheden."
+      "callout": "Alles wat ZPT bouwt, blijft bij het bedrijf. Geen lock-in, geen afhankelijkheden."
     },
     "pricing": {
       "title": "Advisory pakketten",
-      "subtitle": "Prijs op aanvraag. Elk traject begint met het begrijpen van de behoeften van het bedrijf.",
+      "subtitle": "Kies wat past — prijs op aanvraag.",
       "tiers": [
         {
           "name": "Educate",
-          "description": "AI-bewustwording voor het team",
-          "features": [
-            "Branchegerichte AI-presentatie",
-            "Live demo van agentic workflows",
-            "Team Q&A + identificatie van use cases",
-            "Samenvatting met vervolgstappen"
-          ]
+          "time": "Halve dag",
+          "description": "Uw team begrijpt AI"
         },
         {
-          "name": "Basic Setup",
-          "description": "Een workflow, volledig operationeel",
-          "features": [
-            "Lokale map voor een workflow",
-            "Agent geconfigureerd en verbonden",
-            "Teamtraining voor dagelijks gebruik",
-            "30 dagen ondersteuning"
-          ]
+          "name": "Equip",
+          "time": "1-3 dagen",
+          "description": "Uw team gebruikt AI dagelijks"
         },
         {
-          "name": "Advanced Setup",
-          "description": "Volledige uitrol door de organisatie",
-          "features": [
-            "Meerdere workflows en afdelingen",
-            "Toolintegraties (CRM, drives, messaging)",
-            "Aangepaste agentvaardigheden en automatisering",
-            "Doorlopende ondersteuning en optimalisatie"
-          ]
+          "name": "Embed",
+          "time": "Doorlopend",
+          "description": "AI wordt onderdeel van hoe het bedrijf werkt"
         }
       ],
       "cta": "Neem contact op"

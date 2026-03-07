@@ -26,8 +26,8 @@
       "description": "ZPT believes the most effective way to use AI agents is by running them on top of a local, structured folder system. Operational across three industries."
     },
     "advisory": {
-      "title": "ZPT Advisory - Set Up Your Own Local Folder",
-      "description": "ZPT's core product is a structured local folder that connects to AI coding agents. Not limited to sales: marketing, content, operations, and more."
+      "title": "ZPT Advisory - AI Consulting for Your Team",
+      "description": "ZPT visits your company, understands workflows, educates your team on AI, sets up accounts, connects integrations, and optionally builds a tailored company folder. No vendor lock-in."
     },
     "resources": {
       "title": "Case Studies - ZPT",
@@ -44,14 +44,17 @@
       "subtitle": "Without hiring one.",
       "description": "ZPT turns the AI tools your team already uses into practical co-workers that help with real company tasks.",
       "cta": "Set Up Intro Call",
-      "teamCta": "I want to equip my team",
-      "salesCta": "I want help with sales"
+      "teamCtaPrefix": "Advisory:",
+      "teamCtaLabel": "I want to equip my team",
+      "salesCtaPrefix": "Sales:",
+      "salesCtaLabel": "I want help with sales"
     },
     "practical": {
       "title": "What this means for you",
-      "intro": "Every week, new AI concepts land: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">It's overwhelming...</span>",
+      "intro": "Every week, new AI concepts land: skills, MCPs, plugins, CLIs.",
+      "introOverwhelming": "It's overwhelming",
       "introHighlight": "ZPT simplifies this for you.",
-      "description": "We build a structured setup around the AI tools your team already uses, so they become more useful, more consistent, and much easier to rely on in daily work. It's fast, lightweight, and improves over time.",
+      "description": "We set up AI-native tools like Claude Desktop, connect them to your CRM, create skills for your workflows, and wire up the right MCPs. Your team gets AI co-workers that actually know how the company works.",
       "bullets": [
         "Minimal setup",
         "Shared company context",
@@ -61,7 +64,7 @@
       "followup": "Most companies don’t need another tool. They need a better setup around the tools they already have."
     },
     "howItWorks": {
-      "title": "How it works",
+      "title": "How an agent works",
       "intro": "There's been a lot of talk about AI agents. But few companies know how to actually implement them. ZPT bridges that gap.",
       "agent": "Agent",
       "brain": {
@@ -81,10 +84,10 @@
       "folderCallout": "ZPT provides a battle-tested setup and personalizes it for your company."
     },
     "bottleneck": {
-      "title": "Real-life examples of what the setup can do",
+      "title": "Real-life examples of what we can do for you",
       "description": "",
       "description2": "",
-      "examplesLabel": "Real-life examples of what the setup can do:",
+      "examplesLabel": "Real-life examples of what we can do for you:",
       "useCases": [
         {
           "title": "Enrich prospects",
@@ -377,8 +380,30 @@
       "title": "Connects to your stack",
       "subtitle": "ZPT plugs into the tools your company already uses. No migration, no new software."
     },
+    "services": {
+      "title": "What we offer",
+      "subtitle": "Every company is different. Choose what you need. You own everything we build.",
+      "items": [
+        {
+          "title": "Educate your team",
+          "description": "Presentations, demos, Q&A tailored to the company's industry and workflows."
+        },
+        {
+          "title": "Set up accounts and tools",
+          "description": "Configure Claude, ChatGPT, desktop apps, and get your team up and running."
+        },
+        {
+          "title": "Build the company setup",
+          "description": "Structured folder with company context, workflows, templates, and quality standards."
+        },
+        {
+          "title": "Integrate your tools",
+          "description": "Wire up MCPs and integrations to existing tools like CRM, drives, and messaging."
+        }
+      ]
+    },
     "whatItCanDo": {
-      "title": "What it can do",
+      "title": "What your team gets",
       "items": [
         {
           "title": "Build presentations from scratch",
@@ -414,7 +439,7 @@
       ]
     },
     "why": {
-      "title": "Why this setup",
+      "title": "What you own",
       "items": [
         {
           "title": "100% company-owned",
@@ -432,13 +457,6 @@
           "title": "Plugs into what you already use",
           "description": "Claude in your spreadsheets. Claude in your presentations. Connect to Excel, PowerPoint, Google Drive, Slack, HubSpot, and more. No migration required."
         }
-      ]
-    },
-    "concept": {
-      "title": "Every company is different",
-      "paragraphs": [
-        "ZPT captures <strong>culture, roles, processes, and institutional knowledge</strong> into a practical shared setup. The agent reads this before every task, working like <em class=\"text-gold\">a colleague who's been at the company for years</em>.",
-        "The setup stays <strong>fully local</strong>. No vendor lock-in. Works with Anthropic, OpenAI, open-source models, and others. <em class=\"text-gold\">Switch providers anytime</em>."
       ]
     },
     "agentVisual": {
@@ -462,9 +480,11 @@
       "note": "We help your team get set up and running. No technical knowledge required."
     },
     "folder": {
-      "title": "The ZPT folder structure",
-      "description": "Below is an example of a default ZPT structure. Every setup is customized, but this shows the foundation.",
-      "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes.",
+      "title": "Example ZPT folder structure",
+      "description": "Not every engagement includes a folder. But when it does, this is what it looks like.",
+      "expandLabel": "Show folder structure",
+      "collapseLabel": "Hide folder structure",
+      "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes. 100% company-owned. No data leaves your network.",
       "folders": [
         { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
         { "name": "account-management/", "label": "CRM", "description": "Prospect data and profiles, organized by pipeline stage" },
@@ -478,51 +498,36 @@
       ]
     },
     "consulting": {
-      "title": "The ZPT SWAT team drops in",
-      "description": "We deploy into your org, set up a tailored ZPT folder, connect it to your existing tools, train the team, and provide ongoing support.",
+      "title": "How a ZPT Advisory engagement works",
+      "description": "We visit your company, understand how the team works, and build the right AI setup, from education to full implementation.",
       "exampleLink": "example",
       "points": [
-        "Custom folder structure tailored to the company's workflow",
-        "Agent configured with full company context (culture, roles, processes)",
-        "Connected to existing tools — Excel, PowerPoint, CRM, drives, messaging",
-        "Team trained to work with the agent as a coworker",
-        "Ongoing support and periodic updates"
+        "Understand workflows, tools, and team structure",
+        "Educate the team on relevant AI capabilities",
+        "Set up accounts, configure tools, connect integrations",
+        "Optionally build a tailored company folder",
+        "Train the team to work with AI as a co-worker"
       ],
-      "callout": "You own the folder. ZPT helps you operationalize it."
+      "callout": "Everything ZPT builds stays with the company. No lock-in, no dependencies."
     },
     "pricing": {
       "title": "Advisory tiers",
-      "subtitle": "Pricing on request. Every engagement starts with understanding the company's needs.",
+      "subtitle": "Choose what fits — pricing on request.",
       "tiers": [
         {
           "name": "Educate",
-          "description": "AI awareness for the team",
-          "features": [
-            "Industry-tailored AI presentation",
-            "Live demo of agentic workflows",
-            "Team Q&A + use case identification",
-            "Written summary with next steps"
-          ]
+          "time": "Half-day",
+          "description": "Your team understands AI"
         },
         {
-          "name": "Basic Setup",
-          "description": "One workflow, fully operational",
-          "features": [
-            "Local folder for one workflow",
-            "Agent configured and connected",
-            "Team training on daily usage",
-            "30 days of support"
-          ]
+          "name": "Equip",
+          "time": "1-3 days",
+          "description": "Your team uses AI daily"
         },
         {
-          "name": "Advanced Setup",
-          "description": "Full implementation across the org",
-          "features": [
-            "Multiple workflows and departments",
-            "Tool integrations (CRM, drives, messaging)",
-            "Custom agent skills and automation",
-            "Ongoing support and optimization"
-          ]
+          "name": "Embed",
+          "time": "Ongoing",
+          "description": "AI becomes part of how the company works"
         }
       ],
       "cta": "Get in touch"

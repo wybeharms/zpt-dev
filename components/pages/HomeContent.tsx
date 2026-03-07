@@ -13,6 +13,13 @@ export default function HomeContent() {
   }[];
   const practicalBullets = tArray("home.practical.bullets") as string[];
 
+  // Animated dots on "It's overwhelming..."
+  const [dotCount, setDotCount] = useState(1);
+  useEffect(() => {
+    const id = setInterval(() => setDotCount((c) => (c % 3) + 1), 500);
+    return () => clearInterval(id);
+  }, []);
+
   // Scroll-reveal for "ZPT simplifies" card
   const simplifyRef = useRef<HTMLDivElement>(null);
   const [simplifyVisible, setSimplifyVisible] = useState(false);
@@ -26,8 +33,6 @@ export default function HomeContent() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-  const day1Tools = tArray("home.growing.day1Tools") as string[];
-  const month3Tools = tArray("home.growing.month3Tools") as string[];
   const useCases = tArray("home.bottleneck.useCases") as {
     title: string;
     description: string;
@@ -49,24 +54,18 @@ export default function HomeContent() {
             className="mx-auto mt-14 max-w-xl text-lg leading-relaxed text-white/70"
             dangerouslySetInnerHTML={{ __html: t("home.hero.description") }}
           />
-          <a
-            href="mailto:request@zpteam.ai?subject=Intro call request"
-            className="mt-8 inline-block rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
-          >
-            {t("home.hero.cta")}
-          </a>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/advisory"
-              className="inline-flex min-w-[220px] items-center justify-center rounded border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
+              className="inline-flex min-w-[260px] items-center justify-center rounded border border-gold/40 bg-gold/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gold/60 hover:bg-gold/30"
             >
-              {t("home.hero.teamCta")}
+              <span className="font-bold">{t("home.hero.teamCtaPrefix")}</span>&nbsp;{t("home.hero.teamCtaLabel")}
             </Link>
             <Link
               href="/sales"
-              className="inline-flex min-w-[220px] items-center justify-center rounded border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
+              className="inline-flex min-w-[260px] items-center justify-center rounded border border-gold/40 bg-gold/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gold/60 hover:bg-gold/30"
             >
-              {t("home.hero.salesCta")}
+              <span className="font-bold">{t("home.hero.salesCtaPrefix")}</span>&nbsp;{t("home.hero.salesCtaLabel")}
             </Link>
           </div>
         </div>
@@ -97,32 +96,36 @@ export default function HomeContent() {
       {/* What this means for you */}
       <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("home.practical.title")}
+          <h2 className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
+            {t("home.practical.intro")}
           </h2>
-          <p
-            className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-text-muted"
-            dangerouslySetInnerHTML={{ __html: t("home.practical.intro") }}
-          />
+          <p className="mx-auto mt-4 max-w-3xl">
+            <span className="animate-[breathe_3s_ease-in-out_infinite] text-xl font-semibold text-gold md:text-2xl">
+              {t("home.practical.introOverwhelming")}
+              <span className="inline-block w-[1.2em] text-left">{".".repeat(dotCount)}</span>
+            </span>
+          </p>
 
           {/* News screenshot collage — stacked on mobile, overlapping on sm+ */}
-          <div className="mx-auto mt-5 flex max-w-sm flex-col gap-1.5 sm:hidden">
+          <div className="mx-auto mt-8 flex max-w-sm flex-col gap-1.5 sm:hidden">
             <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
+            <Image src="/screenshots/google_cli.png" alt="Google launches CLI for AI agents" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={600} height={80} className="w-full rounded border border-border-warm shadow-sm" />
           </div>
-          <div className="relative mx-auto mt-5 hidden h-[150px] max-w-lg sm:block">
-            <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={400} height={120} className="absolute left-0 top-0 w-[50%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1.5deg)" }} />
-            <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={400} height={120} className="absolute right-0 top-0 w-[46%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(1deg)" }} />
-            <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={400} height={120} className="absolute bottom-0 left-[2%] w-[48%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(0.5deg)" }} />
-            <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={400} height={80} className="absolute bottom-1 right-0 w-[44%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1deg)" }} />
+          <div className="relative mx-auto mt-8 hidden h-[190px] max-w-lg sm:block">
+            <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={400} height={120} className="absolute left-0 top-0 w-[48%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1.5deg)" }} />
+            <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={400} height={120} className="absolute right-0 top-0 w-[44%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(1deg)" }} />
+            <Image src="/screenshots/google_cli.png" alt="Google launches CLI for AI agents" width={400} height={120} className="absolute left-1/2 top-1/2 z-10 w-[44%] rounded border border-border-warm shadow-md" style={{ transform: "translate(-50%, -50%) rotate(-0.5deg)" }} />
+            <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={400} height={120} className="absolute bottom-0 left-[2%] w-[46%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(0.5deg)" }} />
+            <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={400} height={80} className="absolute bottom-1 right-0 w-[42%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1deg)" }} />
           </div>
 
           {/* Card with scroll-reveal */}
           <div
             ref={simplifyRef}
-            className={`mx-auto mt-8 max-w-2xl rounded-xl border border-border-warm bg-white px-8 py-8 shadow-sm transition-all duration-700 ${
+            className={`mx-auto mt-12 max-w-2xl rounded-xl border border-border-warm bg-white px-8 py-8 shadow-sm transition-all duration-700 ${
               simplifyVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-6 opacity-0"
@@ -305,7 +308,7 @@ export default function HomeContent() {
                 {t("home.bottleneck.screenshotLabel")}
               </p>
             </div>
-            <div className="w-full overflow-hidden rounded-lg border border-border-warm shadow-sm">
+            <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-lg border border-border-warm shadow-sm">
               <Image
                 src="/screenshots/claude_cowork.png"
                 alt="Claude finding new prospects by checking HubSpot and searching Google Maps"
@@ -321,78 +324,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* A folder that grows with you */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
-            {t("home.growing.title")}
-          </h2>
-          <div className="mt-10 flex flex-col items-center gap-6 md:flex-row md:gap-4">
-            {/* Day 1 */}
-            <div className="flex min-h-[220px] w-full flex-col rounded-lg border border-border-warm bg-white p-6 md:w-2/5">
-              <h3 className="text-center text-lg font-semibold text-navy">
-                {t("home.growing.day1")}
-              </h3>
-              <div className="mx-auto mt-3 flex h-12 w-12 items-center justify-center">
-                <svg className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
-                </svg>
-              </div>
-              <div className="mt-auto flex flex-wrap justify-center gap-2 pt-4">
-                {day1Tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-border-warm bg-off-white px-3 py-1 text-xs text-text-muted"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="flex flex-col items-center gap-1 text-center md:w-1/5">
-              <svg className="hidden h-6 w-6 text-gold md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-              <svg className="h-6 w-6 text-gold md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-              </svg>
-              <span className="text-xs leading-tight text-text-muted">
-                {t("home.growing.arrow")}
-              </span>
-            </div>
-
-            {/* Month 3 */}
-            <div className="flex min-h-[220px] w-full flex-col rounded-lg border border-gold/30 bg-white p-6 md:w-2/5">
-              <h3 className="text-center text-lg font-semibold text-gold">
-                {t("home.growing.month3")}
-              </h3>
-              <div className="mx-auto mt-3 flex h-12 w-12 items-center justify-center">
-                <svg className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
-                </svg>
-              </div>
-              <div className="mt-auto flex flex-wrap justify-center gap-2 pt-4">
-                {month3Tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <p className="mt-6 text-center text-sm text-text-muted">
-            {t("home.growing.caption")}
-          </p>
-        </div>
-      </section>
-
       {/* Two products */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.products.title")}
