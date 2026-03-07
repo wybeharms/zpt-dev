@@ -49,7 +49,7 @@
     },
     "practical": {
       "title": "Wat dit voor u betekent",
-      "intro": "Elke week verschijnen er nieuwe AI-functies en tools. Dat is overweldigend...",
+      "intro": "Elke week duiken er nieuwe AI-concepten op: skills, MCPs, plugins, CLIs.<br /><span class=\"mt-2 inline-block font-semibold text-gold\">Dat is overweldigend...</span>",
       "introHighlight": "ZPT maakt dit eenvoudig voor u.",
       "description": "Wij bouwen een gestructureerde laag rond de AI-tools die uw team al gebruikt, zodat ze nuttiger, consistenter en veel betrouwbaarder worden in het dagelijkse werk. Het is snel, lichtgewicht en wordt met de tijd beter.",
       "bullets": [
@@ -62,7 +62,7 @@
     },
     "howItWorks": {
       "title": "Hoe het werkt",
-      "intro": "Sinds begin 2026 kunnen AI-modellen volledige mappen lezen, tientallen stappen koppelen en verbinding maken met externe diensten. Volledig autonoom en lokaal.",
+      "intro": "Er wordt veel gepraat over AI-agents. Maar weinig bedrijven weten hoe ze die effectief moeten inzetten. ZPT overbrugt die kloof.",
       "agent": "Agent",
       "brain": {
         "title": "Het Brein",
@@ -70,13 +70,13 @@
       },
       "hands": {
         "title": "De Handen",
-        "description": "Tools die uitvoeren: bestanden lezen, tekst bijwerken, web doorzoeken, verbinden via MCP."
+        "description": "MCPs, plugins en sub-agents die uitvoeren: bestanden lezen, het web doorzoeken, uw CRM bijwerken."
       },
       "folder": {
         "title": "Uw Map",
         "description": "Alle kennis, workflows en context van uw bedrijf. <strong>Gestructureerd, lokaal en 100% van u.</strong>"
       },
-      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex</strong> / <strong>Gemini CLI</strong> = &ldquo;interface&rdquo;",
+      "harnessLabel": "<strong>Claude Code</strong> / <strong>Codex CLI</strong> / <strong>Gemini CLI</strong> = de &ldquo;interface&rdquo; (<a href=\"https://www.anthropic.com/research/building-effective-agents\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 hover:text-gold\">wat is een agent?</a>)",
       "access": "Uw team benadert de map via Claude Desktop, ChatGPT of een andere compatibele app.",
       "folderCallout": "ZPT biedt een beproefde standaardmap en personaliseert deze voor uw bedrijf."
     },
@@ -88,12 +88,12 @@
       "useCases": [
         {
           "title": "Prospects verrijken",
-          "description": "De agent checkt uw CRM, doorzoekt Google Maps, vergelijkt met uw ideale klantprofiel en voegt nieuwe prospects toe aan HubSpot.",
+          "description": "De agent checkt uw CRM, doorzoekt <strong class=\"text-[#EA4335]\">Google Maps</strong>, vergelijkt met uw ideale klantprofiel en voegt nieuwe prospects toe aan <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
           "why": "Claude op het web kan ook zoeken, maar heeft geen toegang tot uw CRM of kennis van uw ideale klant."
         },
         {
-          "title": "Google Slides deck bouwen",
-          "description": "Definieer uw huisstijl, kleuren en structuur eenmalig. De agent volgt ze telkens bij het maken van een deck via API.",
+          "title": "Een deck bouwen",
+          "description": "Maak <strong class=\"text-[#0F9D58]\">Google Slides</strong>- of <strong class=\"text-[#D04A02]\">PowerPoint</strong>-decks vanuit uw terminal of Claude Desktop. De agent gebruikt uw bedrijfscontext om consistente, huisstijl-conforme output te produceren.",
           "why": "Dezelfde tools, maar met de positionering, tone of voice en opmaak van uw bedrijf."
         },
         {
@@ -103,7 +103,7 @@
         },
         {
           "title": "Routinewerk automatiseren",
-          "description": "Vergadernotities kopieren tussen CRM-systemen. Spreadsheets bijwerken vanuit e-maildata. Definieer het een keer, herhaal oneindig.",
+          "description": "Vergadernotities kopieren tussen CRM-systemen. <strong class=\"text-[#217346]\">Excel</strong>-spreadsheets bijwerken vanuit e-maildata. Definieer het een keer, herhaal oneindig.",
           "why": "Workflows die vanzelf draaien, geen taken die iemand handmatig moet onthouden."
         }
       ],
@@ -121,7 +121,24 @@
     },
     "quote": {
       "text": "Elke grote technologische verschuiving brengt een enorme veranderingsuitdaging met zich mee voor bedrijven.",
-      "attribution": "David Sacks"
+      "attribution": "David Sacks",
+      "headlines": [
+        {
+          "text": "Nieuwe AI-tool van Anthropic veroorzaakt schokgolven op de beurs",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/02/04/investing/us-stocks-anthropic-software"
+        },
+        {
+          "text": "Thomson Reuters en RELX kelderen na Claude-plugin voor juridische sector",
+          "source": "Morningstar",
+          "url": "https://www.morningstar.com/stocks/reuters-relx-wolters-stocks-crushed-after-anthropic-debuts-claude-legal-plug-in"
+        },
+        {
+          "text": "Na beurskrach lanceert Anthropic Claude-plugins voor HR en banking",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-02-24/anthropic-links-ai-agent-with-tools-for-investment-banking-hr"
+        }
+      ]
     },
     "products": {
       "title": "Twee producten",

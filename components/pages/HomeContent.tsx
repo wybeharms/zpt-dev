@@ -46,7 +46,7 @@ export default function HomeContent() {
             {t("home.hero.subtitle")}
           </p>
           <p
-            className="mx-auto mt-14 max-w-2xl text-lg leading-relaxed text-white/70"
+            className="mx-auto mt-14 max-w-xl text-lg leading-relaxed text-white/70"
             dangerouslySetInnerHTML={{ __html: t("home.hero.description") }}
           />
           <a
@@ -75,8 +75,10 @@ export default function HomeContent() {
       {/* Quote */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <blockquote className="font-heading text-2xl font-light leading-relaxed tracking-tight text-navy md:text-3xl">
-            &ldquo;{t("home.quote.text")}&rdquo;
+          <blockquote className="font-heading text-2xl font-light italic leading-relaxed tracking-tight text-navy md:text-3xl">
+            <span className="animate-[glow_4s_ease-in-out_infinite]">&ldquo;</span>
+            {t("home.quote.text")}
+            <span className="animate-[glow_4s_ease-in-out_infinite]">&rdquo;</span>
           </blockquote>
           <p className="mt-4 text-sm text-text-muted">
             -{" "}
@@ -98,9 +100,24 @@ export default function HomeContent() {
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.practical.title")}
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-text-muted">
-            {t("home.practical.intro")}
-          </p>
+          <p
+            className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-text-muted"
+            dangerouslySetInnerHTML={{ __html: t("home.practical.intro") }}
+          />
+
+          {/* News screenshot collage — stacked on mobile, overlapping on sm+ */}
+          <div className="mx-auto mt-5 flex max-w-sm flex-col gap-1.5 sm:hidden">
+            <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
+            <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
+            <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
+            <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={600} height={80} className="w-full rounded border border-border-warm shadow-sm" />
+          </div>
+          <div className="relative mx-auto mt-5 hidden h-[150px] max-w-lg sm:block">
+            <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={400} height={120} className="absolute left-0 top-0 w-[50%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1.5deg)" }} />
+            <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={400} height={120} className="absolute right-0 top-0 w-[46%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(1deg)" }} />
+            <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={400} height={120} className="absolute bottom-0 left-[2%] w-[48%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(0.5deg)" }} />
+            <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={400} height={80} className="absolute bottom-1 right-0 w-[44%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1deg)" }} />
+          </div>
 
           {/* Card with scroll-reveal */}
           <div
@@ -256,9 +273,10 @@ export default function HomeContent() {
               >
                 {/* Default content: title + description */}
                 <h3 className="text-base font-semibold text-navy">{uc.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {uc.description}
-                </p>
+                <p
+                  className="mt-2 text-sm leading-relaxed text-text-muted"
+                  dangerouslySetInnerHTML={{ __html: uc.description }}
+                />
                 {/* Hover overlay with "why" — desktop only */}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end bg-gradient-to-t from-white via-white/95 to-transparent px-5 pb-4 pt-8 opacity-0 transition-opacity duration-200 md:group-hover:opacity-100">
                   <p className="text-xs font-medium italic text-[#DE7356]">
