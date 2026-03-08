@@ -51,10 +51,10 @@
     },
     "practical": {
       "title": "Wat dit voor u betekent",
-      "intro": "Elke week duiken er nieuwe AI-concepten op: skills, MCPs, plugins, CLIs.",
+      "intro": "Elke week duiken er nieuwe AI-concepten op: <strong>Skills</strong>, <strong>MCPs</strong>, <strong>Plugins</strong>, <strong>CLIs</strong>.",
       "introOverwhelming": "Dat is overweldigend",
       "introHighlight": "ZPT maakt dit eenvoudig voor u.",
-      "description": "Wij richten Claude Desktop in, koppelen het aan uw CRM, maken skills voor uw workflows en verbinden de juiste MCPs zodat uw team AI-collega's krijgt die echt weten hoe het bedrijf werkt. Snel opgezet, makkelijk te onderhouden, en het wordt steeds beter.",
+      "description": "Wij richten Claude Desktop in, koppelen het aan uw CRM, maken skills voor uw workflows en verbinden de juiste MCPs zodat uw team AI-tools krijgt die echt weten hoe het bedrijf werkt. Snel opgezet, makkelijk te onderhouden, en het wordt steeds beter.",
       "bullets": [
         "Minimale setup",
         "Gedeelde bedrijfscontext",
@@ -185,9 +185,9 @@
       "title": "AI-aangedreven salesoperaties. Beheerd voor u.",
       "audience": "Voor bedrijven met leaddata, CRM-workflows of spreadsheets die een betere manier nodig hebben om die te verrijken, organiseren en benutten.",
       "description": "ZPT verzamelt uw bedrijfscontext, koppelt aan uw CRM en regelt prospecting, verrijking en outreach. U krijgt de output. Wij draaien het systeem.",
-      "primaryCta": "Plan salesgesprek",
+      "primaryCta": "Start Free Trial",
       "secondaryCta": "Bekijk hoe het werkt",
-      "trialNote": "Start met 100 gratis verrijkte contacten."
+      "trialNote": "Your first assignment is on us."
     },
     "intro": {
       "title": "Wat ZPT Sales is",
@@ -368,7 +368,85 @@
           "features": ["Alles in Growth, plus:", "CRM-synchronisatie", "Contentcreatie", "Meetingondersteuning"]
         }
       ],
-      "cta": "Aan de slag"
+      "cta": "Start Free Trial"
+    }
+  },
+  "trial": {
+    "title": "Brief Your AI Team",
+    "subtitle": "Set up your first assignment. Our AI agents handle the rest.",
+    "steps": {
+      "about": "About You",
+      "icp": "Ideal Customer",
+      "deliverable": "Deliverable"
+    },
+    "next": "Next",
+    "back": "Back",
+    "submit": "Start My Trial",
+    "submitting": "Submitting...",
+    "basicInfo": {
+      "subtitle": "Set up your first assignment. Our AI agents handle the rest.",
+      "companyName": "Company name",
+      "companyNamePlaceholder": "e.g., Acme Corp",
+      "contactName": "Your name",
+      "contactNamePlaceholder": "e.g., Jane Smith",
+      "email": "Email",
+      "emailPlaceholder": "e.g., jane@acme.com",
+      "website": "Company website",
+      "websitePlaceholder": "e.g., acme.com"
+    },
+    "icp": {
+      "subtitle": "This is how our agents learn who to look for.",
+      "industry": "Industry / sector",
+      "industryPlaceholder": "e.g., Logistics",
+      "companySize": "Company size",
+      "companySizePlaceholder": "Select...",
+      "geography": "Geography",
+      "geographyPlaceholder": "e.g., Benelux",
+      "descriptionLabel": "Describe your ideal customer",
+      "descriptionPlaceholder": "e.g., B2B logistics companies in the Benelux with 50-200 employees, looking to digitize operations",
+      "examplesLabel": "Name 2-3 companies that fit this profile",
+      "examplesPlaceholder": "e.g., Kuehne+Nagel, DHL Supply Chain, DB Schenker",
+      "uploadLabel": "Already have an ICP document? Drop it here.",
+      "uploadHint": "PDF, DOCX, PPTX, or Excel",
+      "uploading": "Uploading...",
+      "browse": "Browse files"
+    },
+    "deliverable": {
+      "subtitle": "Choose your first assignment for the AI team.",
+      "cards": {
+        "enrich": {
+          "title": "Test Our Enrichment",
+          "description": "Upload existing contacts, we enrich them so you can compare."
+        },
+        "prospect": {
+          "title": "Find New Prospects",
+          "description": "We source prospects matching your ICP."
+        },
+        "competitor": {
+          "title": "Competitor Analysis",
+          "description": "Full competitive intel report."
+        }
+      },
+      "prospect": {
+        "label": "How many prospects should we find?",
+        "prospects": "prospects"
+      },
+      "enrich": {
+        "label": "Upload your contact list (CSV or Excel).",
+        "hint": "Drag and drop your file here, or click to browse",
+        "uploading": "Uploading..."
+      },
+      "competitor": {
+        "label": "Name 1-3 competitors to analyze.",
+        "placeholder": "Competitor",
+        "addMore": "Add another"
+      }
+    },
+    "success": {
+      "title": "Your AI agents are being briefed.",
+      "description": "You'll receive results within 48 hours at the email address provided.",
+      "portal": "We'll also set up your personal portal so you can track everything.",
+      "backToSales": "Back to Sales"
     }
   },
   "advisory": {

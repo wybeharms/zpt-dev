@@ -48,6 +48,17 @@ export async function getUploadUrl(key: string, contentType: string) {
   return getSignedUrl(s3, command, { expiresIn: 3600 });
 }
 
+export async function putJsonToS3(key: string, data: unknown): Promise<void> {
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: bucket,
+      Key: key,
+      ContentType: "application/json",
+      Body: JSON.stringify(data, null, 2),
+    })
+  );
+}
+
 export async function listCustomerIds(): Promise<string[]> {
   const res = await s3.send(
     new ListObjectsV2Command({ Bucket: bucket, Delimiter: "/" })

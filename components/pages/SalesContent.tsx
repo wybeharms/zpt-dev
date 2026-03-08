@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import SalesFunnel from "@/components/SalesFunnel";
 import ToolLogos from "@/components/ToolLogos";
 import EnrichmentTabs from "@/components/EnrichmentTabs";
@@ -48,12 +49,12 @@ export default function SalesContent() {
             {t("sales.hero.audience")}
           </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-            <a
-              href="mailto:request@zpteam.ai?subject=Sales inquiry"
-              className="inline-flex min-w-[200px] items-center justify-center rounded bg-gold px-6 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
+            <Link
+              href="/trial"
+              className="btn-shimmer inline-flex min-w-[200px] items-center justify-center rounded px-6 py-3 text-sm font-medium text-navy"
             >
               {t("sales.hero.primaryCta")}
-            </a>
+            </Link>
             <a
               href="#how-we-get-started"
               className="inline-flex min-w-[200px] items-center justify-center rounded border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
@@ -220,16 +221,16 @@ export default function SalesContent() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="mailto:request@zpteam.ai?subject=Intro call request"
+                  <Link
+                    href="/trial"
                     className={`mt-auto block rounded py-2.5 text-center text-sm font-medium transition-colors ${
                       isHighlight
-                        ? "bg-gold text-navy hover:bg-gold-light"
+                        ? "btn-shimmer text-navy"
                         : "border border-white/20 text-white hover:bg-white/5"
                     }`}
                   >
                     {t("sales.pricing.cta")}
-                  </a>
+                  </Link>
                 </div>
               );
             })}

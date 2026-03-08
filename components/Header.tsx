@@ -45,6 +45,8 @@ export default function Header() {
           <LanguageSelector />
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded bg-gold px-4 py-2 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
             {t("nav.cta")}
@@ -126,6 +128,8 @@ export default function Header() {
             <LanguageSelector />
             <a
               href="mailto:request@zpteam.ai?subject=Intro call request"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded bg-gold px-4 py-2 text-center text-sm font-medium text-navy transition-colors hover:bg-gold-light"
             >
               {t("nav.cta")}
