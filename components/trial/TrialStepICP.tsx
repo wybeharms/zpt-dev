@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useI18n } from "@/components/I18nProvider";
+import FeedCreature from "./FeedCreature";
 
 export interface ICPData {
   industry: string;
@@ -153,12 +154,13 @@ export default function TrialStepICP({ data, onChange, onNext, onBack, trialId }
           onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
           onDragLeave={() => setDragOver(false)}
           onDrop={handleDrop}
-          className={`flex flex-col items-center justify-center rounded border-2 border-dashed p-6 transition-colors ${
+          className={`flex flex-col items-center justify-center rounded border-2 border-dashed p-8 transition-colors ${
             dragOver ? "border-gold bg-gold/5" : "border-white/20 bg-white/5"
           }`}
         >
+          <FeedCreature documentCount={data.documents.length} isDragOver={dragOver} />
           <p className="mb-2 text-xs text-white/50">
-            {uploading ? t("trial.icp.uploading") : t("trial.icp.uploadHint")}
+            {uploading ? t("trial.icp.uploading") : data.documents.length === 0 ? t("trial.icp.creatureHint") : t("trial.icp.uploadHint")}
           </p>
           <label className="cursor-pointer rounded border border-white/20 px-3 py-1.5 text-xs text-white/70 transition-colors hover:border-white/40">
             {t("trial.icp.browse")}

@@ -6,7 +6,7 @@
     "resources": "Casos",
     "product": "Producto",
     "portal": "Portal",
-    "cta": "Agendar llamada"
+    "cta": "Reservar una llamada"
   },
   "ui": {
     "menuToggle": "Abrir o cerrar menu",
@@ -43,7 +43,7 @@
       "title": "El resultado de un equipo completo.",
       "subtitle": "Sin contratar uno.",
       "description": "ZPT refleja el conocimiento, los flujos de trabajo y el contexto de tu empresa en una <strong>carpeta local estructurada</strong>. Con todo en un solo lugar, la IA se encarga del trabajo repetitivo que tu equipo no deberia estar haciendo.",
-      "cta": "Agendar llamada",
+      "cta": "Reservar una llamada",
       "teamCtaPrefix": "Advisory:",
       "teamCtaLabel": "Quiero equipar a mi equipo",
       "salesCtaPrefix": "Sales:",
@@ -54,7 +54,7 @@
       "intro": "Cada semana aparecen nuevos conceptos de IA: <strong>Skills</strong>, <strong>MCPs</strong>, <strong>Plugins</strong>, <strong>CLIs</strong>.",
       "introOverwhelming": "Es abrumador",
       "introHighlight": "ZPT simplifica esto para usted.",
-      "description": "Configuramos Claude Desktop, lo conectamos a su CRM, creamos skills para sus flujos de trabajo y conectamos los MCPs adecuados para que su equipo tenga herramientas de IA que realmente entienden como funciona la empresa. Rapido de configurar, facil de mantener, y mejora continuamente.",
+      "description": "Configuramos Claude Desktop, lo conectamos a su configuración existente (Google Drive, correo electrónico, hojas de cálculo, CRM), creamos skills para sus flujos de trabajo y conectamos los MCPs adecuados para que su equipo tenga herramientas de IA que realmente entienden como funciona la empresa. Rapido de configurar, facil de mantener, y mejora continuamente.",
       "bullets": [
         "Configuracion minima",
         "Contexto compartido de la empresa",
@@ -176,7 +176,7 @@
     },
     "cta": {
       "title": "Quiere ver lo que ZPT puede hacer por su empresa?",
-      "button": "Agendar llamada",
+      "button": "Reservar una llamada",
       "email": "O escriba a"
     }
   },
@@ -409,7 +409,8 @@
       "uploadLabel": "Already have an ICP document? Drop it here.",
       "uploadHint": "PDF, DOCX, PPTX, or Excel",
       "uploading": "Uploading...",
-      "browse": "Browse files"
+      "browse": "Browse files",
+      "creatureHint": "Dame tus documentos — cuanto mas contexto, mejores los resultados"
     },
     "deliverable": {
       "subtitle": "Choose your first assignment for the AI team.",
@@ -613,7 +614,7 @@
     },
     "cta": {
       "title": "Listo para ver lo que la IA puede hacer por su empresa?",
-      "button": "Agendar llamada",
+      "button": "Reservar una llamada",
       "email": "O escriba a"
     }
   },
@@ -624,7 +625,7 @@
       "El enfoque: conectar agentes de IA a las herramientas que la empresa ya utiliza, mantener los datos locales y conservar el control total sobre cada paso del proceso.",
       "Hoy, ZPT opera en tres industrias: analisis financiero, leasing automotriz y logistica. El mismo sistema, diferente contexto. El producto esta activo y operativo."
     ],
-    "cta": "Agendar llamada",
+    "cta": "Reservar una llamada",
     "ctaSubtext": "O escriba a"
   },
   "resources": {
@@ -642,7 +643,7 @@
     ],
     "cta": {
       "title": "Quiere resultados similares para su empresa?",
-      "button": "Agendar llamada",
+      "button": "Reservar una llamada",
       "email": "O escriba a"
     }
   },

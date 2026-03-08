@@ -6,7 +6,7 @@
     "resources": "Resources",
     "product": "Product",
     "portal": "Portal",
-    "cta": "Set Up Intro Call"
+    "cta": "Book a Call"
   },
   "ui": {
     "menuToggle": "Toggle menu",
@@ -43,7 +43,7 @@
       "title": "The output of a full team.",
       "subtitle": "Without hiring one.",
       "description": "ZPT turns the AI tools your team already uses into practical tools that handle real company tasks.",
-      "cta": "Set Up Intro Call",
+      "cta": "Book a Call",
       "teamCtaPrefix": "Advisory:",
       "teamCtaLabel": "I want to equip my team",
       "salesCtaPrefix": "Sales:",
@@ -54,7 +54,7 @@
       "intro": "Every week, new AI concepts land: <strong>Skills</strong>, <strong>MCPs</strong>, <strong>Plugins</strong>, <strong>CLIs</strong>.",
       "introOverwhelming": "It's overwhelming",
       "introHighlight": "ZPT simplifies this for you.",
-      "description": "We set up AI-native tools like Claude Desktop, connect them to your CRM, create skills for your workflows, and wire up the right MCPs. Your team gets AI tools that actually know how the company works.",
+      "description": "We set up AI-native tools like Claude Desktop, connect them to your existing setup (Google Drive, email, spreadsheets, CRM), create skills for your workflows, and wire up the right MCPs. Your team gets AI tools that actually know how the company works.",
       "bullets": [
         "Minimal setup",
         "Shared company context",
@@ -176,7 +176,7 @@
     },
     "cta": {
       "title": "Ready to see what ZPT can do for your business?",
-      "button": "Set Up Intro Call",
+      "button": "Book a Call",
       "email": "Or email"
     }
   },
@@ -534,7 +534,7 @@
     },
     "cta": {
       "title": "Ready to see what AI can do for your company?",
-      "button": "Set Up Intro Call",
+      "button": "Book a Call",
       "email": "Or email"
     }
   },
@@ -545,7 +545,7 @@
       "The approach: connect AI agents to the tools a company already uses, keep data local, and maintain full control over every step of the process.",
       "Today, ZPT operates across three industries: financial analytics, automotive leasing, and logistics. Same system, different context. The product is live and operational."
     ],
-    "cta": "Set Up Intro Call",
+    "cta": "Book a Call",
     "ctaSubtext": "Or email"
   },
   "resources": {
@@ -563,7 +563,7 @@
     ],
     "cta": {
       "title": "Want results like these for your business?",
-      "button": "Set Up Intro Call",
+      "button": "Book a Call",
       "email": "Or email"
     }
   },
@@ -622,7 +622,8 @@
       "uploadLabel": "Already have an ICP document? Drop it here.",
       "uploadHint": "PDF, DOCX, PPTX, or Excel",
       "uploading": "Uploading...",
-      "browse": "Browse files"
+      "browse": "Browse files",
+      "creatureHint": "Feed me your docs — the more context, the better the results"
     },
     "deliverable": {
       "subtitle": "Choose your first assignment for the AI team.",
