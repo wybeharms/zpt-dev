@@ -55,6 +55,15 @@ body {
   animation: shimmer 3s ease-in-out infinite;
 }
 
+@keyframes creature-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50% { filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.5)); }
+}
+
+.creature-glow {
+  animation: creature-glow 2s ease-in-out infinite;
+}
+
 .btn-shimmer:hover {
   background: var(--color-gold-light);
   animation: none;

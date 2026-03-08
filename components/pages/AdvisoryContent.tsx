@@ -139,7 +139,7 @@ export default function AdvisoryContent() {
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
       // Stickman stays near helicopter until section is well into view, lands as it scrolls past
-      const progress = Math.min(1, Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.50)));
+      const progress = Math.min(1, Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.35)));
 
       const ty = (ROPE_START - PERSON_TOP) + progress * (LANDING_TOP - ROPE_START);
       const landed = progress > 0.92;

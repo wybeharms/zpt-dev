@@ -6,7 +6,7 @@
     "resources": "Cases",
     "product": "Product",
     "portal": "Portal",
-    "cta": "Kennismaken"
+    "cta": "Plan een gesprek"
   },
   "ui": {
     "menuToggle": "Menu openen of sluiten",
@@ -43,7 +43,7 @@
       "title": "De output van een volledig team.",
       "subtitle": "Zonder er een aan te nemen.",
       "description": "ZPT spiegelt de kennis, workflows en context van uw bedrijf in een <strong>gestructureerde lokale map</strong>. Met alles op een plek neemt AI het repetitieve werk over waar uw team niet aan zou moeten zitten.",
-      "cta": "Kennismaken",
+      "cta": "Plan een gesprek",
       "teamCtaPrefix": "Advisory:",
       "teamCtaLabel": "Ik wil mijn team uitrusten",
       "salesCtaPrefix": "Sales:",
@@ -54,7 +54,7 @@
       "intro": "Elke week duiken er nieuwe AI-concepten op: <strong>Skills</strong>, <strong>MCPs</strong>, <strong>Plugins</strong>, <strong>CLIs</strong>.",
       "introOverwhelming": "Dat is overweldigend",
       "introHighlight": "ZPT maakt dit eenvoudig voor u.",
-      "description": "Wij richten Claude Desktop in, koppelen het aan uw CRM, maken skills voor uw workflows en verbinden de juiste MCPs zodat uw team AI-tools krijgt die echt weten hoe het bedrijf werkt. Snel opgezet, makkelijk te onderhouden, en het wordt steeds beter.",
+      "description": "Wij richten Claude Desktop in, koppelen het aan uw bestaande setup (Google Drive, e-mail, spreadsheets, CRM), maken skills voor uw workflows en verbinden de juiste MCPs zodat uw team AI-tools krijgt die echt weten hoe het bedrijf werkt. Snel opgezet, makkelijk te onderhouden, en het wordt steeds beter.",
       "bullets": [
         "Minimale setup",
         "Gedeelde bedrijfscontext",
@@ -176,7 +176,7 @@
     },
     "cta": {
       "title": "Benieuwd wat ZPT voor uw bedrijf kan betekenen?",
-      "button": "Kennismaken",
+      "button": "Plan een gesprek",
       "email": "Of mail naar"
     }
   },
@@ -409,7 +409,8 @@
       "uploadLabel": "Already have an ICP document? Drop it here.",
       "uploadHint": "PDF, DOCX, PPTX, or Excel",
       "uploading": "Uploading...",
-      "browse": "Browse files"
+      "browse": "Browse files",
+      "creatureHint": "Voer me je documenten — hoe meer context, hoe beter het resultaat"
     },
     "deliverable": {
       "subtitle": "Choose your first assignment for the AI team.",
@@ -613,7 +614,7 @@
     },
     "cta": {
       "title": "Benieuwd wat AI voor uw bedrijf kan betekenen?",
-      "button": "Kennismaken",
+      "button": "Plan een gesprek",
       "email": "Of mail naar"
     }
   },
@@ -624,7 +625,7 @@
       "De aanpak: AI-agents koppelen aan de tools die een bedrijf al gebruikt, data lokaal houden en volledige controle behouden over elke stap van het proces.",
       "ZPT is vandaag operationeel in drie sectoren: financiele analyse, autoleasing en logistiek. Hetzelfde systeem, andere context. Het product is live en operationeel."
     ],
-    "cta": "Kennismaken",
+    "cta": "Plan een gesprek",
     "ctaSubtext": "Of mail naar"
   },
   "resources": {
@@ -642,7 +643,7 @@
     ],
     "cta": {
       "title": "Vergelijkbare resultaten voor uw bedrijf?",
-      "button": "Kennismaken",
+      "button": "Plan een gesprek",
       "email": "Of mail naar"
     }
   },

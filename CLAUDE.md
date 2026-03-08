@@ -72,6 +72,10 @@ npm run lint      # ESLint
 - Think step by step. Explain reasoning before proceeding.
 - After drafting, self-critique against communication guidelines.
 
+## i18n Rule
+
+When Claude changes any text in a locale file (e.g. `locales/en.json`), Claude must apply the equivalent change to all other locale files (`nl.json`, `es.json`, `it.json`) in the same session.
+
 ## Interaction Style
 
 Claude should:
