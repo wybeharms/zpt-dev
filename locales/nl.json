@@ -6,6 +6,7 @@
     "resources": "Cases",
     "product": "Product",
     "portal": "Portal",
+    "login": "Login",
     "cta": "Plan een gesprek"
   },
   "ui": {
@@ -192,7 +193,17 @@
     "intro": {
       "title": "Wat ZPT Sales is",
       "description": "Wij helpen bedrijven die al leads, lijsten of CRM-data hebben maar een duidelijkere en betrouwbaardere manier nodig hebben om ermee te werken. ZPT benut de nieuwste AI- en agenttools, zodat uw salesproces de concurrentie voorblijft.",
-      "note": "Deel een lijst met 100 namen. Wij verrijken die gratis en leveren de resultaten in het formaat van uw voorkeur."
+      "comparison": {
+        "genericTitle": "Generieke salestools",
+        "genericLine": "Eén database. Statische resultaten.",
+        "zptTitle": "ZPT Sales",
+        "zptLine": "Elke bron die u nodig heeft, inclusief uw eigen. Aangedreven door de meest geavanceerde AI-agents.",
+        "plusYours": "+ uw bronnen",
+        "diyTitle": "Zelf doen",
+        "diyLine": "Krachtig, maar vereist setup, training en doorlopend onderhoud.",
+        "diyAdvisory": "Hulp nodig bij de opzet?",
+        "diyAdvisoryLink": "ZPT Advisory."
+      }
     },
     "funnel": {
       "title": "De salesfunnel",
@@ -300,7 +311,8 @@
           "description": "ZPT begint met sourcen, verrijken en kwalificeren van prospects. Output stroomt terug via uw CRM."
         }
       ],
-      "callout": "U krijgt de output. Wij draaien het systeem."
+      "callout": "U krijgt de output. Wij draaien het systeem.",
+      "trialCta": "Start gratis proefperiode →"
     },
     "portal": {
       "title": "Zichtbaarheid in het portal",

@@ -32,17 +32,17 @@ export default function Header() {
           >
             {t("nav.resources")}
           </Link>
+        </nav>
+
+        {/* Right side — language + login + CTA */}
+        <div className="hidden items-center justify-end gap-4 md:flex">
+          <LanguageSelector />
           <Link
             href="/portal"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
-            {t("nav.portal")}
+            {t("nav.login")}
           </Link>
-        </nav>
-
-        {/* Right side — language + CTA */}
-        <div className="hidden items-center justify-end gap-4 md:flex">
-          <LanguageSelector />
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
             target="_blank"
@@ -118,14 +118,14 @@ export default function Header() {
             >
               {t("nav.resources")}
             </Link>
+            <LanguageSelector />
             <Link
               href="/portal"
-              className="text-sm text-white/80 transition-colors hover:text-white"
+              className="inline-block rounded border border-white/20 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t("nav.portal")}
+              {t("nav.login")}
             </Link>
-            <LanguageSelector />
             <a
               href="mailto:request@zpteam.ai?subject=Intro call request"
               target="_blank"

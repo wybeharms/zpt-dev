@@ -6,6 +6,7 @@
     "resources": "Casos",
     "product": "Producto",
     "portal": "Portal",
+    "login": "Login",
     "cta": "Reservar una llamada"
   },
   "ui": {
@@ -192,7 +193,17 @@
     "intro": {
       "title": "Que es ZPT Sales",
       "description": "Ayudamos a empresas que ya tienen leads, listas o datos en el CRM, pero necesitan una forma mas clara y fiable de trabajar con ellos. ZPT aprovecha las ultimas herramientas de IA y agentes para que su proceso comercial se mantenga por delante de la competencia.",
-      "note": "Comparta una lista de 100 nombres. Los enriquecemos gratis y entregamos los resultados en el formato que prefiera."
+      "comparison": {
+        "genericTitle": "Herramientas de ventas genéricas",
+        "genericLine": "Una base de datos. Resultados estáticos.",
+        "zptTitle": "ZPT Sales",
+        "zptLine": "Cualquier fuente que necesite, incluidas las suyas. Impulsado por los agentes de IA mas avanzados.",
+        "plusYours": "+ sus fuentes",
+        "diyTitle": "Hacerlo usted mismo",
+        "diyLine": "Potente, pero requiere configuración, formación y mantenimiento continuo.",
+        "diyAdvisory": "Necesita ayuda para configurarlo?",
+        "diyAdvisoryLink": "ZPT Advisory."
+      }
     },
     "funnel": {
       "title": "El embudo de ventas",
@@ -300,7 +311,8 @@
           "description": "ZPT comienza a buscar, enriquecer y calificar prospectos. Los resultados fluyen de vuelta a su CRM."
         }
       ],
-      "callout": "Usted recibe los resultados. Nosotros operamos el sistema."
+      "callout": "Usted recibe los resultados. Nosotros operamos el sistema.",
+      "trialCta": "Iniciar prueba gratis →"
     },
     "portal": {
       "title": "Visibilidad en el portal",
