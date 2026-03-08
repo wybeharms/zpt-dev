@@ -54,16 +54,16 @@ export default function HomeContent() {
             className="mx-auto mt-14 max-w-xl text-lg leading-relaxed text-white/70"
             dangerouslySetInnerHTML={{ __html: t("home.hero.description") }}
           />
-          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
               href="/advisory"
-              className="inline-flex min-w-[260px] items-center justify-center rounded border border-gold/40 bg-gold/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gold/60 hover:bg-gold/30"
+              className="inline-flex min-w-[260px] items-center justify-center rounded border-2 border-gold/50 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gold hover:bg-gold/10"
             >
               <span className="font-bold">{t("home.hero.teamCtaPrefix")}</span>&nbsp;{t("home.hero.teamCtaLabel")}
             </Link>
             <Link
               href="/sales"
-              className="inline-flex min-w-[260px] items-center justify-center rounded border border-gold/40 bg-gold/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gold/60 hover:bg-gold/30"
+              className="inline-flex min-w-[260px] items-center justify-center rounded border-2 border-gold/50 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gold hover:bg-gold/10"
             >
               <span className="font-bold">{t("home.hero.salesCtaPrefix")}</span>&nbsp;{t("home.hero.salesCtaLabel")}
             </Link>
@@ -73,8 +73,8 @@ export default function HomeContent() {
 
       {/* Quote */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <blockquote className="font-heading text-2xl font-light italic leading-relaxed tracking-tight text-navy md:text-3xl">
+        <div className="mx-auto max-w-4xl text-center">
+          <blockquote className="font-heading text-xl font-light italic leading-relaxed tracking-tight text-navy md:text-2xl">
             <span className="animate-[glow_4s_ease-in-out_infinite]">&ldquo;</span>
             {t("home.quote.text")}
             <span className="animate-[glow_4s_ease-in-out_infinite]">&rdquo;</span>
@@ -96,9 +96,10 @@ export default function HomeContent() {
       {/* What this means for you */}
       <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
-            {t("home.practical.intro")}
-          </h2>
+          <h2
+            className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl"
+            dangerouslySetInnerHTML={{ __html: t("home.practical.intro") }}
+          />
           <p className="mx-auto mt-4 max-w-3xl">
             <span className="animate-[breathe_3s_ease-in-out_infinite] text-xl font-semibold text-gold md:text-2xl">
               {t("home.practical.introOverwhelming")}
