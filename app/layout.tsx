@@ -27,7 +27,7 @@ const sourceCode = Source_Code_Pro({
 
 export const metadata: Metadata = {
   title: {
-    default: "ZPT - AI Agents for B2B Companies",
+    default: "ZPT - Turn AI into a co-worker, not a chatbot",
     template: "%s | ZPT",
   },
   description:
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://zpteam.ai",
     siteName: "ZPT",
-    title: "ZPT - AI Agents for B2B Companies",
+    title: "ZPT - Turn AI into a co-worker, not a chatbot",
     description:
       "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZPT - AI Agents for B2B Companies",
+    title: "ZPT - Turn AI into a co-worker, not a chatbot",
     description:
       "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously.",
   },
