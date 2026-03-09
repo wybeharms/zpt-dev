@@ -280,6 +280,35 @@ aws s3 cp analysis.json s3://zpt-portal-data/acme/competitors/analysis.json
 
 ---
 
+## Domain & Email Infrastructure
+
+### DNS (Namecheap)
+
+Namecheap is the domain registrar for `zpteam.ai` and manages all DNS records:
+
+| Record Type | Purpose |
+|-------------|---------|
+| A + CNAME | Website routing to Vercel |
+| TXT | Google Workspace domain verification |
+| MX | Email routing to Google Workspace |
+| TXT (SPF) | Authorizes Google as valid sender for `@zpteam.ai` |
+| TXT (DKIM) | Cryptographic email signing via Google-generated key |
+| TXT (DMARC) | Email authentication monitoring (currently no enforcement) |
+
+### Google Workspace (Email)
+
+- **Plan**: Business Starter
+- **Primary user**: wybe@zpteam.ai
+- **Aliases** (deliver to wybe@zpteam.ai inbox):
+  - `request@zpteam.ai` — used as the mailto CTA in the site header and sales page
+  - `help@zpteam.ai` — support alias
+- **Authentication**: SPF + DKIM configured; DMARC in monitoring mode
+- **Admin console**: admin.google.com (logged in as wybe@zpteam.ai)
+
+All email for `@zpteam.ai` routes through Google Workspace. Additional paid seats can be added later if separate mailboxes are needed; aliases allow multiple sender identities on a single seat.
+
+---
+
 ## AWS Infrastructure
 
 ### Cognito User Pool
