@@ -632,10 +632,20 @@
   },
   "about": {
     "title": "Sobre ZPT",
+    "team": {
+      "beer": {
+        "name": "Berend Harms",
+        "role": "Cofundador",
+        "bio": "BBA en la Universidad de Ámsterdam. Actualmente cursando un Máster en Innovation, Technology and Entrepreneurship en Bocconi. Construye activamente productos de IA y es el cerebro detrás de ZPT."
+      },
+      "arnau": {
+        "name": "Arnau Ribé i Fernandez",
+        "role": "Cofundador",
+        "bio": "Estudió Relaciones Públicas, Publicidad y Comunicación en la Universitat Autònoma de Barcelona. Experiencia comercial en Ringover y Across Logistics. Lidera las operaciones de ventas de ZPT."
+      }
+    },
     "paragraphs": [
-      "ZPT cree que la forma mas efectiva de usar agentes de IA es ejecutarlos sobre un sistema de carpetas local y estructurado. Archivos que la empresa posee, contexto que la empresa controla, resultados que la empresa puede ver y verificar.",
-      "El enfoque: conectar agentes de IA a las herramientas que la empresa ya utiliza, mantener los datos locales y conservar el control total sobre cada paso del proceso.",
-      "Hoy, ZPT opera en tres industrias: analisis financiero, leasing automotriz y logistica. El mismo sistema, diferente contexto. El producto esta activo y operativo."
+      "La programación agéntica revolucionó el mundo a finales de 2025. Esa misma tecnología se está expandiendo rápidamente a los procesos empresariales cotidianos. ZPT está construido para capitalizar este cambio."
     ],
     "cta": "Reservar una llamada",
     "ctaSubtext": "O escriba a"
