@@ -632,10 +632,20 @@
   },
   "about": {
     "title": "Over ZPT",
+    "team": {
+      "beer": {
+        "name": "Berend Harms",
+        "role": "Medeoprichter",
+        "bio": "BBA aan de Universiteit van Amsterdam. Momenteel bezig met een Master in Innovation, Technology and Entrepreneurship aan Bocconi. Bouwt actief aan AI-producten en het brein achter ZPT."
+      },
+      "arnau": {
+        "name": "Arnau Ribé i Fernandez",
+        "role": "Medeoprichter",
+        "bio": "Studeerde Public Relations, Reclame en Communicatie aan de Universitat Autònoma de Barcelona. Commerciële ervaring bij Ringover en Across Logistics. Leidt de salesoperaties van ZPT."
+      }
+    },
     "paragraphs": [
-      "ZPT gelooft dat de meest effectieve manier om AI-agents in te zetten is door ze te laten draaien bovenop een lokaal, gestructureerd mappensysteem. Bestanden die het bedrijf bezit, context die het bedrijf beheert, output die het bedrijf kan zien en verifieren.",
-      "De aanpak: AI-agents koppelen aan de tools die een bedrijf al gebruikt, data lokaal houden en volledige controle behouden over elke stap van het proces.",
-      "ZPT is vandaag operationeel in drie sectoren: financiele analyse, autoleasing en logistiek. Hetzelfde systeem, andere context. Het product is live en operationeel."
+      "Agentic coding veroverde de wereld eind 2025. Diezelfde technologie breidt zich nu snel uit naar dagelijkse bedrijfsprocessen. ZPT is gebouwd om op deze verschuiving in te spelen."
     ],
     "cta": "Plan een gesprek",
     "ctaSubtext": "Of mail naar"

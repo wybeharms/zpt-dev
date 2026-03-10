@@ -631,11 +631,21 @@
     }
   },
   "about": {
-    "title": "Chi e ZPT",
+    "title": "Chi è ZPT",
+    "team": {
+      "beer": {
+        "name": "Berend Harms",
+        "role": "Co-fondatore",
+        "bio": "BBA all'Università di Amsterdam. Attualmente frequenta un Master in Innovation, Technology and Entrepreneurship alla Bocconi. Costruisce attivamente prodotti AI ed è la mente dietro ZPT."
+      },
+      "arnau": {
+        "name": "Arnau Ribé i Fernandez",
+        "role": "Co-fondatore",
+        "bio": "Ha studiato Relazioni Pubbliche, Pubblicità e Comunicazione alla Universitat Autònoma de Barcelona. Esperienza commerciale presso Ringover e Across Logistics. Guida le operazioni di vendita di ZPT."
+      }
+    },
     "paragraphs": [
-      "ZPT crede che il modo piu efficace di usare gli agenti AI sia eseguirli su un sistema di cartelle locale e strutturato. File di proprieta dell'azienda, contesto controllato dall'azienda, output che l'azienda puo vedere e verificare.",
-      "L'approccio: collegare agenti AI agli strumenti che l'azienda gia utilizza, mantenere i dati in locale e conservare il pieno controllo su ogni fase del processo.",
-      "Oggi ZPT opera in tre settori: analisi finanziaria, leasing automobilistico e logistica. Stesso sistema, contesto diverso. Il prodotto e attivo e operativo."
+      "Il coding agentico ha conquistato il mondo alla fine del 2025. La stessa tecnologia si sta espandendo rapidamente ai processi aziendali quotidiani. ZPT è costruito per capitalizzare questo cambiamento."
     ],
     "cta": "Prenota una call",
     "ctaSubtext": "Oppure scrivi a"
