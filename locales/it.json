@@ -4,6 +4,7 @@
     "advisory": "Advisory",
     "about": "Chi siamo",
     "resources": "Casi",
+    "technology": "Tecnologia",
     "product": "Prodotto",
     "portal": "Portale",
     "login": "Login",
@@ -15,7 +16,7 @@
   },
   "meta": {
     "default": {
-      "title": "ZPT - Trasforma l'AI in un collega, non un chatbot",
+      "title": "ZPT - Setup e implementazione AI",
       "description": "ZPT struttura la conoscenza, i workflow e il contesto di un'azienda in una cartella locale. Un agente AI si appoggia sopra ed esegue task in autonomia. L'output di un intero team, senza assumerne uno."
     },
     "sales": {
@@ -30,6 +31,10 @@
       "title": "ZPT Advisory - Consulenza AI per il tuo team",
       "description": "ZPT visita la tua azienda, comprende i workflow, forma il team sull'AI, configura gli account, collega le integrazioni e opzionalmente costruisce una cartella aziendale su misura. Nessun vendor lock-in."
     },
+    "technology": {
+      "title": "Tecnologia - Come funziona ZPT",
+      "description": "Come funzionano gli agenti AI, su cosa si basa ZPT e come si collega ai tuoi strumenti esistenti."
+    },
     "resources": {
       "title": "Case study - ZPT",
       "description": "Scopri come ZPT opera in logistica, leasing automotive e analisi finanziaria. Risultati reali da aziende reali."
@@ -41,14 +46,10 @@
   },
   "home": {
     "hero": {
-      "title": "Il risultato di un intero team.",
-      "subtitle": "Senza assumerne uno.",
-      "description": "ZPT rispecchia le conoscenze, i workflow e il contesto della tua azienda in una <strong>cartella locale strutturata</strong>. Con tutto in un unico posto, l'AI gestisce il lavoro ripetitivo che il tuo team non dovrebbe fare.",
-      "cta": "Prenota una call",
-      "teamCtaPrefix": "Advisory:",
-      "teamCtaLabel": "Voglio attrezzare il mio team",
-      "salesCtaPrefix": "Sales:",
-      "salesCtaLabel": "Voglio supporto per le vendite"
+      "title": "La tua azienda sa che l'IA e potente.",
+      "subtitle": "Noi la rendiamo realta.",
+      "description": "ZPT costruisce una configurazione AI pratica su misura per la tua azienda. Il tuo team la usa tramite Claude, ChatGPT o qualsiasi app compatibile. Sei proprietario di tutto.",
+      "cta": "Prenota una call"
     },
     "practical": {
       "title": "Cosa significa per te",
@@ -160,18 +161,29 @@
     },
     "proof": {
       "title": "Gia operativo",
-      "cases": [
+      "description": "ZPT ha consegnato setup AI in logistica, leasing automobilistico e servizi finanziari.",
+      "fitTitle": "La tua azienda e adatta se",
+      "fitItems": [
+        "Tra 5 e 100 persone",
+        "Guidata da un fondatore ambizioso pronto ad adottare rapidamente",
+        "Pochi vincoli legali e di sicurezza",
+        "Pronta a superare la concorrenza"
+      ]
+    },
+    "expectations": {
+      "title": "Cosa ci aspettiamo da te",
+      "items": [
         {
-          "company": "Un'azienda di logistica",
-          "stat": "20.000 contatti arricchiti, verificati e puliti. Il team di vendita ora raggiunge molte piu aziende con tassi di conversione piu elevati."
+          "title": "Abbonamento Claude Pro",
+          "description": "Il tuo team si abbona a Claude Pro (~$100/mese). Questa e la base su cui funziona il setup."
         },
         {
-          "company": "Blankert Shortlease",
-          "stat": "Ricerca strutturata di prospect nel mercato del leasing automobilistico olandese. Arricchimento e supporto outreach continui."
+          "title": "Accesso aperto ai workflow",
+          "description": "ZPT deve capire come lavora il tuo team. Firmiamo un accordo di riservatezza (NDA) per proteggere tutte le informazioni."
         },
         {
-          "company": "Financial Analytics",
-          "stat": "Oltre 1.300 contatti prospettati tra investitori istituzionali."
+          "title": "Un punto di contatto",
+          "description": "Una persona nel tuo team che possa rispondere a domande e dare feedback durante il progetto."
         }
       ]
     },
@@ -594,11 +606,13 @@
       "description": "Visitiamo la tua azienda, comprendiamo come lavora il team e costruiamo il setup AI giusto, dalla formazione all'implementazione completa.",
       "exampleLink": "esempio",
       "points": [
-        "Comprendere workflow, strumenti e struttura del team",
-        "Formare il team sulle capacita AI rilevanti",
-        "Configurare account, strumenti e collegare integrazioni",
-        "Opzionalmente costruire una cartella aziendale su misura",
-        "Formare il team a lavorare con l'AI come un collega"
+        "Analizzare workflow, identificare opportunita di automazione",
+        "Costruire una cartella su misura con connettori, skill e agenti",
+        "Formare il team a usarlo in autonomia",
+        "Costo di setup + piccola quota ricorrente per aggiornamenti periodici",
+        "Piena proprieta dell'azienda. Nessun lock-in.",
+        "Inizia con una valutazione di fattibilita",
+        "Piu veloce e conveniente che costruirlo internamente"
       ],
       "callout": "Tutto cio che ZPT costruisce resta all'azienda. Nessun lock-in, nessuna dipendenza."
     },
@@ -628,6 +642,21 @@
       "title": "Pronto a scoprire cosa l'IA puo fare per la tua azienda?",
       "button": "Prenota una call",
       "email": "Oppure scrivi a"
+    }
+  },
+  "technology": {
+    "hero": {
+      "title": "La tecnologia dietro ZPT",
+      "description": "Come funzionano gli agenti AI, su cosa si basa ZPT e come si collega ai tuoi strumenti esistenti."
+    },
+    "claudeCode": {
+      "title": "Costruito su Claude Code e Codex",
+      "description": "I setup ZPT sono costruiti sulla stessa architettura usata dagli sviluppatori in tutto il mondo: una cartella locale strutturata che da all'AI il contesto completo sull'azienda. Claude Code e OpenAI Codex sono i motori che alimentano l'agente — leggendo la cartella, eseguendo task e collegandosi a strumenti esterni.",
+      "points": [
+        "La cartella resta sulla macchina dell'azienda — nulla viene inviato a ZPT",
+        "Il provider AI e intercambiabile: Claude, ChatGPT o modelli open-source",
+        "ZPT configura tutto — l'azienda lo usa e basta"
+      ]
     }
   },
   "about": {

@@ -4,6 +4,7 @@
     "advisory": "Advisory",
     "about": "Nosotros",
     "resources": "Casos",
+    "technology": "Tecnologia",
     "product": "Producto",
     "portal": "Portal",
     "login": "Login",
@@ -15,7 +16,7 @@
   },
   "meta": {
     "default": {
-      "title": "ZPT - Convierte la IA en un compañero de trabajo, no un chatbot",
+      "title": "ZPT - Configuración e implementación de IA",
       "description": "ZPT estructura el conocimiento, los flujos de trabajo y el contexto de una empresa en una carpeta local. Un agente de IA opera encima y ejecuta tareas de forma autonoma. El resultado de un equipo completo, sin contratar uno."
     },
     "sales": {
@@ -30,6 +31,10 @@
       "title": "ZPT Advisory - Consultoria de IA para su equipo",
       "description": "ZPT visita su empresa, comprende los flujos de trabajo, educa a su equipo sobre IA, configura cuentas, conecta integraciones y opcionalmente construye una carpeta empresarial a medida. Sin dependencia de proveedor."
     },
+    "technology": {
+      "title": "Tecnologia - Como funciona ZPT",
+      "description": "Como funcionan los agentes de IA, en que se basa ZPT y como se conecta a sus herramientas existentes."
+    },
     "resources": {
       "title": "Casos de estudio - ZPT",
       "description": "Vea como opera ZPT en logistica, leasing automotriz y analitica financiera. Resultados reales de empresas reales."
@@ -41,14 +46,10 @@
   },
   "home": {
     "hero": {
-      "title": "El resultado de un equipo completo.",
-      "subtitle": "Sin contratar uno.",
-      "description": "ZPT refleja el conocimiento, los flujos de trabajo y el contexto de tu empresa en una <strong>carpeta local estructurada</strong>. Con todo en un solo lugar, la IA se encarga del trabajo repetitivo que tu equipo no deberia estar haciendo.",
-      "cta": "Reservar una llamada",
-      "teamCtaPrefix": "Advisory:",
-      "teamCtaLabel": "Quiero equipar a mi equipo",
-      "salesCtaPrefix": "Sales:",
-      "salesCtaLabel": "Quiero ayuda con ventas"
+      "title": "Su empresa sabe que la IA es poderosa.",
+      "subtitle": "Nosotros la hacemos realidad.",
+      "description": "ZPT construye una configuracion de IA practica adaptada a su empresa. Su equipo la usa a traves de Claude, ChatGPT o cualquier app compatible. Usted es dueno de todo.",
+      "cta": "Reservar una llamada"
     },
     "practical": {
       "title": "Lo que esto significa para usted",
@@ -160,18 +161,29 @@
     },
     "proof": {
       "title": "Ya operativo",
-      "cases": [
+      "description": "ZPT ha entregado configuraciones de IA en logistica, leasing automotriz y servicios financieros.",
+      "fitTitle": "Su empresa encaja bien si",
+      "fitItems": [
+        "Entre 5 y 100 personas",
+        "Liderada por un fundador ambicioso dispuesto a adoptar rapidamente",
+        "Pocas restricciones legales y de seguridad",
+        "Lista para adelantarse a la competencia"
+      ]
+    },
+    "expectations": {
+      "title": "Lo que esperamos de usted",
+      "items": [
         {
-          "company": "Una empresa de logística",
-          "stat": "20.000 contactos enriquecidos, verificados y depurados. El equipo de ventas ahora llega a significativamente mas empresas con tasas de conversion mas altas."
+          "title": "Suscripcion a Claude Pro",
+          "description": "Su equipo se suscribe a Claude Pro (~$100/mes). Esta es la base sobre la que funciona la configuracion."
         },
         {
-          "company": "Blankert Shortlease",
-          "stat": "Busqueda estructurada de prospectos en el mercado de leasing automotriz en los Paises Bajos. Enriquecimiento y soporte de outreach continuo."
+          "title": "Acceso abierto a flujos de trabajo",
+          "description": "ZPT necesita entender como trabaja su equipo. Firmamos un acuerdo de confidencialidad (NDA) para proteger toda la informacion."
         },
         {
-          "company": "Financial Analytics",
-          "stat": "Mas de 1.300 contactos prospectados entre inversores institucionales."
+          "title": "Un punto de contacto",
+          "description": "Una persona en su equipo que pueda responder preguntas y dar feedback durante el proyecto."
         }
       ]
     },
@@ -594,11 +606,13 @@
       "description": "Visitamos su empresa, entendemos como trabaja el equipo y construimos la configuracion de IA adecuada, desde educacion hasta implementacion completa.",
       "exampleLink": "ejemplo",
       "points": [
-        "Entender flujos de trabajo, herramientas y estructura del equipo",
-        "Educar al equipo sobre capacidades de IA relevantes",
-        "Configurar cuentas, herramientas y conectar integraciones",
-        "Opcionalmente construir una carpeta empresarial a medida",
-        "Capacitar al equipo para trabajar con IA como companero"
+        "Revisar flujos de trabajo, identificar oportunidades de automatizacion",
+        "Construir una carpeta a medida con conectores, skills y agentes",
+        "Capacitar al equipo para usarlo de forma independiente",
+        "Tarifa de configuracion + pequena cuota recurrente para actualizaciones periodicas",
+        "Propiedad completa de la empresa. Sin lock-in.",
+        "Comienza con una evaluacion de viabilidad",
+        "Mas rapido y economico que hacerlo internamente"
       ],
       "callout": "Todo lo que ZPT construye se queda con la empresa. Sin lock-in, sin dependencias."
     },
@@ -628,6 +642,21 @@
       "title": "Listo para ver lo que la IA puede hacer por su empresa?",
       "button": "Reservar una llamada",
       "email": "O escriba a"
+    }
+  },
+  "technology": {
+    "hero": {
+      "title": "La tecnologia detras de ZPT",
+      "description": "Como funcionan los agentes de IA, en que se basa ZPT y como se conecta a sus herramientas existentes."
+    },
+    "claudeCode": {
+      "title": "Construido sobre Claude Code y Codex",
+      "description": "Las configuraciones de ZPT estan construidas sobre la misma arquitectura que usan los desarrolladores en todo el mundo: una carpeta local estructurada que da a la IA contexto completo sobre la empresa. Claude Code y OpenAI Codex son los motores que impulsan al agente — leyendo la carpeta, ejecutando tareas y conectandose a herramientas externas.",
+      "points": [
+        "La carpeta permanece en la maquina de la empresa — nada se envia a ZPT",
+        "El proveedor de IA es intercambiable: Claude, ChatGPT o modelos open-source",
+        "ZPT configura todo — la empresa simplemente lo usa"
+      ]
     }
   },
   "about": {

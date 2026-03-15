@@ -4,6 +4,7 @@
     "advisory": "Advisory",
     "about": "About",
     "resources": "Resources",
+    "technology": "Technology",
     "product": "Product",
     "portal": "Portal",
     "login": "Login",
@@ -15,7 +16,7 @@
   },
   "meta": {
     "default": {
-      "title": "ZPT - Turn AI into a co-worker, not a chatbot",
+      "title": "ZPT - AI setup and implementation",
       "description": "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously. The output of a full team, without hiring one."
     },
     "sales": {
@@ -30,6 +31,10 @@
       "title": "ZPT Advisory - AI Consulting for Your Team",
       "description": "ZPT visits your company, understands workflows, educates your team on AI, sets up accounts, connects integrations, and optionally builds a tailored company folder. No vendor lock-in."
     },
+    "technology": {
+      "title": "Technology - How ZPT Works",
+      "description": "How AI agents work, what ZPT builds on, and how it connects to your existing tools."
+    },
     "resources": {
       "title": "Case Studies - ZPT",
       "description": "See how ZPT operates across logistics, automotive leasing, and financial analytics. Real results from real companies."
@@ -41,14 +46,10 @@
   },
   "home": {
     "hero": {
-      "title": "The output of a full team.",
-      "subtitle": "Without hiring one.",
-      "description": "ZPT turns the AI tools your team already uses into practical tools that handle real company tasks.",
-      "cta": "Book a Call",
-      "teamCtaPrefix": "Advisory:",
-      "teamCtaLabel": "I want to equip my team",
-      "salesCtaPrefix": "Sales:",
-      "salesCtaLabel": "I want help with sales"
+      "title": "Your company knows AI is powerful.",
+      "subtitle": "We make it happen.",
+      "description": "ZPT builds a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything.",
+      "cta": "Book a Call"
     },
     "practical": {
       "title": "What this means for you",
@@ -160,18 +161,29 @@
     },
     "proof": {
       "title": "Already operational",
-      "cases": [
+      "description": "ZPT has delivered AI setups across logistics, automotive leasing, and financial services.",
+      "fitTitle": "Your company is a good fit if",
+      "fitItems": [
+        "Between 5 and 100 people",
+        "Led by an ambitious founder willing to adopt quickly",
+        "Few legal and security constraints slowing things down",
+        "Ready to move ahead of the competition"
+      ]
+    },
+    "expectations": {
+      "title": "What we expect from you",
+      "items": [
         {
-          "company": "A logistics company",
-          "stat": "20,000 contacts enriched, verified, and cleaned. The sales team now reaches significantly more companies with higher conversion rates."
+          "title": "Claude Pro subscription",
+          "description": "Your team subscribes to Claude Pro (~$100/month). This is the foundation the setup runs on."
         },
         {
-          "company": "Blankert Shortlease",
-          "stat": "Structured prospect sourcing in the Dutch automotive leasing market. Ongoing enrichment and outreach support."
+          "title": "Open access to workflows",
+          "description": "ZPT needs to understand how your team works. We sign an NDA to protect all information."
         },
         {
-          "company": "Financial Analytics",
-          "stat": "1,300+ contacts prospected across institutional investors."
+          "title": "A point of contact",
+          "description": "One person on your team who can answer questions and give feedback during the engagement."
         }
       ]
     },
@@ -514,11 +526,13 @@
       "description": "We visit your company, understand how the team works, and build the right AI setup, from education to full implementation.",
       "exampleLink": "example",
       "points": [
-        "Understand workflows, tools, and team structure",
-        "Educate the team on relevant AI capabilities",
-        "Set up accounts, configure tools, connect integrations",
-        "Optionally build a tailored company folder",
-        "Train the team to work with AI as a co-worker"
+        "Review workflows, identify automation opportunities",
+        "Build a tailored folder with connectors, skills, and agents",
+        "Train the team to use it independently",
+        "Setup fee + small recurring fee for periodic updates",
+        "Full company ownership. No lock-in.",
+        "Starts with a viability assessment",
+        "Faster and cheaper than building it internally"
       ],
       "callout": "Everything ZPT builds stays with the company. No lock-in, no dependencies."
     },
@@ -548,6 +562,21 @@
       "title": "Ready to see what AI can do for your company?",
       "button": "Book a Call",
       "email": "Or email"
+    }
+  },
+  "technology": {
+    "hero": {
+      "title": "The technology behind ZPT",
+      "description": "How AI agents work, what ZPT builds on, and how it connects to your existing tools."
+    },
+    "claudeCode": {
+      "title": "Built on Claude Code and Codex",
+      "description": "ZPT setups are built on the same architecture that developers use worldwide: a structured local folder that gives AI full context about the company. Claude Code and OpenAI Codex are the engines that power the agent — reading the folder, executing tasks, and connecting to external tools.",
+      "points": [
+        "The folder stays on the company's machine — nothing is sent to ZPT",
+        "The AI provider is interchangeable: Claude, ChatGPT, or open-source models",
+        "ZPT configures everything — the company just uses it"
+      ]
     }
   },
   "about": {
