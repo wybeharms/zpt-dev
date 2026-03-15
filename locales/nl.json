@@ -4,6 +4,7 @@
     "advisory": "Advisory",
     "about": "Over ons",
     "resources": "Cases",
+    "technology": "Technologie",
     "product": "Product",
     "portal": "Portal",
     "login": "Login",
@@ -15,7 +16,7 @@
   },
   "meta": {
     "default": {
-      "title": "ZPT - Maak van AI een collega, geen chatbot",
+      "title": "ZPT - AI-setup en implementatie",
       "description": "ZPT structureert de kennis, workflows en context van een bedrijf in een lokale map. Een AI-agent werkt daarbovenop en voert taken autonoom uit. De output van een volledig team, zonder er een aan te nemen."
     },
     "sales": {
@@ -30,6 +31,10 @@
       "title": "ZPT Advisory - AI-advies voor uw team",
       "description": "ZPT komt langs bij uw bedrijf, begrijpt workflows, leert uw team over AI, richt accounts in, verbindt integraties en bouwt optioneel een bedrijfsmap op maat. Geen vendor lock-in."
     },
+    "technology": {
+      "title": "Technologie - Hoe ZPT werkt",
+      "description": "Hoe AI-agents werken, waar ZPT op bouwt en hoe het aansluit op uw bestaande tools."
+    },
     "resources": {
       "title": "Casestudies - ZPT",
       "description": "Bekijk hoe ZPT werkt in logistiek, autoleasing en financiele analyse. Echte resultaten van echte bedrijven."
@@ -41,14 +46,10 @@
   },
   "home": {
     "hero": {
-      "title": "De output van een volledig team.",
-      "subtitle": "Zonder er een aan te nemen.",
-      "description": "ZPT spiegelt de kennis, workflows en context van uw bedrijf in een <strong>gestructureerde lokale map</strong>. Met alles op een plek neemt AI het repetitieve werk over waar uw team niet aan zou moeten zitten.",
-      "cta": "Plan een gesprek",
-      "teamCtaPrefix": "Advisory:",
-      "teamCtaLabel": "Ik wil mijn team uitrusten",
-      "salesCtaPrefix": "Sales:",
-      "salesCtaLabel": "Ik wil hulp bij sales"
+      "title": "Uw bedrijf weet dat AI krachtig is.",
+      "subtitle": "Wij maken het werkelijkheid.",
+      "description": "ZPT bouwt een praktische AI-setup op maat van uw bedrijf. Uw team gebruikt het via Claude, ChatGPT of een andere compatibele app. U bent eigenaar van alles.",
+      "cta": "Plan een gesprek"
     },
     "practical": {
       "title": "Wat dit voor u betekent",
@@ -160,18 +161,29 @@
     },
     "proof": {
       "title": "Al operationeel",
-      "cases": [
+      "description": "ZPT heeft AI-setups geleverd in logistiek, autoleasing en financiele dienstverlening.",
+      "fitTitle": "Uw bedrijf past goed als",
+      "fitItems": [
+        "Tussen de 5 en 100 medewerkers",
+        "Geleid door een ambitieuze ondernemer die snel wil schakelen",
+        "Weinig juridische en beveiligingsbeperkingen",
+        "Klaar om de concurrentie voor te blijven"
+      ]
+    },
+    "expectations": {
+      "title": "Wat wij van u verwachten",
+      "items": [
         {
-          "company": "Een logistiek bedrijf",
-          "stat": "20.000 contacten verrijkt, geverifieerd en opgeschoond. Het salesteam bereikt nu aanzienlijk meer bedrijven met hogere conversiepercentages."
+          "title": "Claude Pro-abonnement",
+          "description": "Uw team neemt een Claude Pro-abonnement (~$100/maand). Dit is de basis waarop de setup draait."
         },
         {
-          "company": "Blankert Shortlease",
-          "stat": "Gestructureerde prospectsourcing in de Nederlandse autoleasemarkt. Doorlopende verrijking en outreach-ondersteuning."
+          "title": "Open toegang tot workflows",
+          "description": "ZPT moet begrijpen hoe uw team werkt. Wij tekenen een geheimhoudingsverklaring (NDA) om alle informatie te beschermen."
         },
         {
-          "company": "Financial Analytics",
-          "stat": "1.300+ contacten geprospecteerd bij institutionele beleggers."
+          "title": "Een contactpersoon",
+          "description": "Een persoon in uw team die vragen kan beantwoorden en feedback kan geven tijdens het traject."
         }
       ]
     },
@@ -594,11 +606,13 @@
       "description": "Wij komen langs bij uw bedrijf, begrijpen hoe het team werkt en bouwen de juiste AI-setup, van educatie tot volledige implementatie.",
       "exampleLink": "voorbeeld",
       "points": [
-        "Workflows, tools en teamstructuur begrijpen",
-        "Het team opleiden over relevante AI-mogelijkheden",
-        "Accounts inrichten, tools configureren, integraties verbinden",
-        "Optioneel een bedrijfsmap op maat bouwen",
-        "Het team trainen om met AI als collega te werken"
+        "Workflows doorlichten, automatiseringsmogelijkheden identificeren",
+        "Een map op maat bouwen met connectors, skills en agents",
+        "Het team trainen om het zelfstandig te gebruiken",
+        "Eenmalige setupkosten + kleine terugkerende vergoeding voor periodieke updates",
+        "Volledig eigendom van het bedrijf. Geen lock-in.",
+        "Begint met een haalbaarheidsanalyse",
+        "Sneller en goedkoper dan het intern bouwen"
       ],
       "callout": "Alles wat ZPT bouwt, blijft bij het bedrijf. Geen lock-in, geen afhankelijkheden."
     },
@@ -628,6 +642,21 @@
       "title": "Benieuwd wat AI voor uw bedrijf kan betekenen?",
       "button": "Plan een gesprek",
       "email": "Of mail naar"
+    }
+  },
+  "technology": {
+    "hero": {
+      "title": "De technologie achter ZPT",
+      "description": "Hoe AI-agents werken, waar ZPT op bouwt en hoe het aansluit op uw bestaande tools."
+    },
+    "claudeCode": {
+      "title": "Gebouwd op Claude Code en Codex",
+      "description": "ZPT-setups zijn gebouwd op dezelfde architectuur die ontwikkelaars wereldwijd gebruiken: een gestructureerde lokale map die AI volledige context geeft over het bedrijf. Claude Code en OpenAI Codex zijn de motoren die de agent aandrijven — de map lezen, taken uitvoeren en verbinden met externe tools.",
+      "points": [
+        "De map blijft op de machine van het bedrijf — er wordt niets naar ZPT gestuurd",
+        "De AI-provider is uitwisselbaar: Claude, ChatGPT of open-source modellen",
+        "ZPT configureert alles — het bedrijf gebruikt het gewoon"
+      ]
     }
   },
   "about": {
