@@ -48,11 +48,11 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "ZPT builds a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything.",
+      "description": "ZPT builds a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. <strong>You own everything.</strong>",
       "cta": "Book a Call"
     },
     "practical": {
-      "title": "What this means for you",
+      "title": "What This Means for You",
       "intro": "Every week, new AI concepts land: <strong>Skills</strong>, <strong>MCPs</strong>, <strong>Plugins</strong>, <strong>CLIs</strong>.",
       "introOverwhelming": "It's overwhelming",
       "introHighlight": "ZPT simplifies this for you.",
@@ -66,7 +66,7 @@
       "followup": "Most companies don’t need another tool. They need a better setup around the tools they already have."
     },
     "howItWorks": {
-      "title": "How an agent works",
+      "title": "How an Agent Works",
       "intro": "There's been a lot of talk about AI agents. But few companies know how to actually implement them. ZPT bridges that gap.",
       "agent": "Agent",
       "brain": {
@@ -86,15 +86,16 @@
       "folderCallout": "ZPT provides a battle-tested setup and personalizes it for your company."
     },
     "bottleneck": {
-      "title": "Real-life examples of what we can do for you",
+      "title": "Automate Repetitive Workflows. Scale Without Limits.",
+      "subtitle": "Real examples of busywork ZPT automates. Each workflow runs indefinitely once set up.",
       "description": "",
       "description2": "",
       "examplesLabel": "Real-life examples of what we can do for you:",
       "useCases": [
         {
-          "title": "Enrich prospects",
-          "description": "The agent checks your CRM, searches <strong class=\"text-[#EA4335]\">Google Maps</strong>, cross-references your ideal customer profile, and adds new prospects to <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
-          "why": "Claude on the web can search too, but can't access your CRM or know your ideal customer."
+          "title": "Quarterly fund cash flow analysis",
+          "description": "A fund reports quarterly cash flows. The agent reads the <strong class=\"text-[#D04A02]\">PDFs</strong>, extracts figures, cross-checks the data, and updates the model in <strong class=\"text-[#036C5F]\">SharePoint</strong>. What took days now runs automatically.",
+          "why": "The same workflow handles 5 funds or 50. Define it once, scale indefinitely."
         },
         {
           "title": "Build a deck",
@@ -102,9 +103,9 @@
           "why": "Same tools, but with your company's positioning, tone, and formatting built in."
         },
         {
-          "title": "Monitor competitors",
-          "description": "The agent pulls from <strong class=\"text-[#0A66C2]\">LinkedIn</strong>, <strong class=\"text-[#EA4335]\">Google Maps</strong>, and other sources to track competitor activity on a regular schedule. Results go into a shared file your team can review.",
-          "why": "No more ad hoc research scattered across team members' chat histories."
+          "title": "Client onboarding document processing",
+          "description": "New clients send contracts and intake forms via <strong class=\"text-[#EA4335]\">Gmail</strong>. The agent extracts key fields, populates internal records in <strong class=\"text-[#FF7A59]\">HubSpot</strong>, and flags anything missing.",
+          "why": "The same workflow handles 5 clients or 500. No extra headcount needed."
         },
         {
           "title": "Automate busywork",
@@ -116,7 +117,7 @@
       "screenshotCaption": "Real example: Claude finds new prospects in Chicago by checking HubSpot, cross-referencing the ICP, and searching Google Maps."
     },
     "growing": {
-      "title": "A setup that grows with you",
+      "title": "A Setup That Grows With You",
       "day1": "Day 1",
       "month3": "Month 3",
       "arrow": "Add MCPs, skills, and agents over time",
@@ -146,7 +147,7 @@
       ]
     },
     "products": {
-      "title": "Two ways to work with ZPT",
+      "title": "Two Ways to Work With ZPT",
       "sales": {
         "title": "ZPT Sales",
         "badge": "",
@@ -160,22 +161,26 @@
       }
     },
     "proof": {
-      "title": "Already operational",
-      "description": "ZPT has delivered AI setups across logistics, automotive leasing, and financial services.",
-      "fitTitle": "Your company is a good fit if",
+      "title": "Is ZPT Right for Your Company?",
+      "fitTitle": "Good Fit If",
       "fitItems": [
-        "Between 5 and 100 people",
-        "Led by an ambitious founder willing to adopt quickly",
-        "Few legal and security constraints slowing things down",
-        "Ready to move ahead of the competition"
+        "Small to mid-size teams (up to ~200 people)",
+        "Leadership that champions new tools",
+        "Repeatable processes ready for automation"
+      ],
+      "whyTitle": "Why ZPT",
+      "whyItems": [
+        "Full company ownership. No lock-in.",
+        "Future-proof: the setup evolves as AI advances",
+        "Faster and cheaper than building it internally"
       ]
     },
     "expectations": {
-      "title": "What we expect from you",
+      "title": "What We Expect From You",
       "items": [
         {
-          "title": "Claude Pro subscription",
-          "description": "Your team subscribes to Claude Pro (~$100/month). This is the foundation the setup runs on."
+          "title": "A Claude or ChatGPT Pro account",
+          "description": "Your team subscribes to Claude Pro or ChatGPT Pro (~$100-200/month). This is the foundation the setup runs on."
         },
         {
           "title": "Open access to workflows",
@@ -188,7 +193,7 @@
       ]
     },
     "cta": {
-      "title": "Ready to see what ZPT can do for your business?",
+      "title": "Ready to See What ZPT Can Do for Your Business?",
       "button": "Book a Call",
       "email": "Or email"
     }
@@ -203,7 +208,7 @@
       "trialNote": "Your first assignment is on us."
     },
     "intro": {
-      "title": "What ZPT Sales is",
+      "title": "What ZPT Sales Is",
       "description": "We help companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it. ZPT leverages the latest AI and agent tools, so your sales process stays ahead of the competition.",
       "comparison": {
         "genericTitle": "Generic Sales Tools",
@@ -218,7 +223,7 @@
       }
     },
     "funnel": {
-      "title": "The sales funnel",
+      "title": "The Sales Funnel",
       "sources": ["LinkedIn", "Google Maps", "Web", "Job boards", "..."],
       "stages": [
         {
@@ -240,7 +245,7 @@
       ]
     },
     "tools": {
-      "title": "Connects to your stack",
+      "title": "Connects to Your Stack",
       "subtitle": "ZPT pulls from and pushes to the tools your company already uses.",
       "existing": {
         "label": "Your existing tools",
@@ -248,7 +253,7 @@
       }
     },
     "enrichment": {
-      "title": "Enrichment templates",
+      "title": "Enrichment Templates",
       "description": "You provide content and guidelines. ZPT turns that into structured, actionable intelligence.",
       "note": "Templates are fully customizable. Each client defines their own fields, scoring criteria, and output format.",
       "advancedHeader": "Enriched Company Profile",
@@ -304,7 +309,7 @@
       }
     },
     "onboarding": {
-      "title": "How we get started",
+      "title": "How We Get Started",
       "steps": [
         {
           "number": "1",
@@ -326,11 +331,11 @@
       "trialCta": "Start free trial →"
     },
     "portal": {
-      "title": "Portal visibility",
+      "title": "Portal Visibility",
       "description": "Clients can track activity and output through the ZPT portal."
     },
     "idealCustomer": {
-      "title": "Who this is for",
+      "title": "Who This Is For",
       "items": [
         { "icon": "chart", "text": "Companies with sales data but inconsistent or manual enrichment" },
         { "icon": "table", "text": "Teams working from spreadsheets or a CRM that needs cleanup" },
@@ -401,11 +406,11 @@
       "description": "ZPT builds a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything."
     },
     "tools": {
-      "title": "Connects to your stack",
+      "title": "Connects to Your Stack",
       "subtitle": "ZPT plugs into the tools your company already uses. No migration, no new software."
     },
     "services": {
-      "title": "What we offer",
+      "title": "What We Offer",
       "subtitle": "Every company is different. Choose what you need. You own everything we build.",
       "items": [
         {
@@ -427,7 +432,7 @@
       ]
     },
     "whatItCanDo": {
-      "title": "What your team gets",
+      "title": "What Your Team Gets",
       "items": [
         {
           "title": "Build presentations from scratch",
@@ -456,14 +461,14 @@
       ]
     },
     "nativeTools": {
-      "title": "But aren't Claude and ChatGPT already adding these features?",
+      "title": "But Aren't Claude and ChatGPT Already Adding These Features?",
       "paragraphs": [
         "Yes, and that's exactly why this works. Tools like <strong>Claude</strong> and <strong>ChatGPT</strong> ship powerful default capabilities: skills, integrations, memory. But they're generic. Every company gets the same starting point.",
         "ZPT takes those same building blocks and structures them around <strong>your company</strong>. Your context, your workflows, your standards. The result: your team gets more out of the tools they're already using, because <em class=\"text-gold\">the tools actually know how the company works</em>."
       ]
     },
     "why": {
-      "title": "What you own",
+      "title": "What You Own",
       "items": [
         {
           "title": "100% company-owned",
@@ -489,7 +494,7 @@
       "caption": "The AI provider is interchangeable. Your company setup stays local and proprietary to the company."
     },
     "desktop": {
-      "title": "Your team works with the agent directly",
+      "title": "Your Team Works With the Agent Directly",
       "subtitle": "ZPT sets up the desktop apps so your team can collaborate with the AI agent from day one.",
       "cards": [
         {
@@ -504,7 +509,7 @@
       "note": "We help your team get set up and running. No technical knowledge required."
     },
     "folder": {
-      "title": "Example ZPT folder structure",
+      "title": "Example ZPT Folder Structure",
       "description": "Not every engagement includes a folder. But when it does, this is what it looks like.",
       "expandLabel": "Show folder structure",
       "collapseLabel": "Hide folder structure",
@@ -522,22 +527,19 @@
       ]
     },
     "consulting": {
-      "title": "How a ZPT Advisory engagement works",
+      "title": "How a ZPT Advisory Engagement Works",
       "description": "We visit your company, understand how the team works, and build the right AI setup, from education to full implementation.",
       "exampleLink": "example",
       "points": [
         "Review workflows, identify automation opportunities",
         "Build a tailored folder with connectors, skills, and agents",
         "Train the team to use it independently",
-        "Setup fee + small recurring fee for periodic updates",
-        "Full company ownership. No lock-in.",
-        "Starts with a viability assessment",
-        "Faster and cheaper than building it internally"
+        "Monitor and continuously update with the latest skills, MCPs, and integrations"
       ],
       "callout": "Everything ZPT builds stays with the company. No lock-in, no dependencies."
     },
     "pricing": {
-      "title": "Advisory tiers",
+      "title": "Advisory Tiers",
       "subtitle": "Choose what fits — pricing on request.",
       "tiers": [
         {
@@ -559,23 +561,23 @@
       "cta": "Get in touch"
     },
     "cta": {
-      "title": "Ready to see what AI can do for your company?",
+      "title": "Ready to See What AI Can Do for Your Company?",
       "button": "Book a Call",
       "email": "Or email"
     }
   },
   "technology": {
     "hero": {
-      "title": "The technology behind ZPT",
+      "title": "The Technology Behind ZPT",
       "description": "How AI agents work, what ZPT builds on, and how it connects to your existing tools."
     },
     "claudeCode": {
       "title": "Built on Claude Code and Codex",
-      "description": "ZPT setups are built on the same architecture that developers use worldwide: a structured local folder that gives AI full context about the company. Claude Code and OpenAI Codex are the engines that power the agent — reading the folder, executing tasks, and connecting to external tools.",
+      "description": "ZPT setups are built on the same architecture that developers use worldwide: a structured local folder that gives AI full context about the company. Claude Code and OpenAI Codex are the engines that power the agent. It reads the folder, executes tasks, and connects to external tools.",
       "points": [
-        "The folder stays on the company's machine — nothing is sent to ZPT",
+        "The folder stays on the company's machine. Nothing is sent to ZPT.",
         "The AI provider is interchangeable: Claude, ChatGPT, or open-source models",
-        "ZPT configures everything — the company just uses it"
+        "ZPT configures everything. The company just uses it."
       ]
     }
   },
@@ -613,7 +615,7 @@
       }
     ],
     "cta": {
-      "title": "Want results like these for your business?",
+      "title": "Want Results Like These for Your Business?",
       "button": "Book a Call",
       "email": "Or email"
     }

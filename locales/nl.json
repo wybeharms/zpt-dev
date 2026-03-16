@@ -48,7 +48,7 @@
     "hero": {
       "title": "Uw bedrijf weet dat AI krachtig is.",
       "subtitle": "Wij maken het werkelijkheid.",
-      "description": "ZPT bouwt een praktische AI-setup op maat van uw bedrijf. Uw team gebruikt het via Claude, ChatGPT of een andere compatibele app. U bent eigenaar van alles.",
+      "description": "ZPT bouwt een praktische AI-setup op maat van uw bedrijf. Uw team gebruikt het via Claude, ChatGPT of een andere compatibele app. <strong>U bent eigenaar van alles.</strong>",
       "cta": "Plan een gesprek"
     },
     "practical": {
@@ -86,15 +86,16 @@
       "folderCallout": "ZPT biedt een beproefde standaardmap en personaliseert deze voor uw bedrijf."
     },
     "bottleneck": {
-      "title": "Praktijkvoorbeelden van wat wij voor u kunnen doen",
+      "title": "Automatiseer repetitieve workflows. Schaal zonder grenzen.",
+      "subtitle": "Echte voorbeelden van routinewerk dat ZPT automatiseert. Elke workflow draait oneindig zodra deze is opgezet.",
       "description": "De meeste bedrijven gebruiken al ChatGPT of Claude. Maar iedereen heeft eigen gesprekken, eigen context, een eigen manier van prompten. Kennis is verspreid en niets is gecentraliseerd.",
       "description2": "ZPT gelooft dat de beste weg vooruit is om <strong>de native AI-tools te blijven gebruiken</strong> die uw team al heeft, en ze drastisch effectiever te maken met een gecentraliseerde map met de volledige bedrijfscontext, gekoppelde tools en herhaalbare workflows.",
       "examplesLabel": "Praktijkvoorbeelden van wat wij voor u kunnen doen:",
       "useCases": [
         {
-          "title": "Prospects verrijken",
-          "description": "De agent checkt uw CRM, doorzoekt <strong class=\"text-[#EA4335]\">Google Maps</strong>, vergelijkt met uw ideale klantprofiel en voegt nieuwe prospects toe aan <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
-          "why": "Claude op het web kan ook zoeken, maar heeft geen toegang tot uw CRM of kennis van uw ideale klant."
+          "title": "Kwartaalanalyse fondskasstroom",
+          "description": "Een fonds rapporteert kwartaalcijfers. De agent leest de <strong class=\"text-[#D04A02]\">PDF's</strong>, extraheert de cijfers, controleert de data en werkt het model bij in <strong class=\"text-[#036C5F]\">SharePoint</strong>. Wat dagen kostte, draait nu automatisch.",
+          "why": "Dezelfde workflow verwerkt 5 fondsen of 50. Stel het een keer in, schaal oneindig."
         },
         {
           "title": "Een deck bouwen",
@@ -102,9 +103,9 @@
           "why": "Dezelfde tools, maar met de positionering, tone of voice en opmaak van uw bedrijf."
         },
         {
-          "title": "Concurrenten monitoren",
-          "description": "Stel het een keer in. De agent scant periodiek bronnen, werkt een centrale concurrenten-map bij en signaleert veranderingen.",
-          "why": "Geen ad hoc onderzoek meer verspreid over chatgeschiedenissen van teamleden."
+          "title": "Documentverwerking bij klant-onboarding",
+          "description": "Nieuwe klanten sturen contracten en intakeformulieren via <strong class=\"text-[#EA4335]\">Gmail</strong>. De agent extraheert de belangrijkste velden, vult interne records bij in <strong class=\"text-[#FF7A59]\">HubSpot</strong> en signaleert wat ontbreekt.",
+          "why": "Dezelfde workflow verwerkt 5 klanten of 500. Geen extra personeel nodig."
         },
         {
           "title": "Routinewerk automatiseren",
@@ -160,22 +161,26 @@
       }
     },
     "proof": {
-      "title": "Al operationeel",
-      "description": "ZPT heeft AI-setups geleverd in logistiek, autoleasing en financiele dienstverlening.",
-      "fitTitle": "Uw bedrijf past goed als",
+      "title": "Past ZPT bij uw bedrijf?",
+      "fitTitle": "Past goed als",
       "fitItems": [
-        "Tussen de 5 en 100 medewerkers",
-        "Geleid door een ambitieuze ondernemer die snel wil schakelen",
-        "Weinig juridische en beveiligingsbeperkingen",
-        "Klaar om de concurrentie voor te blijven"
+        "Klein tot middelgroot team (tot ~200 medewerkers)",
+        "Leiderschap dat nieuwe tools omarmt",
+        "Herhaalbare processen die klaar zijn voor automatisering"
+      ],
+      "whyTitle": "Waarom ZPT",
+      "whyItems": [
+        "Volledig eigendom van het bedrijf. Geen lock-in.",
+        "Toekomstbestendig: de setup evolueert met AI-ontwikkelingen",
+        "Sneller en goedkoper dan het intern bouwen"
       ]
     },
     "expectations": {
       "title": "Wat wij van u verwachten",
       "items": [
         {
-          "title": "Claude Pro-abonnement",
-          "description": "Uw team neemt een Claude Pro-abonnement (~$100/maand). Dit is de basis waarop de setup draait."
+          "title": "Een Claude of ChatGPT Pro account",
+          "description": "Uw team neemt een Claude Pro of ChatGPT Pro abonnement (~$100-200/maand). Dit is de basis waarop de setup draait."
         },
         {
           "title": "Open toegang tot workflows",
@@ -609,10 +614,7 @@
         "Workflows doorlichten, automatiseringsmogelijkheden identificeren",
         "Een map op maat bouwen met connectors, skills en agents",
         "Het team trainen om het zelfstandig te gebruiken",
-        "Eenmalige setupkosten + kleine terugkerende vergoeding voor periodieke updates",
-        "Volledig eigendom van het bedrijf. Geen lock-in.",
-        "Begint met een haalbaarheidsanalyse",
-        "Sneller en goedkoper dan het intern bouwen"
+        "Monitoren en doorlopend bijwerken met de nieuwste skills, MCPs en integraties"
       ],
       "callout": "Alles wat ZPT bouwt, blijft bij het bedrijf. Geen lock-in, geen afhankelijkheden."
     },
@@ -651,11 +653,11 @@
     },
     "claudeCode": {
       "title": "Gebouwd op Claude Code en Codex",
-      "description": "ZPT-setups zijn gebouwd op dezelfde architectuur die ontwikkelaars wereldwijd gebruiken: een gestructureerde lokale map die AI volledige context geeft over het bedrijf. Claude Code en OpenAI Codex zijn de motoren die de agent aandrijven — de map lezen, taken uitvoeren en verbinden met externe tools.",
+      "description": "ZPT-setups zijn gebouwd op dezelfde architectuur die ontwikkelaars wereldwijd gebruiken: een gestructureerde lokale map die AI volledige context geeft over het bedrijf. Claude Code en OpenAI Codex zijn de motoren die de agent aandrijven. De map wordt gelezen, taken worden uitgevoerd en externe tools worden verbonden.",
       "points": [
-        "De map blijft op de machine van het bedrijf — er wordt niets naar ZPT gestuurd",
+        "De map blijft op de machine van het bedrijf. Er wordt niets naar ZPT gestuurd.",
         "De AI-provider is uitwisselbaar: Claude, ChatGPT of open-source modellen",
-        "ZPT configureert alles — het bedrijf gebruikt het gewoon"
+        "ZPT configureert alles. Het bedrijf gebruikt het gewoon."
       ]
     }
   },

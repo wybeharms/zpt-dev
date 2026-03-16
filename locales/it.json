@@ -48,7 +48,7 @@
     "hero": {
       "title": "La tua azienda sa che l'IA e potente.",
       "subtitle": "Noi la rendiamo realta.",
-      "description": "ZPT costruisce una configurazione AI pratica su misura per la tua azienda. Il tuo team la usa tramite Claude, ChatGPT o qualsiasi app compatibile. Sei proprietario di tutto.",
+      "description": "ZPT costruisce una configurazione AI pratica su misura per la tua azienda. Il tuo team la usa tramite Claude, ChatGPT o qualsiasi app compatibile. <strong>Sei proprietario di tutto.</strong>",
       "cta": "Prenota una call"
     },
     "practical": {
@@ -86,15 +86,16 @@
       "folderCallout": "ZPT fornisce una cartella predefinita collaudata e la personalizza per la tua azienda."
     },
     "bottleneck": {
-      "title": "Esempi reali di cosa possiamo fare per te",
+      "title": "Automatizza workflow ripetitivi. Scala senza limiti.",
+      "subtitle": "Esempi reali di lavoro di routine che ZPT automatizza. Ogni workflow gira all'infinito una volta configurato.",
       "description": "La maggior parte delle aziende usa gia ChatGPT o Claude. Ma ognuno ha le proprie conversazioni, il proprio contesto, il proprio modo di fare prompt. Le conoscenze sono sparse e niente e centralizzato.",
       "description2": "ZPT crede che la strada migliore sia <strong>continuare a usare gli strumenti AI nativi</strong> che il tuo team ha gia, e renderli drasticamente piu efficaci con una cartella centralizzata con tutto il contesto aziendale, strumenti connessi e workflow ripetibili.",
       "examplesLabel": "Esempi reali di cosa possiamo fare per te:",
       "useCases": [
         {
-          "title": "Arricchire prospect",
-          "description": "L'agente controlla il tuo CRM, cerca su <strong class=\"text-[#EA4335]\">Google Maps</strong>, incrocia con il tuo profilo cliente ideale e aggiunge nuovi prospect a <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
-          "why": "Claude sul web puo cercare, ma non puo accedere al tuo CRM o conoscere il tuo cliente ideale."
+          "title": "Analisi trimestrale dei flussi di cassa dei fondi",
+          "description": "Un fondo riporta i flussi di cassa trimestrali. L'agente legge i <strong class=\"text-[#D04A02]\">PDF</strong>, estrae le cifre, verifica i dati e aggiorna il modello in <strong class=\"text-[#036C5F]\">SharePoint</strong>. Cio che richiedeva giorni ora gira automaticamente.",
+          "why": "Lo stesso workflow gestisce 5 fondi o 50. Configuralo una volta, scala all'infinito."
         },
         {
           "title": "Creare un deck",
@@ -102,9 +103,9 @@
           "why": "Gli stessi strumenti, ma con il posizionamento, il tono e la formattazione della tua azienda."
         },
         {
-          "title": "Monitorare competitor",
-          "description": "Configuralo una volta. L'agente scansiona periodicamente le fonti, aggiorna una cartella competitor centralizzata e segnala i cambiamenti.",
-          "why": "Niente piu ricerche ad hoc sparse nelle cronologie chat dei membri del team."
+          "title": "Elaborazione documenti di onboarding clienti",
+          "description": "I nuovi clienti inviano contratti e moduli via <strong class=\"text-[#EA4335]\">Gmail</strong>. L'agente estrae i campi chiave, compila i record interni in <strong class=\"text-[#FF7A59]\">HubSpot</strong> e segnala cio che manca.",
+          "why": "Lo stesso workflow gestisce 5 clienti o 500. Nessun personale aggiuntivo necessario."
         },
         {
           "title": "Automatizzare lavoro di routine",
@@ -160,22 +161,26 @@
       }
     },
     "proof": {
-      "title": "Gia operativo",
-      "description": "ZPT ha consegnato setup AI in logistica, leasing automobilistico e servizi finanziari.",
-      "fitTitle": "La tua azienda e adatta se",
+      "title": "ZPT e adatto alla tua azienda?",
+      "fitTitle": "Adatto se",
       "fitItems": [
-        "Tra 5 e 100 persone",
-        "Guidata da un fondatore ambizioso pronto ad adottare rapidamente",
-        "Pochi vincoli legali e di sicurezza",
-        "Pronta a superare la concorrenza"
+        "Team da piccoli a medi (fino a ~200 persone)",
+        "Leadership che promuove nuovi strumenti",
+        "Processi ripetibili pronti per l'automazione"
+      ],
+      "whyTitle": "Perche ZPT",
+      "whyItems": [
+        "Piena proprieta dell'azienda. Nessun lock-in.",
+        "A prova di futuro: il setup evolve con i progressi dell'AI",
+        "Piu veloce e conveniente che costruirlo internamente"
       ]
     },
     "expectations": {
       "title": "Cosa ci aspettiamo da te",
       "items": [
         {
-          "title": "Abbonamento Claude Pro",
-          "description": "Il tuo team si abbona a Claude Pro (~$100/mese). Questa e la base su cui funziona il setup."
+          "title": "Un account Claude o ChatGPT Pro",
+          "description": "Il tuo team si abbona a Claude Pro o ChatGPT Pro (~$100-200/mese). Questa e la base su cui funziona il setup."
         },
         {
           "title": "Accesso aperto ai workflow",
@@ -609,10 +614,7 @@
         "Analizzare workflow, identificare opportunita di automazione",
         "Costruire una cartella su misura con connettori, skill e agenti",
         "Formare il team a usarlo in autonomia",
-        "Costo di setup + piccola quota ricorrente per aggiornamenti periodici",
-        "Piena proprieta dell'azienda. Nessun lock-in.",
-        "Inizia con una valutazione di fattibilita",
-        "Piu veloce e conveniente che costruirlo internamente"
+        "Monitorare e aggiornare continuamente con le ultime skill, MCP e integrazioni"
       ],
       "callout": "Tutto cio che ZPT costruisce resta all'azienda. Nessun lock-in, nessuna dipendenza."
     },
@@ -651,11 +653,11 @@
     },
     "claudeCode": {
       "title": "Costruito su Claude Code e Codex",
-      "description": "I setup ZPT sono costruiti sulla stessa architettura usata dagli sviluppatori in tutto il mondo: una cartella locale strutturata che da all'AI il contesto completo sull'azienda. Claude Code e OpenAI Codex sono i motori che alimentano l'agente — leggendo la cartella, eseguendo task e collegandosi a strumenti esterni.",
+      "description": "I setup ZPT sono costruiti sulla stessa architettura usata dagli sviluppatori in tutto il mondo: una cartella locale strutturata che da all'AI il contesto completo sull'azienda. Claude Code e OpenAI Codex sono i motori che alimentano l'agente. Legge la cartella, esegue task e si collega a strumenti esterni.",
       "points": [
-        "La cartella resta sulla macchina dell'azienda — nulla viene inviato a ZPT",
+        "La cartella resta sulla macchina dell'azienda. Nulla viene inviato a ZPT.",
         "Il provider AI e intercambiabile: Claude, ChatGPT o modelli open-source",
-        "ZPT configura tutto — l'azienda lo usa e basta"
+        "ZPT configura tutto. L'azienda lo usa e basta."
       ]
     }
   },

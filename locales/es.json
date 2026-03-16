@@ -48,7 +48,7 @@
     "hero": {
       "title": "Su empresa sabe que la IA es poderosa.",
       "subtitle": "Nosotros la hacemos realidad.",
-      "description": "ZPT construye una configuracion de IA practica adaptada a su empresa. Su equipo la usa a traves de Claude, ChatGPT o cualquier app compatible. Usted es dueno de todo.",
+      "description": "ZPT construye una configuracion de IA practica adaptada a su empresa. Su equipo la usa a traves de Claude, ChatGPT o cualquier app compatible. <strong>Usted es dueno de todo.</strong>",
       "cta": "Reservar una llamada"
     },
     "practical": {
@@ -86,15 +86,16 @@
       "folderCallout": "ZPT proporciona una carpeta predeterminada probada y la personaliza para tu empresa."
     },
     "bottleneck": {
-      "title": "Ejemplos reales de lo que podemos hacer por usted",
+      "title": "Automatice workflows repetitivos. Escale sin limites.",
+      "subtitle": "Ejemplos reales de trabajo rutinario que ZPT automatiza. Cada workflow se ejecuta indefinidamente una vez configurado.",
       "description": "La mayoria de las empresas ya usan ChatGPT o Claude. Pero cada persona tiene sus propias conversaciones, su propio contexto, su propia forma de hacer prompts. El conocimiento esta disperso y nada esta centralizado.",
       "description2": "ZPT cree que el mejor camino es <strong>seguir usando las herramientas de IA nativas</strong> que tu equipo ya tiene, y hacerlas dramaticamente mas efectivas con una carpeta centralizada con todo el contexto de la empresa, herramientas conectadas y flujos de trabajo repetibles.",
       "examplesLabel": "Ejemplos reales de lo que podemos hacer por usted:",
       "useCases": [
         {
-          "title": "Enriquecer prospectos",
-          "description": "El agente revisa tu CRM, busca en <strong class=\"text-[#EA4335]\">Google Maps</strong>, cruza con tu perfil de cliente ideal y agrega nuevos prospectos a <strong class=\"text-[#FF7A59]\">HubSpot</strong>.",
-          "why": "Claude en la web tambien puede buscar, pero no puede acceder a tu CRM ni conocer tu cliente ideal."
+          "title": "Analisis trimestral de flujos de caja de fondos",
+          "description": "Un fondo reporta flujos de caja trimestrales. El agente lee los <strong class=\"text-[#D04A02]\">PDFs</strong>, extrae las cifras, verifica los datos y actualiza el modelo en <strong class=\"text-[#036C5F]\">SharePoint</strong>. Lo que tomaba dias ahora se ejecuta automaticamente.",
+          "why": "El mismo workflow maneja 5 fondos o 50. Configurelo una vez, escale indefinidamente."
         },
         {
           "title": "Crear un deck",
@@ -102,9 +103,9 @@
           "why": "Las mismas herramientas, pero con el posicionamiento, tono y formato de tu empresa."
         },
         {
-          "title": "Monitorear competidores",
-          "description": "Configuralo una vez. El agente escanea fuentes periodicamente, actualiza una carpeta centralizada de competidores y senala cambios.",
-          "why": "No mas investigacion ad hoc dispersa en los historiales de chat del equipo."
+          "title": "Procesamiento de documentos de onboarding",
+          "description": "Los nuevos clientes envian contratos y formularios via <strong class=\"text-[#EA4335]\">Gmail</strong>. El agente extrae los campos clave, completa los registros internos en <strong class=\"text-[#FF7A59]\">HubSpot</strong> y senala lo que falta.",
+          "why": "El mismo workflow maneja 5 clientes o 500. Sin necesidad de contratar mas personal."
         },
         {
           "title": "Automatizar trabajo rutinario",
@@ -160,22 +161,26 @@
       }
     },
     "proof": {
-      "title": "Ya operativo",
-      "description": "ZPT ha entregado configuraciones de IA en logistica, leasing automotriz y servicios financieros.",
-      "fitTitle": "Su empresa encaja bien si",
+      "title": "Es ZPT adecuado para su empresa?",
+      "fitTitle": "Buen encaje si",
       "fitItems": [
-        "Entre 5 y 100 personas",
-        "Liderada por un fundador ambicioso dispuesto a adoptar rapidamente",
-        "Pocas restricciones legales y de seguridad",
-        "Lista para adelantarse a la competencia"
+        "Equipos pequenos a medianos (hasta ~200 personas)",
+        "Liderazgo que impulsa nuevas herramientas",
+        "Procesos repetibles listos para automatizar"
+      ],
+      "whyTitle": "Por que ZPT",
+      "whyItems": [
+        "Propiedad total de la empresa. Sin lock-in.",
+        "A prueba de futuro: la configuracion evoluciona con los avances de la IA",
+        "Mas rapido y economico que hacerlo internamente"
       ]
     },
     "expectations": {
       "title": "Lo que esperamos de usted",
       "items": [
         {
-          "title": "Suscripcion a Claude Pro",
-          "description": "Su equipo se suscribe a Claude Pro (~$100/mes). Esta es la base sobre la que funciona la configuracion."
+          "title": "Una cuenta Claude o ChatGPT Pro",
+          "description": "Su equipo se suscribe a Claude Pro o ChatGPT Pro (~$100-200/mes). Esta es la base sobre la que funciona la configuracion."
         },
         {
           "title": "Acceso abierto a flujos de trabajo",
@@ -609,10 +614,7 @@
         "Revisar flujos de trabajo, identificar oportunidades de automatizacion",
         "Construir una carpeta a medida con conectores, skills y agentes",
         "Capacitar al equipo para usarlo de forma independiente",
-        "Tarifa de configuracion + pequena cuota recurrente para actualizaciones periodicas",
-        "Propiedad completa de la empresa. Sin lock-in.",
-        "Comienza con una evaluacion de viabilidad",
-        "Mas rapido y economico que hacerlo internamente"
+        "Monitorear y actualizar continuamente con las ultimas skills, MCPs e integraciones"
       ],
       "callout": "Todo lo que ZPT construye se queda con la empresa. Sin lock-in, sin dependencias."
     },
@@ -651,11 +653,11 @@
     },
     "claudeCode": {
       "title": "Construido sobre Claude Code y Codex",
-      "description": "Las configuraciones de ZPT estan construidas sobre la misma arquitectura que usan los desarrolladores en todo el mundo: una carpeta local estructurada que da a la IA contexto completo sobre la empresa. Claude Code y OpenAI Codex son los motores que impulsan al agente — leyendo la carpeta, ejecutando tareas y conectandose a herramientas externas.",
+      "description": "Las configuraciones de ZPT estan construidas sobre la misma arquitectura que usan los desarrolladores en todo el mundo: una carpeta local estructurada que da a la IA contexto completo sobre la empresa. Claude Code y OpenAI Codex son los motores que impulsan al agente. Lee la carpeta, ejecuta tareas y se conecta a herramientas externas.",
       "points": [
-        "La carpeta permanece en la maquina de la empresa — nada se envia a ZPT",
+        "La carpeta permanece en la maquina de la empresa. Nada se envia a ZPT.",
         "El proveedor de IA es intercambiable: Claude, ChatGPT o modelos open-source",
-        "ZPT configura todo — la empresa simplemente lo usa"
+        "ZPT configura todo. La empresa simplemente lo usa."
       ]
     }
   },

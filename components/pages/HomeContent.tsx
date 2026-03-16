@@ -114,6 +114,7 @@ export default function HomeContent() {
     description: string;
   }[];
   const fitItems = tArray("home.proof.fitItems") as string[];
+  const whyItems = tArray("home.proof.whyItems") as string[];
   const expectationItems = tArray("home.expectations.items") as {
     title: string;
     description: string;
@@ -261,28 +262,24 @@ export default function HomeContent() {
     <svg key="folder" className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
     </svg>,
-    <svg key="plug" className="h-10 w-10 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-    </svg>,
+    <Image key="sharepoint" src="/logos/sharepoint.png" alt="SharePoint" width={40} height={40} className="h-10 w-10 object-contain" />,
   ];
 
   return (
     <>
       {/* Section 1: Hero — text left, helicopter right */}
-      <section className="bg-navy px-6 py-16 text-white lg:px-8 lg:py-20">
+      <section className="bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">
           {/* Text */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="font-heading text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-5xl">
               {t("home.hero.title")}
             </h1>
-            <p className="mt-4 font-heading text-3xl font-light text-gold md:text-4xl lg:text-5xl">
+            <p className="mt-6 font-heading text-3xl font-light text-gold md:text-4xl lg:text-5xl">
               {t("home.hero.subtitle")}
             </p>
-            <p className="mx-auto mt-10 max-w-xl text-base leading-relaxed text-white/70 md:mx-0">
-              {t("home.hero.description")}
-            </p>
-            <div className="mt-10">
+            <p className="mx-auto mt-12 max-w-xl text-base leading-relaxed text-white/70 md:mx-0" dangerouslySetInnerHTML={{ __html: t("home.hero.description") }} />
+            <div className="mt-12">
               <a
                 href="mailto:request@zpteam.ai?subject=Intro call request"
                 className="inline-block rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
@@ -345,7 +342,7 @@ export default function HomeContent() {
       </section>
 
       {/* Quote */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <blockquote className="font-heading text-xl font-light italic leading-relaxed tracking-tight text-navy md:text-2xl">
             <span className="animate-[glow_4s_ease-in-out_infinite]">&ldquo;</span>
@@ -381,19 +378,19 @@ export default function HomeContent() {
           </p>
 
           {/* News screenshot collage */}
-          <div className="mx-auto mt-8 flex max-w-sm flex-col gap-1.5 sm:hidden">
+          <div className="mx-auto mt-8 flex max-w-sm flex-col gap-1 sm:hidden">
             <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/google_cli.png" alt="Google launches CLI for AI agents" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={600} height={150} className="w-full rounded border border-border-warm shadow-sm" />
             <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={600} height={80} className="w-full rounded border border-border-warm shadow-sm" />
           </div>
-          <div className="relative mx-auto mt-8 hidden h-[190px] max-w-lg sm:block">
-            <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={400} height={120} className="absolute left-0 top-0 w-[48%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1.5deg)" }} />
-            <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={400} height={120} className="absolute right-0 top-0 w-[44%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(1deg)" }} />
-            <Image src="/screenshots/google_cli.png" alt="Google launches CLI for AI agents" width={400} height={120} className="absolute left-1/2 top-1/2 z-10 w-[44%] rounded border border-border-warm shadow-md" style={{ transform: "translate(-50%, -50%) rotate(-0.5deg)" }} />
-            <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={400} height={120} className="absolute bottom-0 left-[2%] w-[46%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(0.5deg)" }} />
-            <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={400} height={80} className="absolute bottom-1 right-0 w-[42%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1deg)" }} />
+          <div className="relative mx-auto mt-8 hidden h-[160px] max-w-lg sm:block">
+            <Image src="/screenshots/software-stocks.png" alt="Anthropic's new AI tool sends shudders through software stocks — CNN" width={400} height={120} className="absolute left-0 top-0 w-[46%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1.5deg)" }} />
+            <Image src="/screenshots/mcp-dangerous.png" alt="OpenAI adds powerful but dangerous support for MCP — VentureBeat" width={400} height={120} className="absolute right-0 top-0 w-[42%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(1deg)" }} />
+            <Image src="/screenshots/google_cli.png" alt="Google launches CLI for AI agents" width={400} height={120} className="absolute left-1/2 top-1/2 z-10 w-[42%] rounded border border-border-warm shadow-md" style={{ transform: "translate(-50%, -50%) rotate(-0.5deg)" }} />
+            <Image src="/screenshots/anthropic-skills-fear.png" alt="Anthropic announces new Claude plugins to automate HR, banking and research — MSN" width={400} height={120} className="absolute bottom-0 left-[2%] w-[44%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(0.5deg)" }} />
+            <Image src="/screenshots/in-house-legal-fears.png" alt="AI disruption fears deepen after Anthropic targets in-house legal teams" width={400} height={80} className="absolute bottom-0 right-0 w-[40%] rounded border border-border-warm shadow-sm" style={{ transform: "rotate(-1deg)" }} />
           </div>
 
           {/* Scroll-reveal card */}
@@ -474,7 +471,7 @@ export default function HomeContent() {
               <p className="mt-3 text-text-muted">
                 {t("advisory.consulting.description")}
               </p>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-6 space-y-5">
                 {consultingPoints.map((point, i) => (
                   <li key={i} className="flex gap-3 text-sm leading-relaxed text-text-muted">
                     <span className="mt-0.5 flex-shrink-0 text-gold">+</span>
@@ -586,10 +583,18 @@ export default function HomeContent() {
             ))}
           </div>
 
-          {/* Use case cards */}
-          <h3 className="mt-16 text-center font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
+        </div>
+      </section>
+
+      {/* Use case cards */}
+      <section className="bg-cream px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
             {t("home.bottleneck.title")}
-          </h3>
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-text-muted">
+            {t("home.bottleneck.subtitle")}
+          </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:gap-6">
             {useCases.map((uc) => (
               <div
@@ -615,37 +620,52 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Section 6: Good Fit + Proof */}
+      {/* Section 6: Good Fit + Why ZPT */}
       <section className="bg-navy px-6 py-14 text-white lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight md:text-4xl">
             {t("home.proof.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-white/60">
-            {t("home.proof.description")}
-          </p>
 
-          <div className="mx-auto mt-10 flex max-w-md flex-col items-center">
-            <h3 className="text-center text-lg font-semibold text-gold">
-              {t("home.proof.fitTitle")}
-            </h3>
-            <ul className="mt-6 space-y-3">
-              {fitItems.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm leading-relaxed text-white/70">
-                  <svg className="h-4 w-4 flex-shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="mx-auto mt-10 grid max-w-3xl gap-10 md:grid-cols-2">
+            {/* Left: Fit criteria */}
+            <div>
+              <h3 className="text-lg font-semibold text-gold">
+                {t("home.proof.fitTitle")}
+              </h3>
+              <ul className="mt-6 space-y-3">
+                {fitItems.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm leading-relaxed text-white/70">
+                    <svg className="h-4 w-4 flex-shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: Why ZPT */}
+            <div>
+              <h3 className="text-lg font-semibold text-gold">
+                {t("home.proof.whyTitle")}
+              </h3>
+              <ul className="mt-6 space-y-3">
+                {whyItems.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm leading-relaxed text-white/70">
+                    <span className="flex-shrink-0 text-gold">+</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Section 7: What We Expect From You */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.expectations.title")}
           </h2>

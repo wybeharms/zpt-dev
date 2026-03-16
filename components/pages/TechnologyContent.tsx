@@ -220,7 +220,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* Claude Desktop screenshot */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col items-center">
             <div className="mb-4 flex items-center gap-2">
