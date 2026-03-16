@@ -108,9 +108,9 @@
           "why": "Dezelfde workflow verwerkt 5 klanten of 500. Geen extra personeel nodig."
         },
         {
-          "title": "Routinewerk automatiseren",
-          "description": "Vergadernotities kopieren tussen CRM-systemen. <strong class=\"text-[#217346]\">Excel</strong>-spreadsheets bijwerken vanuit e-maildata. Definieer het een keer, herhaal oneindig.",
-          "why": "Workflows die vanzelf draaien, geen taken die iemand handmatig moet onthouden."
+          "title": "Dagelijks rapport",
+          "description": "Elke ochtend scant de agent uw nieuwsbrieven, <strong class=\"text-[#1DA1F2]\">X</strong>, branchefeeds en opgeslagen bronnen. Het filtert wat relevant is voor uw rol en levert een gepersonaliseerde briefing in <strong class=\"text-[#611f69]\">Slack</strong> of e-mail.",
+          "why": "Draait op schema. Geen handmatig zoeken, geen gemiste updates."
         }
       ],
       "screenshotLabel": "Screenshot vanuit Claude Desktop, gericht op een ZPT-map",
@@ -658,6 +658,32 @@
         "De map blijft op de machine van het bedrijf. Er wordt niets naar ZPT gestuurd.",
         "De AI-provider is uitwisselbaar: Claude, ChatGPT of open-source modellen",
         "ZPT configureert alles. Het bedrijf gebruikt het gewoon."
+      ]
+    },
+    "expertise": {
+      "title": "Wat ZPT Bouwt",
+      "subtitle": "De vaardigheden die ZPT bij elk traject inzet.",
+      "items": [
+        {
+          "title": "Multi-agent workflowontwerp",
+          "description": "Agentische loops ontwerpen, multi-agentsystemen orkestreren en taakdecompositie over workflows beheren."
+        },
+        {
+          "title": "Toolintegratie & MCP-configuratie",
+          "description": "Tools verbinden met duidelijke grenzen, MCP-servers integreren en capaciteiten over agents verdelen."
+        },
+        {
+          "title": "Setup & configuratie",
+          "description": "CLAUDE.md-hierarchieen configureren, custom skills maken, bedrijfsspecifieke regels toepassen en integreren in bestaande processen."
+        },
+        {
+          "title": "Kwaliteitscontrole & gestructureerde output",
+          "description": "Prompts ontwerpen met expliciete criteria, gestructureerde outputformaten afdwingen en validatieloops implementeren."
+        },
+        {
+          "title": "Betrouwbaarheid & contextbeheer",
+          "description": "Kritieke informatie bewaren over lange interacties, foutafhandeling beheren en consistente resultaten garanderen."
+        }
       ]
     }
   },

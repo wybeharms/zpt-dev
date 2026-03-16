@@ -32,6 +32,10 @@ export default function TechnologyContent() {
     description: string;
   }[];
   const claudeCodePoints = tArray("technology.claudeCode.points") as string[];
+  const expertiseItems = tArray("technology.expertise.items") as {
+    title: string;
+    description: string;
+  }[];
 
   // Collapsible folder structure
   const [folderOpen, setFolderOpen] = useState(false);
@@ -219,8 +223,90 @@ export default function TechnologyContent() {
         </div>
       </section>
 
-      {/* Claude Desktop screenshot */}
+      {/* What ZPT Builds */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("technology.expertise.title")}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-text-muted">
+            {t("technology.expertise.subtitle")}
+          </p>
+          <div className="mt-10 divide-y divide-border-warm">
+            {expertiseItems.map((item) => (
+              <div key={item.title} className="flex flex-col gap-2 py-5 md:flex-row md:gap-10">
+                <h3 className="flex-shrink-0 text-base font-semibold text-navy md:w-64">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-text-muted">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Example folder structure — collapsible */}
+      <section id="folder-structure" className="scroll-mt-8 bg-navy px-6 py-14 text-white lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <div className="max-w-xl">
+            <h2 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
+              {t("advisory.folder.title")}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/60">
+              {t("advisory.folder.description")}
+            </p>
+          </div>
+          <button
+            onClick={() => setFolderOpen((o) => !o)}
+            className="mt-6 flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-light"
+          >
+            <svg
+              className={`h-4 w-4 transition-transform duration-200 ${folderOpen ? "rotate-90" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            {folderOpen ? t("advisory.folder.collapseLabel") : t("advisory.folder.expandLabel")}
+          </button>
+          <div
+            className={`grid transition-all duration-300 ease-in-out ${
+              folderOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              <div className="mt-4 rounded-lg border border-white/10 bg-navy-light p-5 font-logo text-sm">
+                <div className="text-gold">example-zpt/</div>
+                {folders.map((folder, i) => {
+                  const isLast = i === folders.length - 1;
+                  const prefix = isLast ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ";
+                  return (
+                    <div key={i} className="mt-1 flex gap-4 pl-2">
+                      <span className="flex-shrink-0 whitespace-pre text-white/40">{prefix}</span>
+                      <span className="flex-shrink-0 text-white/80">{folder.name}</span>
+                      <span className="inline text-white/30">
+                        <span className="text-gold/60">{folder.label}</span>
+                        {" — "}
+                        {folder.description}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="mt-4 text-xs leading-relaxed text-white/40">
+                {t("advisory.folder.note")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Claude Desktop screenshot */}
+      <section className="bg-cream px-6 py-14 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col items-center">
             <div className="mb-4 flex items-center gap-2">
@@ -292,64 +378,6 @@ export default function TechnologyContent() {
             </div>
             {/* Folder */}
             <FolderBadge />
-          </div>
-        </div>
-      </section>
-
-      {/* Example folder structure — collapsible */}
-      <section id="folder-structure" className="scroll-mt-8 bg-navy px-6 py-14 text-white lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="max-w-xl">
-            <h2 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
-              {t("advisory.folder.title")}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-white/60">
-              {t("advisory.folder.description")}
-            </p>
-          </div>
-          <button
-            onClick={() => setFolderOpen((o) => !o)}
-            className="mt-6 flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-light"
-          >
-            <svg
-              className={`h-4 w-4 transition-transform duration-200 ${folderOpen ? "rotate-90" : ""}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-            {folderOpen ? t("advisory.folder.collapseLabel") : t("advisory.folder.expandLabel")}
-          </button>
-          <div
-            className={`grid transition-all duration-300 ease-in-out ${
-              folderOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-            }`}
-          >
-            <div className="overflow-hidden">
-              <div className="mt-4 rounded-lg border border-white/10 bg-navy-light p-5 font-logo text-sm">
-                <div className="text-gold">example-zpt/</div>
-                {folders.map((folder, i) => {
-                  const isLast = i === folders.length - 1;
-                  const prefix = isLast ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ";
-                  return (
-                    <div key={i} className="mt-1 flex gap-4 pl-2">
-                      <span className="flex-shrink-0 whitespace-pre text-white/40">{prefix}</span>
-                      <span className="flex-shrink-0 text-white/80">{folder.name}</span>
-                      <span className="inline text-white/30">
-                        <span className="text-gold/60">{folder.label}</span>
-                        {" — "}
-                        {folder.description}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-              <p className="mt-4 text-xs leading-relaxed text-white/40">
-                {t("advisory.folder.note")}
-              </p>
-            </div>
           </div>
         </div>
       </section>

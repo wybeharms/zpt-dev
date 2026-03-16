@@ -108,9 +108,9 @@
           "why": "Lo stesso workflow gestisce 5 clienti o 500. Nessun personale aggiuntivo necessario."
         },
         {
-          "title": "Automatizzare lavoro di routine",
-          "description": "Copiare note riunioni tra CRM. Aggiornare fogli di calcolo <strong class=\"text-[#217346]\">Excel</strong> dai dati email. Definiscilo una volta, ripetilo all'infinito.",
-          "why": "Workflow che girano da soli, non compiti che qualcuno deve ricordarsi di fare manualmente."
+          "title": "Report giornaliero",
+          "description": "Ogni mattina, l'agente scansiona le tue newsletter, <strong class=\"text-[#1DA1F2]\">X</strong>, feed di settore e fonti salvate. Filtra cio che conta per il tuo ruolo e consegna un briefing personalizzato su <strong class=\"text-[#611f69]\">Slack</strong> o email.",
+          "why": "Gira in automatico su orario. Niente ricerche manuali, niente aggiornamenti persi."
         }
       ],
       "screenshotLabel": "Screenshot da Claude Desktop, che punta a una cartella ZPT",
@@ -658,6 +658,32 @@
         "La cartella resta sulla macchina dell'azienda. Nulla viene inviato a ZPT.",
         "Il provider AI e intercambiabile: Claude, ChatGPT o modelli open-source",
         "ZPT configura tutto. L'azienda lo usa e basta."
+      ]
+    },
+    "expertise": {
+      "title": "Cosa Costruisce ZPT",
+      "subtitle": "Le competenze che ZPT porta in ogni progetto.",
+      "items": [
+        {
+          "title": "Design di workflow multi-agente",
+          "description": "Progettare loop agentici, orchestrare sistemi multi-agente e gestire la decomposizione dei task tra workflow."
+        },
+        {
+          "title": "Integrazione strumenti e configurazione MCP",
+          "description": "Collegare strumenti con confini chiari, integrare server MCP e distribuire capacita tra agenti."
+        },
+        {
+          "title": "Setup e configurazione",
+          "description": "Configurare gerarchie CLAUDE.md, creare skill personalizzate, applicare regole specifiche dell'azienda e integrare nei processi esistenti."
+        },
+        {
+          "title": "Controllo qualita e output strutturato",
+          "description": "Progettare prompt con criteri espliciti, applicare formati di output strutturati e implementare loop di validazione."
+        },
+        {
+          "title": "Affidabilita e gestione del contesto",
+          "description": "Preservare informazioni critiche in interazioni lunghe, gestire la gestione degli errori e garantire risultati coerenti."
+        }
       ]
     }
   },

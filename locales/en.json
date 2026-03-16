@@ -108,9 +108,9 @@
           "why": "The same workflow handles 5 clients or 500. No extra headcount needed."
         },
         {
-          "title": "Automate busywork",
-          "description": "Copy meeting notes between CRM systems. Update <strong class=\"text-[#217346]\">Excel</strong> spreadsheets from email data. Define it once, repeat indefinitely.",
-          "why": "Workflows that run on their own, not tasks someone remembers to do manually."
+          "title": "Daily report",
+          "description": "Every morning, the agent scans your newsletters, <strong class=\"text-[#1DA1F2]\">X</strong>, industry feeds, and saved sources. It filters what matters to your role and delivers a personalized briefing to <strong class=\"text-[#611f69]\">Slack</strong> or email.",
+          "why": "Runs on a schedule. No manual searching, no missed updates."
         }
       ],
       "screenshotLabel": "Screenshot from Claude Desktop, pointing at a ZPT folder",
@@ -578,6 +578,32 @@
         "The folder stays on the company's machine. Nothing is sent to ZPT.",
         "The AI provider is interchangeable: Claude, ChatGPT, or open-source models",
         "ZPT configures everything. The company just uses it."
+      ]
+    },
+    "expertise": {
+      "title": "What ZPT Builds",
+      "subtitle": "The skills ZPT brings to every engagement.",
+      "items": [
+        {
+          "title": "Multi-Agent Workflow Design",
+          "description": "Design agentic loops, orchestrate multi-agent systems, and manage task decomposition across workflows."
+        },
+        {
+          "title": "Tool Integration & MCP Configuration",
+          "description": "Connect tools with clear boundaries, integrate MCP servers, and distribute capabilities across agents."
+        },
+        {
+          "title": "Setup & Configuration",
+          "description": "Configure CLAUDE.md hierarchies, create custom skills, apply company-specific rules, and integrate into existing processes."
+        },
+        {
+          "title": "Quality Control & Structured Output",
+          "description": "Design prompts with explicit criteria, enforce structured output formats, and implement validation loops."
+        },
+        {
+          "title": "Reliability & Context Management",
+          "description": "Preserve critical information across long interactions, manage error handling, and ensure consistent results."
+        }
       ]
     }
   },

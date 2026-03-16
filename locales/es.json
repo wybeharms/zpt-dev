@@ -108,9 +108,9 @@
           "why": "El mismo workflow maneja 5 clientes o 500. Sin necesidad de contratar mas personal."
         },
         {
-          "title": "Automatizar trabajo rutinario",
-          "description": "Copiar notas de reuniones entre CRMs. Actualizar hojas de calculo de <strong class=\"text-[#217346]\">Excel</strong> desde emails. Definelo una vez, repetelo indefinidamente.",
-          "why": "Flujos de trabajo que corren solos, no tareas que alguien debe recordar hacer manualmente."
+          "title": "Informe diario",
+          "description": "Cada manana, el agente escanea sus newsletters, <strong class=\"text-[#1DA1F2]\">X</strong>, feeds del sector y fuentes guardadas. Filtra lo relevante para su rol y entrega un briefing personalizado en <strong class=\"text-[#611f69]\">Slack</strong> o email.",
+          "why": "Se ejecuta en horario. Sin busquedas manuales, sin actualizaciones perdidas."
         }
       ],
       "screenshotLabel": "Captura de pantalla de Claude Desktop, apuntando a una carpeta ZPT",
@@ -658,6 +658,32 @@
         "La carpeta permanece en la maquina de la empresa. Nada se envia a ZPT.",
         "El proveedor de IA es intercambiable: Claude, ChatGPT o modelos open-source",
         "ZPT configura todo. La empresa simplemente lo usa."
+      ]
+    },
+    "expertise": {
+      "title": "Lo Que ZPT Construye",
+      "subtitle": "Las competencias que ZPT aporta a cada proyecto.",
+      "items": [
+        {
+          "title": "Diseno de workflows multi-agente",
+          "description": "Disenar loops agénticos, orquestar sistemas multi-agente y gestionar la descomposicion de tareas entre workflows."
+        },
+        {
+          "title": "Integracion de herramientas y configuracion MCP",
+          "description": "Conectar herramientas con limites claros, integrar servidores MCP y distribuir capacidades entre agentes."
+        },
+        {
+          "title": "Setup y configuracion",
+          "description": "Configurar jerarquias CLAUDE.md, crear skills personalizados, aplicar reglas especificas de la empresa e integrar en procesos existentes."
+        },
+        {
+          "title": "Control de calidad y output estructurado",
+          "description": "Disenar prompts con criterios explicitos, aplicar formatos de output estructurados e implementar loops de validacion."
+        },
+        {
+          "title": "Fiabilidad y gestion de contexto",
+          "description": "Preservar informacion critica en interacciones largas, gestionar el manejo de errores y garantizar resultados consistentes."
+        }
       ]
     }
   },
