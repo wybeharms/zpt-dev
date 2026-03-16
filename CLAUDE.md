@@ -58,12 +58,6 @@ npm run lint      # ESLint
 
 ---
 
-## Writing Convention
-
-**Always use "Wybe" (or "the human") and "Claude" instead of pronouns.**
-- Never use "I", "you", "me", "my", "your" in any files.
-- Example: "Wybe drafts, Claude reviews" (not "I draft, you review").
-
 ## Planning Protocol
 
 - Confirm the objective before acting.
