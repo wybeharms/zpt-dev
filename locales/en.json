@@ -1,11 +1,9 @@
 {
   "nav": {
-    "sales": "Sales",
     "advisory": "Advisory",
     "about": "About",
     "resources": "Resources",
     "technology": "Technology",
-    "product": "Product",
     "portal": "Portal",
     "login": "Login",
     "cta": "Book a Call"
@@ -18,10 +16,6 @@
     "default": {
       "title": "ZPT - AI setup and implementation",
       "description": "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously. The output of a full team, without hiring one."
-    },
-    "sales": {
-      "title": "ZPT Sales - AI-Powered Sales Operations",
-      "description": "AI agents that chain multiple steps together autonomously. Source, research, qualify, draft, follow up. Connect existing tools, no migration needed."
     },
     "about": {
       "title": "About ZPT - AI Sales Agents",
@@ -109,7 +103,7 @@
         },
         {
           "title": "Daily report",
-          "description": "Every morning, the agent scans your newsletters, <strong class=\"text-[#1DA1F2]\">X</strong>, industry feeds, and saved sources. It filters what matters to your role and delivers a personalized briefing to <strong class=\"text-[#611f69]\">Slack</strong> or email.",
+          "description": "Every morning, the agent scans <strong class=\"text-[#0A66C2]\">LinkedIn</strong>, your newsletters, <strong class=\"text-[#1DA1F2]\">X</strong>, industry feeds, and saved sources. It filters what matters to your role and delivers a personalized briefing to <strong class=\"text-[#611f69]\">Slack</strong> or email.",
           "why": "Runs on a schedule. No manual searching, no missed updates."
         }
       ],
@@ -122,8 +116,22 @@
       "month3": "Month 3",
       "arrow": "Add MCPs, skills, and agents over time",
       "caption": "Each addition gives the agent one more capability. You control what gets added.",
-      "day1Tools": ["Files", "Shell", "Search"],
-      "month3Tools": ["Files", "Shell", "Search", "Maps", "Email", "Slack", "Browser", "LinkedIn", "Intel"]
+      "day1Tools": [
+        "Files",
+        "Shell",
+        "Search"
+      ],
+      "month3Tools": [
+        "Files",
+        "Shell",
+        "Search",
+        "Maps",
+        "Email",
+        "Slack",
+        "Browser",
+        "LinkedIn",
+        "Intel"
+      ]
     },
     "quote": {
       "text": "Every major technology shift creates a massive change management challenge for enterprises.",
@@ -196,207 +204,6 @@
       "title": "Ready to See What ZPT Can Do for Your Business?",
       "button": "Book a Call",
       "email": "Or email"
-    }
-  },
-  "sales": {
-    "hero": {
-      "title": "AI-powered sales operations. Managed for you.",
-      "audience": "For companies with lead data, CRM workflows, or spreadsheets that need a better way to enrich, organize, and act on them.",
-      "description": "You share your sales context and data. ZPT helps source, enrich, organize, and update the output for you.",
-      "primaryCta": "Start Free Trial",
-      "secondaryCta": "See How It Works",
-      "trialNote": "Your first assignment is on us."
-    },
-    "intro": {
-      "title": "What ZPT Sales Is",
-      "description": "We help companies that already have leads, lists, or CRM data but need a clearer and more reliable way to work with it. ZPT leverages the latest AI and agent tools, so your sales process stays ahead of the competition.",
-      "comparison": {
-        "genericTitle": "Generic Sales Tools",
-        "genericLine": "One database. Static results.",
-        "zptTitle": "ZPT Sales",
-        "zptLine": "Any source you need, including yours. Powered by the most advanced AI agents.",
-        "plusYours": "+ your sources",
-        "diyTitle": "Do It Yourself",
-        "diyLine": "Powerful, but requires setup, training, and ongoing maintenance.",
-        "diyAdvisory": "Need help setting it up?",
-        "diyAdvisoryLink": "ZPT Advisory."
-      }
-    },
-    "funnel": {
-      "title": "The Sales Funnel",
-      "sources": ["LinkedIn", "Google Maps", "Web", "Job boards", "..."],
-      "stages": [
-        {
-          "title": "Find Prospects",
-          "description": "Source leads from LinkedIn, directories, maps, conferences, and competitor intel."
-        },
-        {
-          "title": "Enrich & Qualify",
-          "description": "Build full profiles with decision-maker data, company intel, and ICP scoring."
-        },
-        {
-          "title": "Personalized Outreach",
-          "description": "Draft emails using the company's voice, positioning, and prospect research."
-        },
-        {
-          "title": "Manage Pipeline",
-          "description": "Track activity, follow-ups, and sync with your existing CRM."
-        }
-      ]
-    },
-    "tools": {
-      "title": "Connects to Your Stack",
-      "subtitle": "ZPT pulls from and pushes to the tools your company already uses.",
-      "existing": {
-        "label": "Your existing tools",
-        "items": ["HubSpot", "Salesforce", "Google Drive", "Notion", "Slack"]
-      }
-    },
-    "enrichment": {
-      "title": "Enrichment Templates",
-      "description": "You provide content and guidelines. ZPT turns that into structured, actionable intelligence.",
-      "note": "Templates are fully customizable. Each client defines their own fields, scoring criteria, and output format.",
-      "advancedHeader": "Enriched Company Profile",
-      "simpleTable": {
-        "columns": {
-          "company": "Company",
-          "contact": "Contact",
-          "role": "Role",
-          "email": "Email",
-          "status": "Status"
-        },
-        "rows": [
-          { "company": "Acme Corp", "contact": "Jane Smith", "role": "CRO", "email": "jane@acme.com", "status": "verified" },
-          { "company": "Beta Inc", "contact": "Tom Brown", "role": "VP Sales", "email": "tom@beta.io", "status": "enriched" },
-          { "company": "Gamma SA", "contact": "Lisa Muller", "role": "CEO", "email": "lisa@gamma.de", "status": "verified" },
-          { "company": "Delta Ltd", "contact": "Mark Roberts", "role": "Head of Sales", "email": "mark@delta.co.uk", "status": "pending" },
-          { "company": "Echo GmbH", "contact": "Anna Weber", "role": "CMO", "email": "anna@echo.de", "status": "verified" },
-          { "company": "Foxtrot BV", "contact": "Pieter de Vries", "role": "Managing Director", "email": "pieter@foxtrot.nl", "status": "enriched" },
-          { "company": "Gulf Corp", "contact": "Sarah Johnson", "role": "VP Business Dev", "email": "sarah@gulf.com", "status": "verified" },
-          { "company": "Hotel SA", "contact": "Carlos Ruiz", "role": "CEO", "email": "carlos@hotel.es", "status": "pending" },
-          { "company": "India Tech", "contact": "Priya Sharma", "role": "CTO", "email": "priya@indiatech.in", "status": "enriched" }
-        ]
-      },
-      "statusLabels": {
-        "verified": "Verified",
-        "enriched": "Enriched",
-        "pending": "Pending"
-      },
-      "advanced": {
-        "featured": {
-          "company": "Acme Corp",
-          "meta": "SaaS, 50-200 employees, Munich, Germany",
-          "fitLabel": "ICP-Fit",
-          "fitScore": "5 / 5",
-          "decisionMakerLabel": "Decision maker",
-          "decisionMakerValue": "Jane Smith, CRO",
-          "painSignalsLabel": "Pain signals",
-          "painSignalsValue": "Hiring SDR, manual CRM updates, low outreach volume",
-          "personalizedHookLabel": "Personalized hook",
-          "personalizedHookValue": "\"Saw your SDR job post on LinkedIn. ZPT could cover that function at a fraction of the cost...\"",
-          "recommendedChannelLabel": "Recommended channel",
-          "recommendedChannelValue": "LinkedIn + email sequence"
-        },
-        "additionalCompanies": [
-          { "company": "Beta Inc", "contact": "Tom Brown, VP Sales", "score": "4 / 5", "signal": "Expanding to new market, no local team" },
-          { "company": "Gamma SA", "contact": "Lisa Muller, CEO", "score": "4 / 5", "signal": "Recently closed funding round, scaling sales" },
-          { "company": "Delta Ltd", "contact": "Mark Roberts, Head of Sales", "score": "3 / 5", "signal": "Using outdated CRM, high churn on sales team" }
-        ]
-      },
-      "tabs": {
-        "simple": "Simple Template",
-        "advanced": "Advanced Template"
-      }
-    },
-    "onboarding": {
-      "title": "How We Get Started",
-      "steps": [
-        {
-          "number": "1",
-          "title": "Collect company context",
-          "description": "We learn your ICP, positioning, current process, and examples of good-fit accounts."
-        },
-        {
-          "number": "2",
-          "title": "Connect to your CRM",
-          "description": "We hook into HubSpot, Salesforce, or whatever your team already uses."
-        },
-        {
-          "number": "3",
-          "title": "Start delivering results",
-          "description": "ZPT begins sourcing, enriching, and qualifying prospects. Output flows back through your CRM."
-        }
-      ],
-      "callout": "You get the output. We run the system.",
-      "trialCta": "Start free trial →"
-    },
-    "portal": {
-      "title": "Portal Visibility",
-      "description": "Clients can track activity and output through the ZPT portal."
-    },
-    "idealCustomer": {
-      "title": "Who This Is For",
-      "items": [
-        { "icon": "chart", "text": "Companies with sales data but inconsistent or manual enrichment" },
-        { "icon": "table", "text": "Teams working from spreadsheets or a CRM that needs cleanup" },
-        { "icon": "building", "text": "Traditional firms that want more pipeline without hiring immediately" },
-        { "icon": "bolt", "text": "Lean teams that need better output from their existing sales process" }
-      ]
-    },
-    "faq": {
-      "title": "FAQ",
-      "subtitle": "Common questions about ZPT Sales.",
-      "items": [
-        {
-          "question": "How long does it take to get started?",
-          "answer": "Most companies are up and running within 15 minutes. ZPT needs context about the business, the ideal customer profile, and the tools in use. From there, the first enriched prospect profile is generated immediately."
-        },
-        {
-          "question": "What tools does ZPT connect to?",
-          "answer": "ZPT integrates with HubSpot, Salesforce, Google Drive, Notion, and Slack. It pulls from and pushes to the tools the company already uses. No migration, no new software."
-        },
-        {
-          "question": "How is this different from hiring an SDR?",
-          "answer": "ZPT handles the repetitive parts of the sales process: sourcing, enrichment, outreach drafting, and pipeline management. It runs 24/7 at a fraction of the cost. Human oversight stays in the loop for approvals and relationship building."
-        },
-        {
-          "question": "Who approves the outreach before it goes out?",
-          "answer": "The company always approves. ZPT drafts personalized outreach based on prospect research, but nothing gets sent without explicit approval. Full control stays with the team."
-        },
-        {
-          "question": "Can ZPT work with our existing CRM data?",
-          "answer": "Yes. ZPT connects to the company's existing CRM and syncs data bidirectionally. Existing contacts, deals, and pipeline stages are preserved and enriched."
-        },
-        {
-          "question": "What happens to our data?",
-          "answer": "Your company data and output stay under your control. ZPT operates the sales system on your behalf and pushes the results back into the tools your team already uses."
-        }
-      ]
-    },
-    "pricing": {
-      "title": "Pricing",
-      "subtitle": "A fraction of what a single SDR costs.",
-      "tiers": [
-        {
-          "name": "Starter",
-          "price": "~$300",
-          "period": "/mo",
-          "features": ["Sourcing", "Enrichment"]
-        },
-        {
-          "name": "Growth",
-          "price": "~$600",
-          "period": "/mo",
-          "features": ["Everything in Starter, plus:", "Outreach drafting", "Pipeline management"]
-        },
-        {
-          "name": "Full Service",
-          "price": "~$1,000",
-          "period": "/mo",
-          "features": ["Everything in Growth, plus:", "CRM sync", "Content creation", "Meeting support"]
-        }
-      ],
-      "cta": "Start Free Trial"
     }
   },
   "advisory": {
@@ -515,15 +322,51 @@
       "collapseLabel": "Hide folder structure",
       "note": "The structure above is an example. Every deployment is customized to match the company's actual workflow, tools, and processes. 100% company-owned. No data leaves your network.",
       "folders": [
-        { "name": "company-context/", "label": "Context", "description": "What the business is: overview, product, ICP, positioning" },
-        { "name": "account-management/", "label": "CRM", "description": "Prospect data and profiles, organized by pipeline stage" },
-        { "name": "skills/", "label": "Standards", "description": "How output should look: templates, formats, quality rules" },
-        { "name": "memory/", "label": "Memory", "description": "Lessons learned, preferences, patterns discovered over time" },
-        { "name": "output/", "label": "Deliverables", "description": "Drafts, content, reports ready for review" },
-        { "name": "workflows/", "label": "Processes", "description": "How tasks get done: step-by-step procedures" },
-        { "name": "mcp/", "label": "Tools", "description": "Available integrations and tool configurations" },
-        { "name": "CLAUDE.md", "label": "Instructions", "description": "Operating instructions for the AI agents" },
-        { "name": "AGENT.md", "label": "Agent config", "description": "Agent-specific settings and preferences" }
+        {
+          "name": "company-context/",
+          "label": "Context",
+          "description": "What the business is: overview, product, ICP, positioning"
+        },
+        {
+          "name": "account-management/",
+          "label": "CRM",
+          "description": "Prospect data and profiles, organized by pipeline stage"
+        },
+        {
+          "name": "skills/",
+          "label": "Standards",
+          "description": "How output should look: templates, formats, quality rules"
+        },
+        {
+          "name": "memory/",
+          "label": "Memory",
+          "description": "Lessons learned, preferences, patterns discovered over time"
+        },
+        {
+          "name": "output/",
+          "label": "Deliverables",
+          "description": "Drafts, content, reports ready for review"
+        },
+        {
+          "name": "workflows/",
+          "label": "Processes",
+          "description": "How tasks get done: step-by-step procedures"
+        },
+        {
+          "name": "mcp/",
+          "label": "Tools",
+          "description": "Available integrations and tool configurations"
+        },
+        {
+          "name": "CLAUDE.md",
+          "label": "Instructions",
+          "description": "Operating instructions for the AI agents"
+        },
+        {
+          "name": "AGENT.md",
+          "label": "Agent config",
+          "description": "Agent-specific settings and preferences"
+        }
       ]
     },
     "consulting": {
@@ -661,85 +504,6 @@
       "title": "Title",
       "email": "Email",
       "score": "Score"
-    }
-  },
-  "trial": {
-    "title": "Brief Your AI Team",
-    "subtitle": "Set up your first assignment. Our AI agents handle the rest.",
-    "steps": {
-      "about": "About You",
-      "icp": "Ideal Customer",
-      "deliverable": "Deliverable"
-    },
-    "next": "Next",
-    "back": "Back",
-    "submit": "Start My Trial",
-    "submitting": "Submitting...",
-    "basicInfo": {
-      "subtitle": "Set up your first assignment. Our AI agents handle the rest.",
-      "companyName": "Company name",
-      "companyNamePlaceholder": "e.g., Acme Corp",
-      "contactName": "Your name",
-      "contactNamePlaceholder": "e.g., Jane Smith",
-      "email": "Email",
-      "emailPlaceholder": "e.g., jane@acme.com",
-      "website": "Company website",
-      "websitePlaceholder": "e.g., acme.com"
-    },
-    "icp": {
-      "subtitle": "This is how our agents learn who to look for.",
-      "industry": "Industry / sector",
-      "industryPlaceholder": "e.g., Logistics",
-      "companySize": "Company size",
-      "companySizePlaceholder": "Select...",
-      "geography": "Geography",
-      "geographyPlaceholder": "e.g., Benelux",
-      "descriptionLabel": "Describe your ideal customer",
-      "descriptionPlaceholder": "e.g., B2B logistics companies in the Benelux with 50-200 employees, looking to digitize operations",
-      "examplesLabel": "Name 2-3 companies that fit this profile",
-      "examplesPlaceholder": "e.g., Kuehne+Nagel, DHL Supply Chain, DB Schenker",
-      "uploadLabel": "Already have an ICP document? Drop it here.",
-      "uploadHint": "PDF, DOCX, PPTX, or Excel",
-      "uploading": "Uploading...",
-      "browse": "Browse files",
-      "creatureHint": "Feed me your docs — the more context, the better the results"
-    },
-    "deliverable": {
-      "subtitle": "Choose your first assignment for the AI team.",
-      "cards": {
-        "enrich": {
-          "title": "Test Our Enrichment",
-          "description": "Upload existing contacts, we enrich them so you can compare."
-        },
-        "prospect": {
-          "title": "Find New Prospects",
-          "description": "We source prospects matching your ICP."
-        },
-        "competitor": {
-          "title": "Competitor Analysis",
-          "description": "Full competitive intel report."
-        }
-      },
-      "prospect": {
-        "label": "How many prospects should we find?",
-        "prospects": "prospects"
-      },
-      "enrich": {
-        "label": "Upload your contact list (CSV or Excel).",
-        "hint": "Drag and drop your file here, or click to browse",
-        "uploading": "Uploading..."
-      },
-      "competitor": {
-        "label": "Name 1-3 competitors to analyze.",
-        "placeholder": "Competitor",
-        "addMore": "Add another"
-      }
-    },
-    "success": {
-      "title": "Your AI agents are being briefed.",
-      "description": "You'll receive results within 48 hours at the email address provided.",
-      "portal": "We'll also set up your personal portal so you can track everything.",
-      "backToSales": "Back to Sales"
     }
   },
   "footer": {

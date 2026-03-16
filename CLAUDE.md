@@ -2,12 +2,13 @@
 
 ## What ZPT Is
 
-ZPT helps companies operationalize AI — turning tools like Claude and ChatGPT into practical co-workers that understand the business. Two services:
+ZPT is an AI consulting and implementation agency (advisory-only). Wybe visits companies, understands workflows, and builds custom AI setups — local folders, agentic workflows, tool integrations — that the company owns and operates.
 
 - **ZPT Advisory** — Builds tailored AI setups for non-technical teams across sales, marketing, content, and operations. No new software; plugs into existing tools.
-- **ZPT Sales** — Runs AI-powered sales operations end-to-end: prospect sourcing, data enrichment, outreach drafting, pipeline management.
 
 Core philosophy: companies own their setup. No vendor lock-in. No data leaves the building.
+
+**Note:** The site previously had a separate "ZPT Sales" product. That has been removed. The site is now advisory-only.
 
 ## Tech Stack
 
@@ -24,7 +25,6 @@ Core philosophy: companies own their setup. No vendor lock-in. No data leaves th
 app/
 ├── (marketing)/          Public pages (Header + Footer via layout)
 │   ├── page.tsx          Homepage
-│   ├── sales/            /sales
 │   ├── advisory/         /advisory
 │   ├── about/            /about
 │   └── resources/        /resources (case studies)
