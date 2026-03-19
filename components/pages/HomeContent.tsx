@@ -176,14 +176,14 @@ export default function HomeContent() {
   return (
     <>
       {/* Section 1: Hero — text left, helicopter right */}
-      <section className="bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">
+      <section className="overflow-hidden bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-8">
           {/* Text */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="font-heading text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="font-heading text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-[2.75rem]">
               {t("home.hero.title")}
             </h1>
-            <p className="mt-6 font-heading text-3xl font-light text-gold md:text-4xl lg:text-5xl">
+            <p className="mt-6 font-heading text-3xl font-light text-gold md:text-4xl lg:text-[2.75rem]">
               {t("home.hero.subtitle")}
             </p>
             <p className="mx-auto mt-12 max-w-xl text-base leading-relaxed text-white/70 md:mx-0" dangerouslySetInnerHTML={{ __html: t("home.hero.description") }} />
@@ -197,15 +197,17 @@ export default function HomeContent() {
             </div>
           </div>
           {/* Hero video — AI workflow visualization */}
-          <div className="hidden flex-shrink-0 md:block md:w-72">
+          <div className="relative hidden flex-shrink-0 md:-mr-28 md:block md:w-96 lg:-mr-36 lg:w-[28rem]">
             <video
               autoPlay
               muted
               loop
               playsInline
               className="w-full rounded-lg"
-              src="/video/gemini_header_video.mp4"
+              style={{ filter: "brightness(0.85) contrast(1.15) saturate(0.9)" }}
+              src="/video/gemini_video_2.mp4"
             />
+            <div className="pointer-events-none absolute inset-0 rounded-lg" style={{ boxShadow: "inset 0 0 30px 15px #0C0C28" }} />
           </div>
         </div>
       </section>
@@ -233,7 +235,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 2: The Problem */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="px-6 py-14 lg:px-8" style={{ backgroundColor: "#EAE8DE" }}>
         <div className="mx-auto max-w-4xl text-center">
           <h2
             className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl"
