@@ -8,98 +8,6 @@ import { useI18n } from "@/components/I18nProvider";
 export default function HomeContent() {
   const { t, tArray } = useI18n();
 
-  // Hero helicopter looping animation
-  const heroStickmanRef = useRef<SVGGElement>(null);
-  const heroRopeRef = useRef<SVGLineElement>(null);
-  const heroFolderRef = useRef<SVGGElement>(null);
-  useEffect(() => {
-    const SKID_Y = 68;
-    const PERSON_HEAD_Y = 86;
-    const PERSON_FEET_Y = 132;
-    const PERSON_HEIGHT = PERSON_FEET_Y - PERSON_HEAD_Y;
-    const BUILDING_TOP_Y = 196;
-    const LAND_Y = BUILDING_TOP_Y - PERSON_HEIGHT; // top of head when landed
-
-    // Phase durations in ms
-    const DESCENT = 1500;
-    const DELIVERY = 3000;
-    const ASCENT = 1500;
-    const PAUSE = 1000;
-    const TOTAL = DESCENT + DELIVERY + ASCENT + PAUSE;
-
-    // Folder line segments (5 strokes that draw sequentially)
-    const folderPaths = heroFolderRef.current?.querySelectorAll("line, path");
-
-    let startTime: number | null = null;
-    let animId: number;
-
-    const tick = (now: number) => {
-      if (!startTime) startTime = now;
-      const elapsed = (now - startTime) % TOTAL;
-
-      const stickman = heroStickmanRef.current;
-      const rope = heroRopeRef.current;
-      if (!stickman || !rope) { animId = requestAnimationFrame(tick); return; }
-
-      let ty: number;
-
-      if (elapsed < DESCENT) {
-        // Phase 1: Descent (ease-out)
-        const t = elapsed / DESCENT;
-        const ease = 1 - (1 - t) * (1 - t);
-        ty = (SKID_Y - PERSON_HEAD_Y) + ease * (LAND_Y - SKID_Y);
-        // Hide folder lines
-        folderPaths?.forEach((p) => {
-          (p as SVGElement).style.strokeDashoffset = (p as SVGElement).getAttribute("data-len") || "0";
-          (p as SVGElement).style.opacity = "1";
-        });
-      } else if (elapsed < DESCENT + DELIVERY) {
-        // Phase 2: Delivery — stickman at building, folder assembles
-        ty = LAND_Y - PERSON_HEAD_Y;
-        const dt = (elapsed - DESCENT) / DELIVERY;
-        // 5 segments, each takes 1/5 of delivery time, staggered
-        folderPaths?.forEach((p, i) => {
-          const segStart = i / 5;
-          const segEnd = (i + 1) / 5;
-          const segProgress = Math.min(1, Math.max(0, (dt - segStart) / (segEnd - segStart)));
-          const len = parseFloat((p as SVGElement).getAttribute("data-len") || "0");
-          (p as SVGElement).style.strokeDashoffset = String(len * (1 - segProgress));
-          (p as SVGElement).style.opacity = "1";
-        });
-      } else if (elapsed < DESCENT + DELIVERY + ASCENT) {
-        // Phase 3: Ascent (ease-in)
-        const t = (elapsed - DESCENT - DELIVERY) / ASCENT;
-        const ease = t * t;
-        ty = (LAND_Y - PERSON_HEAD_Y) - ease * (LAND_Y - SKID_Y);
-        // Folder stays visible
-      } else {
-        // Phase 4: Pause at top, folder fades out
-        ty = SKID_Y - PERSON_HEAD_Y;
-        const t = (elapsed - DESCENT - DELIVERY - ASCENT) / PAUSE;
-        folderPaths?.forEach((p) => {
-          (p as SVGElement).style.opacity = String(1 - t);
-        });
-      }
-
-      stickman.setAttribute("transform", `translate(0 ${ty})`);
-      rope.setAttribute("y2", String(PERSON_HEAD_Y + ty));
-      animId = requestAnimationFrame(tick);
-    };
-
-    // Init folder line dashoffsets
-    setTimeout(() => {
-      folderPaths?.forEach((p) => {
-        const el = p as SVGElement;
-        const len = (p as SVGGeometryElement).getTotalLength?.() || 30;
-        el.setAttribute("data-len", String(len));
-        el.style.strokeDasharray = String(len);
-        el.style.strokeDashoffset = String(len);
-      });
-      animId = requestAnimationFrame(tick);
-    }, 100);
-
-    return () => cancelAnimationFrame(animId);
-  }, []);
 
   // Locale data
   const consultingPoints = tArray("advisory.consulting.points") as string[];
@@ -288,55 +196,16 @@ export default function HomeContent() {
               </a>
             </div>
           </div>
-          {/* Compact helicopter — scroll-animated descent */}
-          <div className="hidden flex-shrink-0 md:block md:w-44">
-            <svg className="h-[260px] w-full" fill="none" viewBox="0 0 180 260" strokeWidth={1.2} stroke="currentColor">
-              {/* Rotor */}
-              <line x1="30" y1="18" x2="150" y2="18" strokeWidth={2} className="text-gold/60" />
-              <ellipse cx="90" cy="18" rx="3" ry="3" fill="currentColor" className="text-gold/60" />
-              {/* Mast */}
-              <line x1="90" y1="18" x2="90" y2="32" strokeWidth={1.5} className="text-white/40" />
-              {/* Body */}
-              <ellipse cx="90" cy="46" rx="30" ry="14" strokeWidth={1.5} className="text-white/40" />
-              {/* Cockpit */}
-              <path d="M104 40 Q112 46 104 52" strokeWidth={1} className="text-gold/40" />
-              {/* Tail */}
-              <line x1="60" y1="42" x2="42" y2="35" strokeWidth={1.5} className="text-white/40" />
-              <line x1="42" y1="35" x2="42" y2="28" strokeWidth={1.5} className="text-white/40" />
-              <line x1="36" y1="28" x2="48" y2="28" strokeWidth={1.5} className="text-gold/40" />
-              {/* Skids */}
-              <line x1="70" y1="58" x2="70" y2="68" strokeWidth={1} className="text-white/30" />
-              <line x1="110" y1="58" x2="110" y2="68" strokeWidth={1} className="text-white/30" />
-              <line x1="60" y1="68" x2="120" y2="68" strokeWidth={1.5} className="text-white/30" />
-              {/* Rope — y2 animated by JS */}
-              <line ref={heroRopeRef} x1="90" y1="68" x2="90" y2="86" strokeWidth={1} strokeDasharray="3 3" className="text-gold/40" />
-              {/* Person — transform animated by JS */}
-              <g ref={heroStickmanRef}>
-                <circle cx="90" cy="86" r="6" strokeWidth={1.5} className="text-white/60" fill="none" />
-                <line x1="90" y1="92" x2="90" y2="116" strokeWidth={1.5} className="text-white/60" />
-                <line x1="90" y1="100" x2="77" y2="110" strokeWidth={1.5} className="text-white/60" />
-                <line x1="90" y1="100" x2="103" y2="110" strokeWidth={1.5} className="text-white/60" />
-                <line x1="90" y1="116" x2="79" y2="132" strokeWidth={1.5} className="text-white/60" />
-                <line x1="90" y1="116" x2="101" y2="132" strokeWidth={1.5} className="text-white/60" />
-                {/* Briefcase */}
-                <rect x="103" y="105" width="9" height="7" rx="1" strokeWidth={1} className="text-gold/50" />
-              </g>
-              {/* Building — compact, no windows */}
-              <rect x="48" y="196" width="84" height="48" rx="3" strokeWidth={1.5} className="text-white/30" />
-              {/* Folder construction lines — drawn sequentially during delivery */}
-              <g ref={heroFolderRef}>
-                {/* Bottom edge */}
-                <line x1="72" y1="232" x2="108" y2="232" strokeWidth={1.8} stroke="#C9A96E" />
-                {/* Left side */}
-                <line x1="72" y1="232" x2="72" y2="212" strokeWidth={1.8} stroke="#C9A96E" />
-                {/* Right side */}
-                <line x1="108" y1="232" x2="108" y2="212" strokeWidth={1.8} stroke="#C9A96E" />
-                {/* Top edge */}
-                <line x1="72" y1="212" x2="108" y2="212" strokeWidth={1.8} stroke="#C9A96E" />
-                {/* Folder tab */}
-                <path d="M72 212 L72 208 L85 208 L88 212" strokeWidth={1.8} stroke="#C9A96E" fill="none" />
-              </g>
-            </svg>
+          {/* Hero video — AI workflow visualization */}
+          <div className="hidden flex-shrink-0 md:block md:w-72">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full rounded-lg"
+              src="/video/gemini_header_video.mp4"
+            />
           </div>
         </div>
       </section>
