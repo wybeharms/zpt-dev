@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useI18n } from "../I18nProvider";
@@ -26,7 +27,8 @@ export default function PortalSidebar({
   return (
     <aside className="flex w-64 flex-col bg-navy text-white">
       <div className="px-6 py-6">
-        <Link href="/" className="font-logo text-lg font-medium tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-logo text-lg font-medium tracking-tight">
+          <Image src="/logo-icon-light.svg" alt="" width={24} height={24} className="h-6 w-6" />
           ZPT
         </Link>
         <span className="ml-2 text-xs text-white/40">{t("portalUi.title")}</span>

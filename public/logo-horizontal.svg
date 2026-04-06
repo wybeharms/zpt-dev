@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 48" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8C55A"/>
+      <stop offset="45%" stop-color="#D4A843"/>
+      <stop offset="100%" stop-color="#B8892E"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <rect x="3" y="3" width="42" height="42" rx="7.5" fill="none" stroke="#0C0C28" stroke-width="2.6"/>
+  <rect x="13.5" y="13.5" width="21" height="21" rx="3" fill="none" stroke="url(#gold)" stroke-width="2.4" transform="rotate(45, 24, 24)"/>
+  <rect x="18" y="18" width="12" height="12" rx="2.6" fill="#0C0C28"/>
+  <circle cx="24" cy="24" r="2.2" fill="url(#gold)"/>
+  <!-- Wordmark -->
+  <text x="62" y="30" font-family="'Source Code Pro', 'SF Mono', 'Fira Code', monospace" font-size="20" font-weight="500" fill="#0C0C28" letter-spacing="0.5">Zero Person Team</text>
+</svg>

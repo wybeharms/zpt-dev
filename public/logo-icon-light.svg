@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8C55A"/>
+      <stop offset="45%" stop-color="#D4A843"/>
+      <stop offset="100%" stop-color="#B8892E"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer square (white for dark backgrounds) -->
+  <rect x="4" y="4" width="56" height="56" rx="10" fill="none" stroke="#FAFAF7" stroke-width="3.5"/>
+  <!-- Middle: diamond in gold -->
+  <rect x="18" y="18" width="28" height="28" rx="4" fill="none" stroke="url(#gold)" stroke-width="3.2" transform="rotate(45, 32, 32)"/>
+  <!-- Inner square -->
+  <rect x="24" y="24" width="16" height="16" rx="3.5" fill="#FAFAF7"/>
+  <circle cx="32" cy="32" r="3" fill="url(#gold)"/>
+</svg>

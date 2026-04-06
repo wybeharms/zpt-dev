@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "./I18nProvider";
 
@@ -13,8 +14,9 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="font-logo text-lg font-medium tracking-tight"
+              className="flex items-center gap-2.5 font-logo text-lg font-medium tracking-tight"
             >
+              <Image src="/logo-icon-light.svg" alt="" width={28} height={28} className="h-7 w-7" />
               Zero Person Team
             </Link>
           </div>
