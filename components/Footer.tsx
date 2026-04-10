@@ -16,7 +16,7 @@ export default function Footer() {
               href="/"
               className="flex items-center gap-2.5 font-logo text-lg font-medium tracking-tight"
             >
-              <Image src="/logo-icon-light.svg" alt="" width={28} height={28} className="h-7 w-7" />
+              <Image src="/favicon.png" alt="" width={28} height={28} className="h-7 w-7" />
               Zero Person Team
             </Link>
           </div>

@@ -14,7 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-navy text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5 font-logo text-lg font-medium tracking-tight">
-          <Image src="/logo-icon-light.svg" alt="" width={28} height={28} className="h-7 w-7" />
+          <Image src="/favicon.png" alt="" width={28} height={28} className="h-7 w-7" />
           Zero Person Team
         </Link>
 
