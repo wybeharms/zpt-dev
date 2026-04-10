@@ -6,12 +6,16 @@
     </linearGradient>
   </defs>
   <rect x="0" y="0" width="32" height="32" rx="6" fill="#0C0C28"/>
-  <!-- Subtle warm glow -->
-  <circle cx="16" cy="17" r="9" fill="#C9A96E" opacity="0.06"/>
-  <!-- Prism triangle -->
-  <path d="M16 6 L6 25 L26 25 Z" fill="none" stroke="url(#gold)" stroke-width="2.8" stroke-linejoin="miter"/>
+  <!-- Prism triangle (behind lines) -->
+  <path d="M16 6 L6 25 L26 25 Z" fill="none" stroke="url(#gold)" stroke-width="2.8" stroke-linejoin="round"/>
   <!-- Vertex accents -->
-  <circle cx="16" cy="6" r="1.6" fill="url(#gold)"/>
-  <circle cx="6" cy="25" r="1.6" fill="url(#gold)"/>
-  <circle cx="26" cy="25" r="1.6" fill="url(#gold)"/>
+  <circle cx="16" cy="6" r="1.4" fill="url(#gold)"/>
+  <circle cx="6" cy="25" r="1.4" fill="url(#gold)"/>
+  <circle cx="26" cy="25" r="1.4" fill="url(#gold)"/>
+  <!-- Input lines: tapered, staggered, muted white -->
+  <polygon points="0,12.5 14,15.6 14,16.4 0,14.5" fill="#B8B8C8"/>
+  <polygon points="1,15.5 14,15.6 14,16.4 1,16.5" fill="#B8B8C8"/>
+  <polygon points="2,18.5 14,15.6 14,16.4 2,20.5" fill="#B8B8C8"/>
+  <!-- Output: tapered, angled up -->
+  <polygon points="22,15.2 31,12 31,14 22,16.2" fill="url(#gold)"/>
 </svg>

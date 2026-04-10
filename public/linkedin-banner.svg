@@ -4,6 +4,10 @@
       <stop offset="0%" stop-color="#0C0C28"/>
       <stop offset="100%" stop-color="#141438"/>
     </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4B070"/>
+      <stop offset="100%" stop-color="#B8944E"/>
+    </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a40" stroke-width="0.5"/>
     </pattern>
@@ -12,28 +16,20 @@
   <!-- Background -->
   <rect width="1128" height="191" fill="url(#bg)"/>
   <rect width="1128" height="191" fill="url(#grid)" opacity="0.4"/>
-
-  <!-- Subtle horizontal accent line -->
   <line x1="0" y1="188" x2="1128" y2="188" stroke="#C9A96E" stroke-width="1.5" opacity="0.6"/>
 
-  <!-- ============================================ -->
-  <!-- LEFT SIDE: Prism with convergence lines      -->
-  <!-- ============================================ -->
+  <!-- Prism triangle (behind input lines) -->
+  <path d="M300 30 L248 158 L352 158 Z" fill="none" stroke="url(#goldGrad)" stroke-width="2.8" stroke-linejoin="round"/>
 
-  <!-- Input lines (muted, converging toward prism) -->
-  <line x1="40" y1="50" x2="278" y2="65" stroke="#8888AA" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <line x1="40" y1="95" x2="268" y2="95" stroke="#8888AA" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <line x1="40" y1="140" x2="258" y2="125" stroke="#8888AA" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <!-- Input lines: tapered, staggered start (top furthest left) -->
+  <polygon points="20,47 305,93.8 305,96.2 20,53" fill="#B8B8C8" opacity="0.7"/>
+  <polygon points="40,92 305,93.8 305,96.2 40,98" fill="#B8B8C8" opacity="0.7"/>
+  <polygon points="60,137 305,93.8 305,96.2 60,143" fill="#B8B8C8" opacity="0.7"/>
 
-  <!-- Prism (equilateral triangle) -->
-  <path d="M300 30 L248 158 L352 158 Z" fill="none" stroke="#C9A96E" stroke-width="2.8" stroke-linejoin="miter"/>
+  <!-- Output: tapered polygon, thicker, angled up -->
+  <polygon points="330,91 560,65 560,73 330,95" fill="#C9A96E"/>
 
-  <!-- Output line (gold, clarity emerging) -->
-  <line x1="330" y1="95" x2="560" y2="95" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
-
-  <!-- ============================================ -->
-  <!-- RIGHT SIDE: ZPT branding + tagline           -->
-  <!-- ============================================ -->
+  <!-- ZPT branding -->
   <g transform="translate(720, 42)">
     <text x="0" y="0" text-anchor="middle" font-family="monospace" font-size="42" font-weight="600" fill="#C9A96E" letter-spacing="4">ZPT</text>
     <line x1="-120" y1="14" x2="120" y2="14" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
@@ -46,5 +42,4 @@
   <circle cx="200" cy="160" r="1" fill="#C9A96E" opacity="0.15"/>
   <circle cx="750" cy="25" r="1" fill="#C9A96E" opacity="0.15"/>
   <circle cx="450" cy="170" r="1.5" fill="#C9A96E" opacity="0.1"/>
-
 </svg>
