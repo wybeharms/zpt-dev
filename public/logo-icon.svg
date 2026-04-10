@@ -1,16 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E8C55A"/>
-      <stop offset="45%" stop-color="#D4A843"/>
-      <stop offset="100%" stop-color="#B8892E"/>
-    </linearGradient>
-  </defs>
-  <!-- Outer square -->
-  <rect x="4" y="4" width="56" height="56" rx="10" fill="none" stroke="#0C0C28" stroke-width="3.5"/>
-  <!-- Middle: diamond (rotated square) in gold -->
-  <rect x="18" y="18" width="28" height="28" rx="4" fill="none" stroke="url(#gold)" stroke-width="3.2" transform="rotate(45, 32, 32)"/>
-  <!-- Inner square -->
-  <rect x="24" y="24" width="16" height="16" rx="3.5" fill="#0C0C28"/>
-  <circle cx="32" cy="32" r="3" fill="url(#gold)"/>
+  <!-- Input lines (muted, converging toward prism) -->
+  <line x1="2" y1="19" x2="24" y2="24" stroke="#6B6B8A" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="31" x2="20" y2="31" stroke="#6B6B8A" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2" y1="43" x2="16" y2="38" stroke="#6B6B8A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Prism (equilateral triangle) -->
+  <path d="M32 13 L13 47 L51 47 Z" fill="none" stroke="#C9A96E" stroke-width="2.5" stroke-linejoin="miter"/>
+  <!-- Output line (gold: clarity emerging) -->
+  <line x1="44" y1="31" x2="62" y2="31" stroke="#C9A96E" stroke-width="2" stroke-linecap="round"/>
 </svg>
