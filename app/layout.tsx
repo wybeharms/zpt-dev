@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously. The output of a full team, without hiring one.",
   metadataBase: new URL("https://zpteam.ai"),
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.png",
   },
   openGraph: {
     type: "website",
