@@ -9,119 +9,91 @@ import { useI18n } from "@/components/I18nProvider";
 
 type ManualStep = { step: string; time: string };
 type ZptStep = { step: string; type: "agent" | "human" };
-type OutputIcon = { src: string; label: string };
-type InputIcon = { label: string; icon: "docs" | "folder" | "email" };
 
 const workflowExamples: {
   title: string;
   lead: string;
-  input: InputIcon;
-  outputIcons: OutputIcon[];
-  manual: ManualStep[];
+  outputLabel: string;
+  outputLogo: string;
+  manualStart: ManualStep[];
   manualMore: number;
+  manualEnd: ManualStep[];
   manualTotal: string;
   zpt: ZptStep[];
   zptTotal: string;
-  quality: string;
 }[] = [
   {
     title: "Quarterly Fund Analysis",
     lead: "Analyzing quarterly cash flows across multiple fund portfolios.",
-    input: { label: "Quarterly PDFs", icon: "docs" },
-    outputIcons: [],
-    manual: [
+    outputLabel: "Excel",
+    outputLogo: "/logos/excel.png",
+    manualStart: [
       { step: "Log into custodian portal and download reports", time: "30 min" },
       { step: "Open each PDF, locate relevant tables", time: "45 min" },
       { step: "Manually type figures into spreadsheet", time: "1.5 h" },
-      { step: "Double-check entries against source documents", time: "1 h" },
-      { step: "Cross-reference data across fund documents", time: "1.5 h" },
     ],
     manualMore: 5,
+    manualEnd: [
+      { step: "Create updated Excel model", time: "2 h" },
+      { step: "Final review and sign-off", time: "1 h" },
+    ],
     manualTotal: "~10 hours",
     zpt: [
       { step: "Reads all quarterly PDFs and extracts figures", type: "agent" },
-      { step: "Cross-references data across documents", type: "agent" },
-      { step: "Flags discrepancies with source citations", type: "agent" },
+      { step: "Cross-references and flags discrepancies", type: "agent" },
       { step: "Analyst verifies flagged items", type: "human" },
-      { step: "Updates financial model automatically", type: "agent" },
+      { step: "Creates updated Excel model", type: "agent" },
     ],
     zptTotal: "~1 hour",
-    quality: "Every figure traced to source. No manual entry errors.",
   },
   {
-    title: "Due Diligence Report",
-    lead: "From data room to investment committee deck.",
-    input: { label: "Data Room (20+ docs)", icon: "folder" },
-    outputIcons: [
-      { src: "/logos/excel.png", label: "Excel" },
-      { src: "/logos/powerpoint.png", label: "PowerPoint" },
-    ],
-    manual: [
+    title: "Due Diligence Deck",
+    lead: "From data room to investment committee presentation.",
+    outputLabel: "PowerPoint",
+    outputLogo: "/logos/powerpoint.png",
+    manualStart: [
       { step: "Receive and organize data room documents", time: "1 h" },
       { step: "Read and categorize each document (20+)", time: "6 h" },
       { step: "Extract data points into structured format", time: "4 h" },
-      { step: "Draft analysis sections and recommendation", time: "12 h" },
-      { step: "Build supporting Excel model", time: "6 h" },
     ],
     manualMore: 6,
+    manualEnd: [
+      { step: "Internal review and iteration", time: "4 h" },
+      { step: "Final polish and formatting", time: "2 h" },
+    ],
     manualTotal: "~2 weeks",
     zpt: [
       { step: "Reads and categorizes all data room documents", type: "agent" },
-      { step: "Extracts structured data with source citations", type: "agent" },
       { step: "Produces ~80% draft of analysis sections", type: "agent" },
       { step: "Analyst reviews, adds investment judgment", type: "human" },
-      { step: "Builds Excel model and PowerPoint deck", type: "agent" },
-      { step: "Team finalizes and presents to committee", type: "human" },
+      { step: "Builds PowerPoint deck from analysis", type: "agent" },
     ],
     zptTotal: "~2-3 days",
-    quality: "Consistent analysis. Every data point cited to source document.",
   },
   {
     title: "Client Onboarding",
     lead: "Processing intake documents and populating internal systems.",
-    input: { label: "Intake Forms", icon: "email" },
-    outputIcons: [],
-    manual: [
+    outputLabel: "HubSpot",
+    outputLogo: "/logos/hubspot.png",
+    manualStart: [
       { step: "Receive contracts and intake forms via email", time: "10 min" },
       { step: "Open and read each document for key fields", time: "30 min" },
       { step: "Log into CRM and manually enter data", time: "25 min" },
-      { step: "Cross-check against existing records", time: "15 min" },
-      { step: "Flag missing information, draft follow-up", time: "25 min" },
     ],
     manualMore: 4,
+    manualEnd: [
+      { step: "Flag missing information", time: "10 min" },
+      { step: "Draft follow-up email to client", time: "15 min" },
+    ],
     manualTotal: "~2.5 hours",
     zpt: [
-      { step: "Reads all intake documents automatically", type: "agent" },
-      { step: "Extracts key fields and maps to CRM", type: "agent" },
-      { step: "Populates records, flags gaps and conflicts", type: "agent" },
+      { step: "Reads all intake documents and extracts fields", type: "agent" },
+      { step: "Populates CRM records, flags gaps", type: "agent" },
       { step: "Human reviews summary and sends follow-up", type: "human" },
     ],
     zptTotal: "~20 minutes",
-    quality: "No missed fields. Automatic conflict detection across records.",
   },
 ];
-
-/* ── Input icon SVGs ──────────────────────────────────────── */
-
-function InputIconSvg({ type }: { type: "docs" | "folder" | "email" }) {
-  if (type === "folder")
-    return (
-      <svg className="h-5 w-5 text-navy/50" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-      </svg>
-    );
-  if (type === "email")
-    return (
-      <svg className="h-5 w-5 text-navy/50" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-      </svg>
-    );
-  return (
-    <svg className="h-5 w-5 text-navy/50" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-    </svg>
-  );
-}
 
 /* ── Component ────────────────────────────────────────────── */
 
@@ -269,124 +241,117 @@ export default function HowItWorksContent() {
           </p>
 
           <div className="mt-14 space-y-14">
-            {workflowExamples.map((wf, wi) => (
-              <div
-                key={wf.title}
-                ref={(el) => { workflowRefs.current[wi] = el; }}
-                className={`overflow-hidden rounded-xl border border-border-warm bg-white shadow-sm transition-all duration-700 ${
-                  visibleWorkflows[wi] ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: visibleWorkflows[wi] ? `${wi * 150}ms` : "0ms" }}
-              >
-                {/* Card header with input → output visual */}
-                <div className="px-6 pt-7 md:px-8 md:pt-8">
-                  <h3 className="font-logo text-base font-semibold text-navy">{wf.title}</h3>
-                  <p className="mt-1 text-sm text-text-muted">{wf.lead}</p>
+            {workflowExamples.map((wf, wi) => {
+              const startNum = wf.manualStart.length;
+              const totalSteps = startNum + wf.manualMore + wf.manualEnd.length;
+              const endStartNum = totalSteps - wf.manualEnd.length + 1;
 
-                  {/* Input → Output visual */}
-                  <div className="mt-5 flex items-center gap-3">
-                    <div className="flex items-center gap-2 rounded-lg border border-border-warm bg-off-white px-3 py-2">
-                      <InputIconSvg type={wf.input.icon} />
-                      <span className="text-xs text-navy/60">{wf.input.label}</span>
+              return (
+                <div
+                  key={wf.title}
+                  ref={(el) => { workflowRefs.current[wi] = el; }}
+                  className={`overflow-hidden rounded-xl border border-border-warm bg-white shadow-sm transition-all duration-700 ${
+                    visibleWorkflows[wi] ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: visibleWorkflows[wi] ? `${wi * 150}ms` : "0ms" }}
+                >
+                  {/* Card header: title left, output badge right */}
+                  <div className="flex items-start justify-between px-6 pt-7 md:px-8 md:pt-8">
+                    <div>
+                      <h3 className="font-logo text-base font-semibold text-navy">{wf.title}</h3>
+                      <p className="mt-1 text-sm text-text-muted">{wf.lead}</p>
                     </div>
-                    <svg className="h-4 w-6 flex-shrink-0 text-gold" fill="none" viewBox="0 0 24 16" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2 8h18m0 0l-5-5m5 5l-5 5" />
-                    </svg>
-                    {wf.outputIcons.length > 0 ? (
-                      <div className="flex items-center gap-2">
-                        {wf.outputIcons.map((o) => (
-                          <div key={o.label} className="flex items-center gap-1.5 rounded-lg border border-gold/25 bg-gold/[0.06] px-3 py-2">
-                            <Image src={o.src} alt={o.label} width={18} height={18} className="h-[18px] w-[18px]" />
-                            <span className="text-xs font-medium text-navy/60">{o.label}</span>
-                          </div>
+                    <div className="ml-4 flex shrink-0 items-center gap-2 rounded-lg border border-gold/25 bg-gold/[0.06] px-3 py-2">
+                      <Image src={wf.outputLogo} alt={wf.outputLabel} width={18} height={18} className="h-[18px] w-[18px]" />
+                      <span className="text-xs font-medium text-navy/60">{wf.outputLabel}</span>
+                    </div>
+                  </div>
+
+                  {/* Two-panel comparison */}
+                  <div className="mt-6 grid md:grid-cols-2">
+                    {/* LEFT: Manual process */}
+                    <div className="border-b border-border-warm bg-white px-6 pb-6 pt-5 md:border-b-0 md:border-r md:px-8 md:pb-8">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-navy/40">
+                        Manual process
+                      </p>
+                      <ul className="mt-4 space-y-0">
+                        {/* First steps */}
+                        {wf.manualStart.map((s, i) => (
+                          <li key={i} className="flex items-baseline gap-3 border-b border-border-warm/40 py-2.5">
+                            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy/[0.06] text-[10px] font-medium text-navy/30">
+                              {i + 1}
+                            </span>
+                            <span className="flex-1 text-[13px] leading-snug text-text-muted">{s.step}</span>
+                            <span className="shrink-0 font-mono text-[11px] text-navy/25">{s.time}</span>
+                          </li>
                         ))}
-                      </div>
-                    ) : (
-                      <div className="rounded-lg border border-gold/25 bg-gold/[0.06] px-3 py-2">
-                        <span className="text-xs font-medium text-navy/60">Updated output</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
+                        {/* "And more" row */}
+                        {wf.manualMore > 0 && (
+                          <li className="flex items-baseline gap-3 border-b border-border-warm/40 py-2.5">
+                            <span className="flex h-5 w-5 shrink-0 items-center justify-center text-[11px] text-navy/20">⋯</span>
+                            <span className="text-[12px] italic text-navy/25">and {wf.manualMore} more steps</span>
+                          </li>
+                        )}
+                        {/* Last steps */}
+                        {wf.manualEnd.map((s, i) => (
+                          <li key={`end-${i}`} className="flex items-baseline gap-3 border-b border-border-warm/40 py-2.5 last:border-b-0">
+                            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy/[0.06] text-[10px] font-medium text-navy/30">
+                              {endStartNum + i}
+                            </span>
+                            <span className="flex-1 text-[13px] leading-snug text-text-muted">{s.step}</span>
+                            <span className="shrink-0 font-mono text-[11px] text-navy/25">{s.time}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                {/* Two-panel comparison */}
-                <div className="mt-6 grid md:grid-cols-2">
-                  {/* LEFT: Manual process */}
-                  <div className="border-b border-border-warm bg-white px-6 pb-6 pt-5 md:border-b-0 md:border-r md:px-8 md:pb-8">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-navy/40">
-                      Manual process
-                    </p>
-                    <ul className="mt-4 space-y-0">
-                      {wf.manual.map((s, i) => (
-                        <li key={i} className="flex items-baseline gap-3 border-b border-border-warm/40 py-2.5 last:border-b-0">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy/[0.06] text-[10px] font-medium text-navy/30">
-                            {i + 1}
-                          </span>
-                          <span className="flex-1 text-[13px] leading-snug text-text-muted">{s.step}</span>
-                          <span className="shrink-0 font-mono text-[11px] text-navy/25">{s.time}</span>
-                        </li>
-                      ))}
-                      {wf.manualMore > 0 && (
-                        <li className="flex items-baseline gap-3 py-2.5">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center text-[12px] text-navy/20">
-                            ⋯
-                          </span>
-                          <span className="text-[12px] italic text-navy/25">
-                            and {wf.manualMore} more steps
-                          </span>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-
-                  {/* RIGHT: With agents */}
-                  <div className="bg-gold/[0.04] px-6 pb-6 pt-5 md:px-8 md:pb-8">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gold-dark">
-                      With agents
-                    </p>
-                    <ul className="mt-4 space-y-0">
-                      {wf.zpt.map((s, i) => (
-                        <li
-                          key={i}
-                          className={`flex items-start gap-3 border-b border-gold/10 py-3 last:border-b-0 ${
-                            s.type === "human" ? "font-medium text-navy" : "text-navy/70"
-                          }`}
-                        >
-                          <span
-                            className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold ${
-                              s.type === "human"
-                                ? "bg-navy/10 text-navy"
-                                : "bg-gold/20 text-gold-dark"
+                    {/* RIGHT: With agents */}
+                    <div className="bg-gold/[0.08] px-6 pb-6 pt-5 md:px-8 md:pb-8">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gold-dark">
+                        With agents
+                      </p>
+                      <ul className="mt-4 space-y-0">
+                        {wf.zpt.map((s, i) => (
+                          <li
+                            key={i}
+                            className={`flex items-start gap-3 border-b border-gold/10 py-3 last:border-b-0 ${
+                              s.type === "human" ? "font-medium text-navy" : "text-navy/70"
                             }`}
                           >
-                            {s.type === "human" ? "✓" : "→"}
-                          </span>
-                          <span className="text-[13px] leading-snug">{s.step}</span>
-                        </li>
-                      ))}
-                    </ul>
+                            <span
+                              className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold ${
+                                s.type === "human"
+                                  ? "bg-navy/10 text-navy"
+                                  : "bg-gold/25 text-gold-dark"
+                              }`}
+                            >
+                              {s.type === "human" ? "✓" : "→"}
+                            </span>
+                            <span className="text-[13px] leading-snug">{s.step}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
 
-                {/* Footer: time comparison + quality */}
-                <div className="border-t border-border-warm bg-off-white/60 px-6 py-5 md:px-8">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-lg font-semibold text-navy">{wf.manualTotal}</p>
-                      <p className="text-[10px] uppercase tracking-wider text-navy/30">manual</p>
+                  {/* Footer: time comparison centered under each column */}
+                  <div className="grid border-t border-border-warm md:grid-cols-2">
+                    <div className="flex items-center justify-center border-b border-border-warm bg-off-white/40 px-6 py-5 md:border-b-0 md:border-r">
+                      <div className="text-center">
+                        <p className="text-lg font-semibold text-navy">{wf.manualTotal}</p>
+                        <p className="mt-0.5 text-[10px] uppercase tracking-wider text-navy/30">manual</p>
+                      </div>
                     </div>
-                    <svg className="h-4 w-8 text-gold" fill="none" viewBox="0 0 32 16" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2 8h26m0 0l-5-5m5 5l-5 5" />
-                    </svg>
-                    <div className="text-right">
-                      <p className="text-lg font-semibold text-gold">{wf.zptTotal}</p>
-                      <p className="text-[10px] uppercase tracking-wider text-gold/50">with agents</p>
+                    <div className="flex items-center justify-center bg-gold/[0.06] px-6 py-5">
+                      <div className="text-center">
+                        <p className="text-lg font-semibold text-gold">{wf.zptTotal}</p>
+                        <p className="mt-0.5 text-[10px] uppercase tracking-wider text-gold/50">with agents</p>
+                      </div>
                     </div>
                   </div>
-                  <p className="mt-3 text-xs italic text-text-muted">{wf.quality}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

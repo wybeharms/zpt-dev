@@ -72,12 +72,23 @@ export default function HomeContent() {
               className="mx-auto mt-12 max-w-xl text-base leading-relaxed text-white/70 md:mx-0"
               dangerouslySetInnerHTML={{ __html: t("home.hero.description") }}
             />
-            <div className="mt-12">
+            <div className="mt-12 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:request@zpteam.ai?subject=Intro call request"
                 className="inline-block rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
               >
                 {t("home.hero.cta")}
+              </a>
+              <a
+                href="/zpt-one-pager.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded border border-white/20 px-6 py-3 text-sm font-medium text-white/80 transition-colors hover:border-white/40 hover:text-white"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                One-Pager PDF
               </a>
             </div>
           </div>
