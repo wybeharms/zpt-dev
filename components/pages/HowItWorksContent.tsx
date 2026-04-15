@@ -10,72 +10,87 @@ import { useI18n } from "@/components/I18nProvider";
 const workflowExamples = [
   {
     title: "Quarterly Fund Analysis",
-    lead: "A fund reports quarterly cash flows across multiple portfolios.",
+    lead: "Analyzing quarterly cash flows across multiple fund portfolios.",
     manual: [
-      { step: "Download quarterly reports (PDFs)", time: "30 min" },
-      { step: "Read through each document", time: "2 h" },
-      { step: "Extract figures into spreadsheet", time: "3 h" },
-      { step: "Cross-check data across documents", time: "1.5 h" },
-      { step: "Update financial model", time: "2 h" },
-      { step: "Format and review output", time: "1 h" },
+      { step: "Log into custodian portal", time: "10 min" },
+      { step: "Download quarterly reports (PDFs)", time: "20 min" },
+      { step: "Open each PDF, locate relevant tables", time: "45 min" },
+      { step: "Manually type figures into spreadsheet", time: "1.5 h" },
+      { step: "Double-check entries against source", time: "1 h" },
+      { step: "Cross-reference across fund documents", time: "1.5 h" },
+      { step: "Identify and resolve discrepancies", time: "1 h" },
+      { step: "Update financial model with new data", time: "2 h" },
+      { step: "Format output for review", time: "45 min" },
+      { step: "Final review and sign-off", time: "1 h" },
     ],
     manualTotal: "~10 hours",
-    agent: [
-      { step: "Agent reads all PDFs and extracts figures", auto: true },
-      { step: "Agent cross-checks and flags discrepancies", auto: true },
-      { step: "Agent updates model", auto: true },
-      { step: "Human reviews and approves", auto: false },
+    zpt: [
+      { step: "Reads all quarterly PDFs and extracts figures", type: "agent" as const },
+      { step: "Cross-references data across documents", type: "agent" as const },
+      { step: "Flags discrepancies with source citations", type: "agent" as const },
+      { step: "Analyst verifies flagged items", type: "human" as const },
+      { step: "Updates financial model automatically", type: "agent" as const },
+      { step: "Formats output to your standards", type: "agent" as const },
     ],
-    agentTotal: "~1 hour",
-    barManual: 100,
-    barAgent: 10,
+    zptTotal: "~1 hour of human time",
+    outputs: [] as { src: string; label: string }[],
   },
   {
     title: "Due Diligence Report",
-    lead: "Producing an investment memo from a data room of 20+ documents.",
+    lead: "From data room to investment committee deck.",
     manual: [
-      { step: "Gather and organize data room", time: "1 h" },
-      { step: "Read and categorize documents", time: "8 h" },
-      { step: "Extract key data points", time: "6 h" },
-      { step: "Draft analysis sections", time: "12 h" },
-      { step: "Build supporting Excel model", time: "8 h" },
-      { step: "Create PowerPoint deck", time: "10 h" },
-      { step: "Review and iterate", time: "5 h" },
+      { step: "Receive and organize data room", time: "1 h" },
+      { step: "Read and categorize each document (20+)", time: "6 h" },
+      { step: "Take notes on key findings per document", time: "3 h" },
+      { step: "Extract data points into structured format", time: "4 h" },
+      { step: "Cross-reference data across sources", time: "2 h" },
+      { step: "Draft analysis sections", time: "8 h" },
+      { step: "Write investment recommendation", time: "4 h" },
+      { step: "Build supporting Excel model", time: "6 h" },
+      { step: "Create PowerPoint presentation", time: "8 h" },
+      { step: "Internal review and iteration", time: "4 h" },
+      { step: "Final polish and formatting", time: "2 h" },
     ],
-    manualTotal: "~50 hours",
-    agent: [
-      { step: "Agent reads and categorizes all documents", auto: true },
-      { step: "Agent extracts structured data with source tags", auto: true },
-      { step: "Agent drafts analysis with citations", auto: true },
-      { step: "Agent builds Excel model", auto: true },
-      { step: "Agent creates PowerPoint deck", auto: true },
-      { step: "Human reviews, adds judgment, finalizes", auto: false },
+    manualTotal: "~2 weeks",
+    zpt: [
+      { step: "Reads and categorizes all data room documents", type: "agent" as const },
+      { step: "Extracts structured data with source citations", type: "agent" as const },
+      { step: "Produces ~80% draft of analysis sections", type: "agent" as const },
+      { step: "Analyst reviews, adds investment judgment", type: "human" as const },
+      { step: "Builds Excel model from extracted data", type: "agent" as const },
+      { step: "Creates PowerPoint deck from analysis", type: "agent" as const },
+      { step: "Team finalizes and presents to committee", type: "human" as const },
     ],
-    agentTotal: "~15 hours",
-    barManual: 100,
-    barAgent: 30,
+    zptTotal: "~2-3 days",
+    outputs: [
+      { src: "/logos/excel.png", label: "Excel" },
+      { src: "/logos/powerpoint.png", label: "PowerPoint" },
+    ],
   },
   {
     title: "Client Onboarding",
     lead: "Processing intake documents and populating internal systems.",
     manual: [
-      { step: "Receive contracts and intake forms", time: "—" },
-      { step: "Read each document for key fields", time: "45 min" },
-      { step: "Enter data into CRM", time: "30 min" },
-      { step: "Cross-reference against existing records", time: "20 min" },
-      { step: "Flag missing information", time: "15 min" },
-      { step: "Follow up with client", time: "20 min" },
+      { step: "Receive contracts and intake forms via email", time: "—" },
+      { step: "Open and read each document", time: "30 min" },
+      { step: "Identify key fields (names, dates, amounts)", time: "20 min" },
+      { step: "Log into CRM system", time: "5 min" },
+      { step: "Manually enter data into CRM fields", time: "25 min" },
+      { step: "Cross-check against existing records", time: "15 min" },
+      { step: "Flag missing or conflicting information", time: "10 min" },
+      { step: "Draft follow-up email to client", time: "15 min" },
+      { step: "File documents in shared drive", time: "10 min" },
     ],
-    manualTotal: "~2 hours per client",
-    agent: [
-      { step: "Agent reads documents and extracts fields", auto: true },
-      { step: "Agent populates CRM records", auto: true },
-      { step: "Agent flags gaps and conflicts", auto: true },
-      { step: "Human reviews and sends follow-up", auto: false },
+    manualTotal: "~2.5 hours per client",
+    zpt: [
+      { step: "Reads all intake documents automatically", type: "agent" as const },
+      { step: "Extracts key fields and maps to CRM structure", type: "agent" as const },
+      { step: "Populates CRM records", type: "agent" as const },
+      { step: "Flags gaps and conflicts with explanations", type: "agent" as const },
+      { step: "Human reviews summary and sends follow-up", type: "human" as const },
     ],
-    agentTotal: "~15 minutes",
-    barManual: 100,
-    barAgent: 13,
+    zptTotal: "~20 minutes per client",
+    outputs: [],
   },
 ];
 
@@ -113,8 +128,7 @@ export default function HowItWorksContent() {
       const cx = 96;
       const cy = LANDING_Y + 15;
       for (let i = 0; i < 16; i++) {
-        const angle =
-          (Math.PI * 2 * i) / 16 + (Math.random() - 0.5) * 0.4;
+        const angle = (Math.PI * 2 * i) / 16 + (Math.random() - 0.5) * 0.4;
         const speed = 40 + Math.random() * 50;
         const size = 2 + Math.random() * 3;
         const el = document.createElementNS(
@@ -130,15 +144,10 @@ export default function HowItWorksContent() {
         }
         el.setAttribute(
           "fill",
-          i % 3 === 0
-            ? "#C9A96E"
-            : i % 3 === 1
-              ? "#E8D5A8"
-              : "#0C0C28"
+          i % 3 === 0 ? "#C9A96E" : i % 3 === 1 ? "#E8D5A8" : "#0C0C28"
         );
         el.setAttribute("opacity", "1");
         g.appendChild(el);
-
         const dx = Math.cos(angle) * speed;
         const dy = Math.sin(angle) * speed - 20;
         let frame = 0;
@@ -157,11 +166,8 @@ export default function HowItWorksContent() {
             el.setAttribute("y", String(y));
           }
           el.setAttribute("opacity", String(Math.max(0, 1 - t)));
-          if (frame < totalFrames) {
-            requestAnimationFrame(animate);
-          } else {
-            el.remove();
-          }
+          if (frame < totalFrames) requestAnimationFrame(animate);
+          else el.remove();
         };
         requestAnimationFrame(animate);
       }
@@ -170,9 +176,7 @@ export default function HowItWorksContent() {
     const lightWindows = () => {
       windowRefs.current.forEach((w, i) => {
         if (!w) return;
-        setTimeout(() => {
-          w.style.fill = "rgba(201,169,110,0.35)";
-        }, i * 90);
+        setTimeout(() => { w.style.fill = "rgba(201,169,110,0.35)"; }, i * 90);
       });
     };
 
@@ -181,57 +185,27 @@ export default function HowItWorksContent() {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
-      const progress = Math.min(
-        1,
-        Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.35))
-      );
-
-      const ty =
-        ROPE_START - PERSON_TOP + progress * (LANDING_TOP - ROPE_START);
+      const progress = Math.min(1, Math.max(0, (vh * 0.55 - rect.top) / (vh * 0.35)));
+      const ty = ROPE_START - PERSON_TOP + progress * (LANDING_TOP - ROPE_START);
       const landed = progress > 0.92;
-
       stickmanRef.current?.setAttribute("transform", `translate(0 ${ty})`);
-      upperRopeRef.current?.setAttribute(
-        "y2",
-        String(PERSON_ATTACH + ty)
-      );
+      upperRopeRef.current?.setAttribute("y2", String(PERSON_ATTACH + ty));
       if (lowerRopeRef.current) {
-        lowerRopeRef.current.setAttribute(
-          "y1",
-          String(Math.min(PERSON_BOTTOM + ty, LANDING_Y))
-        );
-        lowerRopeRef.current.setAttribute(
-          "opacity",
-          String(progress > 0.7 ? (progress - 0.7) / 0.3 : 0)
-        );
+        lowerRopeRef.current.setAttribute("y1", String(Math.min(PERSON_BOTTOM + ty, LANDING_Y)));
+        lowerRopeRef.current.setAttribute("opacity", String(progress > 0.7 ? (progress - 0.7) / 0.3 : 0));
       }
-      if (buildingRef.current) {
-        buildingRef.current.style.stroke = landed ? "#C9A96E" : "";
-      }
-
-      if (landed && !hasLandedRef.current) {
-        hasLandedRef.current = true;
-        spawnConfetti();
-        lightWindows();
-      }
-      if (!landed && hasLandedRef.current) {
-        hasLandedRef.current = false;
-        windowRefs.current.forEach((w) => {
-          if (w) w.style.fill = "none";
-        });
-      }
+      if (buildingRef.current) buildingRef.current.style.stroke = landed ? "#C9A96E" : "";
+      if (landed && !hasLandedRef.current) { hasLandedRef.current = true; spawnConfetti(); lightWindows(); }
+      if (!landed && hasLandedRef.current) { hasLandedRef.current = false; windowRefs.current.forEach((w) => { if (w) w.style.fill = "none"; }); }
     };
 
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     update();
-    return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-    };
+    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
   }, []);
 
-  // Workflow examples: stagger-in
+  // Workflow card entrance animation
   const workflowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [visibleWorkflows, setVisibleWorkflows] = useState<boolean[]>(
     workflowExamples.map(() => false)
@@ -242,15 +216,10 @@ export default function HowItWorksContent() {
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisibleWorkflows((prev) => {
-              const next = [...prev];
-              next[i] = true;
-              return next;
-            });
-          }
+          if (entry.isIntersecting)
+            setVisibleWorkflows((prev) => { const next = [...prev]; next[i] = true; return next; });
         },
-        { threshold: 0.15 }
+        { threshold: 0.1 }
       );
       obs.observe(el);
       observers.push(obs);
@@ -261,7 +230,7 @@ export default function HowItWorksContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 text-white lg:px-8">
+      <section className="bg-navy px-6 py-20 text-white lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("howItWorks.hero.title")}
@@ -273,21 +242,11 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 1: Helicopter Animation + Consulting Steps */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div
-            ref={helicopterSectionRef}
-            className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12"
-          >
-            {/* Helicopter SVG */}
+          <div ref={helicopterSectionRef} className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
             <div className="flex flex-shrink-0 flex-col items-center md:w-56">
-              <svg
-                className="h-[440px] w-48 text-navy"
-                fill="none"
-                viewBox="0 0 192 440"
-                strokeWidth={1.2}
-                stroke="currentColor"
-              >
+              <svg className="h-[440px] w-48 text-navy" fill="none" viewBox="0 0 192 440" strokeWidth={1.2} stroke="currentColor">
                 <line x1="28" y1="22" x2="164" y2="22" strokeWidth={2.5} className="text-gold" />
                 <ellipse cx="96" cy="22" rx="4" ry="4" fill="currentColor" className="text-gold" />
                 <line x1="96" y1="22" x2="96" y2="40" strokeWidth={2} />
@@ -302,62 +261,45 @@ export default function HowItWorksContent() {
                 <line ref={upperRopeRef} x1="96" y1="88" x2="96" y2="104" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" />
                 <g ref={stickmanRef} transform="translate(0 -4)">
                   <circle cx="96" cy="100" r="8" strokeWidth={2} className="text-navy" fill="#FAFAF7" />
-                  <line x1="96" y1="108" x2="96" y2="138" strokeWidth={2.2} className="text-navy" />
-                  <line x1="96" y1="117" x2="79" y2="129" strokeWidth={2} className="text-navy" />
-                  <line x1="96" y1="117" x2="113" y2="129" strokeWidth={2} className="text-navy" />
-                  <line x1="96" y1="138" x2="82" y2="158" strokeWidth={2} className="text-navy" />
-                  <line x1="96" y1="138" x2="110" y2="158" strokeWidth={2} className="text-navy" />
+                  <line x1="96" y1="108" x2="96" y2="138" strokeWidth={2.2} />
+                  <line x1="96" y1="117" x2="79" y2="129" strokeWidth={2} />
+                  <line x1="96" y1="117" x2="113" y2="129" strokeWidth={2} />
+                  <line x1="96" y1="138" x2="82" y2="158" strokeWidth={2} />
+                  <line x1="96" y1="138" x2="110" y2="158" strokeWidth={2} />
                   <rect x="113" y="123" width="12" height="9" rx="1.5" strokeWidth={1.5} className="text-gold" />
                 </g>
                 <line ref={lowerRopeRef} x1="96" y1="154" x2="96" y2="296" strokeWidth={1.5} strokeDasharray="4 4" className="text-gold" opacity="0" />
-                <rect ref={buildingRef} x="46" y="300" width="100" height="72" rx="4" strokeWidth={2} className="text-navy" style={{ transition: "stroke 0.4s ease" }} />
-                <line x1="46" y1="318" x2="146" y2="318" strokeWidth={1} className="text-navy" opacity="0.3" />
-                <rect ref={(el) => { windowRefs.current[0] = el; }} x="60" y="327" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
-                <rect ref={(el) => { windowRefs.current[1] = el; }} x="88" y="327" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
-                <rect ref={(el) => { windowRefs.current[2] = el; }} x="116" y="327" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
-                <rect ref={(el) => { windowRefs.current[3] = el; }} x="60" y="348" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
-                <rect ref={(el) => { windowRefs.current[4] = el; }} x="88" y="348" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
-                <rect ref={(el) => { windowRefs.current[5] = el; }} x="116" y="348" width="16" height="11" rx="1.5" strokeWidth={1.2} className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
+                <rect ref={buildingRef} x="46" y="300" width="100" height="72" rx="4" strokeWidth={2} style={{ transition: "stroke 0.4s ease" }} />
+                <line x1="46" y1="318" x2="146" y2="318" strokeWidth={1} opacity="0.3" />
+                {[0,1,2,3,4,5].map((i) => (
+                  <rect key={i} ref={(el) => { windowRefs.current[i] = el; }}
+                    x={60 + (i % 3) * 28} y={327 + Math.floor(i / 3) * 21}
+                    width="16" height="11" rx="1.5" strokeWidth={1.2}
+                    className="text-gold" fill="none" style={{ transition: "fill 0.3s ease" }} />
+                ))}
                 <g ref={confettiRef} />
               </svg>
             </div>
-            {/* Consulting text */}
             <div className="flex-1">
               <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
                 {t("advisory.consulting.title")}
               </h2>
-              <p className="mt-3 text-text-muted">
-                {t("advisory.consulting.description")}
-              </p>
+              <p className="mt-3 text-text-muted">{t("advisory.consulting.description")}</p>
               <ul className="mt-6 space-y-5">
                 {consultingPoints.map((point, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-3 text-sm leading-relaxed text-text-muted"
-                  >
+                  <li key={i} className="flex gap-3 text-sm leading-relaxed text-text-muted">
                     <span className="mt-0.5 flex-shrink-0 text-gold">+</span>
                     <span>
                       {point as string}
                       {i === 1 && (
-                        <>
-                          {" ("}
-                          <Link
-                            href="/technology#folder-structure"
-                            className="text-navy underline underline-offset-2 transition-colors hover:text-gold"
-                          >
-                            {t("advisory.consulting.exampleLink")}
-                          </Link>
-                          {")"}
-                        </>
+                        <>{" ("}<Link href="/technology#folder-structure" className="text-navy underline underline-offset-2 transition-colors hover:text-gold">{t("advisory.consulting.exampleLink")}</Link>{")"}</>
                       )}
                     </span>
                   </li>
                 ))}
               </ul>
               <div className="mt-6 inline-block rounded-lg border border-gold/30 bg-gold/10 px-5 py-3">
-                <p className="text-sm font-semibold text-navy">
-                  {t("advisory.consulting.callout")}
-                </p>
+                <p className="text-sm font-semibold text-navy">{t("advisory.consulting.callout")}</p>
               </div>
             </div>
           </div>
@@ -365,108 +307,102 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 2: Workflow Comparisons */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
             What This Looks Like in Practice
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-text-muted">
-            Real workflows. Manual process on the left, ZPT-assisted on the right.
+            Real workflows, real time savings.
           </p>
 
-          <div className="mt-12 space-y-10">
+          <div className="mt-14 space-y-12">
             {workflowExamples.map((wf, wi) => (
               <div
                 key={wf.title}
                 ref={(el) => { workflowRefs.current[wi] = el; }}
-                className={`rounded-xl border border-border-warm bg-white p-6 shadow-sm transition-all duration-700 md:p-8 ${
-                  visibleWorkflows[wi]
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-6 opacity-0"
+                className={`overflow-hidden rounded-xl border border-border-warm bg-white shadow-sm transition-all duration-700 ${
+                  visibleWorkflows[wi] ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}
                 style={{ transitionDelay: visibleWorkflows[wi] ? `${wi * 150}ms` : "0ms" }}
               >
-                <h3 className="font-logo text-base font-semibold text-navy">
-                  {wf.title}
-                </h3>
-                <p className="mt-1 text-sm text-text-muted">{wf.lead}</p>
+                {/* Card header */}
+                <div className="px-6 pt-6 md:px-8 md:pt-8">
+                  <h3 className="font-logo text-base font-semibold text-navy">{wf.title}</h3>
+                  <p className="mt-1 text-sm text-text-muted">{wf.lead}</p>
+                </div>
 
-                <div className="mt-6 grid gap-8 md:grid-cols-2">
-                  {/* Manual */}
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
+                {/* Two-panel comparison */}
+                <div className="mt-6 grid md:grid-cols-2">
+                  {/* LEFT: Manual process */}
+                  <div className="border-b border-border-warm bg-white px-6 py-6 md:border-b-0 md:border-r md:px-8 md:py-8">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-navy/40">
                       Manual process
                     </p>
-                    <ol className="mt-3 space-y-2">
+                    <ul className="mt-4 space-y-0">
                       {wf.manual.map((s, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-text-muted">
-                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy/8 text-[10px] font-medium text-navy/50">
-                            {i + 1}
-                          </span>
-                          <span className="flex-1">{s.step}</span>
-                          <span className="shrink-0 text-xs text-navy/40">{s.time}</span>
-                        </li>
-                      ))}
-                    </ol>
-                    <p className="mt-3 text-base font-semibold text-navy">
-                      {wf.manualTotal}
-                    </p>
-                  </div>
-
-                  {/* With ZPT */}
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-gold">
-                      With ZPT directory
-                    </p>
-                    <ol className="mt-3 space-y-2">
-                      {wf.agent.map((s, i) => (
                         <li
                           key={i}
-                          className={`flex items-start gap-2.5 text-sm ${
-                            s.auto ? "text-text-muted" : "font-medium text-navy"
+                          className="flex items-baseline gap-3 border-b border-border-warm/40 py-2.5 last:border-b-0"
+                        >
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy/[0.06] text-[10px] font-medium text-navy/30">
+                            {i + 1}
+                          </span>
+                          <span className="flex-1 text-[13px] leading-snug text-text-muted">
+                            {s.step}
+                          </span>
+                          <span className="shrink-0 font-mono text-[11px] text-navy/25">
+                            {s.time}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-5 text-lg font-semibold text-navy">{wf.manualTotal}</p>
+                  </div>
+
+                  {/* RIGHT: With ZPT */}
+                  <div className="bg-gold/[0.03] px-6 py-6 md:px-8 md:py-8">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gold">
+                      With ZPT directory
+                    </p>
+                    <ul className="mt-4 space-y-0">
+                      {wf.zpt.map((s, i) => (
+                        <li
+                          key={i}
+                          className={`flex items-start gap-3 border-b border-gold/10 py-3 last:border-b-0 ${
+                            s.type === "human" ? "font-medium text-navy" : "text-text-muted"
                           }`}
                         >
                           <span
                             className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-medium ${
-                              s.auto
-                                ? "bg-gold/10 text-gold"
-                                : "bg-navy/10 text-navy"
+                              s.type === "human"
+                                ? "bg-navy/10 text-navy"
+                                : "bg-gold/10 text-gold"
                             }`}
                           >
-                            {s.auto ? "→" : "✓"}
+                            {s.type === "human" ? "✓" : "→"}
                           </span>
-                          <span>{s.step}</span>
+                          <span className="text-[13px] leading-snug">{s.step}</span>
                         </li>
                       ))}
-                    </ol>
-                    <p className="mt-3 text-base font-semibold text-gold">
-                      {wf.agentTotal}
-                    </p>
-                  </div>
-                </div>
+                    </ul>
 
-                {/* Time comparison bars */}
-                <div className="mt-5 space-y-1.5">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="h-1.5 rounded-full bg-navy/15 transition-all duration-1000"
-                      style={{ width: visibleWorkflows[wi] ? `${wf.barManual}%` : "0%" }}
-                    />
-                    <span className="shrink-0 text-[11px] text-text-muted">
-                      {wf.manualTotal}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="h-1.5 rounded-full bg-gold transition-all duration-1000"
-                      style={{
-                        width: visibleWorkflows[wi] ? `${wf.barAgent}%` : "0%",
-                        transitionDelay: "300ms",
-                      }}
-                    />
-                    <span className="shrink-0 text-[11px] font-medium text-gold">
-                      {wf.agentTotal}
-                    </span>
+                    {/* Output logos */}
+                    {wf.outputs.length > 0 && (
+                      <div className="mt-5 flex items-center gap-3">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-navy/30">
+                          Output
+                        </span>
+                        {wf.outputs.map((o) => (
+                          <div key={o.label} className="flex items-center gap-1.5 rounded-md border border-border-warm bg-white px-2.5 py-1.5">
+                            <Image src={o.src} alt={o.label} width={16} height={16} className="h-4 w-4" />
+                            <span className="text-[11px] text-text-muted">{o.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="mt-5 text-lg font-semibold text-gold">{wf.zptTotal}</p>
                   </div>
                 </div>
               </div>
@@ -485,15 +421,10 @@ export default function HowItWorksContent() {
               </h2>
               <div className="mt-6 space-y-4">
                 {nativeToolsParagraphs.map((p, i) => (
-                  <p
-                    key={i}
-                    className="text-sm leading-relaxed text-text-muted"
-                    dangerouslySetInnerHTML={{ __html: p }}
-                  />
+                  <p key={i} className="text-sm leading-relaxed text-text-muted" dangerouslySetInnerHTML={{ __html: p }} />
                 ))}
               </div>
             </div>
-            {/* Interchangeable provider visual */}
             <div className="flex flex-shrink-0 flex-col items-center md:w-52">
               <div className="rounded-xl border border-border-warm bg-white p-6">
                 <div className="flex justify-center gap-4">
@@ -510,13 +441,9 @@ export default function HowItWorksContent() {
                   </svg>
                   <span>{t("advisory.agentVisual.interchangeable")}</span>
                 </div>
-                <div className="my-3 flex flex-col items-center gap-0">
-                  <svg className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                  <svg className="h-4 w-4 rotate-180 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
+                <div className="my-3 flex flex-col items-center">
+                  <svg className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                  <svg className="h-4 w-4 rotate-180 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                 </div>
                 <div className="flex justify-center">
                   <div className="flex h-16 w-16 items-center justify-center rounded-lg border-2 border-gold bg-navy p-2">
@@ -538,38 +465,21 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 4: Engagement Types */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.pricing.title")}
           </h2>
-          <p className="mt-3 text-center text-text-muted">
-            {t("advisory.pricing.subtitle")}
-          </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {(
-              tArray("advisory.pricing.tiers") as {
-                name: string;
-                time: string;
-                description: string;
-              }[]
-            ).map((tier) => (
-              <div
-                key={tier.name}
-                className="flex flex-col items-center rounded-lg border border-navy/20 bg-navy-light p-7 text-center"
-              >
-                <h3 className="text-2xl font-semibold text-white">
-                  {tier.name}
-                </h3>
-                <p className="mt-2 text-sm font-medium text-gold">
-                  {tier.time}
-                </p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/60">
-                  {tier.description}
-                </p>
+          <p className="mt-3 text-center text-text-muted">{t("advisory.pricing.subtitle")}</p>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {(tArray("advisory.pricing.tiers") as { name: string; time: string; description: string }[]).map((tier) => (
+              <div key={tier.name} className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy-light p-8 text-center">
+                <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
+                <p className="mt-2 text-xs font-medium text-gold">{tier.time}</p>
+                <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">{tier.description}</p>
                 <a
                   href="mailto:request@zpteam.ai?subject=Advisory inquiry"
-                  className="mt-6 block w-full rounded border border-white/30 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  className="mt-6 block w-full rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy"
                 >
                   {t("advisory.pricing.cta")}
                 </a>
@@ -580,37 +490,20 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 5: Before We Start */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.expectations.title")}
           </h2>
-          <ul className="mt-8 space-y-5">
-            {(
-              tArray("home.expectations.items") as {
-                title: string;
-                description: string;
-              }[]
-            ).map((item) => (
+          <ul className="mt-10 space-y-6 pl-4 md:pl-10">
+            {(tArray("home.expectations.items") as { title: string; description: string }[]).map((item) => (
               <li key={item.title} className="flex items-start gap-4">
-                <svg
-                  className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                    clipRule="evenodd"
-                  />
+                <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <p className="text-sm font-semibold text-navy">
-                    {item.title}
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-text-muted">
-                    {item.description}
-                  </p>
+                  <p className="text-sm font-semibold text-navy">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-text-muted">{item.description}</p>
                 </div>
               </li>
             ))}
@@ -619,7 +512,7 @@ export default function HowItWorksContent() {
       </section>
 
       {/* CTA */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.cta.title")}
@@ -632,10 +525,7 @@ export default function HowItWorksContent() {
           </a>
           <p className="mt-3 text-sm text-text-muted">
             {t("advisory.cta.email")}{" "}
-            <a
-              href="mailto:request@zpteam.ai"
-              className="text-slate-blue underline underline-offset-2 transition-colors hover:text-navy"
-            >
+            <a href="mailto:request@zpteam.ai" className="text-slate-blue underline underline-offset-2 transition-colors hover:text-navy">
               request@zpteam.ai
             </a>
           </p>

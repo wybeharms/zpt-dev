@@ -290,7 +290,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 4: Good Fit + Why ZPT */}
-      <section className="bg-navy px-6 py-14 text-white lg:px-8">
+      <section className="bg-navy px-6 py-20 text-white lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight md:text-4xl">
             {t("home.proof.title")}
@@ -344,8 +344,50 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Section 5: CTA */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      {/* Section 5: Advisory Tiers */}
+      <section className="bg-cream px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+            {t("advisory.pricing.title")}
+          </h2>
+          <p className="mt-3 text-center text-text-muted">
+            {t("advisory.pricing.subtitle")}
+          </p>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {(
+              tArray("advisory.pricing.tiers") as {
+                name: string;
+                time: string;
+                description: string;
+              }[]
+            ).map((tier) => (
+              <div
+                key={tier.name}
+                className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy-light p-8 text-center"
+              >
+                <h3 className="text-lg font-semibold text-white">
+                  {tier.name}
+                </h3>
+                <p className="mt-2 text-xs font-medium text-gold">
+                  {tier.time}
+                </p>
+                <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">
+                  {tier.description}
+                </p>
+                <a
+                  href="mailto:request@zpteam.ai?subject=Advisory inquiry"
+                  className="mt-6 block w-full rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy"
+                >
+                  {t("advisory.pricing.cta")}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: CTA */}
+      <section className="bg-off-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.cta.title")}
