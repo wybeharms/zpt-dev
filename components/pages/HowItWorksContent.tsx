@@ -73,8 +73,8 @@ const workflowExamples: {
   {
     title: "Client Onboarding",
     lead: "Processing intake documents and populating internal systems.",
-    outputLabel: "HubSpot",
-    outputLogo: "/logos/hubspot.png",
+    outputLabel: "CRM",
+    outputLogo: "",
     manualStart: [
       { step: "Receive contracts and intake forms via email", time: "10 min" },
       { step: "Open and read each document for key fields", time: "30 min" },
@@ -262,7 +262,13 @@ export default function HowItWorksContent() {
                       <p className="mt-1 text-sm text-text-muted">{wf.lead}</p>
                     </div>
                     <div className="ml-4 flex shrink-0 items-center gap-2 rounded-lg border border-gold/25 bg-gold/[0.06] px-3 py-2">
-                      <Image src={wf.outputLogo} alt={wf.outputLabel} width={18} height={18} className="h-[18px] w-[18px]" />
+                      {wf.outputLogo ? (
+                        <Image src={wf.outputLogo} alt={wf.outputLabel} width={18} height={18} className="h-[18px] w-[18px]" />
+                      ) : (
+                        <svg className="h-[18px] w-[18px] text-navy/40" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                        </svg>
+                      )}
                       <span className="text-xs font-medium text-navy/60">{wf.outputLabel}</span>
                     </div>
                   </div>
