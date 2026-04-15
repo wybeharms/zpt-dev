@@ -7,32 +7,46 @@ import { useI18n } from "@/components/I18nProvider";
 
 /* ── Step visuals ─────────────────────────────────────────── */
 
-/** Step 1: Understand — workflow map that draws itself */
-function WorkflowMapVisual({ active }: { active: boolean }) {
-  const boxes = ["Intake", "Review", "Approve", "Archive"];
+/** Step 1: Understand — animated discovery checklist */
+function DiscoveryVisual({ active }: { active: boolean }) {
+  const items = [
+    { text: "Sales pipeline workflow", dept: "Sales" },
+    { text: "Quarterly reporting process", dept: "Finance" },
+    { text: "Client onboarding steps", dept: "Ops" },
+    { text: "Document review cycle", dept: "Legal" },
+  ];
+  const [checked, setChecked] = useState<boolean[]>(items.map(() => false));
+
+  useEffect(() => {
+    if (!active) { setChecked(items.map(() => false)); return; }
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    items.forEach((_, i) => {
+      timers.push(setTimeout(() => {
+        setChecked((prev) => { const next = [...prev]; next[i] = true; return next; });
+      }, 400 + i * 500));
+    });
+    return () => timers.forEach(clearTimeout);
+  }, [active]);
+
   return (
-    <div className="mt-4 flex items-center gap-1">
-      {boxes.map((label, i) => (
-        <div key={label} className="flex items-center gap-1">
-          <div
-            className={`rounded border px-2.5 py-1.5 text-[10px] font-medium transition-all duration-500 ${
-              active ? "border-gold/40 bg-gold/[0.06] text-navy/70" : "border-transparent bg-transparent text-transparent"
-            }`}
-            style={{ transitionDelay: active ? `${i * 200}ms` : "0ms" }}
-          >
-            {label}
+    <div className="mt-4 overflow-hidden rounded-md border border-border-warm bg-white shadow-sm">
+      <div className="flex items-center gap-1.5 border-b border-border-warm bg-off-white px-2.5 py-1">
+        <svg className="h-3 w-3 text-navy/30" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+        </svg>
+        <span className="text-[9px] text-navy/30">Workflow discovery</span>
+      </div>
+      <div className="space-y-0 px-2.5 py-1.5">
+        {items.map((item, i) => (
+          <div key={i} className={`flex items-center gap-2 border-b border-border-warm/30 py-1.5 last:border-b-0 transition-opacity duration-300 ${active ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: active ? `${i * 150}ms` : "0ms" }}>
+            <div className={`flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded transition-all duration-300 ${checked[i] ? "bg-gold text-white" : "border border-navy/20"}`}>
+              {checked[i] && <svg className="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>}
+            </div>
+            <span className={`flex-1 text-[10px] transition-colors duration-300 ${checked[i] ? "text-navy/70" : "text-navy/35"}`}>{item.text}</span>
+            <span className={`text-[9px] font-medium transition-colors duration-300 ${checked[i] ? "text-gold" : "text-navy/20"}`}>{item.dept}</span>
           </div>
-          {i < boxes.length - 1 && (
-            <svg
-              className={`h-3 w-4 transition-all duration-300 ${active ? "text-gold/50" : "text-transparent"}`}
-              style={{ transitionDelay: active ? `${i * 200 + 150}ms` : "0ms" }}
-              fill="none" viewBox="0 0 16 12" strokeWidth={1.5} stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M1 6h12m0 0l-3-3m3 3l-3 3" />
-            </svg>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -157,54 +171,64 @@ function DocEditVisual({ active }: { active: boolean }) {
         </svg>
         <span className="text-[9px] text-navy/30">Q3-analysis-draft.md</span>
       </div>
-      <div className="h-[100px] space-y-1 px-2.5 py-2 text-[10px] leading-[14px] text-navy/50">
+      <div className="h-[100px] space-y-1.5 px-2.5 py-2 text-[10px] leading-[14px] text-navy/60">
         <p className={`transition-opacity duration-500 ${phase >= 1 ? "opacity-100" : "opacity-0"}`}>
-          Fund performance exceeded benchmark by 2.3%
+          Fund performance exceeded benchmark by{" "}
+          <span className={`transition-all duration-400 ${phase >= 3 ? "text-[#D04A02] line-through decoration-[#D04A02]" : "font-semibold text-navy"}`}>2.3%</span>
+          {phase >= 3 && <span className="ml-1 font-bold text-navy">2.4%</span>}
         </p>
         <p className={`transition-opacity duration-500 ${phase >= 1 ? "opacity-100" : "opacity-0"}`}>
-          in Q3, driven by <span className={`transition-all duration-500 ${phase >= 2 ? "bg-gold/20 px-0.5" : ""}`}>infrastructure allocation</span>.
+          in Q3, driven by <span className={`rounded-sm transition-all duration-500 ${phase >= 2 ? "bg-gold/30 px-0.5 font-semibold text-navy" : ""}`}>infrastructure allocation</span>.
         </p>
         <p className={`transition-opacity duration-500 ${phase >= 2 ? "opacity-100" : "opacity-0"}`}>
-          Net cash flow: <span className={`transition-all duration-500 ${phase >= 3 ? "font-semibold text-navy" : ""}`}>$4.2M</span> (verified)
+          Net cash flow: <span className={`transition-all duration-500 ${phase >= 3 ? "font-bold text-navy" : ""}`}>$4.2M</span>{phase >= 3 && <span className="ml-1 text-[#4A9A6A] font-semibold">(verified)</span>}
         </p>
         <p className={`transition-all duration-500 ${phase >= 3 ? "opacity-100" : "opacity-0"}`}>
-          <span className={phase >= 4 ? "text-navy/20 line-through" : ""}>Risk rating: moderate</span>
-          {phase >= 4 && <span className="ml-1 font-medium text-navy"> Risk rating: low-moderate</span>}
+          <span className={`transition-all duration-400 ${phase >= 4 ? "text-[#D04A02]/40 line-through decoration-[#D04A02]" : ""}`}>Risk rating: moderate</span>
+          {phase >= 4 && <span className="ml-1 font-bold text-navy">Risk: low-moderate</span>}
         </p>
         <p className={`transition-opacity duration-500 ${phase >= 4 ? "opacity-100" : "opacity-0"}`}>
-          <span className="text-[#4A9A6A]">✓</span> Review complete
+          <span className="font-bold text-[#4A9A6A]">✓ Review complete</span>
         </p>
       </div>
     </div>
   );
 }
 
-/** Step 4: Maintain — notification stack */
-function NotificationVisual({ active }: { active: boolean }) {
-  const items = [
-    { text: "New skill added: quarterly-report-v3", time: "2 days ago" },
-    { text: "MCP updated: Slack integration", time: "1 week ago" },
-    { text: "Agent upgraded to Claude 4.5", time: "2 weeks ago" },
+/** Step 4: Maintain — engagement timeline */
+function TimelineVisual({ active }: { active: boolean }) {
+  const phases = [
+    { label: "Discovery", duration: "1-2 days", width: "12%" },
+    { label: "Build", duration: "1-2 weeks", width: "30%" },
+    { label: "Test + Refine", duration: "1 week", width: "20%" },
+    { label: "Ongoing improvements", duration: "", width: "38%" },
   ];
   return (
-    <div className="mt-4 space-y-1.5">
-      {items.map((item, i) => (
-        <div
-          key={i}
-          className={`rounded-md border border-border-warm bg-white px-3 py-2 shadow-sm transition-all duration-500 ${
-            active ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
-          }`}
-          style={{ transitionDelay: active ? `${i * 150}ms` : "0ms" }}
-        >
-          <p className="text-[10px] font-medium text-navy/70">{item.text}</p>
-          <p className="text-[9px] text-navy/30">{item.time}</p>
-        </div>
-      ))}
+    <div className="mt-4">
+      <div className="flex gap-0.5">
+        {phases.map((p, i) => {
+          const isLast = i === phases.length - 1;
+          return (
+            <div
+              key={i}
+              className={`transition-all duration-500 ${active ? "opacity-100" : "opacity-0"}`}
+              style={{ width: p.width, transitionDelay: active ? `${i * 200}ms` : "0ms" }}
+            >
+              <div className={`h-1.5 rounded-full ${isLast ? "bg-gold/40" : "bg-gold"} ${isLast ? "bg-[length:200%_100%] animate-[shimmer_3s_ease-in-out_infinite]" : ""}`}
+                style={isLast ? { backgroundImage: "linear-gradient(90deg, #C9A96E 0%, #D4BA8A 50%, #C9A96E 100%)" } : undefined}
+              />
+              <p className="mt-1.5 text-[9px] font-medium text-navy/60">{p.label}</p>
+              {p.duration && <p className="text-[8px] text-navy/30">{p.duration}</p>}
+              {isLast && <p className="text-[8px] text-gold">→</p>}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
 
-const STEP_VISUALS = [WorkflowMapVisual, TerminalVisual, DocEditVisual, NotificationVisual];
+const STEP_VISUALS = [DiscoveryVisual, TerminalVisual, DocEditVisual, TimelineVisual];
 
 /* ── Main component ───────────────────────────────────────── */
 
