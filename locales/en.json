@@ -52,7 +52,7 @@
     "hero": {
       "title": "Your company knows AI is powerful.",
       "subtitle": "We make it happen.",
-      "description": "ZPT builds a practical AI setup tailored to your company. Your team uses it through Claude, ChatGPT, or any compatible app. <strong>You own everything.</strong>",
+      "description": "ZPT builds a custom AI directory for your company. Your team uses it through Claude, ChatGPT, or any compatible app. <strong>You own everything.</strong>",
       "cta": "Book a Call"
     },
     "practical": {
@@ -60,7 +60,7 @@
       "intro": "Every week, new AI concepts land: <strong>Skills</strong>, <strong>MCPs</strong>, <strong>Plugins</strong>, <strong>CLIs</strong>.",
       "introOverwhelming": "It's overwhelming",
       "introHighlight": "ZPT simplifies this for you.",
-      "description": "We set up AI-native tools like Claude Desktop, connect them to your existing setup (Google Drive, email, spreadsheets, CRM), create skills for your workflows, and wire up the right MCPs. Your team gets AI tools that actually know how the company works.",
+      "description": "We configure AI tools like Claude Desktop, connect them to what you already use (Google Drive, email, spreadsheets, CRM), create skills for your workflows, and wire up the right integrations. Your team gets AI that actually knows how the company works.",
       "bullets": [
         "Minimal setup",
         "Shared company context",
@@ -180,7 +180,7 @@
     },
     "process": {
       "title": "How We Work",
-      "description": "We visit your company, understand how the team works, and build the right AI setup.",
+      "description": "We visit your company, understand how the team works, and build the right AI directory.",
       "link": "See the full process",
       "steps": [
         {
@@ -242,7 +242,7 @@
   "howItWorks": {
     "hero": {
       "title": "How a ZPT Engagement Works",
-      "subtitle": "We come to your company, understand how the team works, and build the right AI setup."
+      "subtitle": "We come to your company, understand how the team works, and build the right AI directory."
     }
   },
   "advisory": {

@@ -5,6 +5,82 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/components/I18nProvider";
 
+/* ── Workflow comparison data ─────────────────────────────── */
+
+const workflowExamples = [
+  {
+    title: "Quarterly Fund Analysis",
+    lead: "A fund reports quarterly cash flows across multiple portfolios.",
+    manual: [
+      { step: "Download quarterly reports (PDFs)", time: "30 min" },
+      { step: "Read through each document", time: "2 h" },
+      { step: "Extract figures into spreadsheet", time: "3 h" },
+      { step: "Cross-check data across documents", time: "1.5 h" },
+      { step: "Update financial model", time: "2 h" },
+      { step: "Format and review output", time: "1 h" },
+    ],
+    manualTotal: "~10 hours",
+    agent: [
+      { step: "Agent reads all PDFs and extracts figures", auto: true },
+      { step: "Agent cross-checks and flags discrepancies", auto: true },
+      { step: "Agent updates model", auto: true },
+      { step: "Human reviews and approves", auto: false },
+    ],
+    agentTotal: "~1 hour",
+    barManual: 100,
+    barAgent: 10,
+  },
+  {
+    title: "Due Diligence Report",
+    lead: "Producing an investment memo from a data room of 20+ documents.",
+    manual: [
+      { step: "Gather and organize data room", time: "1 h" },
+      { step: "Read and categorize documents", time: "8 h" },
+      { step: "Extract key data points", time: "6 h" },
+      { step: "Draft analysis sections", time: "12 h" },
+      { step: "Build supporting Excel model", time: "8 h" },
+      { step: "Create PowerPoint deck", time: "10 h" },
+      { step: "Review and iterate", time: "5 h" },
+    ],
+    manualTotal: "~50 hours",
+    agent: [
+      { step: "Agent reads and categorizes all documents", auto: true },
+      { step: "Agent extracts structured data with source tags", auto: true },
+      { step: "Agent drafts analysis with citations", auto: true },
+      { step: "Agent builds Excel model", auto: true },
+      { step: "Agent creates PowerPoint deck", auto: true },
+      { step: "Human reviews, adds judgment, finalizes", auto: false },
+    ],
+    agentTotal: "~15 hours",
+    barManual: 100,
+    barAgent: 30,
+  },
+  {
+    title: "Client Onboarding",
+    lead: "Processing intake documents and populating internal systems.",
+    manual: [
+      { step: "Receive contracts and intake forms", time: "—" },
+      { step: "Read each document for key fields", time: "45 min" },
+      { step: "Enter data into CRM", time: "30 min" },
+      { step: "Cross-reference against existing records", time: "20 min" },
+      { step: "Flag missing information", time: "15 min" },
+      { step: "Follow up with client", time: "20 min" },
+    ],
+    manualTotal: "~2 hours per client",
+    agent: [
+      { step: "Agent reads documents and extracts fields", auto: true },
+      { step: "Agent populates CRM records", auto: true },
+      { step: "Agent flags gaps and conflicts", auto: true },
+      { step: "Human reviews and sends follow-up", auto: false },
+    ],
+    agentTotal: "~15 minutes",
+    barManual: 100,
+    barAgent: 13,
+  },
+];
+
+/* ── Component ────────────────────────────────────────────── */
+
 export default function HowItWorksContent() {
   const { t, tArray } = useI18n();
 
@@ -12,15 +88,6 @@ export default function HowItWorksContent() {
   const nativeToolsParagraphs = tArray(
     "advisory.nativeTools.paragraphs"
   ) as string[];
-  const useCases = tArray("home.bottleneck.useCases") as {
-    title: string;
-    description: string;
-    why: string;
-  }[];
-  const expectationItems = tArray("home.expectations.items") as {
-    title: string;
-    description: string;
-  }[];
 
   // Helicopter scroll animation
   const helicopterSectionRef = useRef<HTMLDivElement>(null);
@@ -164,20 +231,31 @@ export default function HowItWorksContent() {
     };
   }, []);
 
-  // Use case card stagger-in
-  const useCaseRef = useRef<HTMLDivElement>(null);
-  const [useCasesVisible, setUseCasesVisible] = useState(false);
+  // Workflow examples: stagger-in
+  const workflowRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visibleWorkflows, setVisibleWorkflows] = useState<boolean[]>(
+    workflowExamples.map(() => false)
+  );
   useEffect(() => {
-    const el = useCaseRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setUseCasesVisible(true);
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const observers: IntersectionObserver[] = [];
+    workflowRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleWorkflows((prev) => {
+              const next = [...prev];
+              next[i] = true;
+              return next;
+            });
+          }
+        },
+        { threshold: 0.15 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   return (
@@ -286,43 +364,111 @@ export default function HowItWorksContent() {
         </div>
       </section>
 
-      {/* Section 2: Use Case Cards */}
+      {/* Section 2: Workflow Comparisons */}
       <section className="bg-cream px-6 py-14 lg:px-8">
-        <div ref={useCaseRef} className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-2xl font-light tracking-tight text-navy md:text-3xl">
-            {t("home.bottleneck.title")}
+            What This Looks Like in Practice
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-text-muted">
-            {t("home.bottleneck.subtitle")}
+            Real workflows. Manual process on the left, ZPT-assisted on the right.
           </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:gap-6">
-            {useCases.map((uc, i) => (
+
+          <div className="mt-12 space-y-10">
+            {workflowExamples.map((wf, wi) => (
               <div
-                key={uc.title}
-                className={`group relative h-[180px] overflow-hidden rounded-lg border border-border-warm bg-white p-5 transition-all duration-500 ${
-                  useCasesVisible
+                key={wf.title}
+                ref={(el) => { workflowRefs.current[wi] = el; }}
+                className={`rounded-xl border border-border-warm bg-white p-6 shadow-sm transition-all duration-700 md:p-8 ${
+                  visibleWorkflows[wi]
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-4 opacity-0"
+                    : "translate-y-6 opacity-0"
                 }`}
-                style={{
-                  transitionDelay: useCasesVisible ? `${i * 100}ms` : "0ms",
-                }}
+                style={{ transitionDelay: visibleWorkflows[wi] ? `${wi * 150}ms` : "0ms" }}
               >
-                <h3 className="text-base font-semibold text-navy">
-                  {uc.title}
+                <h3 className="font-logo text-base font-semibold text-navy">
+                  {wf.title}
                 </h3>
-                <p
-                  className="mt-2 text-sm leading-relaxed text-text-muted"
-                  dangerouslySetInnerHTML={{ __html: uc.description }}
-                />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end bg-gradient-to-t from-white via-white/95 to-transparent px-5 pb-4 pt-8 opacity-0 transition-opacity duration-200 md:group-hover:opacity-100">
-                  <p className="text-xs font-medium italic text-[#DE7356]">
-                    {uc.why}
-                  </p>
+                <p className="mt-1 text-sm text-text-muted">{wf.lead}</p>
+
+                <div className="mt-6 grid gap-8 md:grid-cols-2">
+                  {/* Manual */}
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
+                      Manual process
+                    </p>
+                    <ol className="mt-3 space-y-2">
+                      {wf.manual.map((s, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-text-muted">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy/8 text-[10px] font-medium text-navy/50">
+                            {i + 1}
+                          </span>
+                          <span className="flex-1">{s.step}</span>
+                          <span className="shrink-0 text-xs text-navy/40">{s.time}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="mt-3 text-base font-semibold text-navy">
+                      {wf.manualTotal}
+                    </p>
+                  </div>
+
+                  {/* With ZPT */}
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wider text-gold">
+                      With ZPT directory
+                    </p>
+                    <ol className="mt-3 space-y-2">
+                      {wf.agent.map((s, i) => (
+                        <li
+                          key={i}
+                          className={`flex items-start gap-2.5 text-sm ${
+                            s.auto ? "text-text-muted" : "font-medium text-navy"
+                          }`}
+                        >
+                          <span
+                            className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-medium ${
+                              s.auto
+                                ? "bg-gold/10 text-gold"
+                                : "bg-navy/10 text-navy"
+                            }`}
+                          >
+                            {s.auto ? "→" : "✓"}
+                          </span>
+                          <span>{s.step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="mt-3 text-base font-semibold text-gold">
+                      {wf.agentTotal}
+                    </p>
+                  </div>
                 </div>
-                <p className="mt-2 text-xs font-medium italic text-[#DE7356] md:hidden">
-                  {uc.why}
-                </p>
+
+                {/* Time comparison bars */}
+                <div className="mt-5 space-y-1.5">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="h-1.5 rounded-full bg-navy/15 transition-all duration-1000"
+                      style={{ width: visibleWorkflows[wi] ? `${wf.barManual}%` : "0%" }}
+                    />
+                    <span className="shrink-0 text-[11px] text-text-muted">
+                      {wf.manualTotal}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="h-1.5 rounded-full bg-gold transition-all duration-1000"
+                      style={{
+                        width: visibleWorkflows[wi] ? `${wf.barAgent}%` : "0%",
+                        transitionDelay: "300ms",
+                      }}
+                    />
+                    <span className="shrink-0 text-[11px] font-medium text-gold">
+                      {wf.agentTotal}
+                    </span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -407,64 +553,68 @@ export default function HowItWorksContent() {
                 time: string;
                 description: string;
               }[]
-            ).map((tier, i) => {
-              const isHighlight = i === 1;
-              return (
-                <div
-                  key={tier.name}
-                  className={`flex flex-col items-center rounded-lg p-7 text-center ${
-                    isHighlight
-                      ? "border-2 border-gold bg-navy-light"
-                      : "border border-navy/20 bg-navy-light"
-                  }`}
+            ).map((tier) => (
+              <div
+                key={tier.name}
+                className="flex flex-col items-center rounded-lg border border-navy/20 bg-navy-light p-7 text-center"
+              >
+                <h3 className="text-2xl font-semibold text-white">
+                  {tier.name}
+                </h3>
+                <p className="mt-2 text-sm font-medium text-gold">
+                  {tier.time}
+                </p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/60">
+                  {tier.description}
+                </p>
+                <a
+                  href="mailto:request@zpteam.ai?subject=Advisory inquiry"
+                  className="mt-6 block w-full rounded border border-white/30 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-white/10"
                 >
-                  <h3 className="text-2xl font-semibold text-white">
-                    {tier.name}
-                  </h3>
-                  <p className="mt-2 text-sm font-medium text-gold">
-                    {tier.time}
-                  </p>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-white/60">
-                    {tier.description}
-                  </p>
-                  <a
-                    href="mailto:request@zpteam.ai?subject=Advisory inquiry"
-                    className={`mt-6 block w-full rounded py-2.5 text-center text-sm font-medium transition-colors ${
-                      isHighlight
-                        ? "bg-gold text-navy hover:bg-gold-light"
-                        : "border border-white/30 text-white hover:bg-white/10"
-                    }`}
-                  >
-                    {t("advisory.pricing.cta")}
-                  </a>
-                </div>
-              );
-            })}
+                  {t("advisory.pricing.cta")}
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 5: What We Expect From You */}
+      {/* Section 5: Before We Start */}
       <section className="bg-off-white px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.expectations.title")}
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {expectationItems.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-lg border border-border-warm bg-white p-6 text-center"
-              >
-                <h3 className="text-base font-semibold text-navy">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {item.description}
-                </p>
-              </div>
+          <ul className="mt-8 space-y-5">
+            {(
+              tArray("home.expectations.items") as {
+                title: string;
+                description: string;
+              }[]
+            ).map((item) => (
+              <li key={item.title} className="flex items-start gap-4">
+                <svg
+                  className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <div>
+                  <p className="text-sm font-semibold text-navy">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-text-muted">
+                    {item.description}
+                  </p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

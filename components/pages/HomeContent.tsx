@@ -62,10 +62,10 @@ export default function HomeContent() {
       <section className="overflow-hidden bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-8">
           <div className="flex-1 text-center md:text-left">
-            <h1 className="font-logo text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-[2.75rem]">
+            <h1 className="font-logo text-xl font-medium leading-tight tracking-tight md:text-2xl">
               {t("home.hero.title")}
             </h1>
-            <p className="mt-6 font-heading text-3xl font-light text-gold md:text-4xl lg:text-[2.75rem]">
+            <p className="mt-4 font-logo text-xl font-medium text-gold md:text-2xl">
               {t("home.hero.subtitle")}
             </p>
             <p

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import LanguageSelector from "./LanguageSelector";
 import { useI18n } from "./I18nProvider";
 
 export default function Header() {
@@ -40,9 +39,8 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Right side — language + CTA */}
+        {/* Right side — CTA */}
         <div className="hidden items-center justify-end gap-4 md:flex">
-          <LanguageSelector />
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
             target="_blank"
@@ -108,7 +106,6 @@ export default function Header() {
             >
               {t("nav.caseStudies")}
             </Link>
-            <LanguageSelector />
             <a
               href="mailto:request@zpteam.ai?subject=Intro call request"
               target="_blank"
