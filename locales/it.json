@@ -3,6 +3,8 @@
     "advisory": "Advisory",
     "about": "Chi siamo",
     "resources": "Casi",
+    "howItWorks": "Come funziona",
+    "caseStudies": "Case study",
     "technology": "Tecnologia",
     "portal": "Portale",
     "login": "Login",
@@ -28,6 +30,14 @@
     "technology": {
       "title": "Tecnologia - Come funziona ZPT",
       "description": "Come funzionano gli agenti AI, su cosa si basa ZPT e come si collega ai tuoi strumenti esistenti."
+    },
+    "howItWorks": {
+      "title": "Come funziona - ZPT",
+      "description": "Come funziona un progetto ZPT: visitiamo la tua azienda, mappiamo i workflow, costruiamo una directory AI su misura e formiamo il team."
+    },
+    "caseStudies": {
+      "title": "Case study - ZPT",
+      "description": "Risultati reali dai progetti advisory di ZPT in diversi settori."
     },
     "resources": {
       "title": "Case study - ZPT",
@@ -168,6 +178,29 @@
         "link": "Scopri di piu"
       }
     },
+    "process": {
+      "title": "Come lavoriamo",
+      "description": "Visitiamo la tua azienda, comprendiamo come lavora il team e costruiamo il setup AI giusto.",
+      "link": "Scopri il processo completo",
+      "steps": [
+        {
+          "title": "Capire",
+          "description": "Mappare i workflow tra i dipartimenti, identificare le opportunita di automazione e intervistare il team per capire cosa entra, quali passi avvengono e cosa esce."
+        },
+        {
+          "title": "Costruire",
+          "description": "Costruire la directory: contesto organizzativo, skill automatizzate, template e connessioni agli strumenti. I workflow vengono affrontati uno alla volta."
+        },
+        {
+          "title": "Testare",
+          "description": "Il tuo team esegue i workflow con dati reali. ZPT affina finche l'output non soddisfa i tuoi standard."
+        },
+        {
+          "title": "Mantenere",
+          "description": "Dopo il progetto, ZPT mantiene la directory aggiornata tramite check-in regolari e aggiornamenti da remoto man mano che le capacita AI evolvono."
+        }
+      ]
+    },
     "proof": {
       "title": "ZPT e adatto alla tua azienda?",
       "fitTitle": "Adatto se",
@@ -204,6 +237,12 @@
       "title": "Vuoi vedere cosa ZPT puo fare per la tua azienda?",
       "button": "Prenota una call",
       "email": "Oppure scrivi a"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "Come funziona un progetto ZPT",
+      "subtitle": "Visitiamo la tua azienda, comprendiamo come lavora il team e costruiamo il setup AI giusto."
     }
   },
   "advisory": {
@@ -386,19 +425,24 @@
       "subtitle": "Scegli cio che fa per te — prezzo su richiesta.",
       "tiers": [
         {
-          "name": "Educate",
-          "time": "Mezza giornata",
-          "description": "Il tuo team capisce l'AI"
+          "name": "Discovery",
+          "time": "1-2 giorni",
+          "description": "Mappare workflow, identificare opportunita, costruire proof of concept"
         },
         {
-          "name": "Equip",
-          "time": "1-3 giorni",
-          "description": "Il tuo team usa l'AI ogni giorno"
+          "name": "Focused Build",
+          "time": "2-3 giorni",
+          "description": "Automatizzare 1-2 workflow ben definiti end-to-end con dati reali"
         },
         {
-          "name": "Embed",
+          "name": "Comprehensive",
+          "time": "1-2 settimane",
+          "description": "Discovery completa seguita da un build multi-workflow"
+        },
+        {
+          "name": "Embedded",
           "time": "Continuativo",
-          "description": "L'AI diventa parte di come lavora l'azienda"
+          "description": "Sessioni regolari settimanali o mensili, costruendo in modo incrementale"
         }
       ],
       "cta": "Contattaci"
@@ -471,16 +515,12 @@
     "ctaSubtext": "Oppure scrivi a"
   },
   "resources": {
-    "title": "Casi",
-    "subtitle": "Casi studio",
+    "title": "Case study",
+    "subtitle": "Progetti con clienti",
     "cases": [
       {
-        "title": "Azienda di logistica",
-        "description": "20.000 contatti arricchiti, verificati e puliti. Profili prospect completi con identificazione dei decisori e intelligence aziendale. Il team di vendita ora raggiunge molte piu aziende con tassi di conversione piu elevati."
-      },
-      {
-        "title": "Blankert Shortlease",
-        "description": "Ricerca strutturata di prospect nel mercato del leasing automobilistico olandese. Arricchimento continuo e supporto outreach tramite directory, eventi di settore e LinkedIn."
+        "title": "In arrivo",
+        "description": "ZPT sta lavorando attivamente con aziende nei servizi finanziari, servizi professionali e operations. Case study dettagliati con nomi dei clienti saranno pubblicati qui man mano che i progetti vengono completati."
       }
     ],
     "cta": {

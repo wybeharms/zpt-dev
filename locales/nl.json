@@ -3,6 +3,8 @@
     "advisory": "Advisory",
     "about": "Over ons",
     "resources": "Cases",
+    "howItWorks": "Hoe het werkt",
+    "caseStudies": "Casestudies",
     "technology": "Technologie",
     "portal": "Portal",
     "login": "Login",
@@ -28,6 +30,14 @@
     "technology": {
       "title": "Technologie - Hoe ZPT werkt",
       "description": "Hoe AI-agents werken, waar ZPT op bouwt en hoe het aansluit op uw bestaande tools."
+    },
+    "howItWorks": {
+      "title": "Hoe het werkt - ZPT",
+      "description": "Hoe een ZPT-traject werkt: wij bezoeken uw bedrijf, brengen workflows in kaart, bouwen een AI-map op maat en trainen uw team."
+    },
+    "caseStudies": {
+      "title": "Casestudies - ZPT",
+      "description": "Echte resultaten van ZPT advisory-trajecten in diverse sectoren."
     },
     "resources": {
       "title": "Casestudies - ZPT",
@@ -168,6 +178,29 @@
         "link": "Meer info"
       }
     },
+    "process": {
+      "title": "Hoe wij werken",
+      "description": "Wij bezoeken uw bedrijf, begrijpen hoe het team werkt en bouwen de juiste AI-setup.",
+      "link": "Bekijk het volledige proces",
+      "steps": [
+        {
+          "title": "Begrijpen",
+          "description": "Workflows in kaart brengen, automatiseringsmogelijkheden identificeren en het team interviewen om te begrijpen wat binnenkomt, welke stappen er zijn en wat eruit komt."
+        },
+        {
+          "title": "Bouwen",
+          "description": "De map opbouwen: bedrijfscontext, geautomatiseerde skills, templates en toolconnecties. Workflows worden een voor een aangepakt."
+        },
+        {
+          "title": "Testen",
+          "description": "Uw team draait de workflows met echte data. ZPT verfijnt totdat de output aan uw standaarden voldoet."
+        },
+        {
+          "title": "Onderhouden",
+          "description": "Na het traject houdt ZPT de map actueel via regelmatige check-ins en updates op afstand naarmate AI-mogelijkheden evolueren."
+        }
+      ]
+    },
     "proof": {
       "title": "Past ZPT bij uw bedrijf?",
       "fitTitle": "Past goed als",
@@ -204,6 +237,12 @@
       "title": "Benieuwd wat ZPT voor uw bedrijf kan betekenen?",
       "button": "Plan een gesprek",
       "email": "Of mail naar"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "Hoe een ZPT-traject werkt",
+      "subtitle": "Wij komen langs bij uw bedrijf, begrijpen hoe het team werkt en bouwen de juiste AI-setup."
     }
   },
   "advisory": {
@@ -386,19 +425,24 @@
       "subtitle": "Kies wat past — prijs op aanvraag.",
       "tiers": [
         {
-          "name": "Educate",
-          "time": "Halve dag",
-          "description": "Uw team begrijpt AI"
+          "name": "Discovery",
+          "time": "1-2 dagen",
+          "description": "Workflows in kaart brengen, kansen identificeren, proof of concept bouwen"
         },
         {
-          "name": "Equip",
-          "time": "1-3 dagen",
-          "description": "Uw team gebruikt AI dagelijks"
+          "name": "Focused Build",
+          "time": "2-3 dagen",
+          "description": "1-2 goed gedefinieerde workflows end-to-end automatiseren met echte data"
         },
         {
-          "name": "Embed",
+          "name": "Comprehensive",
+          "time": "1-2 weken",
+          "description": "Volledige discovery gevolgd door een multi-workflow build"
+        },
+        {
+          "name": "Embedded",
           "time": "Doorlopend",
-          "description": "AI wordt onderdeel van hoe het bedrijf werkt"
+          "description": "Regelmatige wekelijkse of maandelijkse sessies, stap voor stap opbouwen"
         }
       ],
       "cta": "Neem contact op"
@@ -471,16 +515,12 @@
     "ctaSubtext": "Of mail naar"
   },
   "resources": {
-    "title": "Cases",
-    "subtitle": "Casestudies",
+    "title": "Casestudies",
+    "subtitle": "Klanttrajecten",
     "cases": [
       {
-        "title": "Logistiek bedrijf",
-        "description": "20.000 contacten verrijkt, geverifieerd en opgeschoond. Volledige prospectprofielen met beslissersidentificatie en bedrijfsinformatie. Het salesteam bereikt nu aanzienlijk meer bedrijven met hogere conversiepercentages."
-      },
-      {
-        "title": "Blankert Shortlease",
-        "description": "Gestructureerde prospectsourcing in de Nederlandse autoleasemarkt. Doorlopende verrijking en outreach-ondersteuning via bedrijvengidsen, branche-evenementen en LinkedIn."
+        "title": "Binnenkort beschikbaar",
+        "description": "ZPT werkt momenteel met bedrijven in financiele dienstverlening, professionele diensten en operaties. Gedetailleerde casestudies met klantnamen worden hier gepubliceerd zodra trajecten zijn afgerond."
       }
     ],
     "cta": {

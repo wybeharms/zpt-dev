@@ -21,22 +21,22 @@ export default function Header() {
         {/* Desktop nav — centered */}
         <nav className="hidden items-center gap-8 md:flex">
           <Link
+            href="/how-it-works"
+            className="text-sm text-white/80 transition-colors hover:text-white"
+          >
+            {t("nav.howItWorks")}
+          </Link>
+          <Link
             href="/technology"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
             {t("nav.technology")}
           </Link>
           <Link
-            href="/about"
+            href="/case-studies"
             className="text-sm text-white/80 transition-colors hover:text-white"
           >
-            {t("nav.about")}
-          </Link>
-          <Link
-            href="/resources"
-            className="text-sm text-white/80 transition-colors hover:text-white"
-          >
-            {t("nav.resources")}
+            {t("nav.caseStudies")}
           </Link>
         </nav>
 
@@ -88,6 +88,13 @@ export default function Header() {
         <nav className="border-t border-white/10 px-6 pb-6 md:hidden">
           <div className="flex flex-col gap-4 pt-4">
             <Link
+              href="/how-it-works"
+              className="text-sm text-white/80 transition-colors hover:text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.howItWorks")}
+            </Link>
+            <Link
               href="/technology"
               className="text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
@@ -95,18 +102,11 @@ export default function Header() {
               {t("nav.technology")}
             </Link>
             <Link
-              href="/about"
+              href="/case-studies"
               className="text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t("nav.about")}
-            </Link>
-            <Link
-              href="/resources"
-              className="text-sm text-white/80 transition-colors hover:text-white"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t("nav.resources")}
+              {t("nav.caseStudies")}
             </Link>
             <LanguageSelector />
             <a

@@ -23,19 +23,22 @@ export default function Footer() {
 
           <nav className="flex flex-col gap-3 text-sm text-white/70">
             <Link
+              href="/how-it-works"
+              className="transition-colors hover:text-white"
+            >
+              {t("nav.howItWorks")}
+            </Link>
+            <Link
               href="/technology"
               className="transition-colors hover:text-white"
             >
               {t("nav.technology")}
             </Link>
-            <Link href="/about" className="transition-colors hover:text-white">
-              {t("nav.about")}
-            </Link>
             <Link
-              href="/resources"
+              href="/case-studies"
               className="transition-colors hover:text-white"
             >
-              {t("nav.resources")}
+              {t("nav.caseStudies")}
             </Link>
           </nav>
 

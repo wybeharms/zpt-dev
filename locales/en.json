@@ -3,6 +3,8 @@
     "advisory": "Advisory",
     "about": "About",
     "resources": "Resources",
+    "howItWorks": "How It Works",
+    "caseStudies": "Case Studies",
     "technology": "Technology",
     "portal": "Portal",
     "login": "Login",
@@ -28,6 +30,14 @@
     "technology": {
       "title": "Technology - How ZPT Works",
       "description": "How AI agents work, what ZPT builds on, and how it connects to your existing tools."
+    },
+    "howItWorks": {
+      "title": "How It Works - ZPT",
+      "description": "How a ZPT engagement works: we visit your company, map workflows, build a custom AI directory, and train your team."
+    },
+    "caseStudies": {
+      "title": "Case Studies - ZPT",
+      "description": "Real engagement results from ZPT advisory projects across industries."
     },
     "resources": {
       "title": "Case Studies - ZPT",
@@ -168,6 +178,29 @@
         "link": "Explore Advisory"
       }
     },
+    "process": {
+      "title": "How We Work",
+      "description": "We visit your company, understand how the team works, and build the right AI setup.",
+      "link": "See the full process",
+      "steps": [
+        {
+          "title": "Understand",
+          "description": "Map workflows across departments, identify automation opportunities, and interview the team to understand what comes in, what steps happen, and what goes out."
+        },
+        {
+          "title": "Build",
+          "description": "Construct the directory: organizational context, automated skills, templates, and tool connections. Workflows are tackled one by one."
+        },
+        {
+          "title": "Test",
+          "description": "Your team runs the workflows with real data. ZPT refines until the output meets your standards."
+        },
+        {
+          "title": "Maintain",
+          "description": "After the engagement, ZPT keeps the directory current through regular check-ins and remote updates as AI capabilities evolve."
+        }
+      ]
+    },
     "proof": {
       "title": "Is ZPT Right for Your Company?",
       "fitTitle": "Good Fit If",
@@ -204,6 +237,12 @@
       "title": "Ready to See What ZPT Can Do for Your Business?",
       "button": "Book a Call",
       "email": "Or email"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "How a ZPT Engagement Works",
+      "subtitle": "We come to your company, understand how the team works, and build the right AI setup."
     }
   },
   "advisory": {
@@ -386,19 +425,24 @@
       "subtitle": "Choose what fits — pricing on request.",
       "tiers": [
         {
-          "name": "Educate",
-          "time": "Half-day",
-          "description": "Your team understands AI"
+          "name": "Discovery",
+          "time": "1-2 days",
+          "description": "Map workflows, identify opportunities, build a proof of concept"
         },
         {
-          "name": "Equip",
-          "time": "1-3 days",
-          "description": "Your team uses AI daily"
+          "name": "Focused Build",
+          "time": "2-3 days",
+          "description": "Automate 1-2 well-defined workflows end-to-end with real data"
         },
         {
-          "name": "Embed",
+          "name": "Comprehensive",
+          "time": "1-2 weeks",
+          "description": "Full discovery followed by a multi-workflow build"
+        },
+        {
+          "name": "Embedded",
           "time": "Ongoing",
-          "description": "AI becomes part of how the company works"
+          "description": "Regular weekly or monthly sessions, building incrementally"
         }
       ],
       "cta": "Get in touch"
@@ -471,16 +515,12 @@
     "ctaSubtext": "Or email"
   },
   "resources": {
-    "title": "Resources",
-    "subtitle": "Case studies",
+    "title": "Case Studies",
+    "subtitle": "Client engagements",
     "cases": [
       {
-        "title": "Logistics Company",
-        "description": "20,000 contacts enriched, verified, and cleaned. Full prospect profiles with decision-maker identification and company intelligence. The sales team now reaches significantly more companies with higher conversion rates."
-      },
-      {
-        "title": "Blankert Shortlease",
-        "description": "Structured prospect sourcing in the Dutch automotive leasing market. Ongoing enrichment and outreach support across directories, industry events, and LinkedIn."
+        "title": "Coming Soon",
+        "description": "ZPT is actively working with companies across financial services, professional services, and operations. Detailed case studies with client names will be published here as engagements are completed."
       }
     ],
     "cta": {
