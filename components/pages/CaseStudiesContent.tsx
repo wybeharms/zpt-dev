@@ -12,7 +12,7 @@ export default function CaseStudiesContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 text-white lg:px-8">
+      <section className="bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("resources.title")}
@@ -24,7 +24,7 @@ export default function CaseStudiesContent() {
       </section>
 
       {/* Case studies */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 md:grid-cols-2">
             {cases.map((item, i) => (
@@ -45,14 +45,14 @@ export default function CaseStudiesContent() {
       </section>
 
       {/* CTA */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("resources.cta.title")}
           </h2>
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
-            className="mt-6 inline-block rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
+            className="mt-6 inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
             {t("resources.cta.button")}
           </a>

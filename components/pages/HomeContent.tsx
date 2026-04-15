@@ -295,7 +295,7 @@ export default function HomeContent() {
       <section className="overflow-hidden bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-8">
           <div className="flex-1 text-center md:text-left">
-            <h1 className="font-logo text-xl font-medium leading-tight tracking-tight md:text-2xl">
+            <h1 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
               {t("home.hero.title")}
             </h1>
             <p className="mt-4 font-logo text-xl font-medium text-gold md:text-2xl">
@@ -308,7 +308,7 @@ export default function HomeContent() {
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:request@zpteam.ai?subject=Intro call request"
-                className="inline-block rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
+                className="inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
               >
                 {t("home.hero.cta")}
               </a>
@@ -316,7 +316,7 @@ export default function HomeContent() {
                 href="/zpt-one-pager.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded border border-white/20 px-6 py-3 text-sm font-medium text-white/80 transition-colors hover:border-white/40 hover:text-white"
+                className="inline-flex items-center gap-2 font-logo rounded border border-white/20 px-6 py-3 text-sm font-medium text-white/80 transition-colors hover:border-white/40 hover:text-white"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -344,7 +344,7 @@ export default function HomeContent() {
       </section>
 
       {/* Quote */}
-      <section className="bg-off-white px-6 py-20 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <blockquote className="font-heading text-xl font-light italic leading-relaxed tracking-tight text-navy md:text-2xl">
             <span className="animate-[glow_4s_ease-in-out_infinite]">&ldquo;</span>
@@ -366,7 +366,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 2: The Problem */}
-      <section className="px-6 py-14 lg:px-8" style={{ backgroundColor: "#EAE8DE" }}>
+      <section className="px-6 py-24 lg:px-8" style={{ backgroundColor: "#EAE8DE" }}>
         <div className="mx-auto max-w-4xl text-center">
           <h2
             className="font-heading text-2xl font-light tracking-tight text-navy md:text-3xl"
@@ -418,7 +418,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 3: How We Work — Mobile (simple stack) */}
-      <section className="bg-off-white px-6 py-14 md:hidden">
+      <section className="bg-off-white px-6 py-24 md:hidden">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy">
             {t("home.process.title")}
@@ -446,7 +446,7 @@ export default function HomeContent() {
           <div className="mt-6 text-center">
             <Link
               href="/how-it-works"
-              className="text-sm font-medium text-navy underline underline-offset-4 transition-colors hover:text-gold"
+              className="font-logo text-sm font-medium text-navy underline underline-offset-4 transition-colors hover:text-gold"
             >
               {t("home.process.link")} &rarr;
             </Link>
@@ -472,7 +472,7 @@ export default function HomeContent() {
               </p>
               <Link
                 href="/how-it-works"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-navy underline underline-offset-4 transition-colors hover:text-gold"
+                className="mt-8 inline-flex items-center gap-2 font-logo text-sm font-medium text-navy underline underline-offset-4 transition-colors hover:text-gold"
               >
                 {t("home.process.link")} &rarr;
               </Link>
@@ -532,7 +532,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 4: Good Fit + Why ZPT */}
-      <section className="bg-navy px-6 py-20 text-white lg:px-8">
+      <section className="bg-navy px-6 py-24 text-white lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight md:text-4xl">
             {t("home.proof.title")}
@@ -572,7 +572,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 5: Advisory Tiers */}
-      <section className="bg-cream px-6 py-20 lg:px-8">
+      <section className="bg-cream px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.pricing.title")}
@@ -586,7 +586,7 @@ export default function HomeContent() {
                 <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
                 <p className="mt-2 text-xs font-medium text-gold">{tier.time}</p>
                 <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">{tier.description}</p>
-                <a href="mailto:request@zpteam.ai?subject=Advisory inquiry" className="mt-6 block w-full rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy">
+                <a href="mailto:request@zpteam.ai?subject=Advisory inquiry" className="mt-6 block w-full font-logo rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy">
                   {t("advisory.pricing.cta")}
                 </a>
               </div>
@@ -596,14 +596,14 @@ export default function HomeContent() {
       </section>
 
       {/* Section 6: CTA */}
-      <section className="bg-off-white px-6 py-20 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.cta.title")}
           </h2>
           <a
             href="mailto:request@zpteam.ai?subject=Intro call request"
-            className="mt-6 inline-block rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
+            className="mt-6 inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
             {t("advisory.cta.button")}
           </a>

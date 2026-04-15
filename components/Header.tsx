@@ -21,19 +21,19 @@ export default function Header() {
         <nav className="hidden items-center gap-8 md:flex">
           <Link
             href="/how-it-works"
-            className="text-sm text-white/80 transition-colors hover:text-white"
+            className="font-logo text-sm text-white/80 transition-colors hover:text-white"
           >
             {t("nav.howItWorks")}
           </Link>
           <Link
             href="/technology"
-            className="text-sm text-white/80 transition-colors hover:text-white"
+            className="font-logo text-sm text-white/80 transition-colors hover:text-white"
           >
             {t("nav.technology")}
           </Link>
           <Link
             href="/case-studies"
-            className="text-sm text-white/80 transition-colors hover:text-white"
+            className="font-logo text-sm text-white/80 transition-colors hover:text-white"
           >
             {t("nav.caseStudies")}
           </Link>
@@ -45,7 +45,7 @@ export default function Header() {
             href="mailto:request@zpteam.ai?subject=Intro call request"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded bg-gold px-4 py-2 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
+            className="font-logo rounded bg-gold px-4 py-2 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
             {t("nav.cta")}
           </a>
@@ -87,21 +87,21 @@ export default function Header() {
           <div className="flex flex-col gap-4 pt-4">
             <Link
               href="/how-it-works"
-              className="text-sm text-white/80 transition-colors hover:text-white"
+              className="font-logo text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.howItWorks")}
             </Link>
             <Link
               href="/technology"
-              className="text-sm text-white/80 transition-colors hover:text-white"
+              className="font-logo text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.technology")}
             </Link>
             <Link
               href="/case-studies"
-              className="text-sm text-white/80 transition-colors hover:text-white"
+              className="font-logo text-sm text-white/80 transition-colors hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.caseStudies")}
@@ -110,7 +110,7 @@ export default function Header() {
               href="mailto:request@zpteam.ai?subject=Intro call request"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded bg-gold px-4 py-2 text-center text-sm font-medium text-navy transition-colors hover:bg-gold-light"
+              className="font-logo inline-block rounded bg-gold px-4 py-2 text-center text-sm font-medium text-navy transition-colors hover:bg-gold-light"
             >
               {t("nav.cta")}
             </a>

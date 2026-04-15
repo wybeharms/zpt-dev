@@ -53,7 +53,7 @@ export default function TechnologyContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 text-white lg:px-8 lg:py-24">
+      <section className="bg-navy px-6 py-20 text-white lg:px-8 lg:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-light tracking-tight md:text-5xl">
             {t("technology.hero.title")}
@@ -65,7 +65,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* What is an AI agent? */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("home.howItWorks.title")}
@@ -181,7 +181,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* Claude Code & Codex */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-16">
             <div className="flex-1">
@@ -224,7 +224,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* What ZPT Builds */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("technology.expertise.title")}
@@ -248,7 +248,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* Example folder structure — collapsible */}
-      <section id="folder-structure" className="scroll-mt-8 bg-navy px-6 py-14 text-white lg:px-8">
+      <section id="folder-structure" className="scroll-mt-8 bg-navy px-6 py-24 text-white lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
             <h2 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
@@ -306,7 +306,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* Claude Desktop screenshot */}
-      <section className="bg-cream px-6 py-14 lg:px-8">
+      <section className="bg-cream px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col items-center">
             <div className="mb-4 flex items-center gap-2">
@@ -338,7 +338,7 @@ export default function TechnologyContent() {
       </section>
 
       {/* Connects to your stack */}
-      <section className="bg-off-white px-6 py-14 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">
             {t("advisory.tools.title")}

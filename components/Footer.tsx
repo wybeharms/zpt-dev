@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-navy text-white">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
             <Link
@@ -24,19 +24,19 @@ export default function Footer() {
           <nav className="flex flex-col gap-3 text-sm text-white/70">
             <Link
               href="/how-it-works"
-              className="transition-colors hover:text-white"
+              className="font-logo transition-colors hover:text-white"
             >
               {t("nav.howItWorks")}
             </Link>
             <Link
               href="/technology"
-              className="transition-colors hover:text-white"
+              className="font-logo transition-colors hover:text-white"
             >
               {t("nav.technology")}
             </Link>
             <Link
               href="/case-studies"
-              className="transition-colors hover:text-white"
+              className="font-logo transition-colors hover:text-white"
             >
               {t("nav.caseStudies")}
             </Link>
@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3 text-sm text-white/70">
             <a
               href="mailto:request@zpteam.ai"
-              className="transition-colors hover:text-white"
+              className="font-logo transition-colors hover:text-white"
             >
               request@zpteam.ai
             </a>
@@ -53,7 +53,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/zpteam/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-white"
+              className="font-logo transition-colors hover:text-white"
             >
               LinkedIn
             </a>
