@@ -5,6 +5,209 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/components/I18nProvider";
 
+/* ── Step visuals ─────────────────────────────────────────── */
+
+/** Step 1: Understand — workflow map that draws itself */
+function WorkflowMapVisual({ active }: { active: boolean }) {
+  const boxes = ["Intake", "Review", "Approve", "Archive"];
+  return (
+    <div className="mt-4 flex items-center gap-1">
+      {boxes.map((label, i) => (
+        <div key={label} className="flex items-center gap-1">
+          <div
+            className={`rounded border px-2.5 py-1.5 text-[10px] font-medium transition-all duration-500 ${
+              active ? "border-gold/40 bg-gold/[0.06] text-navy/70" : "border-transparent bg-transparent text-transparent"
+            }`}
+            style={{ transitionDelay: active ? `${i * 200}ms` : "0ms" }}
+          >
+            {label}
+          </div>
+          {i < boxes.length - 1 && (
+            <svg
+              className={`h-3 w-4 transition-all duration-300 ${active ? "text-gold/50" : "text-transparent"}`}
+              style={{ transitionDelay: active ? `${i * 200 + 150}ms` : "0ms" }}
+              fill="none" viewBox="0 0 16 12" strokeWidth={1.5} stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M1 6h12m0 0l-3-3m3 3l-3 3" />
+            </svg>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Step 2: Build — terminal animation */
+const TERMINAL_SCRIPT: { text: string; isCmd: boolean; color?: string }[] = [
+  { text: "$ zpt build --company acme-corp", isCmd: true },
+  { text: "● Creating company-context/overview.md... done", isCmd: false, color: "blue" },
+  { text: "● Building skills/quarterly-analysis/... done", isCmd: false, color: "muted" },
+  { text: "● Connecting MCP: Google Drive... done", isCmd: false, color: "muted" },
+  { text: "● Connecting MCP: HubSpot... done", isCmd: false, color: "blue" },
+  { text: "● Running validation... passed", isCmd: false, color: "green" },
+];
+
+const DOT_COLORS: Record<string, string> = {
+  green: "text-[#4A9A6A]",
+  blue: "text-[#5B8FB9]",
+  muted: "text-navy/30",
+};
+
+function TerminalVisual({ active }: { active: boolean }) {
+  const [lines, setLines] = useState<{ text: string; isCmd: boolean; color?: string }[]>([]);
+  const [currentCmd, setCurrentCmd] = useState("");
+  const runRef = useRef(false);
+  const cancelRef = useRef(false);
+
+  useEffect(() => {
+    if (!active) {
+      cancelRef.current = true;
+      runRef.current = false;
+      setLines([]);
+      setCurrentCmd("");
+      return;
+    }
+
+    if (runRef.current) return;
+    runRef.current = true;
+    cancelRef.current = false;
+
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+    async function run() {
+      while (!cancelRef.current) {
+        setLines([]);
+        setCurrentCmd("");
+        for (const step of TERMINAL_SCRIPT) {
+          if (cancelRef.current) return;
+          if (step.isCmd) {
+            for (let i = 0; i <= step.text.length; i++) {
+              if (cancelRef.current) return;
+              setCurrentCmd(step.text.slice(0, i));
+              await sleep(25);
+            }
+            await sleep(250);
+            setLines((p) => [...p, step]);
+            setCurrentCmd("");
+          } else {
+            await sleep(350);
+            if (cancelRef.current) return;
+            setLines((p) => [...p, step]);
+          }
+        }
+        await sleep(2000);
+      }
+    }
+
+    run();
+    return () => { cancelRef.current = true; };
+  }, [active]);
+
+  return (
+    <div className="mt-4 overflow-hidden rounded-md border border-border-warm bg-white shadow-sm">
+      <div className="flex items-center gap-1.5 border-b border-border-warm bg-off-white px-2.5 py-1">
+        <div className="h-1.5 w-1.5 rounded-full bg-red-300/50" />
+        <div className="h-1.5 w-1.5 rounded-full bg-yellow-300/50" />
+        <div className="h-1.5 w-1.5 rounded-full bg-green-300/50" />
+        <span className="ml-1.5 text-[9px] text-navy/30">zpt-agent</span>
+      </div>
+      <div className="h-[100px] overflow-hidden px-2.5 py-1.5 font-mono text-[10px] leading-[16px]">
+        {lines.map((line, i) => (
+          <div key={i} className={line.isCmd ? "font-semibold text-gold-dark" : "text-navy/50"}>
+            {line.isCmd ? (
+              line.text
+            ) : (
+              <>
+                <span className={DOT_COLORS[line.color || "muted"]}>{line.text.charAt(0)}</span>
+                {line.text.slice(1)}
+              </>
+            )}
+          </div>
+        ))}
+        {currentCmd && (
+          <div className="font-semibold text-gold-dark">
+            {currentCmd}<span className="animate-pulse text-gold">|</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** Step 3: Test — document editing animation */
+function DocEditVisual({ active }: { active: boolean }) {
+  const [phase, setPhase] = useState(0);
+
+  useEffect(() => {
+    if (!active) { setPhase(0); return; }
+    let frame = 0;
+    const id = setInterval(() => {
+      frame = (frame + 1) % 5;
+      setPhase(frame);
+    }, 1200);
+    setPhase(1);
+    return () => clearInterval(id);
+  }, [active]);
+
+  return (
+    <div className="mt-4 overflow-hidden rounded-md border border-border-warm bg-white shadow-sm">
+      <div className="flex items-center gap-1.5 border-b border-border-warm bg-off-white px-2.5 py-1">
+        <svg className="h-3 w-3 text-navy/30" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+        </svg>
+        <span className="text-[9px] text-navy/30">Q3-analysis-draft.md</span>
+      </div>
+      <div className="h-[100px] space-y-1 px-2.5 py-2 text-[10px] leading-[14px] text-navy/50">
+        <p className={`transition-opacity duration-500 ${phase >= 1 ? "opacity-100" : "opacity-0"}`}>
+          Fund performance exceeded benchmark by 2.3%
+        </p>
+        <p className={`transition-opacity duration-500 ${phase >= 1 ? "opacity-100" : "opacity-0"}`}>
+          in Q3, driven by <span className={`transition-all duration-500 ${phase >= 2 ? "bg-gold/20 px-0.5" : ""}`}>infrastructure allocation</span>.
+        </p>
+        <p className={`transition-opacity duration-500 ${phase >= 2 ? "opacity-100" : "opacity-0"}`}>
+          Net cash flow: <span className={`transition-all duration-500 ${phase >= 3 ? "font-semibold text-navy" : ""}`}>$4.2M</span> (verified)
+        </p>
+        <p className={`transition-all duration-500 ${phase >= 3 ? "opacity-100" : "opacity-0"}`}>
+          <span className={phase >= 4 ? "text-navy/20 line-through" : ""}>Risk rating: moderate</span>
+          {phase >= 4 && <span className="ml-1 font-medium text-navy"> Risk rating: low-moderate</span>}
+        </p>
+        <p className={`transition-opacity duration-500 ${phase >= 4 ? "opacity-100" : "opacity-0"}`}>
+          <span className="text-[#4A9A6A]">✓</span> Review complete
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/** Step 4: Maintain — notification stack */
+function NotificationVisual({ active }: { active: boolean }) {
+  const items = [
+    { text: "New skill added: quarterly-report-v3", time: "2 days ago" },
+    { text: "MCP updated: Slack integration", time: "1 week ago" },
+    { text: "Agent upgraded to Claude 4.5", time: "2 weeks ago" },
+  ];
+  return (
+    <div className="mt-4 space-y-1.5">
+      {items.map((item, i) => (
+        <div
+          key={i}
+          className={`rounded-md border border-border-warm bg-white px-3 py-2 shadow-sm transition-all duration-500 ${
+            active ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+          }`}
+          style={{ transitionDelay: active ? `${i * 150}ms` : "0ms" }}
+        >
+          <p className="text-[10px] font-medium text-navy/70">{item.text}</p>
+          <p className="text-[9px] text-navy/30">{item.time}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const STEP_VISUALS = [WorkflowMapVisual, TerminalVisual, DocEditVisual, NotificationVisual];
+
+/* ── Main component ───────────────────────────────────────── */
+
 export default function HomeContent() {
   const { t, tArray } = useI18n();
 
@@ -114,13 +317,9 @@ export default function HomeContent() {
       <section className="bg-off-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <blockquote className="font-heading text-xl font-light italic leading-relaxed tracking-tight text-navy md:text-2xl">
-            <span className="animate-[glow_4s_ease-in-out_infinite]">
-              &ldquo;
-            </span>
+            <span className="animate-[glow_4s_ease-in-out_infinite]">&ldquo;</span>
             {t("home.quote.text")}
-            <span className="animate-[glow_4s_ease-in-out_infinite]">
-              &rdquo;
-            </span>
+            <span className="animate-[glow_4s_ease-in-out_infinite]">&rdquo;</span>
           </blockquote>
           <p className="mt-4 text-sm text-text-muted">
             -{" "}
@@ -198,24 +397,21 @@ export default function HomeContent() {
             {t("home.process.description")}
           </p>
           <div className="mt-8 space-y-4">
-            {processSteps.map((step, i) => (
-              <div
-                key={i}
-                className="rounded-lg border border-border-warm bg-white p-5"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-sm font-semibold text-navy">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-base font-semibold text-navy">
-                    {step.title}
-                  </h3>
+            {processSteps.map((step, i) => {
+              const Visual = STEP_VISUALS[i];
+              return (
+                <div key={i} className="rounded-lg border border-border-warm bg-white p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-sm font-semibold text-navy">
+                      {i + 1}
+                    </span>
+                    <h3 className="text-base font-semibold text-navy">{step.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-text-muted">{step.description}</p>
+                  {Visual && <Visual active={true} />}
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-text-muted">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="mt-6 text-center">
             <Link
@@ -251,49 +447,54 @@ export default function HomeContent() {
                 {t("home.process.link")} &rarr;
               </Link>
             </div>
-            {/* Right: scroll-driven tabs */}
+            {/* Right: scroll-driven tabs with visuals */}
             <div className="flex-1">
               <div className="space-y-3">
-                {processSteps.map((step, i) => (
-                  <div
-                    key={i}
-                    className={`rounded-lg border p-5 transition-all duration-500 ${
-                      activeStep === i
-                        ? "border-gold/40 bg-white shadow-sm"
-                        : "border-transparent"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span
-                        className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-colors duration-500 ${
-                          activeStep === i
-                            ? "bg-gold text-navy"
-                            : "bg-navy/10 text-navy/40"
-                        }`}
-                      >
-                        {i + 1}
-                      </span>
-                      <h3
-                        className={`text-base font-semibold transition-colors duration-500 ${
-                          activeStep === i ? "text-navy" : "text-navy/40"
-                        }`}
-                      >
-                        {step.title}
-                      </h3>
-                    </div>
+                {processSteps.map((step, i) => {
+                  const Visual = STEP_VISUALS[i];
+                  const isActive = activeStep === i;
+                  return (
                     <div
-                      className={`overflow-hidden transition-all duration-500 ${
-                        activeStep === i
-                          ? "mt-3 max-h-32 opacity-100"
-                          : "max-h-0 opacity-0"
+                      key={i}
+                      className={`rounded-lg border p-5 transition-all duration-500 ${
+                        isActive
+                          ? "border-gold/40 bg-white shadow-sm"
+                          : "border-transparent"
                       }`}
                     >
-                      <p className="text-sm leading-relaxed text-text-muted">
-                        {step.description}
-                      </p>
+                      <div className="flex items-center gap-3">
+                        <span
+                          className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-colors duration-500 ${
+                            isActive
+                              ? "bg-gold text-navy"
+                              : "bg-navy/10 text-navy/40"
+                          }`}
+                        >
+                          {i + 1}
+                        </span>
+                        <h3
+                          className={`text-base font-semibold transition-colors duration-500 ${
+                            isActive ? "text-navy" : "text-navy/40"
+                          }`}
+                        >
+                          {step.title}
+                        </h3>
+                      </div>
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ${
+                          isActive
+                            ? "mt-3 max-h-[280px] opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <p className="text-sm leading-relaxed text-text-muted">
+                          {step.description}
+                        </p>
+                        {Visual && <Visual active={isActive} />}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -314,37 +515,22 @@ export default function HomeContent() {
               </h3>
               <ul className="mt-6 space-y-3">
                 {fitItems.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-sm leading-relaxed text-white/70"
-                  >
-                    <svg
-                      className="h-4 w-4 flex-shrink-0 text-gold"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                        clipRule="evenodd"
-                      />
+                  <li key={i} className="flex items-center gap-3 text-sm leading-relaxed text-white/70">
+                    <svg className="h-4 w-4 flex-shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                     </svg>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-
             <div>
               <h3 className="text-lg font-semibold text-gold">
                 {t("home.proof.whyTitle")}
               </h3>
               <ul className="mt-6 space-y-3">
                 {whyItems.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-sm leading-relaxed text-white/70"
-                  >
+                  <li key={i} className="flex items-center gap-3 text-sm leading-relaxed text-white/70">
                     <span className="flex-shrink-0 text-gold">+</span>
                     <span>{item}</span>
                   </li>
@@ -365,30 +551,12 @@ export default function HomeContent() {
             {t("advisory.pricing.subtitle")}
           </p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {(
-              tArray("advisory.pricing.tiers") as {
-                name: string;
-                time: string;
-                description: string;
-              }[]
-            ).map((tier) => (
-              <div
-                key={tier.name}
-                className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy-light p-8 text-center"
-              >
-                <h3 className="text-lg font-semibold text-white">
-                  {tier.name}
-                </h3>
-                <p className="mt-2 text-xs font-medium text-gold">
-                  {tier.time}
-                </p>
-                <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">
-                  {tier.description}
-                </p>
-                <a
-                  href="mailto:request@zpteam.ai?subject=Advisory inquiry"
-                  className="mt-6 block w-full rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy"
-                >
+            {(tArray("advisory.pricing.tiers") as { name: string; time: string; description: string }[]).map((tier) => (
+              <div key={tier.name} className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy-light p-8 text-center">
+                <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
+                <p className="mt-2 text-xs font-medium text-gold">{tier.time}</p>
+                <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">{tier.description}</p>
+                <a href="mailto:request@zpteam.ai?subject=Advisory inquiry" className="mt-6 block w-full rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy">
                   {t("advisory.pricing.cta")}
                 </a>
               </div>
