@@ -174,8 +174,8 @@ function DocEditVisual({ active }: { active: boolean }) {
       <div className="h-[100px] space-y-1.5 px-2.5 py-2 text-[10px] leading-[14px] text-navy/60">
         <p className={`transition-opacity duration-500 ${phase >= 1 ? "opacity-100" : "opacity-0"}`}>
           Fund performance exceeded benchmark by{" "}
-          <span className={`transition-all duration-400 ${phase >= 3 ? "text-[#D04A02] line-through decoration-[#D04A02]" : "font-semibold text-navy"}`}>2.3%</span>
-          {phase >= 3 && <span className="ml-1 font-bold text-navy">2.4%</span>}
+          <span className={`transition-all duration-400 ${phase >= 2 ? "text-[#D04A02] line-through decoration-[#D04A02]" : "font-semibold text-navy"}`}>2.3%</span>
+          {phase >= 2 && <span className="ml-1 font-bold text-navy">2.4%</span>}
         </p>
         <p className={`transition-opacity duration-500 ${phase >= 1 ? "opacity-100" : "opacity-0"}`}>
           in Q3, driven by <span className={`rounded-sm transition-all duration-500 ${phase >= 2 ? "bg-gold/30 px-0.5 font-semibold text-navy" : ""}`}>infrastructure allocation</span>.
