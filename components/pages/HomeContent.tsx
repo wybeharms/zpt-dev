@@ -277,11 +277,11 @@ export default function HomeContent() {
       if (totalScroll <= 0) return;
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / totalScroll));
-      // Give Build and Test more scroll room (30% each vs 20% for Understand/Maintain)
+      // Understand gets a buffer to absorb scroll momentum from above
       let step;
-      if (progress < 0.15) step = 0;
-      else if (progress < 0.45) step = 1;
-      else if (progress < 0.75) step = 2;
+      if (progress < 0.18) step = 0;
+      else if (progress < 0.48) step = 1;
+      else if (progress < 0.78) step = 2;
       else step = 3;
       setActiveStep(step);
     };
@@ -458,7 +458,7 @@ export default function HomeContent() {
       <section
         ref={processRef}
         className="relative hidden bg-off-white md:block"
-        style={{ height: "360vh" }}
+        style={{ height: "450vh" }}
       >
         <div className="sticky top-0 flex min-h-screen items-center px-6 lg:px-8">
           <div className="mx-auto flex w-full max-w-5xl gap-16">
