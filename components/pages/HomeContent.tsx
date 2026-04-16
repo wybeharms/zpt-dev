@@ -298,7 +298,7 @@ export default function HomeContent() {
             <h1 className="font-heading text-3xl font-light tracking-tight md:text-4xl">
               {t("home.hero.title")}
             </h1>
-            <p className="mt-4 font-logo text-xl font-medium text-gold md:text-2xl">
+            <p className="mt-4 font-heading text-3xl font-light text-gold md:text-4xl">
               {t("home.hero.subtitle")}
             </p>
             <p
@@ -532,7 +532,7 @@ export default function HomeContent() {
       </section>
 
       {/* Section 4: Good Fit + Why ZPT */}
-      <section className="bg-navy px-6 py-24 text-white lg:px-8">
+      <section className="bg-navy px-6 py-32 text-white lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight md:text-4xl">
             {t("home.proof.title")}
@@ -582,7 +582,7 @@ export default function HomeContent() {
           </p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {(tArray("advisory.pricing.tiers") as { name: string; time: string; description: string }[]).map((tier) => (
-              <div key={tier.name} className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy-light p-8 text-center">
+              <div key={tier.name} className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy p-8 text-center">
                 <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
                 <p className="mt-2 text-xs font-medium text-gold">{tier.time}</p>
                 <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">{tier.description}</p>
