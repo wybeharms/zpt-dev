@@ -428,13 +428,13 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 5: Engagement Types */}
-      <section className="bg-off-white px-6 py-24 lg:px-8">
+      <section className="bg-navy px-6 py-24 text-white lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">{t("advisory.pricing.title")}</h2>
-          <p className="mt-3 text-center text-text-muted">{t("advisory.pricing.subtitle")}</p>
+          <h2 className="text-center font-heading text-3xl font-light tracking-tight md:text-4xl">{t("advisory.pricing.title")}</h2>
+          <p className="mt-3 text-center text-white/60">{t("advisory.pricing.subtitle")}</p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {(tArray("advisory.pricing.tiers") as { name: string; time: string; description: string }[]).map((tier) => (
-              <div key={tier.name} className="flex flex-col items-center rounded-xl border border-navy/15 bg-navy p-8 text-center">
+              <div key={tier.name} className="flex flex-col items-center rounded-xl border border-white/10 bg-white/5 p-8 text-center">
                 <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
                 <p className="mt-2 text-xs font-medium text-gold">{tier.time}</p>
                 <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">{tier.description}</p>
