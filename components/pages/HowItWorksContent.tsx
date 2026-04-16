@@ -428,7 +428,7 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 5: Engagement Types */}
-      <section className="bg-cream px-6 py-24 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">{t("advisory.pricing.title")}</h2>
           <p className="mt-3 text-center text-text-muted">{t("advisory.pricing.subtitle")}</p>
@@ -448,7 +448,7 @@ export default function HowItWorksContent() {
       </section>
 
       {/* CTA */}
-      <section className="bg-off-white px-6 py-24 lg:px-8">
+      <section className="bg-cream px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">{t("advisory.cta.title")}</h2>
           <a href="mailto:request@zpteam.ai?subject=Intro call request" className="mt-6 inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light">
