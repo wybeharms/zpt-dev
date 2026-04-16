@@ -408,7 +408,7 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Section 4: Before We Start */}
-      <section className="bg-off-white px-6 py-24 lg:px-8">
+      <section className="bg-cream px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">{t("home.expectations.title")}</h2>
           <ul className="mt-10 space-y-7 pl-4 md:pl-12">
@@ -448,7 +448,7 @@ export default function HowItWorksContent() {
       </section>
 
       {/* CTA */}
-      <section className="bg-cream px-6 py-24 lg:px-8">
+      <section className="bg-off-white px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-light tracking-tight text-navy md:text-4xl">{t("advisory.cta.title")}</h2>
           <a href="mailto:request@zpteam.ai?subject=Intro call request" className="mt-6 inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light">
