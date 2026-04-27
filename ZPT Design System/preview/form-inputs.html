@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Form Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); font-family: var(--font-body); color: var(--zpt-navy); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .group label { display: block; font-family: var(--font-logo); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 6px; }
+  .on-dark { background: var(--zpt-navy); padding: 18px; border-radius: 8px; }
+  .on-dark label { color: rgba(255,255,255,0.5); }
+  input, select { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 4px; font-family: var(--font-body); font-size: 14px; }
+  .light input, .light select { border: 1px solid var(--zpt-border-warm); background: #fff; color: var(--zpt-navy); }
+  .light input:focus { outline: none; border-color: var(--zpt-gold); }
+  .on-dark select, .on-dark input { background: var(--zpt-navy-light); border: 0; color: #fff; }
+  .on-dark select:focus, .on-dark input:focus { outline: 1px solid var(--zpt-gold); }
+</style>
+</head>
+<body>
+<div class="group light">
+  <label>Email</label>
+  <input type="email" placeholder="you@company.com" value="request@zpteam.ai">
+</div>
+<div class="group on-dark">
+  <label>Customer</label>
+  <select><option>acme-corp</option><option>globex</option></select>
+</div>
+</body>
+</html>

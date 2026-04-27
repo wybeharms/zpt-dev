@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Type: Quote Treatment</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 26px 32px; background: var(--bg-1); color: var(--zpt-navy); text-align: center; }
+  blockquote { font-family: var(--font-heading); font-weight: 300; font-style: italic; font-size: 22px; line-height: 1.45; letter-spacing: -0.01em; margin: 0; }
+  @keyframes qglow { 0%,100% { color: var(--zpt-navy); } 50% { color: var(--zpt-gold); text-shadow: 0 0 12px rgba(201,169,110,.4); } }
+  .q { animation: qglow 4s ease-in-out infinite; }
+  .attr { margin-top: 10px; font-family: var(--font-body); font-size: 13px; color: var(--zpt-muted); }
+  .attr a { color: var(--zpt-muted); text-decoration: underline; text-underline-offset: 2px; }
+</style>
+</head>
+<body>
+<blockquote><span class="q">&ldquo;</span>Every major technology shift creates a massive change-management challenge for enterprises.<span class="q">&rdquo;</span></blockquote>
+<p class="attr">— <a href="#">David Sacks</a></p>
+</body>
+</html>

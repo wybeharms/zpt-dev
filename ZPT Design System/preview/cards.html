@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); font-family: var(--font-body); color: var(--zpt-navy); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .card { border-radius: 12px; padding: 18px; }
+  .paper { background: #fff; border: 1px solid var(--zpt-border-warm); box-shadow: var(--shadow-sm); }
+  .navy { background: var(--zpt-navy); border: 1px solid rgba(255,255,255,0.1); color: #fff; }
+  .active { background: #fff; border: 1px solid rgba(201,169,110,0.4); box-shadow: var(--shadow-sm); }
+  .eyebrow { font-family: var(--font-logo); font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(12,12,40,0.4); margin: 0 0 8px; font-weight: 500; }
+  .navy .eyebrow { color: rgba(255,255,255,0.5); }
+  .t { font-family: var(--font-body); font-weight: 600; font-size: 15px; margin: 0 0 6px; }
+  .d { font-family: var(--font-body); font-size: 12px; color: var(--zpt-muted); margin: 0; line-height: 1.55; }
+  .navy .d { color: rgba(255,255,255,0.55); }
+  .time { font-family: var(--font-body); font-size: 11px; color: var(--zpt-gold); font-weight: 500; margin: 0 0 8px; }
+</style>
+</head>
+<body>
+<div class="card paper">
+  <p class="eyebrow">Paper</p>
+  <p class="t">Build the setup</p>
+  <p class="d">White + warm border + shadow-sm. The workhorse card.</p>
+</div>
+<div class="card navy">
+  <p class="eyebrow">Navy</p>
+  <p class="t">Discovery</p>
+  <p class="time">1–2 days</p>
+  <p class="d">Map workflows, identify opportunities, build a POC.</p>
+</div>
+<div class="card active">
+  <p class="eyebrow">Active / Gold</p>
+  <p class="t">Focused Build</p>
+  <p class="d">Gold-40% border replaces the warm border on emphasis.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Colors: Semantic Accents</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .swatch { border: 1px solid var(--zpt-border-warm); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+  .chip { height: 72px; position: relative; }
+  .chip::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.14) 100%);
+    pointer-events: none;
+  }
+  .meta { padding: 8px 10px; }
+  .name { display: block; font-family: var(--font-logo); font-size: 11px; color: var(--zpt-navy); font-weight: 500; }
+  .sub  { display: block; font-family: var(--font-body); font-size: 10px; color: var(--fg-2); margin-top: 2px; font-style: italic; }
+  .hex  { display: block; font-family: var(--font-logo); font-size: 10px; color: var(--fg-3); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-red-accent);"></div>
+    <div class="meta">
+      <span class="name">oxblood</span>
+      <span class="sub">diff · danger</span>
+      <span class="hex">#5C1A1A</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-green-accent);"></div>
+    <div class="meta">
+      <span class="name">bottle</span>
+      <span class="sub">verified · pass</span>
+      <span class="hex">#254735</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-blue-accent);"></div>
+    <div class="meta">
+      <span class="name">deep-indigo</span>
+      <span class="sub">info · link tint</span>
+      <span class="hex">#1F3454</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-teal-accent);"></div>
+    <div class="meta">
+      <span class="name">deep-patina</span>
+      <span class="sub">highlight · copy</span>
+      <span class="hex">#113833</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

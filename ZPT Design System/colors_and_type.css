@@ -1,0 +1,221 @@
+/* ZPT — Colors & Type
+   Source of truth: dev/app/globals.css + dev/app/layout.tsx
+   Fonts: Cormorant Garamond (heading), Geist (body),
+          Source Code Pro (logo/logo-adjacent UI labels)
+*/
+
+/* ── Webfonts ─────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap");
+
+:root {
+  /* ── Brand / Primitive Colors ───────────────────────────── */
+  --zpt-navy: #0C0C28;            /* primary bg / brand ink */
+  --zpt-navy-light: #1A1A3F;      /* elevated navy — deeper, more chic than #161640 */
+  --zpt-navy-deep: #05051A;       /* deepest navy — for shadow gradients, footer base */
+  --zpt-slate-blue: #1A1A3F;      /* alias to navy-light; kept for marketing-kit backward compat */
+  --zpt-gold: #C9A96E;            /* primary accent, CTAs, outlines */
+  --zpt-gold-light: #D4BA8A;      /* hover on gold */
+  --zpt-gold-dark: #B8944E;       /* deep gold (gradient stop) */
+  --zpt-off-white: #FAFAF7;       /* body background */
+  --zpt-cream: #F5F4ED;           /* secondary warm bg band */
+  --zpt-sand: #EAE8DE;            /* tertiary warm bg (problem section) */
+  --zpt-ink: #07111E;             /* text-primary, darker than navy */
+  --zpt-muted: #64748B;           /* text-muted */
+  --zpt-border-warm: #E7E2D4;     /* warm hairline border */
+
+  /* Semantic / utility — deep jewel tones, editorial. Never saturated primaries. */
+  --zpt-red-accent: #5C1A1A;      /* oxblood — diff / delete tone */
+  --zpt-green-accent: #254735;    /* bottle green — verified / pass */
+  --zpt-blue-accent: #1F3454;     /* deep indigo — info / link tint */
+  --zpt-teal-accent: #113833;     /* deep patina — copy highlight */
+
+  /* ── Foreground / Background Roles ──────────────────────── */
+  --fg-1: var(--zpt-ink);                /* primary text on light */
+  --fg-2: var(--zpt-muted);              /* muted body */
+  --fg-3: rgba(7, 17, 30, 0.35);         /* tertiary / captions */
+  --fg-on-dark-1: #FFFFFF;                /* text on navy */
+  --fg-on-dark-2: rgba(255,255,255,0.70); /* body on navy */
+  --fg-on-dark-3: rgba(255,255,255,0.40); /* caption on navy */
+
+  --bg-1: var(--zpt-off-white);   /* page bg */
+  --bg-2: var(--zpt-cream);       /* alt band */
+  --bg-3: var(--zpt-sand);        /* emphasis band */
+  --bg-dark-1: var(--zpt-navy);
+  --bg-dark-2: var(--zpt-navy-light);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-heading: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-logo: "Source Code Pro", "SF Mono", "JetBrains Mono", Menlo, monospace;
+
+  /* Heading weights — Cormorant is used LIGHT (300/400). */
+  --weight-heading: 300;
+  --weight-heading-medium: 400;
+
+  /* Scale (desktop-first; clamp for responsive) */
+  --fs-display: clamp(2.25rem, 1.6rem + 2.5vw, 3.5rem);   /* h1 hero */
+  --fs-h1: clamp(1.875rem, 1.4rem + 1.6vw, 2.5rem);
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.1vw, 2rem);
+  --fs-h3: 1.125rem;    /* 18 */
+  --fs-body: 1rem;      /* 16 */
+  --fs-small: 0.875rem; /* 14 */
+  --fs-xs: 0.75rem;     /* 12 */
+  --fs-micro: 0.625rem; /* 10 — used in animation UI labels */
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.7;
+
+  /* Tracking — Cormorant is set TIGHT for elegance */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.12em;
+  --tracking-logo: 0.02em;
+  --tracking-eyebrow: 0.2em; /* small caps / eyebrow */
+
+  /* ── Spacing / Radius / Shadow / Motion ─────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  --radius-sm: 4px;   /* buttons, tight chips */
+  --radius-md: 6px;   /* cards small */
+  --radius-lg: 8px;   /* cards, pills */
+  --radius-xl: 12px;  /* hero cards, tier cards */
+  --radius-2xl: 16px; /* rare, large feature cards */
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 1px rgba(12,12,40,0.04);
+  --shadow-sm: 0 1px 2px rgba(12,12,40,0.06), 0 1px 1px rgba(12,12,40,0.03);
+  --shadow-md: 0 4px 14px rgba(12,12,40,0.08);
+  --shadow-warm: 0 1px 0 rgba(231,226,212,0.8);
+  --shadow-inset-hero: inset 0 0 20px 10px var(--zpt-navy);
+
+  --ease-smooth: cubic-bezier(.2,.7,.2,1);
+  --ease-gentle: cubic-bezier(.4,0,.2,1);
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-slow: 500ms;
+  --dur-ambient: 3s; /* shimmer / breathe */
+}
+
+/* ── Semantic element styles ─────────────────────────────── */
+.zpt-body {
+  font-family: var(--font-body);
+  color: var(--fg-1);
+  background: var(--bg-1);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+}
+
+.zpt-h1, .zpt-display {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--zpt-navy);
+}
+
+.zpt-h2 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--zpt-navy);
+}
+
+.zpt-h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  color: var(--zpt-navy);
+}
+
+.zpt-subtitle {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: var(--fs-h1);
+  color: var(--zpt-gold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.zpt-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: rgba(12,12,40,0.4);
+}
+
+.zpt-p {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.zpt-quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: var(--weight-heading);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  color: var(--zpt-navy);
+  letter-spacing: var(--tracking-tight);
+}
+
+.zpt-logo, .zpt-nav, .zpt-button-label {
+  font-family: var(--font-logo);
+  font-weight: 500;
+  letter-spacing: var(--tracking-logo);
+}
+
+.zpt-code, .zpt-mono {
+  font-family: var(--font-logo);
+  font-size: var(--fs-xs);
+  color: var(--zpt-navy);
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.zpt-btn-primary {
+  font-family: var(--font-logo);
+  font-weight: 500;
+  font-size: var(--fs-small);
+  background: var(--zpt-gold);
+  color: var(--zpt-navy);
+  padding: 12px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--dur-base) var(--ease-gentle);
+}
+.zpt-btn-primary:hover { background: var(--zpt-gold-light); }
+
+.zpt-btn-ghost {
+  font-family: var(--font-logo);
+  font-weight: 500;
+  font-size: var(--fs-small);
+  background: transparent;
+  color: var(--fg-on-dark-2);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-gentle);
+}
+.zpt-btn-ghost:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+}

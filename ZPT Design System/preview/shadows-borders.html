@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Shadows & Borders</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-1); font-family: var(--font-body); color: var(--zpt-navy); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--zpt-border-warm); border-radius: 8px; height: 70px; display: flex; align-items: flex-end; padding: 8px 10px; font-family: var(--font-logo); font-size: 10px; color: var(--fg-3); letter-spacing: 0.05em; }
+  .c1 { /* no shadow */ }
+  .c2 { box-shadow: var(--shadow-sm); }
+  .c3 { box-shadow: var(--shadow-md); }
+  .c4 { border-color: var(--zpt-gold); border-width: 1.5px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="card c1">1px warm border<br>— default</div>
+  <div class="card c2">shadow-sm<br>— white on off-white</div>
+  <div class="card c3">shadow-md<br>— hero cards (rare)</div>
+  <div class="card c4">gold border 40%<br>— active / emphasis</div>
+</div>
+</body>
+</html>

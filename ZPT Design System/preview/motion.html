@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Motion</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); color: var(--zpt-navy); font-family: var(--font-body); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .card { background: #fff; border: 1px solid var(--zpt-border-warm); border-radius: 8px; padding: 14px 16px; min-height: 96px; display: flex; flex-direction: column; justify-content: space-between; }
+  .lbl { font-family: var(--font-logo); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-3); }
+  .demo { font-family: var(--font-heading); font-weight: 300; font-size: 22px; letter-spacing: -0.01em; margin: 4px 0; }
+  .demo em { color: var(--zpt-gold); font-style: italic; }
+  .btn { align-self: flex-start; background: linear-gradient(110deg, var(--zpt-gold) 0%, var(--zpt-gold) 35%, #e0c98a 50%, var(--zpt-gold) 65%, var(--zpt-gold) 100%); background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite; color: var(--zpt-navy); font-family: var(--font-logo); font-size: 12px; font-weight: 500; padding: 8px 18px; border-radius: 4px; }
+  @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+  @keyframes glow { 0%,100% { color: var(--zpt-navy); text-shadow: none; } 50% { color: var(--zpt-gold); text-shadow: 0 0 12px rgba(201,169,110,.4); } }
+  .glow { animation: glow 4s ease-in-out infinite; }
+  @keyframes breathe { 0%,100% { font-size: 22px; } 50% { font-size: 26px; } }
+  .breathe { animation: breathe 3s ease-in-out infinite; color: var(--zpt-gold); font-weight: 600; font-family: var(--font-body); }
+  .meta { font-family: var(--font-logo); font-size: 10px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="lbl">Shimmer</span>
+  <div class="btn">Book a Call</div>
+  <span class="meta">3s · linear · loop</span>
+</div>
+<div class="card">
+  <span class="lbl">Glow</span>
+  <div class="demo"><span class="glow">&ldquo;</span>quote<span class="glow">&rdquo;</span></div>
+  <span class="meta">4s · ease-in-out</span>
+</div>
+<div class="card">
+  <span class="lbl">Breathe</span>
+  <div><span class="breathe">overwhelming</span></div>
+  <span class="meta">3s · 1 → 1.15em</span>
+</div>
+</body>
+</html>

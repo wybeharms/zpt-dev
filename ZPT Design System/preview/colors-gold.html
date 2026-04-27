@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Colors: Gold</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .swatch { border: 1px solid var(--zpt-border-warm); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+  .chip { height: 80px; position: relative; }
+
+  /* Shiny / glamorous version for the hero gold swatch.
+     Base #C9A96E, with a raking highlight — reads like polished brass. */
+  .chip-shiny {
+    background:
+      /* raking highlight */
+      linear-gradient(
+        115deg,
+        rgba(255,255,255,0)    0%,
+        rgba(255,255,255,0)    35%,
+        rgba(255,248,220,0.55) 48%,
+        rgba(255,255,255,0.85) 52%,
+        rgba(255,248,220,0.55) 56%,
+        rgba(255,255,255,0)    70%,
+        rgba(255,255,255,0)    100%
+      ),
+      /* metallic sheen: dark brass → light brass → dark brass */
+      linear-gradient(
+        135deg,
+        #8A6A32 0%,
+        #B8944E 18%,
+        #E8CF94 42%,
+        #C9A96E 58%,
+        #A98645 85%,
+        #7A5828 100%
+      );
+    background-blend-mode: screen, normal;
+  }
+  .chip-shiny::after {
+    /* subtle top-edge gleam */
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 30%);
+    pointer-events: none;
+  }
+
+  .meta { padding: 10px 12px; }
+  .name { display: block; font-family: var(--font-logo); font-size: 12px; color: var(--zpt-navy); font-weight: 500; }
+  .hex { display: block; font-family: var(--font-logo); font-size: 10px; color: var(--fg-3); margin-top: 2px; }
+  .tag {
+    display: inline-block;
+    margin-left: 6px;
+    font-family: var(--font-logo);
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--zpt-gold-dark);
+    vertical-align: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-gold-light);"></div>
+    <div class="meta">
+      <span class="name">gold-light</span>
+      <span class="hex">#D4BA8A · matte · hover</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="chip chip-shiny"></div>
+    <div class="meta">
+      <span class="name">gold<span class="tag">polished</span></span>
+      <span class="hex">#C9A96E · metallic sheen · hero accent</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-gold-dark);"></div>
+    <div class="meta">
+      <span class="name">gold-dark</span>
+      <span class="hex">#B8944E · matte · deep accent</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

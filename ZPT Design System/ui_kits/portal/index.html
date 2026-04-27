@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ZPT Portal — UI Kit</title>
+<link rel="icon" href="../../assets/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Geist:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+
+<style>
+  html, body { background: #FAFAF7; height: 100%; }
+  body { font-family: 'Geist', system-ui, sans-serif; color: #0C0C28; margin: 0; }
+  .font-heading { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.01em; }
+  .font-logo { font-family: 'Source Code Pro', ui-monospace, monospace; }
+  .font-mono { font-family: 'Source Code Pro', ui-monospace, monospace; }
+  #root { height: 100%; }
+</style>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#0C0C28', 'navy-light': '#161640',
+          gold: '#C9A96E', 'gold-light': '#D4BA8A', 'gold-dark': '#B58A4B',
+          'off-white': '#FAFAF7', cream: '#F5F4ED', sand: '#EAE8DE',
+          'border-warm': '#E7E2D4',
+          'text-primary': '#0C0C28', 'text-muted': '#64748B',
+          'slate-blue': '#475B7A',
+        },
+        fontFamily: {
+          heading: ['Cormorant Garamond', 'Georgia', 'serif'],
+          logo: ['Source Code Pro', 'ui-monospace', 'monospace'],
+          mono: ['Source Code Pro', 'ui-monospace', 'monospace'],
+          sans: ['Geist', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel" src="SignInScreen.jsx"></script>
+<script type="text/babel" src="PortalSidebar.jsx"></script>
+<script type="text/babel" src="PortalHeader.jsx"></script>
+<script type="text/babel" src="OnboardingPage.jsx"></script>
+<script type="text/babel" src="ProspectsPage.jsx"></script>
+<script type="text/babel" src="CompetitorsPage.jsx"></script>
+
+<script type="text/babel">
+const App = () => {
+  const [signedIn, setSignedIn] = React.useState(false);
+  const [userName, setUserName] = React.useState("Maria Chen");
+  const [page, setPage] = React.useState("onboarding");
+  const [customerId, setCustomerId] = React.useState("acme-corp");
+
+  if (!signedIn) {
+    return (
+      <SignInScreen
+        onSignIn={(email) => {
+          if (email && email.includes("@")) setUserName(email.split("@")[0]);
+          setSignedIn(true);
+        }}
+      />
+    );
+  }
+
+  const Page = { onboarding: OnboardingPage, prospects: ProspectsPage, competitors: CompetitorsPage }[page] || OnboardingPage;
+
+  return (
+    <div className="flex h-screen">
+      <PortalSidebar
+        page={page}
+        onNav={setPage}
+        customerId={customerId}
+        onCustomerChange={setCustomerId}
+      />
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <PortalHeader
+          userName={userName}
+          customerName={customerId}
+          onSignOut={() => setSignedIn(false)}
+        />
+        <main className="flex-1 overflow-y-auto bg-off-white p-8">
+          <Page />
+        </main>
+      </div>
+    </div>
+  );
+};
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+
+</body>
+</html>

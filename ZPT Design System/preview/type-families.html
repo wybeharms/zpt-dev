@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Type: Families</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); color: var(--zpt-navy); }
+  .fam { padding: 14px 0; border-bottom: 1px solid var(--zpt-border-warm); display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+  .fam:last-child { border: 0; }
+  .s1 { font-family: var(--font-heading); font-weight: 300; font-size: 32px; line-height: 1.1; letter-spacing: -0.01em; }
+  .s1 em { color: var(--zpt-gold); font-style: italic; }
+  .s2 { font-family: var(--font-body); font-size: 15px; color: var(--zpt-muted); line-height: 1.5; }
+  .s3 { font-family: var(--font-logo); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+  .tag { font-family: var(--font-logo); font-size: 10px; color: var(--fg-3); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.15em; }
+</style>
+</head>
+<body>
+<div class="fam">
+  <span class="s1">The elegant <em>subhead</em></span>
+  <span class="tag">Cormorant Garamond · Heading</span>
+</div>
+<div class="fam">
+  <span class="s2">Short body copy. Confident. Neutral.</span>
+  <span class="tag">Geist · Body</span>
+</div>
+<div class="fam">
+  <span class="s3">Book a Call · zpt build --company</span>
+  <span class="tag">Source Code Pro · Logo/UI</span>
+</div>
+</body>
+</html>

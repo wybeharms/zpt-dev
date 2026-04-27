@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Folder Tree</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 18px 20px; background: var(--zpt-navy); color: #fff; font-family: var(--font-logo); font-size: 13px; }
+  .tree { background: var(--zpt-navy-light); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 18px; }
+  .root { color: var(--zpt-gold); }
+  .row { display: flex; gap: 14px; margin-top: 4px; padding-left: 6px; }
+  .pre { color: rgba(255,255,255,0.35); white-space: pre; flex-shrink: 0; }
+  .name { color: rgba(255,255,255,0.85); flex-shrink: 0; }
+  .lbl { color: rgba(201,169,110,0.65); }
+  .desc { color: rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+<div class="tree">
+  <div class="root">example-zpt/</div>
+  <div class="row"><span class="pre">├── </span><span class="name">company-context/</span><span><span class="lbl">Context</span> <span class="desc">— overview, product, ICP, positioning</span></span></div>
+  <div class="row"><span class="pre">├── </span><span class="name">skills/</span><span><span class="lbl">Standards</span> <span class="desc">— templates, formats, quality rules</span></span></div>
+  <div class="row"><span class="pre">├── </span><span class="name">workflows/</span><span><span class="lbl">Processes</span> <span class="desc">— step-by-step procedures</span></span></div>
+  <div class="row"><span class="pre">└── </span><span class="name">CLAUDE.md</span><span><span class="lbl">Instructions</span> <span class="desc">— operating instructions for agents</span></span></div>
+</div>
+</body>
+</html>

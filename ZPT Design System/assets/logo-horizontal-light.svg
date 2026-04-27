@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 48" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4B070"></stop>
+      <stop offset="100%" stop-color="#B8944E"></stop>
+    </linearGradient>
+  </defs>
+  
+  <path d="M24 5 L12 39 L36 39 Z" fill="none" stroke="url(#gold)" stroke-width="2.4" stroke-linejoin="round"></path>
+  
+  <polygon points="0,9 25,21.5 25,22.5 0,11.5" fill="#B8B8C8"></polygon>
+  <polygon points="2,21 25,21.5 25,22.5 2,23.5" fill="#B8B8C8"></polygon>
+  <polygon points="4,33 25,21.5 25,22.5 4,35.5" fill="#B8B8C8"></polygon>
+  
+  <polygon points="32,20 48,15 48,18.5 32,22" fill="#C9A96E"></polygon>
+  
+  <text x="56" y="30" font-family="&#39;Source Code Pro&#39;, &#39;SF Mono&#39;, &#39;Fira Code&#39;, monospace" font-size="20" font-weight="500" fill="#FAFAF7" letter-spacing="0.5">Zero Person Team</text>
+</svg>

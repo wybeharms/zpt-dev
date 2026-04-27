@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Colors: Core</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .swatch { border: 1px solid var(--zpt-border-warm); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+  .chip { height: 92px; display: flex; align-items: flex-end; padding: 10px 12px; }
+  .chip.on-dark { color: #fff; }
+  .meta { padding: 10px 12px; display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; }
+  .name { font-family: var(--font-logo); font-weight: 500; color: var(--zpt-navy); letter-spacing: var(--tracking-logo); }
+  .hex { font-family: var(--font-logo); color: var(--fg-3); font-size: 11px; }
+  .label { font-family: var(--font-logo); font-size: 10px; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; opacity: .7; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="swatch">
+    <div class="chip on-dark" style="background: var(--zpt-navy);"><span class="label">Primary</span></div>
+    <div class="meta"><span class="name">Navy</span><span class="hex">#0C0C28</span></div>
+  </div>
+  <div class="swatch">
+    <div class="chip on-dark" style="background: var(--zpt-gold);"><span class="label">Accent</span></div>
+    <div class="meta"><span class="name">Gold</span><span class="hex">#C9A96E</span></div>
+  </div>
+  <div class="swatch">
+    <div class="chip" style="background: var(--zpt-off-white); border-bottom: 1px solid var(--zpt-border-warm);"><span class="label" style="color: var(--fg-3);">Canvas</span></div>
+    <div class="meta"><span class="name">Off-white</span><span class="hex">#FAFAF7</span></div>
+  </div>
+</div>
+</body>
+</html>

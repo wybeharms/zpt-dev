@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Colors: Warm Neutrals</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-1); font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .swatch { border: 1px solid var(--zpt-border-warm); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+  .chip { height: 72px; }
+  .meta { padding: 8px 10px; }
+  .name { display: block; font-family: var(--font-logo); font-size: 11px; color: var(--zpt-navy); font-weight: 500; }
+  .hex { display: block; font-family: var(--font-logo); font-size: 10px; color: var(--fg-3); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="swatch"><div class="chip" style="background: var(--zpt-off-white);"></div><div class="meta"><span class="name">off-white</span><span class="hex">#FAFAF7</span></div></div>
+  <div class="swatch"><div class="chip" style="background: var(--zpt-cream);"></div><div class="meta"><span class="name">cream</span><span class="hex">#F5F4ED</span></div></div>
+  <div class="swatch"><div class="chip" style="background: var(--zpt-sand);"></div><div class="meta"><span class="name">sand</span><span class="hex">#EAE8DE</span></div></div>
+  <div class="swatch"><div class="chip" style="background: var(--zpt-border-warm);"></div><div class="meta"><span class="name">border-warm</span><span class="hex">#E7E2D4</span></div></div>
+</div>
+</body>
+</html>

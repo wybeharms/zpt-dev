@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Bullets</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body {
+    margin: 0; padding: 20px 24px;
+    background: var(--zpt-navy); color: #fff;
+    font-family: var(--font-body);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+
+  /* Eyebrow — Cormorant italic, gold. */
+  h3 {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--zpt-gold);
+    margin: 0 0 14px;
+    letter-spacing: -0.005em;
+    border-bottom: 1px solid rgba(201,169,110,0.25);
+    padding-bottom: 10px;
+  }
+
+  ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+
+  /* Unified marker: gold serif plus, same across all lists */
+  li {
+    display: flex; align-items: baseline; gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.55;
+  }
+  .plus {
+    color: var(--zpt-gold);
+    font-family: var(--font-heading);
+    font-size: 18px;
+    line-height: 1;
+    position: relative;
+    top: 2px;
+    flex-shrink: 0;
+  }
+  .lead {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 2px;
+    letter-spacing: -0.005em;
+  }
+  .aside {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <h3>Good fit if</h3>
+  <ul>
+    <li><span class="plus">+</span><span>Small to mid-size teams <span class="aside">(up to ~200)</span></span></li>
+    <li><span class="plus">+</span><span>Leadership that champions new tools</span></li>
+    <li><span class="plus">+</span><span>Repeatable processes ready to automate</span></li>
+  </ul>
+</div>
+
+<div>
+  <h3>Why ZPT</h3>
+  <ul>
+    <li><span class="plus">+</span><span><span class="lead">Full ownership.</span> No lock-in, no rented platforms.</span></li>
+    <li><span class="plus">+</span><span><span class="lead">Future-proof.</span> Built to ride AI's curve.</span></li>
+    <li><span class="plus">+</span><span><span class="lead">Faster, cheaper.</span> Than building internally.</span></li>
+  </ul>
+</div>
+
+</body>
+</html>

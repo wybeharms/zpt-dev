@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPT — Nav / Step Bubble</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 0; background: var(--zpt-navy); font-family: var(--font-body); }
+  .header { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; color: #fff; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-logo); font-weight: 500; font-size: 15px; letter-spacing: 0.02em; }
+  .brand img { width: 22px; height: 22px; }
+  nav { display: flex; gap: 22px; font-family: var(--font-logo); font-size: 13px; }
+  nav a { color: rgba(255,255,255,0.8); text-decoration: none; letter-spacing: 0.02em; }
+  nav a:hover { color: #fff; }
+  .cta { background: var(--zpt-gold); color: var(--zpt-navy); font-family: var(--font-logo); font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 4px; text-decoration: none; letter-spacing: 0.02em; }
+  .steps { background: #fff; padding: 18px 24px; display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--zpt-border-warm); }
+  .bubble { height: 32px; width: 32px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px; }
+  .on { background: var(--zpt-gold); color: var(--zpt-navy); }
+  .off { background: rgba(12,12,40,0.1); color: rgba(12,12,40,0.4); }
+  .steps span { font-family: var(--font-body); font-size: 14px; }
+  .s-on { color: var(--zpt-navy); font-weight: 600; }
+  .s-off { color: rgba(12,12,40,0.4); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="brand"><img src="../assets/favicon.png" alt=""> Zero Person Team</div>
+  <nav><a>How It Works</a><a>Technology</a><a>Case Studies</a></nav>
+  <a href="#" class="cta">Book a Call</a>
+</div>
+<div class="steps">
+  <span class="bubble on">1</span><span class="s-on">Understand</span>
+  <span class="bubble off">2</span><span class="s-off">Build</span>
+  <span class="bubble off">3</span><span class="s-off">Test</span>
+  <span class="bubble off">4</span><span class="s-off">Maintain</span>
+</div>
+</body>
+</html>
