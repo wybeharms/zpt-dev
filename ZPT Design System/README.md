@@ -1,12 +1,12 @@
 # ZPT — Design System
 
-**Zero Person Team** (ZPT, `zpteam.ai`) is an **AI consulting and implementation agency**. They visit companies, map workflows, and build tailored, company-owned AI setups — local folders + agentic workflows + tool integrations — that plug into the tools teams already use. Tagline: *Turn AI into a co-worker, not a chatbot.* Currently advisory-only (a previous "ZPT Sales" product has been sunset).
+**ZPT Partners** (ZPT, `zptpartners.com`) is an **AI consulting and implementation agency**. They visit companies, map workflows, and build tailored, company-owned AI setups — local folders + agentic workflows + tool integrations — that plug into the tools teams already use. Tagline: *Turn AI into a co-worker, not a chatbot.* Currently advisory-only (a previous "ZPT Sales" product has been sunset).
 
 > "Your company knows AI is powerful. **We make it happen.**"
 
 ## Sources
 
-- **Codebase:** mounted locally at `dev/` — a Next.js 16 / React 19 / Tailwind v4 marketing site + customer portal, deployed to `zpteam.ai` on Vercel.
+- **Codebase:** mounted locally at `dev/` — a Next.js 16 / React 19 / Tailwind v4 marketing site + customer portal, deployed to `zptpartners.com` on Vercel.
 - **Key files consulted:**
   - `dev/app/globals.css` — authoritative token definitions (colors + font variables).
   - `dev/app/layout.tsx` — font loading (Cormorant Garamond, Plus Jakarta Sans in source; substituted with **Geist** in this design system — see note below).
@@ -19,7 +19,7 @@
 
 ## Products represented
 
-1. **Marketing site** (`zpteam.ai`) — hero, problem framing, process explainer, workflow comparison, advisory tiers, case studies, about, technology deep-dive.
+1. **Marketing site** (`zptpartners.com`) — hero, problem framing, process explainer, workflow comparison, advisory tiers, case studies, about, technology deep-dive.
 2. **Customer Portal** (`/portal/*`) — auth-gated shell with sidebar (Onboarding, Prospects, Competitors), customer switcher for admin, S3-backed data.
 
 Both share the same token system and chrome; the portal is a plainer, data-oriented subset.
@@ -120,7 +120,7 @@ Scroll-reveal cards translate `translate-y-6 opacity-0 → 0 opacity-100` over *
 
 **Brand marks:**
 - `logo-icon.svg` — the ZPT prism mark (triangle + three input lines refracting into a single gold output beam). 64×64 master.
-- `logo-horizontal.svg` — prism + "Zero Person Team" wordmark set in Source Code Pro.
+- `logo-horizontal.svg` — prism + "ZPT Partners" wordmark set in Source Code Pro.
 - `favicon.svg` / `favicon.png` — navy rounded-rect with a stylized gold prism, three gold dots, and lines through it. Used as the nav logo on dark.
 - `favicon-glass.*` — alternate treatment.
 - Light variants with `-light` suffix for use on navy.

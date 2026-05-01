@@ -3,12 +3,12 @@
 ## Context
 
 As of 2026-03-14, ZPT was split into two separate companies:
-1. **ZPT Advisory** (zpteam.ai) — AI consulting/implementation agency
+1. **ZPT Advisory** (zptpartners.com) — AI consulting/implementation agency
 2. **Claudester** (separate domain TBD) — managed AI sales product
 
-This website (zpteam.ai) currently contains pages for BOTH products. It needs to be stripped down to advisory-only. The sales product pages, trial flow, and customer portal will move to the new Claudester website (at `~/Sites/claudester/dev/`).
+This website (zptpartners.com) currently contains pages for BOTH products. It needs to be stripped down to advisory-only. The sales product pages, trial flow, and customer portal will move to the new Claudester website (at `~/Sites/claudester/dev/`).
 
-## What to REMOVE from zpteam.ai
+## What to REMOVE from zptpartners.com
 
 ### Pages to Remove
 - `/sales` — `app/(marketing)/sales/page.tsx` + `components/pages/SalesContent.tsx`
@@ -39,7 +39,7 @@ This website (zpteam.ai) currently contains pages for BOTH products. It needs to
 - `@aws-sdk/client-s3` + `@aws-sdk/s3-request-presigner` (portal only)
 - `next-auth` (portal only — unless advisory portal is planned)
 
-## What to UPDATE on zpteam.ai
+## What to UPDATE on zptpartners.com
 
 ### Homepage (`app/(marketing)/page.tsx` + `components/pages/HomeContent.tsx`)
 - Remove the "Sales" product card (keep only Advisory)
@@ -59,7 +59,7 @@ This website (zpteam.ai) currently contains pages for BOTH products. It needs to
 ### Locales (`locales/*.json`)
 - Remove all sales/trial/portal translation keys from en.json, nl.json, es.json, it.json
 
-## What to KEEP on zpteam.ai
+## What to KEEP on zptpartners.com
 
 - `/advisory` page — this IS the product
 - `/about` page — company info, team profiles
@@ -72,5 +72,5 @@ This website (zpteam.ai) currently contains pages for BOTH products. It needs to
 
 - The portal code has been copied to `~/Sites/claudester/dev/` as a starting point for the Claudester website.
 - Wybe wants to design the Claudester website theme and structure in a dedicated chat before building.
-- The zpteam.ai design (navy/gold, Cormorant Garamond headings) may stay or evolve for advisory.
+- The zptpartners.com design (navy/gold, Cormorant Garamond headings) may stay or evolve for advisory.
 - Do NOT delete the sales/portal code until the Claudester website has been built and verified.

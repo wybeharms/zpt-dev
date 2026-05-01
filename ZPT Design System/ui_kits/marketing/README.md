@@ -1,4 +1,4 @@
-# Marketing UI Kit — `zpteam.ai`
+# Marketing UI Kit — `zptpartners.com`
 
 A click-through recreation of the ZPT marketing site's home page, using the real tokens and exact copy from `dev/locales/en.json`.
 

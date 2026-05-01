@@ -17,7 +17,7 @@ export default function Footer() {
               className="flex items-center gap-2.5 font-logo text-lg font-medium tracking-tight"
             >
               <Image src="/favicon.png" alt="" width={28} height={28} className="h-7 w-7" />
-              Zero Person Team
+              ZPT Partners
             </Link>
           </div>
 
@@ -44,10 +44,10 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3 text-sm text-white/70">
             <a
-              href="mailto:request@zpteam.ai"
+              href="mailto:request@zptpartners.com"
               className="font-logo transition-colors hover:text-white"
             >
-              request@zpteam.ai
+              request@zptpartners.com
             </a>
             <a
               href="https://www.linkedin.com/company/zpteam/"

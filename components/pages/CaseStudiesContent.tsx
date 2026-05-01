@@ -51,7 +51,7 @@ export default function CaseStudiesContent() {
             {t("resources.cta.title")}
           </h2>
           <a
-            href="mailto:request@zpteam.ai?subject=Intro call request"
+            href="mailto:request@zptpartners.com?subject=Intro call request"
             className="mt-6 inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
             {t("resources.cta.button")}
@@ -59,10 +59,10 @@ export default function CaseStudiesContent() {
           <p className="mt-3 text-sm text-text-muted">
             {t("resources.cta.email")}{" "}
             <a
-              href="mailto:request@zpteam.ai"
+              href="mailto:request@zptpartners.com"
               className="text-slate-blue underline underline-offset-2 transition-colors hover:text-navy"
             >
-              request@zpteam.ai
+              request@zptpartners.com
             </a>
           </p>
         </div>

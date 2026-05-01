@@ -1,4 +1,4 @@
-# Portal UI Kit — `zpteam.ai/portal`
+# Portal UI Kit — `zptpartners.com/portal`
 
 Click-through recreation of the ZPT customer portal: sign-in → sidebar-shell → three inner pages (Onboarding, Prospects, Competitors).
 

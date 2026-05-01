@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Real engagement results from ZPT advisory projects across industries.",
   alternates: {
-    canonical: "https://zpteam.ai/case-studies",
+    canonical: "https://zptpartners.com/case-studies",
   },
   openGraph: {
     title: "Case Studies - ZPT",
     description:
       "Real engagement results from ZPT advisory projects across industries.",
-    url: "https://zpteam.ai/case-studies",
+    url: "https://zptpartners.com/case-studies",
   },
 };
 

@@ -10,7 +10,7 @@ const CtaSection = () => (
       <p className="mt-3 text-sm text-text-muted">
         Or email{" "}
         <a className="text-slate-blue underline underline-offset-2 transition-colors hover:text-navy cursor-pointer">
-          request@zpteam.ai
+          request@zptpartners.com
         </a>
       </p>
     </div>

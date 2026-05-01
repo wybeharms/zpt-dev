@@ -5,7 +5,7 @@
 - **Framework**: Next.js (App Router, static export)
 - **Styling**: Tailwind CSS
 - **Hosting**: Vercel (Hobby tier)
-- **Domain**: zpteam.ai (Namecheap, active until Mar 2028)
+- **Domain**: zptpartners.com (Namecheap, active until Mar 2028)
 - **Repo**: github.com/wybeharms/zpt-dev
 - **SSL**: Auto-provisioned by Vercel
 
@@ -21,8 +21,8 @@ Vercel auto-deploys on push to `main`. No manual steps needed after initial setu
 
 1. Imported `zpt-dev` repo into Vercel
 2. Framework auto-detected as Next.js, default build settings used
-3. Added `zpteam.ai` and `www.zpteam.ai` as custom domains in Vercel
-4. Set `www.zpteam.ai` as primary (root redirects to www)
+3. Added `zptpartners.com` and `www.zptpartners.com` as custom domains in Vercel
+4. Set `www.zptpartners.com` as primary (root redirects to www)
 
 ## DNS (Namecheap)
 
@@ -37,11 +37,11 @@ Namecheap parking and redirect records were removed.
 ## Google Search Console
 
 - Verified via TXT DNS record
-- Sitemap submitted: https://www.zpteam.ai/sitemap.xml
+- Sitemap submitted: https://www.zptpartners.com/sitemap.xml
 
 ## Email
 
-Separate from the website. Email for request@zpteam.ai needs to be set up via Google Workspace (requires MX records in Namecheap).
+Separate from the website. Email for request@zptpartners.com needs to be set up via Google Workspace (requires MX records in Namecheap).
 
 ## Future Migration (Vercel to AWS Amplify)
 
@@ -50,7 +50,7 @@ When a dashboard/auth layer is needed:
 1. Remove `output: 'export'` from `next.config.ts`
 2. Deploy to AWS Amplify (native Next.js support)
 3. Add Cognito for auth
-4. Update DNS: point zpteam.ai from Vercel to Amplify/CloudFront
+4. Update DNS: point zptpartners.com from Vercel to Amplify/CloudFront
 5. Delete Vercel project
 
 No code rewrite needed. Components, styles, and pages carry over unchanged.

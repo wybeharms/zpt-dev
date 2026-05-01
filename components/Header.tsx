@@ -14,7 +14,7 @@ export default function Header() {
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5 font-logo text-lg font-medium tracking-tight">
           <Image src="/favicon.png" alt="" width={28} height={28} className="h-7 w-7" />
-          Zero Person Team
+          ZPT Partners
         </Link>
 
         {/* Desktop nav — centered */}
@@ -42,7 +42,7 @@ export default function Header() {
         {/* Right side — CTA */}
         <div className="hidden items-center justify-end gap-4 md:flex">
           <a
-            href="mailto:request@zpteam.ai?subject=Intro call request"
+            href="mailto:request@zptpartners.com?subject=Intro call request"
             target="_blank"
             rel="noopener noreferrer"
             className="font-logo rounded bg-gold px-4 py-2 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
@@ -107,7 +107,7 @@ export default function Header() {
               {t("nav.caseStudies")}
             </Link>
             <a
-              href="mailto:request@zpteam.ai?subject=Intro call request"
+              href="mailto:request@zptpartners.com?subject=Intro call request"
               target="_blank"
               rel="noopener noreferrer"
               className="font-logo inline-block rounded bg-gold px-4 py-2 text-center text-sm font-medium text-navy transition-colors hover:bg-gold-light"

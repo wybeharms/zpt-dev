@@ -307,7 +307,7 @@ export default function HomeContent() {
             />
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <a
-                href="mailto:request@zpteam.ai?subject=Intro call request"
+                href="mailto:request@zptpartners.com?subject=Intro call request"
                 className="inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
               >
                 {t("home.hero.cta")}
@@ -586,7 +586,7 @@ export default function HomeContent() {
                 <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
                 <p className="mt-2 text-xs font-medium text-gold">{tier.time}</p>
                 <p className="mt-3 flex-1 text-xs leading-relaxed text-white/50">{tier.description}</p>
-                <a href="mailto:request@zpteam.ai?subject=Advisory inquiry" className="mt-6 block w-full font-logo rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy">
+                <a href="mailto:request@zptpartners.com?subject=Advisory inquiry" className="mt-6 block w-full font-logo rounded-lg border border-white/20 py-2.5 text-center text-xs font-medium text-white/80 transition-all hover:border-gold hover:bg-gold hover:text-navy">
                   {t("advisory.pricing.cta")}
                 </a>
               </div>
@@ -602,7 +602,7 @@ export default function HomeContent() {
             {t("advisory.cta.title")}
           </h2>
           <a
-            href="mailto:request@zpteam.ai?subject=Intro call request"
+            href="mailto:request@zptpartners.com?subject=Intro call request"
             className="mt-6 inline-block font-logo rounded bg-gold px-8 py-3 text-sm font-medium text-navy transition-colors hover:bg-gold-light"
           >
             {t("advisory.cta.button")}
@@ -610,10 +610,10 @@ export default function HomeContent() {
           <p className="mt-3 text-sm text-text-muted">
             {t("advisory.cta.email")}{" "}
             <a
-              href="mailto:request@zpteam.ai"
+              href="mailto:request@zptpartners.com"
               className="text-slate-blue underline underline-offset-2 transition-colors hover:text-navy"
             >
-              request@zpteam.ai
+              request@zptpartners.com
             </a>
           </p>
         </div>

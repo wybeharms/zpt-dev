@@ -1,8 +1,10 @@
 # ZPT Dev — Project Instructions
 
+> Company name: **ZPT Partners** (renamed from "Zero-Person Team" on 2026-05-01). Product/abbrev "ZPT" stays. Domain: `zptpartners.com` (migrated from `zpteam.ai`; both run in parallel during cutover). Logo SVGs in `public/` and `ZPT Design System/assets/` still encode the old wordmark and need a redesign pass; they were intentionally left unchanged in the rename sed pass.
+
 ## What ZPT Is
 
-ZPT is an AI consulting and implementation agency (advisory-only). Wybe visits companies, understands workflows, and builds custom AI setups — local folders, agentic workflows, tool integrations — that the company owns and operates.
+ZPT Partners is an AI consulting and implementation agency (advisory-only). Wybe visits companies, understands workflows, and builds custom AI setups — local folders, agentic workflows, tool integrations — that the company owns and operates.
 
 - **ZPT Advisory** — Builds tailored AI setups for non-technical teams across sales, marketing, content, and operations. No new software; plugs into existing tools.
 
@@ -17,7 +19,7 @@ Core philosophy: companies own their setup. No vendor lock-in. No data leaves th
 - **Auth**: NextAuth v5 (beta) + AWS Cognito OIDC
 - **Storage**: AWS S3 bucket `zpt-portal-data` (eu-north-1)
 - **i18n**: Custom I18nProvider (en, nl, es, it)
-- **Domain**: zpteam.ai
+- **Domain**: zptpartners.com
 
 ## Repo Structure
 

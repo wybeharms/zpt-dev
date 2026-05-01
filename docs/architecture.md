@@ -2,7 +2,7 @@
 
 ## Overview
 
-zpteam.ai is a Next.js 16 application deployed on Vercel. The site serves two purposes:
+zptpartners.com is a Next.js 16 application deployed on Vercel. The site serves two purposes:
 
 1. **Marketing site** — public pages describing ZPT products and services
 2. **Customer portal** — auth-gated area where customers view enriched prospect lists, competitor analyses, and upload onboarding files
@@ -219,7 +219,7 @@ All values from `.env.local` must be added to Vercel project settings:
 
 | Variable | Description |
 |----------|-------------|
-| `NEXTAUTH_URL` | Production URL: `https://zpteam.ai` |
+| `NEXTAUTH_URL` | Production URL: `https://zptpartners.com` |
 | `NEXTAUTH_SECRET` | Random secret for signing JWTs |
 | `COGNITO_CLIENT_ID` | Cognito app client ID |
 | `COGNITO_CLIENT_SECRET` | Cognito app client secret |
@@ -284,28 +284,28 @@ aws s3 cp analysis.json s3://zpt-portal-data/acme/competitors/analysis.json
 
 ### DNS (Namecheap)
 
-Namecheap is the domain registrar for `zpteam.ai` and manages all DNS records:
+Namecheap is the domain registrar for `zptpartners.com` and manages all DNS records:
 
 | Record Type | Purpose |
 |-------------|---------|
 | A + CNAME | Website routing to Vercel |
 | TXT | Google Workspace domain verification |
 | MX | Email routing to Google Workspace |
-| TXT (SPF) | Authorizes Google as valid sender for `@zpteam.ai` |
+| TXT (SPF) | Authorizes Google as valid sender for `@zptpartners.com` |
 | TXT (DKIM) | Cryptographic email signing via Google-generated key |
 | TXT (DMARC) | Email authentication monitoring (currently no enforcement) |
 
 ### Google Workspace (Email)
 
 - **Plan**: Business Starter
-- **Primary user**: wybe@zpteam.ai
-- **Aliases** (deliver to wybe@zpteam.ai inbox):
-  - `request@zpteam.ai` — used as the mailto CTA in the site header and sales page
-  - `help@zpteam.ai` — support alias
+- **Primary user**: wybe@zptpartners.com
+- **Aliases** (deliver to wybe@zptpartners.com inbox):
+  - `request@zptpartners.com` — used as the mailto CTA in the site header and sales page
+  - `help@zptpartners.com` — support alias
 - **Authentication**: SPF + DKIM configured; DMARC in monitoring mode
-- **Admin console**: admin.google.com (logged in as wybe@zpteam.ai)
+- **Admin console**: admin.google.com (logged in as wybe@zptpartners.com)
 
-All email for `@zpteam.ai` routes through Google Workspace. Additional paid seats can be added later if separate mailboxes are needed; aliases allow multiple sender identities on a single seat.
+All email for `@zptpartners.com` routes through Google Workspace. Additional paid seats can be added later if separate mailboxes are needed; aliases allow multiple sender identities on a single seat.
 
 ---
 
@@ -316,8 +316,8 @@ All email for `@zpteam.ai` routes through Google Workspace. Additional paid seat
 - **Region**: eu-north-1
 - **Custom attributes**: `custom:role` (admin/customer), `custom:customer_id` (e.g., "acme")
 - **App client**: Authorization code flow, OIDC scopes (`openid`, `profile`, `email`)
-- **Callback URLs**: `http://localhost:3000/api/auth/callback/cognito`, `https://zpteam.ai/api/auth/callback/cognito`
-- **Sign-out URLs**: `http://localhost:3000`, `https://zpteam.ai`
+- **Callback URLs**: `http://localhost:3000/api/auth/callback/cognito`, `https://zptpartners.com/api/auth/callback/cognito`
+- **Sign-out URLs**: `http://localhost:3000`, `https://zptpartners.com`
 
 ### S3 Bucket
 
@@ -336,7 +336,7 @@ All email for `@zpteam.ai` routes through Google Workspace. Additional paid seat
 ```bash
 aws cognito-idp admin-create-user \
   --user-pool-id <pool-id> \
-  --username wybe@zpteam.ai \
+  --username wybe@zptpartners.com \
   --user-attributes Name=custom:role,Value=admin Name=custom:customer_id,Value=all
 
 aws cognito-idp admin-create-user \
@@ -389,11 +389,11 @@ The primary sales CTA is a **10-day free trial** with a self-service onboarding 
 
 ### CTA Routing
 
-All primary sales CTAs now point to `/trial` instead of `mailto:request@zpteam.ai`:
+All primary sales CTAs now point to `/trial` instead of `mailto:request@zptpartners.com`:
 
 | Location | CTA Text | Destination |
 |----------|----------|-------------|
-| Header (desktop + mobile) | "Set Up Intro Call" | `mailto:request@zpteam.ai` |
+| Header (desktop + mobile) | "Set Up Intro Call" | `mailto:request@zptpartners.com` |
 | Sales hero primary button | "Start Free Trial" | `/trial` |
 | Sales pricing buttons (x3) | "Start Free Trial" | `/trial` |
 | Sales hero sub-text | "Your first assignment is on us." | (not a link) |
@@ -501,10 +501,10 @@ s3://zpt-portal-data/
 
 ### V2: SES Email Notification on Submission
 
-**Goal**: Wybe gets an email at `request@zpteam.ai` every time a trial is submitted, so no manual S3 polling is needed.
+**Goal**: Wybe gets an email at `request@zptpartners.com` every time a trial is submitted, so no manual S3 polling is needed.
 
 **Implementation plan**:
-- Set up AWS SES in eu-north-1 (verify `zpteam.ai` domain or at minimum `request@zpteam.ai` as sender)
+- Set up AWS SES in eu-north-1 (verify `zptpartners.com` domain or at minimum `request@zptpartners.com` as sender)
 - Add `@aws-sdk/client-ses` dependency
 - Create a `sendTrialNotification()` utility in `lib/ses.ts` (or `lib/email.ts`)
 - Call it from `app/api/trial/submit/route.ts` after writing `submission.json` to S3

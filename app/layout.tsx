@@ -32,14 +32,14 @@ export const metadata: Metadata = {
   },
   description:
     "ZPT structures a company's knowledge, workflows, and context into a local folder. An AI agent sits on top and executes tasks autonomously. The output of a full team, without hiring one.",
-  metadataBase: new URL("https://zpteam.ai"),
+  metadataBase: new URL("https://zptpartners.com"),
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://zpteam.ai",
+    url: "https://zptpartners.com",
     siteName: "ZPT",
     title: "ZPT - Turn AI into a co-worker, not a chatbot",
     description:
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://zpteam.ai",
+    canonical: "https://zptpartners.com",
   },
 };
 

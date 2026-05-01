@@ -1,6 +1,6 @@
 ---
 name: zpt-design
-description: Use this skill to generate well-branded interfaces and assets for ZPT (Zero Person Team, zpteam.ai — an AI consulting and implementation agency), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
+description: Use this skill to generate well-branded interfaces and assets for ZPT (ZPT Partners, zptpartners.com — an AI consulting and implementation agency), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
 user-invocable: true
 ---
 

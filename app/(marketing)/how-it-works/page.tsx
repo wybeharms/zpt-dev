@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "How a ZPT engagement works: we visit your company, map workflows, build a custom AI directory, and train your team to use it independently.",
   alternates: {
-    canonical: "https://zpteam.ai/how-it-works",
+    canonical: "https://zptpartners.com/how-it-works",
   },
   openGraph: {
     title: "How It Works - ZPT",
     description:
       "How a ZPT engagement works: we visit your company, map workflows, build a custom AI directory, and train your team.",
-    url: "https://zpteam.ai/how-it-works",
+    url: "https://zptpartners.com/how-it-works",
   },
 };
 

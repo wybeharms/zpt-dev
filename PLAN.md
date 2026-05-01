@@ -2,7 +2,7 @@
 
 ## Goal
 
-Launch a professional, multi-page website at **zpteam.ai** that communicates the ZPT vision. No login, no dashboard, no backend. A static site with proper SEO foundations, language support, and a clear path to conversion.
+Launch a professional, multi-page website at **zptpartners.com** that communicates the ZPT vision. No login, no dashboard, no backend. A static site with proper SEO foundations, language support, and a clear path to conversion.
 
 ---
 
@@ -13,7 +13,7 @@ Launch a professional, multi-page website at **zpteam.ai** that communicates the
 | Framework | **Next.js** (static export) | React-based (same family as PAAI), static export = portable to any host |
 | Styling | **Tailwind CSS** | Same as PAAI, responsive, fast to build |
 | Hosting | **Vercel** (free tier) | Zero-config deploys, free SSL, custom domain |
-| Domain | **zpteam.ai** | Purchased via Namecheap (active, Mar 2026 - Mar 2028) |
+| Domain | **zptpartners.com** | Purchased via Namecheap (active, Mar 2026 - Mar 2028) |
 | Repo | **GitHub** (`wybeharms/zpt-dev`) | Auto-deploys to Vercel on push to `main` |
 | i18n | **next-intl** or manual JSON files | Language selector for EN, NL, ES, IT |
 
@@ -36,16 +36,16 @@ The build output is plain HTML/CSS/JS. Deployable to AWS Amplify, S3+CloudFront,
 
 Domain is purchased and active on Namecheap. Next steps:
 
-1. In Vercel: create project, add `zpteam.ai` as custom domain
+1. In Vercel: create project, add `zptpartners.com` as custom domain
 2. In Namecheap: add CNAME/A records pointing to Vercel (keep Namecheap as DNS provider for easier future migration)
 3. Vercel auto-provisions SSL
-4. Verify both `zpteam.ai` and `www.zpteam.ai` resolve correctly
+4. Verify both `zptpartners.com` and `www.zptpartners.com` resolve correctly
 
 ---
 
 ## Email
 
-- Contact email: **request@zpteam.ai**
+- Contact email: **request@zptpartners.com**
 - Wybe needs to set up email forwarding or a mailbox (Namecheap Private Email, Google Workspace, or simple forwarding to personal email)
 - This is separate from the website build but needed before launch
 
@@ -54,7 +54,7 @@ Domain is purchased and active on Namecheap. Next steps:
 ## Site Structure (Multi-Page)
 
 ```
-zpteam.ai/
+zptpartners.com/
   /              Home (landing page)
   /product       Product details, how it works, enrichment examples
   /about         Minimal company page (no personal founder info)
@@ -87,7 +87,7 @@ zpteam.ai/
 
 | Role | Font | Style |
 |------|------|-------|
-| Logo | **Source Code Pro** | Monospace, medium weight. Text logo: "Zero Person Team" (until custom logo is ready) |
+| Logo | **Source Code Pro** | Monospace, medium weight. Text logo: "ZPT Partners" (until custom logo is ready) |
 | Headings | **Cormorant Garamond** | Elegant serif. Gives editorial, LVMH-like quality. Light/regular weight for large sizes. |
 | Body | **Inter** | Clean sans-serif. Highly legible, widely used in tech/SaaS. |
 
@@ -109,7 +109,7 @@ All fonts are Google Fonts (free, self-hostable, no vendor dependency).
 
 ```
 +------------------------------------------------------------------------+
-|  Zero Person Team          Product   About   Resources   [EN v]  [CTA] |
+|  ZPT Partners          Product   About   Resources   [EN v]  [CTA] |
 |  (Source Code Pro)                                                      |
 +------------------------------------------------------------------------+
 ```
@@ -177,7 +177,7 @@ All fonts are Google Fonts (free, self-hostable, no vendor dependency).
 |                                                                         |
 |    Ready to see what ZPT can do for your business?                      |
 |    [ Set up 15 min intro call to learn more ]                           |
-|    Or email request@zpteam.ai                                           |
+|    Or email request@zptpartners.com                                           |
 |                                                                         |
 +------------------------------------------------------------------------+
 |                          [FOOTER]                                       |
@@ -305,7 +305,7 @@ Minimal. Company-focused, not founder-focused.
 |    ZPT is based in Europe. The product is live and operational.         |
 |                                                                         |
 |    [ Set up 15 min intro call to learn more ]                           |
-|    request@zpteam.ai                                                    |
+|    request@zptpartners.com                                                    |
 |                                                                         |
 +------------------------------------------------------------------------+
 |                          [FOOTER]                                       |
@@ -347,8 +347,8 @@ Initially lightweight. Expandable with blog posts and case studies later.
 
 ```
 +------------------------------------------------------------------------+
-|  Zero Person Team           Product | About | Resources                 |
-|                              request@zpteam.ai                         |
+|  ZPT Partners           Product | About | Resources                 |
+|                              request@zptpartners.com                         |
 |                              LinkedIn                                  |
 |                              [EN v]                                     |
 |                                                                         |
@@ -450,10 +450,10 @@ Based on the SEO audit framework from PAAI. Built in from day one.
 
 ### Phase 4: Deploy
 15. Connect GitHub repo to Vercel (Import Project)
-16. Add `zpteam.ai` as custom domain in Vercel
+16. Add `zptpartners.com` as custom domain in Vercel
 17. Update DNS records in Namecheap (CNAME/A records to Vercel)
-18. Verify SSL, both zpteam.ai and www.zpteam.ai
-19. Set up email forwarding for request@zpteam.ai (separate from Vercel)
+18. Verify SSL, both zptpartners.com and www.zptpartners.com
+19. Set up email forwarding for request@zptpartners.com (separate from Vercel)
 
 ---
 
@@ -464,7 +464,7 @@ When ready to add a dashboard/auth layer:
 1. Remove `output: 'export'` from `next.config.js`
 2. Deploy to AWS Amplify (native Next.js support)
 3. Add Cognito for auth (same pattern as PAAI)
-4. Update DNS in Namecheap: point zpteam.ai from Vercel to Amplify/CloudFront
+4. Update DNS in Namecheap: point zptpartners.com from Vercel to Amplify/CloudFront
 5. Delete Vercel project
 
 No code rewrite. React components, Tailwind styles, and pages carry over unchanged.
@@ -473,9 +473,9 @@ No code rewrite. React components, Tailwind styles, and pages carry over unchang
 
 ## Resolved Questions
 
-- **Logo**: Wybe is creating one. For now, use "Zero Person Team" in Source Code Pro as text logo.
+- **Logo**: Wybe is creating one. For now, use "ZPT Partners" in Source Code Pro as text logo.
 - **Colors**: PAAI navy (#0C0C28) + LVMH-inspired warm gold accents. Full palette above.
-- **Contact method**: Email to request@zpteam.ai + CTA "Set up 15 min intro call to learn more"
+- **Contact method**: Email to request@zptpartners.com + CTA "Set up 15 min intro call to learn more"
 - **Analytics**: Skip for v1. Add later if needed.
 - **GDPR**: Skip for v1.
 - **About page**: Minimal, company-focused, no personal founder details.
@@ -485,4 +485,4 @@ No code rewrite. React components, Tailwind styles, and pages carry over unchang
 
 - [ ] Does Wybe want the intro call CTA to link to a Calendly page, or just to the email address for now?
 - [ ] For the Resources page case studies, should Claude write detailed case study content, or keep it as brief proof points?
-- [ ] Email setup: is Wybe setting up request@zpteam.ai via Namecheap Private Email, Google Workspace, or another provider?
+- [ ] Email setup: is Wybe setting up request@zptpartners.com via Namecheap Private Email, Google Workspace, or another provider?

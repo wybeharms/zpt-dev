@@ -142,7 +142,7 @@ add_text(s, Inches(1.5), Inches(2.9), Inches(10), Inches(1),
 add_gold_divider(s, Inches(5.5), Inches(4.2), Inches(2.3))
 
 add_text(s, Inches(1.5), Inches(4.6), Inches(10), Inches(0.5),
-         "zpteam.ai  |  request@zpteam.ai",
+         "zptpartners.com  |  request@zptpartners.com",
          font_size=14, font_name=FONT_BODY, color=MUTED,
          alignment=PP_ALIGN.CENTER)
 
@@ -595,7 +595,7 @@ add_text(s, Inches(4.8), Inches(3.78), Inches(3.7), Inches(0.65),
          "Book a Call", font_size=20, color=NAVY, bold=True, alignment=PP_ALIGN.CENTER)
 
 add_text(s, Inches(1.5), Inches(4.8), Inches(10.3), Inches(0.5),
-         "request@zpteam.ai",
+         "request@zptpartners.com",
          font_size=16, color=MUTED, alignment=PP_ALIGN.CENTER)
 
 add_text(s, Inches(1.5), Inches(5.5), Inches(10.3), Inches(0.5),

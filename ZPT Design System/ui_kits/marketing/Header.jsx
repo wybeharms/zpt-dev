@@ -12,7 +12,7 @@ const MktHeader = ({ active = "home", onNav = () => {} }) => {
           className="flex cursor-pointer items-center gap-2.5 font-logo text-lg font-medium tracking-tight"
         >
           <img src="../../assets/favicon.png" alt="" className="h-7 w-7" />
-          Zero Person Team
+          ZPT Partners
         </a>
         <nav className="flex items-center gap-8">
           {links.map((l) => (
