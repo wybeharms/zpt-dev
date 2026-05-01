@@ -50,7 +50,7 @@ export default function Footer() {
               request@zptpartners.com
             </a>
             <a
-              href="https://www.linkedin.com/company/zpteam/"
+              href="https://www.linkedin.com/company/zptpartners/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-logo transition-colors hover:text-white"
