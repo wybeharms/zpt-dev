@@ -57,20 +57,29 @@ Both share the same token system and chrome; the portal is a plainer, data-orien
 
 ## Visual Foundations
 
-**Core palette** (three colors do almost all the work):
+**Core palette** (three colors do almost all the work — redesigned 2026-05-02):
 
 | Role | Hex | Name | Used for |
 |---|---|---|---|
 | Ink | `#0C0C28` | Navy | Hero sections, header, footer, body text on light |
-| Accent | `#C9A96E` | Gold | Every CTA, every highlight, every "it lit up" moment |
-| Canvas | `#FAFAF7` | Off-white | Page background |
+| Accent | `#A5663C` | Cognac | CTAs, highlights, accent text on light/cream backgrounds |
+| Accent (on dark) | `#B97A4B` | Cognac (light variant) | Cognac when set on navy — meets WCAG AA (5.2:1 contrast) |
+| Canvas (warm) | `#EDE4D3` | Cream | Wordmark on navy; primary text on dark; alt warm bg band |
 
-Supporting: `#161640` navy-light (elevated on navy), `#F5F4ED` cream (alt band), `#EAE8DE` sand (emphasis band — the "problem" section), `#E7E2D4` warm border (every hairline), `#64748B` muted text. The palette reads warm — nothing is pure white, borders are beige, not grey.
+Supporting: `#1A1A3F` navy-light (elevated on navy), `#7A3E1F` cognac-deep (gradient terminus, hover), `#F2E8D5` cream-soft (subtle bg variant), `#E7E2D4` warm border (every hairline), `#64748B` muted text. The palette reads warm — nothing is pure white, borders are beige, not grey.
+
+**Legacy palette (DEPRECATED — being phased out):** Gold `#C9A96E`, Off-white `#FAFAF7`, Sand `#EAE8DE`. Live site code may still reference these until the landing-page rebuild. Do not use in new components.
 
 **Type:**
-- **Cormorant Garamond** — headings, display, pull-quotes. Always set **light (300/400)** with **tight tracking** and **italic for emphasis**. This is where all the elegance lives.
-- **Geist** — body. Modern neutral sans — tight spacing, flat apertures, purpose-built for interfaces. Provides sharp contrast with Cormorant's editorial warmth. *(Substituted for Plus Jakarta Sans used in the live site; see caveats.)*
-- **Source Code Pro** — logo, nav links, button labels, folder structure listings. This is ZPT's signature: UI chrome is typeset in mono. It's how you know you're on a ZPT surface.
+
+*Logo system (NEW 2026-05-02):*
+- **Instrument Serif** — wordmark letters ("ZPT Partners") and the "Z" in the `./Z` monogram. Modern transitional serif, expensive feel, contemporary without being trendy. Set at weight 400, no tracking adjustment.
+- **Old Standard TT** — the `.` and `/` characters in the `./Z` monogram. Used specifically because it gives the punctuation slightly more breathing room than Instrument Serif's `./` would. The slash is colored in cognac and angled to match the Z's diagonal stroke.
+
+*Body / heading / chrome (live site — under review pending landing-page rebuild):*
+- **Cormorant Garamond** — headings, display, pull-quotes. Always set **light (300/400)** with **tight tracking** and **italic for emphasis**.
+- **Geist** — body. Modern neutral sans. *(Substituted for Plus Jakarta Sans used in the live site; see caveats.)*
+- **Source Code Pro** — nav links, button labels, folder structure listings. UI chrome is typeset in mono.
 
 **Backgrounds:** No gradients-as-decoration. Sections alternate solid bands — navy, off-white, cream, sand, navy — to pace the page. One full-bleed video (subtle, brightness-0.95/contrast-1.08) lives inside the hero only. No repeating patterns, no hand-drawn illustrations, no grain, no textures.
 
@@ -118,12 +127,25 @@ Scroll-reveal cards translate `translate-y-6 opacity-0 → 0 opacity-100` over *
 
 **Logos (PNG):** Partner/integration logos (`claude.png`, `openai.png`, `hubspot.png`, `salesforce.png`, `google-drive.png`, `excel.png`, `powerpoint.png`, `notion.png`, `slack.png`, `sharepoint.png`, `google_maps.png`) live in `assets/logos/` and are placed on 56×56 or 64×64 off-white tiles with a warm border. LinkedIn is an SVG.
 
-**Brand marks:**
-- `logo-icon.svg` — the ZPT prism mark (triangle + three input lines refracting into a single gold output beam). 64×64 master.
-- `logo-horizontal.svg` — prism + "ZPT Partners" wordmark set in Source Code Pro.
-- `favicon.svg` / `favicon.png` — navy rounded-rect with a stylized gold prism, three gold dots, and lines through it. Used as the nav logo on dark.
-- `favicon-glass.*` — alternate treatment.
-- Light variants with `-light` suffix for use on navy.
+**Brand marks (redesigned 2026-05-02 — old prism mark deprecated):**
+
+The new identity is a **wordmark + monogram system**:
+- **Wordmark** — "ZPT" set in Instrument Serif (cream on navy), with "Partners" subtitle in cognac. The full brand mark for site headers, business cards, presentations, anywhere there's room.
+- **Monogram** — `./Z` lockup. Dot and slash in Old Standard TT, Z in Instrument Serif, slash colored cognac and angled to match the Z's diagonal. References Unix path syntax / CLI command syntax (the `/` echoes Claude Code slash commands). Used for favicon, app icon, social avatar, watermarks — anywhere the wordmark won't fit.
+
+**Asset locations** (canonical files in `dev/public/brand/`, copies in `dev/ZPT Design System/assets/`):
+- `zpt-wordmark-dark.{svg,png}` — cream "ZPT" + cognac "Partners" on navy
+- `zpt-wordmark-light.{svg,png}` — navy "ZPT" + cognac "Partners" on cream
+- `zpt-wordmark-cognac.{svg,png}` — cream wordmark on cognac
+- `zpt-monogram-dark.{svg,png}` — `./Z` on navy
+- `zpt-monogram-light.{svg,png}` — `./Z` on cream
+- `zpt-monogram-cognac.{svg,png}` — `./Z` on cognac
+
+**Favicons** (`dev/public/`): `favicon.ico`, `favicon.svg`, `favicon-96x96.png`, `apple-touch-icon.png`, `web-app-manifest-{192x192,512x512}.png`. Source PNG is `dev/public/brand/zpt-favicon-source.png` (512×512).
+
+**OG image** (`dev/public/og-image.png`): wordmark centered on navy, 1200×630.
+
+**Old prism mark (DEPRECATED):** `logo-icon.svg`, `logo-horizontal.svg`, old `favicon.svg`, `favicon-glass.*` — moved to `Old_Logos/` subfolders. Do not reference in new code.
 
 **Unicode used as glyphs:**
 - `+` (literal plus, in bullet lists) — the "additive capability" marker.
@@ -140,8 +162,13 @@ Scroll-reveal cards translate `translate-y-6 opacity-0 → 0 opacity-100` over *
 
 ## Fonts — substitutions flagged
 
-All three fonts are loaded from **Google Fonts** in production and in this design system:
+All fonts are loaded from **Google Fonts** in production and in this design system:
 
+*Logo system (NEW):*
+- Instrument Serif — 400 (regular and italic)
+- Old Standard TT — 400, 700 (regular and italic)
+
+*Body/heading/chrome (live site):*
 - Cormorant Garamond — 300, 400, 500, 600
 - Geist — 300, 400, 500, 600, 700
 - Source Code Pro — 400, 500
@@ -158,10 +185,11 @@ No local TTF files exist in the upstream codebase (they're streamed via `next/fo
 ├── SKILL.md                   ← skill definition for Agent Skills / Claude Code
 ├── colors_and_type.css        ← canonical tokens (colors, fonts, spacing, radius, shadows, motion)
 ├── assets/
-│   ├── favicon.(png|svg)      ← square prism mark (for dark)
-│   ├── favicon-glass.(png|svg)← alt treatment
-│   ├── logo-icon[-light].svg  ← prism icon
-│   ├── logo-horizontal[-light].svg ← prism + wordmark
+│   ├── zpt-wordmark-{dark,light,cognac}.{svg,png}  ← NEW wordmark system
+│   ├── zpt-monogram-{dark,light,cognac}.{svg,png}  ← NEW `./Z` monogram
+│   ├── zpt-favicon-source.png                       ← favicon source (512×512)
+│   ├── og-image.png                                 ← Open Graph image (1200×630)
+│   ├── Old_Logos/                                   ← deprecated prism mark + variants
 │   ├── linkedin-banner.svg
 │   ├── logos/                 ← partner PNGs (Claude, OpenAI, HubSpot, Salesforce, GDrive, Excel, PPT, Notion, Slack, SharePoint, Google Maps) + linkedin.svg
 │   ├── profile_pic/           ← Arnau.png, Beer.png (founders)

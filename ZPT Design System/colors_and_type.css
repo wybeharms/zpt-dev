@@ -1,24 +1,38 @@
 /* ZPT — Colors & Type
-   Source of truth: dev/app/globals.css + dev/app/layout.tsx
-   Fonts: Cormorant Garamond (heading), Geist (body),
-          Source Code Pro (logo/logo-adjacent UI labels)
+   Brand redesign: 2026-05-02. See BRAND.md at repo root.
+   Source of truth: this file + dev/app/globals.css (live-site tokens may lag during cutover).
+   Logo fonts: Instrument Serif (letters), Old Standard TT (./ punctuation).
+   Body/heading fonts: Cormorant Garamond (heading), Geist (body),
+                       Source Code Pro (chrome) — under review pending landing rebuild.
 */
 
 /* ── Webfonts ─────────────────────────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap");
 
 :root {
   /* ── Brand / Primitive Colors ───────────────────────────── */
   --zpt-navy: #0C0C28;            /* primary bg / brand ink */
-  --zpt-navy-light: #1A1A3F;      /* elevated navy — deeper, more chic than #161640 */
+  --zpt-navy-light: #1A1A3F;      /* elevated navy */
   --zpt-navy-deep: #05051A;       /* deepest navy — for shadow gradients, footer base */
   --zpt-slate-blue: #1A1A3F;      /* alias to navy-light; kept for marketing-kit backward compat */
-  --zpt-gold: #C9A96E;            /* primary accent, CTAs, outlines */
-  --zpt-gold-light: #D4BA8A;      /* hover on gold */
-  --zpt-gold-dark: #B8944E;       /* deep gold (gradient stop) */
-  --zpt-off-white: #FAFAF7;       /* body background */
-  --zpt-cream: #F5F4ED;           /* secondary warm bg band */
-  --zpt-sand: #EAE8DE;            /* tertiary warm bg (problem section) */
+
+  /* Cognac (NEW 2026-05-02) — replaces gold as primary accent */
+  --zpt-cognac: #A5663C;          /* primary accent on light/cream bg, CTAs, outlines */
+  --zpt-cognac-on-dark: #B97A4B;  /* lighter cognac for use on navy — meets WCAG AA (5.2:1) */
+  --zpt-cognac-deep: #7A3E1F;     /* deep stop — gradient terminus, hover on light */
+
+  /* Cream (NEW 2026-05-02) — primary text on dark + alt bg on light */
+  --zpt-cream: #EDE4D3;           /* wordmark/text on navy; primary cream */
+  --zpt-cream-soft: #F2E8D5;      /* lighter cream variant for subtle bg bands */
+
+  /* Legacy tokens — DEPRECATED, retained while live site references them.
+     Will be removed during landing-page rebuild. Do not use in new code. */
+  --zpt-gold: #C9A96E;            /* DEPRECATED — replaced by --zpt-cognac */
+  --zpt-gold-light: #D4BA8A;      /* DEPRECATED */
+  --zpt-gold-dark: #B8944E;       /* DEPRECATED */
+  --zpt-off-white: #FAFAF7;       /* DEPRECATED — replaced by --zpt-cream */
+  --zpt-sand: #EAE8DE;            /* DEPRECATED */
+
   --zpt-ink: #07111E;             /* text-primary, darker than navy */
   --zpt-muted: #64748B;           /* text-muted */
   --zpt-border-warm: #E7E2D4;     /* warm hairline border */
@@ -37,16 +51,23 @@
   --fg-on-dark-2: rgba(255,255,255,0.70); /* body on navy */
   --fg-on-dark-3: rgba(255,255,255,0.40); /* caption on navy */
 
-  --bg-1: var(--zpt-off-white);   /* page bg */
-  --bg-2: var(--zpt-cream);       /* alt band */
-  --bg-3: var(--zpt-sand);        /* emphasis band */
+  --bg-1: var(--zpt-off-white);   /* page bg (legacy) */
+  --bg-2: var(--zpt-cream);       /* alt band — now primary cream */
+  --bg-3: var(--zpt-sand);        /* emphasis band (legacy) */
   --bg-dark-1: var(--zpt-navy);
   --bg-dark-2: var(--zpt-navy-light);
 
   /* ── Typography ─────────────────────────────────────────── */
+  /* Logo (NEW 2026-05-02) — wordmark + monogram only.
+     The monogram is `./Z` — letters in Instrument Serif, the dot and slash
+     in Old Standard TT for slightly more breathing room around the punctuation. */
+  --font-logo-letters: "Instrument Serif", "Garamond", Georgia, serif;
+  --font-logo-punct: "Old Standard TT", "Times New Roman", Georgia, serif;
+
+  /* Body / heading / chrome (current live-site fonts — under review) */
   --font-heading: "Cormorant Garamond", "Times New Roman", Georgia, serif;
   --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
-  --font-logo: "Source Code Pro", "SF Mono", "JetBrains Mono", Menlo, monospace;
+  --font-logo: "Source Code Pro", "SF Mono", "JetBrains Mono", Menlo, monospace; /* legacy: chrome/nav/buttons */
 
   /* Heading weights — Cormorant is used LIGHT (300/400). */
   --weight-heading: 300;
@@ -176,7 +197,29 @@
   letter-spacing: var(--tracking-tight);
 }
 
-.zpt-logo, .zpt-nav, .zpt-button-label {
+/* Wordmark — "ZPT Partners" (or just "ZPT") in Instrument Serif.
+   Use cream (#EDE4D3) on navy, navy on cream, cream on cognac.
+   "Partners" subtitle is set in --zpt-cognac-on-dark when on navy. */
+.zpt-wordmark {
+  font-family: var(--font-logo-letters);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Monogram — `./Z` lockup. Apply --font-logo-punct to `./` characters
+   and --font-logo-letters to the `Z`. Color the slash in cognac. */
+.zpt-monogram-punct { font-family: var(--font-logo-punct); }
+.zpt-monogram-letter { font-family: var(--font-logo-letters); }
+
+/* Chrome (nav links, button labels) — kept on Source Code Pro for now. */
+.zpt-nav, .zpt-button-label {
+  font-family: var(--font-logo);
+  font-weight: 500;
+  letter-spacing: var(--tracking-logo);
+}
+
+/* Legacy alias — old code references .zpt-logo. Kept until rebuild. */
+.zpt-logo {
   font-family: var(--font-logo);
   font-weight: 500;
   letter-spacing: var(--tracking-logo);

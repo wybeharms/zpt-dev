@@ -1,6 +1,6 @@
 # ZPT Dev — Project Instructions
 
-> Company name: **ZPT Partners** (renamed from "Zero-Person Team" on 2026-05-01). Product/abbrev "ZPT" stays. Domain: `zptpartners.com` (migrated from `zpteam.ai`; both run in parallel during cutover). Logo SVGs in `public/` and `ZPT Design System/assets/` still encode the old wordmark and need a redesign pass; they were intentionally left unchanged in the rename sed pass.
+> Company name: **ZPT Partners** (renamed from "Zero-Person Team" on 2026-05-01). Product/abbrev "ZPT" stays. Domain: `zptpartners.com` (migrated from `zpteam.ai`; both run in parallel during cutover). Logo system was redesigned on 2026-05-02 — see `BRAND.md` at repo root for the full system (colors, typography, asset paths). Live site code may still reference old tokens until the landing-page rebuild.
 
 ## What ZPT Is
 
@@ -55,8 +55,14 @@ npm run lint      # ESLint
 
 ## Design Tokens
 
-- **Colors**: Navy `#0C0C28`, Gold `#C9A96E`, Off-white `#FAFAF7`
-- **Fonts**: Cormorant Garamond (headings), Plus Jakarta Sans (body), Source Code Pro (logo)
+Source of truth: `BRAND.md` at repo root.
+
+- **Colors**: Navy `#0C0C28`, Cream `#EDE4D3`, Cognac `#A5663C` (default) / `#B97A4B` (on navy, for AA contrast)
+- **Logo fonts**: Instrument Serif (letters), Old Standard TT (`./` punctuation in monogram)
+- **Body/heading fonts (live site, pending review)**: Cormorant Garamond (headings), Plus Jakarta Sans (body), Source Code Pro (chrome) — these may be updated as part of the landing-page rebuild
+- **Logo assets**: `public/brand/zpt-{wordmark,monogram}-{dark,light,cognac}.{svg,png}`
+- **Favicon**: `public/favicon.{ico,svg}`, `apple-touch-icon.png`, `web-app-manifest-{192x192,512x512}.png`
+- **OG image**: `public/og-image.png` (1200×630)
 
 ---
 
