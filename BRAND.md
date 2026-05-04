@@ -2,7 +2,7 @@
 
 > Brand redesigned **2026-05-02**. This file is canonical. If `CLAUDE.md`, `ZPT Design System/`, or `app/globals.css` disagree with this file, this file wins. Live site code may still reference legacy tokens until the landing-page rebuild — that's expected.
 >
-> Brand theme and landing-page direction added 2026-05-03. Strategic and theme content lives below; the canonical asset reference (logo, colors, typography, files) follows. Companion document: [LANDING_BRAINSTORM.md](LANDING_BRAINSTORM.md).
+> Brand theme and landing-page direction added 2026-05-03. Strategic and theme content lives below; the canonical asset reference (logo, colors, typography, files) follows. Companion documents: [LANDING_BRAINSTORM.md](LANDING_BRAINSTORM.md) (landing-page brief for Claude Design) and `../business/STYLE-GUIDE.md` (lite working reference for non-dev surfaces: decks, proposals, social posts, video).
 
 ## Brand vision
 
