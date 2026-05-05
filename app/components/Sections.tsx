@@ -25,9 +25,18 @@ function Section({
   );
 }
 
-function SectionEyebrow({ children }: { children: ReactNode }) {
+function SectionEyebrow({
+  children,
+  bg,
+}: {
+  children: ReactNode;
+  bg: Bg;
+}) {
+  const color = bg === "cream" ? "text-cognac" : "text-cognac-light";
   return (
-    <p className="mb-5 text-[12px] font-medium uppercase tracking-[0.18em] opacity-60">
+    <p
+      className={`mb-5 text-[12px] font-medium uppercase tracking-[0.22em] ${color}`}
+    >
       {children}
     </p>
   );
@@ -61,7 +70,7 @@ export function TrustedBy() {
   ];
   return (
     <Section id="trusted-by" bg="cream" className="py-16 md:py-20">
-      <p className="mb-10 text-center text-[12px] font-medium uppercase tracking-[0.22em] text-navy/55">
+      <p className="mb-10 text-center text-[12px] font-medium uppercase tracking-[0.22em] text-cognac">
         Trusted By
       </p>
       <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 md:gap-x-16">
@@ -78,51 +87,58 @@ export function TrustedBy() {
   );
 }
 
-/* ---------- 3. What You Get ---------- */
-export function WhatYouGet() {
-  const items = [
+/* ---------- 3. Our Approach (replaces What You Get) ---------- */
+export function OurApproach() {
+  const steps = [
     {
-      label: "Equipment",
-      copy: "Skills, integrations, and automated workflows tuned to your team.",
+      label: "Education",
+      copy: "A hands-on session with your leadership and operating team. Your team leaves understanding what AI can and cannot do for the work they actually do.",
     },
     {
-      label: "Documentation",
-      copy: "Context files, terminology, templates, and instructions the agent reads.",
+      label: "Discovery",
+      copy: "On-site mapping of your real workflows. Where is the time going? Which decisions repeat? What does “correct” look like? We surface the highest-leverage opportunities.",
     },
     {
-      label: "Ownership",
-      copy: "Your code, your data, your infrastructure. No vendor lock-in.",
+      label: "Build",
+      copy: "We build the workflows your team actually runs, every day. Skills, automations, and the context files that hold them together. Your team uses them through Claude, Codex, or any compatible AI app. You own everything we build.",
     },
   ];
   return (
-    <Section id="what-you-get" bg="navy">
-      <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-20">
+    <Section id="our-approach" bg="navy">
+      <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:gap-20">
         <div>
-          <SectionEyebrow>What You Get</SectionEyebrow>
-          <SectionHeading bg="navy">
-            A working AI directory, custom-built for your company.
-          </SectionHeading>
+          <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
+          <SectionHeading bg="navy">Our Approach</SectionHeading>
         </div>
         <div className="pt-2">
           <p className="text-[17px] leading-[1.7] text-cream/85">
-            Each engagement produces a directory your team runs through Claude,
-            ChatGPT, or Codex. Equipment plus documentation, sized to your
-            workflows. You own everything.
+            Every company is different. ZPT meets your team where you are, and
+            the engagement can be as light or as deep as you need. Three steps
+            anchor the work.
           </p>
-          <ul className="mt-9 space-y-5">
-            {items.map((item) => (
-              <li key={item.label} className="flex gap-4">
+          <ul className="mt-10 space-y-7">
+            {steps.map((step) => (
+              <li key={step.label} className="flex gap-5">
                 <span
                   aria-hidden="true"
-                  className="mt-3 inline-block h-px w-6 shrink-0 bg-cognac-light"
+                  className="mt-3 inline-block h-px w-7 shrink-0 bg-cognac-light"
                 />
-                <p className="text-[16px] leading-[1.65] text-cream/90">
-                  <span className="text-cream">{item.label}.</span>{" "}
-                  <span className="text-cream/75">{item.copy}</span>
-                </p>
+                <div>
+                  <p className="font-serif text-[22px] leading-snug text-cream">
+                    {step.label}
+                  </p>
+                  <p className="mt-2 text-[16px] leading-[1.65] text-cream/75">
+                    {step.copy}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
+          <p className="mt-10 text-[16px] leading-[1.7] text-cream/75">
+            Engagements range from a single education session through full
+            multi-workflow builds, sized to where your team is ready. The
+            architecture is the same; how far we take it is your call.
+          </p>
         </div>
       </div>
     </Section>
@@ -157,10 +173,8 @@ export function HowWeWork() {
     <Section id="how-we-work" bg="cream">
       <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-20">
         <div>
-          <SectionEyebrow>How We Work</SectionEyebrow>
-          <SectionHeading bg="cream">
-            Five ways to engage, sized to where your team is.
-          </SectionHeading>
+          <SectionEyebrow bg="cream">Engagement Types</SectionEyebrow>
+          <SectionHeading bg="cream">How We Work</SectionHeading>
         </div>
         <ul className="divide-y divide-navy/10 border-y border-navy/10">
           {types.map((t) => (
@@ -187,16 +201,14 @@ export function WatchZpt() {
   return (
     <Section id="watch" bg="navy">
       <div className="mx-auto max-w-[760px] text-center">
-        <SectionEyebrow>Watch ZPT in Action</SectionEyebrow>
-        <SectionHeading bg="navy">
-          A two-minute walk through the directory.
-        </SectionHeading>
+        <SectionEyebrow bg="navy">Preview</SectionEyebrow>
+        <SectionHeading bg="navy">Watch ZPT in Action</SectionHeading>
         <p className="mx-auto mt-6 max-w-[560px] text-[17px] leading-[1.65] text-cream/75">
           A short introduction to what ZPT builds and how your team runs it.
         </p>
-        <div className="mt-12 aspect-video w-full overflow-hidden rounded-sm border border-cream/15 bg-[#08081c]">
+        <div className="mt-12 aspect-video w-full overflow-hidden rounded-[5px] border border-cream/15 bg-[#08081c]">
           <div className="flex h-full w-full items-center justify-center">
-            <span className="text-[14px] uppercase tracking-[0.2em] text-cream/55">
+            <span className="text-[12px] font-medium uppercase tracking-[0.22em] text-cream/55">
               Video Walkthrough Coming Soon
             </span>
           </div>
@@ -206,38 +218,36 @@ export function WatchZpt() {
   );
 }
 
-/* ---------- 6. Why ZPT ---------- */
+/* ---------- 6. Why ZPT (rewritten) ---------- */
 export function WhyZpt() {
-  const items = [
+  const blocks = [
     {
-      title: "Built across industries",
-      copy: "ZPT has built directories for investment consultants, PE funds, secondaries VCs, interior design firms, and restaurant operators. Same architecture, custom content every time.",
+      lead: "Track record across industries.",
+      copy: "ZPT has built working AI systems for investment consulting, private equity, secondaries, design, and hospitality. Same architecture, custom content every time. After 100+ conversations with leaders about AI adoption, most of the wrong turns have already been mapped. Your team starts ahead.",
     },
     {
-      title: "Working systems, not decks",
-      copy: "Other firms leave you with a recommendation. ZPT leaves you with a directory your team owns and runs from day one.",
+      lead: "Founder who has lived it.",
+      copy: "Wybe Harms is a software founder who built and ran AI inside a financial analytics firm before starting ZPT. He has watched first-hand how these tools change a team’s work. ZPT exists because most organizations don’t need another strategy deck. They need someone who has already done it.",
     },
     {
-      title: "Depth is the moat",
-      copy: "Permissions, naming, authentication, the trade-offs between Claude, ChatGPT, and Codex. The nuances are where the value compounds.",
+      lead: "Start small, no commitment.",
+      copy: "You don’t have to commit to a full build to begin. A half-day education session gives your leadership team a working understanding of what’s possible. If it makes sense, we move to discovery, then a build. If not, you keep what you learned and walk away. The first step is small.",
     },
   ];
   return (
     <Section id="why-zpt" bg="cream">
       <div className="max-w-[720px]">
-        <SectionEyebrow>Why ZPT</SectionEyebrow>
-        <SectionHeading bg="cream">
-          The reason this works is the people who build it.
-        </SectionHeading>
+        <SectionEyebrow bg="cream">Why ZPT</SectionEyebrow>
+        <SectionHeading bg="cream">Why ZPT</SectionHeading>
       </div>
       <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
-        {items.map((item) => (
-          <div key={item.title}>
+        {blocks.map((block) => (
+          <div key={block.lead}>
             <h3 className="font-serif text-[22px] leading-snug text-navy">
-              {item.title}
+              {block.lead}
             </h3>
             <p className="mt-4 text-[16px] leading-[1.65] text-navy/75">
-              {item.copy}
+              {block.copy}
             </p>
           </div>
         ))}
@@ -263,14 +273,12 @@ export function IsZptRight() {
   return (
     <Section id="is-zpt-right" bg="navy">
       <div className="max-w-[720px]">
-        <SectionEyebrow>Is ZPT Right for Your Company</SectionEyebrow>
-        <SectionHeading bg="navy">
-          A short test before we get on a call.
-        </SectionHeading>
+        <SectionEyebrow bg="navy">Qualify</SectionEyebrow>
+        <SectionHeading bg="navy">Is ZPT Right for Your Company</SectionHeading>
       </div>
       <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
         <div>
-          <p className="text-[14px] font-medium uppercase tracking-[0.18em] text-cognac-light">
+          <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-cognac-light">
             Yes, If
           </p>
           <ul className="mt-6 space-y-4">
@@ -286,7 +294,7 @@ export function IsZptRight() {
           </ul>
         </div>
         <div>
-          <p className="text-[14px] font-medium uppercase tracking-[0.18em] text-cream/55">
+          <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-cream/55">
             Not Yet, If
           </p>
           <ul className="mt-6 space-y-4">
@@ -306,7 +314,7 @@ export function IsZptRight() {
   );
 }
 
-/* ---------- 8. Team Preview ---------- */
+/* ---------- 8. Team Preview (basic stub) ---------- */
 export function TeamPreview() {
   const team = [
     { name: "Wybe Harms", role: "Founder" },
@@ -318,10 +326,8 @@ export function TeamPreview() {
   return (
     <Section id="team" bg="cream">
       <div className="max-w-[720px]">
-        <SectionEyebrow>Team Preview</SectionEyebrow>
-        <SectionHeading bg="cream">
-          The people building your directory.
-        </SectionHeading>
+        <SectionEyebrow bg="cream">Team</SectionEyebrow>
+        <SectionHeading bg="cream">Team Preview</SectionHeading>
       </div>
       <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-6">
         {team.map((member) => (
@@ -346,7 +352,6 @@ export function FinalCta() {
       id="final-cta"
       className="relative w-full overflow-hidden bg-navy py-32 text-cream md:py-40"
     >
-      {/* Subtle painting backdrop */}
       <div
         aria-hidden="true"
         className="absolute inset-0 z-0 opacity-[0.15]"
@@ -365,7 +370,7 @@ export function FinalCta() {
         }}
       />
       <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center md:px-10">
-        <SectionEyebrow>Start Here</SectionEyebrow>
+        <SectionEyebrow bg="navy">Start Here</SectionEyebrow>
         <h2 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] font-normal leading-[1.06] tracking-[-0.01em] text-cream">
           Build Your AI Directory
         </h2>
@@ -375,7 +380,7 @@ export function FinalCta() {
         <div className="mt-10">
           <a
             href="mailto:wybe@zptpartners.com"
-            className="inline-flex items-center justify-center rounded-full bg-cognac px-9 py-4 text-[16px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-[var(--color-cognac-deep)]"
+            className="inline-flex items-center justify-center rounded-[5px] bg-cognac px-9 py-4 text-[16px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
           >
             Book a Call
           </a>

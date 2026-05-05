@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import {
   TrustedBy,
-  WhatYouGet,
+  OurApproach,
   HowWeWork,
   WatchZpt,
   WhyZpt,
@@ -19,7 +19,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustedBy />
-        <WhatYouGet />
+        <OurApproach />
         <HowWeWork />
         <WatchZpt />
         <WhyZpt />

@@ -10,13 +10,13 @@ export default function Hero() {
       id="hero"
       className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-navy"
     >
-      {/* Background: video (with poster) or fallback image */}
+      {/* Background: video (with poster) or fallback image. Full bleed cover. */}
       {videoFailed ? (
         <img
           src="/landing_page/Main Landing Page.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-left"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       ) : (
         <video
@@ -28,23 +28,29 @@ export default function Hero() {
           playsInline
           preload="auto"
           onError={() => setVideoFailed(true)}
-          className="absolute inset-0 h-full w-full object-cover object-left"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       )}
 
-      {/* Soft blur on the video under the right ~40% */}
+      {/* Soft blur on the video under the right portion */}
       <div
         aria-hidden="true"
-        className="absolute inset-y-0 right-0 z-[1] w-[42%] backdrop-blur-md"
+        className="absolute inset-y-0 right-0 z-[1] w-[45%] backdrop-blur-md"
       />
 
-      {/* Cream gradient: transparent at ~60% across to solid cream at right edge */}
+      {/* Cream overlay: long horizontal fade in (60% to 80%), then solid cream.
+          Vertical mask: solid at top where text sits, fades to ~35% at bottom
+          so the wave/water animation shows through. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 z-[2]"
         style={{
           background:
-            "linear-gradient(to right, transparent 0%, transparent 55%, rgba(237, 228, 211, 0.55) 70%, rgba(237, 228, 211, 0.92) 88%, #EDE4D3 100%)",
+            "linear-gradient(to right, transparent 0%, transparent 58%, rgba(237, 228, 211, 0.35) 68%, rgba(237, 228, 211, 0.85) 78%, #EDE4D3 86%)",
+          maskImage:
+            "linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.55) 85%, rgba(0,0,0,0.35) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.55) 85%, rgba(0,0,0,0.35) 100%)",
         }}
       />
 
@@ -61,13 +67,13 @@ export default function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#final-cta"
-              className="inline-flex items-center justify-center rounded-full bg-cognac px-7 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-[var(--color-cognac-deep)]"
+              className="inline-flex items-center justify-center rounded-[5px] bg-cognac px-7 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
             >
               Book a Call
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center rounded-full border border-navy/85 px-7 py-3.5 text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy hover:text-cream"
+              className="inline-flex items-center justify-center rounded-[5px] border border-navy/85 px-7 py-3.5 text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy hover:text-cream"
             >
               Download the One-Pager
             </a>
