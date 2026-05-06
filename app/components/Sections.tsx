@@ -289,17 +289,17 @@ export function WhyZpt() {
     {
       Icon: CompassIcon,
       lead: "Track Record Across Industries.",
-      copy: "Working AI systems shipped across investment consulting, private equity, secondaries, design, and hospitality. Same architecture, custom content every time. After 100+ conversations with leaders about AI adoption, most of the wrong turns have already been mapped. Your team starts ahead.",
+      copy: "Custom Claude, Codex, and Copilot setups shipped across investment consulting, private equity, secondaries, design, and hospitality. After 100+ conversations with leaders adopting AI, most of the wrong turns are already mapped. Depth is the moat your team inherits.",
     },
     {
       Icon: SextantIcon,
       lead: "Built by Practitioners.",
-      copy: "Wybe Harms is a software founder who built and ran AI inside a financial analytics firm before starting ZPT. He uses these tools every day and has watched first-hand how they change a team's work. ZPT brings that hands-on experience directly to your team, in production from day one.",
+      copy: "ZPT originated out of a software company that lives and breathes AI. We test every new tool as it ships and know first-hand how they reshape how teams operate. That experience comes directly to your team, in production form.",
     },
     {
       Icon: SailboatIcon,
       lead: "Start Small, No Commitment.",
-      copy: "Every engagement is low risk by design. A half-day education session leaves your team with a practical understanding of what AI can do for the work they actually run. Even if a particular workflow turns out not to be ready for automation today, your team still walks away equipped with the knowledge and tools to recognize the next opportunity.",
+      copy: "Every engagement is low risk by design. Even when a workflow is only partially automatable, what we build becomes a foundation the team grows over time. The setup is AI agnostic and nothing is locked in.",
     },
   ];
   return (
