@@ -15,16 +15,22 @@ export default function Header() {
 
   useEffect(() => {
     const trustedBy = document.querySelector("#trusted-by");
-    if (!trustedBy) return;
+    const header = document.querySelector("header");
+    if (!trustedBy || !header) return;
 
     const update = () => {
-      const rect = trustedBy.getBoundingClientRect();
-      setScrolled(rect.bottom < 0);
+      const headerBottom = header.getBoundingClientRect().bottom;
+      const tbBottom = trustedBy.getBoundingClientRect().bottom;
+      setScrolled(tbBottom < headerBottom + 24);
     };
 
     update();
     window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("resize", update, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   const headerBg = scrolled ? "bg-cream" : "bg-cream/85";
