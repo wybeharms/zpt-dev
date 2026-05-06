@@ -105,25 +105,35 @@ export function OurApproach() {
   ];
   return (
     <Section id="our-approach" bg="navy">
-      <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:gap-20">
-        <div>
+      <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-20">
+        {/* Left column: eyebrow, heading, intro paragraph, gap, concluding paragraph */}
+        <div className="flex flex-col">
           <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
           <SectionHeading bg="navy">Our Approach</SectionHeading>
-        </div>
-        <div className="pt-2">
-          <p className="text-[17px] leading-[1.7] text-cream/85">
+          <p className="mt-8 text-[17px] leading-[1.7] text-cream/85">
             Every company is different. ZPT meets your team where you are, and
             the engagement can be as light or as deep as you need. Three steps
             anchor the work.
           </p>
-          <ul className="mt-10 space-y-7">
+          <p className="mt-10 text-[16px] leading-[1.7] text-cream/75">
+            Engagements range from a single education session through full
+            multi-workflow builds, sized to where your team is ready. The
+            architecture is the same; how far we take it is your call.
+          </p>
+        </div>
+
+        {/* Right column: 3 bullets, vertically centered within the row */}
+        <div className="flex flex-col justify-center">
+          <ul className="space-y-9">
             {steps.map((step) => (
-              <li key={step.label} className="flex gap-5">
+              <li key={step.label} className="flex gap-4">
                 <span
                   aria-hidden="true"
-                  className="mt-3 inline-block h-px w-7 shrink-0 bg-cognac-light"
-                />
-                <div>
+                  className="select-none font-serif text-[24px] leading-[1.1] text-cognac-light"
+                >
+                  +
+                </span>
+                <div className="flex-1">
                   <p className="font-serif text-[22px] leading-snug text-cream">
                     {step.label}
                   </p>
@@ -134,11 +144,6 @@ export function OurApproach() {
               </li>
             ))}
           </ul>
-          <p className="mt-10 text-[16px] leading-[1.7] text-cream/75">
-            Engagements range from a single education session through full
-            multi-workflow builds, sized to where your team is ready. The
-            architecture is the same; how far we take it is your call.
-          </p>
         </div>
       </div>
     </Section>
@@ -218,19 +223,19 @@ export function WatchZpt() {
   );
 }
 
-/* ---------- 6. Why ZPT (rewritten) ---------- */
+/* ---------- 6. Why ZPT ---------- */
 export function WhyZpt() {
   const blocks = [
     {
-      lead: "Track record across industries.",
+      lead: "Track Record Across Industries.",
       copy: "ZPT has built working AI systems for investment consulting, private equity, secondaries, design, and hospitality. Same architecture, custom content every time. After 100+ conversations with leaders about AI adoption, most of the wrong turns have already been mapped. Your team starts ahead.",
     },
     {
-      lead: "Founder who has lived it.",
-      copy: "Wybe Harms is a software founder who built and ran AI inside a financial analytics firm before starting ZPT. He has watched first-hand how these tools change a team’s work. ZPT exists because most organizations don’t need another strategy deck. They need someone who has already done it.",
+      lead: "Built by Practitioners.",
+      copy: "ZPT grew out of a software company that works with AI agents day in and day out. We test the latest tools as they ship and learn where they fit. That experience lets us bridge the gap between what AI can do and how your team actually operates.",
     },
     {
-      lead: "Start small, no commitment.",
+      lead: "Start Small, No Commitment.",
       copy: "You don’t have to commit to a full build to begin. A half-day education session gives your leadership team a working understanding of what’s possible. If it makes sense, we move to discovery, then a build. If not, you keep what you learned and walk away. The first step is small.",
     },
   ];
@@ -287,7 +292,7 @@ export function IsZptRight() {
                 key={line}
                 className="flex gap-3 text-[16px] leading-[1.6] text-cream/85"
               >
-                <span aria-hidden="true" className="mt-2 inline-block h-px w-4 shrink-0 bg-cognac-light" />
+                <span aria-hidden="true" className="select-none text-cognac-light">+</span>
                 <span>{line}</span>
               </li>
             ))}
@@ -303,7 +308,7 @@ export function IsZptRight() {
                 key={line}
                 className="flex gap-3 text-[16px] leading-[1.6] text-cream/70"
               >
-                <span aria-hidden="true" className="mt-2 inline-block h-px w-4 shrink-0 bg-cream/30" />
+                <span aria-hidden="true" className="select-none text-cream/40">+</span>
                 <span>{line}</span>
               </li>
             ))}

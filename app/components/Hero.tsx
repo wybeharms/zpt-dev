@@ -83,9 +83,9 @@ export default function Hero() {
               We make it happen.
             </span>
           </h1>
-          <p className="mt-6 max-w-[560px] text-[17px] leading-[1.6] text-navy/85 md:text-[18px]">
-            ZPT helps companies understand AI and put it to work. From a
-            half-day workshop to a full implementation, you own everything we
+          <p className="mt-6 max-w-[540px] text-[15px] leading-[1.65] text-navy/85 md:text-[16px]">
+            ZPT Partners helps companies understand AI and put it to work. From
+            half-day workshops to a full implementation, you own everything we
             deliver.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -99,7 +99,7 @@ export default function Hero() {
               href="#"
               className="inline-flex items-center justify-center rounded-[5px] border border-navy/85 px-7 py-3.5 text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy hover:text-cream"
             >
-              Download the One-Pager
+              Download One-Pager
             </a>
           </div>
         </div>
