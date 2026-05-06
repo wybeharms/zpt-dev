@@ -1,26 +1,36 @@
-import {
-  SectionEyebrow,
-  SectionHeading,
-} from "../../components/Sections";
+const PAINTING_SRC = "/landing_page/Our Work.png";
 
+/**
+ * /our-work hero — painting banner only, no text band. The Our Work
+ * painting is panoramic (~2:1) and serves as the visual hero on its
+ * own; the page's identity is conveyed by URL, browser tab, and the
+ * painting itself. The "THE PROCESS / The Shape Of The Work." section
+ * (FiveSteps) immediately below acts as the de facto top-of-page
+ * heading.
+ *
+ * The painting renders at native 2:1 aspect on mobile and is capped
+ * vertically on larger screens (max 460px) so the hero doesn't grow
+ * past a sensible height on tall desktops.
+ *
+ * `data-hero-watch` opts this element into the Header's transparent-
+ * over-hero treatment: the header reads as translucent cream over the
+ * painting, then transitions to solid cream once the painting scrolls
+ * past — matching the home page.
+ */
 export default function OurWorkHero() {
   return (
     <section
       id="our-work-hero"
-      className="relative w-full bg-navy text-cream"
+      className="relative w-full overflow-hidden bg-navy"
+      data-hero-watch
+      style={{ aspectRatio: "2 / 1", maxHeight: "460px" }}
     >
-      <div className="mx-auto max-w-[1400px] px-6 pt-36 pb-20 md:px-10 md:pt-44 md:pb-28">
-        <div className="max-w-[820px]">
-          <SectionEyebrow bg="navy">Our Work</SectionEyebrow>
-          <SectionHeading bg="navy">
-            What An Engagement Actually Looks Like.
-          </SectionHeading>
-          <p className="mt-6 max-w-[640px] text-[15px] leading-[1.7] text-cream/75 md:text-[17px]">
-            Valuable phases of an engagement, plus examples from past
-            builds.
-          </p>
-        </div>
-      </div>
+      <img
+        src={PAINTING_SRC}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
     </section>
   );
 }

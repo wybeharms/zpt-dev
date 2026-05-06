@@ -17,6 +17,7 @@ const NAV_LINKS: NavItem[] = [
     submenu: [
       { label: "How It Works", href: "/how-it-works" },
       { label: "Our Work", href: "/our-work" },
+      { label: "Technology", href: "/technology" },
     ],
   },
   { label: "Testimonials", href: "/#trusted-by" },
@@ -30,22 +31,27 @@ export default function Header() {
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    // Header transitions from translucent → solid cream once the user
+    // scrolls past the page's "hero watch" target. The home page uses
+    // #trusted-by as that target. Sub-pages with a visual hero (a
+    // painting that benefits from a transparent header on top) opt in
+    // by adding `data-hero-watch` to the hero element. Pages with
+    // neither default to solid from the top.
+    const heroWatch = document.querySelector("[data-hero-watch]");
     const trustedBy = document.querySelector("#trusted-by");
+    const watchTarget = heroWatch || trustedBy;
     const header = document.querySelector("header");
     if (!header) return;
 
-    // Sub-pages don't have a #trusted-by sentinel; their heroes are not
-    // the home cream/animation hero, so the header should default to
-    // solid cream from the top.
-    if (!trustedBy) {
+    if (!watchTarget) {
       setScrolled(true);
       return;
     }
 
     const update = () => {
       const headerBottom = header.getBoundingClientRect().bottom;
-      const tbBottom = trustedBy.getBoundingClientRect().bottom;
-      setScrolled(tbBottom < headerBottom + 24);
+      const targetBottom = watchTarget.getBoundingClientRect().bottom;
+      setScrolled(targetBottom < headerBottom + 24);
     };
 
     update();

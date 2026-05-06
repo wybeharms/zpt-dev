@@ -17,8 +17,8 @@ export default function BeyondDefaults() {
       align="header"
       bgColor="#E0CDB0"
     >
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-16">
-        <div className="max-w-[760px]">
+      <div className="grid gap-10 md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-24">
+        <div className="max-w-[760px] md:order-2 md:pl-4">
           <SectionEyebrow bg="cream">Beyond The Defaults</SectionEyebrow>
           <SectionHeading bg="cream">
             But Aren&apos;t Claude And ChatGPT Already Doing This?
@@ -39,7 +39,7 @@ export default function BeyondDefaults() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-4 md:justify-end md:gap-5">
+        <div className="flex items-center justify-center gap-4 md:order-1 md:justify-start md:gap-5">
           {featuredTools.map((tool) => (
             <div
               key={tool.label}

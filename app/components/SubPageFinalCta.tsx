@@ -46,8 +46,9 @@ export default function SubPageFinalCta({ backgroundImage }: Props = {}) {
           <SectionHeading bg="navy">
             Start With A Conversation.
           </SectionHeading>
-          <p className="mx-auto mt-6 max-w-[520px] text-[16px] leading-[1.65] text-cream/75">
-            Wybe handles every first call personally.
+          <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-cream/75">
+            Every engagement begins with a conversation. Book a 30-minute
+            call to talk through your team&apos;s situation.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a

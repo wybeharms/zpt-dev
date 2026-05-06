@@ -138,10 +138,10 @@ export default function FiveSteps() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-cognac-light">
                     <Icon className="h-7 w-7" />
                   </span>
-                  <p className="mt-5 font-serif text-[19px] leading-snug text-cream">
+                  <p className="mt-5 font-serif text-[24px] leading-snug text-cream">
                     {label}
                   </p>
-                  <p className="mt-2 max-w-[200px] text-[13px] leading-[1.6] text-cream/65">
+                  <p className="mt-3 max-w-[200px] text-[13px] leading-[1.6] text-cream/65">
                     {copy}
                   </p>
                 </div>
@@ -158,10 +158,10 @@ export default function FiveSteps() {
                 <Icon className="h-7 w-7" />
               </span>
               <div>
-                <p className="font-serif text-[19px] leading-snug text-cream">
+                <p className="font-serif text-[24px] leading-snug text-cream">
                   {label}
                 </p>
-                <p className="mt-1 text-[14px] leading-[1.6] text-cream/65">
+                <p className="mt-2 text-[14px] leading-[1.6] text-cream/65">
                   {copy}
                 </p>
               </div>
