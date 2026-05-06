@@ -11,7 +11,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cream/85 border-b border-navy/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-cream border-b border-navy/10">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:px-10 md:py-4">
         <Link href="/" aria-label="ZPT Partners home" className="block">
           <img
