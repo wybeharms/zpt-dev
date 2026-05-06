@@ -21,9 +21,17 @@ export default function Hero() {
       className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-cream"
     >
       {/* Painting frame: anchored left, height = hero, sized to the painting's
-          true 3:2 aspect. Wherever this wrapper doesn't reach, the cream
-          section bg shows through. */}
-      <div className="absolute top-0 left-0 z-[1] h-full aspect-[3/2] overflow-hidden">
+          true 3:2 aspect. Mask feathers the right edge so the painting blurs
+          softly into the cream rather than ending in a hard vertical line. */}
+      <div
+        className="absolute top-0 left-0 z-[1] h-full aspect-[3/2] overflow-hidden"
+        style={{
+          maskImage:
+            "linear-gradient(to right, #000 0%, #000 50%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, #000 0%, #000 50%, transparent 100%)",
+        }}
+      >
         {videoFailed ? (
           <img
             src="/landing_page/Main Landing Page.png"
@@ -47,15 +55,16 @@ export default function Hero() {
         )}
       </div>
 
-      {/* Cream overlay: solid on the right ~40%, fading to transparent at
-          the 55-60% mark. Vertical mask keeps the top solid (text legibility)
-          and fades the bottom toward 35% opacity so waves read through. */}
+      {/* Cream overlay: extended horizontal fade from 35% to 55%, solid cream
+          from 55% rightward so the headline + subhead sit fully on solid cream.
+          Vertical mask keeps the top solid (text legibility) and fades the
+          bottom toward 35% opacity so waves read through. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 z-[2]"
         style={{
           background:
-            "linear-gradient(to right, transparent 0%, transparent 55%, #EDE4D3 62%, #EDE4D3 100%)",
+            "linear-gradient(to right, transparent 0%, transparent 35%, #EDE4D3 55%, #EDE4D3 100%)",
           maskImage:
             "linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.55) 85%, rgba(0,0,0,0.35) 100%)",
           WebkitMaskImage:
@@ -75,10 +84,9 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-[560px] text-[17px] leading-[1.6] text-navy/85 md:text-[18px]">
-            ZPT helps companies understand AI and put it to work. We start by
-            mapping how your team operates, then design and build what fits.
-            From a half-day workshop to a full implementation, you own
-            everything we deliver.
+            ZPT helps companies understand AI and put it to work. From a
+            half-day workshop to a full implementation, you own everything we
+            deliver.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
