@@ -89,7 +89,8 @@ public/
 ├── web-app-manifest-192x192.png
 ├── web-app-manifest-512x512.png
 ├── site.webmanifest
-├── og-image.png                                     ← 1200×630, navy ground, centered wordmark
+├── og-image.png                                     ← 1200×630, navy ground, ./Z monogram + ZPT Partners wordmark (default)
+├── og-image-simple.png                               ← 1200×630, navy ground, centered ZPT Partners wordmark (alternate, wordmark-only)
 ├── Old_Logos/                                       ← deprecated prism mark
 └── brand/
     ├── zpt-wordmark-{dark,light,cognac}.{svg,png}
