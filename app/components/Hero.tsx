@@ -41,7 +41,7 @@ export default function Hero() {
           />
         ) : (
           <video
-            src="/landing_page/Ship%20Animation.mp4"
+            src="/landing_page/ShipAnimation.mp4"
             poster="/landing_page/Main Landing Page.png"
             autoPlay
             loop
