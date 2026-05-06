@@ -84,9 +84,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-[540px] text-[15px] leading-[1.65] text-navy/85 md:text-[16px]">
-            ZPT Partners helps companies understand AI and put it to work. From
-            half-day workshops to a full implementation, you own everything we
-            deliver.
+            ZPT Partners helps companies understand AI and put it to work.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
