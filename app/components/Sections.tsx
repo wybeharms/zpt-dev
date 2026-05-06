@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import RevealOnScroll from "./RevealOnScroll";
 
 type Bg = "cream" | "navy";
 
@@ -107,46 +108,49 @@ export function OurApproach() {
     },
   ];
   return (
-    <Section id="our-approach" bg="navy">
-      <div className="max-w-[860px]">
-        <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
-        <SectionHeading bg="navy">Our Approach</SectionHeading>
-        <p className="mt-8 text-[17px] leading-[1.7] text-cream/85">
-          Every engagement starts where your team is. Three steps anchor the
-          work.
-        </p>
+    <section
+      id="our-approach"
+      className="relative w-full bg-navy py-20 text-cream md:py-24"
+    >
+      <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+        <div className="max-w-[860px]">
+          <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
+          <SectionHeading bg="navy">Our Approach</SectionHeading>
+          <p className="mt-6 text-[17px] leading-[1.7] text-cream/85">
+            Every company is different. ZPT meets your team where you are.
+            Engagements range from a half-day education session to a full
+            multi-workflow build, sized to where your team is ready. Three
+            steps anchor the work.
+          </p>
 
-        <ul className="mt-14 border-t border-cream/15">
-          {steps.map((step) => (
-            <li
-              key={step.label}
-              className="grid grid-cols-[64px_minmax(0,1fr)] gap-6 border-b border-cream/15 py-7 md:grid-cols-[80px_minmax(0,1fr)] md:gap-10 md:py-9"
-            >
-              <span
-                aria-hidden="true"
-                className="select-none font-serif text-[28px] leading-none text-cognac-light md:text-[32px]"
+          <ul className="mt-6 border-t border-cream/15">
+            {steps.map((step) => (
+              <li
+                key={step.label}
+                className="border-b border-cream/15"
               >
-                {step.number}
-              </span>
-              <div>
-                <p className="font-serif text-[22px] leading-snug text-cream md:text-[24px]">
-                  {step.label}
-                </p>
-                <p className="mt-3 text-[16px] leading-[1.65] text-cream/75">
-                  {step.copy}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
-
-        <p className="mt-10 text-[16px] leading-[1.7] text-cream/75">
-          Engagements range from a single education session to a full
-          multi-workflow build. The architecture is the same; how far we take
-          it is your call.
-        </p>
+                <RevealOnScroll className="grid grid-cols-[64px_minmax(0,1fr)] gap-6 py-5 md:grid-cols-[80px_minmax(0,1fr)] md:gap-10 md:py-5">
+                  <span
+                    aria-hidden="true"
+                    className="select-none font-serif text-[28px] leading-none text-cognac-light md:text-[32px]"
+                  >
+                    {step.number}
+                  </span>
+                  <div>
+                    <p className="font-serif text-[22px] leading-snug text-cream md:text-[24px]">
+                      {step.label}
+                    </p>
+                    <p className="mt-3 text-[16px] leading-[1.65] text-cream/75">
+                      {step.copy}
+                    </p>
+                  </div>
+                </RevealOnScroll>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
 
@@ -284,24 +288,24 @@ export function WhyZpt() {
   const blocks = [
     {
       Icon: CompassIcon,
-      lead: "Track record across industries.",
+      lead: "Track Record Across Industries.",
       copy: "Working AI systems shipped across investment consulting, private equity, secondaries, design, and hospitality. Same architecture, custom content every time. After 100+ conversations with leaders about AI adoption, most of the wrong turns have already been mapped. Your team starts ahead.",
     },
     {
       Icon: SextantIcon,
-      lead: "Founder who has lived it.",
-      copy: "Wybe Harms is a software founder who built and ran AI inside a financial analytics firm before starting ZPT. He has watched first-hand how these tools change a team's work. ZPT exists because most organizations don't need another strategy deck. They need someone who has already done it.",
+      lead: "Built by Practitioners.",
+      copy: "Wybe Harms is a software founder who built and ran AI inside a financial analytics firm before starting ZPT. He uses these tools every day and has watched first-hand how they change a team's work. ZPT brings that hands-on experience directly to your team, in production from day one.",
     },
     {
       Icon: SailboatIcon,
-      lead: "Start small, no commitment.",
-      copy: "You don't have to commit to a full build to begin. A half-day education session gives your leadership team a working understanding of what's possible. If it makes sense, we move to discovery, then a build. If not, you keep what you learned and walk away.",
+      lead: "Start Small, No Commitment.",
+      copy: "Every engagement is low risk by design. A half-day education session leaves your team with a practical understanding of what AI can do for the work they actually run. Even if a particular workflow turns out not to be ready for automation today, your team still walks away equipped with the knowledge and tools to recognize the next opportunity.",
     },
   ];
   return (
     <Section id="why-zpt" bg="cream">
       <div className="max-w-[720px]">
-        <SectionEyebrow bg="cream">Credibility</SectionEyebrow>
+        <SectionEyebrow bg="cream">Proven</SectionEyebrow>
         <SectionHeading bg="cream">Why ZPT</SectionHeading>
       </div>
       <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
@@ -472,7 +476,7 @@ export function FinalCta() {
         className="absolute inset-0 z-[1]"
         style={{
           background:
-            "linear-gradient(180deg, rgba(12,12,40,0.15) 0%, rgba(12,12,40,0.65) 50%, #0C0C28 100%)",
+            "linear-gradient(180deg, rgba(12,12,40,0.05) 0%, rgba(12,12,40,0.55) 50%, #0C0C28 100%)",
         }}
       />
       <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center md:px-10">
