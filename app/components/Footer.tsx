@@ -8,7 +8,7 @@ export default function Footer() {
             src="/landing_page/Footer Ornament Navy.png"
             alt=""
             aria-hidden="true"
-            className="h-auto w-full max-w-[900px]"
+            className="h-auto w-full max-w-[450px]"
           />
 
           <nav className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[13px] tracking-wide text-cream/65">

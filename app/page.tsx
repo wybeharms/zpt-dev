@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import {
   TrustedBy,
   OurApproach,
-  HowWeWork,
   WatchZpt,
   WhyZpt,
   IsZptRight,
@@ -20,7 +19,6 @@ export default function Home() {
         <Hero />
         <TrustedBy />
         <OurApproach />
-        <HowWeWork />
         <WatchZpt />
         <WhyZpt />
         <IsZptRight />

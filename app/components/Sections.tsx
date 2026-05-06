@@ -1,32 +1,56 @@
 import type { ReactNode } from "react";
 import RevealOnScroll from "./RevealOnScroll";
+import {
+  AnchorIcon,
+  CompassIcon,
+  FogIcon,
+  SailboatIcon,
+  SextantIcon,
+} from "./MarineIcons";
 
-type Bg = "cream" | "navy";
+export type Bg = "cream" | "navy";
+export type SectionAlign = "default" | "header";
 
-function Section({
+export function Section({
   id,
   bg,
+  align = "default",
+  bgColor,
   children,
   className = "",
 }: {
   id: string;
   bg: Bg;
+  align?: SectionAlign;
+  /** Optional bg-color override (e.g. "#E0CDB0") so a section can break
+      the alternating cream/navy rhythm with a custom shade. The text color
+      still follows `bg`. */
+  bgColor?: string;
   children: ReactNode;
   className?: string;
 }) {
-  const palette =
-    bg === "cream" ? "bg-cream text-navy" : "bg-navy text-cream";
+  const textColor = bg === "cream" ? "text-navy" : "text-cream";
+  const bgClass = bgColor
+    ? ""
+    : bg === "cream"
+      ? "bg-cream"
+      : "bg-navy";
+  // align="header" widens the inner container to 1400px so eyebrows /
+  // headings line up with the header logo's left edge. Default 1200px
+  // stays for the home page.
+  const innerMax = align === "header" ? "max-w-[1400px]" : "max-w-[1200px]";
   return (
     <section
       id={id}
-      className={`relative w-full ${palette} py-24 md:py-32 ${className}`}
+      className={`relative w-full ${bgClass} ${textColor} py-24 md:py-32 ${className}`}
+      style={bgColor ? { backgroundColor: bgColor } : undefined}
     >
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10">{children}</div>
+      <div className={`mx-auto ${innerMax} px-6 md:px-10`}>{children}</div>
     </section>
   );
 }
 
-function SectionEyebrow({
+export function SectionEyebrow({
   children,
   bg,
 }: {
@@ -43,7 +67,7 @@ function SectionEyebrow({
   );
 }
 
-function SectionHeading({
+export function SectionHeading({
   children,
   bg,
 }: {
@@ -116,7 +140,7 @@ export function OurApproach() {
         <div className="max-w-[860px]">
           <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
           <SectionHeading bg="navy">Our Approach</SectionHeading>
-          <p className="mt-6 text-[17px] leading-[1.7] text-cream/85">
+          <p className="mt-6 text-[16px] leading-[1.7] text-cream/85">
             Every company is different. ZPT meets your team where you are.
             Engagements range from a half-day education session to a full
             multi-workflow build, sized to where your team is ready. Three
@@ -140,7 +164,7 @@ export function OurApproach() {
                     <p className="font-serif text-[22px] leading-snug text-cream md:text-[24px]">
                       {step.label}
                     </p>
-                    <p className="mt-3 text-[16px] leading-[1.65] text-cream/75">
+                    <p className="mt-3 text-[15px] leading-[1.65] text-cream/75">
                       {step.copy}
                     </p>
                   </div>
@@ -154,57 +178,6 @@ export function OurApproach() {
   );
 }
 
-/* ---------- 4. How We Work ---------- */
-export function HowWeWork() {
-  const types = [
-    {
-      label: "Education Workshop",
-      copy: "Half- or full-day session for leadership teams who want to learn before they build.",
-    },
-    {
-      label: "Discovery",
-      copy: "One to two days mapping workflows and shipping a first proof of concept.",
-    },
-    {
-      label: "Focused Build",
-      copy: "Two to three days automating one or two well-defined workflows end to end.",
-    },
-    {
-      label: "Comprehensive",
-      copy: "Four or more days of full discovery followed by a multi-workflow build.",
-    },
-    {
-      label: "Embedded",
-      copy: "Ongoing weekly or monthly sessions that grow the directory over time.",
-    },
-  ];
-  return (
-    <Section id="how-we-work" bg="cream">
-      <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-20">
-        <div>
-          <SectionEyebrow bg="cream">Engagement Types</SectionEyebrow>
-          <SectionHeading bg="cream">How We Work</SectionHeading>
-        </div>
-        <ul className="divide-y divide-navy/10 border-y border-navy/10">
-          {types.map((t) => (
-            <li
-              key={t.label}
-              className="grid gap-2 py-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8"
-            >
-              <span className="font-serif text-[20px] leading-snug text-navy">
-                {t.label}
-              </span>
-              <span className="text-[16px] leading-[1.65] text-navy/75">
-                {t.copy}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Section>
-  );
-}
-
 /* ---------- 5. Watch ZPT in Action ---------- */
 export function WatchZpt() {
   return (
@@ -212,7 +185,7 @@ export function WatchZpt() {
       <div className="mx-auto max-w-[760px] text-center">
         <SectionEyebrow bg="navy">Preview</SectionEyebrow>
         <SectionHeading bg="navy">Watch ZPT in Action</SectionHeading>
-        <p className="mx-auto mt-6 max-w-[560px] text-[17px] leading-[1.65] text-cream/75">
+        <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-cream/75">
           A short introduction to what ZPT builds and how your team runs it.
         </p>
         <div className="mt-12 aspect-video w-full overflow-hidden rounded-[5px] border border-cream/15 bg-[#08081c]">
@@ -228,62 +201,6 @@ export function WatchZpt() {
 }
 
 /* ---------- 6. Why ZPT ---------- */
-function CompassIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <circle cx="16" cy="16" r="12.5" />
-      <polygon points="16,7 19,16 16,25 13,16" />
-    </svg>
-  );
-}
-
-function SextantIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M5 24 L27 24 L16 6 Z" />
-      <path d="M9 24 A 7 7 0 0 1 23 24" />
-      <line x1="16" y1="14" x2="20" y2="11" />
-    </svg>
-  );
-}
-
-function SailboatIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <line x1="16" y1="5" x2="16" y2="22" />
-      <path d="M16 8 L9 22 L23 22 Z" />
-      <path d="M4 24 L28 24 L25 28 L7 28 Z" />
-    </svg>
-  );
-}
-
 export function WhyZpt() {
   const blocks = [
     {
@@ -315,7 +232,7 @@ export function WhyZpt() {
             <h3 className="font-serif text-[22px] leading-snug text-navy">
               {lead}
             </h3>
-            <p className="mt-4 text-[16px] leading-[1.65] text-navy/75">
+            <p className="mt-4 text-[15px] leading-[1.65] text-navy/75">
               {copy}
             </p>
           </div>
@@ -326,45 +243,6 @@ export function WhyZpt() {
 }
 
 /* ---------- 7. Is ZPT Right for Your Company ---------- */
-function AnchorIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <circle cx="16" cy="6" r="2" />
-      <line x1="16" y1="8" x2="16" y2="26" />
-      <line x1="11" y1="13" x2="21" y2="13" />
-      <path d="M6 22 A 10 10 0 0 0 26 22" />
-    </svg>
-  );
-}
-
-function FogIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <line x1="5" y1="11" x2="27" y2="11" />
-      <line x1="3" y1="17" x2="25" y2="17" />
-      <line x1="7" y1="23" x2="29" y2="23" />
-    </svg>
-  );
-}
-
 export function IsZptRight() {
   const yes = [
     "You have repeatable workflows worth codifying.",
@@ -394,7 +272,7 @@ export function IsZptRight() {
             {yes.map((line) => (
               <li
                 key={line}
-                className="text-[16px] leading-[1.6] text-cream/85"
+                className="text-[15px] leading-[1.6] text-cream/85"
               >
                 {line}
               </li>
@@ -412,7 +290,7 @@ export function IsZptRight() {
             {notYet.map((line) => (
               <li
                 key={line}
-                className="text-[16px] leading-[1.6] text-cream/70"
+                className="text-[15px] leading-[1.6] text-cream/70"
               >
                 {line}
               </li>
@@ -484,7 +362,7 @@ export function FinalCta() {
         <h2 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] font-normal leading-[1.06] tracking-[-0.01em] text-cream">
           Build Your AI Directory
         </h2>
-        <p className="mx-auto mt-6 max-w-[560px] text-[17px] leading-[1.65] text-cream/80">
+        <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-cream/80">
           Every engagement begins with a conversation. Book a 30-minute call
           to talk through your team's situation.
         </p>
