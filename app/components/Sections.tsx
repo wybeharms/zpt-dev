@@ -63,7 +63,7 @@ function SectionHeading({
 export function TrustedBy() {
   const clients = [
     "Marquette",
-    "Cypress Creek",
+    "CFA Society",
     "New Vintage",
     "MDV Design",
     "Brutalia",
@@ -87,64 +87,64 @@ export function TrustedBy() {
   );
 }
 
-/* ---------- 3. Our Approach (replaces What You Get) ---------- */
+/* ---------- 3. Our Approach (editorial vertical list) ---------- */
 export function OurApproach() {
   const steps = [
     {
+      number: "01",
       label: "Education",
-      copy: "A hands-on session with your leadership and operating team. Your team leaves understanding what AI can and cannot do for the work they actually do.",
+      copy: "A hands-on session for your leadership and operating team. Your team leaves understanding what AI can and cannot do for the work they already run.",
     },
     {
+      number: "02",
       label: "Discovery",
-      copy: "On-site mapping of your real workflows. Where is the time going? Which decisions repeat? What does “correct” look like? We surface the highest-leverage opportunities.",
+      copy: "On-site mapping of your real workflows. We surface the highest-leverage opportunities to automate.",
     },
     {
+      number: "03",
       label: "Build",
-      copy: "We build the workflows your team actually runs, every day. Skills, automations, and the context files that hold them together. Your team uses them through Claude, Codex, or any compatible AI app. You own everything we build.",
+      copy: "We build the workflows your team runs every day. Your team uses them through Claude, Codex, or any compatible AI app, and you own everything we deliver.",
     },
   ];
   return (
     <Section id="our-approach" bg="navy">
-      <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-20">
-        {/* Left column: eyebrow, heading, intro paragraph, gap, concluding paragraph */}
-        <div className="flex flex-col">
-          <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
-          <SectionHeading bg="navy">Our Approach</SectionHeading>
-          <p className="mt-8 text-[17px] leading-[1.7] text-cream/85">
-            Every company is different. ZPT meets your team where you are, and
-            the engagement can be as light or as deep as you need. Three steps
-            anchor the work.
-          </p>
-          <p className="mt-10 text-[16px] leading-[1.7] text-cream/75">
-            Engagements range from a single education session through full
-            multi-workflow builds, sized to where your team is ready. The
-            architecture is the same; how far we take it is your call.
-          </p>
-        </div>
+      <div className="max-w-[860px]">
+        <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
+        <SectionHeading bg="navy">Our Approach</SectionHeading>
+        <p className="mt-8 text-[17px] leading-[1.7] text-cream/85">
+          Every engagement starts where your team is. Three steps anchor the
+          work.
+        </p>
 
-        {/* Right column: 3 bullets, vertically centered within the row */}
-        <div className="flex flex-col justify-center">
-          <ul className="space-y-9">
-            {steps.map((step) => (
-              <li key={step.label} className="flex gap-4">
-                <span
-                  aria-hidden="true"
-                  className="select-none font-serif text-[24px] leading-[1.1] text-cognac-light"
-                >
-                  +
-                </span>
-                <div className="flex-1">
-                  <p className="font-serif text-[22px] leading-snug text-cream">
-                    {step.label}
-                  </p>
-                  <p className="mt-2 text-[16px] leading-[1.65] text-cream/75">
-                    {step.copy}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="mt-14 border-t border-cream/15">
+          {steps.map((step) => (
+            <li
+              key={step.label}
+              className="grid grid-cols-[64px_minmax(0,1fr)] gap-6 border-b border-cream/15 py-7 md:grid-cols-[80px_minmax(0,1fr)] md:gap-10 md:py-9"
+            >
+              <span
+                aria-hidden="true"
+                className="select-none font-serif text-[28px] leading-none text-cognac-light md:text-[32px]"
+              >
+                {step.number}
+              </span>
+              <div>
+                <p className="font-serif text-[22px] leading-snug text-cream md:text-[24px]">
+                  {step.label}
+                </p>
+                <p className="mt-3 text-[16px] leading-[1.65] text-cream/75">
+                  {step.copy}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-10 text-[16px] leading-[1.7] text-cream/75">
+          Engagements range from a single education session to a full
+          multi-workflow build. The architecture is the same; how far we take
+          it is your call.
+        </p>
       </div>
     </Section>
   );
@@ -224,35 +224,95 @@ export function WatchZpt() {
 }
 
 /* ---------- 6. Why ZPT ---------- */
+function CompassIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="16" cy="16" r="12.5" />
+      <polygon points="16,7 19,16 16,25 13,16" />
+    </svg>
+  );
+}
+
+function SextantIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M5 24 L27 24 L16 6 Z" />
+      <path d="M9 24 A 7 7 0 0 1 23 24" />
+      <line x1="16" y1="14" x2="20" y2="11" />
+    </svg>
+  );
+}
+
+function SailboatIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <line x1="16" y1="5" x2="16" y2="22" />
+      <path d="M16 8 L9 22 L23 22 Z" />
+      <path d="M4 24 L28 24 L25 28 L7 28 Z" />
+    </svg>
+  );
+}
+
 export function WhyZpt() {
   const blocks = [
     {
-      lead: "Track Record Across Industries.",
-      copy: "ZPT has built working AI systems for investment consulting, private equity, secondaries, design, and hospitality. Same architecture, custom content every time. After 100+ conversations with leaders about AI adoption, most of the wrong turns have already been mapped. Your team starts ahead.",
+      Icon: CompassIcon,
+      lead: "Track record across industries.",
+      copy: "Working AI systems shipped across investment consulting, private equity, secondaries, design, and hospitality. Same architecture, custom content every time. After 100+ conversations with leaders about AI adoption, most of the wrong turns have already been mapped. Your team starts ahead.",
     },
     {
-      lead: "Built by Practitioners.",
-      copy: "ZPT grew out of a software company that works with AI agents day in and day out. We test the latest tools as they ship and learn where they fit. That experience lets us bridge the gap between what AI can do and how your team actually operates.",
+      Icon: SextantIcon,
+      lead: "Founder who has lived it.",
+      copy: "Wybe Harms is a software founder who built and ran AI inside a financial analytics firm before starting ZPT. He has watched first-hand how these tools change a team's work. ZPT exists because most organizations don't need another strategy deck. They need someone who has already done it.",
     },
     {
-      lead: "Start Small, No Commitment.",
-      copy: "You don’t have to commit to a full build to begin. A half-day education session gives your leadership team a working understanding of what’s possible. If it makes sense, we move to discovery, then a build. If not, you keep what you learned and walk away. The first step is small.",
+      Icon: SailboatIcon,
+      lead: "Start small, no commitment.",
+      copy: "You don't have to commit to a full build to begin. A half-day education session gives your leadership team a working understanding of what's possible. If it makes sense, we move to discovery, then a build. If not, you keep what you learned and walk away.",
     },
   ];
   return (
     <Section id="why-zpt" bg="cream">
       <div className="max-w-[720px]">
-        <SectionEyebrow bg="cream">Why ZPT</SectionEyebrow>
+        <SectionEyebrow bg="cream">Credibility</SectionEyebrow>
         <SectionHeading bg="cream">Why ZPT</SectionHeading>
       </div>
       <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
-        {blocks.map((block) => (
-          <div key={block.lead}>
+        {blocks.map(({ Icon, lead, copy }) => (
+          <div key={lead}>
+            <Icon className="mb-3 h-8 w-8 text-cognac" />
             <h3 className="font-serif text-[22px] leading-snug text-navy">
-              {block.lead}
+              {lead}
             </h3>
             <p className="mt-4 text-[16px] leading-[1.65] text-navy/75">
-              {block.copy}
+              {copy}
             </p>
           </div>
         ))}
@@ -262,6 +322,45 @@ export function WhyZpt() {
 }
 
 /* ---------- 7. Is ZPT Right for Your Company ---------- */
+function AnchorIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="16" cy="6" r="2" />
+      <line x1="16" y1="8" x2="16" y2="26" />
+      <line x1="11" y1="13" x2="21" y2="13" />
+      <path d="M6 22 A 10 10 0 0 0 26 22" />
+    </svg>
+  );
+}
+
+function FogIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <line x1="5" y1="11" x2="27" y2="11" />
+      <line x1="3" y1="17" x2="25" y2="17" />
+      <line x1="7" y1="23" x2="29" y2="23" />
+    </svg>
+  );
+}
+
 export function IsZptRight() {
   const yes = [
     "You have repeatable workflows worth codifying.",
@@ -283,33 +382,35 @@ export function IsZptRight() {
       </div>
       <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
         <div>
-          <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-cognac-light">
-            Yes, If
-          </p>
-          <ul className="mt-6 space-y-4">
+          <div className="flex items-center gap-3 text-cognac-light">
+            <AnchorIcon className="h-7 w-7" />
+            <p className="font-serif text-[26px] leading-none">Yes, If</p>
+          </div>
+          <ul className="mt-6 space-y-4 pl-10">
             {yes.map((line) => (
               <li
                 key={line}
-                className="flex gap-3 text-[16px] leading-[1.6] text-cream/85"
+                className="text-[16px] leading-[1.6] text-cream/85"
               >
-                <span aria-hidden="true" className="select-none text-cognac-light">+</span>
-                <span>{line}</span>
+                {line}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-cream/55">
-            Not Yet, If
-          </p>
-          <ul className="mt-6 space-y-4">
+          <div className="flex items-center gap-3 text-cream/55">
+            <FogIcon className="h-7 w-7" />
+            <p className="font-serif text-[26px] leading-none text-cream/85">
+              Not Yet, If
+            </p>
+          </div>
+          <ul className="mt-6 space-y-4 pl-10">
             {notYet.map((line) => (
               <li
                 key={line}
-                className="flex gap-3 text-[16px] leading-[1.6] text-cream/70"
+                className="text-[16px] leading-[1.6] text-cream/70"
               >
-                <span aria-hidden="true" className="select-none text-cream/40">+</span>
-                <span>{line}</span>
+                {line}
               </li>
             ))}
           </ul>
@@ -371,7 +472,7 @@ export function FinalCta() {
         className="absolute inset-0 z-[1]"
         style={{
           background:
-            "linear-gradient(180deg, rgba(12,12,40,0.5) 0%, rgba(12,12,40,0.85) 60%, #0C0C28 100%)",
+            "linear-gradient(180deg, rgba(12,12,40,0.15) 0%, rgba(12,12,40,0.65) 50%, #0C0C28 100%)",
         }}
       />
       <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center md:px-10">
@@ -380,7 +481,8 @@ export function FinalCta() {
           Build Your AI Directory
         </h2>
         <p className="mx-auto mt-6 max-w-[560px] text-[17px] leading-[1.65] text-cream/80">
-          Wybe handles all initial conversations personally.
+          Every engagement begins with a conversation. Book a 30-minute call
+          to talk through your team's situation.
         </p>
         <div className="mt-10">
           <a
