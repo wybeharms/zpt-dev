@@ -13,7 +13,7 @@ type Row = {
 const rows: Row[] = [
   {
     lead: "Use Your Templates.",
-    copy: "A chatbot needs you to upload an example each time. An agent has your template library available, and writes the next memo in your house format without prompting.",
+    copy: "A chatbot needs you to upload an example each time. An agent has your template library available, and writes the next memo in your company format without prompting.",
   },
   {
     lead: "Connect To Your Tools.",

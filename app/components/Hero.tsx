@@ -84,17 +84,21 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-[540px] text-[15px] leading-[1.65] text-navy/85 md:text-[16px]">
-            ZPT Partners helps you navigate the uncharted AI frontier.
+            ZPT Partners helps you navigate the uncharted AI waters.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
-              href="#final-cta"
+              href="https://calendly.com/zptpartners/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-[5px] bg-cognac px-7 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
             >
               Book a Call
             </a>
             <a
-              href="#"
+              href="/resources/zpt-one-pager.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-[5px] border border-navy/85 px-7 py-3.5 text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy hover:text-cream"
             >
               Download One-Pager

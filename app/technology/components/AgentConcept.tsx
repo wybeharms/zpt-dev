@@ -23,9 +23,9 @@ export default function AgentConcept() {
           <p className="mt-6 text-[16px] leading-[1.7] text-navy/75">
             Claude, ChatGPT, and Gemini are chatbots. Powerful, but they
             answer questions and stop. An agent uses the same underlying
-            model and adds tools. It can read your files, call your CRM,
-            post to Slack, run a script, write a memo to your house format.
-            Same intelligence. More reach.
+            model but has access to tools. It can read your files, call
+            your CRM, post to Slack, run a script, write a memo to your
+            company format. Same intelligence. More reach.
           </p>
         </div>
         <div className="md:w-[640px]">

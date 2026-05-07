@@ -33,3 +33,39 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* TrustedBy marquee.
+ * The track holds two copies of the logo row side by side; animating it
+ * from translateX(0) to translateX(-50%) over 60s creates a seamless
+ * loop because the second copy's first card lands exactly where the
+ * first copy's first card started.
+ *
+ * Hover or focus inside the wrapper pauses the animation. A separate
+ * static fallback is shown when the user prefers reduced motion (see
+ * Sections.tsx); the !important rule below disables the keyframes on
+ * the marquee specifically, overriding the global 0.01ms clamp so the
+ * track doesn't flicker if the reduced-motion fallback is bypassed.
+ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 60s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track,
+.marquee-wrapper:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}

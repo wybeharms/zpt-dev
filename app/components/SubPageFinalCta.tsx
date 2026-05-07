@@ -1,16 +1,20 @@
 import { SectionEyebrow, SectionHeading } from "./Sections";
 
+const CALENDLY_URL = "https://calendly.com/zptpartners/30min";
+const ONE_PAGER_URL = "/resources/zpt-one-pager.pdf";
+
 type Props = {
   /** Optional painting URL rendered behind the navy gradient overlay. */
   backgroundImage?: string;
 };
 
 /**
- * Shared final CTA used by sub-pages (/how-it-works, /our-work). When
- * `backgroundImage` is passed, renders a home-page-style bg painting
- * with a navy gradient overlay (transparent at the top so the painting
- * peeks through, opaque at the bottom for text legibility). Without it,
- * falls back to a plain navy band.
+ * Shared final CTA used by sub-pages (/how-it-works, /our-work,
+ * /technology, /resources, /team). When `backgroundImage` is passed,
+ * renders a home-page-style bg painting with a navy gradient overlay
+ * (transparent at the top so the painting peeks through, opaque at the
+ * bottom for text legibility). Without it, falls back to a plain navy
+ * band.
  */
 export default function SubPageFinalCta({ backgroundImage }: Props = {}) {
   return (
@@ -52,13 +56,17 @@ export default function SubPageFinalCta({ backgroundImage }: Props = {}) {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:wybe@zptpartners.com"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-[5px] bg-cognac px-8 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
             >
               Book A Call
             </a>
             <a
-              href="#"
+              href={ONE_PAGER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-[5px] border border-cream/85 px-8 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cream hover:text-navy"
             >
               Download The One-Pager
