@@ -134,16 +134,17 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
   },
 ];
 
-// Future destination for "See Testimonials" — the page is on the
-// roadmap but doesn't exist yet, so this link will 404 until /testimonials
-// ships. The CTA + clickable cards are wired so when the page lands no
-// further changes are needed here.
-const TESTIMONIALS_HREF = "/testimonials";
+// Future destination for "See Testimonials" — kept here as a reminder
+// for when the /testimonials page ships. The CTA below the strip and
+// the desktop click-to-navigate are currently DISABLED; flip them back
+// on by replacing TrustedLogoCard's <div> with an <a href={TESTIMONIALS_HREF}>
+// and re-rendering the "See Testimonials" CTA below the marquee.
+// const TESTIMONIALS_HREF = "/testimonials";
 
 /**
  * Single logo card body — the visual content that's shared between the
- * desktop marquee tile (wrapped in a Link) and the mobile scroll strip
- * (wrapped in a button that toggles description visibility on tap).
+ * desktop marquee tile (currently a non-clickable div) and the mobile
+ * scroll strip (a button that toggles description visibility on tap).
  *
  * The logo slot is fixed-height with items-center so all cards have
  * their text rows starting at the same y-coordinate, regardless of how
@@ -188,18 +189,16 @@ function TrustedLogoBody({
 }
 
 /**
- * Desktop / marquee version of the card. Whole card is a Link to the
- * testimonials page; hover reveals the description (via `group`).
+ * Desktop / marquee version of the card. Currently non-clickable — hover
+ * reveals the description via `group`. Click navigation to /testimonials
+ * is disabled until that page ships; see comment on TESTIMONIALS_HREF
+ * above for how to re-enable.
  */
 function TrustedLogoLinkCard({ logo }: { logo: TrustedLogo }) {
   return (
-    <a
-      href={TESTIMONIALS_HREF}
-      className="group block flex-shrink-0 cursor-pointer"
-      aria-label={`${logo.name} — see testimonials`}
-    >
+    <div className="group block flex-shrink-0">
       <TrustedLogoBody logo={logo} />
-    </a>
+    </div>
   );
 }
 
@@ -256,21 +255,8 @@ export function TrustedBy() {
         ))}
       </ul>
 
-      {/* Shared "See Testimonials" CTA — present on both layouts. */}
-      <div className="mt-10 text-center">
-        <a
-          href={TESTIMONIALS_HREF}
-          className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-wide text-cognac transition-colors duration-150 hover:text-cognac-deep"
-        >
-          See Testimonials
-          <span
-            aria-hidden="true"
-            className="transition-transform duration-150 group-hover:translate-x-0.5"
-          >
-            →
-          </span>
-        </a>
-      </div>
+      {/* "See Testimonials" CTA disabled until /testimonials ships — see
+          comment on TESTIMONIALS_HREF above for how to re-enable. */}
     </Section>
   );
 }
