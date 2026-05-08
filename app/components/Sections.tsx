@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import RevealOnScroll from "./RevealOnScroll";
 import PortraitSwap from "./PortraitSwap";
 import YoutubeFacade from "./YoutubeFacade";
+import TrustedLogoTapCard from "./TrustedLogoTapCard";
 import { TEAM } from "./team-data";
 import {
   AnchorIcon,
@@ -45,7 +46,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative w-full ${bgClass} ${textColor} py-24 md:py-32 ${className}`}
+      className={`relative w-full ${bgClass} ${textColor} py-20 md:py-32 ${className}`}
       style={bgColor ? { backgroundColor: bgColor } : undefined}
     >
       <div className={`mx-auto ${innerMax} px-6 md:px-10`}>{children}</div>
@@ -133,24 +134,39 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
   },
 ];
 
+// Future destination for "See Testimonials" — the page is on the
+// roadmap but doesn't exist yet, so this link will 404 until /testimonials
+// ships. The CTA + clickable cards are wired so when the page lands no
+// further changes are needed here.
+const TESTIMONIALS_HREF = "/testimonials";
+
 /**
- * Single logo card. Group-hover reveals the description below the firm
- * name + location (opacity 0 → 1 over 200ms). The card sits inside a
- * marquee track, but it's also used in the static reduced-motion
- * fallback row, so it stays self-contained.
+ * Single logo card body — the visual content that's shared between the
+ * desktop marquee tile (wrapped in a Link) and the mobile scroll strip
+ * (wrapped in a button that toggles description visibility on tap).
  *
  * The logo slot is fixed-height with items-center so all cards have
  * their text rows starting at the same y-coordinate, regardless of how
  * tall or short each individual logo image is. Logos with the
  * `emphasis` flag (e.g. Marquette, whose source PNG has lots of
  * transparent padding) render taller inside the same slot.
+ *
+ * `descriptionVisible` controls the description independently of any
+ * hover state — used by the mobile tap-toggle. The desktop wrapper
+ * still drives reveal via `:group-hover`, layered on top.
  */
-function TrustedLogoCard({ logo }: { logo: TrustedLogo }) {
+function TrustedLogoBody({
+  logo,
+  descriptionVisible = false,
+}: {
+  logo: TrustedLogo;
+  descriptionVisible?: boolean;
+}) {
   const imgClass = logo.emphasis
     ? "h-14 w-auto max-w-[180px] object-contain md:h-20"
     : "h-12 w-auto max-w-[160px] object-contain md:h-14";
   return (
-    <div className="group flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
+    <div className="flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
       <div className="flex h-14 items-center justify-center md:h-20">
         <img src={logo.file} alt={logo.name} className={imgClass} />
       </div>
@@ -160,10 +176,30 @@ function TrustedLogoCard({ logo }: { logo: TrustedLogo }) {
       <p className="mt-1 text-[12px] tracking-wide text-navy/55">
         {logo.location}
       </p>
-      <p className="mt-1.5 text-[12px] leading-[1.4] text-navy/65 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+      <p
+        className={`mt-1.5 text-[12px] leading-[1.4] text-navy/65 transition-opacity duration-200 group-hover:opacity-100 ${
+          descriptionVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         {logo.description}
       </p>
     </div>
+  );
+}
+
+/**
+ * Desktop / marquee version of the card. Whole card is a Link to the
+ * testimonials page; hover reveals the description (via `group`).
+ */
+function TrustedLogoLinkCard({ logo }: { logo: TrustedLogo }) {
+  return (
+    <a
+      href={TESTIMONIALS_HREF}
+      className="group block flex-shrink-0 cursor-pointer"
+      aria-label={`${logo.name} — see testimonials`}
+    >
+      <TrustedLogoBody logo={logo} />
+    </a>
   );
 }
 
@@ -179,9 +215,24 @@ export function TrustedBy() {
         Trusted By
       </p>
 
-      {/* Marquee — default. Hidden when the user prefers reduced motion. */}
+      {/* ---------- Mobile: tap-to-reveal scrollable strip ---------- */}
+      <div className="md:hidden">
+        <div
+          className="-mx-6 flex snap-x snap-mandatory gap-2 overflow-x-auto px-6 pb-2"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {TRUSTED_LOGOS.map((logo) => (
+            <TrustedLogoTapCard key={logo.name} logo={logo} />
+          ))}
+        </div>
+        <p className="mt-3 text-center text-[11px] text-navy/50">
+          Tap a logo to see the firm.
+        </p>
+      </div>
+
+      {/* ---------- Desktop: marquee with hover reveal + click-to-navigate ---------- */}
       <div
-        className="marquee-wrapper relative overflow-hidden motion-reduce:hidden"
+        className="marquee-wrapper relative hidden overflow-hidden motion-reduce:hidden md:block"
         style={{
           maskImage:
             "linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%)",
@@ -191,19 +242,35 @@ export function TrustedBy() {
       >
         <div className="marquee-track flex w-max">
           {trackLogos.map((logo, i) => (
-            <TrustedLogoCard key={`${logo.name}-${i}`} logo={logo} />
+            <TrustedLogoLinkCard key={`${logo.name}-${i}`} logo={logo} />
           ))}
         </div>
       </div>
 
-      {/* Static fallback — shown only when the user prefers reduced motion. */}
-      <ul className="hidden flex-wrap items-center justify-center gap-x-4 gap-y-6 motion-reduce:flex">
+      {/* Static fallback (desktop reduced-motion) — shown only when the user prefers reduced motion. */}
+      <ul className="hidden flex-wrap items-center justify-center gap-x-4 gap-y-6 motion-reduce:md:flex">
         {TRUSTED_LOGOS.map((logo) => (
           <li key={logo.name}>
-            <TrustedLogoCard logo={logo} />
+            <TrustedLogoLinkCard logo={logo} />
           </li>
         ))}
       </ul>
+
+      {/* Shared "See Testimonials" CTA — present on both layouts. */}
+      <div className="mt-10 text-center">
+        <a
+          href={TESTIMONIALS_HREF}
+          className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-wide text-cognac transition-colors duration-150 hover:text-cognac-deep"
+        >
+          See Testimonials
+          <span
+            aria-hidden="true"
+            className="transition-transform duration-150 group-hover:translate-x-0.5"
+          >
+            →
+          </span>
+        </a>
+      </div>
     </Section>
   );
 }
@@ -361,7 +428,7 @@ export function IsZptRight() {
   ];
   const notYet = [
     "You're not ready to invest the time to explore.",
-    "You're a heavily regulated organization.",
+    "You're not willing to license enterprise Claude, Codex, or Copilot.",
     "You'd rather outsource critical processes to an external firm.",
     "You want a chatbot wrapper, not a working system.",
   ];
@@ -377,7 +444,7 @@ export function IsZptRight() {
             <AnchorIcon className="h-7 w-7" />
             <p className="font-serif text-[26px] leading-none">Yes, If</p>
           </div>
-          <ul className="mt-6 space-y-4">
+          <ul className="mt-6 space-y-4 pl-10 md:pl-0">
             {yes.map((line) => (
               <li
                 key={line}
@@ -401,7 +468,7 @@ export function IsZptRight() {
               Not Yet, If
             </p>
           </div>
-          <ul className="mt-6 space-y-4">
+          <ul className="mt-6 space-y-4 pl-10 md:pl-0">
             {notYet.map((line) => (
               <li
                 key={line}
