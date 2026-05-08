@@ -315,12 +315,12 @@ export function WhyZpt() {
     {
       Icon: CompassIcon,
       lead: "Track Record Across Industries.",
-      copy: "We've engaged with firms across financial services, design, and hospitality, from boutique studios to top-tier consultants. After 100+ conversations with leaders adopting AI, the wrong turns are already mapped. That experience comes with every engagement.",
+      copy: "We've engaged with firms across financial services, design, and hospitality, from boutique studios to top-tier consultants. 100+ conversations with leaders adopting AI means we know what works across teams, workflows, and tooling. Few are better positioned to help your team land the right setup.",
     },
     {
       Icon: SextantIcon,
       lead: "Built by Practitioners.",
-      copy: "ZPT originated out of a software company that lives and breathes AI. We test every new tool as it ships and know first-hand how they reshape how teams operate. That experience comes directly to your team, in production form.",
+      copy: "ZPTers live and breathe AI. We test every new framework and model the moment it lands, and we've shipped with each in production, so we know first-hand which approaches hold up under real work. ZPT grew out of a software company, and that hands-on expertise reaches your team already proven.",
     },
     {
       Icon: SailboatIcon,
