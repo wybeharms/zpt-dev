@@ -51,6 +51,22 @@ const NAV_LINKS: NavItem[] = [
   { label: "About", href: "/team" },
 ];
 
+/**
+ * Flat list of every nav target shown in the mobile sheet. Includes the
+ * sub-pages from the desktop mega panel (How It Works / Our Work /
+ * Technology) as their own rows so a phone user can reach them in one
+ * tap rather than navigating through a dropdown.
+ */
+const MOBILE_LINKS: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Our Work", href: "/our-work" },
+  { label: "Technology", href: "/technology" },
+  { label: "Testimonials", href: "/#trusted-by" },
+  { label: "Resources", href: "/resources" },
+  { label: "About", href: "/team" },
+];
+
 // Per-column class strings: hairline lives on cols 2 and 3, padding shifts
 // per column so the inner content sits flush with the panel edges on the
 // outside columns and 32px clear of each hairline.
@@ -63,6 +79,7 @@ const COLUMN_CLASSES = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -97,6 +114,23 @@ export default function Header() {
       window.removeEventListener("resize", update);
     };
   }, []);
+
+  // Close the mobile sheet when the user navigates or presses Esc.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    // Lock body scroll while the sheet is open so the user can't accidentally
+    // scroll the page underneath.
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [mobileOpen]);
 
   const headerBg = scrolled ? "bg-cream" : "bg-cream/85";
 
@@ -173,14 +207,57 @@ export default function Header() {
             </a>
           </nav>
 
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-[5px] bg-cognac px-4 py-2 text-[13px] font-medium text-cream md:hidden"
-          >
-            Book a Call
-          </a>
+          {/* Mobile right-side cluster: Book a Call + hamburger. */}
+          <div className="flex items-center gap-2 md:hidden">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-[5px] bg-cognac px-4 py-2 text-[13px] font-medium text-cream"
+            >
+              Book a Call
+            </a>
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav-sheet"
+              onClick={() => setMobileOpen((v) => !v)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[5px] border border-navy/15 text-navy transition-colors duration-150 hover:bg-navy/5"
+            >
+              {mobileOpen ? (
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 4l10 10M14 4L4 14"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  width="20"
+                  height="14"
+                  viewBox="0 0 20 14"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1 1h18M1 7h18M1 13h18"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -233,6 +310,59 @@ export default function Header() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile sheet — slides down below the top bar on phones. Hidden
+          at md+. Tapping a link or the backdrop closes it; the
+          escape-key + body-lock effect lives in useEffect above. */}
+      <div
+        id="mobile-nav-sheet"
+        aria-hidden={!mobileOpen}
+        className={`md:hidden ${
+          mobileOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          aria-hidden="true"
+          onClick={() => setMobileOpen(false)}
+          className={`fixed inset-0 top-[64px] bg-navy/40 transition-opacity duration-200 ${
+            mobileOpen ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        {/* Panel */}
+        <div
+          className={`absolute left-0 right-0 top-full bg-cream border-b border-navy/10 transition-all duration-200 ${
+            mobileOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-2 opacity-0"
+          }`}
+        >
+          <nav className="mx-auto max-w-[1400px] px-6 py-4">
+            <ul className="flex flex-col">
+              {MOBILE_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block border-b border-navy/10 py-4 text-[16px] tracking-wide text-navy transition-colors duration-150 hover:text-cognac"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="mt-5 inline-flex w-full items-center justify-center rounded-[5px] bg-cognac px-5 py-3 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
+            >
+              Book a Call
+            </a>
+          </nav>
         </div>
       </div>
     </header>
