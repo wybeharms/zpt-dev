@@ -6,10 +6,11 @@ import {
 const PAINTING_SRC = "/landing_page/Technology.png";
 
 /**
- * /technology hero. Mirrors the HowItWorksHero layout: navy band, ~78vh
- * tall on desktop, painting anchored to the right edge with a left-edge
- * mask gradient that fades into navy. Mobile drops the painting below
- * the text block.
+ * /technology hero. Desktop layout mirrors HowItWorksHero: navy band,
+ * ~78vh tall, painting anchored to the right edge with a left-edge mask
+ * gradient that fades into navy. Mobile stacks: painting on top
+ * (full-width), title block below — matching the home page Hero pattern
+ * so the title is never overlaid on the painting on small screens.
  */
 export default function TechnologyHero() {
   return (
@@ -38,9 +39,21 @@ export default function TechnologyHero() {
         />
       </div>
 
+      {/* Mobile painting: sits above the title block. The fixed header
+          overlays the top of the painting, same pattern as the home Hero. */}
+      <div className="md:hidden">
+        <img
+          src={PAINTING_SRC}
+          alt=""
+          aria-hidden="true"
+          className="block w-full"
+        />
+      </div>
+
       {/* Content — container widened to 1400px so the eyebrow + heading
-          align with the header logo's left edge. */}
-      <div className="relative mx-auto max-w-[1400px] px-6 pt-28 pb-10 md:flex md:h-full md:items-center md:px-10 md:py-0">
+          align with the header logo's left edge. Mobile padding tightened
+          since the painting above provides the buffer to the header. */}
+      <div className="relative mx-auto max-w-[1400px] px-6 pt-10 pb-12 md:flex md:h-full md:items-center md:px-10 md:py-0">
         <div className="md:max-w-[560px]">
           <SectionEyebrow bg="navy">Technology</SectionEyebrow>
           <SectionHeading bg="navy">Below The Deck.</SectionHeading>
@@ -49,16 +62,6 @@ export default function TechnologyHero() {
             terms.
           </p>
         </div>
-      </div>
-
-      {/* Mobile painting: full-width block below the text */}
-      <div className="md:hidden">
-        <img
-          src={PAINTING_SRC}
-          alt=""
-          aria-hidden="true"
-          className="block w-full"
-        />
       </div>
     </section>
   );

@@ -32,6 +32,17 @@ const tree: TreeNode = {
       ],
     },
     {
+      name: "departments/",
+      isFolder: true,
+      description: "Per-team context and ownership",
+      children: [
+        { name: "investment.md", description: "Investment team scope" },
+        { name: "operations.md" },
+        { name: "client-services.md" },
+        { name: "compliance.md" },
+      ],
+    },
+    {
       name: "skills/",
       isFolder: true,
       children: [
@@ -180,7 +191,9 @@ function TreeLine({
       ) : null}
       <span>{node.name}</span>
       {node.description ? (
-        <span className="ml-[2ch] text-navy/55">
+        // Hidden on mobile — the inline arrows + description wrap awkwardly
+        // and the file/folder names alone tell the story.
+        <span className="ml-[2ch] hidden text-navy/55 md:inline">
           {`← ${node.description}`}
         </span>
       ) : null}
