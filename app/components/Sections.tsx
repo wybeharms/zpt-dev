@@ -108,12 +108,13 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     description: "Top-five US investment consultant",
     emphasis: true,
   },
-  {
-    file: "/testimonials/new_vintage_partners.png",
-    name: "New Vintage Partners",
-    location: "New York, USA",
-    description: "Specialist venture secondaries fund",
-  },
+  // Hidden at NVP's request 2026-05-08, keep for possible re-add later.
+  // {
+  //   file: "/testimonials/new_vintage_partners.png",
+  //   name: "New Vintage Partners",
+  //   location: "New York, USA",
+  //   description: "Specialist venture secondaries fund",
+  // },
   {
     file: "/testimonials/CFA_Institute.png",
     name: "CFA Society",
