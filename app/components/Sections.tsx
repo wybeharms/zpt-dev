@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import RevealOnScroll from "./RevealOnScroll";
 import PortraitSwap from "./PortraitSwap";
 import YoutubeFacade from "./YoutubeFacade";
-import TrustedLogoTapCard from "./TrustedLogoTapCard";
+import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
 import { TEAM } from "./team-data";
 import {
   AnchorIcon,
@@ -214,18 +214,11 @@ export function TrustedBy() {
         Trusted By
       </p>
 
-      {/* ---------- Mobile: tap-to-reveal scrollable strip ---------- */}
+      {/* ---------- Mobile: auto-scrolling marquee + native swipe ---------- */}
       <div className="md:hidden">
-        <div
-          className="-mx-6 flex snap-x snap-mandatory gap-2 overflow-x-auto px-6 pb-2"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {TRUSTED_LOGOS.map((logo) => (
-            <TrustedLogoTapCard key={logo.name} logo={logo} />
-          ))}
-        </div>
+        <TrustedMarqueeMobile logos={TRUSTED_LOGOS} />
         <p className="mt-3 text-center text-[11px] text-navy/50">
-          Tap a logo to see the firm.
+          Swipe to scroll, tap a logo to see the firm.
         </p>
       </div>
 
