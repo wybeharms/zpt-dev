@@ -3,7 +3,7 @@ import {
   SectionHeading,
 } from "../../components/Sections";
 
-const PAINTING_SRC = "/landing_page/What You Get page.png";
+const PAINTING_SRC = "/landing_page/What You Get page.webp";
 
 /**
  * /resources hero. Painting anchored to the LEFT (different left/right

@@ -23,7 +23,7 @@ export default function HowItWorksPage() {
         <ToolsSetup />
         <BeyondDefaults />
         <WhatYouGet />
-        <SubPageFinalCta backgroundImage="/landing_page/How It Works page.png" />
+        <SubPageFinalCta backgroundImage="/landing_page/How It Works page.webp" />
       </main>
       <Footer />
     </>

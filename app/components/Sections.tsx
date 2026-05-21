@@ -102,7 +102,7 @@ type TrustedLogo = {
 
 const TRUSTED_LOGOS: TrustedLogo[] = [
   {
-    file: "/testimonials/marquette_associates.png",
+    file: "/testimonials/marquette_associates.webp",
     name: "Marquette Associates",
     location: "Chicago, USA",
     description: "Top-five US investment consultant",
@@ -110,7 +110,7 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
   },
   // Hidden at NVP's request 2026-05-08, keep for possible re-add later.
   // {
-  //   file: "/testimonials/new_vintage_partners.png",
+  //   file: "/testimonials/new_vintage_partners.webp",
   //   name: "New Vintage Partners",
   //   location: "New York, USA",
   //   description: "Specialist venture secondaries fund",
@@ -122,13 +122,13 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     description: "Global professional body for CFA charterholders",
   },
   {
-    file: "/testimonials/mdv_design.png",
+    file: "/testimonials/mdv_design.webp",
     name: "MDV Design",
     location: "New York, USA",
     description: "Manhattan-based luxury interior design studio",
   },
   {
-    file: "/testimonials/brutalia.png",
+    file: "/testimonials/brutalia.webp",
     name: "Brutalia",
     location: "Barcelona, Spain",
     description: "Fastest-growing pasta chain in Spain",
@@ -530,7 +530,7 @@ export function FinalCta() {
         aria-hidden="true"
         className="absolute inset-0 z-0 opacity-[0.15]"
         style={{
-          backgroundImage: "url('/landing_page/Main Landing Page.png')",
+          backgroundImage: "url('/landing_page/Main Landing Page.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

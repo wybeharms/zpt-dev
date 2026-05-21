@@ -1,4 +1,4 @@
-const PAINTING_SRC = "/landing_page/Our Work.png";
+const PAINTING_SRC = "/landing_page/Our Work.webp";
 
 /**
  * /our-work hero — painting banner only, no text band. The Our Work

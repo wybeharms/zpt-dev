@@ -3,7 +3,7 @@ import {
   SectionHeading,
 } from "../../components/Sections";
 
-const PAINTING_SRC = "/landing_page/How It Works page.png";
+const PAINTING_SRC = "/landing_page/How It Works page.webp";
 
 /**
  * Sub-page hero: navy band, ~60vh tall on desktop. The Shipwright painting

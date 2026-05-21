@@ -19,7 +19,7 @@ export default function Hero() {
 
   const mediaNode = videoFailed ? (
     <img
-      src="/landing_page/Main Landing Page.png"
+      src="/landing_page/Main Landing Page.webp"
       alt=""
       aria-hidden="true"
       className="absolute top-0 left-0 h-full w-auto max-w-none"
@@ -27,7 +27,7 @@ export default function Hero() {
   ) : (
     <video
       src="/landing_page/ShipAnimation.mp4"
-      poster="/landing_page/Main Landing Page.png"
+      poster="/landing_page/Main Landing Page.webp"
       autoPlay
       loop
       muted

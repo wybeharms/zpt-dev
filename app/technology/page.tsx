@@ -23,7 +23,7 @@ export default function TechnologyPage() {
         <AgentInPractice />
         <AgentArchitecture />
         <AgentHome />
-        <SubPageFinalCta backgroundImage="/landing_page/Technology.png" />
+        <SubPageFinalCta backgroundImage="/landing_page/Technology.webp" />
       </main>
       <Footer />
     </>

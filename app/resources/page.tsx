@@ -21,7 +21,7 @@ export default function ResourcesPage() {
         <OnePagerDownload />
         <Recordings />
         <EmailSignup />
-        <SubPageFinalCta backgroundImage="/landing_page/What You Get page.png" />
+        <SubPageFinalCta backgroundImage="/landing_page/What You Get page.webp" />
       </main>
       <Footer />
     </>
