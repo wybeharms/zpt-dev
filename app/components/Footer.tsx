@@ -92,7 +92,7 @@ export default function Footer() {
     <footer className="bg-navy text-cream">
       {/* Decorative ornament band, full-width above the column area. */}
       <img
-        src="/landing_page/Footer Ornament Navy.png"
+        src="/landing_page/Footer Ornament Navy.webp"
         alt=""
         aria-hidden="true"
         className="mx-auto block h-auto w-full max-w-[400px]"

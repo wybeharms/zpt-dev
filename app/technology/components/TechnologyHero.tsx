@@ -3,7 +3,7 @@ import {
   SectionHeading,
 } from "../../components/Sections";
 
-const PAINTING_SRC = "/landing_page/Technology.png";
+const PAINTING_SRC = "/landing_page/Technology.webp";
 
 /**
  * /technology hero. Desktop layout mirrors HowItWorksHero: navy band,
