@@ -38,9 +38,8 @@ The **hero** must be polished. That's the thing we're really testing.
 
 **Assets** (in `public/landing_page/`):
 
-- `Ship Animation.mp4`: 8-second seamless loop (~18 MB). Hero motion.
-- `Main Landing Page.png`: high-res still of the same scene. Use as `poster` AND as fallback if video errors.
-- `Main Landing Page Small.png`: alternate version with the ship rendered slightly smaller. Try both crops; use whichever feels right at full-bleed width. If the regular one feels overwhelming on wide screens, switch to Small.
+- `ShipAnimation.mp4`: ~4 MB seamless loop (optimized from the original). Hero motion.
+- `Main Landing Page.webp`: high-res still of the same scene. Used as `poster` AND as fallback if video errors.
 
 **Behavior:**
 
@@ -78,7 +77,7 @@ For each section: correct headline, one paragraph of body, alternating cream and
 ## Footer
 
 - Dark navy background.
-- Centered: the etched ornament from `public/landing_page/Footer Ornament.png` (or `Footer Ornament Big.png` if the regular one feels too small at full width; try both).
+- Centered: the etched ornament from `public/landing_page/Footer Ornament Navy.webp`.
 - Below ornament: small print with copyright, minimal links (Privacy, Contact), wordmark.
 
 ## Brand quick reference

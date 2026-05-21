@@ -53,7 +53,8 @@ don't get lost when sub-pages are still in flight.
 
 ## Punted from current build (2026-05-06 / 07)
 
-- [ ] **Build `/about`.** Painting (`Expedition.png`) is in place. Three
+- [ ] **Build `/about`.** Source a hero painting when building (an earlier
+  `Expedition.png` candidate is available in git history if useful). Three
   blocks proposed: why ZPT exists, how ZPT is built, where ZPT is going.
   Firm-focused, no founder signature, no personal info. Adds large
   portraits below the body.
