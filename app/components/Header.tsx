@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const CALENDLY_URL = "https://calendly.com/zptpartners/30min";
@@ -81,6 +82,13 @@ export default function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // When the user pins the mega panel open by clicking the trigger, the
+  // hover-out close timer is suppressed. Click outside the trigger/panel
+  // or click the trigger again to unpin and close.
+  const pinnedByClickRef = useRef(false);
+  const megaTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const megaPanelRef = useRef<HTMLDivElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     // Header transitions from translucent → solid cream once the user
@@ -132,6 +140,39 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
+  // Reset mega panel state on every client-side route change. The Header
+  // itself doesn't unmount on navigation (it's in the root layout), so
+  // without this the click-pinned panel would stay open after the user
+  // navigates to a sub-page via a dropdown item.
+  useEffect(() => {
+    pinnedByClickRef.current = false;
+    setMegaOpen(false);
+  }, [pathname]);
+
+  // Click-outside + Escape close the panel when it's pinned open.
+  useEffect(() => {
+    if (!megaOpen) return;
+    const onMouseDown = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (megaTriggerRef.current?.contains(target)) return;
+      if (megaPanelRef.current?.contains(target)) return;
+      pinnedByClickRef.current = false;
+      setMegaOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        pinnedByClickRef.current = false;
+        setMegaOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [megaOpen]);
+
   const headerBg = scrolled ? "bg-cream" : "bg-cream/85";
 
   const openMega = () => {
@@ -139,10 +180,28 @@ export default function Header() {
     setMegaOpen(true);
   };
   const scheduleCloseMega = () => {
+    // Pinned-open via click — don't let hover-out close the panel.
+    if (pinnedByClickRef.current) return;
     if (closeTimer.current) clearTimeout(closeTimer.current);
     // 120ms grace window so the user can move the cursor across the gap
     // between the trigger and the panel without the panel collapsing.
     closeTimer.current = setTimeout(() => setMegaOpen(false), 120);
+  };
+  const toggleMegaByClick = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    if (megaOpen && pinnedByClickRef.current) {
+      // Second click on the trigger collapses the pinned panel.
+      pinnedByClickRef.current = false;
+      setMegaOpen(false);
+    } else {
+      pinnedByClickRef.current = true;
+      setMegaOpen(true);
+    }
+  };
+  const closeMegaImmediately = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    pinnedByClickRef.current = false;
+    setMegaOpen(false);
   };
 
   return (
@@ -170,11 +229,13 @@ export default function Header() {
                   onFocus={openMega}
                   onBlur={scheduleCloseMega}
                 >
-                  <Link
-                    href={link.href}
+                  <button
+                    type="button"
+                    ref={megaTriggerRef}
+                    onClick={toggleMegaByClick}
                     aria-haspopup="true"
                     aria-expanded={megaOpen}
-                    className="inline-flex items-center gap-1 text-[14px] tracking-wide text-navy/80 transition-colors duration-150 hover:text-navy"
+                    className="inline-flex cursor-pointer items-center gap-1 text-[14px] tracking-wide text-navy/80 transition-colors duration-150 hover:text-navy"
                   >
                     {link.label}
                     <span
@@ -185,7 +246,7 @@ export default function Header() {
                     >
                       ▾
                     </span>
-                  </Link>
+                  </button>
                 </div>
               ) : (
                 <Link
@@ -266,6 +327,7 @@ export default function Header() {
           doesn't intercept clicks. Shadow bumped a touch from the previous
           iteration so the panel reads as a distinct floating card. */}
       <div
+        ref={megaPanelRef}
         aria-hidden={!megaOpen}
         onMouseEnter={openMega}
         onMouseLeave={scheduleCloseMega}
@@ -289,21 +351,40 @@ export default function Header() {
                   key={col.title}
                   href={col.href}
                   role="menuitem"
-                  className={`group block ${COLUMN_CLASSES[i]}`}
+                  onClick={closeMegaImmediately}
+                  onMouseMove={(e) => {
+                    const t = e.currentTarget;
+                    const r = t.getBoundingClientRect();
+                    t.style.setProperty("--mx", `${e.clientX - r.left}px`);
+                    t.style.setProperty("--my", `${e.clientY - r.top}px`);
+                  }}
+                  className={`group relative block overflow-hidden ${COLUMN_CLASSES[i]}`}
                 >
-                  <h4 className="font-serif text-[22px] leading-snug text-navy transition-colors duration-150 group-hover:text-cognac">
-                    {col.title}
-                  </h4>
-                  <p className="mt-2 text-[14px] leading-snug text-navy/65">
-                    {col.descriptor}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-cognac">
-                    View
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-150 group-hover:translate-x-0.5"
-                    >
-                      →
+                  {/* Cursor-tracking glow — soft cognac spotlight follows
+                      the mouse across each column. */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{
+                      background:
+                        "radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(165, 102, 60, 0.10), transparent 70%)",
+                    }}
+                  />
+                  <span className="relative block">
+                    <h4 className="font-serif text-[22px] leading-snug text-navy transition-colors duration-150 group-hover:text-cognac">
+                      {col.title}
+                    </h4>
+                    <p className="mt-2 text-[14px] leading-snug text-navy/65">
+                      {col.descriptor}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-cognac">
+                      View
+                      <span
+                        aria-hidden="true"
+                        className="transition-transform duration-150 group-hover:translate-x-0.5"
+                      >
+                        →
+                      </span>
                     </span>
                   </span>
                 </Link>

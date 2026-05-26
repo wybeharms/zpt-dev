@@ -12,7 +12,12 @@ import ChatbotVsAgentSvg from "./ChatbotVsAgentSvg";
  */
 export default function AgentConcept() {
   return (
-    <Section id="agent-concept" bg="cream" align="header">
+    <Section
+      id="agent-concept"
+      bg="cream"
+      align="header"
+      backgroundWord="Agents"
+    >
       <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-16">
         <div className="max-w-[520px]">
           <SectionEyebrow bg="cream">Chatbot vs Agent</SectionEyebrow>

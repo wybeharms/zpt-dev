@@ -3,6 +3,8 @@ import RevealOnScroll from "./RevealOnScroll";
 import PortraitSwap from "./PortraitSwap";
 import YoutubeFacade from "./YoutubeFacade";
 import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
+import WhyZptCard from "./WhyZptCard";
+import OurApproachRow from "./OurApproachRow";
 import { TEAM } from "./team-data";
 import {
   AnchorIcon,
@@ -20,6 +22,7 @@ export function Section({
   bg,
   align = "default",
   bgColor,
+  backgroundWord,
   children,
   className = "",
 }: {
@@ -30,6 +33,10 @@ export function Section({
       the alternating cream/navy rhythm with a custom shade. The text color
       still follows `bg`. */
   bgColor?: string;
+  /** Optional giant faint serif word that bleeds off the top-right corner
+   *  as a decorative watermark behind the section content (Lerai-style).
+   *  Pass one short word, displayed uppercase. */
+  backgroundWord?: string;
   children: ReactNode;
   className?: string;
 }) {
@@ -43,13 +50,24 @@ export function Section({
   // headings line up with the header logo's left edge. Default 1200px
   // stays for the home page.
   const innerMax = align === "header" ? "max-w-[1400px]" : "max-w-[1200px]";
+  const wordColor = bg === "cream" ? "text-navy/[0.05]" : "text-cream/[0.05]";
   return (
     <section
       id={id}
-      className={`relative w-full ${bgClass} ${textColor} py-20 md:py-32 ${className}`}
+      className={`relative w-full ${backgroundWord ? "overflow-hidden" : ""} ${bgClass} ${textColor} py-20 md:py-32 ${className}`}
       style={bgColor ? { backgroundColor: bgColor } : undefined}
     >
-      <div className={`mx-auto ${innerMax} px-6 md:px-10`}>{children}</div>
+      {backgroundWord ? (
+        <span
+          aria-hidden="true"
+          className={`pointer-events-none absolute -top-6 right-0 select-none font-serif text-[clamp(6.5rem,20vw,16rem)] font-light uppercase leading-none tracking-tight md:-top-10 md:right-2 ${wordColor}`}
+        >
+          {backgroundWord}
+        </span>
+      ) : null}
+      <div className={`relative mx-auto ${innerMax} px-6 md:px-10`}>
+        {children}
+      </div>
     </section>
   );
 }
@@ -105,16 +123,15 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     file: "/testimonials/marquette_associates.webp",
     name: "Marquette Associates",
     location: "Chicago, USA",
-    description: "Top-five US investment consultant",
+    description: "Top 5 independent US investment consultant",
     emphasis: true,
   },
-  // Hidden at NVP's request 2026-05-08, keep for possible re-add later.
-  // {
-  //   file: "/testimonials/new_vintage_partners.webp",
-  //   name: "New Vintage Partners",
-  //   location: "New York, USA",
-  //   description: "Specialist venture secondaries fund",
-  // },
+  {
+    file: "/testimonials/new_vintage_partners.webp",
+    name: "New Vintage Partners",
+    location: "New York, USA",
+    description: "Specialist venture secondaries fund",
+  },
   {
     file: "/testimonials/CFA_Institute.png",
     name: "CFA Society",
@@ -165,21 +182,21 @@ function TrustedLogoBody({
   descriptionVisible?: boolean;
 }) {
   const imgClass = logo.emphasis
-    ? "h-14 w-auto max-w-[180px] object-contain md:h-20"
+    ? "h-16 w-auto max-w-[200px] object-contain md:h-24"
     : "h-12 w-auto max-w-[160px] object-contain md:h-14";
   return (
     <div className="flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
       <div className="flex h-14 items-center justify-center md:h-20">
         <img src={logo.file} alt={logo.name} className={imgClass} />
       </div>
-      <p className="mt-7 text-[12px] font-medium uppercase tracking-[0.18em] text-navy">
+      <p className="mt-7 min-h-[36px] text-[12px] font-medium uppercase tracking-[0.18em] text-navy">
         {logo.name}
       </p>
       <p className="mt-1 text-[12px] tracking-wide text-navy/55">
         {logo.location}
       </p>
       <p
-        className={`mt-1.5 text-[12px] leading-[1.4] text-navy/65 transition-opacity duration-200 group-hover:opacity-100 ${
+        className={`mt-1.5 text-[12px] italic leading-[1.4] text-navy/65 transition-opacity duration-200 group-hover:opacity-100 ${
           descriptionVisible ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -275,44 +292,25 @@ export function OurApproach() {
     },
   ];
   return (
-    <section
-      id="our-approach"
-      className="relative w-full bg-navy py-20 text-cream md:py-24"
-    >
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-        <div className="max-w-[860px]">
-          <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
-          <SectionHeading bg="navy">Our Approach</SectionHeading>
-          <p className="mt-6 text-[16px] leading-[1.7] text-cream/85">
+    <Section id="our-approach" bg="navy" backgroundWord="Method">
+      {/* Section header sits above the card, mirroring Lerai's pattern. */}
+      <div className="max-w-[720px]">
+        <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
+        <SectionHeading bg="navy">Our Approach</SectionHeading>
+      </div>
+
+      {/* Content card — subtle cream tint on navy, defined edges. */}
+      <div className="mt-10 rounded-2xl border border-cream/10 bg-cream/[0.04] p-7 md:mt-14 md:p-12">
+          <p className="text-[16px] leading-[1.7] text-cream/85">
             Every company is different. ZPT meets your team where you are.
             Engagements range from a half-day education session to a full
             multi-workflow build, sized to where your team is ready. Three
             steps anchor the work.
           </p>
 
-          <ul className="mt-6 border-t border-cream/15">
+          <ul className="mt-8 border-t border-cream/15">
             {steps.map((step) => (
-              <li
-                key={step.label}
-                className="border-b border-cream/15 transition-colors duration-200 hover:bg-cognac/[0.10]"
-              >
-                <RevealOnScroll className="grid grid-cols-[64px_minmax(0,1fr)] gap-6 px-3 py-5 md:grid-cols-[80px_minmax(0,1fr)] md:gap-10 md:px-5 md:py-5">
-                  <span
-                    aria-hidden="true"
-                    className="select-none font-serif text-[28px] leading-none text-cognac-light md:text-[32px]"
-                  >
-                    {step.number}
-                  </span>
-                  <div>
-                    <p className="font-serif text-[22px] leading-snug text-cream md:text-[24px]">
-                      {step.label}
-                    </p>
-                    <p className="mt-3 text-[16px] leading-[1.65] text-cream/75">
-                      {step.copy}
-                    </p>
-                  </div>
-                </RevealOnScroll>
-              </li>
+              <OurApproachRow key={step.label} {...step} />
             ))}
           </ul>
           <div className="mt-10">
@@ -330,8 +328,7 @@ export function OurApproach() {
             </a>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }
 
@@ -360,38 +357,45 @@ export function WatchZpt() {
 export function WhyZpt() {
   const blocks = [
     {
-      Icon: CompassIcon,
-      lead: "Track Record Across Industries.",
-      copy: "We've engaged with firms across financial services, design, and hospitality, from boutique studios to top-tier consultants. 100+ conversations with leaders adopting AI means we know what works across teams, workflows, and tooling. Few are better positioned to help your team land the right setup.",
-    },
-    {
       Icon: SextantIcon,
       lead: "Built by Practitioners.",
-      copy: "ZPTers live and breathe AI. We test every new framework and model the moment it lands, and we've shipped with each in production, so we know first-hand which approaches hold up under real work. ZPT grew out of a software company, and that hands-on expertise reaches your team already proven.",
+      copy: "ZPTers are obsessed with AI. We test every new framework and model the day it ships, and we've put each in production, so we know what holds up under real work.",
+      expanded:
+        "ZPT grew out of a software company. Every team member uses agents in their own daily work. The methods we recommend are the ones we run ourselves.",
+    },
+    {
+      Icon: CompassIcon,
+      lead: "Track Record.",
+      copy: "We've worked across financial services, design, and hospitality on workflows that range from deep research to daily operations.",
+      expanded:
+        "Allocators, designers, hospitality operators. The patterns repeat across sectors and team sizes, so we know which approaches hold up and which ones break.",
     },
     {
       Icon: SailboatIcon,
       lead: "Start Small, No Commitment.",
-      copy: "Every engagement is low risk by design. Even when a workflow is only partially automatable, what we build becomes a foundation the team grows over time. The setup is AI agnostic and nothing is locked in.",
+      copy: "Every engagement is low-risk by design. The setup is AI agnostic and runs on tools you already have, like SharePoint or Dropbox. Nothing is locked in.",
+      expanded:
+        "A half-day education session is a legitimate first step, no retainer required. Runs on your own Claude, Codex, or Copilot license.",
     },
   ];
   return (
-    <Section id="why-zpt" bg="cream">
+    <Section id="why-zpt" bg="cream" align="header" backgroundWord="Why">
       <div className="max-w-[720px]">
         <SectionEyebrow bg="cream">Proven</SectionEyebrow>
         <SectionHeading bg="cream">Why ZPT</SectionHeading>
       </div>
-      <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
-        {blocks.map(({ Icon, lead, copy }) => (
-          <div key={lead}>
-            <Icon className="mb-3 h-8 w-8 text-cognac" />
-            <h3 className="font-serif text-[22px] leading-snug text-navy">
-              {lead}
-            </h3>
-            <p className="mt-4 text-[15px] leading-[1.65] text-navy/75">
-              {copy}
-            </p>
-          </div>
+      {/* No items-start: grid stretches each card to the tallest in the
+          row so the bordered cards line up even with different copy
+          lengths (Example footer pinned to the bottom inside the card). */}
+      <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-7">
+        {blocks.map(({ Icon, lead, copy, expanded }) => (
+          <WhyZptCard
+            key={lead}
+            icon={<Icon className="h-7 w-7" />}
+            lead={lead}
+            copy={copy}
+            expanded={expanded}
+          />
         ))}
       </div>
     </Section>
@@ -543,10 +547,21 @@ export function FinalCta() {
             "linear-gradient(180deg, rgba(12,12,40,0.05) 0%, rgba(12,12,40,0.55) 50%, #0C0C28 100%)",
         }}
       />
+      {/* Closing background word — sits between the painting overlay and
+          the foreground text so it reads as a faint watermark. */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-4 right-0 z-[2] select-none font-serif text-[clamp(6.5rem,20vw,16rem)] font-light uppercase leading-none tracking-tight text-cream/[0.05] md:-top-8 md:right-2"
+      >
+        Begin
+      </span>
       <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center md:px-10">
         <SectionEyebrow bg="navy">Start Here</SectionEyebrow>
-        <h2 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] font-normal leading-[1.06] tracking-[-0.01em] text-cream">
-          Build Your AI Directory
+        <h2 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.06] tracking-[-0.01em]">
+          <span className="block font-normal text-cream">Build</span>
+          <span className="mt-1 block font-bold text-cognac">
+            Your AI Directory
+          </span>
         </h2>
         <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-cream/80">
           Every engagement begins with a conversation. Book a 30-minute call

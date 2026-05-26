@@ -40,20 +40,23 @@ export default function PortraitSwap({ src, alt }: Props) {
       className="group relative block aspect-[3/4] w-full overflow-hidden rounded-md border border-navy/10 cursor-pointer"
     >
       {/* Professional half — default visible. Fades out on hover (desktop)
-          OR when `toggled` is true (touch tap). */}
+          OR when `toggled` is true (touch tap). The clip-path crops a 3px
+          sliver off the right edge so the seam at the center of the 3:2
+          composite never appears as a hairline. */}
       <img
         src={src}
         alt={alt}
-        className={`absolute inset-0 h-full w-full object-cover object-left transition-opacity duration-[350ms] ease-out group-hover:opacity-0 ${
+        className={`absolute inset-0 h-full w-full object-cover object-left [clip-path:inset(0_3px_0_0)] transition-opacity duration-[350ms] ease-out group-hover:opacity-0 ${
           toggled ? "opacity-0" : "opacity-100"
         }`}
       />
-      {/* Marine half — fades in on hover OR when toggled. */}
+      {/* Marine half — fades in on hover OR when toggled. Same 3px clip,
+          mirrored to the left edge for the same reason. */}
       <img
         src={src}
         alt=""
         aria-hidden="true"
-        className={`absolute inset-0 h-full w-full object-cover object-right transition-opacity duration-[350ms] ease-out group-hover:opacity-100 ${
+        className={`absolute inset-0 h-full w-full object-cover object-right [clip-path:inset(0_0_0_3px)] transition-opacity duration-[350ms] ease-out group-hover:opacity-100 ${
           toggled ? "opacity-100" : "opacity-0"
         }`}
       />

@@ -9,6 +9,7 @@ import {
   KnotIcon,
   LiferingIcon,
 } from "../../components/MarineIcons";
+import WorkflowCard from "./WorkflowCard";
 
 type Workflow = {
   Icon: React.ComponentType<{ className?: string }>;
@@ -40,7 +41,12 @@ const workflows: Workflow[] = [
 
 export default function ExampleWorkflows() {
   return (
-    <Section id="example-workflows" bg="cream" align="header">
+    <Section
+      id="example-workflows"
+      bg="cream"
+      align="header"
+      backgroundWord="Cases"
+    >
       <div className="max-w-[720px]">
         <SectionEyebrow bg="cream">Workflows We&apos;ve Shipped</SectionEyebrow>
         <SectionHeading bg="cream">A Few Examples.</SectionHeading>
@@ -53,17 +59,13 @@ export default function ExampleWorkflows() {
       <ul className="mt-14 grid gap-6 md:grid-cols-3 md:gap-7">
         {workflows.map(({ Icon, title, industry, body }) => (
           <li key={title}>
-            <RevealOnScroll className="flex h-full flex-col rounded-md border border-navy/10 bg-[#F4ECDE] p-7 transition-all duration-200 hover:-translate-y-1 hover:border-cognac/30 hover:bg-[#DBC5AD] hover:shadow-[0_14px_32px_-14px_rgba(12,12,40,0.18)]">
-              <Icon className="h-8 w-8 text-cognac" />
-              <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.22em] text-cognac/85">
-                {industry}
-              </p>
-              <h3 className="mt-2 font-serif text-[22px] leading-snug text-navy">
-                {title}
-              </h3>
-              <p className="mt-4 text-[14px] leading-[1.65] text-navy/75">
-                {body}
-              </p>
+            <RevealOnScroll>
+              <WorkflowCard
+                icon={<Icon className="h-8 w-8" />}
+                industry={industry}
+                title={title}
+                body={body}
+              />
             </RevealOnScroll>
           </li>
         ))}

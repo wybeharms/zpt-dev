@@ -24,7 +24,7 @@ export type TrustedLogo = {
 export default function TrustedLogoTapCard({ logo }: { logo: TrustedLogo }) {
   const [open, setOpen] = useState(false);
   const imgClass = logo.emphasis
-    ? "h-14 w-auto max-w-[180px] object-contain md:h-20"
+    ? "h-16 w-auto max-w-[200px] object-contain md:h-24"
     : "h-12 w-auto max-w-[160px] object-contain md:h-14";
 
   return (
@@ -38,14 +38,14 @@ export default function TrustedLogoTapCard({ logo }: { logo: TrustedLogo }) {
         <div className="flex h-14 items-center justify-center md:h-20">
           <img src={logo.file} alt={logo.name} className={imgClass} />
         </div>
-        <p className="mt-7 text-[12px] font-medium uppercase tracking-[0.18em] text-navy">
+        <p className="mt-7 min-h-[36px] text-[12px] font-medium uppercase tracking-[0.18em] text-navy">
           {logo.name}
         </p>
         <p className="mt-1 text-[12px] tracking-wide text-navy/55">
           {logo.location}
         </p>
         <p
-          className={`mt-1.5 text-[12px] leading-[1.4] text-navy/65 transition-opacity duration-200 ${
+          className={`mt-1.5 text-[12px] italic leading-[1.4] text-navy/65 transition-opacity duration-200 ${
             open ? "opacity-100" : "opacity-0"
           }`}
         >

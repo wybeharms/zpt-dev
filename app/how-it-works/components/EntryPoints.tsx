@@ -47,7 +47,7 @@ const entries: Entry[] = [
 
 export default function EntryPoints() {
   return (
-    <Section id="entry-points" bg="cream" align="header">
+    <Section id="entry-points" bg="cream" backgroundWord="Process" align="header">
       <div className="max-w-[880px]">
         <SectionEyebrow bg="cream">Flexibility Is Key</SectionEyebrow>
         <SectionHeading bg="cream">Pick Your Entry Point.</SectionHeading>

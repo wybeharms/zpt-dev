@@ -4,7 +4,11 @@ import {
   SectionHeading,
 } from "../../components/Sections";
 
-const CALENDLY_URL = "https://calendly.com/zptpartners/30min";
+const APPLY_HREF = `mailto:wybe@zptpartners.com?subject=${encodeURIComponent(
+  "Apply to become a ZPTer",
+)}&body=${encodeURIComponent(
+  "Share a quick message about why you'd like to apply to become a ZPTer.\n\n",
+)}`;
 
 /**
  * Apply-to-ZPT call-out. Sits between the team grid and the final CTA.
@@ -12,9 +16,9 @@ const CALENDLY_URL = "https://calendly.com/zptpartners/30min";
  * team grid above without breaking the alternating cream/navy rhythm
  * leading into the final navy CTA.
  *
- * The Apply button routes through the same Calendly link as Book A
- * Call. Wybe handles intake personally; emails/forms can be added
- * later if volume warrants.
+ * Apply button opens a mail draft to Wybe with a pre-filled subject
+ * and a one-line prompt in the body. Wybe handles intake personally;
+ * a form can replace the mailto later if volume warrants.
  */
 export default function JoinUs() {
   return (
@@ -29,9 +33,7 @@ export default function JoinUs() {
         </p>
         <div className="mt-8">
           <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={APPLY_HREF}
             className="inline-flex items-center justify-center gap-2 rounded-[5px] bg-cognac px-8 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
           >
             Apply To Join
