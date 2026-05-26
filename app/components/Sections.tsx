@@ -5,6 +5,7 @@ import YoutubeFacade from "./YoutubeFacade";
 import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
 import WhyZptCard from "./WhyZptCard";
 import OurApproachRow from "./OurApproachRow";
+import TrustedLogoBody, { type TrustedLogo } from "./TrustedLogoBody";
 import { TEAM } from "./team-data";
 import {
   AnchorIcon,
@@ -107,17 +108,6 @@ export function SectionHeading({
 }
 
 /* ---------- 2. Trusted By ---------- */
-type TrustedLogo = {
-  file: string;
-  name: string;
-  location: string;
-  description: string;
-  /** Set true when the source PNG has a lot of transparent padding
-   *  around the actual mark, so the logo needs to render at a larger
-   *  height to read at the same visual weight as the others. */
-  emphasis?: boolean;
-};
-
 const TRUSTED_LOGOS: TrustedLogo[] = [
   {
     file: "/testimonials/marquette_associates.webp",
@@ -160,57 +150,11 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
 // const TESTIMONIALS_HREF = "/testimonials";
 
 /**
- * Single logo card body — the visual content that's shared between the
- * desktop marquee tile (currently a non-clickable div) and the mobile
- * scroll strip (a button that toggles description visibility on tap).
- *
- * The logo slot is fixed-height with items-center so all cards have
- * their text rows starting at the same y-coordinate, regardless of how
- * tall or short each individual logo image is. Logos with the
- * `emphasis` flag (e.g. Marquette, whose source PNG has lots of
- * transparent padding) render taller inside the same slot.
- *
- * `descriptionVisible` controls the description independently of any
- * hover state — used by the mobile tap-toggle. The desktop wrapper
- * still drives reveal via `:group-hover`, layered on top.
- */
-function TrustedLogoBody({
-  logo,
-  descriptionVisible = false,
-}: {
-  logo: TrustedLogo;
-  descriptionVisible?: boolean;
-}) {
-  const imgClass = logo.emphasis
-    ? "h-16 w-auto max-w-[200px] object-contain md:h-24"
-    : "h-12 w-auto max-w-[160px] object-contain md:h-14";
-  return (
-    <div className="flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
-      <div className="flex h-14 items-center justify-center md:h-20">
-        <img src={logo.file} alt={logo.name} className={imgClass} />
-      </div>
-      <p className="mt-7 min-h-[36px] text-[12px] font-medium uppercase tracking-[0.18em] text-navy">
-        {logo.name}
-      </p>
-      <p className="mt-1 text-[12px] tracking-wide text-navy/55">
-        {logo.location}
-      </p>
-      <p
-        className={`mt-1.5 text-[12px] italic leading-[1.4] text-navy/65 transition-opacity duration-200 group-hover:opacity-100 ${
-          descriptionVisible ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {logo.description}
-      </p>
-    </div>
-  );
-}
-
-/**
- * Desktop / marquee version of the card. Currently non-clickable — hover
+ * Desktop / marquee version of the card. Currently non-clickable, hover
  * reveals the description via `group`. Click navigation to /testimonials
  * is disabled until that page ships; see comment on TESTIMONIALS_HREF
- * above for how to re-enable.
+ * above for how to re-enable. The body markup itself lives in
+ * TrustedLogoBody so the mobile tap card can render the same visual.
  */
 function TrustedLogoLinkCard({ logo }: { logo: TrustedLogo }) {
   return (

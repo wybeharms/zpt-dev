@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import TrustedLogoTapCard, { type TrustedLogo } from "./TrustedLogoTapCard";
+import TrustedLogoTapCard from "./TrustedLogoTapCard";
+import type { TrustedLogo } from "./TrustedLogoBody";
 
 /**
  * Mobile auto-scrolling marquee with native swipe support.
