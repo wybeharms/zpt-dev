@@ -3,10 +3,12 @@ export type TrustedLogo = {
   name: string;
   location: string;
   description: string;
-  /** Set true when the source PNG has a lot of transparent padding
-   *  around the actual mark, so the logo needs to render at a larger
-   *  height to read at the same visual weight as the others. */
-  emphasis?: boolean;
+  /** Visual size tier. Default `md` matches most logos. Use `lg` when a
+   *  logo has heavy transparent padding (Marquette, NVP) or just
+   *  reads as visually weaker than the rest. Use `sm` when a logo's
+   *  glyphs are dense enough (CFA) that the default size looks
+   *  oversized next to the others. */
+  size?: "sm" | "md" | "lg";
 };
 
 /**
