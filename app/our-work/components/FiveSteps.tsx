@@ -135,8 +135,8 @@ export default function FiveSteps() {
                     }ms`,
                   }}
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-cognac-light">
-                    <Icon className="h-7 w-7" />
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-navy text-cognac-light ring-1 ring-cognac/30">
+                    <Icon className="h-9 w-9" />
                   </span>
                   <p className="mt-5 font-serif text-[24px] leading-snug text-cream">
                     {label}
@@ -155,7 +155,7 @@ export default function FiveSteps() {
           {steps.map(({ Icon, label, copy }) => (
             <li key={label} className="flex gap-4">
               <span className="mt-1 text-cognac-light">
-                <Icon className="h-7 w-7" />
+                <Icon className="h-9 w-9" />
               </span>
               <div>
                 <p className="font-serif text-[24px] leading-snug text-cream">

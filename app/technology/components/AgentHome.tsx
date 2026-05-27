@@ -3,6 +3,9 @@ import {
   SectionEyebrow,
   SectionHeading,
 } from "../../components/Sections";
+import FolderTree, {
+  type TreeNode,
+} from "../../how-it-works/components/FolderTree";
 
 const storageProviders = [
   { src: "/external_logos/GitHub.png", label: "GitHub" },
@@ -11,36 +14,60 @@ const storageProviders = [
   { src: "/external_logos/Dropbox.png", label: "Dropbox" },
 ];
 
-/**
- * Static, non-interactive folder tree. Renders only the top-level
- * structure (no nested children, no click-to-expand). Reuses the same
- * monospace styling and inset container from the /how-it-works
- * FolderTree so the two pages feel consistent. The interactive expand
- * stays unique to /how-it-works.
- */
-function StaticFolderTree() {
-  const rows: { prefix: string; name: string }[] = [
-    { prefix: "├──── ", name: "CLAUDE.md" },
-    { prefix: "├──── ", name: "company-context/" },
-    { prefix: "├──── ", name: "skills/" },
-    { prefix: "├──── ", name: "templates/" },
-    { prefix: "└──── ", name: "example-docs/" },
-  ];
-  return (
-    <div
-      className="w-full rounded-md border border-navy/15 p-6 font-mono text-[14px] leading-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]"
-      style={{ backgroundColor: "#E5DBC6" }}
-    >
-      <div className="text-navy">your-company/</div>
-      {rows.map((row) => (
-        <div key={row.name} className="whitespace-pre text-navy">
-          <span className="text-navy/55">{row.prefix}</span>
-          {row.name}
-        </div>
-      ))}
-    </div>
-  );
-}
+// Shorter folder tree shown on /technology. Each top-level folder has
+// a handful of children so the click-to-expand interaction has
+// something to reveal, without dragging in the full /how-it-works
+// reference tree. The deeper structure stays unique to /how-it-works,
+// where the bridge link at the bottom of this section sends curious
+// readers.
+const AGENT_HOME_TREE: TreeNode = {
+  name: "your-company/",
+  isFolder: true,
+  children: [
+    {
+      name: "CLAUDE.md",
+      description: "Instructions for the AI agent",
+    },
+    {
+      name: "company-context/",
+      isFolder: true,
+      children: [
+        { name: "overview.md", description: "Who you are, what you do" },
+        { name: "terminology.md", description: "Industry terms" },
+        { name: "style-guide.md", description: "How you write" },
+      ],
+    },
+    {
+      name: "skills/",
+      isFolder: true,
+      children: [
+        { name: "draft-memo/", isFolder: true, children: [] },
+        { name: "analyze-documents/", isFolder: true, children: [] },
+        { name: "summarize-call/", isFolder: true, children: [] },
+      ],
+    },
+    {
+      name: "templates/",
+      isFolder: true,
+      children: [
+        {
+          name: "memo-template.md",
+          description: "Output formatting standards",
+        },
+        { name: "weekly-update-template.md" },
+      ],
+    },
+    {
+      name: "example-docs/",
+      isFolder: true,
+      description: "Real inputs and outputs",
+      children: [
+        { name: "good-memos/", isFolder: true, children: [] },
+        { name: "winning-pitches/", isFolder: true, children: [] },
+      ],
+    },
+  ],
+};
 
 /**
  * Section 5 — tinted-cream band (#E0CDB0). Frames the agent package as
@@ -72,7 +99,10 @@ export default function AgentHome() {
           stretches of cream on either side. */}
       <div className="mx-auto mt-14 flex max-w-[820px] flex-col items-center gap-10 md:mt-16 md:flex-row md:items-center md:justify-center md:gap-14">
         <div className="w-full max-w-[460px]">
-          <StaticFolderTree />
+          <FolderTree
+            tree={AGENT_HOME_TREE}
+            className="w-full rounded-md border border-navy/15 p-6 font-mono text-[14px] leading-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]"
+          />
         </div>
         <div className="grid w-full max-w-[280px] grid-cols-2 gap-3 md:gap-4">
           {storageProviders.map((provider) => (

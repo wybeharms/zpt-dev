@@ -1,4 +1,3 @@
-import RevealOnScroll from "../../components/RevealOnScroll";
 import {
   Section,
   SectionEyebrow,
@@ -10,6 +9,7 @@ import {
   SailboatIcon,
   SextantIcon,
 } from "../../components/MarineIcons";
+import EntryPointsRow from "./EntryPointsRow";
 
 type Entry = {
   Icon: React.ComponentType<{ className?: string }>;
@@ -58,28 +58,8 @@ export default function EntryPoints() {
       </div>
 
       <ul className="mt-14 border-t border-navy/10">
-        {entries.map(({ Icon, name, duration, copy }) => (
-          <li
-            key={name}
-            className="group border-b border-navy/10 transition-colors duration-200 hover:bg-cognac/[0.08]"
-          >
-            <RevealOnScroll className="grid grid-cols-[56px_minmax(0,1fr)] gap-5 px-3 py-9 md:grid-cols-[100px_300px_minmax(0,1fr)] md:gap-10 md:px-5">
-              <div className="text-cognac md:flex md:items-start md:pt-2">
-                <Icon className="h-9 w-9 transition-colors duration-200 group-hover:text-cognac-deep md:h-10 md:w-10" />
-              </div>
-              <div className="md:pt-1">
-                <p className="font-serif text-[22px] leading-snug text-navy md:text-[26px]">
-                  {name}
-                </p>
-                <p className="mt-2 text-[13px] italic text-cognac/85">
-                  {duration}
-                </p>
-              </div>
-              <p className="col-span-2 text-[15px] leading-[1.65] text-navy/75 transition-colors duration-200 group-hover:text-navy md:col-span-1 md:pt-2">
-                {copy}
-              </p>
-            </RevealOnScroll>
-          </li>
+        {entries.map((entry) => (
+          <EntryPointsRow key={entry.name} {...entry} />
         ))}
       </ul>
 

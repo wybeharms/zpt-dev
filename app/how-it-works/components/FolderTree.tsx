@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 
-type TreeNode = {
+export type TreeNode = {
   name: string;
   isFolder?: boolean;
   description?: string;
   children?: TreeNode[];
 };
 
-const tree: TreeNode = {
+// Default tree used by /how-it-works/WhatYouGet — the full reference
+// structure. AgentHome on /technology supplies its own shorter tree
+// via the `tree` prop.
+const DEFAULT_TREE: TreeNode = {
   name: "your-company/",
   isFolder: true,
   children: [
@@ -256,7 +259,19 @@ function TreeBranch({
   );
 }
 
-export default function FolderTree() {
+type FolderTreeProps = {
+  /** Tree data to render. Defaults to the /how-it-works reference tree. */
+  tree?: TreeNode;
+  /** Override the wrapper's classes (e.g. to drop the centering or top
+   *  margin when embedding inside another section). When omitted, the
+   *  original /how-it-works styling applies. */
+  className?: string;
+};
+
+export default function FolderTree({
+  tree = DEFAULT_TREE,
+  className,
+}: FolderTreeProps = {}) {
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   const toggle = (path: string) => {
@@ -268,11 +283,12 @@ export default function FolderTree() {
     });
   };
 
+  const wrapperClass =
+    className ??
+    "mx-auto mt-12 max-w-[640px] rounded-md border border-navy/15 p-6 font-mono text-[14px] leading-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]";
+
   return (
-    <div
-      className="mx-auto mt-12 max-w-[640px] rounded-md border border-navy/15 p-6 font-mono text-[14px] leading-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]"
-      style={{ backgroundColor: "#E5DBC6" }}
-    >
+    <div className={wrapperClass} style={{ backgroundColor: "#E5DBC6" }}>
       <TreeBranch
         node={tree}
         ancestorIsLast={[]}

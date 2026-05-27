@@ -46,20 +46,46 @@ export default function AgentArchitecture() {
         </p>
       </div>
 
-      {/* Two-column body: paragraphs left, diagram right (stacks on mobile). */}
+      {/* Two-column body: vertical assembly on the left, diagram on the
+          right. The assembly visualizes the three parts as nodes on a
+          single cognac thread, so the reader sees Brain, Hands, and
+          Harness as one connected system rather than three loose
+          paragraphs. The right column keeps the existing HarnessSvg as
+          a complementary visual anchor. Stacks on mobile. */}
       <div className="mt-14 grid gap-12 md:mt-16 md:grid-cols-[minmax(0,1fr)_minmax(0,720px)] md:items-center md:gap-16">
-        <div className="space-y-8">
-          {parts.map(({ name, copy }) => (
-            <div key={name}>
-              <p className="font-serif text-[22px] leading-snug text-navy">
-                {name}
-              </p>
-              <p className="mt-3 max-w-[520px] pl-5 text-[15px] leading-[1.65] text-navy/75">
-                {copy}
-              </p>
-            </div>
-          ))}
-        </div>
+        <ul className="relative">
+          {parts.map(({ name, copy }, i) => {
+            const isLast = i === parts.length - 1;
+            return (
+              <li
+                key={name}
+                className={`relative pl-8 ${isLast ? "" : "pb-10"}`}
+              >
+                {/* Connector segment: extends from this node's center
+                    down through the row's bottom padding so the visual
+                    thread runs continuously into the next node. Hidden
+                    on the last row. */}
+                {!isLast ? (
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute top-3 bottom-0 left-[5px] w-px bg-cognac/40"
+                  />
+                ) : null}
+                {/* Node on the thread, centered on the connector line. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute top-3 left-0 block h-[11px] w-[11px] rounded-full bg-cognac ring-4 ring-cream"
+                />
+                <p className="font-serif text-[22px] leading-snug text-cognac">
+                  {name}
+                </p>
+                <p className="mt-3 max-w-[520px] text-[15px] leading-[1.65] text-navy/75">
+                  {copy}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
         <div>
           <HarnessSvg />
         </div>

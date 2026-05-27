@@ -475,14 +475,6 @@ export function FinalCta() {
             "linear-gradient(180deg, rgba(12,12,40,0.05) 0%, rgba(12,12,40,0.55) 50%, #0C0C28 100%)",
         }}
       />
-      {/* Closing background word — sits between the painting overlay and
-          the foreground text so it reads as a faint watermark. */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-4 right-0 z-[2] select-none font-serif text-[clamp(6.5rem,20vw,16rem)] font-light uppercase leading-none tracking-tight text-cream/[0.05] md:-top-8 md:right-2"
-      >
-        Begin
-      </span>
       <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center md:px-10">
         <SectionEyebrow bg="navy">Start Here</SectionEyebrow>
         <h2 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.06] tracking-[-0.01em]">

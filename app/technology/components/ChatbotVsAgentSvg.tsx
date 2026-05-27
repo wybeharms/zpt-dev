@@ -28,10 +28,9 @@ export default function ChatbotVsAgentSvg() {
           width="196"
           height="310"
           rx="10"
-          fill="#F4ECDE"
           stroke="currentColor"
           strokeWidth="1"
-          className="text-navy/15"
+          className="text-navy/15 fill-[#F4ECDE] hover:fill-[#E5D3B8] transition-colors duration-200"
         />
         <text
           x="180"
@@ -109,10 +108,9 @@ export default function ChatbotVsAgentSvg() {
           width="196"
           height="310"
           rx="10"
-          fill="#F4ECDE"
           stroke="currentColor"
           strokeWidth="1"
-          className="text-navy/15"
+          className="text-navy/15 fill-[#F4ECDE] hover:fill-[#E5D3B8] transition-colors duration-200"
         />
         <text
           x="460"

@@ -95,7 +95,7 @@ export default function Footer() {
         src="/landing_page/Footer Ornament Navy.webp"
         alt=""
         aria-hidden="true"
-        className="mx-auto block h-auto w-full max-w-[400px]"
+        className="mx-auto block h-auto w-full max-w-[240px]"
       />
 
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">

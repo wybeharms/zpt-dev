@@ -37,7 +37,7 @@ export default function TrustedMarqueeDesktop({
     ).matches;
 
     // Pixels-per-frame at ~60fps. Matches the mobile cadence.
-    const SPEED = 0.4;
+    const SPEED = 0.25;
     // Brief beat so a quick release doesn't cause a visible stutter.
     // The chain picks back up almost immediately on letting go.
     const RESUME_DELAY_MS = 100;
