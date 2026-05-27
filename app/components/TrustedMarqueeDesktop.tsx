@@ -37,6 +37,11 @@ export default function TrustedMarqueeDesktop({
     ).matches;
 
     // Pixels-per-frame at ~60fps. Matches the mobile cadence.
+    // Note: at sub-pixel speeds (anything below ~0.5) `el.scrollLeft +=
+    // SPEED` doesn't progress, because most browsers round scrollLeft
+    // to whole pixels and the fractional increment never accumulates.
+    // The fix below keeps a JS-side `position` accumulator that holds
+    // the true float position and writes rounded values to scrollLeft.
     const SPEED = 0.125;
     // Brief beat so a quick release doesn't cause a visible stutter.
     // The chain picks back up almost immediately on letting go.
@@ -49,16 +54,21 @@ export default function TrustedMarqueeDesktop({
     let isDragging = false;
     let dragStartX = 0;
     let dragStartScroll = 0;
+    // Float-precision scroll position kept in JS so fractional speeds
+    // accumulate across frames. scrollLeft itself gets rounded by the
+    // browser but the source of truth lives here.
+    let position = el.scrollLeft;
 
     const tick = () => {
       if (!hoverPaused && !dragPaused) {
         const half = el.scrollWidth / 2;
-        if (el.scrollLeft >= half) {
+        position += SPEED;
+        if (position >= half) {
           // Wraparound: jump back by exactly half so the visible cards
           // line up with what was just scrolled past.
-          el.scrollLeft -= half;
+          position -= half;
         }
-        el.scrollLeft += SPEED;
+        el.scrollLeft = position;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -81,6 +91,7 @@ export default function TrustedMarqueeDesktop({
       if (isDragging) {
         isDragging = false;
         el.style.cursor = "";
+        position = el.scrollLeft;
         scheduleResume();
       }
     };
@@ -97,12 +108,17 @@ export default function TrustedMarqueeDesktop({
     const onMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
       const delta = e.clientX - dragStartX;
-      el.scrollLeft = dragStartScroll - delta;
+      const next = dragStartScroll - delta;
+      el.scrollLeft = next;
+      // Keep the float accumulator in sync with the drag-set position
+      // so auto-scroll picks back up from where the user let go.
+      position = next;
     };
     const onMouseUp = () => {
       if (!isDragging) return;
       isDragging = false;
       el.style.cursor = "";
+      position = el.scrollLeft;
       scheduleResume();
     };
 

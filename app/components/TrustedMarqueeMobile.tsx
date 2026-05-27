@@ -45,6 +45,11 @@ export default function TrustedMarqueeMobile({
     // Pixels-per-frame at ~60fps. 0.125 ≈ 7.5px/sec, a deliberately
     // slow drift that lets each name linger so the reader has time to
     // recognise it before it scrolls past.
+    // Note: at sub-pixel speeds (anything below ~0.5) `el.scrollLeft +=
+    // SPEED` doesn't progress, because most browsers round scrollLeft
+    // to whole pixels and the fractional increment never accumulates.
+    // The fix below keeps a JS-side `position` accumulator that holds
+    // the true float position and writes rounded values to scrollLeft.
     const SPEED = 0.125;
     // How long to keep auto-scroll paused after the user lifts their
     // finger. Short enough to feel responsive, long enough that the
@@ -54,16 +59,21 @@ export default function TrustedMarqueeMobile({
     let raf = 0;
     let paused = false;
     let resumeTimer: ReturnType<typeof setTimeout> | null = null;
+    // Float-precision scroll position kept in JS so fractional speeds
+    // accumulate across frames. scrollLeft itself gets rounded by the
+    // browser but the source of truth lives here.
+    let position = el.scrollLeft;
 
     const tick = () => {
       if (!paused && el) {
         const half = el.scrollWidth / 2;
-        if (el.scrollLeft >= half) {
+        position += SPEED;
+        if (position >= half) {
           // Wraparound: jump back by exactly half so the visible cards
           // line up with what was just scrolled past.
-          el.scrollLeft -= half;
+          position -= half;
         }
-        el.scrollLeft += SPEED;
+        el.scrollLeft = position;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -76,6 +86,9 @@ export default function TrustedMarqueeMobile({
     const onTouchEnd = () => {
       if (resumeTimer) clearTimeout(resumeTimer);
       resumeTimer = setTimeout(() => {
+        // Pick up wherever the user finished swiping so auto-scroll
+        // doesn't jump back to its last JS-tracked position.
+        position = el.scrollLeft;
         paused = false;
       }, RESUME_DELAY_MS);
     };
