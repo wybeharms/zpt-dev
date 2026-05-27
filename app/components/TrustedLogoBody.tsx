@@ -18,9 +18,8 @@ export type TrustedLogo = {
  *
  * The logo slot is fixed-height with items-center so all cards have
  * their text rows starting at the same y-coordinate, regardless of
- * how tall or short each individual logo image is. Logos with the
- * `emphasis` flag (e.g. Marquette, whose source PNG has lots of
- * transparent padding) render taller inside the same slot.
+ * how tall or short each individual logo image is. The `size` tier
+ * controls the rendered height inside that fixed slot.
  *
  * `descriptionVisible` controls the description independently of any
  * hover state, used by the mobile tap-toggle. The desktop wrapper
@@ -29,6 +28,12 @@ export type TrustedLogo = {
  * Presentational only (no state, no client APIs) so it is safe to
  * import from both server and client components.
  */
+const SIZE_CLASSES: Record<NonNullable<TrustedLogo["size"]>, string> = {
+  sm: "h-10 w-auto max-w-[140px] object-contain md:h-12",
+  md: "h-12 w-auto max-w-[160px] object-contain md:h-14",
+  lg: "h-20 w-auto max-w-[220px] object-contain md:h-28",
+};
+
 export default function TrustedLogoBody({
   logo,
   descriptionVisible = false,
@@ -36,12 +41,13 @@ export default function TrustedLogoBody({
   logo: TrustedLogo;
   descriptionVisible?: boolean;
 }) {
-  const imgClass = logo.emphasis
-    ? "h-16 w-auto max-w-[200px] object-contain md:h-24"
-    : "h-12 w-auto max-w-[160px] object-contain md:h-14";
+  const imgClass = SIZE_CLASSES[logo.size ?? "md"];
   return (
     <div className="flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
-      <div className="flex h-14 items-center justify-center md:h-20">
+      {/* Slot is tall enough to fully contain the largest size tier
+          (md:h-28) so the text row below stays at the same y for every
+          card regardless of which logo is shown. */}
+      <div className="flex h-20 items-center justify-center md:h-28">
         <img src={logo.file} alt={logo.name} className={imgClass} />
       </div>
       <p className="mt-7 min-h-[36px] text-[12px] font-medium uppercase tracking-[0.18em] text-navy">

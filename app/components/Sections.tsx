@@ -121,19 +121,21 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     name: "Marquette Associates",
     location: "Chicago, USA",
     description: "150-person independent investment consultant",
-    emphasis: true,
+    size: "lg",
   },
   {
     file: "/testimonials/new_vintage_partners.webp",
     name: "New Vintage Partners",
     location: "New York, USA",
     description: "Specialist venture secondaries fund",
+    size: "lg",
   },
   {
     file: "/testimonials/CFA_Institute.png",
     name: "CFA Society",
     location: "Istanbul, Turkey",
     description: "Global professional body for CFA charterholders",
+    size: "sm",
   },
   {
     file: "/testimonials/mdv_design.webp",
