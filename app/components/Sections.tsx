@@ -6,6 +6,7 @@ import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
 import WhyZptCard from "./WhyZptCard";
 import OurApproachRow from "./OurApproachRow";
 import TrustedLogoBody, { type TrustedLogo } from "./TrustedLogoBody";
+import TrustedMarqueeDesktop from "./TrustedMarqueeDesktop";
 import { TEAM } from "./team-data";
 import {
   AnchorIcon,
@@ -113,7 +114,7 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     file: "/testimonials/marquette_associates.webp",
     name: "Marquette Associates",
     location: "Chicago, USA",
-    description: "Top 5 independent US investment consultant",
+    description: "150-person independent investment consultant",
     emphasis: true,
   },
   {
@@ -165,18 +166,13 @@ function TrustedLogoLinkCard({ logo }: { logo: TrustedLogo }) {
 }
 
 export function TrustedBy() {
-  // Two copies of the logo row inside the marquee track for a seamless
-  // loop. Keys are namespaced by index so React doesn't complain about
-  // duplicate names across the two halves.
-  const trackLogos = [...TRUSTED_LOGOS, ...TRUSTED_LOGOS];
-
   return (
     <Section id="trusted-by" bg="cream" className="py-16 md:py-20">
       <p className="mb-10 text-center text-[12px] font-medium uppercase tracking-[0.22em] text-cognac">
         Trusted By
       </p>
 
-      {/* ---------- Mobile: auto-scrolling marquee + native swipe ---------- */}
+      {/* Mobile: auto-scrolling marquee + native touch swipe. */}
       <div className="md:hidden">
         <TrustedMarqueeMobile logos={TRUSTED_LOGOS} />
         <p className="mt-3 text-center text-[11px] text-navy/50">
@@ -184,24 +180,12 @@ export function TrustedBy() {
         </p>
       </div>
 
-      {/* ---------- Desktop: marquee with hover reveal + click-to-navigate ---------- */}
-      <div
-        className="marquee-wrapper relative hidden overflow-hidden motion-reduce:hidden md:block"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%)",
-        }}
-      >
-        <div className="marquee-track flex w-max">
-          {trackLogos.map((logo, i) => (
-            <TrustedLogoLinkCard key={`${logo.name}-${i}`} logo={logo} />
-          ))}
-        </div>
-      </div>
+      {/* Desktop: auto-scrolling marquee + mouse click-and-drag scrub. */}
+      <TrustedMarqueeDesktop logos={TRUSTED_LOGOS} />
 
-      {/* Static fallback (desktop reduced-motion) — shown only when the user prefers reduced motion. */}
+      {/* Static fallback shown only when the user prefers reduced motion
+          (desktop). The animated marquee above is hidden in that case via
+          motion-reduce:hidden. */}
       <ul className="hidden flex-wrap items-center justify-center gap-x-4 gap-y-6 motion-reduce:md:flex">
         {TRUSTED_LOGOS.map((logo) => (
           <li key={logo.name}>
@@ -210,7 +194,7 @@ export function TrustedBy() {
         ))}
       </ul>
 
-      {/* "See Testimonials" CTA disabled until /testimonials ships — see
+      {/* "See Testimonials" CTA disabled until /testimonials ships; see
           comment on TESTIMONIALS_HREF above for how to re-enable. */}
     </Section>
   );
