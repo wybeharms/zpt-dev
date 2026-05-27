@@ -18,11 +18,11 @@ export default function ResourcesHero() {
       id="resources-hero"
       className="relative w-full overflow-hidden bg-navy text-cream"
     >
-      <div className="mx-auto grid max-w-[1400px] gap-10 px-6 pt-28 pb-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:px-10 lg:py-0 lg:h-[78vh] lg:min-h-[640px]">
+      <div className="mx-auto grid max-w-[1400px] gap-10 px-6 pt-28 pb-10 xl:grid-cols-[1.15fr_1fr] xl:gap-12 xl:px-10 xl:py-0 xl:h-[78vh] xl:min-h-[640px]">
         {/* Painting column (desktop) */}
         <div
           aria-hidden="true"
-          className="pointer-events-none relative hidden lg:block lg:h-full"
+          className="pointer-events-none relative hidden xl:block xl:h-full"
         >
           {/* object-position shifts the painting right inside its column
               so the navy geometric block on the painting's left edge is
@@ -44,10 +44,10 @@ export default function ResourcesHero() {
         </div>
 
         {/* Text column. Vertically centered against the painting on desktop. */}
-        <div className="lg:flex lg:flex-col lg:justify-center lg:max-w-[560px]">
+        <div className="xl:flex xl:flex-col xl:justify-center xl:max-w-[560px]">
           <SectionEyebrow bg="navy">Reference</SectionEyebrow>
           <SectionHeading bg="navy">Resources.</SectionHeading>
-          <p className="mt-6 text-[15px] leading-[1.7] text-cream/75 lg:text-[17px]">
+          <p className="mt-6 text-[15px] leading-[1.7] text-cream/75 xl:text-[17px]">
             Documents, recordings, and references for teams exploring or
             starting a ZPT engagement.
           </p>
@@ -55,9 +55,9 @@ export default function ResourcesHero() {
       </div>
 
       {/* Stacked painting below the text on mobile + small desktop.
-          The side-by-side grid only kicks in at lg (1024px) so the
+          The side-by-side grid only kicks in at xl (1280px) so the
           title never has to fight the painting at narrow widths. */}
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <img
           src={PAINTING_SRC}
           alt=""

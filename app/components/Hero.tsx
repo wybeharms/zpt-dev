@@ -48,11 +48,11 @@ export default function Hero() {
           Painting renders full-width on top in a fixed-aspect window.
           Content sits below on solid cream so headline, subhead, and both
           buttons are always legible. This stacked layout runs all the way
-          up to lg (1024px) so narrow desktop windows never put text on
+          up to xl (1280px) so narrow desktop windows never put text on
           top of the painting. The overlay layout below takes over from
-          lg upward, where the cream gutter is wide enough to fully hold
+          xl upward, where the cream gutter is wide enough to fully hold
           the headline without crowding. */}
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <div className="relative aspect-[4/3] w-full overflow-hidden">
           {mediaNode}
         </div>
@@ -89,8 +89,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ---------- Desktop overlay layout (lg and up) ---------- */}
-      <div className="relative hidden h-[100svh] min-h-[640px] w-full lg:block">
+      {/* ---------- Desktop overlay layout (xl and up) ---------- */}
+      <div className="relative hidden h-[100svh] min-h-[640px] w-full xl:block">
         {/* Painting frame: anchored left, height = hero, sized to the painting's
             true 3:2 aspect. Mask feathers the right edge so the painting blurs
             softly into the cream rather than ending in a hard vertical line. */}
