@@ -6,8 +6,10 @@
  * scattered-ships imagery, which read as too random.
  *
  * The two sets are styled differently so the "aligned" state reads as
- * the resolved outcome: bigger fill, stronger stroke, brighter cognac.
- * The "day one" set stays muted so the contrast lands quickly.
+ * the resolved outcome: bigger fill, stronger stroke, brighter cream
+ * (vs the cognac-light + lower opacity of the day-one set). Cream on
+ * navy is the strongest contrast available in the palette, so the
+ * "arrived" moment lands at a glance.
  */
 
 const leftAngles = [-65, 38, -125, 152, -22];
@@ -23,8 +25,10 @@ function CompassRose({
   angle: number;
   aligned?: boolean;
 }) {
-  // Aligned compasses pop: stronger stroke, denser needle, brighter
-  // currentColor inherited from a wrapping <g>.
+  // Aligned compasses pop: stronger stroke, denser needle, plus a much
+  // brighter currentColor inherited from a wrapping <g className="text-cream">.
+  // Cream on navy is a far bigger jump than cognac vs cognac-light,
+  // which read as the same warm brown at this size.
   const rimOpacity = aligned ? 0.9 : 0.5;
   const rimWidth = aligned ? 1.6 : 1.2;
   const centerOpacity = aligned ? 1 : 0.7;
@@ -111,10 +115,12 @@ export default function CompassAlignment() {
           <path d="M 42 -6 L 50 0 L 42 6" />
         </g>
 
-        {/* Right set: five aligned compasses. Wrapped in a <g> with a
-            brighter cognac color so the rim, dot, tick, and needle all
-            inherit a stronger fill/stroke via currentColor. */}
-        <g className="text-cognac">
+        {/* Right set: five aligned compasses. Wrapped in a <g> with
+            cream as currentColor so the rim, dot, tick, and needle all
+            inherit a much brighter fill/stroke than the day-one set's
+            muted cognac-light. Cream vs cognac-light on navy is the
+            highest-contrast pairing in the palette. */}
+        <g className="text-cream">
           {compassPositions.map((cx, i) => (
             <g
               key={`r-${i}`}
@@ -132,7 +138,7 @@ export default function CompassAlignment() {
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
             }}
-            className="fill-cognac"
+            className="fill-cream"
           >
             Aligned
           </text>
