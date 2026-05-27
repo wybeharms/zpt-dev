@@ -42,7 +42,7 @@ export default function TrustedMarqueeDesktop({
     // to whole pixels and the fractional increment never accumulates.
     // The fix below keeps a JS-side `position` accumulator that holds
     // the true float position and writes rounded values to scrollLeft.
-    const SPEED = 0.25;
+    const SPEED = 0.4;
     // Brief beat so a quick release doesn't cause a visible stutter.
     // The chain picks back up almost immediately on letting go.
     const RESUME_DELAY_MS = 100;
