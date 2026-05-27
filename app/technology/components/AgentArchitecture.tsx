@@ -76,7 +76,7 @@ export default function AgentArchitecture() {
                   aria-hidden="true"
                   className="pointer-events-none absolute top-3 left-0 block h-[11px] w-[11px] rounded-full bg-cognac ring-4 ring-cream"
                 />
-                <p className="font-serif text-[22px] leading-snug text-cognac">
+                <p className="font-serif font-semibold text-[22px] leading-snug text-cognac">
                   {name}
                 </p>
                 <p className="mt-3 max-w-[520px] text-[15px] leading-[1.65] text-navy/75">

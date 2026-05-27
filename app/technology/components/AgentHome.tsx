@@ -52,7 +52,7 @@ const AGENT_HOME_TREE: TreeNode = {
       children: [
         {
           name: "memo-template.md",
-          description: "Output formatting standards",
+          description: "Output format",
         },
         { name: "weekly-update-template.md" },
       ],
