@@ -38,10 +38,9 @@ export default function TrustedMarqueeDesktop({
 
     // Pixels-per-frame at ~60fps. Matches the mobile cadence.
     const SPEED = 0.4;
-    // How long to keep the auto-scroll paused after the user releases
-    // a drag. Long enough to read what got scrolled into view, short
-    // enough that the chain doesn't feel dead.
-    const RESUME_DELAY_MS = 1200;
+    // Brief beat so a quick release doesn't cause a visible stutter.
+    // The chain picks back up almost immediately on letting go.
+    const RESUME_DELAY_MS = 100;
 
     let raf = 0;
     let hoverPaused = false;
