@@ -58,8 +58,18 @@ export default function EntryPoints() {
       </div>
 
       <ul className="mt-14 border-t border-navy/10">
-        {entries.map((entry) => (
-          <EntryPointsRow key={entry.name} {...entry} />
+        {entries.map(({ Icon, name, duration, copy }) => (
+          <EntryPointsRow
+            key={name}
+            // Pre-render the icon here so a ReactNode crosses the
+            // server -> client boundary instead of a function ref.
+            icon={
+              <Icon className="h-9 w-9 transition-colors duration-200 group-hover:text-cognac-deep md:h-10 md:w-10" />
+            }
+            name={name}
+            duration={duration}
+            copy={copy}
+          />
         ))}
       </ul>
 

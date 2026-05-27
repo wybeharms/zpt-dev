@@ -1,11 +1,16 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useRef } from "react";
 import type { MouseEvent as ReactMouseEvent } from "react";
 import RevealOnScroll from "../../components/RevealOnScroll";
 
 export type EntryPointsRowProps = {
-  Icon: React.ComponentType<{ className?: string }>;
+  // The icon arrives pre-rendered as a ReactNode (with className already
+  // baked in) so the server parent can construct it. Passing a component
+  // reference across the server -> client boundary breaks the React
+  // payload serializer, since functions are not serializable.
+  icon: ReactNode;
   name: string;
   duration: string;
   copy: string;
@@ -19,7 +24,7 @@ export type EntryPointsRowProps = {
  * with cognac glow tuned to read on light cream.
  */
 export default function EntryPointsRow({
-  Icon,
+  icon,
   name,
   duration,
   copy,
@@ -51,7 +56,7 @@ export default function EntryPointsRow({
       />
       <RevealOnScroll className="relative grid grid-cols-[56px_minmax(0,1fr)] gap-5 px-3 py-9 md:grid-cols-[100px_300px_minmax(0,1fr)] md:gap-10 md:px-5">
         <div className="text-cognac md:flex md:items-start md:pt-2">
-          <Icon className="h-9 w-9 transition-colors duration-200 group-hover:text-cognac-deep md:h-10 md:w-10" />
+          {icon}
         </div>
         <div className="md:pt-1">
           <p className="font-serif text-[22px] leading-snug text-navy md:text-[26px]">
