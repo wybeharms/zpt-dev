@@ -68,12 +68,17 @@ export default function Hero() {
           <p className="mt-5 text-[15px] leading-[1.6] text-navy/85">
             ZPT Partners helps you navigate the uncharted AI waters.
           </p>
-          <div className="mt-7 flex flex-col gap-3">
+          {/* Buttons stack vertically below the headline. max-w-[360px]
+              keeps them from stretching edge-to-edge on wider narrow
+              desktops (between sm and xl) where the stacked layout is
+              still active; on phones <360px wide they fall back to full
+              width via w-full. items-start aligns them to the headline. */}
+          <div className="mt-7 flex flex-col items-start gap-3">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-[5px] bg-cognac px-6 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
+              className="inline-flex w-full max-w-[360px] items-center justify-center rounded-[5px] bg-cognac px-6 py-3.5 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
             >
               Book a Call
             </a>
@@ -81,7 +86,7 @@ export default function Hero() {
               href="/resources/zpt-one-pager.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-[5px] border border-navy/85 px-6 py-3.5 text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy hover:text-cream"
+              className="inline-flex w-full max-w-[360px] items-center justify-center rounded-[5px] border border-navy/85 px-6 py-3.5 text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy hover:text-cream"
             >
               Download One-Pager
             </a>

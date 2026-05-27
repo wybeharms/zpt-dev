@@ -60,9 +60,15 @@ export function Section({
       style={bgColor ? { backgroundColor: bgColor } : undefined}
     >
       {backgroundWord ? (
+        // -top-[0.22em] uses em (relative to the watermark's own
+        // font-size) so the negative shift scales with viewport-driven
+        // clamp(). 0.22em clips the empty space above the cap of
+        // Cormorant glyphs at every size, so the visible cap of the
+        // word sits flush with the section's top edge instead of
+        // leaving a band of bg color above it.
         <span
           aria-hidden="true"
-          className={`pointer-events-none absolute -top-6 right-0 select-none font-serif text-[clamp(6.5rem,20vw,16rem)] font-light uppercase leading-none tracking-tight md:-top-10 md:right-2 ${wordColor}`}
+          className={`pointer-events-none absolute -top-[0.22em] right-0 select-none font-serif text-[clamp(6.5rem,20vw,16rem)] font-light uppercase leading-none tracking-tight md:right-2 ${wordColor}`}
         >
           {backgroundWord}
         </span>

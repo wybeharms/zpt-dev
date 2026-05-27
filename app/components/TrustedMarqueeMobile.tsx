@@ -42,9 +42,10 @@ export default function TrustedMarqueeMobile({
     ).matches;
     if (reduceMotion) return;
 
-    // Pixels-per-frame at ~60fps. 0.25 ≈ 15px/sec, slow enough for
-    // names to read clearly while still feeling like the strip is alive.
-    const SPEED = 0.25;
+    // Pixels-per-frame at ~60fps. 0.125 ≈ 7.5px/sec, a deliberately
+    // slow drift that lets each name linger so the reader has time to
+    // recognise it before it scrolls past.
+    const SPEED = 0.125;
     // How long to keep auto-scroll paused after the user lifts their
     // finger. Short enough to feel responsive, long enough that the
     // user doesn't fight the animation while reading.
