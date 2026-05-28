@@ -4,11 +4,13 @@ export type TrustedLogo = {
   location: string;
   description: string;
   /** Visual size tier. Default `md` matches most logos. Use `lg` when a
-   *  logo has heavy transparent padding (Marquette, NVP) or just
-   *  reads as visually weaker than the rest. Use `sm` when a logo's
-   *  glyphs are dense enough (CFA) that the default size looks
-   *  oversized next to the others. */
-  size?: "sm" | "md" | "lg";
+   *  logo has heavy transparent padding (Marquette) or just reads as
+   *  visually weaker than the rest. `ml` is the half-step between md
+   *  and lg, used for logos like NVP that want extra weight but not
+   *  the full Marquette treatment. Use `sm` when a logo's glyphs are
+   *  dense enough (CFA) that the default size looks oversized next to
+   *  the others. */
+  size?: "sm" | "md" | "ml" | "lg";
 };
 
 /**
@@ -33,6 +35,7 @@ export type TrustedLogo = {
 const SIZE_CLASSES: Record<NonNullable<TrustedLogo["size"]>, string> = {
   sm: "h-10 w-auto max-w-[140px] object-contain md:h-12",
   md: "h-12 w-auto max-w-[160px] object-contain md:h-14",
+  ml: "h-16 w-auto max-w-[200px] object-contain md:h-24",
   lg: "h-20 w-auto max-w-[220px] object-contain md:h-28",
 };
 

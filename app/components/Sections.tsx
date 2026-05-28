@@ -128,7 +128,7 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     name: "New Vintage Partners",
     location: "New York, USA",
     description: "Specialist venture secondaries fund",
-    size: "lg",
+    size: "ml",
   },
   {
     file: "/testimonials/CFA_Institute.png",
