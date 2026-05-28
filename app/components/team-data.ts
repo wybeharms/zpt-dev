@@ -25,7 +25,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Jasper Moll",
-    role: "Forward-Deployed Engineer",
+    role: "Co-Founder & Forward-Deployed Engineer",
     portrait: "/team/Jasper%20Moll.webp",
     bio: "Forward-deployed engineer shipping production agent workflows for cross-functional teams. Trained in business engineering with prior project management experience.",
     linkedin: "https://www.linkedin.com/in/jasper-moll-9a1424139/",
