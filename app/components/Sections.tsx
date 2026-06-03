@@ -430,7 +430,7 @@ export function TeamPreview() {
             className="flex flex-col items-center text-center"
           >
             <div className="w-[140px]">
-              <PortraitSwap src={member.portrait} alt={member.name} />
+              <PortraitSwap photo={member.photo} marine={member.marine} alt={member.name} />
             </div>
             <p className="mt-4 font-serif text-[16px] leading-snug text-navy">
               {member.name}

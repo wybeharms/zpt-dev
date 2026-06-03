@@ -19,7 +19,7 @@ export default function TeamGrid() {
       <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
         {TEAM.map((member) => (
           <li key={member.name} className="flex flex-col">
-            <PortraitSwap src={member.portrait} alt={member.name} />
+            <PortraitSwap photo={member.photo} marine={member.marine} alt={member.name} />
             <h3 className="mt-5 font-serif text-[20px] leading-snug text-navy">
               {member.name}
             </h3>
