@@ -64,15 +64,20 @@ don't get lost when sub-pages are still in flight.
   Doubles as buyer education and GEO content for AI-search engines.
   Candidate questions captured in conversation summary.
 
-- [ ] **SEO + GEO technical pass.** Dedicated prompt covering:
-  - Per-page `metadata` blocks tightening (title + description + OG)
-  - `app/sitemap.ts` and `app/robots.ts`
-  - 1200×630 `og-image.png` at `/public/og-image.png`
-  - Twitter card meta
-  - JSON-LD: `Organization` on layout, `Person` on `/team`, `FAQPage`
-    once FAQ lands
-  - `llms.txt` at the root for AI crawlers
-  - Alt text and heading hierarchy audit
+- [ ] **SEO + GEO technical pass.** Core technical SEO shipped 2026-06-03
+  (commit `e0e47b1`). GEO and content items below are still open.
+  - [x] `app/sitemap.ts` and `app/robots.ts` (shipped 2026-06-03; sitemap
+    submitted to Search Console the same day)
+  - [x] Per-page canonical tags via `metadata.alternates.canonical`
+    (shipped 2026-06-03; cleared the "duplicate without canonical" flag)
+  - [x] JSON-LD `Organization` (shipped 2026-06-03, on `app/page.tsx` home
+    page rather than the layout)
+  - [x] Per-page `metadata` blocks (title, description, OG). Already in place.
+  - [x] 1200×630 `og-image.png` at `/public/og-image.png`. Already in place.
+  - [x] Twitter card meta. Already in place.
+  - [ ] JSON-LD `Person` on `/team`, `FAQPage` once FAQ lands
+  - [ ] `llms.txt` at the root for AI crawlers
+  - [ ] Alt text and heading hierarchy audit
 
 - [ ] **Email signup provider.** Currently UI-only (preventDefault
   no-op). Pick a provider (Buttondown leans best for indie/founder use)
