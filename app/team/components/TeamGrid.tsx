@@ -1,5 +1,6 @@
 import { Section } from "../../components/Sections";
 import PortraitSwap from "../../components/PortraitSwap";
+import RoleLabel from "../../components/RoleLabel";
 import { TEAM } from "../../components/team-data";
 
 /**
@@ -24,7 +25,7 @@ export default function TeamGrid() {
               {member.name}
             </h3>
             <p className="mt-1.5 text-[12px] font-medium uppercase tracking-[0.2em] text-cognac/85">
-              {member.role}
+              <RoleLabel role={member.role} />
             </p>
             <p className="mt-3 max-w-[280px] text-[14px] leading-[1.6] text-navy/70">
               {member.bio}

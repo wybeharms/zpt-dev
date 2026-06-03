@@ -19,7 +19,7 @@ export type TeamMember = {
 export const TEAM: TeamMember[] = [
   {
     name: "Wybe Harms",
-    role: "Founder",
+    role: "Founder and Chief ZPTer",
     photo: "/team/Wybe%20Harms-photo.webp",
     marine: "/team/Wybe%20Harms-marine.webp",
     bio: "Started a software company that was reshaped by Claude Code, then founded ZPT to help other teams navigate the same shift.",
@@ -27,7 +27,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Jasper Moll",
-    role: "Co-Founder & Forward-Deployed Engineer",
+    role: "Co-Founder & Forward-Deployed ZPTer",
     photo: "/team/Jasper%20Moll-photo.webp",
     marine: "/team/Jasper%20Moll-marine.webp",
     bio: "Forward-deployed engineer shipping production agent workflows for cross-functional teams. Trained in business engineering with prior project management experience.",
@@ -35,7 +35,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Alessandro Condorelli",
-    role: "Forward-Deployed Engineer",
+    role: "Forward-Deployed ZPTer",
     photo: "/team/Alessandro%20Condorelli-photo.webp",
     marine: "/team/Alessandro%20Condorelli-marine.webp",
     bio: "MSc candidate in Analytics and Management at London Business School, where he founded the public speaking and debating extracurricular.",

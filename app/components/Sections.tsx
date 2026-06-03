@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import RevealOnScroll from "./RevealOnScroll";
 import PortraitSwap from "./PortraitSwap";
+import RoleLabel from "./RoleLabel";
 import YoutubeFacade from "./YoutubeFacade";
 import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
 import WhyZptCard from "./WhyZptCard";
@@ -436,7 +437,7 @@ export function TeamPreview() {
               {member.name}
             </p>
             <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.2em] text-cognac/85">
-              {member.role}
+              <RoleLabel role={member.role} />
             </p>
           </li>
         ))}
