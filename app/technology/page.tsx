@@ -11,6 +11,9 @@ export const metadata = {
   title: "Technology | ZPT Partners",
   description:
     "What an agent is, what's inside it, and where it runs. The architecture in plain terms.",
+  alternates: {
+    canonical: "/technology",
+  },
 };
 
 export default function TechnologyPage() {

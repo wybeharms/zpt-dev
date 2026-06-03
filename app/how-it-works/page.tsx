@@ -11,6 +11,9 @@ export const metadata = {
   title: "How It Works | ZPT Partners",
   description:
     "How a ZPT engagement comes together. Pick an entry point, get the tools set up, and grow from there.",
+  alternates: {
+    canonical: "/how-it-works",
+  },
 };
 
 export default function HowItWorksPage() {

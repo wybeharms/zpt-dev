@@ -9,6 +9,9 @@ export const metadata = {
   title: "Our Work | ZPT Partners",
   description:
     "The five-phase process behind every ZPT engagement, plus example workflows we have shipped.",
+  alternates: {
+    canonical: "/our-work",
+  },
 };
 
 export default function OurWorkPage() {

@@ -9,6 +9,9 @@ export const metadata = {
   title: "The Team | ZPT Partners",
   description:
     "A small, talented, distributed team of AI experts shipping across 10+ organizations.",
+  alternates: {
+    canonical: "/team",
+  },
 };
 
 export default function TeamPage() {

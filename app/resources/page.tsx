@@ -10,6 +10,9 @@ export const metadata = {
   title: "Resources | ZPT Partners",
   description:
     "Documents, recordings, and references for teams exploring or starting a ZPT engagement.",
+  alternates: {
+    canonical: "/resources",
+  },
 };
 
 export default function ResourcesPage() {
