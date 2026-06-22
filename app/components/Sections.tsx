@@ -155,6 +155,7 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     name: "Ivy Hall",
     location: "Chicago, USA",
     description: "Illinois retail dispensary group",
+    size: "xs",
   },
 ];
 
