@@ -150,6 +150,12 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     location: "Barcelona, Spain",
     description: "Fastest-growing pasta chain in Spain",
   },
+  {
+    file: "/testimonials/ivy_hall.png",
+    name: "Ivy Hall",
+    location: "Chicago, USA",
+    description: "Illinois retail dispensary group",
+  },
 ];
 
 // Future destination for "See Testimonials" — kept here as a reminder
