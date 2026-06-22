@@ -9,7 +9,7 @@ export type TrustedLogo = {
    *  and lg, used for logos like NVP that want extra weight but not
    *  the full Marquette treatment. Use `sm` when a logo's glyphs are
    *  dense enough (CFA) that the default size looks oversized next to
-   *  the others. `xs` sits one step below `sm` (~30% under `md`) for a
+   *  the others. `xs` sits one step below `sm` (~40% under `md`) for a
    *  wordmark that should read quieter than the rest (Ivy Hall). */
   size?: "xs" | "sm" | "md" | "ml" | "lg";
 };
@@ -34,10 +34,10 @@ export type TrustedLogo = {
  * import from both server and client components.
  */
 const SIZE_CLASSES: Record<NonNullable<TrustedLogo["size"]>, string> = {
-  xs: "h-8 w-auto max-w-[112px] object-contain md:h-10",
+  xs: "h-7 w-auto max-w-[100px] object-contain md:h-9",
   sm: "h-10 w-auto max-w-[140px] object-contain md:h-12",
   md: "h-12 w-auto max-w-[160px] object-contain md:h-14",
-  ml: "h-16 w-auto max-w-[200px] object-contain md:h-24",
+  ml: "h-14 w-auto max-w-[180px] object-contain md:h-20",
   lg: "h-20 w-auto max-w-[220px] object-contain md:h-28",
 };
 

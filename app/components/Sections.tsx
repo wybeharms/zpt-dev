@@ -149,6 +149,7 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     name: "Brutalia",
     location: "Barcelona, Spain",
     description: "Fastest-growing pasta chain in Spain",
+    size: "sm",
   },
   {
     file: "/testimonials/ivy_hall.png",
