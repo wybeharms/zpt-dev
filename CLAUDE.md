@@ -9,7 +9,8 @@ This folder is the website only. The ZPT business operations (accounts, playbook
 - **Product:** zptpartners.com, the firm's public site (ZPT Partners is an AI implementation agency; see the business folder for the full pitch).
 - **Stack:** Next.js (App Router) on Vercel.
 - **Routes:** `app/` holds the pages (`how-it-works`, `our-work`, `resources`, `team`, `technology`, plus `page.tsx`, `layout.tsx`, `robots.ts`, `sitemap.ts`) and `app/components/`.
-- **Assets:** `public/` (logos and brand assets in `public/brand/`).
+- **Assets:** `public/` (logos and brand assets in `public/brand/`). Everything in `public/` is served and deployed, so only web-ready files belong there.
+- **Design sources:** `design-sources/landing-page/` holds the uncompressed originals (PNG, MP4) behind the `.webp` and `.mp4` files in `public/landing_page/`. Moved here from `~/Desktop/Wybe/ZPT/Images Backup/` on August 3rd, 2026 so they are backed up by git instead of iCloud only. **Keep them out of `public/`**: they are 35MB and Next.js would serve and deploy every one. Re-export to `public/landing_page/` when a visual changes; never point a component at this folder.
 - **Build spec:** `BUILD_BRIEF.md` is the landing-page build spec. `infrastructure.md` covers deploy/hosting. `TODO.md` is the working punch list.
 
 ## Brand source of truth
