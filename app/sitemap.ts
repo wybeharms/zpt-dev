@@ -9,6 +9,7 @@ const routes = [
   "/resources",
   "/team",
   "/technology",
+  "/testimonials",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

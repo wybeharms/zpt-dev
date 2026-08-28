@@ -44,7 +44,7 @@ type NavItem = {
 const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "How It Works", href: "/how-it-works", hasMega: true },
-  { label: "Testimonials", href: "/#trusted-by" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Resources", href: "/resources" },
   // About points to /team for now — it's the only "about" content that
   // exists. When /about and /testimonials are built, this can be
@@ -63,7 +63,7 @@ const MOBILE_LINKS: NavItem[] = [
   { label: "How It Works", href: "/how-it-works" },
   { label: "Our Work", href: "/our-work" },
   { label: "Technology", href: "/technology" },
-  { label: "Testimonials", href: "/#trusted-by" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/team" },
 ];

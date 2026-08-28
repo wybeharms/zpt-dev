@@ -42,7 +42,7 @@ export default function TrustedMarqueeDesktop({
     // to whole pixels and the fractional increment never accumulates.
     // The fix below keeps a JS-side `position` accumulator that holds
     // the true float position and writes rounded values to scrollLeft.
-    const SPEED = 0.4;
+    const SPEED = 0.32;
     // Brief beat so a quick release doesn't cause a visible stutter.
     // The chain picks back up almost immediately on letting go.
     const RESUME_DELAY_MS = 100;
@@ -54,6 +54,11 @@ export default function TrustedMarqueeDesktop({
     let isDragging = false;
     let dragStartX = 0;
     let dragStartScroll = 0;
+    // Longest distance the pointer travelled during the last drag. The
+    // cards are links to /testimonials, so a scrub that ends on a card
+    // must not fire that card's click — anything past a few px of
+    // travel swallows the click in the capture handler below.
+    let dragTravel = 0;
     // Float-precision scroll position kept in JS so fractional speeds
     // accumulate across frames. scrollLeft itself gets rounded by the
     // browser but the source of truth lives here.
@@ -99,6 +104,7 @@ export default function TrustedMarqueeDesktop({
       isDragging = true;
       dragStartX = e.clientX;
       dragStartScroll = el.scrollLeft;
+      dragTravel = 0;
       dragPaused = true;
       if (resumeTimer) clearTimeout(resumeTimer);
       el.style.cursor = "grabbing";
@@ -108,6 +114,7 @@ export default function TrustedMarqueeDesktop({
     const onMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
       const delta = e.clientX - dragStartX;
+      dragTravel = Math.max(dragTravel, Math.abs(delta));
       const next = dragStartScroll - delta;
       el.scrollLeft = next;
       // Keep the float accumulator in sync with the drag-set position
@@ -122,9 +129,20 @@ export default function TrustedMarqueeDesktop({
       scheduleResume();
     };
 
+    // Capture-phase click guard: a scrub that happens to start and end
+    // on the same card would otherwise navigate. Plain clicks
+    // (dragTravel under the threshold) pass through to the card links.
+    const onClickCapture = (e: MouseEvent) => {
+      if (dragTravel > 6) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
     el.addEventListener("mouseenter", onMouseEnter);
     el.addEventListener("mouseleave", onMouseLeave);
     el.addEventListener("mousedown", onMouseDown);
+    el.addEventListener("click", onClickCapture, true);
     // mousemove and mouseup on window so a drag that escapes the strip
     // still updates and releases cleanly.
     window.addEventListener("mousemove", onMouseMove);
@@ -136,6 +154,7 @@ export default function TrustedMarqueeDesktop({
       el.removeEventListener("mouseenter", onMouseEnter);
       el.removeEventListener("mouseleave", onMouseLeave);
       el.removeEventListener("mousedown", onMouseDown);
+      el.removeEventListener("click", onClickCapture, true);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseup", onMouseUp);
     };
@@ -154,12 +173,14 @@ export default function TrustedMarqueeDesktop({
     >
       <div className="flex w-max">
         {trackLogos.map((logo, i) => (
-          <div
+          <a
             key={`${logo.name}-${i}`}
+            href="/testimonials"
+            draggable={false}
             className="group block flex-shrink-0"
           >
             <TrustedLogoBody logo={logo} />
-          </div>
+          </a>
         ))}
       </div>
     </div>

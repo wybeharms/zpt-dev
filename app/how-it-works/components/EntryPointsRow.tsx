@@ -19,8 +19,7 @@ export type EntryPointsRowProps = {
 /**
  * One row of the Pick Your Entry Point list. Client component so the
  * row can track the cursor position and update a CSS custom property
- * used by a radial-gradient glow overlay. Same pattern as
- * OurApproachRow on the home page, but rendered on a cream background
+ * used by a radial-gradient glow overlay, rendered on a cream background
  * with cognac glow tuned to read on light cream.
  */
 export default function EntryPointsRow({

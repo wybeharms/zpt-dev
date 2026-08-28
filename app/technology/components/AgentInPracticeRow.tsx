@@ -17,7 +17,7 @@ export type AgentInPracticeRowProps = {
  *
  * On hover the row's background flips from navy to a warm cream and
  * the text inverts to navy, then the cognac cursor glow rides on top.
- * Same architecture as OurApproachRow and EntryPointsRow; the colors
+ * Same architecture as EntryPointsRow; the colors
  * are tuned for the cream-on-hover treatment specific to this section.
  */
 export default function AgentInPracticeRow({

@@ -18,7 +18,7 @@ const exploreLinks: FooterLink[] = [
 const companyLinks: FooterLink[] = [
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
-  { label: "Testimonials", href: "/#trusted-by" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Book a Call", href: CALENDLY_URL, external: true },
 ];
 

@@ -5,7 +5,8 @@ import RoleLabel from "./RoleLabel";
 import YoutubeFacade from "./YoutubeFacade";
 import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
 import WhyZptCard from "./WhyZptCard";
-import OurApproachRow from "./OurApproachRow";
+import OurApproachChart from "./OurApproachChart";
+import WatchCollage from "./WatchCollage";
 import TrustedLogoBody, { type TrustedLogo } from "./TrustedLogoBody";
 import TrustedMarqueeDesktop from "./TrustedMarqueeDesktop";
 import { TEAM } from "./team-data";
@@ -132,6 +133,12 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     size: "ml",
   },
   {
+    file: "/testimonials/capital_industrial.webp",
+    name: "Capital Industrial",
+    location: "London, UK",
+    description: "London-based real estate investment firm",
+  },
+  {
     file: "/testimonials/CFA_Institute.png",
     name: "CFA Society",
     location: "Istanbul, Turkey",
@@ -158,27 +165,28 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     description: "Illinois retail dispensary group",
     size: "xs",
   },
+  {
+    kind: "more",
+    file: "",
+    name: "And Counting",
+    location: "US · UK · Europe",
+    description: "More teams across investing, design, and hospitality",
+  },
 ];
 
-// Future destination for "See Testimonials" — kept here as a reminder
-// for when the /testimonials page ships. The CTA below the strip and
-// the desktop click-to-navigate are currently DISABLED; flip them back
-// on by replacing TrustedLogoCard's <div> with an <a href={TESTIMONIALS_HREF}>
-// and re-rendering the "See Testimonials" CTA below the marquee.
-// const TESTIMONIALS_HREF = "/testimonials";
+const TESTIMONIALS_HREF = "/testimonials";
 
 /**
- * Desktop / marquee version of the card. Currently non-clickable, hover
- * reveals the description via `group`. Click navigation to /testimonials
- * is disabled until that page ships; see comment on TESTIMONIALS_HREF
- * above for how to re-enable. The body markup itself lives in
+ * Static-fallback version of the card (shown for reduced-motion users).
+ * Links to /testimonials like the marquee cards; hover reveals the
+ * description via `group`. The body markup itself lives in
  * TrustedLogoBody so the mobile tap card can render the same visual.
  */
 function TrustedLogoLinkCard({ logo }: { logo: TrustedLogo }) {
   return (
-    <div className="group block flex-shrink-0">
+    <a href={TESTIMONIALS_HREF} className="group block flex-shrink-0">
       <TrustedLogoBody logo={logo} />
-    </div>
+    </a>
   );
 }
 
@@ -211,31 +219,26 @@ export function TrustedBy() {
         ))}
       </ul>
 
-      {/* "See Testimonials" CTA disabled until /testimonials ships; see
-          comment on TESTIMONIALS_HREF above for how to re-enable. */}
+      <div className="mt-10 text-center">
+        <a
+          href={TESTIMONIALS_HREF}
+          className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-wide text-cognac transition-colors duration-150 hover:text-cognac-deep"
+        >
+          See Testimonials
+          <span
+            aria-hidden="true"
+            className="transition-transform duration-150 group-hover:translate-x-0.5"
+          >
+            →
+          </span>
+        </a>
+      </div>
     </Section>
   );
 }
 
-/* ---------- 3. Our Approach (editorial vertical list) ---------- */
+/* ---------- 3. Our Approach (ascending bar chart) ---------- */
 export function OurApproach() {
-  const steps = [
-    {
-      number: "01",
-      label: "Education",
-      copy: "A working session on what agents can and can't do, with real examples.",
-    },
-    {
-      number: "02",
-      label: "Discovery",
-      copy: "On-site mapping of your real workflows. We surface the highest-leverage opportunities to improve.",
-    },
-    {
-      number: "03",
-      label: "Build",
-      copy: "We map your existing workflows and mirror them so an agent runs part or all of each one. Your team uses the setup through Claude, Codex, or Microsoft Copilot, and we guide you to the right combination for the services you already run.",
-    },
-  ];
   return (
     <Section id="our-approach" bg="navy" backgroundWord="Method">
       {/* Section header sits above the card, mirroring Lerai's pattern. */}
@@ -249,15 +252,12 @@ export function OurApproach() {
           <p className="text-[16px] leading-[1.7] text-cream/85">
             Every company is different. ZPT meets your team where you are.
             Engagements range from a half-day education session to a full
-            multi-workflow build, sized to where your team is ready. Three
-            steps anchor the work.
+            multi-workflow build, and every one climbs the same curve.
           </p>
 
-          <ul className="mt-8 border-t border-cream/15">
-            {steps.map((step) => (
-              <OurApproachRow key={step.label} {...step} />
-            ))}
-          </ul>
+          <div className="mt-10">
+            <OurApproachChart />
+          </div>
           <div className="mt-10">
             <a
               href="/our-work"
@@ -285,14 +285,18 @@ export function WatchZpt() {
         <SectionEyebrow bg="cream">Preview</SectionEyebrow>
         <SectionHeading bg="cream">Watch ZPT in Action</SectionHeading>
         <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-navy/75">
-          A short introduction to what ZPT builds and how your team runs it.
+          A short introduction to what ZPT builds, and the teams already
+          running it.
         </p>
-        <div className="mt-12">
-          <YoutubeFacade
-            videoId="z7pos9R_zE4"
-            title="Watch ZPT in Action"
-          />
-        </div>
+      </div>
+      {/* items-center keeps the (shorter) video vertically centered
+          against the taller photo collage on desktop. */}
+      <div className="mt-12 grid items-center gap-12 md:mt-14 md:grid-cols-[54fr_46fr] md:gap-12">
+        <YoutubeFacade
+          videoId="z7pos9R_zE4"
+          title="Watch ZPT in Action"
+        />
+        <WatchCollage />
       </div>
     </Section>
   );

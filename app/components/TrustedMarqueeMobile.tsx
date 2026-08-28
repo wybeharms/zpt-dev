@@ -42,14 +42,14 @@ export default function TrustedMarqueeMobile({
     ).matches;
     if (reduceMotion) return;
 
-    // Pixels-per-frame at ~60fps. 0.4 ≈ 24px/sec, a steady drift that
+    // Pixels-per-frame at ~60fps. 0.32 ≈ 19px/sec, a steady drift that
     // feels alive without being so fast that names blur past.
     // Note: at sub-pixel speeds (anything below ~0.5) `el.scrollLeft +=
     // SPEED` doesn't progress, because most browsers round scrollLeft
     // to whole pixels and the fractional increment never accumulates.
     // The fix below keeps a JS-side `position` accumulator that holds
     // the true float position and writes rounded values to scrollLeft.
-    const SPEED = 0.4;
+    const SPEED = 0.32;
     // How long to keep auto-scroll paused after the user lifts their
     // finger. Short enough to feel responsive, long enough that the
     // user doesn't fight the animation while reading.
