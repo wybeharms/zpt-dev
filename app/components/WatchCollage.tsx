@@ -37,7 +37,7 @@ export default function WatchCollage() {
           <img
             src="/testimonials/cfa_society_photo.webp"
             alt="Wybe presenting at CFA Society Istanbul"
-            className={`${FRAME} relative -mt-2 h-36 -rotate-[1.2deg] md:h-40`}
+            className={`${FRAME} relative -mt-2 h-44 -rotate-[1.2deg] object-[center_75%] md:h-52`}
           />
         </div>
       </div>

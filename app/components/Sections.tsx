@@ -168,9 +168,9 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
   {
     kind: "more",
     file: "",
-    name: "And Counting",
-    location: "US · UK · Europe",
-    description: "More teams across investing, design, and hospitality",
+    name: "And many more",
+    location: "",
+    description: "",
   },
 ];
 

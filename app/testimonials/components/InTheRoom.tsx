@@ -7,6 +7,7 @@ const ROOMS = [
     title: "New Vintage Partners · New York",
     caption:
       "On site with the NVP team, mapping and building workflows together.",
+    position: "object-center",
   },
   {
     file: "/testimonials/cfa_society_photo.webp",
@@ -14,6 +15,9 @@ const ROOMS = [
     title: "CFA Society Istanbul · Keynote",
     caption:
       "Wybe on stage: practical ways for investment teams to put agents to work.",
+    // Portrait source in a landscape frame: bias the crop low so the
+    // speaker is in frame instead of only the screen above.
+    position: "object-[center_72%]",
   },
 ];
 
@@ -35,7 +39,7 @@ export default function InTheRoom() {
             <img
               src={room.file}
               alt={room.alt}
-              className="aspect-[4/3] w-full rounded-xl object-cover"
+              className={`aspect-[4/3] w-full rounded-xl object-cover ${room.position}`}
             />
             <figcaption className="mt-4">
               <p className="text-[14px] font-medium text-cream">

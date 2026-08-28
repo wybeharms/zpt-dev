@@ -12,8 +12,9 @@ export type TrustedLogo = {
    *  the others. `xs` sits one step below `sm` (~40% under `md`) for a
    *  wordmark that should read quieter than the rest (Ivy Hall). */
   size?: "xs" | "sm" | "md" | "ml" | "lg";
-  /** "more" renders the closing "& many more" card instead of a logo
-   *  image; `file` is ignored for that card. */
+  /** "more" renders the closing card: just a small "and many more…"
+   *  line in the logo slot, no name/location/description rows.
+   *  `file` is ignored for that card. */
   kind?: "more";
 };
 
@@ -51,6 +52,17 @@ export default function TrustedLogoBody({
   logo: TrustedLogo;
   descriptionVisible?: boolean;
 }) {
+  if (logo.kind === "more") {
+    return (
+      <div className="flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
+        <div className="flex h-20 items-center justify-center md:h-28">
+          <span className="font-serif text-[15px] italic text-cognac md:text-[17px]">
+            and many more&hellip;
+          </span>
+        </div>
+      </div>
+    );
+  }
   const imgClass = SIZE_CLASSES[logo.size ?? "md"];
   return (
     <div className="flex w-[200px] flex-shrink-0 flex-col items-center px-6 text-center">
@@ -58,13 +70,7 @@ export default function TrustedLogoBody({
           (md:h-28) so the text row below stays at the same y for every
           card regardless of which logo is shown. */}
       <div className="flex h-20 items-center justify-center md:h-28">
-        {logo.kind === "more" ? (
-          <span className="font-serif text-[26px] italic leading-none text-cognac md:text-[30px]">
-            &amp; many more
-          </span>
-        ) : (
-          <img src={logo.file} alt={logo.name} className={imgClass} />
-        )}
+        <img src={logo.file} alt={logo.name} className={imgClass} />
       </div>
       <p className="mt-7 min-h-[36px] text-[12px] font-medium uppercase tracking-[0.18em] text-navy">
         {logo.name}
