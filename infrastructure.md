@@ -23,6 +23,26 @@ Vercel project **`zpt-dev`** (default URL: `zpt-dev.vercel.app`), deployed from 
 
 Google Workspace seat under `zptpartners.com`. Primary: `wybe@zptpartners.com`. Alias `wybe@zpteam.ai` still works on the same seat.
 
+### Mail Authentication And Amazon SES
+
+The client portal sends its mail through Amazon SES on the ZPT Partners AWS account, so `zptpartners.com` has two senders: Google Workspace for normal company mail and SES for portal mail. They coexist because each signs with its own DKIM selector.
+
+Added at Namecheap on September 4th, 2026, TTL Automatic on all three:
+
+| Type | Host | Value |
+|---|---|---|
+| CNAME | `b53u6j4qxhbhqot6ogse2ysdoflkzk6k._domainkey` | `b53u6j4qxhbhqot6ogse2ysdoflkzk6k.dkim.amazonses.com` |
+| CNAME | `jxbofcohifasic7jdvzuoo7tnq6yz3as._domainkey` | `jxbofcohifasic7jdvzuoo7tnq6yz3as.dkim.amazonses.com` |
+| CNAME | `7ikgpvwceedfsx45rrfrgvkfdziqsm6e._domainkey` | `7ikgpvwceedfsx45rrfrgvkfdziqsm6e.dkim.amazonses.com` |
+
+Namecheap appends the domain to whatever goes in the Host field, so the host is the selector plus `._domainkey` and never the full hostname. Pasting the full name produces `..._domainkey.zptpartners.com.zptpartners.com`, which never verifies.
+
+🔴 **Never add a second SPF record.** The existing `v=spf1 include:_spf.google.com ~all` serves Google Workspace, and two SPF records break both senders at once. SES uses the default `amazonses.com` MAIL FROM, so it needs nothing in this domain's SPF. Only a custom MAIL FROM subdomain would change that, and none is configured.
+
+Left untouched on purpose: the Google SPF record, the MX record pointing at `smtp.google.com`, the `google._domainkey` TXT record, and DMARC at `v=DMARC1; p=none;`.
+
+Account, region, and SES sandbox detail: `~/Sites/cloud-accounts.md`, ZPT Partners section.
+
 ## Google Search Console
 
 Both domains added as **Domain properties** (covers all subdomains, http/https). Verification is via Namecheap TXT record. The properties are owned by the **`wybeharms@gmail.com`** Google account (not `wybe@zptpartners.com` or the Coghill account), so sign in with that account to manage them.
