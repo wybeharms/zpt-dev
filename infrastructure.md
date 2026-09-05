@@ -5,7 +5,7 @@ The zptpartners.com marketing website. Stack details live in `package.json` (Nex
 ## Domains
 
 - **`zptpartners.com`** — primary (renamed 2026-05-01)
-- **`zpteam.ai`** — legacy, running in parallel during cutover
+- **`zpteam.ai`** — legacy, retired. No longer used, it only 308-redirects to `www.zptpartners.com` (verified September 6th, 2026)
 
 Both should resolve to the same site. **`www.zptpartners.com` is the canonical host** (it is the base used in the sitemap, canonical tags, and OG URLs). `zpteam.ai` already 308-redirects to `www.zptpartners.com`, so the planned cutover redirect is effectively live.
 
