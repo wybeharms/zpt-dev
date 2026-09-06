@@ -10,7 +10,7 @@ The current website is the brand reference: `app/globals.css`, `app/layout.tsx`,
 
 ## Rules
 
-- For portal UI reference work, read `../business/strategy/portal/agent-coordination.md`. Work on the portal's styles. Do not change this marketing site as a side effect.
+- For portal UI reference work, read `../business/portal/agent-coordination.md`. Work on the portal's styles. Do not change this marketing site as a side effect.
 - Keep client-confidential content out of the public site. Naming a specific client publicly requires Wybe's explicit approval.
 - `public/` is deployed and publicly served. Uncompressed originals stay in `design-sources/landing-page/`. Export web-ready assets before using them.
 - Preserve current branding. Coordinate accepted brand changes between the relevant website file and the business style guide.
