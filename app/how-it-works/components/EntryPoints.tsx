@@ -4,7 +4,6 @@ import {
   SectionHeading,
 } from "../../components/Sections";
 import {
-  AnchorIcon,
   CompassIcon,
   SailboatIcon,
   SextantIcon,
@@ -21,27 +20,21 @@ type Entry = {
 const entries: Entry[] = [
   {
     Icon: CompassIcon,
-    name: "Education Workshop",
-    duration: "Half-day, on-site or remote",
-    copy: "A practical session on how agents actually work, with live demos drawn from real workflows. The team leaves with a shared vocabulary and a short list of places worth exploring next.",
+    name: "ZPT Onboarding",
+    duration: "45 minutes per person, remote",
+    copy: "Your agent installed and set up for your role and company, permissions and privacy done right, a first folder built together, and portal access to keep going.",
   },
   {
     Icon: SextantIcon,
-    name: "Discovery",
-    duration: "One to two days",
-    copy: "ZPT comes on-site, interviews the team, and maps work across departments. We size each candidate by time saved and feasibility, then close with a working proof of concept.",
+    name: "ZPT Discovery",
+    duration: "Lite: half a day. Pro: one day on-site, two for larger firms",
+    copy: "ZPT sets the team up, builds the shared folder, interviews the departments, and ranks the workflows by impact and feasibility. Ends with a scaffolded folder your team works in the same week.",
   },
   {
     Icon: SailboatIcon,
-    name: "Focused Build",
-    duration: "One to ten days",
-    copy: "A focused build takes one defined workflow all the way through with real data. ZPT builds the package around it: context, skills, templates, and tool connections, then refines until the output is good enough to use.",
-  },
-  {
-    Icon: AnchorIcon,
-    name: "Embedded",
-    duration: "Ongoing, weekly or monthly",
-    copy: "Regular sessions to add workflows and maintain the package as the team learns where agents help. ZPT stays close enough to keep the foundation healthy without making your team dependent.",
+    name: "ZPT Build",
+    duration: "One to five days per workflow, over months",
+    copy: "Workflows built one by one from the discovery list, each judged against countable success criteria agreed before the work starts and checked together on real cases.",
   },
 ];
 
@@ -52,19 +45,19 @@ export default function EntryPoints() {
         <SectionEyebrow bg="cream">Flexibility Is Key</SectionEyebrow>
         <SectionHeading bg="cream">Pick Your Entry Point.</SectionHeading>
         <p className="mt-6 max-w-[880px] text-[16px] leading-[1.7] text-navy/70">
-          Most engagements start with Education or Discovery and grow from
-          there.
+          Most teams start with Onboarding or Discovery. Each package
+          includes everything before it.*
         </p>
       </div>
 
-      <ul className="mt-14 border-t border-navy/10">
+      <ul className="mt-10 border-t border-navy/10">
         {entries.map(({ Icon, name, duration, copy }) => (
           <EntryPointsRow
             key={name}
             // Pre-render the icon here so a ReactNode crosses the
             // server -> client boundary instead of a function ref.
             icon={
-              <Icon className="h-9 w-9 transition-colors duration-200 group-hover:text-cognac-deep md:h-10 md:w-10" />
+              <Icon className="h-7 w-7 transition-colors duration-200 group-hover:text-cognac-deep md:h-8 md:w-8" />
             }
             name={name}
             duration={duration}
@@ -72,6 +65,12 @@ export default function EntryPoints() {
           />
         ))}
       </ul>
+
+      <p className="mt-5 text-[13px] italic leading-[1.6] text-navy/55">
+        * ZPT also offers subscriptions for individuals and retainers for
+        the companies we work with, so the line stays open after any
+        package.
+      </p>
 
       {/* Bridge link to /our-work */}
       <div className="mt-12 text-center">

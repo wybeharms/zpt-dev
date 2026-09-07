@@ -1,9 +1,9 @@
 /**
- * Photo collage beside the Watch ZPT video: four team photos with
- * slight rotations and small overlaps, like prints laid on a table.
- * Cream borders lift the photos off the tan section background. The
- * caption links to /testimonials, where the same photos appear full
- * size with their stories.
+ * Photo collage on the right of the Our Approach section: four
+ * engagement photos with slight rotations and small overlaps, like
+ * prints laid on a table. Cream borders lift the photos off the navy
+ * section background. The caption links to /testimonials, where the
+ * same photos appear full size with their stories.
  *
  * Overlaps are deliberate but small: the right column is nudged down
  * and left, and each column's lower photo tucks under the one above
@@ -41,14 +41,14 @@ export default function WatchCollage() {
           />
         </div>
       </div>
-      <p className="mt-7 text-center text-[12px] tracking-wide text-navy/60">
+      <p className="mt-7 text-center text-[12px] tracking-wide text-cream/60">
         Capital Industrial · Marquette Associates · New Vintage Partners ·
         CFA Society
       </p>
       <p className="mt-2 text-center">
         <a
           href="/testimonials"
-          className="group inline-flex items-center gap-1.5 text-[13px] font-medium tracking-wide text-cognac transition-colors duration-150 hover:text-cognac-deep"
+          className="group inline-flex items-center gap-1.5 text-[13px] font-medium tracking-wide text-cognac-light transition-colors duration-150 hover:text-cream"
         >
           See Testimonials
           <span

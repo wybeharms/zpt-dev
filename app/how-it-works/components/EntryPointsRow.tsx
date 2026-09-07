@@ -53,17 +53,19 @@ export default function EntryPointsRow({
             "radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(165, 102, 60, 0.22), transparent 70%)",
         }}
       />
-      <RevealOnScroll className="relative grid grid-cols-[56px_minmax(0,1fr)] gap-5 px-3 py-9 md:grid-cols-[100px_300px_minmax(0,1fr)] md:gap-10 md:px-5">
-        <div className="text-cognac md:flex md:items-start md:pt-2">
+      <RevealOnScroll className="relative grid grid-cols-[48px_minmax(0,1fr)] gap-4 px-3 py-5 md:grid-cols-[64px_280px_minmax(0,1fr)] md:gap-8 md:px-5 md:py-6">
+        <div className="text-cognac md:flex md:items-start md:pt-1">
           {icon}
         </div>
-        <div className="md:pt-1">
-          <p className="font-serif text-[22px] leading-snug text-navy md:text-[26px]">
+        <div>
+          <p className="font-serif text-[20px] leading-snug text-navy md:text-[22px]">
             {name}
           </p>
-          <p className="mt-2 text-[13px] italic text-cognac/85">{duration}</p>
+          <p className="mt-1 text-[12.5px] italic leading-snug text-cognac/85">
+            {duration}
+          </p>
         </div>
-        <p className="col-span-2 text-[15px] leading-[1.65] text-navy/75 transition-colors duration-200 group-hover:text-navy md:col-span-1 md:pt-2">
+        <p className="col-span-2 text-[14px] leading-[1.6] text-navy/75 transition-colors duration-200 group-hover:text-navy md:col-span-1 md:pt-0.5">
           {copy}
         </p>
       </RevealOnScroll>

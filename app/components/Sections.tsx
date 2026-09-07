@@ -5,7 +5,7 @@ import RoleLabel from "./RoleLabel";
 import YoutubeFacade from "./YoutubeFacade";
 import TrustedMarqueeMobile from "./TrustedMarqueeMobile";
 import WhyZptCard from "./WhyZptCard";
-import OurApproachChart from "./OurApproachChart";
+import OurApproachPackages from "./OurApproachPackages";
 import WatchCollage from "./WatchCollage";
 import TrustedLogoBody, { type TrustedLogo } from "./TrustedLogoBody";
 import TrustedMarqueeDesktop from "./TrustedMarqueeDesktop";
@@ -237,28 +237,29 @@ export function TrustedBy() {
   );
 }
 
-/* ---------- 3. Our Approach (ascending bar chart) ---------- */
+/* ---------- 3. Our Approach (packages left, engagement photos right) ---------- */
 export function OurApproach() {
   return (
     <Section id="our-approach" bg="navy" backgroundWord="Method">
-      {/* Section header sits above the card, mirroring Lerai's pattern. */}
       <div className="max-w-[720px]">
         <SectionEyebrow bg="navy">How We Help</SectionEyebrow>
         <SectionHeading bg="navy">Our Approach</SectionHeading>
       </div>
 
-      {/* Content card — subtle cream tint on navy, defined edges. */}
-      <div className="mt-10 rounded-2xl border border-cream/10 bg-cream/[0.04] p-7 md:mt-14 md:p-12">
+      {/* Left: the three packages. Right: photos from real engagements,
+          the same ones that appear full size on /testimonials. Centered
+          vertically so the shorter column floats beside the taller one. */}
+      <div className="mt-10 grid gap-12 md:mt-12 md:grid-cols-[minmax(0,54fr)_minmax(0,46fr)] md:items-center md:gap-16">
+        <div>
           <p className="text-[16px] leading-[1.7] text-cream/85">
-            Every company is different. ZPT meets your team where you are.
-            Engagements range from a half-day education session to a full
-            multi-workflow build, and every one climbs the same curve.
+            Every company is different. Three packages, from one person set
+            up in under an hour to agents running a team&apos;s work. Each
+            includes everything before it.
           </p>
-
-          <div className="mt-10">
-            <OurApproachChart />
+          <div className="mt-8">
+            <OurApproachPackages />
           </div>
-          <div className="mt-10">
+          <div className="mt-8">
             <a
               href="/our-work"
               className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-wide text-cognac-light transition-colors duration-150 hover:text-cream"
@@ -273,6 +274,8 @@ export function OurApproach() {
             </a>
           </div>
         </div>
+        <WatchCollage />
+      </div>
     </Section>
   );
 }
@@ -289,14 +292,13 @@ export function WatchZpt() {
           running it.
         </p>
       </div>
-      {/* items-center keeps the (shorter) video vertically centered
-          against the taller photo collage on desktop. */}
-      <div className="mt-12 grid items-center gap-12 md:mt-14 md:grid-cols-[54fr_46fr] md:gap-12">
+      {/* Video only. The engagement photos that used to sit beside it now
+          live in the Our Approach section above. */}
+      <div className="mx-auto mt-12 max-w-[900px] md:mt-14">
         <YoutubeFacade
           videoId="z7pos9R_zE4"
           title="Watch ZPT in Action"
         />
-        <WatchCollage />
       </div>
     </Section>
   );
@@ -324,7 +326,7 @@ export function WhyZpt() {
       lead: "Start Small, No Commitment.",
       copy: "Every engagement is low-risk by design. The setup is AI agnostic and runs on tools you already have, like SharePoint or Dropbox. Nothing is locked in.",
       expanded:
-        "A half-day education session is a legitimate first step, no retainer required. Runs on your own Claude, Codex, or Copilot license.",
+        "Onboarding a single person is a legitimate first step, no retainer required. Runs on your own Claude, Codex, or Copilot license.",
     },
   ];
   return (
@@ -355,7 +357,7 @@ export function WhyZpt() {
 export function IsZptRight() {
   const yes = [
     "You know AI matters but haven't found a way to use it.",
-    "Even an education session or discovery is a fine place to start.",
+    "Even onboarding one person or a half-day discovery is a fine place to start.",
     "You're ready to face the AI revolution head-on.",
     "You'd rather own the setup than subscribe.",
   ];
