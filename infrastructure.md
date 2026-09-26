@@ -41,7 +41,7 @@ Namecheap appends the domain to whatever goes in the Host field, so the host is 
 
 Left untouched on purpose: the Google SPF record, the MX record pointing at `smtp.google.com`, the `google._domainkey` TXT record, and DMARC at `v=DMARC1; p=none;`.
 
-Account, region, and SES sandbox detail: `~/Sites/cloud-accounts.md`, ZPT Partners section.
+Account, region, and SES sandbox detail: `~/Sites/computer-setup/cloud-accounts.md`, ZPT Partners section.
 
 ## Google Search Console
 
