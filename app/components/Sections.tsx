@@ -147,7 +147,7 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
   {
     file: "/testimonials/kernbouw.svg",
     name: "KernBouw",
-    location: "Amsterdam Area, Netherlands",
+    location: "Amsterdam, NL",
     description: "Dutch construction and renovation firm",
     size: "sm",
   },
@@ -259,25 +259,19 @@ export function OurApproach() {
         <SectionHeading bg="navy">Our Approach</SectionHeading>
       </div>
 
-      {/* Left: the three packages. Right: photos from real engagements,
-          the same ones that appear full size on /testimonials. Centered
-          vertically so the shorter column floats beside the taller one. */}
+      {/* Left: the three packages, kept to a name, a tag and one line
+          each. Right: photos from real engagements, the same ones that
+          appear full size on /testimonials. Centered vertically so the
+          shorter column floats beside the taller one. */}
       <div className="mt-10 grid gap-12 md:mt-12 md:grid-cols-[minmax(0,54fr)_minmax(0,46fr)] md:items-center md:gap-16">
         <div>
-          <p className="text-[16px] leading-[1.7] text-cream/85">
-            Every company is different. Three packages, from one person set
-            up in under an hour to agents running a team&apos;s work. Each
-            includes everything before it.
-          </p>
-          <div className="mt-8">
-            <OurApproachPackages />
-          </div>
-          <div className="mt-8">
+          <OurApproachPackages />
+          <div className="mt-7">
             <a
               href="/our-work"
               className="group inline-flex items-center gap-1.5 text-[14px] font-medium tracking-wide text-cognac-light transition-colors duration-150 hover:text-cream"
             >
-              See examples of what we&apos;ve shipped
+              See Example Workflows
               <span
                 aria-hidden="true"
                 className="transition-transform duration-150 group-hover:translate-x-0.5"

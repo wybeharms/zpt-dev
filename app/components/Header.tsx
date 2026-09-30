@@ -82,11 +82,12 @@ export default function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  // When the user pins the mega panel open by clicking the trigger, the
-  // hover-out close timer is suppressed. Click outside the trigger/panel
-  // or click the trigger again to unpin and close.
-  const pinnedByClickRef = useRef(false);
-  const megaTriggerRef = useRef<HTMLButtonElement | null>(null);
+  // The "How It Works" trigger is a real link: hovering opens the mega
+  // panel, clicking goes to /how-it-works. Touch screens have no hover,
+  // so there the first tap only opens the panel and a second tap follows
+  // the link. This ref marks a tap that should open instead of navigate.
+  const tapOpensPanelRef = useRef(false);
+  const megaTriggerRef = useRef<HTMLAnchorElement | null>(null);
   const megaPanelRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
 
@@ -142,28 +143,24 @@ export default function Header() {
 
   // Reset mega panel state on every client-side route change. The Header
   // itself doesn't unmount on navigation (it's in the root layout), so
-  // without this the click-pinned panel would stay open after the user
-  // navigates to a sub-page via a dropdown item.
+  // without this an open panel would stay open after the user navigates
+  // to a sub-page via a dropdown item.
   useEffect(() => {
-    pinnedByClickRef.current = false;
     setMegaOpen(false);
   }, [pathname]);
 
-  // Click-outside + Escape close the panel when it's pinned open.
+  // Click-outside + Escape close the panel. This is what closes it on
+  // touch screens, where there is no hover-out.
   useEffect(() => {
     if (!megaOpen) return;
     const onMouseDown = (e: MouseEvent) => {
       const target = e.target as Node;
       if (megaTriggerRef.current?.contains(target)) return;
       if (megaPanelRef.current?.contains(target)) return;
-      pinnedByClickRef.current = false;
       setMegaOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        pinnedByClickRef.current = false;
-        setMegaOpen(false);
-      }
+      if (e.key === "Escape") setMegaOpen(false);
     };
     document.addEventListener("mousedown", onMouseDown);
     document.addEventListener("keydown", onKey);
@@ -180,27 +177,13 @@ export default function Header() {
     setMegaOpen(true);
   };
   const scheduleCloseMega = () => {
-    // Pinned-open via click — don't let hover-out close the panel.
-    if (pinnedByClickRef.current) return;
     if (closeTimer.current) clearTimeout(closeTimer.current);
     // 120ms grace window so the user can move the cursor across the gap
     // between the trigger and the panel without the panel collapsing.
     closeTimer.current = setTimeout(() => setMegaOpen(false), 120);
   };
-  const toggleMegaByClick = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    if (megaOpen && pinnedByClickRef.current) {
-      // Second click on the trigger collapses the pinned panel.
-      pinnedByClickRef.current = false;
-      setMegaOpen(false);
-    } else {
-      pinnedByClickRef.current = true;
-      setMegaOpen(true);
-    }
-  };
   const closeMegaImmediately = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    pinnedByClickRef.current = false;
     setMegaOpen(false);
   };
 
@@ -229,10 +212,28 @@ export default function Header() {
                   onFocus={openMega}
                   onBlur={scheduleCloseMega}
                 >
-                  <button
-                    type="button"
+                  <Link
+                    href={link.href}
                     ref={megaTriggerRef}
-                    onClick={toggleMegaByClick}
+                    onPointerDown={(e) => {
+                      // Runs before the tap's focus event opens the
+                      // panel, so megaOpen is still the state the user
+                      // saw when they put a finger down.
+                      tapOpensPanelRef.current =
+                        e.pointerType !== "mouse" && !megaOpen;
+                    }}
+                    onPointerCancel={() => {
+                      tapOpensPanelRef.current = false;
+                    }}
+                    onClick={(e) => {
+                      if (tapOpensPanelRef.current) {
+                        tapOpensPanelRef.current = false;
+                        e.preventDefault();
+                        openMega();
+                        return;
+                      }
+                      closeMegaImmediately();
+                    }}
                     aria-haspopup="true"
                     aria-expanded={megaOpen}
                     className="inline-flex cursor-pointer items-center gap-1 text-[14px] tracking-wide text-navy/80 transition-colors duration-150 hover:text-navy"
@@ -246,7 +247,7 @@ export default function Header() {
                     >
                       ▾
                     </span>
-                  </button>
+                  </Link>
                 </div>
               ) : (
                 <Link

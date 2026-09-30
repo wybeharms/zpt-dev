@@ -59,7 +59,7 @@ export function NewVintageHighlight() {
         <img
           src="/testimonials/new_vintage_partners_photo.webp"
           alt="Wybe Harms and Brian Downs at the New Vintage Partners office in New York"
-          className="aspect-[10/11] w-full rounded-xl object-cover shadow-[0_18px_44px_-14px_rgba(12,12,40,0.28)]"
+          className="aspect-[10/11] w-full rounded-xl object-cover shadow-[0_18px_44px_-14px_rgba(12,12,40,0.28)] md:max-w-[400px]"
         />
         <div>
           <p aria-hidden="true" className="font-serif text-[56px] leading-[0.5] text-cognac">
@@ -111,10 +111,8 @@ export function CapitalIndustrialHighlight() {
             London-based real estate investment firm, get their team onto
             agents. During a full-day AI session we centralized the
             documentation, the skills, and the company context into one
-            folder, shared properly and with the right permissions, while
-            getting the team up to speed on how to use these agents well.
-            Everyone left with Claude Code running and their own set of
-            instructions and context files.
+            folder. Everyone left with Claude Code running and their own
+            set of instructions and context files.
           </blockquote>
           <div className="mt-7 flex items-center gap-4">
             <img
@@ -146,35 +144,36 @@ export function MarquetteHighlight() {
           <p aria-hidden="true" className="font-serif text-[56px] leading-[0.5] text-cognac">
             &ldquo;
           </p>
+          {/* One type treatment for the whole quote: the opening line, the
+              two points and the closing line share font, size and color. */}
           <blockquote className="mt-5 font-serif text-[19px] italic leading-[1.5] text-navy md:text-[21px]">
-            Since April, we&apos;ve been working with Marquette Associates,
-            an independent investment consulting firm headquartered in
-            Chicago, building and rolling out agentic AI workflows
-            alongside their team.
+            <p>
+              Since April, we&apos;ve been working with Marquette
+              Associates, an independent investment consulting firm
+              headquartered in Chicago, building and rolling out agentic AI
+              workflows alongside their team.
+            </p>
+            <ul className="mt-4 space-y-1.5">
+              {[
+                "Built a foundational, shareable folder where the agents operate",
+                "Worked through multiple real workflows across several departments",
+              ].map((line) => (
+                <li key={line} className="flex items-baseline gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="flex-shrink-0 select-none font-sans text-[0.8em] font-medium not-italic text-cognac"
+                  >
+                    +
+                  </span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4">
+              It&apos;s been a great collaboration, and we&apos;re excited
+              for what&apos;s next.
+            </p>
           </blockquote>
-          <ul className="mt-5 space-y-2.5">
-            {[
-              "Built a foundational, shareable folder where the agents operate",
-              "Worked through multiple real workflows across several departments",
-            ].map((line) => (
-              <li
-                key={line}
-                className="flex items-start gap-3 text-[15px] leading-[1.6] text-navy/80"
-              >
-                <span
-                  aria-hidden="true"
-                  className="flex-shrink-0 select-none font-medium text-cognac"
-                >
-                  +
-                </span>
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 font-serif text-[17px] italic leading-[1.5] text-navy/85">
-            It&apos;s been a great collaboration, and we&apos;re excited
-            for what&apos;s next.
-          </p>
           <div className="mt-7 flex items-center gap-4">
             <img
               src="/testimonials/marquette_associates_mark.webp"
@@ -195,7 +194,7 @@ export function MarquetteHighlight() {
         <img
           src="/testimonials/marquette_photo.webp"
           alt="With the Marquette Associates team at their Chicago office"
-          className="aspect-[10/11] w-full rounded-xl object-cover shadow-[0_18px_44px_-14px_rgba(12,12,40,0.28)]"
+          className="aspect-[10/11] w-full rounded-xl object-cover shadow-[0_18px_44px_-14px_rgba(12,12,40,0.28)] md:max-w-[400px] md:justify-self-end"
         />
       </div>
     </Section>
