@@ -6,6 +6,10 @@
  *
  * Spaces in filenames are URL-encoded so the asset path is unambiguous
  * regardless of how the rendering layer handles it.
+ *
+ * Both grids are laid out for the current roster of three. When the
+ * roster changes size, update the column counts in TeamGrid and
+ * TeamPreview with it.
  */
 export type TeamMember = {
   name: string;
@@ -32,14 +36,6 @@ export const TEAM: TeamMember[] = [
     marine: "/team/Jasper%20Moll-marine.webp",
     bio: "Forward-deployed engineer shipping production agent workflows for cross-functional teams. Trained in business engineering with prior project management experience.",
     linkedin: "https://www.linkedin.com/in/jasper-moll-9a1424139/",
-  },
-  {
-    name: "Alessandro Condorelli",
-    role: "Forward-Deployed ZPTer",
-    photo: "/team/Alessandro%20Condorelli-photo.webp",
-    marine: "/team/Alessandro%20Condorelli-marine.webp",
-    bio: "MSc candidate in Analytics and Management at London Business School, where he founded the public speaking and debating extracurricular.",
-    linkedin: "https://www.linkedin.com/in/alessandro-condorelli-82685221a/",
   },
   {
     name: "Arnau Ribé",

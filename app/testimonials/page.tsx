@@ -5,14 +5,15 @@ import TestimonialsHero from "./components/TestimonialsHero";
 import {
   CapitalIndustrialHighlight,
   MarquetteHighlight,
+  NewVintageHighlight,
 } from "./components/LinkedInHighlights";
 import InTheRoom from "./components/InTheRoom";
-import CaseStudies from "./components/CaseStudies";
+import OurWorkTeaser from "./components/OurWorkTeaser";
 
 export const metadata = {
   title: "Testimonials | ZPT Partners",
   description:
-    "LinkedIn highlights, photos from the room, and case studies from the teams ZPT works with.",
+    "Client quotes, LinkedIn highlights, and photos from the room with the teams ZPT works with.",
   alternates: {
     canonical: "/testimonials",
   },
@@ -24,10 +25,11 @@ export default function TestimonialsPage() {
       <Header />
       <main>
         <TestimonialsHero />
-        <CapitalIndustrialHighlight />
+        <NewVintageHighlight />
         <MarquetteHighlight />
+        <CapitalIndustrialHighlight />
         <InTheRoom />
-        <CaseStudies />
+        <OurWorkTeaser />
         <SubPageFinalCta backgroundImage="/landing_page/Our Work.webp" />
       </main>
       <Footer />

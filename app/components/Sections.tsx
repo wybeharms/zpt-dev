@@ -27,12 +27,17 @@ export function Section({
   align = "default",
   bgColor,
   backgroundWord,
+  compact = false,
   children,
   className = "",
 }: {
   id: string;
   bg: Bg;
   align?: SectionAlign;
+  /** Tighter vertical padding, for a band that should stay short. A
+   *  padding class passed through `className` does not win over the
+   *  default, so this prop is the way to shorten a section. */
+  compact?: boolean;
   /** Optional bg-color override (e.g. "#E0CDB0") so a section can break
       the alternating cream/navy rhythm with a custom shade. The text color
       still follows `bg`. */
@@ -55,10 +60,11 @@ export function Section({
   // stays for the home page.
   const innerMax = align === "header" ? "max-w-[1400px]" : "max-w-[1200px]";
   const wordColor = bg === "cream" ? "text-navy/[0.05]" : "text-cream/[0.05]";
+  const padding = compact ? "py-14 md:py-24" : "py-20 md:py-32";
   return (
     <section
       id={id}
-      className={`relative w-full ${backgroundWord ? "overflow-hidden" : ""} ${bgClass} ${textColor} py-20 md:py-32 ${className}`}
+      className={`relative w-full ${backgroundWord ? "overflow-hidden" : ""} ${bgClass} ${textColor} ${padding} ${className}`}
       style={bgColor ? { backgroundColor: bgColor } : undefined}
     >
       {backgroundWord ? (
@@ -137,6 +143,13 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     name: "Capital Industrial",
     location: "London, UK",
     description: "London-based real estate investment firm",
+  },
+  {
+    file: "/testimonials/kernbouw.svg",
+    name: "KernBouw",
+    location: "Amsterdam Area, Netherlands",
+    description: "Dutch construction and renovation firm",
+    size: "sm",
   },
   {
     file: "/testimonials/CFA_Institute.png",
@@ -357,7 +370,7 @@ export function WhyZpt() {
 export function IsZptRight() {
   const yes = [
     "You know AI matters but haven't found a way to use it.",
-    "Even onboarding one person or a half-day discovery is a fine place to start.",
+    "Even onboarding 1 person or a half-day discovery is a fine place to start.",
     "You're ready to face the AI revolution head-on.",
     "You'd rather own the setup than subscribe.",
   ];
@@ -379,7 +392,9 @@ export function IsZptRight() {
             <AnchorIcon className="h-7 w-7" />
             <p className="font-serif text-[26px] leading-none">Yes, If</p>
           </div>
-          <ul className="mt-6 space-y-4 pl-10 md:pl-0">
+          {/* pl-10 = icon width + gap, so the bullets sit indented under
+              the "Yes, If" label instead of under the icon. */}
+          <ul className="mt-6 space-y-4 pl-10">
             {yes.map((line) => (
               <li
                 key={line}
@@ -403,7 +418,7 @@ export function IsZptRight() {
               Not Yet, If
             </p>
           </div>
-          <ul className="mt-6 space-y-4 pl-10 md:pl-0">
+          <ul className="mt-6 space-y-4 pl-10">
             {notYet.map((line) => (
               <li
                 key={line}
@@ -438,7 +453,7 @@ export function TeamPreview() {
         <SectionEyebrow bg="cream">Team</SectionEyebrow>
         <SectionHeading bg="cream">The Team</SectionHeading>
       </div>
-      <ul className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mx-auto mt-12 grid max-w-[900px] gap-x-8 gap-y-10 sm:grid-cols-3">
         {TEAM.map((member) => (
           <li
             key={member.name}

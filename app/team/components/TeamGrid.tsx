@@ -4,10 +4,11 @@ import RoleLabel from "../../components/RoleLabel";
 import { TEAM } from "../../components/team-data";
 
 /**
- * Cream band. 4-up portrait grid (1 col on mobile, 2 on tablet, 4 on
- * desktop). Each card: hover-swap portrait, name, role, bio, LinkedIn
- * link. The grid carries the page; no extra eyebrow/heading above it
- * since the hero already framed the section.
+ * Cream band. 3-up portrait grid (1 col on mobile, 2 on small tablets,
+ * 3 from md up), capped at 1010px and centered so each card keeps the
+ * width it had in the earlier 4-up row. Each card: hover-swap portrait,
+ * name, role, bio, LinkedIn link. The grid carries the page; no extra
+ * eyebrow/heading above it since the hero already framed the section.
  */
 export default function TeamGrid() {
   return (
@@ -17,7 +18,7 @@ export default function TeamGrid() {
       align="header"
       backgroundWord="Team"
     >
-      <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
+      <ul className="mx-auto grid max-w-[1010px] gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-x-10">
         {TEAM.map((member) => (
           <li key={member.name} className="flex flex-col">
             <PortraitSwap photo={member.photo} marine={member.marine} alt={member.name} />

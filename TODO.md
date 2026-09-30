@@ -5,14 +5,14 @@ don't get lost when sub-pages are still in flight.
 
 ## Pre-launch fixes
 
-- [ ] **Sector text on /our-work cards.** `app/our-work/components/ExampleWorkflows.tsx`
-  shows "Investment consulting", "Asset management", and "Private equity" as
-  industry tags above each workflow title. LANDING_BRAINSTORM.md is explicit
-  that case studies should never show sector text alongside the Trusted By
-  logo wall: combined, they make it trivial to identify which client did
-  which workflow. Decide before launch: drop the industry tag, replace with
-  a non-revealing tag (e.g., "document workflow"), or remove the Trusted By
-  logos from the home page.
+- [x] **Sector text on /our-work cards.** Resolved September 30th, 2026: the
+  examples section was rebuilt with tool tags ("Word · Excel · PowerPoint",
+  "PDF Statements", "HubSpot · Outlook", "Gmail · Google Sheets") in place of
+  the sector tags, and results are stated without numbers. The rule stands for
+  future cards: case studies never show sector text alongside the Trusted By
+  logo wall, because combined they make it trivial to identify which client
+  did which workflow. The document thumbnails are drawn in markup
+  (`app/components/ExampleDocsFan.tsx`), not screenshots of client work.
 
 - [ ] **Header anchors will need to update once real sub-pages exist.**
   `app/components/Header.tsx` currently routes:
