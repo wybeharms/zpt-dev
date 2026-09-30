@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const CALENDLY_URL = "https://calendly.com/zptpartners/30min";
+const PORTAL_URL = "https://portal.zptpartners.com/sign-in";
 
 type FooterLink = {
   label: string;
@@ -19,6 +20,7 @@ const companyLinks: FooterLink[] = [
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
   { label: "Testimonials", href: "/testimonials" },
+  { label: "Portal", href: PORTAL_URL },
   { label: "Book a Call", href: CALENDLY_URL, external: true },
 ];
 
@@ -40,8 +42,8 @@ const connectLinks: FooterLink[] = [
 /**
  * External links render with target="_blank" rel="noopener noreferrer"
  * and a small ↗ glyph in cream/40 trailing the label. Internal Next.js
- * routes use <Link>. mailto: counts as internal-style (no glyph,
- * no target=_blank).
+ * routes use <Link>. mailto: and the portal count as internal-style
+ * (no glyph, no target=_blank).
  */
 function ColumnLink({ label, href, external }: FooterLink) {
   if (external) {
@@ -59,7 +61,7 @@ function ColumnLink({ label, href, external }: FooterLink) {
       </a>
     );
   }
-  if (href.startsWith("mailto:") || href.startsWith("/#")) {
+  if (href.startsWith("mailto:") || href.startsWith("/#") || href.startsWith("https:")) {
     return (
       <a
         href={href}

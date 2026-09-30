@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const CALENDLY_URL = "https://calendly.com/zptpartners/30min";
+const PORTAL_URL = "https://portal.zptpartners.com/sign-in";
 
 /**
  * Sub-pages featured in the mega panel that opens under "How It Works."
@@ -259,14 +260,22 @@ export default function Header() {
                 </Link>
               ),
             )}
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[5px] bg-cognac px-5 py-2.5 text-[14px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
-            >
-              Book a Call
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href={PORTAL_URL}
+                className="rounded-[5px] border border-navy/20 px-5 py-[9px] text-[14px] font-medium tracking-wide text-navy transition-colors duration-150 hover:border-navy/40 hover:bg-navy/5"
+              >
+                Portal
+              </a>
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-[5px] bg-cognac px-5 py-2.5 text-[14px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
+              >
+                Book a Call
+              </a>
+            </div>
           </nav>
 
           {/* Mobile right-side cluster: Book a Call + hamburger. */}
@@ -443,6 +452,13 @@ export default function Header() {
               className="mt-5 inline-flex w-full items-center justify-center rounded-[5px] bg-cognac px-5 py-3 text-[15px] font-medium tracking-wide text-cream transition-colors duration-150 hover:bg-cognac-deep"
             >
               Book a Call
+            </a>
+            <a
+              href={PORTAL_URL}
+              onClick={() => setMobileOpen(false)}
+              className="mt-3 inline-flex w-full items-center justify-center rounded-[5px] border border-navy/20 px-5 py-[11px] text-[15px] font-medium tracking-wide text-navy transition-colors duration-150 hover:bg-navy/5"
+            >
+              Portal
             </a>
           </nav>
         </div>
