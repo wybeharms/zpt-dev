@@ -4,6 +4,11 @@ The zptpartners.com marketing website. Stack details live in `package.json` (Nex
 
 ## Domains
 
+- **Retired Brands, October 16th, 2026:** `claudcito.com`, `claudeconomics.com` and `claudester.com`, including each `www` variant, now use permanent 308 redirects to `https://www.zptpartners.com`. All six variants belong to the existing `zpt-dev` Vercel project. Claudester's former project and source remain retained without these custom domains.
+- **Canonical Redirect, October 16th, 2026:** `zptpartners.com` now uses 308 rather than 307 to reach `www.zptpartners.com`, preserving paths and query parameters.
+- Claudcito and Claudeconomics use Namecheap BasicDNS with `A @ 216.198.79.1` and `CNAME www 40eb4bbc083adbe7.vercel-dns-017.com.`. Their old parking/URL redirect records were replaced. Existing mail records and nameservers were preserved. Claudester's DNS and mail records were preserved.
+- HTTPS certificate checks and direct Vercel requests passed for all six retired-brand variants. Authoritative DNS confirms both new domain record sets. Cached parking records may persist until their earlier TTL expires. Claudje, Claudtje, CGAI, the expired Perspective Analytics domain and the existing ZPTeam redirect were left unchanged.
+
 - **`zptpartners.com`** — primary (renamed 2026-05-01)
 - **`zpteam.ai`** — legacy, retired. No longer used, it only 308-redirects to `www.zptpartners.com` (verified September 6th, 2026)
 
@@ -59,6 +64,7 @@ Both domains added as **Domain properties** (covers all subdomains, http/https).
 These are produced by the Next.js build, not stored as static files. They regenerate on every deploy and are served live:
 
 - **`/sitemap.xml`** comes from `app/sitemap.ts`. The route list is hardcoded. **When a page is added or removed, edit the `routes` array in `app/sitemap.ts` and redeploy.** The live file and Google's copy update on their own after that.
+- **Modification Dates, October 16th, 2026:** sitemap `lastmod` values are omitted because genuine per-page update dates are not maintained. Application `61d3951994ece1043b5ffdbd3c331fab87cdb757` is verified Ready in Vercel deployment `7TY8v7gNwa2Mopv3NLjhYDULnETS`. The live sitemap serves all seven existing public pages without build-generated update dates. The production build and focused lint check pass.
 - **`/robots.txt`** comes from `app/robots.ts`. Allows all crawlers and points to the sitemap.
 - **Canonical tags** come from each page's `metadata.alternates.canonical` (a relative path), resolved against `metadataBase` (`https://www.zptpartners.com`) set in `app/layout.tsx`. Every page declaring its own canonical is what cleared the www/non-www "duplicate without canonical" flag in Search Console.
 - **Organization JSON-LD** is an inline `<script type="application/ld+json">` block in `app/page.tsx` (home page only), using `apple-touch-icon.png` as the logo.
