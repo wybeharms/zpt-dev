@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import RevealOnScroll from "./RevealOnScroll";
 import PortraitSwap from "./PortraitSwap";
 import RoleLabel from "./RoleLabel";
 import YoutubeFacade from "./YoutubeFacade";
@@ -436,7 +435,7 @@ export function IsZptRight() {
 
 /* ---------- 8. Team Preview ---------- */
 /**
- * Compact teaser of the full /team roster. Smaller portrait squares
+ * Compact teaser of the full /team roster. Smaller portrait cards
  * (~140px), name + role only (no bio), and a centered "Meet The Team"
  * link below the row that routes to /team.
  */
@@ -447,7 +446,7 @@ export function TeamPreview() {
         <SectionEyebrow bg="cream">Team</SectionEyebrow>
         <SectionHeading bg="cream">The Team</SectionHeading>
       </div>
-      <ul className="mx-auto mt-12 grid max-w-[900px] gap-x-8 gap-y-10 sm:grid-cols-3">
+      <ul className="mx-auto mt-12 grid max-w-[900px] gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
         {TEAM.map((member) => (
           <li
             key={member.name}
@@ -517,7 +516,7 @@ export function FinalCta() {
         </h2>
         <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-cream/80">
           Every engagement begins with a conversation. Book a 30-minute call
-          to talk through your team's situation.
+          to talk through your team&apos;s situation.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
