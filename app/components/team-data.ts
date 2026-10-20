@@ -50,7 +50,7 @@ export const TEAM: TeamMember[] = [
     role: "AI Education Intern",
     photo: "/team/gavin-photo.webp",
     marine: "/team/gavin-marine.webp",
-    bio: "Develops ZPT's AI courses and educational resources, helping teams get started with practical AI workflows.",
+    bio: "Studies Finance and Accounting at CU Boulder's Leeds School of Business, with internship experience at Coghill Capital and Mesirow Financial. Develops ZPT's AI courses and educational resources, helping teams move from understanding AI to applying it in their daily workflows.",
     linkedin: "https://www.linkedin.com/in/gavinabel/",
   },
 ];
