@@ -17,9 +17,9 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zptpartners.com"),
-  title: "ZPT Partners. Custom AI for Your Company.",
+  title: "ZPT Partners | Put Agents To Work",
   description:
-    "ZPT builds a custom AI directory for your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything.",
+    "Put agents to work with Claude, ChatGPT or Copilot. ZPT helps teams set up context, instructions and workflows for everyday tasks. You own the setup.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "ZPT Partners. Custom AI for Your Company.",
+    title: "ZPT Partners | Put Agents To Work",
     description:
-      "ZPT builds custom AI setups your team owns and runs. We help organizations navigate the uncharted AI waters.",
+      "Put agents to work with Claude, ChatGPT or Copilot. ZPT helps teams set up context, instructions and workflows for everyday tasks. You own the setup.",
     url: "https://www.zptpartners.com",
     siteName: "ZPT Partners",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZPT Partners. Custom AI for Your Company.",
-    description: "ZPT builds custom AI setups your team owns and runs.",
+    title: "ZPT Partners | Put Agents To Work",
+    description: "Put agents to work with Claude, ChatGPT or Copilot. ZPT helps teams set up context, instructions and workflows for everyday tasks. You own the setup.",
     images: ["/og-image.png"],
   },
 };

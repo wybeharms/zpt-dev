@@ -2,6 +2,10 @@
 
 The zptpartners.com marketing website. Stack details live in `package.json` (Next.js 16, React 19, Tailwind 4).
 
+## Website Wording, October 27th, 2026
+
+Wybe approved implementation, GitHub synchronization and production publication of Put Agents To Work as the landing-page headline, footer wording and search/social title. The introduction names familiar AI tools, practical files/instructions, workflows, training and ownership. Organization metadata uses the same positioning. The final landing-page call to action reads Start With A Conversation. Existing design, links and assets are preserved. The unrelated untracked NVP logo is excluded. Local desktop/laptop review passed. The production build and focused lint pass, with the three existing image-element warnings. Publication verification is pending.
+
 ## Domains
 
 - **Retired Brands, October 16th, 2026:** `claudcito.com`, `claudeconomics.com` and `claudester.com`, including each `www` variant, now use permanent 308 redirects to `https://www.zptpartners.com`. All six variants belong to the existing `zpt-dev` Vercel project. Claudester's former project and source remain retained without these custom domains.

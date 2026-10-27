@@ -22,7 +22,7 @@ const organizationSchema = {
   url: "https://www.zptpartners.com",
   logo: "https://www.zptpartners.com/apple-touch-icon.png",
   description:
-    "ZPT builds a custom AI directory for your company. Your team uses it through Claude, ChatGPT, or any compatible app. You own everything.",
+    "Put agents to work with Claude, ChatGPT or Copilot. ZPT helps teams set up context, instructions and workflows for everyday tasks. You own the setup.",
 };
 
 export default function Home() {

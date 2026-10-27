@@ -110,7 +110,7 @@ export default function Footer() {
               className="h-8 w-auto rounded-md"
             />
             <p className="mt-5 max-w-[280px] font-serif text-[18px] leading-snug text-cream/85">
-              We help you navigate the uncharted AI waters.
+              Put Agents To Work.
             </p>
             <a
               href="mailto:wybe@zptpartners.com"

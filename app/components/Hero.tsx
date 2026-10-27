@@ -59,14 +59,14 @@ export default function Hero() {
         <div className="px-6 pt-10 pb-12">
           <h1 className="font-serif text-[2.25rem] leading-[1.05] tracking-[-0.01em]">
             <span className="block font-normal text-navy">
-              Your company knows AI is powerful.
+              Put Agents
             </span>
             <span className="mt-1 block font-bold text-cognac">
-              We make it happen.
+              To Work.
             </span>
           </h1>
           <p className="mt-5 text-[15px] leading-[1.6] text-navy/85">
-            ZPT Partners helps you navigate the uncharted AI waters.
+            Keep using Claude, ChatGPT or Copilot. We help your team organize its files and instructions, build workflows around everyday tasks, and learn how to use agents. You own the setup.
           </p>
           {/* Buttons stack vertically below the headline. max-w-[360px]
               keeps them from stretching edge-to-edge on wider narrow
@@ -133,14 +133,14 @@ export default function Hero() {
           <div className="ml-auto w-full max-w-[600px]">
             <h1 className="font-serif text-[clamp(2.25rem,4.6vw,4rem)] leading-[1.05] tracking-[-0.01em]">
               <span className="block font-normal text-navy">
-                Your company knows AI is powerful.
+                Put Agents
               </span>
               <span className="mt-1 block whitespace-nowrap font-bold text-cognac">
-                We make it happen.
+                To Work.
               </span>
             </h1>
             <p className="mt-6 max-w-[540px] text-[16px] leading-[1.65] text-navy/85">
-              ZPT Partners helps you navigate the uncharted AI waters.
+              Keep using Claude, ChatGPT or Copilot. We help your team organize its files and instructions, build workflows around everyday tasks, and learn how to use agents. You own the setup.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a

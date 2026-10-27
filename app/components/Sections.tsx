@@ -509,14 +509,13 @@ export function FinalCta() {
       <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center md:px-10">
         <SectionEyebrow bg="navy">Start Here</SectionEyebrow>
         <h2 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.06] tracking-[-0.01em]">
-          <span className="block font-normal text-cream">Build</span>
+          <span className="block font-normal text-cream">Start With</span>
           <span className="mt-1 block font-bold text-cognac">
-            Your AI Directory
+            A Conversation
           </span>
         </h2>
         <p className="mx-auto mt-6 max-w-[560px] text-[16px] leading-[1.65] text-cream/80">
-          Every engagement begins with a conversation. Book a 30-minute call
-          to talk through your team&apos;s situation.
+          Book a 30-minute call to talk through your team&apos;s situation.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
