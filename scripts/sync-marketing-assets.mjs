@@ -16,8 +16,8 @@
 //   * On Vercel (or anywhere the business folder is absent): logs a notice
 //     and exits 0. The committed copies in public/resources/ are used as-is.
 //
-// To add a new downloadable asset: drop it in business/marketing/ and add
-// its filename to FILES_TO_SYNC below.
+// To add a downloadable asset, add its marketing source path and public
+// filename to FILES_TO_SYNC below.
 
 import { copyFileSync, existsSync, mkdirSync, statSync, utimesSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
@@ -29,8 +29,14 @@ const MARKETING_DIR = resolve(DEV_ROOT, "../business/marketing");
 const PUBLIC_RESOURCES_DIR = resolve(DEV_ROOT, "public/resources");
 
 const FILES_TO_SYNC = [
-  "zpt-one-pager.pdf",
-  "2026_Agentic-Workflows.pdf",
+  {
+    source: "one-pager/zpt-one-pager-services-v5.pdf",
+    filename: "zpt-one-pager.pdf",
+  },
+  {
+    source: "2026_Agentic-Workflows.pdf",
+    filename: "2026_Agentic-Workflows.pdf",
+  },
 ];
 
 function main() {
@@ -48,8 +54,8 @@ function main() {
   let skipped = 0;
   const missing = [];
 
-  for (const filename of FILES_TO_SYNC) {
-    const src = join(MARKETING_DIR, filename);
+  for (const { source, filename } of FILES_TO_SYNC) {
+    const src = join(MARKETING_DIR, source);
     const dest = join(PUBLIC_RESOURCES_DIR, filename);
 
     if (!existsSync(src)) {

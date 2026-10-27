@@ -13,12 +13,12 @@ type Download = {
 
 /**
  * Both PDFs live in /public/resources/. Sizes are pulled from the actual
- * files on disk: the one-pager is ~230 KB, the deck is ~4 MB.
+ * files on disk: the one-pager and deck are each ~4 MB.
  */
 const DOWNLOADS: Download[] = [
   {
     label: "One-Pager",
-    size: "230 KB",
+    size: "4 MB",
     buttonLabel: "Download ZPT One-Pager (PDF)",
     href: "/resources/zpt-one-pager.pdf",
   },
