@@ -1,6 +1,6 @@
 # ZPT Website Agent Instructions
 
-Updated September 5th, 2026. This file owns standing instructions for the public ZPT marketing website. `CLAUDE.md` is a compatibility pointer. Read [Website Context](website-context.md) for the project map and asset-handling details.
+Updated November 2nd, 2026. This file is the single project instruction entrypoint for Claude Code and Codex working on the public ZPT marketing website. Explicitly read `AGENTS.md` before work if automatic loading is unavailable or unverified. Read [Website Context](website-context.md) for the project map and asset-handling details.
 
 ## Purpose And Sources
 
