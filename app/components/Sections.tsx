@@ -144,6 +144,13 @@ const TRUSTED_LOGOS: TrustedLogo[] = [
     description: "London-based real estate investment firm",
   },
   {
+    file: "/testimonials/flex_hr.webp",
+    name: "Flex HR",
+    location: "Atlanta, USA",
+    description: "HR, payroll and recruitment firm",
+    size: "sm",
+  },
+  {
     file: "/testimonials/kernbouw.svg",
     name: "KernBouw",
     location: "Amsterdam, NL",

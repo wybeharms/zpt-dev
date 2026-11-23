@@ -1,9 +1,9 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SubPageFinalCta from "../components/SubPageFinalCta";
-import TestimonialsHero from "./components/TestimonialsHero";
 import {
   CapitalIndustrialHighlight,
+  FlexHrHighlight,
   MarquetteHighlight,
   NewVintageHighlight,
 } from "./components/LinkedInHighlights";
@@ -24,10 +24,10 @@ export default function TestimonialsPage() {
     <>
       <Header />
       <main>
-        <TestimonialsHero />
-        <NewVintageHighlight />
         <MarquetteHighlight />
         <CapitalIndustrialHighlight />
+        <FlexHrHighlight />
+        <NewVintageHighlight />
         <InTheRoom />
         <OurWorkTeaser />
         <SubPageFinalCta backgroundImage="/landing_page/Our Work.webp" />
