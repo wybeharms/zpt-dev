@@ -187,7 +187,7 @@ export function FlexHrHighlight() {
       <div className="grid items-center gap-10 md:grid-cols-[44fr_56fr] md:gap-14">
         <img
           src="/testimonials/flex_hr_photo.webp"
-          alt="ZPT leading a remote Claude Cowork session with the Flex HR team"
+          alt="Jasper Moll leading a remote Claude Cowork session with the Flex HR team"
           className={`aspect-[4/3] w-full rounded-xl object-cover ${PHOTO_SHADOW}`}
         />
         <QuoteColumn

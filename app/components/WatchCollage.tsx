@@ -48,9 +48,9 @@ export default function WatchCollage() {
         </div>
         <div className="w-[33%] -translate-x-2">
           <img
-            src="/testimonials/cfa_society_photo.webp"
-            alt="Wybe presenting at a CFA Society Netherlands event in Amsterdam"
-            className={`${FRAME} aspect-[4/3] rotate-[1deg] object-[center_78%]`}
+            src="/testimonials/flex_hr_photo.webp"
+            alt="Jasper Moll leading a remote Claude Cowork session with the Flex HR team"
+            className={`${FRAME} aspect-[4/3] rotate-[1deg]`}
           />
         </div>
       </div>
