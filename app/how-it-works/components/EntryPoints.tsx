@@ -20,21 +20,21 @@ type Entry = {
 const entries: Entry[] = [
   {
     Icon: CompassIcon,
-    name: "ZPT Onboarding",
-    duration: "45 minutes per person, remote",
-    copy: "Your agent installed and set up for your role and company, permissions and privacy done right, a first folder built together, and portal access to keep going.",
+    name: "Setup",
+    duration: "Usually one to two days for a company, shorter for one person",
+    copy: "A ZPTer teaches your team to use agents in their own work and sets up the shared folder, instructions and company context with you. We map your workflows and agree what should happen next.",
   },
   {
     Icon: SextantIcon,
-    name: "ZPT Discovery",
-    duration: "Lite: half a day. Pro: one day on-site, two for larger firms",
-    copy: "ZPT sets the team up, builds the shared folder, interviews the departments, and ranks the workflows by impact and feasibility. Ends with a scaffolded folder your team works in the same week.",
+    name: "Build",
+    duration: "Optional, scoped per project",
+    copy: "The workflows you choose, built from real example inputs and outputs, judged against success criteria agreed before the work starts, tested with the people who use them, and handed over with instructions.",
   },
   {
     Icon: SailboatIcon,
-    name: "ZPT Build",
-    duration: "One to five days per workflow, over months",
-    copy: "Workflows built one by one from the discovery list, each judged against countable success criteria agreed before the work starts and checked together on real cases.",
+    name: "Retainer",
+    duration: "Monthly, scope agreed per client",
+    copy: "Ongoing support, maintenance and small improvements to your setup, a monthly folder review and a written monthly recap. Larger new workflows are scoped as a separate Build.",
   },
 ];
 
@@ -43,10 +43,11 @@ export default function EntryPoints() {
     <Section id="entry-points" bg="cream" backgroundWord="Process" align="header">
       <div className="max-w-[880px]">
         <SectionEyebrow bg="cream">Flexibility Is Key</SectionEyebrow>
-        <SectionHeading bg="cream">Pick Your Entry Point.</SectionHeading>
+        <SectionHeading bg="cream">Setup, Build, Retainer.</SectionHeading>
         <p className="mt-6 max-w-[880px] text-[16px] leading-[1.7] text-navy/70">
-          Most teams start with Onboarding or Discovery. Each package
-          includes everything before it.*
+          Every engagement starts with a Setup. Build is optional: many
+          teams go straight from Setup to a Retainer. Every engagement
+          includes the ZPT Portal.
         </p>
       </div>
 
@@ -65,12 +66,6 @@ export default function EntryPoints() {
           />
         ))}
       </ul>
-
-      <p className="mt-5 text-[13px] italic leading-[1.6] text-navy/55">
-        * ZPT also offers subscriptions for individuals and retainers for
-        the companies we work with, so the line stays open after any
-        package.
-      </p>
 
       {/* Bridge link to /our-work */}
       <div className="mt-12 text-center">

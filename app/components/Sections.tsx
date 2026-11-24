@@ -265,8 +265,8 @@ export function OurApproach() {
         <SectionHeading bg="navy">Our Approach</SectionHeading>
       </div>
 
-      {/* Left: the three packages, kept to a name, a tag and one line
-          each. Right: photos from real engagements, the same ones that
+      {/* Left: the three services (Setup, Build, Retainer) as filled
+          cards, kept to a name, a tag and one line each. Right: photos from real engagements, the same ones that
           appear full size on /testimonials. Centered vertically so the
           shorter column floats beside the taller one. */}
       <div className="mt-10 grid gap-12 md:mt-12 md:grid-cols-[minmax(0,54fr)_minmax(0,46fr)] md:items-center md:gap-16">
@@ -339,7 +339,7 @@ export function WhyZpt() {
       lead: "Start Small, No Commitment.",
       copy: "Every engagement is low-risk by design. The setup is AI agnostic and runs on tools you already have, like SharePoint or Dropbox. Nothing is locked in.",
       expanded:
-        "Onboarding a single person is a legitimate first step, no retainer required. Runs on your own Claude, Codex, or Copilot license.",
+        "Start with a Setup, even for one person. Build and Retainer are optional, never required. Runs on your own Claude, Codex, or Copilot license.",
     },
   ];
   return (
@@ -370,7 +370,7 @@ export function WhyZpt() {
 export function IsZptRight() {
   const yes = [
     "You know AI matters but haven't found a way to use it.",
-    "Even onboarding 1 person or a half-day discovery is a fine place to start.",
+    "A short Setup for one person or a small team is a fine place to start.",
     "You're ready to face the AI revolution head-on.",
     "You'd rather own the setup than subscribe.",
   ];

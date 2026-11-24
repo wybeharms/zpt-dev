@@ -10,7 +10,7 @@ import WhatYouGet from "./components/WhatYouGet";
 export const metadata = {
   title: "How It Works | ZPT Partners",
   description:
-    "How a ZPT engagement comes together. Pick an entry point, get the tools set up, and grow from there.",
+    "How a ZPT engagement comes together: Setup, an optional Build, and a Retainer to keep improving.",
   alternates: {
     canonical: "/how-it-works",
   },
